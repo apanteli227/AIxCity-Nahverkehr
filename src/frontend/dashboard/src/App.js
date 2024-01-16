@@ -3,11 +3,20 @@ import api from './api'
 
 const App = () => {
     const [helloWorld, setHelloWorld] = useState([]);
-    const [transactions, setTransactions] = useState([]);
+
+    const fetchHelloWorld = async () => {
+      const response = await api.post('/helloWorld');
+      console.log(response);
+      setHelloWorld(response.data);
+    }
+
+    useEffect(() => {
+        fetchHelloWorld();//hier muss vllt try/catch bzw. .then()...
+    },[]);
 
     return (
         <div>
-            Hello World!
+            {helloWorld}
         </div>
     )
 }

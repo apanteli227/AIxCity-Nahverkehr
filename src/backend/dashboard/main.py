@@ -7,10 +7,18 @@ import os
 app = FastAPI()
 
 origins = [
-  os.getenv('REACT_APP_BACKEND_URL')
+    "http://localhost:3000",
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*'],
 )
+
+
+@app.post("/helloWorld")
+def hello_world():
+    return "Hello World!"
