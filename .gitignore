@@ -1,10 +1,24 @@
+# .gitignore
+
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-venv/
-requirements.txt
+*.pyz
+*.pyw
+*.pyproj
+*.Python
+*.coverage
+*.db
+*.sqlite3
+*.log
+*.cache
+*.bak
+*.swp
+*.tmp
+*.vscode/
+*.env
 
 # React
 node_modules/
@@ -15,3 +29,6 @@ public/
 .env
 data/
 .idea/
+.pdm/
+venv/
+env/
