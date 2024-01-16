@@ -14,3 +14,4 @@ public/
 # Other
 .env
 data/
+.idea/
