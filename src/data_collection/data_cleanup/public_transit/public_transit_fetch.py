@@ -37,16 +37,13 @@ def extract_stop_time_updates(gtfsr_data):
         return stop_time_updates
     else:
         return None
-
-
-if __name__ == "__main__":
-    gtfsr_url = "https://gtfsr.vbn.de/gtfsr_connect.json"
-    gtfsr_data = get_gtfsr_data(gtfsr_url)
-
-    stop_time_updates = extract_stop_time_updates(gtfsr_data)
-
+    
+def create_stop_time_updates_df(stop_time_updates):
     if stop_time_updates is not None:
         df = pd.DataFrame(stop_time_updates)
-        print(df)
+        return df
     else:
-        print("Fehler beim Extrahieren der StopTimeUpdates.")
+        print("Fehler beim Extrahieren der StopTimeUpdates.")    
+
+
+
