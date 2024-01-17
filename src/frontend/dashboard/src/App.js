@@ -6,7 +6,6 @@ const App = () => {
 
     const fetchHelloWorld = async () => {
       const response = await api.post('/helloWorld');
-      console.log(response);
       setHelloWorld(response.data);
     }
 
