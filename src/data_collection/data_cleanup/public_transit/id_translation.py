@@ -3,7 +3,8 @@ import os
 
 def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
     """
-    Diese Funktion lädt GTFS-Textdateien und erstellt fünf DataFrames.
+    Diese Funktion lädt die GTFS-Textdateien aus dem Resssourcen Ordner ein
+    und erstellt fünf DataFrames.
     
     Parameters:
     - base_path (str): Der Basispfad, in dem sich die GTFS-Textdateien befinden.
@@ -16,6 +17,8 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
     - trips_bsag_df: DataFrame für Trips der BSAG
     - transfer_bsag_df: DataFrame für Transfers der BSAG
     """
+
+    # Liste mit den Dateinamen der GTFS-Textdateien
     gtfs_files = [
         "stops",
         "routes",
@@ -24,6 +27,7 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
         "transfers"
     ]
 
+    # Erstelle ein Dictionary mit den DataFrames
     gtfs_data = {}
     for file in gtfs_files:
         file_path = os.path.join(base_path, f"{file}.txt")
@@ -32,7 +36,7 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
         except FileNotFoundError:
             print(f"Warnung: Datei {file}.txt nicht gefunden.")
 
-    # Zugriff auf DataFrame für Haltestellen
+    # Zugriff auf DataFrame für Haltestellen im Dictionary
     stops_df = gtfs_data.get("stops")
 
     # Filtere das DataFrame, um nur Haltestellen-ID, Namen und Geo-Koordinaten zu behalten
@@ -89,6 +93,7 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
     #Filtern der Transfers der BSAG, welche auch eine entsprechende Stop-ID in der Stop-Tabelle besitzen
     transfer_bsag_df = filtered_transfer_df[filtered_transfer_df["from_stop_id"].isin(stops_bremen_df["stop_id"]) & filtered_transfer_df["to_stop_id"].isin(stops_bremen_df["stop_id"])]
 
+    # Rückgabe des Dictionarys mit den DataFrames
     return {
         "stops_bremen_df": stops_bremen_df,
         "agency_bsag_df": agency_bsag_df,
