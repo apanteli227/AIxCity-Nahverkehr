@@ -1,678 +1,1132 @@
-StartDate,Startzeit (Anfanghaltestelle),Linie,Richtung,Haltestelle,StopSequence,Ankunftsverspaetung in Sek.,Abfahrtsverspaetung in Sek.
-20240118,00:08:00,N9,Neue Vahr-Nord,Bremen Huckelriede,,0,0
-20240118,00:08:00,N9,Neue Vahr-Nord,Bremen Gottfried-Menken-Straße,4.0,-30,-30
-20240118,00:08:00,N9,Neue Vahr-Nord,Bremen Meyerstraße,5.0,0,0
-20240118,00:08:00,N9,Neue Vahr-Nord,Bremen Am Brill (Bgm.-Smidt-Straße),11.0,0,0
-20240118,00:08:00,N9,Neue Vahr-Nord,Bremen Am Brill (Bgm.-Smidt-Straße),11.0,0,0
-20240117,23:55:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal,,0,0
-20240117,23:55:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,30.0,-30,-30
-20240117,23:55:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,31.0,0,0
-20240118,00:01:00,N4,Lilienthal,Bremen Arsten,,0,0
-20240118,00:50:00,2E,Sebaldsbrück,Bremen Weserwehr,,0,0
-20240117,23:46:00,94,Bf Vegesack,Schwanewede Am Spreeken,,0,0
-20240117,23:46:00,94,Bf Vegesack,,4.0,-18,72
-20240117,23:46:00,94,Bf Vegesack,Schwanewede Dreienkamp,7.0,42,42
-20240117,23:46:00,94,Bf Vegesack,Schwanewede Am Markt,8.0,72,72
-20240117,23:46:00,94,Bf Vegesack,Bremen Rastenburger Straße,11.0,42,42
-20240117,23:46:00,94,Bf Vegesack,Bremen Ringofenstraße,13.0,12,12
-20240117,23:46:00,94,Bf Vegesack,Bremen Bahnhof Blumenthal,19.0,12,0
-20240117,23:46:00,94,Bf Vegesack,Bremen Margaretenallee,21.0,-30,-30
-20240117,23:46:00,94,Bf Vegesack,Bremen Bremer Vulkan,22.0,0,0
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Roland-Center,,0,0
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Norderländer Straße,1.0,56,56
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Solinger Straße,3.0,26,26
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Pappelstraße,6.0,59,59
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Am Brill (Bgm.-Smidt-Straße),9.0,28,59
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Hauptbahnhof,11.0,26,163
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25.0,133,133
-20240117,23:41:00,N1,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26.0,163,163
-20240117,23:45:00,N1,Huchting,Bremen Bf Mahndorf,,0,0
-20240117,23:45:00,N1,Huchting,Bremen Teneverstraße,5.0,23,53
-20240117,23:45:00,N1,Huchting,Bremen Graubündener Straße,10.0,93,93
-20240117,23:45:00,N1,Huchting,Bremen Hauptbahnhof,32.0,93,0
-20240118,00:09:00,6,Flughafen,Bremen Universität-Nord,,0,0
-20240118,00:09:00,6,Flughafen,Bremen Herdentor,14.0,-30,-30
-20240118,00:09:00,6,Flughafen,Bremen Schüsselkorb,15.0,0,0
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Domsheide,,0,-69
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Schüsselkorb,1.0,-39,0
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Herdentor,2.0,-32,0
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Hauptbahnhof,3.0,-83,0
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Sebaldsbrück (Bus+Tram),25.0,-30,-30
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Christernstraße,26.0,0,0
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Osterhop,27.0,-30,-30
-20240117,23:48:00,N5,Bf Mahndorf,Bremen Belmerstraße,28.0,0,0
-20240117,23:43:00,10,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240117,23:43:00,10,Sebaldsbrück,Bremen Lindenhofstraße,1.0,18,29
-20240117,23:43:00,10,Sebaldsbrück,Bremen Altenescher Straße,3.0,62,62
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Arsten,,0,0
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Sielhof,6.0,2,2
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Huckelriede,7.0,-30,0
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Rotes-Kreuz-Krankenhaus,12.0,-31,0
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Schüsselkorb,16.0,40,40
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Herdentor,17.0,69,69
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,32.0,39,39
-20240117,23:40:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,33.0,69,69
-20240118,00:10:00,98,Bf Vegesack,Bremen Borchsholt,,0,0
-20240118,00:10:00,98,Bf Vegesack,Bremen Herbartstraße,2.0,-30,-30
-20240118,00:10:00,98,Bf Vegesack,Bremen Vorlöhnhorster Weg,3.0,0,0
-20240118,00:17:00,3,Gröpelingen,Bremen Weserwehr,,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Neue Vahr Nord,,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Friedrich-Stampfer-Straße,1.0,-30,-30
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Otto-Braun-Straße,2.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Am Brill (Bgm.-Smidt-Straße),15.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Am Brill (Bgm.-Smidt-Straße),15.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Carsten-Dreßler-Straße,38.0,-30,-30
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen In der Laake,39.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Hermann-Helms-Straße,42.0,-30,-30
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Senator-Theil-Straße,43.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Piependamm,44.0,-30,-30
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Pfarrfeldsweg,45.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Fontanestraße,50.0,-30,-30
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Fellendsweg,51.0,0,0
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Helene-Lange-Straße,52.0,-30,-30
-20240118,00:07:00,N9,Kattenturm / Huckelriede,Bremen Friedhof Huckelriede,53.0,0,0
-20240118,00:23:00,N7,Hauptbahnhof,Bremen Bahnhof Vegesack,,0,0
-20240118,00:23:00,N7,Hauptbahnhof,Bremen Holthorster Weg,5.0,-30,-30
-20240118,00:23:00,N7,Hauptbahnhof,Bremen Zum Kränholm,6.0,0,0
-20240118,00:23:00,N7,Hauptbahnhof,Bremen Karl-Bröger-Straße,27.0,-30,-30
-20240118,00:23:00,N7,Hauptbahnhof,Bremen Gröpelingen,28.0,0,0
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Überseestadt-Nord,,0,0
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Am Wall,18.0,1,23
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Am Brill (Bgm.-Smidt-Straße),19.0,23,23
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Am Brill (Bgm.-Smidt-Straße),19.0,0,0
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Fontanestraße,34.0,-7,-7
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Habenhauser Brückenstraße,35.0,23,23
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Schlehenweg,37.0,-7,-7
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Staustraße,38.0,23,23
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Arster Kirche,43.0,-29,0
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Arster Landstraße,44.0,4,4
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Martin-Buber-Straße,47.0,-26,-26
-20240117,23:05:00,26,Kattenturm / Klinikum LDW,Bremen Brenningstraße,48.0,4,4
-20240117,23:33:00,N3,Rablinghausen,Bremen Bf Mahndorf,,0,0
-20240117,23:33:00,N3,Rablinghausen,Bremen Am Großen Kuhkamp,1.0,35,35
-20240117,23:33:00,N3,Rablinghausen,Bremen Egestorff-Stiftung,4.0,71,71
-20240117,23:33:00,N3,Rablinghausen,Bremen Osterholzer Möhlendamm,5.0,41,41
-20240117,23:33:00,N3,Rablinghausen,Bremen Am Hahnenkamp,6.0,71,71
-20240117,23:33:00,N3,Rablinghausen,Bremen Poggenburg,13.0,41,41
-20240117,23:33:00,N3,Rablinghausen,Bremen Am Hallacker,14.0,71,71
-20240117,23:33:00,N3,Rablinghausen,Bremen Lise-Meitner-Straße,31.0,41,41
-20240117,23:33:00,N3,Rablinghausen,Bremen Universität-Süd,32.0,71,71
-20240117,23:33:00,N3,Rablinghausen,Bremen Hauptbahnhof,43.0,71,0
-20240117,23:33:00,N3,Rablinghausen,Bremen Herdentor,44.0,-30,-30
-20240117,23:33:00,N3,Rablinghausen,Bremen Schüsselkorb,45.0,0,0
-20240117,23:33:00,N3,Rablinghausen,Bremen Akazienstraße,52.0,-30,-30
-20240117,23:33:00,N3,Rablinghausen,Bremen Huder Straße,53.0,0,0
-20240117,23:33:00,N3,Rablinghausen,Bremen Rechtenflether Straße,56.0,-30,-30
-20240117,23:33:00,N3,Rablinghausen,Bremen Woltmershauser Friedhof,57.0,0,0
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Hauptbahnhof,,0,33
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Bürgerpark,2.0,3,3
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Findorffallee,3.0,33,33
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Lange Reihe,12.0,3,3
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Waller Ring,13.0,33,33
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Gröpelingen,17.0,33,0
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen DIAKO Bremen,19.0,-30,-30
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Am Fuchsberg,20.0,0,0
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Am Bahnhof St. Magnus,41.0,-30,-30
-20240118,00:00:00,N7,Betriebshof Blumenthal,Bremen Tannenhof,42.0,0,0
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Marßel,,0,47
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Stader Landstraße,8.0,84,84
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Finkenschlag,15.0,44,44
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Grohn-Markt,19.0,12,12
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Bahnhof Vegesack,20.0,-126,0
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Gerhard-Rohlfs-Straße,21.0,34,34
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Bremer Vulkan,25.0,2,2
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Bahnhof Blumenthal,28.0,-23,73
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Bockhorner Weg,30.0,111,111
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Hegeweg,33.0,81,81
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Ringofenstraße,34.0,111,111
-20240117,23:06:00,94,Schwanewede-Nord,Bremen Rastenburger Straße,36.0,82,82
-20240117,23:06:00,94,Schwanewede-Nord,Schwanewede Insterburger Weg,38.0,52,52
-20240117,23:06:00,94,Schwanewede-Nord,Schwanewede Am Markt,39.0,114,114
-20240117,23:06:00,94,Schwanewede-Nord,Schwanewede Eichengrund,41.0,70,70
-20240117,23:06:00,94,Schwanewede-Nord,Schwanewede Hospitalstraße,42.0,40,40
-20240117,23:06:00,94,Schwanewede-Nord,,43.0,-5,0
-20240117,23:06:00,94,Schwanewede-Nord,Schwanewede Am Spreeken,47.0,-100,0
-20240117,23:47:00,3,Gröpelingen,Bremen Weserwehr,,0,0
-20240118,00:13:00,6E,Neustadt / BSAG-Zentrum,Bremen Bürgerpark,,0,0
-20240118,00:13:00,6E,Neustadt / BSAG-Zentrum,Bremen Herdentor,3.0,-30,-30
-20240118,00:13:00,6E,Neustadt / BSAG-Zentrum,Bremen Schüsselkorb,4.0,0,0
-20240117,23:21:00,2,Gröpelingen,Bremen Sebaldsbrück (Bus+Tram),,0,0
-20240117,23:21:00,2,Gröpelingen,Bremen Föhrenstraße,4.0,29,29
-20240117,23:06:00,25,Osterholz,Bremen Weidedamm-Süd,,0,0
-20240117,23:06:00,25,Osterholz,Bremen Stuttgarter Straße,1.0,23,23
-20240117,23:06:00,25,Osterholz,Bremen Utbremer Ring,2.0,53,53
-20240117,23:06:00,25,Osterholz,Bremen Hemmstraße,4.0,21,21
-20240117,23:06:00,25,Osterholz,Bremen Lohmannstraße,5.0,-19,0
-20240117,23:06:00,25,Osterholz,Bremen Daniel-von-Büren-Straße,8.0,61,61
-20240117,23:06:00,25,Osterholz,Bremen Doventor,9.0,5,5
-20240117,23:06:00,25,Osterholz,Bremen Radio Bremen/VHS,10.0,-50,0
-20240117,23:06:00,25,Osterholz,Bremen Am Brill (Martinistraße),11.0,-29,0
-20240117,23:06:00,25,Osterholz,Bremen Martinistraße,12.0,5,5
-20240117,23:06:00,25,Osterholz,Bremen Domsheide,13.0,-115,0
-20240117,23:06:00,25,Osterholz,Bremen Schüsselkorb,14.0,5,5
-20240117,23:06:00,25,Osterholz,Bremen Herdentor,15.0,56,56
-20240117,23:06:00,25,Osterholz,Bremen Hauptbahnhof,16.0,56,0
-20240117,23:06:00,25,Osterholz,Bremen Rembertistraße,17.0,40,40
-20240117,23:06:00,25,Osterholz,Bremen Dobbenweg,18.0,-3,0
-20240117,23:06:00,25,Osterholz,Bremen Stader Straße/Bismarckstraße,21.0,-37,0
-20240117,23:06:00,25,Osterholz,Bremen Steubenstraße,23.0,12,12
-20240117,23:06:00,25,Osterholz,Bremen Müdener Straße,25.0,-29,0
-20240117,23:06:00,25,Osterholz,Bremen Stellichter Straße,27.0,-31,0
-20240117,23:06:00,25,Osterholz,Bremen Rennplatz,28.0,-85,0
-20240117,23:06:00,25,Osterholz,Bremen Bottroper Straße,33.0,-30,-30
-20240117,23:06:00,25,Osterholz,Bremen Einkaufszentrum Blockdiek,34.0,0,0
-20240117,23:31:00,N4,Lilienthal,Bremen Arsten,,0,0
-20240117,23:31:00,N4,Lilienthal,Bremen Twiedelftsweg,1.0,29,29
-20240117,23:31:00,N4,Lilienthal,Bremen Rosenpfad,9.0,63,63
-20240117,23:31:00,N4,Lilienthal,Bremen Hauptbahnhof,18.0,63,0
-20240118,00:15:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal,,0,0
-20240118,00:15:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,30.0,-30,-30
-20240118,00:15:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,31.0,0,0
-20240117,23:49:00,2,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240118,00:57:00,6E,Neustadt / BSAG-Zentrum,Bremen Gröpelingen,,0,0
-20240117,23:15:00,N1,Huchting,Bremen Bf Mahndorf,,0,0
-20240117,23:15:00,N1,Huchting,Bremen Werner-Steenken-Straße,4.0,-35,0
-20240117,23:15:00,N1,Huchting,Bremen Graubündener Straße,10.0,31,31
-20240117,23:15:00,N1,Huchting,Bremen Erkelenzer Straße,15.0,1,1
-20240117,23:15:00,N1,Huchting,Bremen Carl-Goerdeler-Straße,18.0,34,34
-20240117,23:15:00,N1,Huchting,Bremen Berliner Freiheit,19.0,-10,0
-20240117,23:15:00,N1,Huchting,Bremen Wilhelm-Leuschner-Straße,20.0,39,39
-20240117,23:15:00,N1,Huchting,Bremen Julius-Brecht-Allee,22.0,11,11
-20240117,23:15:00,N1,Huchting,Bremen St. Joseph-Stift,27.0,42,42
-20240117,23:15:00,N1,Huchting,Bremen Hauptbahnhof,32.0,82,0
-20240117,23:15:00,N1,Huchting,Bremen Am Wall,33.0,94,94
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Hauptbahnhof,,0,0
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Bürgerpark,2.0,-30,-30
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Findorffallee,3.0,0,0
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Lange Reihe,12.0,-30,-30
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Waller Ring,13.0,0,0
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen DIAKO Bremen,19.0,-30,-30
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Am Fuchsberg,20.0,0,0
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Am Bahnhof St. Magnus,41.0,-30,-30
-20240118,01:30:00,N7,Betriebshof Blumenthal,Bremen Tannenhof,42.0,0,0
-20240117,23:54:00,96,Bf Blumenthal,Bremen Betriebshof Blumenthal,,0,0
-20240117,23:54:00,96,Bf Blumenthal,Bremen Besanstraße,8.0,-30,-30
-20240117,23:54:00,96,Bf Blumenthal,Bremen Hakenwehrstraße,9.0,0,0
-20240117,23:53:00,N7,Gröpelingen,Bremen Bahnhof Vegesack,,0,0
-20240117,23:53:00,N7,Gröpelingen,Bremen Holthorster Weg,5.0,-30,-30
-20240117,23:53:00,N7,Gröpelingen,Bremen Zum Kränholm,6.0,0,0
-20240117,23:53:00,N7,Gröpelingen,Bremen Karl-Bröger-Straße,27.0,-30,-30
-20240117,23:53:00,N7,Gröpelingen,Bremen Gröpelingen,28.0,0,0
-20240117,23:50:00,27E,Huckelriede,Brinkum(Stuhr) IKEA/Marktkauf,,0,0
-20240117,23:51:00,27E,Brinkum-Nord / IKEA-Marktkauf,Brinkum(Stuhr) IKEA/Marktkauf,10.0,-205,0
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Roland-Center,,0,0
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Norderländer Straße,1.0,34,34
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Neuenlander Straße,5.0,79,79
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Am Brill (Bgm.-Smidt-Straße),9.0,11,72
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Hauptbahnhof,11.0,284,284
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,25.0,254,254
-20240117,23:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,26.0,284,284
-20240118,00:06:00,39,Weserpark-Süd,Bremen Bf Mahndorf,,0,70
-20240117,23:22:00,1,Bf Mahndorf,Bremen Roland-Center,,0,0
-20240117,23:22:00,1,Bf Mahndorf,Bremen Norderländer Straße,1.0,35,35
-20240117,23:22:00,1,Bf Mahndorf,Bremen Duckwitzstraße,4.0,75,75
-20240117,23:22:00,1,Bf Mahndorf,Bremen Neuenlander Straße,5.0,118,118
-20240117,23:22:00,1,Bf Mahndorf,Bremen Pappelstraße,6.0,157,157
-20240117,23:22:00,1,Bf Mahndorf,Bremen Hochschule Bremen,7.0,186,186
-20240117,23:22:00,1,Bf Mahndorf,Bremen Am Wall,10.0,220,220
-20240117,23:22:00,1,Bf Mahndorf,Bremen Hauptbahnhof,11.0,185,98
-20240117,23:22:00,1,Bf Mahndorf,Bremen Rembertistraße,12.0,160,189
-20240117,23:22:00,1,Bf Mahndorf,Bremen Parkstraße,14.0,232,232
-20240117,23:22:00,1,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25.0,202,202
-20240117,23:22:00,1,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26.0,232,232
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Rablinghausen,,0,0
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Roccoweg,1.0,-30,-30
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Bakeweg,2.0,0,0
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Dötlinger Straße,7.0,-30,-30
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Huder Straße,8.0,0,0
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Bahnhof Neustadt,10.0,-30,-30
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Hohentorsplatz,11.0,0,0
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Oewerweg,49.0,-30,-30
-20240118,00:04:00,N3,Bf Mahndorf,Bremen Osterholzer Heerstraße,50.0,0,0
-20240117,23:42:00,55,Brinkum,Bremen Roland-Center,,0,0
-20240117,23:42:00,55,Brinkum,Bremen Willakedamm,1.0,103,103
-20240117,23:42:00,55,Brinkum,Bremen Hohenhorster Weg,2.0,133,133
-20240117,23:42:00,55,Brinkum,Bremen Rotterdamer Straße,3.0,90,90
-20240117,23:42:00,55,Brinkum,Bremen Friedhof Huchting,4.0,55,55
-20240117,23:42:00,55,Brinkum,Bremen Varreler Landstraße,5.0,27,27
-20240117,23:42:00,55,Brinkum,,6.0,104,104
-20240117,23:42:00,55,Brinkum,,7.0,52,52
-20240117,23:42:00,55,Brinkum,,8.0,0,0
-20240117,23:42:00,55,Brinkum,,11.0,-30,-30
-20240117,23:42:00,55,Brinkum,,12.0,0,0
-20240117,23:42:00,55,Brinkum,Brinkum(Stuhr) Magdeburger Straße,17.0,-38,0
-20240117,23:42:00,55,Brinkum,Brinkum(Stuhr) Am Bahnhof,18.0,-49,0
-20240117,23:42:00,55,Brinkum,Brinkum(Stuhr) Schule Feldstraße,19.0,-51,0
-20240117,23:42:00,55,Brinkum,Brinkum(Stuhr) Marktplatz,20.0,10,0
-20240118,00:01:00,N10,Gröpelingen,Bremen Sebaldsbrück (Bus+Tram),,0,0
-20240118,00:01:00,N10,Gröpelingen,Bremen Schloßparkstraße,1.0,-30,-30
-20240118,00:01:00,N10,Gröpelingen,Bremen Trinidadstraße,2.0,0,0
-20240118,00:54:00,96,Lüssum-Süd / An der Lehmkuhle,Bremen Betriebshof Blumenthal,,0,0
-20240118,00:27:00,6E,Neustadt / BSAG-Zentrum,Bremen Gröpelingen,,0,0
-20240118,00:45:00,N1,Neustadt / BSAG-Zentrum,Bremen Bf Mahndorf,,0,0
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Marßel,,0,0
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Stockholmer Straße,3.0,-33,0
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Burgdammer Ring,4.0,-29,0
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Stader Landstraße,8.0,62,92
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Finkenschlag,15.0,62,62
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Bahnhof Vegesack,20.0,-86,0
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Hegeweg,33.0,-30,-30
-20240117,23:36:00,94,Schwanewede-Nord,Bremen Ringofenstraße,34.0,0,0
-20240117,23:36:00,94,Schwanewede-Nord,Schwanewede Insterburger Weg,38.0,-30,-30
-20240117,23:36:00,94,Schwanewede-Nord,Schwanewede Am Markt,39.0,0,0
-20240117,23:31:00,N10,Gröpelingen,Bremen Sebaldsbrück (Bus+Tram),,0,0
-20240117,23:31:00,N10,Gröpelingen,Bremen Schloßparkstraße,1.0,24,24
-20240117,23:31:00,N10,Gröpelingen,Bremen Trinidadstraße,2.0,54,54
-20240117,23:31:00,N10,Gröpelingen,Bremen St.-Jürgen-Straße,10.0,3,3
-20240117,23:31:00,N10,Gröpelingen,Bremen Am Dobben,14.0,-63,0
-20240117,23:31:00,N10,Gröpelingen,Bremen Rembertistraße,15.0,-17,0
-20240117,23:31:00,N10,Gröpelingen,Bremen Hauptbahnhof,16.0,-29,0
-20240117,23:31:00,N10,Gröpelingen,Bremen Falkenstraße,17.0,71,71
-20240118,01:13:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Bf Mahndorf,,0,0
-20240118,00:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal,,0,0
-20240118,00:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,30.0,-30,-30
-20240118,00:43:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,31.0,0,0
-20240118,00:09:00,3,Weserwehr,Bremen Gröpelingen,,0,0
-20240117,23:59:00,57,Bremen Roland-Center,Bremen Roland-Center,,0,40
-20240117,23:59:00,57,Bremen Roland-Center,Bremen Willakedamm,1.0,76,76
-20240118,00:47:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Bf Mahndorf,,0,0
-20240118,00:49:00,96,Lüssum,Bremen Bahnhof Blumenthal,,0,0
-20240118,00:49:00,96,Lüssum,Bremen Wasserturm,2.0,-30,-30
-20240118,00:49:00,96,Lüssum,Bremen Hakenwehrstraße,3.0,0,0
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Rablinghausen,,0,0
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Roccoweg,1.0,-30,-30
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Bakeweg,2.0,68,68
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Woltmershauser Friedhof,4.0,37,37
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Wildeshauser Straße,6.0,-9,0
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Dötlinger Straße,7.0,-30,-30
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Huder Straße,8.0,0,0
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Bahnhof Neustadt,10.0,-30,-30
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Hohentorsplatz,11.0,0,0
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Oewerweg,49.0,-30,-30
-20240117,23:34:00,N3,Bf Mahndorf,Bremen Osterholzer Heerstraße,50.0,0,0
-20240117,23:48:00,N4,Arsten,Lilienthal,,0,0
-20240117,23:48:00,N4,Arsten,Lilienthal Truperdeich,9.0,70,70
-20240117,23:48:00,N4,Arsten,Bremen Hauptbahnhof,30.0,70,0
-20240117,23:48:00,N4,Arsten,Bremen Herdentor,31.0,-30,-30
-20240117,23:48:00,N4,Arsten,Bremen Schüsselkorb,32.0,0,0
-20240118,00:14:00,2,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240118,00:27:00,6E,Neustadt / BSAG-Zentrum,Bremen Gröpelingen,,0,0
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Bahnhof Vegesack,,0,0
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Auf dem Krümpel,1.0,49,49
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Bahnhof Schönebeck,2.0,10,10
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Tannenhof,3.0,46,46
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Am Bahnhof St. Magnus,4.0,15,15
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Holthorster Weg,5.0,-15,-15
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Zum Kränholm,6.0,15,15
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Burgdammer Postweg,10.0,52,52
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Helsingborger Straße,11.0,18,18
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Marßel,12.0,26,26
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Stockholmer Straße,13.0,65,65
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Stader Landstraße,16.0,-1,0
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Ritterhuder Heerstraße,24.0,36,36
-20240117,23:23:00,N7,Hauptbahnhof,Bremen DIAKO Bremen,26.0,7,7
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Karl-Bröger-Straße,27.0,-23,-23
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Gröpelingen,28.0,36,36
-20240117,23:23:00,N7,Hauptbahnhof,Bremen Use Akschen,29.0,73,73
-20240118,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Rembertistraße,,0,0
-20240118,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Herdentor,2.0,-30,-30
-20240118,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Schüsselkorb,3.0,0,0
-20240117,23:05:00,4,Lilienthal,Bremen Arsten,,0,0
-20240117,23:05:00,4,Lilienthal,Bremen Kirchweg,10.0,35,35
-20240117,23:05:00,4,Lilienthal,Bremen Schwankhalle,11.0,66,66
-20240117,23:05:00,4,Lilienthal,Bremen Wilhelm-Kaisen-Brücke,14.0,96,96
-20240117,23:05:00,4,Lilienthal,Bremen Schüsselkorb,16.0,141,141
-20240117,23:05:00,4,Lilienthal,Bremen Herdentor,17.0,181,181
-20240117,23:05:00,4,Lilienthal,Bremen Hauptbahnhof,18.0,184,34
-20240117,23:05:00,4,Lilienthal,Bremen Rembertistraße,19.0,85,85
-20240117,23:05:00,4,Lilienthal,Bremen Am Dobben,20.0,124,124
-20240117,23:05:00,4,Lilienthal,Bremen Parkstraße,21.0,154,154
-20240117,23:05:00,4,Lilienthal,Bremen Vorstraße,30.0,112,112
-20240117,23:05:00,4,Lilienthal,Bremen Horner Mühle,31.0,67,67
-20240118,01:05:00,N10,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Schweizer Eck,,0,0
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Klinikum Bremen-Ost,1.0,37,37
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Grenzwehr,2.0,7,7
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Emmentaler Straße,3.0,71,71
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Einkaufszentrum Blockdiek,5.0,24,24
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Bottroper Straße,6.0,-34,0
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Hermann-Koenen-Straße,7.0,1,1
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Im Holter Feld,9.0,-29,-29
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Georg-Gries-Straße,10.0,1,1
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Hauptbahnhof,23.0,1,0
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Herdentor,24.0,-30,-30
-20240117,23:55:00,25,Weidedamm-Süd,Bremen Schüsselkorb,25.0,0,0
-20240117,23:18:00,N4,Arsten,Lilienthal,,0,97
-20240117,23:18:00,N4,Arsten,Lilienthal Kutscher Behrens,1.0,129,129
-20240117,23:18:00,N4,Arsten,Lilienthal Auf dem Kamp,2.0,155,155
-20240117,23:18:00,N4,Arsten,Bremen Borgfeld,10.0,147,147
-20240117,23:18:00,N4,Arsten,Bremen Horner Mühle,17.0,111,111
-20240117,23:18:00,N4,Arsten,Bremen Horn (Horner Kirche),19.0,69,69
-20240117,23:18:00,N4,Arsten,Bremen Focke-Museum,21.0,23,23
-20240117,23:18:00,N4,Arsten,Bremen Kirchbachstraße,23.0,-7,0
-20240117,23:18:00,N4,Arsten,Bremen Parkstraße,27.0,35,35
-20240117,23:18:00,N4,Arsten,Bremen Rembertistraße,29.0,4,4
-20240117,23:18:00,N4,Arsten,Bremen Hauptbahnhof,30.0,4,0
-20240117,23:18:00,N4,Arsten,Bremen Herdentor,31.0,53,53
-20240117,23:18:00,N4,Arsten,Bremen Schüsselkorb,32.0,83,83
-20240117,23:47:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Bf Mahndorf,,0,0
-20240118,00:08:00,N1,Bf Mahndorf,Bremen Roland-Center,,0,0
-20240118,00:08:00,N1,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25.0,-30,-30
-20240118,00:08:00,N1,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26.0,0,0
-20240117,22:58:00,90,Neuenkirchen,Bremen Gröpelingen,,0,33
-20240117,22:58:00,90,Neuenkirchen,Bremen DIAKO Bremen,2.0,48,48
-20240117,22:58:00,90,Neuenkirchen,Bremen Am Fuchsberg,3.0,78,78
-20240117,22:58:00,90,Neuenkirchen,Bremen Dohlenstraße,5.0,120,120
-20240117,22:58:00,90,Neuenkirchen,Bremen Am Geestkamp,8.0,74,74
-20240117,22:58:00,90,Neuenkirchen,Bremen An Smidts Park,9.0,71,71
-20240117,22:58:00,90,Neuenkirchen,Bremen-Burg(Bus),11.0,-6,71
-20240117,22:58:00,90,Neuenkirchen,Bremen Stader Landstraße,12.0,113,143
-20240117,22:58:00,90,Neuenkirchen,Bremen Am Heidbergstift,15.0,112,112
-20240117,22:58:00,90,Neuenkirchen,Bremen Zum Kränholm,18.0,120,120
-20240117,22:58:00,90,Neuenkirchen,Bremen Holthorster Weg,19.0,150,150
-20240117,22:58:00,90,Neuenkirchen,Bremen Bahnhof Schönebeck,22.0,114,114
-20240117,22:58:00,90,Neuenkirchen,Bremen Bahnhof Vegesack,24.0,-20,75
-20240117,22:58:00,90,Neuenkirchen,Bremen Gerhard-Rohlfs-Straße,25.0,109,109
-20240117,22:58:00,90,Neuenkirchen,Bremen Gustav-Heinemann-Bürgerhaus,26.0,103,103
-20240117,22:58:00,90,Neuenkirchen,Bremen Fährer Kämpe,29.0,140,140
-20240117,22:58:00,90,Neuenkirchen,Bremen Löhstraße,31.0,102,102
-20240117,22:58:00,90,Neuenkirchen,Bremen Bahnhof Blumenthal,33.0,52,0
-20240117,22:58:00,90,Neuenkirchen,Bremen Zum Donaufleet,35.0,7,7
-20240117,22:58:00,90,Neuenkirchen,Bremen Fähre Blumenthal,36.0,37,37
-20240117,22:58:00,90,Neuenkirchen,Bremen Dillener Park,38.0,49,79
-20240117,22:58:00,90,Neuenkirchen,Bremen Hanfstraße,40.0,49,49
-20240117,22:58:00,90,Neuenkirchen,Bremen An der Amtsweide,41.0,79,79
-20240117,22:58:00,90,Neuenkirchen,Bremen Wasserweg,42.0,49,49
-20240117,22:58:00,90,Neuenkirchen,Bremen Fähre Farge,43.0,79,79
-20240117,22:58:00,90,Neuenkirchen,Bremen Wilhelm-Brandhorst-Straße,46.0,22,22
-20240117,22:58:00,90,Neuenkirchen,Bremen De Kreienbarg,47.0,-35,-35
-20240117,22:58:00,90,Neuenkirchen,Bremen Hohenesch,48.0,-65,-30
-20240117,22:58:00,90,Neuenkirchen,Bremen Rekumer Siel,49.0,4,4
-20240117,22:58:00,90,Neuenkirchen,Bremen Sandkuhlenweg,51.0,-26,-26
-20240117,22:58:00,90,Neuenkirchen,Bremen Moorstücke,52.0,4,4
-20240117,22:58:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,54.0,-26,-26
-20240117,22:58:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,55.0,4,4
-20240118,00:20:00,N6,Bremen Roland-Center,Bremen Roland-Center,,0,0
-20240118,00:20:00,N6,Bremen Roland-Center,Bremen Willakedamm,1.0,-30,-30
-20240118,00:20:00,N6,Bremen Roland-Center,Bremen Hohenhorster Weg,2.0,0,0
-20240118,00:20:00,N6,Bremen Roland-Center,Bremen Harriersand,10.0,-30,-30
-20240118,00:20:00,N6,Bremen Roland-Center,Bremen Zum Huchtinger Bahnhof,11.0,0,0
-20240118,00:05:00,N10,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,,,0,0
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Neuenkirchen(Schwanewede) Vorbruch,1.0,-30,-30
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Neuenkirchen(Schwanewede) Ahnten,2.0,0,0
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Moorstücke,5.0,-30,-30
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Sandkuhlenweg,6.0,0,0
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Vor den Wischen,7.0,-30,-30
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Rekumer Siel,8.0,0,0
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen De Kreienbarg,10.0,-30,-30
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Wilhelm-Brandhorst-Straße,11.0,0,0
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Hanfstraße,17.0,-30,-30
-20240117,23:45:00,90,Bf Vegesack / N7 Hauptbahnhof,Bremen Buschdeel,18.0,0,0
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Lindenhofstraße,1.0,-42,0
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Moorstraße,2.0,-29,0
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Bahnhof Walle,6.0,3,32
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Gustavstraße,7.0,62,62
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Utbremer Straße,8.0,53,53
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Daniel-von-Büren-Straße,13.0,98,98
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Falkenstraße,14.0,45,45
-20240117,23:35:00,N10,Sebaldsbrück,Bremen Hauptbahnhof,15.0,74,81
-20240117,23:59:00,58,Bremen Roland-Center,Bremen Roland-Center,,0,0
-20240118,00:04:00,98,Hammersbeck,Bremen Bahnhof Vegesack,,0,0
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Hauptbahnhof,,0,0
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Bürgerpark,2.0,-30,-30
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Findorffallee,3.0,0,0
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Lange Reihe,12.0,-30,-30
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Waller Ring,13.0,0,0
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen DIAKO Bremen,19.0,-30,-30
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Am Fuchsberg,20.0,0,0
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Am Bahnhof St. Magnus,41.0,-30,-30
-20240118,00:30:00,N7,Betriebshof Blumenthal,Bremen Tannenhof,42.0,0,0
-20240118,00:05:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Bf Mahndorf,,0,0
-20240117,23:59:00,37,Bf Mahndorf,Bremen Sebaldsbrück (Bus+Tram),,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Gröpelingen,,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Karl-Bröger-Straße,1.0,-33,0
-20240117,23:28:00,90,Neuenkirchen,Bremen DIAKO Bremen,2.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Bremen Am Fuchsberg,3.0,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Ritterhuder Heerstraße,4.0,29,29
-20240117,23:28:00,90,Neuenkirchen,Bremen Dohlenstraße,5.0,59,59
-20240117,23:28:00,90,Neuenkirchen,Bremen Am Geestkamp,8.0,-2,0
-20240117,23:28:00,90,Neuenkirchen,Bremen-Burg(Bus),11.0,-29,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Stader Landstraße,12.0,12,43
-20240117,23:28:00,90,Neuenkirchen,Bremen Am Heidbergstift,15.0,6,6
-20240117,23:28:00,90,Neuenkirchen,Bremen Zum Kränholm,18.0,-24,-24
-20240117,23:28:00,90,Neuenkirchen,Bremen Holthorster Weg,19.0,40,40
-20240117,23:28:00,90,Neuenkirchen,Bremen Tannenhof,21.0,8,8
-20240117,23:28:00,90,Neuenkirchen,Bremen Bahnhof Vegesack,24.0,-110,74
-20240117,23:28:00,90,Neuenkirchen,Bremen Bahnhof Blumenthal,33.0,74,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Zum Donaufleet,35.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Bremen Fähre Blumenthal,36.0,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Hanfstraße,40.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Bremen An der Amtsweide,41.0,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Wasserweg,42.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Bremen Fähre Farge,43.0,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Hohenesch,48.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Bremen Rekumer Siel,49.0,0,0
-20240117,23:28:00,90,Neuenkirchen,Bremen Sandkuhlenweg,51.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Bremen Moorstücke,52.0,0,0
-20240117,23:28:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,54.0,-30,-30
-20240117,23:28:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,55.0,0,0
-20240117,23:12:00,N3,Rablinghausen,Bremen Schweizer Eck,,0,379
-20240117,23:12:00,N3,Rablinghausen,Bremen Lachmundsdamm,3.0,384,384
-20240117,23:12:00,N3,Rablinghausen,Bremen Osterholzer Heerstraße,4.0,330,330
-20240117,23:12:00,N3,Rablinghausen,Bremen Poggenburg,6.0,300,300
-20240117,23:12:00,N3,Rablinghausen,Bremen Am Hallacker,7.0,330,330
-20240117,23:12:00,N3,Rablinghausen,Bremen Osterholzer Landstraße,8.0,363,363
-20240117,23:12:00,N3,Rablinghausen,Bremen Schevemoorer Landstraße,9.0,355,355
-20240117,23:12:00,N3,Rablinghausen,Bremen Bahnhof Oberneuland,11.0,398,398
-20240117,23:12:00,N3,Rablinghausen,Bremen Simon-Hermann-Post-Weg,13.0,361,361
-20240117,23:12:00,N3,Rablinghausen,Bremen Rockwinkeler Heerstraße,14.0,330,330
-20240117,23:12:00,N3,Rablinghausen,Bremen Beim Kleinen Tagwerk,16.0,280,280
-20240117,23:12:00,N3,Rablinghausen,Bremen Lise-Meitner-Straße,24.0,250,250
-20240117,23:12:00,N3,Rablinghausen,Bremen Universität-Süd,25.0,316,316
-20240117,23:12:00,N3,Rablinghausen,Bremen Wiener Straße,26.0,267,267
-20240117,23:12:00,N3,Rablinghausen,Bremen Parkallee,28.0,227,227
-20240117,23:12:00,N3,Rablinghausen,Bremen Busestraße/Bürgerpark,29.0,186,186
-20240117,23:12:00,N3,Rablinghausen,Bremen Emmastraße/Bürgerpark,30.0,108,108
-20240117,23:12:00,N3,Rablinghausen,Bremen Brahmsstraße,33.0,73,73
-20240117,23:12:00,N3,Rablinghausen,Bremen Am Stern,34.0,37,37
-20240117,23:12:00,N3,Rablinghausen,Bremen Hauptbahnhof,36.0,37,0
-20240117,23:12:00,N3,Rablinghausen,Bremen Herdentor,37.0,-22,-22
-20240117,23:12:00,N3,Rablinghausen,Bremen Schüsselkorb,38.0,4,4
-20240117,23:12:00,N3,Rablinghausen,Bremen Akazienstraße,45.0,-26,-26
-20240117,23:12:00,N3,Rablinghausen,Bremen Huder Straße,46.0,4,4
-20240117,23:12:00,N3,Rablinghausen,Bremen Rechtenflether Straße,49.0,-26,-26
-20240117,23:12:00,N3,Rablinghausen,Bremen Woltmershauser Friedhof,50.0,4,4
-20240117,23:02:00,1,Bf Mahndorf,Bremen Roland-Center,,0,0
-20240117,23:02:00,1,Bf Mahndorf,Bremen Norderländer Straße,1.0,36,36
-20240117,23:02:00,1,Bf Mahndorf,Bremen Neuenlander Straße,5.0,68,68
-20240117,23:02:00,1,Bf Mahndorf,Bremen Pappelstraße,6.0,65,65
-20240117,23:02:00,1,Bf Mahndorf,Bremen Westerstraße,8.0,97,97
-20240117,23:02:00,1,Bf Mahndorf,Bremen Am Brill (Bgm.-Smidt-Straße),9.0,67,97
-20240117,23:02:00,1,Bf Mahndorf,Bremen Am Wall,10.0,126,126
-20240117,23:02:00,1,Bf Mahndorf,Bremen Hauptbahnhof,11.0,123,0
-20240117,23:02:00,1,Bf Mahndorf,Bremen Parkstraße,14.0,37,37
-20240117,23:02:00,1,Bf Mahndorf,Bremen Hollerallee,15.0,79,79
-20240117,23:02:00,1,Bf Mahndorf,Bremen Metzer Straße,17.0,44,44
-20240117,23:02:00,1,Bf Mahndorf,Bremen Kirchbachstraße,18.0,43,43
-20240117,23:02:00,1,Bf Mahndorf,Bremen Barbarossastraße,20.0,12,12
-20240117,23:02:00,1,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25.0,-18,-18
-20240117,23:02:00,1,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26.0,12,12
-20240118,00:43:00,98,Hammersbeck / Kaspar-Ohm-Str.,Bremen Borchsholt,,0,0
-20240118,00:43:00,98,Hammersbeck / Kaspar-Ohm-Str.,Bremen Herbartstraße,2.0,-30,-30
-20240118,00:43:00,98,Hammersbeck / Kaspar-Ohm-Str.,Bremen Vorlöhnhorster Weg,3.0,0,0
-20240117,23:39:00,3,Weserwehr,Bremen Gröpelingen,,0,0
-20240117,23:39:00,3,Weserwehr,Bremen Grasberger Straße,4.0,-36,0
-20240117,23:39:00,3,Weserwehr,Bremen Hansator,10.0,-34,0
-20240117,23:39:00,3,Weserwehr,Bremen Konsul-Smidt-Straße,11.0,-42,0
-20240117,23:39:00,3,Weserwehr,Bremen Europahafen,12.0,-40,0
-20240117,23:39:00,3,Weserwehr,Bremen Am Brill (Hutfilter-/Obernstraße),15.0,-61,0
-20240117,23:43:00,6,Flughafen,Bremen Universität-Nord,,0,0
-20240117,23:43:00,6,Flughafen,Bremen Lise-Meitner-Straße,3.0,41,41
-20240117,23:43:00,6,Flughafen,Bremen Brahmsstraße,10.0,3,3
-20240117,23:43:00,6,Flughafen,Bremen Hauptbahnhof,13.0,15,0
-20240117,23:43:00,6,Flughafen,Bremen Herdentor,14.0,64,64
-20240117,23:43:00,6,Flughafen,Bremen Schüsselkorb,15.0,140,140
-20240118,00:18:00,N5,Bf Mahndorf,Bremen Domsheide,,0,102
-20240118,00:18:00,N5,Bf Mahndorf,Bremen Hauptbahnhof,3.0,102,0
-20240118,00:18:00,N5,Bf Mahndorf,Bremen Sebaldsbrück (Bus+Tram),25.0,-30,-30
-20240118,00:18:00,N5,Bf Mahndorf,Bremen Christernstraße,26.0,0,0
-20240118,00:18:00,N5,Bf Mahndorf,Bremen Osterhop,27.0,-30,-30
-20240118,00:18:00,N5,Bf Mahndorf,Bremen Belmerstraße,28.0,0,0
-20240118,00:57:00,6E,Neustadt / BSAG-Zentrum,Bremen Arsten,,0,0
-20240118,00:30:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Arsten,,0,0
-20240118,00:30:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,32.0,-30,-30
-20240118,00:30:00,1E,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,33.0,0,0
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Klinikum Haupteingang,,0,0
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Gemeinschaftszentrum Obervieland,3.0,16,16
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Brenningstraße,4.0,46,46
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Carsten-Dreßler-Straße,6.0,16,16
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen In der Laake,7.0,76,76
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Schlehenweg,15.0,46,46
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Friedrich-Engels-Straße,16.0,76,76
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Habenhauser Brückenstraße,17.0,76,46
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Fontanestraße,18.0,16,16
-20240117,23:45:00,26,Huckelriede / N9 Neue Vahr,Bremen Fellendsweg,19.0,46,46
-20240117,23:22:00,10,Sebaldsbrück,Bremen Gröpelingen,,0,0
-20240117,23:22:00,10,Sebaldsbrück,Bremen Lindenhofstraße,1.0,38,38
-20240117,23:22:00,10,Sebaldsbrück,Bremen Moorstraße,2.0,-5,0
-20240117,23:22:00,10,Sebaldsbrück,Bremen Waller Straße,5.0,30,30
-20240117,23:22:00,10,Sebaldsbrück,Bremen Utbremer Straße,8.0,59,59
-20240117,23:22:00,10,Sebaldsbrück,Bremen Hansestraße,10.0,17,17
-20240117,23:22:00,10,Sebaldsbrück,Bremen Falkenstraße,14.0,-27,0
-20240117,23:22:00,10,Sebaldsbrück,Bremen Hauptbahnhof,15.0,-25,0
-20240117,23:22:00,10,Sebaldsbrück,Bremen Rembertistraße,16.0,40,40
-20240117,23:22:00,10,Sebaldsbrück,Bremen Am Dobben,17.0,19,19
-20240117,23:22:00,10,Sebaldsbrück,Bremen Sielwall,19.0,-12,0
-20240117,23:22:00,10,Sebaldsbrück,Bremen St.-Jürgen-Straße,21.0,-50,0
-20240117,23:22:00,10,Sebaldsbrück,Bremen Bei den Drei Pfählen,23.0,35,35
-20240117,23:22:00,10,Sebaldsbrück,Bremen Bennigsenstraße,24.0,34,65
-20240117,23:22:00,10,Sebaldsbrück,Bremen Föhrenstraße,27.0,-3,0
-20240118,01:15:00,6E,Neustadt / BSAG-Zentrum,Lilienthal,,0,0
-20240118,01:15:00,6E,Neustadt / BSAG-Zentrum,Bremen Herdentor,31.0,-30,-30
-20240118,01:15:00,6E,Neustadt / BSAG-Zentrum,Bremen Schüsselkorb,32.0,0,0
-20240118,00:20:00,2E,Sebaldsbrück,Bremen Weserwehr,,0,0
-20240117,23:43:00,6,Bremen Bürgerpark,Bremen Flughafen-Süd,,0,0
-20240117,23:43:00,6,Bremen Bürgerpark,Bremen Bürgerpark,13.0,-34,0
-20240118,00:50:00,N6,Bremen Roland-Center,Bremen Roland-Center,,0,0
-20240118,00:50:00,N6,Bremen Roland-Center,Bremen Willakedamm,1.0,-30,-30
-20240118,00:50:00,N6,Bremen Roland-Center,Bremen Hohenhorster Weg,2.0,0,0
-20240118,00:50:00,N6,Bremen Roland-Center,Bremen Harriersand,10.0,-30,-30
-20240118,00:50:00,N6,Bremen Roland-Center,Bremen Zum Huchtinger Bahnhof,11.0,0,0
-20240117,23:50:00,6E,Neustadt / BSAG-Zentrum,Bremen Hauptbahnhof,,0,0
-20240117,23:50:00,6E,Neustadt / BSAG-Zentrum,Bremen Herdentor,1.0,10,10
-20240117,23:50:00,6E,Neustadt / BSAG-Zentrum,Bremen Schüsselkorb,2.0,-9,0
-20240117,23:50:00,6E,Neustadt / BSAG-Zentrum,Bremen Theater am Leibnizplatz,5.0,-62,0
-20240117,23:50:00,6E,Neustadt / BSAG-Zentrum,Bremen Gastfeldstraße,6.0,-104,0
-20240117,23:50:00,6E,Neustadt / BSAG-Zentrum,Bremen Schleiermacherstraße,7.0,-60,0
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Schweizer Eck,,0,279
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Klinikum Bremen-Ost,1.0,310,310
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Grenzwehr,2.0,309,309
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Emmentaler Straße,3.0,335,335
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Einkaufszentrum Blockdiek,5.0,296,296
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Wilhelm-Busch-Weg,8.0,238,238
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Im Holter Feld,9.0,208,208
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Georg-Gries-Straße,10.0,238,238
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Stellichter Straße,12.0,203,203
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Steubenstraße,16.0,170,170
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Klinikum Bremen-Mitte,20.0,105,105
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Dobbenweg,21.0,23,23
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Hauptbahnhof,23.0,17,38
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Herdentor,24.0,117,117
-20240117,23:25:00,25,Weidedamm-Süd,Bremen Schüsselkorb,25.0,147,147
-20240118,00:01:00,25,Domsheide,Bremen Weidedamm-Süd,,0,57
-20240118,00:01:00,25,Domsheide,Bremen Stuttgarter Straße,1.0,72,72
-20240118,00:01:00,25,Domsheide,Bremen Utbremer Ring,2.0,102,102
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Neue Vahr Nord,,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Friedrich-Stampfer-Straße,1.0,4,4
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Otto-Braun-Straße,2.0,34,34
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Heinrich-Hertz-Straße,5.0,-16,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Kurfürstenallee,8.0,-40,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Verdunstraße,9.0,-6,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen St. Joseph-Stift,10.0,-63,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Am Stern,11.0,-75,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Blumenthalstraße,12.0,-70,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Hauptbahnhof,13.0,-72,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Am Brill (Bgm.-Smidt-Straße),15.0,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Am Brill (Bgm.-Smidt-Straße),15.0,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Carsten-Dreßler-Straße,38.0,-30,-30
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen In der Laake,39.0,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Hermann-Helms-Straße,42.0,-30,-30
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Senator-Theil-Straße,43.0,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Piependamm,44.0,-30,-30
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Pfarrfeldsweg,45.0,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Fontanestraße,50.0,-30,-30
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Fellendsweg,51.0,0,0
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Helene-Lange-Straße,52.0,-30,-30
-20240117,23:37:00,N9,Kattenturm / Huckelriede,Bremen Friedhof Huckelriede,53.0,0,0
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Huckelriede,,0,0
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Gastfeldstraße,6.0,231,232
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Delmestraße,7.0,173,174
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Pappelstraße,8.0,115,116
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Hochschule Bremen,9.0,234,235
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Westerstraße,10.0,176,177
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Am Brill (Bgm.-Smidt-Straße),11.0,58,59
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Am Brill (Bgm.-Smidt-Straße),11.0,0,0
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Am Wall,12.0,0,286
-20240117,23:38:00,N9,Neue Vahr-Nord,Bremen Hauptbahnhof,13.0,226,51
-20240117,23:46:00,40,Bf Mahndorf / 39 Weserpark-Süd,Bremen Weserwehr,,0,76
-20240117,23:46:00,40,Bf Mahndorf / 39 Weserpark-Süd,Bremen Föhrenstraße,1.0,87,87
-20240117,23:46:00,40,Bf Mahndorf / 39 Weserpark-Süd,Bremen Hannoversche Straße,2.0,151,151
-20240117,23:46:00,40,Bf Mahndorf / 39 Weserpark-Süd,Bremen Osterhop,5.0,108,108
-20240117,23:46:00,40,Bf Mahndorf / 39 Weserpark-Süd,Bremen Marschstraße,8.0,70,70
-20240117,23:41:00,93,Marßel,Bremen Gröpelingen,,0,71
-20240117,23:41:00,93,Marßel,Bremen Karl-Bröger-Straße,1.0,116,116
-20240117,23:41:00,93,Marßel,Bremen DIAKO Bremen,2.0,86,86
-20240117,23:41:00,93,Marßel,Bremen Am Fuchsberg,3.0,116,116
-20240117,23:41:00,93,Marßel,Bremen Dohlenstraße,5.0,150,150
-20240117,23:41:00,93,Marßel,Bremen Am Geestkamp,8.0,78,78
-20240117,23:41:00,93,Marßel,Bremen-Burg(Bus),11.0,42,0
-20240117,23:41:00,93,Marßel,Bremen Stader Landstraße,12.0,53,84
-20240117,23:19:00,24,Rablinghausen,Bremen Rechtenflether Straße,26.0,-86,-71
-20240117,23:19:00,24,Rablinghausen,Bremen Woltmershauser Friedhof,27.0,-71,0
-20240117,23:19:00,24,Rablinghausen,Bremen Stromer Straße,28.0,-57,0
-20240117,23:19:00,24,Rablinghausen,Bremen Bakeweg,29.0,-24,0
-20240117,23:19:00,24,Rablinghausen,Bremen Roccoweg,30.0,-45,0
-20240117,23:19:00,24,Rablinghausen,Bremen Rablinghausen,31.0,-160,0
-20240118,00:06:00,94,Schwanewede-Nord,Bremen Marßel,,0,0
-20240118,00:06:00,94,Schwanewede-Nord,Bremen Hegeweg,33.0,-30,-30
-20240118,00:06:00,94,Schwanewede-Nord,Bremen Ringofenstraße,34.0,0,0
-20240118,00:06:00,94,Schwanewede-Nord,Schwanewede Insterburger Weg,38.0,-30,-30
-20240118,00:06:00,94,Schwanewede-Nord,Schwanewede Am Markt,39.0,0,0
-20240117,23:47:00,33,Sebaldsbrück,Bremen Horn (Horner Kirche),,0,0
-20240117,23:47:00,33,Sebaldsbrück,Bremen Kapitän-König-Weg,8.0,-30,-30
-20240117,23:47:00,33,Sebaldsbrück,Bremen Im Holze,9.0,0,0
-20240118,01:01:00,N10,Gröpelingen,Bremen Sebaldsbrück (Bus+Tram),,0,0
-20240118,01:01:00,N10,Gröpelingen,Bremen Schloßparkstraße,1.0,-30,-30
-20240118,01:01:00,N10,Gröpelingen,Bremen Trinidadstraße,2.0,0,0
-20240117,23:46:00,40,Weserwehr,Bremen Bf Mahndorf,,0,73
-20240117,23:46:00,40,Weserwehr,Bremen Kluvenhagener Straße,1.0,114,114
-20240117,23:46:00,40,Weserwehr,Bremen Stackkamp,6.0,84,84
-20240117,23:46:00,40,Weserwehr,Bremen Brünsweg,7.0,71,71
-20240117,23:46:00,40,Weserwehr,Bremen Schlengstraße,9.0,31,31
-20240117,23:46:00,40,Weserwehr,Bremen Föhrenstraße,15.0,-8,0
-20240118,00:19:00,96,Lüssum,Bremen Bahnhof Blumenthal,,0,0
-20240118,00:19:00,96,Lüssum,Bremen Wasserturm,2.0,-30,-30
-20240118,00:19:00,96,Lüssum,Bremen Hakenwehrstraße,3.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Gröpelingen,,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen DIAKO Bremen,2.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen Am Fuchsberg,3.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Zum Kränholm,18.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen Holthorster Weg,19.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Zum Donaufleet,35.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen Fähre Blumenthal,36.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Hanfstraße,40.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen An der Amtsweide,41.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Wasserweg,42.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen Fähre Farge,43.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Hohenesch,48.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen Rekumer Siel,49.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Bremen Sandkuhlenweg,51.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Bremen Moorstücke,52.0,0,0
-20240117,23:58:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,54.0,-30,-30
-20240117,23:58:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,55.0,0,0
-20240118,00:24:00,96,Bf Blumenthal,Bremen Betriebshof Blumenthal,,0,0
-20240118,00:24:00,96,Bf Blumenthal,Bremen Besanstraße,8.0,-30,-30
-20240118,00:24:00,96,Bf Blumenthal,Bremen Hakenwehrstraße,9.0,0,0
-20240118,00:37:00,98,Hammersbeck,Bremen Bahnhof Vegesack,,0,0
+StartDate;Startzeit (Anfanghaltestelle);Linie;Richtung;Haltestelle;StopSequence;Ankunftsverspaetung in Sek.;Abfahrtsverspaetung in Sek.
+20240119;00:50:00;N6;Bremen Roland-Center;Bremen Roland-Center;;0;0
+20240119;00:50:00;N6;Bremen Roland-Center;Bremen Willakedamm;1.0;-30;-30
+20240119;00:50:00;N6;Bremen Roland-Center;Bremen Hohenhorster Weg;2.0;0;0
+20240119;00:50:00;N6;Bremen Roland-Center;Bremen Harriersand;10.0;-30;-30
+20240119;00:50:00;N6;Bremen Roland-Center;Bremen Zum Huchtinger Bahnhof;11.0;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Bf Mahndorf;;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Osterholzer Möhlendamm;5.0;-30;-30
+20240118;23:33:00;N3;Rablinghausen;Bremen Am Hahnenkamp;6.0;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Poggenburg;13.0;-30;-30
+20240118;23:33:00;N3;Rablinghausen;Bremen Am Hallacker;14.0;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Lise-Meitner-Straße;31.0;-30;-30
+20240118;23:33:00;N3;Rablinghausen;Bremen Universität-Süd;32.0;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Herdentor;44.0;-30;-30
+20240118;23:33:00;N3;Rablinghausen;Bremen Schüsselkorb;45.0;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Akazienstraße;52.0;-30;-30
+20240118;23:33:00;N3;Rablinghausen;Bremen Huder Straße;53.0;0;0
+20240118;23:33:00;N3;Rablinghausen;Bremen Rechtenflether Straße;56.0;-30;-30
+20240118;23:33:00;N3;Rablinghausen;Bremen Woltmershauser Friedhof;57.0;0;0
+20240118;23:46:00;40;Weserwehr;Bremen Bf Mahndorf;;0;0
+20240118;23:46:00;40;Weserwehr;Bremen Stackkamp;6.0;-30;-30
+20240118;23:46:00;40;Weserwehr;Bremen Brünsweg;7.0;0;0
+20240119;00:54:00;96;Lüssum-Süd / An der Lehmkuhle;Bremen Betriebshof Blumenthal;;0;0
+20240119;01:05:00;N10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Klinikum Haupteingang;;0;0
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Gemeinschaftszentrum Obervieland;3.0;-30;-30
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Brenningstraße;4.0;37;37
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Carsten-Dreßler-Straße;6.0;7;7
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen In der Laake;7.0;61;61
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Schlehenweg;15.0;31;31
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Friedrich-Engels-Straße;16.0;61;61
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Habenhauser Brückenstraße;17.0;61;31
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Fontanestraße;18.0;1;1
+20240118;23:15:00;26;Huckelriede / N9 Neue Vahr;Bremen Fellendsweg;19.0;31;31
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Überseestadt-Nord;;0;0
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Ehrenfelsstraße;1.0;33;33
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Silbermannstraße;2.0;8;8
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Marcuskaje;3.0;45;45
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Lange Reihe;7.0;49;49
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Bahnhof Walle;8.0;79;79
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Findorffallee;14.0;39;39
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Hauptbahnhof;17.0;-7;31
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Am Wall;18.0;-1;0
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Am Brill (Bgm.-Smidt-Straße);19.0;5;5
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Am Brill (Bgm.-Smidt-Straße);19.0;0;0
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Westerstraße;20.0;0;92
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Pappelstraße;22.0;48;48
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Delmestraße;23.0;56;56
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Gastfeldstraße;24.0;18;49
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Meyerstraße;25.0;79;79
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Huckelriede;30.0;175;25
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Helene-Lange-Straße;32.0;55;55
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Fellendsweg;33.0;22;22
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Habenhauser Brückenstraße;35.0;52;52
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Schlehenweg;37.0;22;22
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Staustraße;38.0;52;52
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Pfarrfeldsweg;39.0;130;130
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Piependamm;40.0;162;162
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Hermann-Helms-Straße;42.0;120;120
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Arster Landstraße;44.0;86;86
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Martin-Buber-Straße;47.0;56;56
+20240118;22:25:00;26;Kattenturm / Klinikum LDW;Bremen Brenningstraße;48.0;86;86
+20240118;23:15:00;3;Gröpelingen;Bremen Weserwehr;;0;0
+20240118;23:03:00;6;Universität;Bremen Flughafen-Süd;;0;38
+20240118;23:03:00;6;Universität;Bremen Gastfeldstraße;5.0;70;70
+20240118;23:03:00;6;Universität;Bremen Theater am Leibnizplatz;6.0;73;73
+20240118;23:03:00;6;Universität;Bremen Domsheide;8.0;80;80
+20240118;23:03:00;6;Universität;Bremen Schüsselkorb;9.0;116;116
+20240118;23:03:00;6;Universität;Bremen Hauptbahnhof;11.0;117;31
+20240118;23:03:00;6;Universität;Bremen Blumenthalstraße;12.0;1;1
+20240118;23:31:00;22;Schwachhausen / Kirchbachstr.;Bremen Kattenturm-Mitte;;0;0
+20240118;23:19:00;96;Lüssum;Bremen Bahnhof Blumenthal;;0;0
+20240118;23:19:00;96;Lüssum;Bremen Fresenbergstraße;1.0;42;42
+20240118;23:19:00;96;Lüssum;Bremen Wasserturm;2.0;116;116
+20240118;23:19:00;96;Lüssum;Bremen Hakenwehrstraße;3.0;146;146
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;;;0;0
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Neuenkirchen(Schwanewede) Vorbruch;1.0;40;40
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Neuenkirchen(Schwanewede) Ahnten;2.0;70;70
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Neuenkirchen(Schwanewede) Marktplatz;3.0;27;27
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Neuenkirchen(Schwanewede) Landwehr;4.0;-12;-12
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Moorstücke;5.0;-42;-30
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Sandkuhlenweg;6.0;0;0
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Vor den Wischen;7.0;-30;-30
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Rekumer Siel;8.0;0;0
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen De Kreienbarg;10.0;-30;-30
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Wilhelm-Brandhorst-Straße;11.0;0;0
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Hanfstraße;17.0;-30;-30
+20240118;23:15:00;90;Bf Vegesack / N7 Gröpelingen;Bremen Buschdeel;18.0;0;0
+20240119;00:01:00;N4;Lilienthal;Bremen Arsten;;0;0
+20240118;22:46:00;94;Bf Burg / 90 Gröpelingen;Schwanewede Am Spreeken;;0;0
+20240118;22:46:00;94;Bf Burg / 90 Gröpelingen;Bremen Margaretenallee;21.0;-30;-30
+20240118;22:46:00;94;Bf Burg / 90 Gröpelingen;Bremen Bremer Vulkan;22.0;0;0
+20240118;22:48:00;3;Weserwehr;Bremen Gröpelingen;;0;0
+20240118;22:48:00;3;Weserwehr;Bremen Kap-Horn-Straße;1.0;44;44
+20240118;22:48:00;3;Weserwehr;Bremen Grasberger Straße;4.0;76;76
+20240118;22:48:00;3;Weserwehr;Bremen Emder Straße;6.0;32;32
+20240118;22:48:00;3;Weserwehr;Bremen Radio Bremen/VHS;14.0;61;61
+20240118;22:48:00;3;Weserwehr;Bremen Am Brill (Hutfilter-/Obernstraße);15.0;-8;0
+20240118;22:48:00;3;Weserwehr;Bremen Domsheide;17.0;-31;0
+20240118;22:48:00;3;Weserwehr;Bremen Theater am Goetheplatz;18.0;36;36
+20240118;22:48:00;3;Weserwehr;Bremen Ulrichsplatz;19.0;67;67
+20240118;22:48:00;3;Weserwehr;Bremen Brunnenstraße;21.0;76;106
+20240118;22:48:00;3;Weserwehr;Bremen St.-Jürgen-Straße;22.0;57;57
+20240118;22:48:00;3;Weserwehr;Bremen Georg-Bitter-Straße;26.0;135;135
+20240118;23:10:00;98;Bf Vegesack;Bremen Borchsholt;;0;0
+20240118;23:10:00;98;Bf Vegesack;Bremen Ziegeleiweg;1.0;-42;-40
+20240118;23:10:00;98;Bf Vegesack;Bremen Herbartstraße;2.0;-31;-30
+20240118;23:10:00;98;Bf Vegesack;Bremen Vorlöhnhorster Weg;3.0;0;0
+20240118;23:10:00;98;Bf Vegesack;Bremen Dobbheide;4.0;38;38
+20240118;23:10:00;98;Bf Vegesack;Bremen Kaspar-Ohm-Straße;6.0;9;9
+20240118;23:10:00;98;Bf Vegesack;Bremen Gerhard-Rohlfs-Straße;9.0;-27;0
+20240118;23:10:00;98;Bf Vegesack;Bremen Bahnhof Vegesack;10.0;-64;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Überseestadt-Nord;;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Ehrenfelsstraße;1.0;-30;-30
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Silbermannstraße;2.0;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Lange Reihe;7.0;-30;-30
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Bahnhof Walle;8.0;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Am Brill (Bgm.-Smidt-Straße);19.0;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Am Brill (Bgm.-Smidt-Straße);19.0;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Fontanestraße;34.0;-30;-30
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Habenhauser Brückenstraße;35.0;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Schlehenweg;37.0;-30;-30
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Staustraße;38.0;0;0
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Martin-Buber-Straße;47.0;-30;-30
+20240118;23:05:00;26;Kattenturm / Klinikum LDW;Bremen Brenningstraße;48.0;0;0
+20240118;23:59:00;57;Bremen Roland-Center;Bremen Roland-Center;;0;0
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Hauptbahnhof;;0;-11
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Am Wall;1.0;67;92
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Am Brill (Bgm.-Smidt-Straße);2.0;0;0
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Am Brill (Bgm.-Smidt-Straße);2.0;61;89
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Westerstraße;3.0;42;156
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Hochschule Bremen;4.0;138;150
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Pappelstraße;5.0;144;156
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Senator-Paulmann-Straße;6.0;138;144
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Alter Schutzdeich;8.0;114;114
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Visbeker Straße;9.0;108;108
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Reedeich-Nord;10.0;102;102
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Georg-Henschel-Straße;13.0;132;132
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Franz-Stickan-Straße;14.0;102;102
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Mühlenhauser Fleet;15.0;126;126
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Senator-Mester-Straße;16.0;132;138
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Senator-Blase-Straße;17.0;114;114
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Senator-Nolting-Hauff-Straße;18.0;96;102
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Erich-Kühlmann-Straße;19.0;108;120
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Albert-Bote-Straße;20.0;114;126
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen Senator-Harmssen-Straße;21.0;108;114
+20240118;22:54:00;63;Bremen GVZ-Zentralbereich;Bremen GVZ-Zentralbereich;22.0;102;0
+20240118;22:58:00;22;Kattenturm;Bremen Kulenkampffallee;;0;137
+20240118;22:58:00;22;Kattenturm;Bremen Am Stern;3.0;212;212
+20240118;22:58:00;22;Kattenturm;Bremen St. Joseph-Stift;4.0;207;207
+20240118;22:58:00;22;Kattenturm;Bremen Kurfürstenallee;6.0;207;177
+20240118;22:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Fährer Kämpe;28.0;-62;-62
+20240118;22:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Bahnhof Aumund;29.0;-62;0
+20240118;22:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Aumunder Heide;30.0;-89;-63
+20240118;22:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Gustav-Heinemann-Bürgerhaus;31.0;-63;0
+20240118;22:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Gerhard-Rohlfs-Straße;32.0;-73;0
+20240118;22:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Bahnhof Vegesack;33.0;-104;0
+20240119;00:09:00;6;Flughafen;Bremen Universität-Nord;;0;0
+20240119;00:09:00;6;Flughafen;Bremen Herdentor;14.0;-30;-30
+20240119;00:09:00;6;Flughafen;Bremen Schüsselkorb;15.0;0;0
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Schweizer Eck;;0;0
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Grenzwehr;2.0;-30;-30
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Emmentaler Straße;3.0;0;0
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Im Holter Feld;9.0;-30;-30
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Georg-Gries-Straße;10.0;0;0
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Herdentor;24.0;-30;-30
+20240118;23:25:00;25;Weidedamm-Süd;Bremen Schüsselkorb;25.0;0;0
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Hauptbahnhof;;0;0
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Bürgerpark;2.0;-30;-30
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Findorffallee;3.0;0;0
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Lange Reihe;12.0;-30;-30
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Waller Ring;13.0;0;0
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen DIAKO Bremen;19.0;-30;-30
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Am Fuchsberg;20.0;0;0
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Am Bahnhof St. Magnus;41.0;-30;-30
+20240119;00:30:00;N7;Betriebshof Blumenthal;Bremen Tannenhof;42.0;0;0
+20240118;23:02:00;10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:02:00;10;Sebaldsbrück;Bremen Lindenhofstraße;1.0;-37;0
+20240118;23:02:00;10;Sebaldsbrück;Bremen Moorstraße;2.0;-36;0
+20240118;23:02:00;10;Sebaldsbrück;Bremen Bahnhof Walle;6.0;45;45
+20240118;23:02:00;10;Sebaldsbrück;Bremen Utbremer Straße;8.0;79;79
+20240118;23:02:00;10;Sebaldsbrück;Bremen Hauptbahnhof;15.0;79;49
+20240118;23:02:00;1;Bf Mahndorf;Bremen Roland-Center;;0;0
+20240118;23:02:00;1;Bf Mahndorf;Bremen Carl-Goerdeler-Straße;25.0;-30;-30
+20240118;23:02:00;1;Bf Mahndorf;Bremen Dietrich-Bonhoeffer-Straße;26.0;0;0
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Kattenturm-Mitte;;0;0
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Agnes-Heineken-Straße;1.0;30;30
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Bordeaux-Straße;3.0;66;66
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Europaallee-Ost;6.0;19;19
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Europaallee/Autohof;9.0;-30;0
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Ludwig-von-Kapff-Straße;10.0;6;6
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Arberger Hafendamm;14.0;-24;-24
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Werrahafen;15.0;6;6
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Christernstraße;21.0;-24;-24
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Sebaldsbrück (Bus+Tram);22.0;6;6
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Mercedes-Benz Tor 8;26.0;-24;-24
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Hermann-Koenen-Straße;27.0;6;6
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Im Holter Feld;29.0;-24;-24
+20240118;23:00:00;29;Neue Vahr-Nord;Bremen Witzlebenstraße;30.0;6;6
+20240119;00:10:00;98;Bf Vegesack;Bremen Borchsholt;;0;0
+20240119;00:10:00;98;Bf Vegesack;Bremen Herbartstraße;2.0;-30;-30
+20240119;00:10:00;98;Bf Vegesack;Bremen Vorlöhnhorster Weg;3.0;0;0
+20240118;22:26:00;26;Überseestadt;Bremen Klinikum Haupteingang;;0;0
+20240118;22:26:00;26;Überseestadt;Bremen Klinikum Links der Weser;1.0;40;40
+20240118;22:26:00;26;Überseestadt;Bremen Kattenturm-Mitte;2.0;69;69
+20240118;22:26:00;26;Überseestadt;Bremen Gemeinschaftszentrum Obervieland;3.0;39;39
+20240118;22:26:00;26;Überseestadt;Bremen Brenningstraße;4.0;111;111
+20240118;22:26:00;26;Überseestadt;Bremen Carsten-Dreßler-Straße;6.0;81;81
+20240118;22:26:00;26;Überseestadt;Bremen In der Laake;7.0;111;111
+20240118;22:26:00;26;Überseestadt;Bremen Arster Kirche;9.0;82;82
+20240118;22:26:00;26;Überseestadt;Bremen Piependamm;12.0;47;47
+20240118;22:26:00;26;Überseestadt;Bremen Staustraße;14.0;84;84
+20240118;22:26:00;26;Überseestadt;Bremen Schlehenweg;15.0;90;90
+20240118;22:26:00;26;Überseestadt;Bremen Friedrich-Engels-Straße;16.0;120;120
+20240118;22:26:00;26;Überseestadt;Bremen Habenhauser Brückenstraße;17.0;120;90
+20240118;22:26:00;26;Überseestadt;Bremen Fontanestraße;18.0;60;60
+20240118;22:26:00;26;Überseestadt;Bremen Fellendsweg;19.0;90;90
+20240118;22:26:00;26;Überseestadt;Bremen Helene-Lange-Straße;20.0;36;36
+20240118;22:26:00;26;Überseestadt;Bremen Huckelriede;22.0;-24;0
+20240118;22:26:00;26;Überseestadt;Bremen Stenumer Straße;23.0;8;8
+20240118;22:26:00;26;Überseestadt;Bremen August-Hinrichs-Straße;25.0;46;0
+20240118;22:26:00;26;Überseestadt;Bremen Gottfried-Menken-Straße;26.0;-41;0
+20240118;22:26:00;26;Überseestadt;Bremen Meyerstraße;27.0;-31;0
+20240118;22:26:00;26;Überseestadt;Bremen Pappelstraße;30.0;-51;0
+20240118;22:26:00;26;Überseestadt;Bremen Westerstraße;32.0;-44;0
+20240118;22:26:00;26;Überseestadt;Bremen Am Brill (Bgm.-Smidt-Straße);33.0;-70;0
+20240118;22:26:00;26;Überseestadt;Bremen Am Brill (Bgm.-Smidt-Straße);33.0;0;0
+20240118;22:26:00;26;Überseestadt;Bremen Am Wall;34.0;-10;0
+20240118;22:26:00;26;Überseestadt;Bremen Hauptbahnhof;35.0;-33;0
+20240118;22:26:00;26;Überseestadt;Bremen Findorffallee;38.0;43;43
+20240118;22:26:00;26;Überseestadt;Bremen Eickedorfer Straße;39.0;72;72
+20240118;22:26:00;26;Überseestadt;Bremen Hemmstraße;40.0;39;39
+20240118;22:26:00;26;Überseestadt;Bremen Fürther Straße;41.0;0;0
+20240118;22:26:00;26;Überseestadt;Bremen Silbermannstraße;50.0;-30;-30
+20240118;22:26:00;26;Überseestadt;Bremen Ehrenfelsstraße;51.0;0;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Überseestadt-Nord;;0;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Ehrenfelsstraße;1.0;-30;-30
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Silbermannstraße;2.0;-36;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Marcuskaje;3.0;-48;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Überseetor;4.0;-36;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Cuxhavener Straße;5.0;-48;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Waller Ring;6.0;-58;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Lange Reihe;7.0;-30;-30
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Bahnhof Walle;8.0;-48;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Holsteiner Straße;9.0;-88;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Dithmarscher Freiheit;10.0;-42;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Fürther Straße;11.0;-83;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Am Brill (Bgm.-Smidt-Straße);19.0;0;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Am Brill (Bgm.-Smidt-Straße);19.0;0;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Fontanestraße;34.0;-30;-30
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Habenhauser Brückenstraße;35.0;0;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Schlehenweg;37.0;-30;-30
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Staustraße;38.0;0;0
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Martin-Buber-Straße;47.0;-30;-30
+20240118;22:45:00;26;Kattenturm / Klinikum LDW;Bremen Brenningstraße;48.0;0;0
+20240118;22:55:00;3;Gröpelingen;Bremen Weserwehr;;0;0
+20240118;22:55:00;3;Gröpelingen;Bremen Hohwisch;1.0;45;45
+20240118;22:55:00;3;Gröpelingen;Bremen Georg-Bitter-Straße;2.0;77;77
+20240118;22:55:00;3;Gröpelingen;Bremen Stader Straße/Hamburger Straße;3.0;112;112
+20240118;22:55:00;3;Gröpelingen;Bremen St.-Jürgen-Straße;6.0;70;70
+20240118;22:55:00;3;Gröpelingen;Bremen Ulrichsplatz;9.0;103;103
+20240118;22:55:00;3;Gröpelingen;Bremen Domsheide;11.0;62;62
+20240118;22:55:00;3;Gröpelingen;Bremen Am Brill (Hutfilter-/Obernstraße);13.0;111;141
+20240118;23:28:00;90;Neuenkirchen;Bremen Gröpelingen;;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen DIAKO Bremen;2.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen Am Fuchsberg;3.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen Zum Kränholm;18.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen Holthorster Weg;19.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen Zum Donaufleet;35.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen Fähre Blumenthal;36.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen Hanfstraße;40.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen An der Amtsweide;41.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen Wasserweg;42.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen Fähre Farge;43.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen Hohenesch;48.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen Rekumer Siel;49.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Bremen Sandkuhlenweg;51.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Bremen Moorstücke;52.0;0;0
+20240118;23:28:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Marktplatz;54.0;-30;-30
+20240118;23:28:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Ahnten;55.0;0;0
+20240118;23:21:00;27;Weidedamm-Nord;Bremen Hauptbahnhof;;0;0
+20240118;23:21:00;27;Weidedamm-Nord;Bremen Rudolf-Alexander-Schröder-Straße;9.0;-30;-30
+20240118;23:21:00;27;Weidedamm-Nord;Bremen Weidedamm-Nord;10.0;0;0
+20240119;00:04:00;98;Hammersbeck;Bremen Bahnhof Vegesack;;0;0
+20240119;00:23:00;N7;Hauptbahnhof;Bremen Bahnhof Vegesack;;0;0
+20240119;00:23:00;N7;Hauptbahnhof;Bremen Holthorster Weg;5.0;-30;-30
+20240119;00:23:00;N7;Hauptbahnhof;Bremen Zum Kränholm;6.0;0;0
+20240119;00:23:00;N7;Hauptbahnhof;Bremen Karl-Bröger-Straße;27.0;-30;-30
+20240119;00:23:00;N7;Hauptbahnhof;Bremen Gröpelingen;28.0;0;0
+20240118;22:59:00;33;Horn;Bremen Sebaldsbrück (Bus+Tram);;0;127
+20240118;22:59:00;33;Horn;Bremen Poggenburg;6.0;92;92
+20240118;22:59:00;33;Horn;Bremen Am Hallacker;7.0;62;62
+20240118;22:59:00;33;Horn;Bremen Osterholzer Landstraße;8.0;113;113
+20240118;22:59:00;33;Horn;Bremen Höpkens Ruh;13.0;82;82
+20240118;22:59:00;33;Horn;Bremen Am Querkamp;14.0;45;45
+20240118;23:43:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Roland-Center;;0;0
+20240118;23:43:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;25.0;-30;-30
+20240118;23:43:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;26.0;0;0
+20240119;00:27:00;6E;Neustadt / BSAG-Zentrum;Bremen Gröpelingen;;0;0
+20240118;23:43:00;10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:21:00;2;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240119;00:27:00;6E;Neustadt / BSAG-Zentrum;Bremen Gröpelingen;;0;0
+20240118;23:29:00;37;Bf Mahndorf;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;23:49:00;39;Weserpark-Süd;Bremen Bf Mahndorf;;0;0
+20240119;00:13:00;6E;Neustadt / BSAG-Zentrum;Bremen Bürgerpark;;0;0
+20240119;00:13:00;6E;Neustadt / BSAG-Zentrum;Bremen Herdentor;3.0;-30;-30
+20240119;00:13:00;6E;Neustadt / BSAG-Zentrum;Bremen Schüsselkorb;4.0;0;0
+20240118;23:31:00;N4;Lilienthal;Bremen Arsten;;0;0
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;;;0;0
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Neuenkirchen(Schwanewede) Vorbruch;1.0;-30;-30
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Neuenkirchen(Schwanewede) Ahnten;2.0;0;0
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Moorstücke;5.0;-30;-30
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Sandkuhlenweg;6.0;0;0
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Vor den Wischen;7.0;-30;-30
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Rekumer Siel;8.0;0;0
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen De Kreienbarg;10.0;-30;-30
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Wilhelm-Brandhorst-Straße;11.0;0;0
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Hanfstraße;17.0;-30;-30
+20240118;23:45:00;90;Bf Vegesack / N7 Hauptbahnhof;Bremen Buschdeel;18.0;0;0
+20240118;22:55:00;29;Kattenturm;Bremen Neue Vahr Nord;;0;0
+20240118;22:55:00;29;Kattenturm;Bremen Berliner Freiheit;2.0;34;34
+20240118;22:55:00;29;Kattenturm;Bremen Im Holter Feld;5.0;97;97
+20240118;22:55:00;29;Kattenturm;Bremen Wilhelm-Busch-Weg;6.0;67;67
+20240118;22:55:00;29;Kattenturm;Bremen Osterholzer Friedhof;10.0;9;9
+20240118;22:55:00;29;Kattenturm;Bremen Sebaldsbrück (Bus+Tram);12.0;-41;0
+20240118;22:55:00;29;Kattenturm;Bremen Christernstraße;13.0;9;9
+20240118;22:55:00;29;Kattenturm;Bremen Glockenstraße/Bf Hemelingen;14.0;-20;0
+20240118;22:55:00;29;Kattenturm;Bremen Hannoversche Straße;15.0;9;9
+20240118;22:55:00;29;Kattenturm;Bremen Allerkai;17.0;-33;0
+20240118;22:55:00;29;Kattenturm;Bremen Werrahafen;18.0;-36;0
+20240118;22:55:00;29;Kattenturm;Bremen Arberger Hafendamm;19.0;-60;-60
+20240118;22:55:00;29;Kattenturm;Bremen Fuldahafen;20.0;-90;-30
+20240118;22:55:00;29;Kattenturm;Bremen Kleine Marschstraße;21.0;-33;0
+20240118;22:55:00;29;Kattenturm;Bremen Walther-Jacobs-Straße;22.0;-73;0
+20240118;23:39:00;57;Bremen Roland-Center;Bremen Roland-Center;;0;0
+20240118;23:51:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Huckelriede;;0;0
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Hauptbahnhof;;0;0
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Bürgerpark;2.0;-30;-30
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Findorffallee;3.0;0;0
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Lange Reihe;12.0;-30;-30
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Waller Ring;13.0;0;0
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen DIAKO Bremen;19.0;-30;-30
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Am Fuchsberg;20.0;0;0
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Am Bahnhof St. Magnus;41.0;-30;-30
+20240119;00:00:00;N7;Betriebshof Blumenthal;Bremen Tannenhof;42.0;0;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Gröpelingen;;0;0
+20240118;22:28:00;90;Neuenkirchen;Bremen DIAKO Bremen;2.0;13;13
+20240118;22:28:00;90;Neuenkirchen;Bremen Am Fuchsberg;3.0;43;43
+20240118;22:28:00;90;Neuenkirchen;Bremen Am Geestkamp;8.0;53;53
+20240118;22:28:00;90;Neuenkirchen;Bremen-Burg(Bus);11.0;-21;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Stader Landstraße;12.0;-6;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Am Heidbergstift;15.0;-12;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Rotdornallee;16.0;4;4
+20240118;22:28:00;90;Neuenkirchen;Bremen Zum Kränholm;18.0;27;27
+20240118;22:28:00;90;Neuenkirchen;Bremen Holthorster Weg;19.0;57;57
+20240118;22:28:00;90;Neuenkirchen;Bremen Tannenhof;21.0;14;14
+20240118;22:28:00;90;Neuenkirchen;Bremen Bahnhof Vegesack;24.0;-115;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Gerhard-Rohlfs-Straße;25.0;39;39
+20240118;22:28:00;90;Neuenkirchen;Bremen Fährer Kämpe;29.0;103;103
+20240118;22:28:00;90;Neuenkirchen;Bremen Bahnhof Blumenthal;33.0;7;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Zum Donaufleet;35.0;-30;-30
+20240118;22:28:00;90;Neuenkirchen;Bremen Fähre Blumenthal;36.0;0;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Hanfstraße;40.0;-30;-30
+20240118;22:28:00;90;Neuenkirchen;Bremen An der Amtsweide;41.0;0;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Wasserweg;42.0;-30;-30
+20240118;22:28:00;90;Neuenkirchen;Bremen Fähre Farge;43.0;0;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Hohenesch;48.0;-30;-30
+20240118;22:28:00;90;Neuenkirchen;Bremen Rekumer Siel;49.0;0;0
+20240118;22:28:00;90;Neuenkirchen;Bremen Sandkuhlenweg;51.0;-30;-30
+20240118;22:28:00;90;Neuenkirchen;Bremen Moorstücke;52.0;0;0
+20240118;22:28:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Marktplatz;54.0;-30;-30
+20240118;22:28:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Ahnten;55.0;0;0
+20240118;23:42:00;8;Hauptbahnhof;Bremen Kulenkampffallee;;0;0
+20240118;23:36:00;94;Schwanewede-Nord;Bremen Marßel;;0;0
+20240118;23:36:00;94;Schwanewede-Nord;Bremen Hegeweg;33.0;-30;-30
+20240118;23:36:00;94;Schwanewede-Nord;Bremen Ringofenstraße;34.0;0;0
+20240118;23:36:00;94;Schwanewede-Nord;Schwanewede Insterburger Weg;38.0;-30;-30
+20240118;23:36:00;94;Schwanewede-Nord;Schwanewede Am Markt;39.0;0;0
+20240118;22:51:00;10;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;22:51:00;10;Gröpelingen;Bremen Trinidadstraße;2.0;-33;0
+20240118;22:51:00;10;Gröpelingen;Bremen Bennigsenstraße;7.0;34;34
+20240118;22:51:00;10;Gröpelingen;Bremen Am Hulsberg;9.0;-3;0
+20240118;22:51:00;10;Gröpelingen;Bremen St.-Jürgen-Straße;10.0;-30;0
+20240118;22:51:00;10;Gröpelingen;Bremen Sielwall;12.0;29;29
+20240118;22:51:00;10;Gröpelingen;Bremen Humboldtstraße;13.0;63;63
+20240118;22:51:00;10;Gröpelingen;Bremen Am Dobben;14.0;-40;0
+20240118;22:51:00;10;Gröpelingen;Bremen Hauptbahnhof;16.0;-43;0
+20240118;22:51:00;10;Gröpelingen;Bremen Falkenstraße;17.0;32;32
+20240118;22:51:00;10;Gröpelingen;Bremen Daniel-von-Büren-Straße;18.0;78;78
+20240118;23:41:00;N1;Bf Mahndorf;Bremen Roland-Center;;0;0
+20240118;23:41:00;N1;Bf Mahndorf;Bremen Carl-Goerdeler-Straße;25.0;-30;-30
+20240118;23:41:00;N1;Bf Mahndorf;Bremen Dietrich-Bonhoeffer-Straße;26.0;0;0
+20240118;23:41:00;90;Gröpelingen;Bremen-Burg(Bus);;0;0
+20240118;23:55:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Lilienthal;;0;0
+20240118;23:55:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;30.0;-30;-30
+20240118;23:55:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;31.0;0;0
+20240118;23:34:00;98;Hammersbeck;Bremen Bahnhof Vegesack;;0;0
+20240119;00:50:00;2E;Sebaldsbrück;Bremen Weserwehr;;0;0
+20240118;23:23:00;63;Hauptbahnhof;Bremen Am Brill (Bgm.-Smidt-Straße);12.0;0;0
+20240118;23:23:00;63;Hauptbahnhof;Bremen Am Wall;13.0;165;165
+20240118;23:23:00;63;Hauptbahnhof;Bremen Hauptbahnhof;14.0;135;0
+20240118;23:47:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Bf Mahndorf;;0;0
+20240119;01:13:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Bf Mahndorf;;0;0
+20240118;23:59:00;37;Bf Mahndorf;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;23:05:00;4;Lilienthal;Bremen Arsten;;0;0
+20240118;23:05:00;4;Lilienthal;Bremen Twiedelftsweg;1.0;41;41
+20240118;23:05:00;4;Lilienthal;Bremen Sielhof;6.0;6;6
+20240118;23:05:00;4;Lilienthal;Bremen Huckelriede;7.0;-25;0
+20240118;23:05:00;4;Lilienthal;Bremen Rosenpfad;9.0;30;30
+20240118;23:05:00;4;Lilienthal;Bremen Wilhelm-Kaisen-Brücke;14.0;62;62
+20240118;23:05:00;4;Lilienthal;Bremen Hauptbahnhof;18.0;62;0
+20240118;22:54:00;2;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;22:54:00;2;Sebaldsbrück;Bremen Lindenhofstraße;1.0;19;19
+20240118;22:54:00;2;Sebaldsbrück;Bremen Altenescher Straße;3.0;54;54
+20240118;22:54:00;2;Sebaldsbrück;Bremen Gustavstraße;7.0;87;87
+20240118;22:54:00;2;Sebaldsbrück;Bremen Haferkamp;11.0;17;17
+20240118;22:54:00;2;Sebaldsbrück;Bremen Am Brill (Hutfilter-/Obernstraße);15.0;-7;0
+20240118;22:54:00;2;Sebaldsbrück;Bremen Theater am Goetheplatz;18.0;29;29
+20240118;22:54:00;2;Sebaldsbrück;Bremen Ulrichsplatz;19.0;59;59
+20240118;22:54:00;2;Sebaldsbrück;Bremen Brunnenstraße;21.0;90;90
+20240118;22:54:00;2;Sebaldsbrück;Bremen St.-Jürgen-Straße;22.0;90;0
+20240118;23:14:00;41;Weserwehr;Bremen Bf Mahndorf;;0;0
+20240118;23:14:00;41;Weserwehr;Bremen Sollingstraße;6.0;42;42
+20240118;23:14:00;41;Weserwehr;Bremen Süntelstraße;7.0;11;42
+20240118;23:14:00;41;Weserwehr;Bremen Brünsweg;9.0;72;72
+20240118;22:45:00;4;Lilienthal;Bremen Arsten;;0;0
+20240118;22:45:00;4;Lilienthal;Bremen Klinikum Links der Weser;4.0;37;37
+20240118;22:45:00;4;Lilienthal;Bremen Sielhof;6.0;-25;0
+20240118;22:45:00;4;Lilienthal;Bremen Huckelriede;7.0;-46;0
+20240118;22:45:00;4;Lilienthal;Bremen Wilhelm-Kaisen-Brücke;14.0;29;29
+20240118;22:45:00;4;Lilienthal;Bremen Domsheide;15.0;-11;0
+20240118;22:45:00;4;Lilienthal;Bremen Schüsselkorb;16.0;41;41
+20240118;22:45:00;4;Lilienthal;Bremen Hauptbahnhof;18.0;36;0
+20240118;22:45:00;4;Lilienthal;Bremen Am Dobben;20.0;31;31
+20240118;22:45:00;4;Lilienthal;Bremen Friedhofstraße;26.0;61;61
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Marßel;;0;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Stockholmer Straße;3.0;-35;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Beckers Barg;5.0;-37;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Stader Landstraße;6.0;-39;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen-Burg(Bus);7.0;-51;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Stader Landstraße;8.0;1;31
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Finkenschlag;15.0;0;52
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Taunusstraße;16.0;46;46
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Schönebecker Straße;18.0;0;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Bahnhof Vegesack;20.0;-159;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Gustav-Heinemann-Bürgerhaus;22.0;-27;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Fährgrund;23.0;5;5
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Bremer Vulkan;25.0;-24;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Margaretenallee;26.0;5;5
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Wätjens Park;27.0;-36;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Bahnhof Blumenthal;28.0;-105;0
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Landrat-Berthold-Straße;31.0;39;39
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Hegeweg;33.0;54;54
+20240118;22:36:00;94;Schwanewede-Nord;Bremen Ringofenstraße;34.0;82;82
+20240118;22:36:00;94;Schwanewede-Nord;Schwanewede Insterburger Weg;38.0;52;52
+20240118;22:36:00;94;Schwanewede-Nord;Schwanewede Am Markt;39.0;82;82
+20240119;00:01:00;25;Domsheide;Bremen Weidedamm-Süd;;0;0
+20240119;00:01:00;25;Domsheide;Bremen Stuttgarter Straße;1.0;-30;-30
+20240119;00:01:00;25;Domsheide;Bremen Utbremer Ring;2.0;0;0
+20240118;23:41:00;93;Marßel;Bremen Gröpelingen;;0;0
+20240118;23:41:00;93;Marßel;Bremen DIAKO Bremen;2.0;-30;-30
+20240118;23:41:00;93;Marßel;Bremen Am Fuchsberg;3.0;0;0
+20240118;23:53:00;N7;Gröpelingen;Bremen Bahnhof Vegesack;;0;0
+20240118;23:53:00;N7;Gröpelingen;Bremen Holthorster Weg;5.0;-30;-30
+20240118;23:53:00;N7;Gröpelingen;Bremen Zum Kränholm;6.0;0;0
+20240118;23:53:00;N7;Gröpelingen;Bremen Karl-Bröger-Straße;27.0;-30;-30
+20240118;23:53:00;N7;Gröpelingen;Bremen Gröpelingen;28.0;0;0
+20240119;00:05:00;N10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:11:00;28;Überseestadt;Bremen Universität-Nord;;0;0
+20240118;23:11:00;28;Überseestadt;Bremen Universität/Zentralbereich;1.0;37;37
+20240118;23:11:00;28;Überseestadt;Bremen Universität-Süd;2.0;34;34
+20240118;23:11:00;28;Überseestadt;Bremen Celsiusstraße;4.0;4;4
+20240118;23:11:00;28;Überseestadt;Bremen Wilhelm-Herbst-Straße;5.0;49;49
+20240118;23:11:00;28;Überseestadt;Bremen Stadtwaldsee;7.0;17;17
+20240118;23:11:00;28;Überseestadt;Bremen Campingplatz;8.0;-11;-11
+20240118;23:11:00;28;Überseestadt;Bremen Wetterungsweg;9.0;19;19
+20240118;23:11:00;28;Überseestadt;Bremen Krönkeskamp;11.0;-11;-11
+20240118;23:11:00;28;Überseestadt;Bremen Innsbrucker Straße;12.0;19;19
+20240118;23:11:00;28;Überseestadt;Bremen Schuppen 3;20.0;-11;-11
+20240118;23:11:00;28;Überseestadt;Bremen Überseetor;21.0;19;19
+20240118;23:46:00;94;Bf Vegesack;Schwanewede Am Spreeken;;0;0
+20240118;23:46:00;94;Bf Vegesack;Schwanewede Dreienkamp;7.0;-30;-30
+20240118;23:46:00;94;Bf Vegesack;Schwanewede Am Markt;8.0;0;0
+20240118;23:46:00;94;Bf Vegesack;Bremen Margaretenallee;21.0;-30;-30
+20240118;23:46:00;94;Bf Vegesack;Bremen Bremer Vulkan;22.0;0;0
+20240118;22:38:00;1;Huchting;Bremen Bf Mahndorf;;0;0
+20240118;22:38:00;1;Huchting;Bremen Nußhorn;1.0;29;29
+20240118;22:38:00;1;Huchting;Bremen Teneverstraße;5.0;59;59
+20240118;22:38:00;1;Huchting;Bremen Tenever-Zentrum;6.0;51;51
+20240118;22:38:00;1;Huchting;Bremen Engadiner Straße;8.0;91;91
+20240118;22:38:00;1;Huchting;Bremen Hauptbahnhof;32.0;91;0
+20240118;23:50:00;6E;Neustadt / BSAG-Zentrum;Bremen Hauptbahnhof;;0;0
+20240118;23:50:00;6E;Neustadt / BSAG-Zentrum;Bremen Herdentor;1.0;-30;-30
+20240118;23:50:00;6E;Neustadt / BSAG-Zentrum;Bremen Schüsselkorb;2.0;0;0
+20240118;22:46:00;26;Überseestadt;Bremen Klinikum Haupteingang;;0;0
+20240118;22:46:00;26;Überseestadt;Bremen Kattenturm-Mitte;2.0;39;39
+20240118;22:46:00;26;Überseestadt;Bremen Gemeinschaftszentrum Obervieland;3.0;32;32
+20240118;22:46:00;26;Überseestadt;Bremen Brenningstraße;4.0;92;92
+20240118;22:46:00;26;Überseestadt;Bremen Carsten-Dreßler-Straße;6.0;62;62
+20240118;22:46:00;26;Überseestadt;Bremen In der Laake;7.0;137;137
+20240118;22:46:00;26;Überseestadt;Bremen Hermann-Helms-Straße;10.0;93;93
+20240118;22:46:00;26;Überseestadt;Bremen Pfarrfeldsweg;13.0;63;63
+20240118;22:46:00;26;Überseestadt;Bremen Schlehenweg;15.0;87;87
+20240118;22:46:00;26;Überseestadt;Bremen Friedrich-Engels-Straße;16.0;117;117
+20240118;22:46:00;26;Überseestadt;Bremen Habenhauser Brückenstraße;17.0;117;87
+20240118;22:46:00;26;Überseestadt;Bremen Fontanestraße;18.0;57;57
+20240118;22:46:00;26;Überseestadt;Bremen Fellendsweg;19.0;87;87
+20240118;22:46:00;26;Überseestadt;Bremen Helene-Lange-Straße;20.0;33;33
+20240118;22:46:00;26;Überseestadt;Bremen Huckelriede;22.0;2;2
+20240118;22:46:00;26;Überseestadt;Bremen Stenumer Straße;23.0;39;39
+20240118;22:46:00;26;Überseestadt;Bremen Willigstraße;24.0;77;77
+20240118;22:46:00;26;Überseestadt;Bremen August-Hinrichs-Straße;25.0;108;18
+20240118;22:46:00;26;Überseestadt;Bremen Gottfried-Menken-Straße;26.0;-21;0
+20240118;22:46:00;26;Überseestadt;Bremen Pappelstraße;30.0;-67;0
+20240118;22:46:00;26;Überseestadt;Bremen Am Brill (Bgm.-Smidt-Straße);33.0;0;0
+20240118;22:46:00;26;Überseestadt;Bremen Am Brill (Bgm.-Smidt-Straße);33.0;0;0
+20240118;22:46:00;26;Überseestadt;Bremen Silbermannstraße;50.0;-30;-30
+20240118;22:46:00;26;Überseestadt;Bremen Ehrenfelsstraße;51.0;0;0
+20240118;23:08:00;3;Weserwehr;Bremen Gröpelingen;;0;41
+20240118;23:08:00;3;Weserwehr;Bremen Konsul-Smidt-Straße;11.0;51;82
+20240118;23:08:00;3;Weserwehr;Bremen Domsheide;17.0;82;52
+20240118;22:42:00;10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Lindenhofstraße;1.0;-35;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Gustavstraße;7.0;33;33
+20240118;22:42:00;10;Sebaldsbrück;Bremen Utbremer Straße;8.0;39;39
+20240118;22:42:00;10;Sebaldsbrück;Bremen Falkenstraße;14.0;-11;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Hauptbahnhof;15.0;-38;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Humboldtstraße;18.0;-56;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Sielwall;19.0;-65;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Brunnenstraße;20.0;-40;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen St.-Jürgen-Straße;21.0;-66;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Bei den Drei Pfählen;23.0;-34;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Ludwig-Quidde-Straße;25.0;-35;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Malerstraße;26.0;-31;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Föhrenstraße;27.0;-84;0
+20240118;22:42:00;10;Sebaldsbrück;Bremen Bahnhof Sebaldsbrück;28.0;-104;0
+20240118;23:07:00;33;Sebaldsbrück;Bremen Horn (Horner Kirche);;0;0
+20240118;23:07:00;33;Sebaldsbrück;Bremen Vorstraße;1.0;64;64
+20240118;23:07:00;33;Sebaldsbrück;Bremen Horner Mühle;2.0;25;25
+20240118;23:07:00;33;Sebaldsbrück;Bremen Apfelallee;5.0;-20;0
+20240118;23:07:00;33;Sebaldsbrück;Bremen Kapitän-König-Weg;8.0;9;9
+20240118;23:07:00;33;Sebaldsbrück;Bremen Im Holze;9.0;69;69
+20240118;23:07:00;33;Sebaldsbrück;Bremen Höpkens Ruh;11.0;30;30
+20240118;23:07:00;33;Sebaldsbrück;Bremen Mühlenfeldstraße;12.0;1;1
+20240118;23:15:00;31;Horn;Bremen Achterdiek;;0;0
+20240118;23:15:00;31;Horn;Bremen Hermann-Frese-Straße;1.0;-30;-30
+20240118;23:15:00;31;Horn;Bremen Gravestraße;2.0;0;0
+20240118;23:15:00;31;Horn;Bremen Nedderland;3.0;-30;-30
+20240118;23:15:00;31;Horn;Bremen Mackensenweg;4.0;0;0
+20240118;23:15:00;24;Neue Vahr-Nord;Bremen Rablinghausen;;0;0
+20240118;23:15:00;24;Neue Vahr-Nord;Bremen Roccoweg;1.0;22;22
+20240118;23:15:00;24;Neue Vahr-Nord;Bremen Bakeweg;2.0;52;52
+20240118;23:15:00;24;Neue Vahr-Nord;Bremen Rechtenflether Straße;5.0;90;90
+20240118;23:15:00;24;Neue Vahr-Nord;Bremen Wildeshauser Straße;6.0;49;49
+20240118;23:15:00;24;Neue Vahr-Nord;Bremen Akazienstraße;9.0;-9;0
+20240118;23:23:00;6;Flughafen;Bremen Universität-Nord;;0;0
+20240118;23:23:00;6;Flughafen;Bremen Herdentor;14.0;-30;-30
+20240118;23:23:00;6;Flughafen;Bremen Schüsselkorb;15.0;0;0
+20240118;22:25:00;4;Lilienthal;Bremen Arsten;;0;0
+20240118;22:25:00;4;Lilienthal;Bremen Sielhof;6.0;-43;0
+20240118;22:25:00;4;Lilienthal;Bremen Huckelriede;7.0;-32;0
+20240118;22:25:00;4;Lilienthal;Bremen Am Dammacker;8.0;-30;0
+20240118;22:25:00;4;Lilienthal;Bremen Theater am Leibnizplatz;13.0;29;29
+20240118;22:25:00;4;Lilienthal;Bremen Domsheide;15.0;0;0
+20240118;22:25:00;4;Lilienthal;Bremen Schüsselkorb;16.0;40;40
+20240118;22:25:00;4;Lilienthal;Bremen Hauptbahnhof;18.0;27;93
+20240118;22:25:00;4;Lilienthal;Bremen Friedhofstraße;26.0;77;77
+20240118;22:25:00;4;Lilienthal;Bremen Horn (Horner Kirche);29.0;66;96
+20240118;22:25:00;4;Lilienthal;Bremen Vorstraße;30.0;67;67
+20240118;22:25:00;4;Lilienthal;Bremen Horner Mühle;31.0;-1;0
+20240119;00:43:00;98;Hammersbeck / Kaspar-Ohm-Str.;Bremen Borchsholt;;0;0
+20240119;00:43:00;98;Hammersbeck / Kaspar-Ohm-Str.;Bremen Herbartstraße;2.0;-30;-30
+20240119;00:43:00;98;Hammersbeck / Kaspar-Ohm-Str.;Bremen Vorlöhnhorster Weg;3.0;0;0
+20240118;23:06:00;25;Osterholz;Bremen Weidedamm-Süd;;0;0
+20240118;23:06:00;25;Osterholz;Bremen Stuttgarter Straße;1.0;24;24
+20240118;23:06:00;25;Osterholz;Bremen Utbremer Ring;2.0;54;54
+20240118;23:06:00;25;Osterholz;Bremen Fürther Straße;3.0;24;24
+20240118;23:06:00;25;Osterholz;Bremen Lohmannstraße;5.0;-26;0
+20240118;23:06:00;25;Osterholz;Bremen Daniel-von-Büren-Straße;8.0;40;40
+20240118;23:06:00;25;Osterholz;Bremen Doventor;9.0;-10;0
+20240118;23:06:00;25;Osterholz;Bremen Radio Bremen/VHS;10.0;-69;0
+20240118;23:06:00;25;Osterholz;Bremen Domsheide;13.0;-79;0
+20240118;23:06:00;25;Osterholz;Bremen Bottroper Straße;33.0;-30;-30
+20240118;23:06:00;25;Osterholz;Bremen Einkaufszentrum Blockdiek;34.0;0;0
+20240118;23:50:00;27E;Huckelriede;Brinkum(Stuhr) IKEA/Marktkauf;;0;0
+20240118;23:28:00;26;Hauptbahnhof;Bremen Überseestadt-Nord;;0;0
+20240118;23:28:00;26;Hauptbahnhof;Bremen Ehrenfelsstraße;1.0;-30;-30
+20240118;23:28:00;26;Hauptbahnhof;Bremen Silbermannstraße;2.0;0;0
+20240118;23:28:00;26;Hauptbahnhof;Bremen Lange Reihe;7.0;-30;0
+20240118;23:22:00;10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240119;00:45:00;N1;Neustadt / BSAG-Zentrum;Bremen Bf Mahndorf;;0;0
+20240118;23:49:00;96;Lüssum;Bremen Bahnhof Blumenthal;;0;0
+20240118;23:49:00;96;Lüssum;Bremen Wasserturm;2.0;-30;-30
+20240118;23:49:00;96;Lüssum;Bremen Hakenwehrstraße;3.0;0;0
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Rablinghausen;;0;0
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Roccoweg;1.0;-30;-30
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Bakeweg;2.0;0;0
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Dötlinger Straße;7.0;-30;-30
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Huder Straße;8.0;0;0
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Bahnhof Neustadt;10.0;-30;-30
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Hohentorsplatz;11.0;0;0
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Oewerweg;49.0;-30;-30
+20240119;00:04:00;N3;Bf Mahndorf;Bremen Osterholzer Heerstraße;50.0;0;0
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Schweizer Eck;;0;0
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Grenzwehr;2.0;-30;-30
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Emmentaler Straße;3.0;0;0
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Im Holter Feld;9.0;-30;-30
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Georg-Gries-Straße;10.0;0;0
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Herdentor;24.0;-30;-30
+20240118;23:55:00;25;Weidedamm-Süd;Bremen Schüsselkorb;25.0;0;0
+20240119;00:43:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Lilienthal;;0;0
+20240119;00:43:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;30.0;-30;-30
+20240119;00:43:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;31.0;0;0
+20240119;00:18:00;N5;Bf Mahndorf;Bremen Domsheide;;0;0
+20240119;00:18:00;N5;Bf Mahndorf;Bremen Sebaldsbrück (Bus+Tram);25.0;-30;-30
+20240119;00:18:00;N5;Bf Mahndorf;Bremen Christernstraße;26.0;0;0
+20240119;00:18:00;N5;Bf Mahndorf;Bremen Osterhop;27.0;-30;-30
+20240119;00:18:00;N5;Bf Mahndorf;Bremen Belmerstraße;28.0;0;0
+20240119;01:15:00;6E;Neustadt / BSAG-Zentrum;Lilienthal;;0;0
+20240119;01:15:00;6E;Neustadt / BSAG-Zentrum;Bremen Herdentor;31.0;-30;-30
+20240119;01:15:00;6E;Neustadt / BSAG-Zentrum;Bremen Schüsselkorb;32.0;0;0
+20240119;01:21:00;6E;Neustadt / BSAG-Zentrum;Bremen Rembertistraße;;0;0
+20240119;01:21:00;6E;Neustadt / BSAG-Zentrum;Bremen Herdentor;2.0;-30;-30
+20240119;01:21:00;6E;Neustadt / BSAG-Zentrum;Bremen Schüsselkorb;3.0;0;0
+20240118;23:18:00;8;Kulenkampffallee;Bremen Westerstraße;;0;24
+20240118;23:18:00;8;Kulenkampffallee;Bremen Wilhelm-Kaisen-Brücke;2.0;-56;0
+20240118;23:40:00;98;Bf Vegesack;Bremen Borchsholt;;0;0
+20240118;23:40:00;98;Bf Vegesack;Bremen Herbartstraße;2.0;-30;-30
+20240118;23:40:00;98;Bf Vegesack;Bremen Vorlöhnhorster Weg;3.0;0;0
+20240118;22:46:00;25;Osterholz;Bremen Weidedamm-Süd;;0;0
+20240118;22:46:00;25;Osterholz;Bremen Stuttgarter Straße;1.0;66;66
+20240118;22:46:00;25;Osterholz;Bremen Utbremer Ring;2.0;96;96
+20240118;22:46:00;25;Osterholz;Bremen Fürther Straße;3.0;61;61
+20240118;22:46:00;25;Osterholz;Bremen Lohmannstraße;5.0;1;1
+20240118;22:46:00;25;Osterholz;Bremen Daniel-von-Büren-Straße;8.0;38;38
+20240118;22:46:00;25;Osterholz;Bremen Doventor;9.0;2;2
+20240118;22:46:00;25;Osterholz;Bremen Radio Bremen/VHS;10.0;-66;0
+20240118;22:46:00;25;Osterholz;Bremen Am Brill (Martinistraße);11.0;-28;0
+20240118;22:46:00;25;Osterholz;Bremen Martinistraße;12.0;2;2
+20240118;22:46:00;25;Osterholz;Bremen Domsheide;13.0;-119;34
+20240118;22:46:00;25;Osterholz;Bremen Schüsselkorb;14.0;53;84
+20240118;22:46:00;25;Osterholz;Bremen Hauptbahnhof;16.0;84;0
+20240118;22:46:00;25;Osterholz;Bremen Bottroper Straße;33.0;-30;-30
+20240118;22:46:00;25;Osterholz;Bremen Einkaufszentrum Blockdiek;34.0;0;0
+20240119;00:20:00;N6;Bremen Roland-Center;Bremen Roland-Center;;0;0
+20240119;00:20:00;N6;Bremen Roland-Center;Bremen Willakedamm;1.0;-30;-30
+20240119;00:20:00;N6;Bremen Roland-Center;Bremen Hohenhorster Weg;2.0;0;0
+20240119;00:20:00;N6;Bremen Roland-Center;Bremen Harriersand;10.0;-30;-30
+20240119;00:20:00;N6;Bremen Roland-Center;Bremen Zum Huchtinger Bahnhof;11.0;0;0
+20240118;23:14:00;55;Kirchhuchting;Brinkum(Stuhr) Marktplatz;;0;0
+20240118;23:14:00;55;Kirchhuchting;Brinkum(Stuhr) Schule Feldstraße;1.0;-30;-30
+20240118;23:14:00;55;Kirchhuchting;Brinkum(Stuhr) Am Bahnhof;2.0;60;60
+20240119;00:57:00;6E;Neustadt / BSAG-Zentrum;Bremen Gröpelingen;;0;0
+20240119;01:01:00;N10;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240119;01:01:00;N10;Gröpelingen;Bremen Schloßparkstraße;1.0;-30;-30
+20240119;01:01:00;N10;Gröpelingen;Bremen Trinidadstraße;2.0;0;0
+20240118;22:50:00;4;Arsten;Lilienthal;;0;0
+20240118;22:50:00;4;Arsten;Lilienthal Auf dem Kamp;2.0;34;34
+20240118;22:50:00;4;Arsten;Lilienthal Truperdeich;9.0;18;18
+20240118;22:50:00;4;Arsten;Bremen Borgfeld;10.0;117;117
+20240118;22:50:00;4;Arsten;Bremen Höger Weg;13.0;162;162
+20240118;22:50:00;4;Arsten;Bremen Peter-Henlein-Straße;14.0;124;124
+20240118;22:50:00;4;Arsten;Bremen Kopernikusstraße;15.0;125;125
+20240118;22:50:00;4;Arsten;Bremen Werner-von-Siemens-Straße;16.0;161;161
+20240118;22:50:00;4;Arsten;Bremen Horn (Horner Kirche);19.0;116;116
+20240118;22:50:00;4;Arsten;Bremen Bürgermeister-Spitta-Allee;20.0;117;117
+20240118;22:50:00;4;Arsten;Bremen Focke-Museum;21.0;85;85
+20240118;22:50:00;4;Arsten;Bremen Hauptbahnhof;30.0;85;0
+20240118;22:50:00;4;Arsten;Bremen Herdentor;31.0;-30;-30
+20240118;22:50:00;4;Arsten;Bremen Schüsselkorb;32.0;0;0
+20240118;22:50:00;4;Arsten;Bremen Twiedelftsweg;47.0;-30;-30
+20240118;22:50:00;4;Arsten;Bremen Arsten;48.0;0;0
+20240118;22:41:00;2;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;22:41:00;2;Gröpelingen;Bremen Schloßparkstraße;1.0;29;29
+20240118;22:41:00;2;Gröpelingen;Bremen Trinidadstraße;2.0;26;26
+20240118;22:41:00;2;Gröpelingen;Bremen Föhrenstraße;4.0;140;140
+20240118;22:41:00;2;Gröpelingen;Bremen Ludwig-Quidde-Straße;6.0;180;184
+20240118;22:41:00;2;Gröpelingen;Bremen Bennigsenstraße;7.0;180;180
+20240118;22:41:00;2;Gröpelingen;Bremen Bei den Drei Pfählen;8.0;225;256
+20240118;22:41:00;2;Gröpelingen;Bremen Am Hulsberg;9.0;219;219
+20240118;22:41:00;2;Gröpelingen;Bremen Sielwall;12.0;258;258
+20240118;22:41:00;2;Gröpelingen;Bremen Domsheide;15.0;222;253
+20240118;22:41:00;2;Gröpelingen;Bremen Am Brill (Hutfilter-/Obernstraße);17.0;284;284
+20240118;22:41:00;2;Gröpelingen;Bremen Radio Bremen/VHS;18.0;239;239
+20240118;22:41:00;2;Gröpelingen;Bremen Doventor;19.0;269;269
+20240118;22:41:00;2;Gröpelingen;Bremen Haferkamp;21.0;312;312
+20240118;22:41:00;2;Gröpelingen;Bremen Hansestraße;22.0;343;343
+20240118;22:41:00;2;Gröpelingen;Bremen Wartburgstraße;23.0;313;313
+20240118;22:41:00;2;Gröpelingen;Bremen Gustavstraße;25.0;342;342
+20240118;22:41:00;2;Gröpelingen;Bremen Bahnhof Walle;26.0;283;283
+20240118;23:47:00;3;Gröpelingen;Bremen Weserwehr;;0;0
+20240118;22:24:00;94;Marßel;Schwanewede Am Spreeken;;0;0
+20240118;22:24:00;94;Marßel;Schwanewede Eichengrund;6.0;66;66
+20240118;22:24:00;94;Marßel;Schwanewede Dreienkamp;7.0;36;36
+20240118;22:24:00;94;Marßel;Schwanewede Am Markt;8.0;66;66
+20240118;22:24:00;94;Marßel;Bremen Hohenbuchener Straße;12.0;20;20
+20240118;22:24:00;94;Marßel;Bremen Steenkuhlenweg;15.0;-14;0
+20240118;22:24:00;94;Marßel;Bremen Bahnhof Blumenthal;19.0;-70;0
+20240118;22:24:00;94;Marßel;Bremen Margaretenallee;21.0;1;1
+20240118;22:24:00;94;Marßel;Bremen Bremer Vulkan;22.0;22;22
+20240118;22:24:00;94;Marßel;Bremen Gerhard-Rohlfs-Straße;26.0;13;13
+20240118;22:24:00;94;Marßel;Bremen Bahnhof Vegesack;27.0;-24;0
+20240118;22:24:00;94;Marßel;Bremen Taunusstraße;31.0;36;36
+20240118;22:24:00;94;Marßel;Bremen Richthofenstraße;33.0;-2;0
+20240118;22:24:00;94;Marßel;Bremen Stader Landstraße;39.0;-33;0
+20240118;22:24:00;94;Marßel;Bremen-Burg(Bus);40.0;-71;0
+20240118;22:24:00;94;Marßel;Bremen Stader Landstraße;41.0;39;39
+20240118;22:24:00;94;Marßel;Bremen Beckers Barg;42.0;70;70
+20240118;22:24:00;94;Marßel;Bremen Stockholmer Straße;44.0;24;24
+20240118;22:24:00;94;Marßel;Bremen Marßel;47.0;-19;0
+20240118;23:47:00;33;Sebaldsbrück;Bremen Horn (Horner Kirche);;0;0
+20240118;23:47:00;33;Sebaldsbrück;Bremen Kapitän-König-Weg;8.0;-30;-30
+20240118;23:47:00;33;Sebaldsbrück;Bremen Im Holze;9.0;0;0
+20240118;23:48:00;N5;Bf Mahndorf;Bremen Domsheide;;0;0
+20240118;23:48:00;N5;Bf Mahndorf;Bremen Sebaldsbrück (Bus+Tram);25.0;-30;-30
+20240118;23:48:00;N5;Bf Mahndorf;Bremen Christernstraße;26.0;0;0
+20240118;23:48:00;N5;Bf Mahndorf;Bremen Osterhop;27.0;-30;-30
+20240118;23:48:00;N5;Bf Mahndorf;Bremen Belmerstraße;28.0;0;0
+20240119;00:14:00;2;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:24:00;96;Bf Blumenthal;Bremen Betriebshof Blumenthal;;0;146
+20240118;23:24:00;96;Bf Blumenthal;Bremen Besanstraße;8.0;116;116
+20240118;23:24:00;96;Bf Blumenthal;Bremen Hakenwehrstraße;9.0;146;146
+20240119;00:08:00;N1;Bf Mahndorf;Bremen Roland-Center;;0;0
+20240119;00:08:00;N1;Bf Mahndorf;Bremen Carl-Goerdeler-Straße;25.0;-30;-30
+20240119;00:08:00;N1;Bf Mahndorf;Bremen Dietrich-Bonhoeffer-Straße;26.0;0;0
+20240118;23:11:00;22;Kulenkampffallee;Bremen Kattenturm-Mitte;;0;0
+20240118;23:11:00;22;Kulenkampffallee;Bremen Busestraße;16.0;-30;-30
+20240118;23:11:00;22;Kulenkampffallee;Bremen Kulenkampffallee;17.0;0;0
+20240118;23:11:00;93;Marßel;Bremen Gröpelingen;;0;0
+20240118;23:11:00;93;Marßel;Bremen DIAKO Bremen;2.0;-30;-30
+20240118;23:11:00;93;Marßel;Bremen Am Fuchsberg;3.0;36;36
+20240118;23:11:00;93;Marßel;Bremen Am Geestkamp;8.0;-24;0
+20240118;23:11:00;93;Marßel;Bremen An Smidts Park;9.0;-32;0
+20240118;23:11:00;93;Marßel;Bremen Burger Dorfstraße;10.0;-33;0
+20240118;23:11:00;93;Marßel;Bremen-Burg(Bus);11.0;-82;0
+20240119;00:17:00;3;Gröpelingen;Bremen Weserwehr;;0;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Schweizer Eck;;0;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Grenzwehr;2.0;-30;-30
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Emmentaler Straße;3.0;0;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Einkaufszentrum Blockdiek;5.0;-38;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Bottroper Straße;6.0;-51;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Hermann-Koenen-Straße;7.0;-56;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Im Holter Feld;9.0;-30;-30
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Georg-Gries-Straße;10.0;29;29
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Rennplatz;11.0;-3;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Julius-Brecht-Allee;15.0;-41;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Steubenstraße;16.0;-28;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Stresemannstraße;17.0;3;3
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Stader Straße/Bismarckstraße;18.0;6;6
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Friedrich-Karl-Straße;19.0;3;3
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Klinikum Bremen-Mitte;20.0;-30;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Dobbenweg;21.0;-72;0
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Herdentor;24.0;-30;-30
+20240118;22:59:00;25;Weidedamm-Süd;Bremen Schüsselkorb;25.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Neue Vahr Nord;;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Friedrich-Stampfer-Straße;1.0;-30;-30
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Otto-Braun-Straße;2.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Am Brill (Bgm.-Smidt-Straße);15.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Am Brill (Bgm.-Smidt-Straße);15.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Carsten-Dreßler-Straße;38.0;-30;-30
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen In der Laake;39.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Hermann-Helms-Straße;42.0;-30;-30
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Senator-Theil-Straße;43.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Piependamm;44.0;-30;-30
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Pfarrfeldsweg;45.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Fontanestraße;50.0;-30;-30
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Fellendsweg;51.0;0;0
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Helene-Lange-Straße;52.0;-30;-30
+20240118;23:37:00;N9;Kattenturm / Huckelriede;Bremen Friedhof Huckelriede;53.0;0;0
+20240118;23:16:00;94;Bf Vegesack;Schwanewede Am Spreeken;;0;0
+20240118;23:16:00;94;Bf Vegesack;Schwanewede Dreienkamp;7.0;-30;-30
+20240118;23:16:00;94;Bf Vegesack;Schwanewede Am Markt;8.0;0;0
+20240118;23:16:00;94;Bf Vegesack;Bremen Margaretenallee;21.0;-30;-30
+20240118;23:16:00;94;Bf Vegesack;Bremen Bremer Vulkan;22.0;0;0
+20240118;23:31:00;25;Domsheide;Bremen Weidedamm-Süd;;0;0
+20240118;23:31:00;25;Domsheide;Bremen Stuttgarter Straße;1.0;-30;-30
+20240118;23:31:00;25;Domsheide;Bremen Utbremer Ring;2.0;0;0
+20240118;23:15:00;6E;Neustadt / BSAG-Zentrum;Bremen Gröpelingen;;0;0
+20240118;23:14:00;2;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:30:00;6E;Neustadt / BSAG-Zentrum;Bremen Hauptbahnhof;;0;0
+20240118;23:30:00;6E;Neustadt / BSAG-Zentrum;Bremen Herdentor;1.0;-30;-30
+20240118;23:30:00;6E;Neustadt / BSAG-Zentrum;Bremen Schüsselkorb;2.0;0;0
+20240118;23:23:00;6;Universität;Bremen Flughafen-Süd;;0;0
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Huckelriede;;0;0
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Arsterdamm;1.0;37;37
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Krimpelweg;2.0;-17;0
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Klinikum Links der Weser;4.0;-37;0
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Kattenturm-Mitte;5.0;-43;0
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Alfred-Faust-Straße;6.0;-36;0
+20240118;23:11:00;27E;Brinkum-Nord / IKEA-Marktkauf;Brinkum(Stuhr) IKEA/Marktkauf;10.0;-98;0
+20240118;23:49:00;2;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;22:55:00;24;Neue Vahr-Nord;Bremen Rablinghausen;;0;0
+20240118;22:55:00;24;Neue Vahr-Nord;Bremen Roccoweg;1.0;-30;-30
+20240118;22:55:00;24;Neue Vahr-Nord;Bremen Bakeweg;2.0;0;0
+20240118;22:30:00;4;Arsten;Lilienthal;;0;0
+20240118;22:30:00;4;Arsten;Lilienthal Kutscher Behrens;1.0;33;33
+20240118;22:30:00;4;Arsten;Lilienthal Auf dem Kamp;2.0;68;68
+20240118;22:30:00;4;Arsten;Bremen Borgfeld;10.0;111;111
+20240118;22:30:00;4;Arsten;Bremen Am Lehester Deich;12.0;120;150
+20240118;22:30:00;4;Arsten;Bremen Vorstraße;18.0;187;187
+20240118;22:30:00;4;Arsten;Bremen Bürgermeister-Spitta-Allee;20.0;142;142
+20240118;22:30:00;4;Arsten;Bremen Focke-Museum;21.0;111;111
+20240118;22:30:00;4;Arsten;Bremen Kirchbachstraße;23.0;114;114
+20240118;22:30:00;4;Arsten;Bremen Rembertistraße;29.0;78;78
+20240118;22:30:00;4;Arsten;Bremen Hauptbahnhof;30.0;78;0
+20240118;22:30:00;4;Arsten;Bremen Herdentor;31.0;44;44
+20240118;22:30:00;4;Arsten;Bremen Schüsselkorb;32.0;74;74
+20240118;22:30:00;4;Arsten;Bremen Twiedelftsweg;47.0;44;44
+20240118;22:30:00;4;Arsten;Bremen Arsten;48.0;74;0
+20240118;22:42:00;1;Bf Mahndorf;Bremen Roland-Center;;0;0
+20240118;22:42:00;1;Bf Mahndorf;Bremen Neuenlander Straße;5.0;39;39
+20240118;22:42:00;1;Bf Mahndorf;Bremen Pappelstraße;6.0;83;83
+20240118;22:42:00;1;Bf Mahndorf;Bremen Am Wall;10.0;113;113
+20240118;22:42:00;1;Bf Mahndorf;Bremen Hauptbahnhof;11.0;80;0
+20240118;22:42:00;1;Bf Mahndorf;Bremen Rembertistraße;12.0;36;36
+20240118;22:42:00;1;Bf Mahndorf;Bremen Am Dobben;13.0;80;80
+20240118;22:42:00;1;Bf Mahndorf;Bremen Parkstraße;14.0;111;111
+20240118;22:42:00;1;Bf Mahndorf;Bremen Barbarossastraße;20.0;143;143
+20240118;22:42:00;1;Bf Mahndorf;Bremen Polizeipräsidium;22.0;98;129
+20240118;22:42:00;1;Bf Mahndorf;Bremen Carl-Goerdeler-Straße;25.0;145;145
+20240118;22:42:00;1;Bf Mahndorf;Bremen Dietrich-Bonhoeffer-Straße;26.0;209;209
+20240119;00:08:00;N9;Neue Vahr-Nord;Bremen Huckelriede;;0;0
+20240119;00:08:00;N9;Neue Vahr-Nord;Bremen Gottfried-Menken-Straße;4.0;-30;-30
+20240119;00:08:00;N9;Neue Vahr-Nord;Bremen Meyerstraße;5.0;0;0
+20240119;00:08:00;N9;Neue Vahr-Nord;Bremen Am Brill (Bgm.-Smidt-Straße);11.0;0;0
+20240119;00:08:00;N9;Neue Vahr-Nord;Bremen Am Brill (Bgm.-Smidt-Straße);11.0;0;0
+20240118;23:54:00;96;Bf Blumenthal;Bremen Betriebshof Blumenthal;;0;0
+20240118;23:54:00;96;Bf Blumenthal;Bremen Besanstraße;8.0;-30;-30
+20240118;23:54:00;96;Bf Blumenthal;Bremen Hakenwehrstraße;9.0;0;0
+20240118;23:19:00;58;Bremen Roland-Center;Bremen Roland-Center;;0;0
+20240118;23:19:00;58;Bremen Roland-Center;Bremen Obervielander Straße;1.0;92;92
+20240118;23:27:00;34;Sebaldsbrück;Bremen Horn (Horner Kirche);;0;0
+20240118;23:27:00;34;Sebaldsbrück;Bremen Rockwinkeler Heerstraße;8.0;-30;-30
+20240118;23:27:00;34;Sebaldsbrück;Bremen Simon-Hermann-Post-Weg;9.0;0;0
+20240118;23:39:00;3;Weserwehr;Bremen Gröpelingen;;0;0
+20240118;23:26:00;41;Bf Mahndorf / 39 Weserpark-Süd;Bremen Weserwehr;;0;0
+20240118;23:46:00;40;Bf Mahndorf / 39 Weserpark-Süd;Bremen Weserwehr;;0;0
+20240119;00:01:00;N10;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240119;00:01:00;N10;Gröpelingen;Bremen Schloßparkstraße;1.0;-30;-30
+20240119;00:01:00;N10;Gröpelingen;Bremen Trinidadstraße;2.0;0;0
+20240118;23:19:00;24;Rablinghausen;Bremen Neue Vahr Nord;;0;68
+20240118;23:19:00;24;Rablinghausen;Bremen Heinrich-Hertz-Straße;5.0;68;38
+20240118;23:19:00;24;Rablinghausen;Bremen Hauptbahnhof;13.0;38;0
+20240118;23:19:00;24;Rablinghausen;Bremen Herdentor;14.0;-30;-30
+20240118;23:19:00;24;Rablinghausen;Bremen Schüsselkorb;15.0;0;0
+20240118;23:22:00;8;Hauptbahnhof;Bremen Kulenkampffallee;;0;0
+20240118;22:59:00;24;Rablinghausen;Bremen Neue Vahr Nord;;0;0
+20240118;22:59:00;24;Rablinghausen;Bremen Friedrich-Stampfer-Straße;1.0;38;38
+20240118;22:59:00;24;Rablinghausen;Bremen Heinrich-Hertz-Straße;5.0;72;42
+20240118;22:59:00;24;Rablinghausen;Bremen Kurfürstenallee;8.0;5;5
+20240118;22:59:00;24;Rablinghausen;Bremen Verdunstraße;9.0;34;34
+20240118;22:59:00;24;Rablinghausen;Bremen St. Joseph-Stift;10.0;-8;0
+20240118;22:59:00;24;Rablinghausen;Bremen Am Stern;11.0;9;9
+20240118;22:59:00;24;Rablinghausen;Bremen Blumenthalstraße;12.0;4;4
+20240118;22:59:00;24;Rablinghausen;Bremen Hauptbahnhof;13.0;4;0
+20240118;22:59:00;24;Rablinghausen;Bremen Herdentor;14.0;107;107
+20240118;22:59:00;24;Rablinghausen;Bremen Schüsselkorb;15.0;91;91
+20240118;22:59:00;24;Rablinghausen;Bremen Domsheide;16.0;56;56
+20240118;23:45:00;N1;Huchting;Bremen Bf Mahndorf;;0;0
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Klinikum Haupteingang;;0;0
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Gemeinschaftszentrum Obervieland;3.0;-30;-30
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Brenningstraße;4.0;0;0
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Carsten-Dreßler-Straße;6.0;-30;-30
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen In der Laake;7.0;0;0
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Schlehenweg;15.0;-30;-30
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Friedrich-Engels-Straße;16.0;0;0
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Fontanestraße;18.0;-30;-30
+20240118;23:45:00;26;Huckelriede / N9 Neue Vahr;Bremen Fellendsweg;19.0;0;0
+20240118;23:27:00;93;Gröpelingen;Bremen Marßel;;0;0
+20240118;23:35:00;N10;Sebaldsbrück;Bremen Gröpelingen;;0;0
+20240118;23:43:00;6;Bremen Bürgerpark;Bremen Flughafen-Süd;;0;0
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Rablinghausen;;0;0
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Roccoweg;1.0;-30;-30
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Bakeweg;2.0;0;0
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Dötlinger Straße;7.0;-30;-30
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Huder Straße;8.0;0;0
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Bahnhof Neustadt;10.0;-30;-30
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Hohentorsplatz;11.0;0;0
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Oewerweg;49.0;-30;-30
+20240118;23:34:00;N3;Bf Mahndorf;Bremen Osterholzer Heerstraße;50.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Neue Vahr Nord;;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Friedrich-Stampfer-Straße;1.0;-30;-30
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Otto-Braun-Straße;2.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Am Brill (Bgm.-Smidt-Straße);15.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Am Brill (Bgm.-Smidt-Straße);15.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Carsten-Dreßler-Straße;38.0;-30;-30
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen In der Laake;39.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Hermann-Helms-Straße;42.0;-30;-30
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Senator-Theil-Straße;43.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Piependamm;44.0;-30;-30
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Pfarrfeldsweg;45.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Fontanestraße;50.0;-30;-30
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Fellendsweg;51.0;0;0
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Helene-Lange-Straße;52.0;-30;-30
+20240119;00:07:00;N9;Kattenturm / Huckelriede;Bremen Friedhof Huckelriede;53.0;0;0
+20240118;23:41:00;39;Bf Mahndorf / 40 Weserwehr;Bremen Weserpark-Süd;;0;0
+20240118;23:41:00;39;Bf Mahndorf / 40 Weserwehr;Bremen Holzweide;1.0;-30;-30
+20240118;23:41:00;39;Bf Mahndorf / 40 Weserwehr;Bremen Malthusstraße;2.0;0;0
+20240118;23:11:00;10;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;23:40:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Arsten;;0;0
+20240118;23:40:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;32.0;-30;-30
+20240118;23:40:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;33.0;0;0
+20240118;23:15:00;N1;Huchting;Bremen Bf Mahndorf;;0;0
+20240118;23:15:00;N1;Huchting;Bremen Nußhorn;1.0;34;34
+20240118;23:15:00;N1;Huchting;Bremen Weserpark;3.0;64;64
+20240118;23:15:00;N1;Huchting;Bremen Hauptbahnhof;32.0;64;0
+20240118;22:39:00;24;Rablinghausen;Bremen Neue Vahr Nord;;0;0
+20240118;22:39:00;24;Rablinghausen;Bremen Friedrich-Stampfer-Straße;1.0;44;44
+20240118;22:39:00;24;Rablinghausen;Bremen Otto-Braun-Straße;2.0;-9;0
+20240118;22:39:00;24;Rablinghausen;Bremen Brandenburger Straße;6.0;-43;0
+20240118;22:39:00;24;Rablinghausen;Bremen St. Joseph-Stift;10.0;-34;0
+20240118;22:39:00;24;Rablinghausen;Bremen Am Stern;11.0;-37;0
+20240118;22:39:00;24;Rablinghausen;Bremen Blumenthalstraße;12.0;-79;0
+20240118;22:39:00;24;Rablinghausen;Bremen Hauptbahnhof;13.0;-100;0
+20240118;22:39:00;24;Rablinghausen;Bremen Herdentor;14.0;16;16
+20240118;22:39:00;24;Rablinghausen;Bremen Domsheide;16.0;-20;0
+20240118;22:39:00;24;Rablinghausen;Bremen Am Neuen Markt;18.0;31;31
+20240118;22:39:00;24;Rablinghausen;Bremen Westerstraße;19.0;65;65
+20240118;22:39:00;24;Rablinghausen;Bremen Hohentorsplatz;20.0;30;30
+20240118;22:39:00;24;Rablinghausen;Bremen Huder Straße;23.0;-5;0
+20240118;22:39:00;24;Rablinghausen;Bremen Rechtenflether Straße;26.0;-39;0
+20240118;22:39:00;24;Rablinghausen;Bremen Woltmershauser Friedhof;27.0;-45;0
+20240118;22:39:00;24;Rablinghausen;Bremen Stromer Straße;28.0;-36;0
+20240118;22:39:00;24;Rablinghausen;Bremen Rablinghausen;31.0;-118;0
+20240118;23:20:00;27E;Huckelriede;Brinkum(Stuhr) IKEA/Marktkauf;;0;40
+20240118;23:20:00;27E;Huckelriede;Brinkum-Nord Ochtum Park (IKEA);1.0;71;71
+20240119;00:57:00;6E;Neustadt / BSAG-Zentrum;Bremen Arsten;;0;0
+20240118;22:23:00;90;Gröpelingen;Bremen Fähre Blumenthal;21.0;-70;-70
+20240118;22:23:00;90;Gröpelingen;Bremen Zum Donaufleet;22.0;-95;-85
+20240118;22:23:00;90;Gröpelingen;Bremen-Blumenthal Markt;23.0;-85;0
+20240118;22:23:00;90;Gröpelingen;Bremen Bahnhof Blumenthal;24.0;-179;0
+20240118;22:23:00;90;Gröpelingen;Bremen Löhstraße;26.0;40;40
+20240118;22:23:00;90;Gröpelingen;Bremen Blumenhorster Straße;27.0;-10;0
+20240118;22:23:00;90;Gröpelingen;Bremen Bahnhof Aumund;29.0;80;80
+20240118;22:23:00;90;Gröpelingen;Bremen Aumunder Heide;30.0;56;56
+20240118;22:23:00;90;Gröpelingen;Bremen Gustav-Heinemann-Bürgerhaus;31.0;94;94
+20240118;22:23:00;90;Gröpelingen;Bremen Gerhard-Rohlfs-Straße;32.0;64;64
+20240118;22:23:00;90;Gröpelingen;Bremen Bahnhof Vegesack;33.0;44;107
+20240118;22:23:00;90;Gröpelingen;Bremen Bahnhof Schönebeck;35.0;57;57
+20240118;22:23:00;90;Gröpelingen;Bremen Zum Kränholm;39.0;24;24
+20240118;22:23:00;90;Gröpelingen;Bremen Bahnhof Lesum;40.0;32;32
+20240118;22:23:00;90;Gröpelingen;Bremen Burgdammer Postweg;43.0;-1;0
+20240118;22:23:00;90;Gröpelingen;Bremen-Burg(Bus);46.0;-19;72
+20240118;22:23:00;90;Gröpelingen;Bremen Burger Dorfstraße;47.0;107;107
+20240118;23:38:00;N9;Neue Vahr-Nord;Bremen Huckelriede;;0;0
+20240118;23:38:00;N9;Neue Vahr-Nord;Bremen Gottfried-Menken-Straße;4.0;-30;-30
+20240118;23:38:00;N9;Neue Vahr-Nord;Bremen Meyerstraße;5.0;0;0
+20240118;23:38:00;N9;Neue Vahr-Nord;Bremen Am Brill (Bgm.-Smidt-Straße);11.0;0;0
+20240118;23:38:00;N9;Neue Vahr-Nord;Bremen Am Brill (Bgm.-Smidt-Straße);11.0;0;0
+20240118;23:59:00;58;Bremen Roland-Center;Bremen Roland-Center;;0;0
+20240118;23:22:00;1;Bf Mahndorf;Bremen Roland-Center;;0;0
+20240118;23:22:00;1;Bf Mahndorf;Bremen Carl-Goerdeler-Straße;25.0;-30;-30
+20240118;23:22:00;1;Bf Mahndorf;Bremen Dietrich-Bonhoeffer-Straße;26.0;0;0
+20240118;23:19:00;57;Bremen Roland-Center;Bremen Roland-Center;;0;81
+20240118;23:43:00;6;Flughafen;Bremen Universität-Nord;;0;0
+20240118;23:43:00;6;Flughafen;Bremen Herdentor;14.0;-30;-30
+20240118;23:43:00;6;Flughafen;Bremen Schüsselkorb;15.0;0;0
+20240118;23:48:00;N4;Arsten;Lilienthal;;0;0
+20240118;23:48:00;N4;Arsten;Bremen Herdentor;31.0;-30;-30
+20240118;23:48:00;N4;Arsten;Bremen Schüsselkorb;32.0;0;0
+20240118;23:31:00;27E;Brinkum-Nord / IKEA-Marktkauf;Bremen Huckelriede;;0;0
+20240118;23:06:00;94;Schwanewede-Nord;Bremen Marßel;;0;0
+20240118;23:06:00;94;Schwanewede-Nord;Bremen Hegeweg;33.0;-30;-30
+20240118;23:06:00;94;Schwanewede-Nord;Bremen Ringofenstraße;34.0;0;0
+20240118;23:06:00;94;Schwanewede-Nord;Schwanewede Insterburger Weg;38.0;-30;-30
+20240118;23:06:00;94;Schwanewede-Nord;Schwanewede Am Markt;39.0;0;0
+20240118;23:31:00;N10;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;23:31:00;N10;Gröpelingen;Bremen Schloßparkstraße;1.0;-30;-30
+20240118;23:31:00;N10;Gröpelingen;Bremen Trinidadstraße;2.0;0;0
+20240118;23:12:00;N3;Rablinghausen;Bremen Schweizer Eck;;0;79
+20240118;23:12:00;N3;Rablinghausen;Bremen Poggenburg;6.0;49;49
+20240118;23:12:00;N3;Rablinghausen;Bremen Am Hallacker;7.0;79;79
+20240118;23:12:00;N3;Rablinghausen;Bremen Lise-Meitner-Straße;24.0;49;49
+20240118;23:12:00;N3;Rablinghausen;Bremen Universität-Süd;25.0;79;79
+20240118;23:12:00;N3;Rablinghausen;Bremen Hauptbahnhof;36.0;79;0
+20240118;23:12:00;N3;Rablinghausen;Bremen Herdentor;37.0;-30;-30
+20240118;23:12:00;N3;Rablinghausen;Bremen Schüsselkorb;38.0;0;0
+20240118;23:12:00;N3;Rablinghausen;Bremen Akazienstraße;45.0;-30;-30
+20240118;23:12:00;N3;Rablinghausen;Bremen Huder Straße;46.0;0;0
+20240118;23:12:00;N3;Rablinghausen;Bremen Rechtenflether Straße;49.0;-30;-30
+20240118;23:12:00;N3;Rablinghausen;Bremen Woltmershauser Friedhof;50.0;0;0
+20240118;23:25:00;37;Sebaldsbrück;Bremen Bf Mahndorf;;0;0
+20240118;23:25:00;37;Sebaldsbrück;Bremen Beim Bohnenhof;2.0;-30;-30
+20240118;23:25:00;37;Sebaldsbrück;Bremen Heiligenbergstraße;3.0;0;0
+20240118;23:25:00;37;Sebaldsbrück;Bremen Osterholzer Möhlendamm;5.0;-30;-30
+20240118;23:25:00;37;Sebaldsbrück;Bremen Am Hahnenkamp;6.0;0;0
+20240118;23:25:00;37;Sebaldsbrück;Bremen Am Siek;9.0;-30;-30
+20240118;23:25:00;37;Sebaldsbrück;Bremen Lachmundsdamm;10.0;0;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Gröpelingen;;0;0
+20240118;22:58:00;90;Neuenkirchen;Bremen DIAKO Bremen;2.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Bremen Am Fuchsberg;3.0;39;39
+20240118;22:58:00;90;Neuenkirchen;Bremen Am Geestkamp;8.0;-11;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Burger Dorfstraße;10.0;-39;0
+20240118;22:58:00;90;Neuenkirchen;Bremen-Burg(Bus);11.0;-118;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Stader Landstraße;12.0;25;56
+20240118;22:58:00;90;Neuenkirchen;Bremen Burgdammer Postweg;14.0;86;86
+20240118;22:58:00;90;Neuenkirchen;Bremen Zum Kränholm;18.0;56;56
+20240118;22:58:00;90;Neuenkirchen;Bremen Holthorster Weg;19.0;86;86
+20240118;22:58:00;90;Neuenkirchen;Bremen Bahnhof Vegesack;24.0;86;56
+20240118;22:58:00;90;Neuenkirchen;Bremen Bahnhof Blumenthal;33.0;56;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Zum Donaufleet;35.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Bremen Fähre Blumenthal;36.0;0;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Hanfstraße;40.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Bremen An der Amtsweide;41.0;0;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Wasserweg;42.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Bremen Fähre Farge;43.0;0;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Hohenesch;48.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Bremen Rekumer Siel;49.0;0;0
+20240118;22:58:00;90;Neuenkirchen;Bremen Sandkuhlenweg;51.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Bremen Moorstücke;52.0;0;0
+20240118;22:58:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Marktplatz;54.0;-30;-30
+20240118;22:58:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Ahnten;55.0;0;0
+20240118;23:18:00;N4;Arsten;Lilienthal;;0;38
+20240118;23:18:00;N4;Arsten;Lilienthal Kutscher Behrens;1.0;77;77
+20240118;23:18:00;N4;Arsten;Lilienthal Auf dem Kamp;2.0;142;142
+20240118;23:18:00;N4;Arsten;Lilienthal Schoofmoor;3.0;143;143
+20240118;23:18:00;N4;Arsten;Bremen Hauptbahnhof;30.0;143;0
+20240118;23:18:00;N4;Arsten;Bremen Herdentor;31.0;-30;-30
+20240118;23:18:00;N4;Arsten;Bremen Schüsselkorb;32.0;0;0
+20240118;23:03:00;6;Flughafen;Bremen Universität-Nord;;0;0
+20240118;23:03:00;6;Flughafen;Bremen Lise-Meitner-Straße;3.0;39;39
+20240118;23:03:00;6;Flughafen;Bremen H.-H.-Meier-Allee;8.0;70;70
+20240118;23:03:00;6;Flughafen;Bremen Hauptbahnhof;13.0;29;33
+20240118;23:03:00;6;Flughafen;Bremen Herdentor;14.0;81;81
+20240118;23:03:00;6;Flughafen;Bremen Schüsselkorb;15.0;152;152
+20240119;00:24:00;96;Bf Blumenthal;Bremen Betriebshof Blumenthal;;0;0
+20240119;00:24:00;96;Bf Blumenthal;Bremen Besanstraße;8.0;-30;-30
+20240119;00:24:00;96;Bf Blumenthal;Bremen Hakenwehrstraße;9.0;0;0
+20240118;23:42:00;55;Brinkum;Bremen Roland-Center;;0;0
+20240118;23:42:00;55;Brinkum;Bremen Willakedamm;1.0;-30;-30
+20240118;23:42:00;55;Brinkum;Bremen Hohenhorster Weg;2.0;0;0
+20240118;23:42:00;55;Brinkum;Bremen Varreler Landstraße;5.0;-30;-30
+20240118;23:42:00;55;Brinkum;;6.0;0;0
+20240118;23:42:00;55;Brinkum;;11.0;-30;-30
+20240118;23:42:00;55;Brinkum;;12.0;0;0
+20240118;23:26:00;39;Weserpark-Süd;Bremen Bf Mahndorf;;0;6
+20240119;00:05:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Bf Mahndorf;;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Gröpelingen;;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen DIAKO Bremen;2.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen Am Fuchsberg;3.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Zum Kränholm;18.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen Holthorster Weg;19.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Zum Donaufleet;35.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen Fähre Blumenthal;36.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Hanfstraße;40.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen An der Amtsweide;41.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Wasserweg;42.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen Fähre Farge;43.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Hohenesch;48.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen Rekumer Siel;49.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Bremen Sandkuhlenweg;51.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Bremen Moorstücke;52.0;0;0
+20240118;23:58:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Marktplatz;54.0;-30;-30
+20240118;23:58:00;90;Neuenkirchen;Neuenkirchen(Schwanewede) Ahnten;55.0;0;0
+20240118;22:58:00;1;Huchting;Bremen Bf Mahndorf;;0;0
+20240118;22:58:00;1;Huchting;Bremen Nußhorn;1.0;38;38
+20240118;22:58:00;1;Huchting;Bremen Neuwieder Straße;7.0;68;68
+20240118;22:58:00;1;Huchting;Bremen Schweizer Eck;9.0;18;18
+20240118;22:58:00;1;Huchting;Bremen Graubündener Straße;10.0;50;50
+20240118;22:58:00;1;Huchting;Bremen Kurt-Huber-Straße;16.0;16;16
+20240118;22:58:00;1;Huchting;Bremen Julius-Brecht-Allee;22.0;-19;0
+20240119;00:06:00;39;Weserpark-Süd;Bremen Bf Mahndorf;;0;0
+20240119;00:15:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Lilienthal;;0;0
+20240119;00:15:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;30.0;-30;-30
+20240119;00:15:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;31.0;0;0
+20240119;00:06:00;94;Schwanewede-Nord;Bremen Marßel;;0;0
+20240119;00:06:00;94;Schwanewede-Nord;Bremen Hegeweg;33.0;-30;-30
+20240119;00:06:00;94;Schwanewede-Nord;Bremen Ringofenstraße;34.0;0;0
+20240119;00:06:00;94;Schwanewede-Nord;Schwanewede Insterburger Weg;38.0;-30;-30
+20240119;00:06:00;94;Schwanewede-Nord;Schwanewede Am Markt;39.0;0;0
+20240119;00:09:00;3;Weserwehr;Bremen Gröpelingen;;0;0
+20240119;00:20:00;2E;Sebaldsbrück;Bremen Weserwehr;;0;0
+20240119;00:30:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Arsten;;0;0
+20240119;00:30:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;32.0;-30;-30
+20240119;00:30:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;33.0;0;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Bottroper Straße;6.0;-61;-61
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Hermann-Koenen-Straße;7.0;-64;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Wilhelm-Busch-Weg;8.0;-49;-49
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Im Holter Feld;9.0;-79;-30
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Georg-Gries-Straße;10.0;-29;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Rennplatz;11.0;-26;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Stellichter Straße;12.0;-31;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Wilseder-Berg-Straße;13.0;6;6
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Müdener Straße;14.0;-26;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Julius-Brecht-Allee;15.0;-24;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Steubenstraße;16.0;-23;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Stresemannstraße;17.0;-26;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Stader Straße/Bismarckstraße;18.0;6;6
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Klinikum Bremen-Mitte;20.0;-24;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Dobbenweg;21.0;-110;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Rembertistraße;22.0;-25;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Hauptbahnhof;23.0;-122;0
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Herdentor;24.0;5;5
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Schüsselkorb;25.0;35;35
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Domsheide;26.0;-59;32
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Martinistraße;27.0;63;63
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Radio Bremen/VHS;29.0;19;19
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Doventor;30.0;89;89
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Daniel-von-Büren-Straße;31.0;120;120
+20240118;22:39:00;25;Weidedamm-Süd;Bremen Theodor-Heuss-Allee;32.0;151;151
+20240118;23:06:00;40;Bf Mahndorf / 39 Weserpark-Süd;Bremen Weserwehr;;0;38
+20240118;23:06:00;40;Bf Mahndorf / 39 Weserpark-Süd;Bremen Hannoversche Straße;2.0;39;39
+20240118;23:06:00;40;Bf Mahndorf / 39 Weserpark-Süd;Bremen Christernstraße;4.0;6;6
+20240118;23:23:00;N7;Hauptbahnhof;Bremen Bahnhof Vegesack;;0;0
+20240118;23:23:00;N7;Hauptbahnhof;Bremen Holthorster Weg;5.0;-30;-30
+20240118;23:23:00;N7;Hauptbahnhof;Bremen Zum Kränholm;6.0;0;0
+20240118;23:23:00;N7;Hauptbahnhof;Bremen Karl-Bröger-Straße;27.0;-30;-30
+20240118;23:23:00;N7;Hauptbahnhof;Bremen Gröpelingen;28.0;0;0
+20240118;23:01:00;2;Gröpelingen;Bremen Sebaldsbrück (Bus+Tram);;0;0
+20240118;23:01:00;2;Gröpelingen;Bremen Schloßparkstraße;1.0;-34;0
+20240118;23:01:00;2;Gröpelingen;Bremen Trinidadstraße;2.0;-44;0
+20240118;23:01:00;2;Gröpelingen;Bremen Bahnhof Sebaldsbrück;3.0;-52;0
+20240118;23:01:00;2;Gröpelingen;Bremen Föhrenstraße;4.0;-37;0
+20240118;23:01:00;2;Gröpelingen;Bremen Malerstraße;5.0;-29;0
+20240118;23:01:00;2;Gröpelingen;Bremen Bennigsenstraße;7.0;45;45
+20240118;23:01:00;2;Gröpelingen;Bremen Am Hulsberg;9.0;82;82
+20240118;22:59:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Lilienthal;;0;0
+20240118;22:59:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Carl-Goerdeler-Straße;30.0;-30;-30
+20240118;22:59:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Dietrich-Bonhoeffer-Straße;31.0;0;0
+20240118;23:37:00;27;Hauptbahnhof;Bremen Weidedamm-Nord;;0;0
+20240118;23:37:00;27;Hauptbahnhof;Bremen Rudolf-Alexander-Schröder-Straße;1.0;-30;-30
+20240118;23:37:00;27;Hauptbahnhof;Bremen Ricarda-Huch-Straße;2.0;0;0
+20240118;23:37:00;27;Hauptbahnhof;Bremen Innsbrucker Straße;3.0;-30;-30
+20240118;23:37:00;27;Hauptbahnhof;Bremen Utbremer Ring;4.0;0;0
+20240119;00:49:00;96;Lüssum;Bremen Bahnhof Blumenthal;;0;0
+20240119;00:49:00;96;Lüssum;Bremen Wasserturm;2.0;-30;-30
+20240119;00:49:00;96;Lüssum;Bremen Hakenwehrstraße;3.0;0;0
+20240119;00:47:00;1E;Neue Vahr-Süd / Kurt-Huber-Str.;Bremen Bf Mahndorf;;0;0
+20240119;00:19:00;96;Lüssum;Bremen Bahnhof Blumenthal;;0;0
+20240119;00:19:00;96;Lüssum;Bremen Wasserturm;2.0;-30;-30
+20240119;00:19:00;96;Lüssum;Bremen Hakenwehrstraße;3.0;0;0
+20240119;00:37:00;98;Hammersbeck;Bremen Bahnhof Vegesack;;0;0
