@@ -16,15 +16,16 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     - merged_df (DataFrame): DataFrame mit StopTimeUpdates, die in der trips_bsag_df enthalten sind.
     """
     # Inner Join zwischen stop_time_updates_df und trips_bsag_df
-    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate='many_to_one')
+    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id',
+                         validate='many_to_one')
     return merged_df
+
 
 # Main Funktion
 if __name__ == "__main__":
-
     # URL für die Abfrage der GTFS-Realtime Daten
     gtfsr_url = "https://gtfsr.vbn.de/gtfsr_connect.json"
-    
+
     # Abrufen der GTFS-Realtime Daten
     gtfsr_data = pt_fetch.get_gtfsr_data(gtfsr_url)
 
@@ -52,22 +53,25 @@ if __name__ == "__main__":
     stop_times_bsag_updates['Richtung'] = stop_times_bsag_updates['trip_headsign']
     stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
-   
+
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
-    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(routes_bsag_df.set_index('route_id')['route_short_name'])
-    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(stops_bremen_df.set_index('stop_id')['stop_name'])
-    
+    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(
+        routes_bsag_df.set_index('route_id')['route_short_name'])
+    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(
+        stops_bremen_df.set_index('stop_id')['stop_name'])
+
     # Entfernen der nicht benötigten Spalten
-    columns_to_remove = ['TripId', 'RouteId', 'trip_id','route_id','ScheduleRelationship', 'StopId', 'ScheduleRelationshipStop', 'DepartureDelay', 'ArrivalDelay', 'trip_id', 'route_id', 'trip_headsign','trip_headsign', 'StartTime']
+    columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
+                         'ScheduleRelationshipStop', 'DepartureDelay', 'ArrivalDelay', 'trip_id', 'route_id',
+                         'trip_headsign', 'trip_headsign', 'StartTime']
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Startzeit (Anfanghaltestelle)', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Startzeit (Anfanghaltestelle)', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence',
+                     'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
 
-    #Optional: Speichern des DataFrames als CSV-Datei
+    # Optional: Speichern des DataFrames als CSV-Datei
     stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
-
-    
