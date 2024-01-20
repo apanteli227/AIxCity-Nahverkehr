@@ -42,7 +42,9 @@ def start_weather_process():
     Returns:
     - weather_bremen_df (DataFrame): DataFrame mit den Wetterdaten für Bremen.
     """
-    # API-Key für OpenWeatherMap
+    # API-Key für OpenWeatherMap 
+    # Achtung: API-Key ist vom Account von Emmanuel
+    # Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
     api_key = '131b00cd42bee49451a4c69d496797e1'
 
     # Stadt für die Wetterdaten
