@@ -52,18 +52,19 @@ def extract_stop_time_updates(gtfsr_data):
                         "ScheduleRelationship": trip_update.get('Trip', {}).get('ScheduleRelationship'),
                         "StopId": int(stop_update.get('StopId')),
                         "StopSequence": stop_update.get('StopSequence'),
-                        "ArrivalDelay": stop_update.get('Arrival', {}).get('Delay',0),
-                        "DepartureDelay": int(stop_update.get('Departure', {}).get('Delay',0)),
+                        "ArrivalDelay": stop_update.get('Arrival', {}).get('Delay', 0),
+                        "DepartureDelay": int(stop_update.get('Departure', {}).get('Delay', 0)),
                         "ScheduleRelationshipStop": stop_update.get('ScheduleRelationship')
                     }
                     # Füge den Eintrag der Liste hinzu
                     stop_time_updates.append(stop_info)
-                    
+
         # Gib die Liste zurück
         return stop_time_updates
     else:
         return None
-    
+
+
 def create_stop_time_updates_df(stop_time_updates):
     """
     Diese Funktion erstellt ein DataFrame aus der Liste mit den StopTimeUpdates.
@@ -78,4 +79,4 @@ def create_stop_time_updates_df(stop_time_updates):
         df = pd.DataFrame(stop_time_updates)
         return df
     else:
-        print("Fehler beim Extrahieren der StopTimeUpdates.")    
+        print("Fehler beim Extrahieren der StopTimeUpdates.")

@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: frontend-image
+    ports:
+      - "3000:3000"
+    networks:
+      - my_network
+
+  backend:
+    image: backend-image
+    ports:
+      - "8000:8000"
+    networks:
+      - my_network
+
+  data_collection:
+    image: data-collection-image
+    ports:
+      - "8079:8079"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

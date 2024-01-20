@@ -31,4 +31,5 @@ data/
 .idea/
 .pdm/
 venv/
+venv_data_collection/
 env/
