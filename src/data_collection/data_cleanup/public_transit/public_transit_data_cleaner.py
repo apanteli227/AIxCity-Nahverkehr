@@ -1,6 +1,8 @@
 import public_transit_fetch as pt_fetch
 import id_translation as transl
 import pandas as pd
+from datetime import datetime, time
+import logging
 
 
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
@@ -23,6 +25,11 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
 
 # Main Funktion
 if __name__ == "__main__":
+
+    # Konfiguriere das Logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
+
     # URL für die Abfrage der GTFS-Realtime Daten
     gtfsr_url = "https://gtfsr.vbn.de/gtfsr_connect.json"
 
@@ -37,6 +44,7 @@ if __name__ == "__main__":
 
     # Erstellen der DataFrames zum späteren Filtern Bremer Linien und der Übersetzung der IDs
     result_dict_with_dataframes = transl.process_gtfs_data()
+    logging.info("GTFS-Textdateien gefunden und VErarbeitungsprozess gestartet...")
 
     # Zugriff auf die DataFrames
     stops_bremen_df = result_dict_with_dataframes["stops_bremen_df"]
@@ -49,16 +57,16 @@ if __name__ == "__main__":
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
 
     # Umbenennen der Spalten in verständliche Namen
-    stop_times_bsag_updates['Startzeit (Anfanghaltestelle)'] = stop_times_bsag_updates['StartTime']
+    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = stop_times_bsag_updates['StartTime']
     stop_times_bsag_updates['Richtung'] = stop_times_bsag_updates['trip_headsign']
     stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
 
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
-    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(
-        routes_bsag_df.set_index('route_id')['route_short_name'])
-    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(
-        stops_bremen_df.set_index('stop_id')['stop_name'])
+    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(routes_bsag_df.set_index('route_id')['route_short_name'])
+    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(stops_bremen_df.set_index('stop_id')['stop_name'])
+    
+    logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
 
     # Entfernen der nicht benötigten Spalten
     columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
@@ -67,11 +75,32 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Startzeit (Anfanghaltestelle)', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence',
-                     'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
 
+    # Ermittel das aktuelle Datum und die Uhrzeit
+    actual_datetime = datetime.now()
+
+    # Formatierung der Ausgabe für Datum und Uhrzeit separat
+    actual_date_str = actual_datetime.strftime("%Y-%m-%d")
+    actual_time_str = actual_datetime.strftime("%H:%M:%S")
+
+    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
+    stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
+    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
+
+    
+    # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
+    stop_times_bsag_updates = stop_times_bsag_updates[
+        ((stop_times_bsag_updates['StartDate'] <= actual_date_str) &
+        (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
+        | ((stop_times_bsag_updates['StartDate'] < actual_date_str) &
+        (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
+    ]
+    
+    logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
+    
     # Optional: Speichern des DataFrames als CSV-Datei
     stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)

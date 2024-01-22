@@ -1,5 +1,7 @@
 import requests
 import pandas as pd
+from datetime import datetime
+import logging
 
 
 def get_gtfsr_data(url):
@@ -44,11 +46,20 @@ def extract_stop_time_updates(gtfsr_data):
             # Nur Einträge entnehmen, die nicht ##VDV##COMPOSED in der TripId haben
             if "##VDV##COMPOSED" not in trip_update.get('Trip', {}).get('TripId', ''):
                 for stop_update in stop_time_update:
+
+                    start_date_str = trip_update.get('Trip', {}).get('StartDate', '')
+                    start_time_str = trip_update.get('Trip', {}).get('StartTime', '')
+
+                    # Kombiniere Datum und Uhrzeit zu einem einzigen String
+                    datetime_str = f"{start_date_str} {start_time_str}"
+
+                    # Wandele den kombinierten String in ein datetime-Objekt um
+                    start_datetime = datetime.strptime(datetime_str, '%Y%m%d %H:%M:%S')
                     stop_info = {
                         "TripId": int(trip_update.get('Trip', {}).get('TripId')),
                         "RouteId": int(trip_update.get('Trip', {}).get('RouteId')),
-                        "StartTime": trip_update.get('Trip', {}).get('StartTime'),
-                        "StartDate": trip_update.get('Trip', {}).get('StartDate'),
+                        "StartTime": start_datetime,
+                        "StartDate": start_datetime.date(),
                         "ScheduleRelationship": trip_update.get('Trip', {}).get('ScheduleRelationship'),
                         "StopId": int(stop_update.get('StopId')),
                         "StopSequence": stop_update.get('StopSequence'),
