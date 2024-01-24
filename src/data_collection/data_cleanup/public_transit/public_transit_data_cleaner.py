@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     # Erstellen der DataFrames zum späteren Filtern Bremer Linien und der Übersetzung der IDs
     result_dict_with_dataframes = transl.process_gtfs_data()
-    logging.info("GTFS-Textdateien gefunden und VErarbeitungsprozess gestartet...")
+    logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
 
     # Zugriff auf die DataFrames
     stops_bremen_df = result_dict_with_dataframes["stops_bremen_df"]
