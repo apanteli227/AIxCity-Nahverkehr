@@ -2,8 +2,7 @@ import pandas as pd
 import os
 import logging
 
-
-def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
+def process_gtfs_data(base_path="../resources"):
     """
     Diese Funktion lädt die GTFS-Textdateien aus dem Ressourcen-Ordner ein
     und erstellt fünf DataFrames.

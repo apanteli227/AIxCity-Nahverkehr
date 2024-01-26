@@ -27,11 +27,14 @@ def api_to_dataframe(api_url):
 # Basis-URL für die API-Anfrage
 base_api_url = 'https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point='
 
+# Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
+full_path = os.path.join(os.path.dirname(__file__), "../resources")
+
 # Pfad zur Datei mit den Koordinaten
-file_path = '../resources/stops.txt'
+file_path = os.path.join(full_path, "stops.txt")
 
 # DataFrame aus der Datei lesen (angepasstes Beispiel, bitte anpassen, wenn nötig)
-coordinates_df = pd.read_csv(file_path)  # Hier wird angenommen, dass die Datei tabulatorgetrennt ist
+coordinates_df = pd.read_csv(file_path)
 
 # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
 for index, row in coordinates_df.iterrows():
