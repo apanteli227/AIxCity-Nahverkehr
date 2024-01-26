@@ -1,53 +1,40 @@
 import os
 import requests
 import pandas as pd
-import concurrent.futures
+import public_transit.public_transit_fetch as pt_fetch
 
-def api_to_dataframe(api_url):
-    # API-Anfrage senden und JSON-Daten abrufen
-    response = requests.get(api_url)
-    
-    # Überprüfen, ob die Anfrage erfolgreich war (Status Code 200)
-    if response.status_code == 200:
-        # JSON-Daten aus der Antwort extrahieren
-        json_data = response.json()
+def main(stop_times_bsag_updates):
+
+    #Entferne alle Spalten außer die Spalte "Haltestelle"
+    stop_times_bsag_updates = stop_times_bsag_updates.drop(columns=["StartDate","Startzeit an der Anfangshaltestelle","Linie","Richtung","StopSequence","Ankunftsverspaetung in Sek.","Abfahrtsverspaetung in Sek."])
+
+    # Basis-URL für die API-Anfrage
+    base_api_url = 'https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point='
+
+    # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
+    full_path = os.path.join(os.path.dirname(__file__), "../resources")
+
+    # Pfad zur Datei mit den Koordinaten
+    file_path = os.path.join(full_path, "stops.txt")
+
+    # DataFrame aus der Datei lesen (angepasstes Beispiel, bitte anpassen, wenn nötig)
+    coordinates_df = pd.read_csv(file_path)
+
+    # Führe einen Inner Join zwischen stops.txt und stop_times_bsag_updates durch. Join auf die Spalte "Haltestelle" und "stop_name"
+    coordinates_df = pd.merge(coordinates_df, stop_times_bsag_updates, left_on="stop_name", right_on="Haltestelle", how="inner")
+
+    # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
+    for index, row in coordinates_df.iterrows():
+        latitude = row['stop_lat']
+        longitude = row['stop_lon']
         
-        # DataFrame erstellen
-        dataframe = pd.DataFrame(json_data)
+        # Füge die Koordinaten zur Basis-URL hinzu
+        api_endpoint = f"{base_api_url}{latitude},{longitude}"
         
-        # DataFrame in eine JSON-Datei speichern (optional)
-        dataframe.to_json("output.json", orient="records")
+        # Funktion aufrufen und DataFrame erhalten
+        result_dataframe = api_to_dataframe(api_endpoint)
         
-        return dataframe
-    else:
-        # Falls die Anfrage nicht erfolgreich war, eine Fehlermeldung ausgeben
-        print(f"Fehler bei der API-Anfrage. Status Code: {response.status_code}")
-        return None
-
-# Basis-URL für die API-Anfrage
-base_api_url = 'https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point='
-
-# Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
-full_path = os.path.join(os.path.dirname(__file__), "../resources")
-
-# Pfad zur Datei mit den Koordinaten
-file_path = os.path.join(full_path, "stops.txt")
-
-# DataFrame aus der Datei lesen (angepasstes Beispiel, bitte anpassen, wenn nötig)
-coordinates_df = pd.read_csv(file_path)
-
-# Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
-for index, row in coordinates_df.iterrows():
-    latitude = row['stop_lat']
-    longitude = row['stop_lon']
-    
-    # Füge die Koordinaten zur Basis-URL hinzu
-    api_endpoint = f"{base_api_url}{latitude},{longitude}"
-    
-    # Funktion aufrufen und DataFrame erhalten
-    result_dataframe = api_to_dataframe(api_endpoint)
-    
-    # Überprüfen, ob ein DataFrame erstellt wurde
-    if result_dataframe is not None:
-        # DataFrame anzeigen
-        print(result_dataframe)
+        # Überprüfen, ob ein DataFrame erstellt wurde
+        if result_dataframe is not None:
+            # DataFrame anzeigen
+            print(result_dataframe)

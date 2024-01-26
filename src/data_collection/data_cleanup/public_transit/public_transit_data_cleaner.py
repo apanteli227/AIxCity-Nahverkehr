@@ -1,5 +1,6 @@
 import public_transit_fetch as pt_fetch
 import id_translation as transl
+import traffic_data_cleaner as traffic_data
 import pandas as pd
 from datetime import datetime, time
 import logging
@@ -104,3 +105,10 @@ if __name__ == "__main__":
     
     # Optional: Speichern des DataFrames als CSV-Datei
     stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+
+    # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter
+    # Dieser Prozess wird parallel zum aktuellen Prozess ausgeführt
+    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...") 
+    traffic_data.main(stop_times_bsag_updates)
+    
+
