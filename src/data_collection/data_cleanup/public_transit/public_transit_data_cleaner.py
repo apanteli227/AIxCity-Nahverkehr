@@ -65,6 +65,12 @@ if __name__ == "__main__":
     stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
 
+    # Einfügen weiterer relevanter Spalten
+    # Aktuelle Uhrzeit
+    stop_times_bsag_updates['Aktuelle Uhrzeit'] = datetime.now().time().strftime("%H:%M:%S")
+    # Aktueller Wochentag
+    stop_times_bsag_updates['Wochentag'] = datetime.now().strftime("%A")
+
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
     stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(routes_bsag_df.set_index('route_id')['route_short_name'])
     stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(stops_bremen_df.set_index('stop_id')['stop_name'])
@@ -78,7 +84,7 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Aktuelle Uhrzeit','Wochentag','Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
