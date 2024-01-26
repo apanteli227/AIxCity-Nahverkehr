@@ -1,7 +1,9 @@
 import os
 import requests
 import pandas as pd
-import public_transit_fetch as pt_fetch
+import sys
+sys.path.append('../')
+from public_transit import public_transit_fetch as pt_fetch
 
 def main(stop_times_bsag_updates):
 
@@ -19,6 +21,9 @@ def main(stop_times_bsag_updates):
 
     # DataFrame aus der Datei lesen (angepasstes Beispiel, bitte anpassen, wenn nötig)
     coordinates_df = pd.read_csv(file_path)
+
+    #coordinates_df.to_csv("coordinates_df.csv", index=False)
+    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
 
     # Führe einen Inner Join zwischen stops.txt und stop_times_bsag_updates durch. Join auf die Spalte "Haltestelle" und "stop_name"
     coordinates_df = pd.merge(coordinates_df, stop_times_bsag_updates, left_on="stop_name", right_on="Haltestelle", how="inner")

@@ -1,8 +1,8 @@
 import public_transit_fetch as pt_fetch
 import id_translation as transl
 import sys
-sys.path.append('../traffic')  # Passe den Pfad entsprechend an
-from ..traffic import traffic_data_cleaner
+sys.path.append('../')
+from traffic import traffic_data_cleaner as traffic_data_clean
 import pandas as pd
 from datetime import datetime, time
 import logging
@@ -111,6 +111,6 @@ if __name__ == "__main__":
     # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter
     # Dieser Prozess wird parallel zum aktuellen Prozess ausgeführt
     logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...") 
-    traffic_data.main(stop_times_bsag_updates)
+    traffic_data_clean.main(stop_times_bsag_updates)
     
 
