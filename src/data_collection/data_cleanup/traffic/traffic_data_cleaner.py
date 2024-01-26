@@ -42,12 +42,15 @@ def main(stop_times_bsag_updates):
     # Entferne alle Haltestellen aus coordinates_df, die in der Spalte "Nicht relevante Haltestellen" in not_used_stops_df vorkommen
     coordinates_df = coordinates_df[~coordinates_df.stop_name.isin(not_used_stops_df["Nicht relevante Haltestellen"])]
 
+    # Spalte stop_name entfernen
+    traffic_data_bsag_updates = coordinates_df.drop(columns=["stop_name"])
+
     logging.info("Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
     logging.info("Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
     logging.info("Dieser Prozess kann bis zu 5 Minuten dauern...")   
     
     # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
-    for index, row in coordinates_df.iterrows():
+    for index, row in traffic_data_bsag_updates.iterrows():
         latitude = row['stop_lat']
         longitude = row['stop_lon']
         
@@ -62,12 +65,16 @@ def main(stop_times_bsag_updates):
         free_flow_speed = result_dataframe["flowSegmentData"]["freeFlowSpeed"]
     
         # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle Koordianten eintragen
-        coordinates_df.loc[index, 'currentSpeed'] = current_speed
-        coordinates_df.loc[index, 'freeFlowSpeed'] = free_flow_speed
+        traffic_data_bsag_updates.loc[index, 'currentSpeed'] = current_speed
+        traffic_data_bsag_updates.loc[index, 'freeFlowSpeed'] = free_flow_speed
+
+        # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
+        traffic_data_bsag_updates["Durchschnittliche Verkehrsauslastung in %"] = abs((traffic_data_bsag_updates["currentSpeed"] / traffic_data_bsag_updates["freeFlowSpeed"]) - 1).round(4)
     	
         # Gebe mir die aktuelle Zeile aus
-        print(coordinates_df.loc[index])
+        print(traffic_data_bsag_updates.loc[index])
+
 
     logging.info("Verkehrsdaten wurden ermittelt.")
-    coordinates_df.to_csv("coordinates_df.csv", index=False)
+    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
         
