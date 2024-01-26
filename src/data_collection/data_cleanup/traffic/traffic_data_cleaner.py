@@ -2,8 +2,10 @@ import os
 import requests
 import pandas as pd
 import sys
+import logging
 sys.path.append('../')
 from public_transit import public_transit_fetch as pt_fetch
+from traffic import traffic_data_fetch as td_fetch
 
 def main(stop_times_bsag_updates):
 
@@ -40,21 +42,32 @@ def main(stop_times_bsag_updates):
     # Entferne alle Haltestellen aus coordinates_df, die in der Spalte "Nicht relevante Haltestellen" in not_used_stops_df vorkommen
     coordinates_df = coordinates_df[~coordinates_df.stop_name.isin(not_used_stops_df["Nicht relevante Haltestellen"])]
 
-    coordinates_df.to_csv("coordinates_df.csv", index=False)
-    """
+    logging.info("Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
+    logging.info("Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
+    logging.info("Dieser Prozess kann bis zu 5 Minuten dauern...")   
+    
     # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
     for index, row in coordinates_df.iterrows():
         latitude = row['stop_lat']
         longitude = row['stop_lon']
         
         # Füge die Koordinaten zur Basis-URL hinzu
-        #api_endpoint = f"{base_api_url}{latitude},{longitude}"
+        api_endpoint = f"{base_api_url}{latitude},{longitude}"
         
         # Funktion aufrufen und DataFrame erhalten
-        #result_dataframe = api_to_dataframe(api_endpoint)
+        result_dataframe = td_fetch.api_to_dataframe(api_endpoint)
         
-        # Überprüfen, ob ein DataFrame erstellt wurde
-        #if result_dataframe is not None:
-            # DataFrame anzeigen
-         #   print(result_dataframe)
-        """
+        # Aus DataFrame currentSpeed und freeFlowSpeed entnehmen
+        current_speed = result_dataframe["flowSegmentData"]["currentSpeed"]
+        free_flow_speed = result_dataframe["flowSegmentData"]["freeFlowSpeed"]
+    
+        # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle Koordianten eintragen
+        coordinates_df.loc[index, 'currentSpeed'] = current_speed
+        coordinates_df.loc[index, 'freeFlowSpeed'] = free_flow_speed
+    	
+        # Gebe mir die aktuelle Zeile aus
+        print(coordinates_df.loc[index])
+
+    logging.info("Verkehrsdaten wurden ermittelt.")
+    coordinates_df.to_csv("coordinates_df.csv", index=False)
+        

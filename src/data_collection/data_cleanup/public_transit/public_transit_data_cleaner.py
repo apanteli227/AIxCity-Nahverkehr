@@ -94,7 +94,6 @@ if __name__ == "__main__":
     stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
     stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
-    
     # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
     stop_times_bsag_updates = stop_times_bsag_updates[
         ((stop_times_bsag_updates['StartDate'] <= actual_date_str) &

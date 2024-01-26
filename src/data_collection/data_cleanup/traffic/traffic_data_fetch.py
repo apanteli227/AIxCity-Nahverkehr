@@ -14,9 +14,6 @@ def api_to_dataframe(api_url):
         # DataFrame erstellen
         dataframe = pd.DataFrame(json_data)
         
-        # DataFrame in eine JSON-Datei speichern (optional)
-        dataframe.to_json("output.json", orient="records")
-        
         return dataframe
     else:
         # Falls die Anfrage nicht erfolgreich war, eine Fehlermeldung ausgeben
