@@ -1,7 +1,8 @@
 import requests
 import pandas as pd
 import logging
-
+import weather_cleaner as wc
+import datetime
 
 def get_weather_data(api_key, city):
     """
@@ -65,25 +66,19 @@ def start_weather_process():
             wind_speed = weather_data['wind']['speed']
         else:
             wind_speed = None
-
-        # Abrufen der Wetterwarnungen
-        warnings_response = requests.get(f"http://api.openweathermap.org/data/3.0/warnings?appid={api_key}&q={city}")
-        warnings_data = warnings_response.json()
         
-        # Prüfen, ob Wetterwarnungen verfügbar sind
-        if 'warnings' in warnings_data:
-            weather_warnings = warnings_data['warnings']
-        else:
-            weather_warnings = None
+        weather_warning = wc.get_weather_warning()
 
         # Erstellen eines DataFrames mit den erstellten Wetterdaten
         weather_bremen_df = pd.DataFrame({
-            'City': [city],
-            'Temperature (Celsius)': [temperature],
-            'Humidity (%)': [humidity],
-            'Description': [description],
-            'Wind Speed (m/s)': [wind_speed],
-            'Weather Warnings': [weather_warnings]
+            'Stadt': [city],
+            'Datum': [datetime.date.today()],
+            'Uhrzeit': [datetime.datetime.now().strftime("%H:%M")],
+            'Temperature in Celsius': [temperature],
+            'Feuchtigkeit (%)': [humidity],
+            'Wetterbeschreibung': [description],
+            'Windgeschwindigkeit (m/s)': [wind_speed],
+            'Wetterwarnungen': [weather_warning]
         })
 
         #Optional: Speichern des Wetter-DataFrames als CSV-Datei
