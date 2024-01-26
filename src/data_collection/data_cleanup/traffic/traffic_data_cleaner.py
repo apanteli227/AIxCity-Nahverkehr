@@ -1,7 +1,7 @@
 import os
 import requests
 import pandas as pd
-import public_transit.public_transit_fetch as pt_fetch
+import public_transit_fetch as pt_fetch
 
 def main(stop_times_bsag_updates):
 
@@ -29,12 +29,12 @@ def main(stop_times_bsag_updates):
         longitude = row['stop_lon']
         
         # Füge die Koordinaten zur Basis-URL hinzu
-        api_endpoint = f"{base_api_url}{latitude},{longitude}"
+        #api_endpoint = f"{base_api_url}{latitude},{longitude}"
         
         # Funktion aufrufen und DataFrame erhalten
-        result_dataframe = api_to_dataframe(api_endpoint)
+        #result_dataframe = api_to_dataframe(api_endpoint)
         
         # Überprüfen, ob ein DataFrame erstellt wurde
-        if result_dataframe is not None:
+        #if result_dataframe is not None:
             # DataFrame anzeigen
-            print(result_dataframe)
+         #   print(result_dataframe)

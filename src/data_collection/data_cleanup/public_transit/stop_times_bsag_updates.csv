@@ -1,0 +1,68 @@
+StartDate,Startzeit an der Anfangshaltestelle,Linie,Richtung,Haltestelle,StopSequence,Ankunftsverspaetung in Sek.,Abfahrtsverspaetung in Sek.
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Hauptbahnhof,,0,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Messe-Zentrum,1.0,30,30
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Bürgerpark,2.0,0,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Findorffallee,3.0,1,1
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Holsteiner Straße,9.0,31,31
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Lange Reihe,12.0,48,48
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Waller Ring,13.0,45,75
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Emder Straße,14.0,45,45
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Use Akschen,16.0,13,13
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Gröpelingen,17.0,-91,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Karl-Bröger-Straße,18.0,47,47
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen DIAKO Bremen,19.0,17,17
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Am Fuchsberg,20.0,47,47
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Ritterhuder Heerstraße,21.0,10,10
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen-Burg(Bus),28.0,-1,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Stader Landstraße,29.0,9,9
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Stockholmer Straße,32.0,-26,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Marßel,33.0,-65,-65
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Helsingborger Straße,34.0,-65,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Burgdammer Postweg,35.0,-66,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Am Heidbergstift,36.0,-67,0
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Am Bahnhof St. Magnus,41.0,-30,-30
+2024-01-26,00:30:00,N7,Betriebshof Blumenthal,Bremen Tannenhof,42.0,0,0
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Sebaldsbrück (Bus+Tram),,0,75
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Schloßparkstraße,1.0,106,106
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Trinidadstraße,2.0,87,87
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Bennigsenstraße,7.0,50,50
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Am Hulsberg,9.0,9,9
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Am Dobben,14.0,-84,0
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Rembertistraße,15.0,18,18
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Hauptbahnhof,16.0,-21,76
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Falkenstraße,17.0,108,108
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Doventorsteinweg,19.0,148,148
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Haferkamp,20.0,111,111
+2024-01-26,01:01:00,N10,Gröpelingen,Bremen Hansestraße,21.0,82,82
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Hauptbahnhof,,0,97
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Messe-Zentrum,1.0,136,136
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Bürgerpark,2.0,106,106
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Findorffallee,3.0,136,136
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Lange Reihe,12.0,106,106
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Waller Ring,13.0,136,136
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Gröpelingen,17.0,136,106
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen DIAKO Bremen,19.0,76,76
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Am Fuchsberg,20.0,106,106
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Am Bahnhof St. Magnus,41.0,76,76
+2024-01-26,01:30:00,N7,Betriebshof Blumenthal,Bremen Tannenhof,42.0,106,106
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen BSAG-Zentrum,,0,0
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Schleiermacherstraße,1.0,-53,0
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Gastfeldstraße,2.0,-31,0
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Wilhelm-Kaisen-Brücke,4.0,30,30
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Schüsselkorb,6.0,64,64
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Herdentor,7.0,20,20
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Hauptbahnhof,8.0,20,0
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Rembertistraße,9.0,48,78
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Parkstraße,11.0,116,116
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Hollerallee,12.0,155,155
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,22.0,125,125
+2024-01-26,01:12:00,N1,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,23.0,155,155
+2024-01-26,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Rembertistraße,,0,92
+2024-01-26,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Hauptbahnhof,1.0,55,32
+2024-01-26,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Herdentor,2.0,96,96
+2024-01-26,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Schüsselkorb,3.0,81,81
+2024-01-26,01:21:00,6E,Neustadt / BSAG-Zentrum,Bremen Domsheide,4.0,42,42
+2024-01-26,01:05:00,N10,Sebaldsbrück,Bremen Gröpelingen,,0,0
+2024-01-26,01:15:00,6E,Neustadt / BSAG-Zentrum,Lilienthal,,0,0
+2024-01-26,01:15:00,6E,Neustadt / BSAG-Zentrum,Bremen Herdentor,31.0,-30,-30
+2024-01-26,01:15:00,6E,Neustadt / BSAG-Zentrum,Bremen Schüsselkorb,32.0,0,0

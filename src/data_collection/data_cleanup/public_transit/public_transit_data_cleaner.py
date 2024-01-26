@@ -1,6 +1,8 @@
 import public_transit_fetch as pt_fetch
 import id_translation as transl
-import traffic_data_cleaner as traffic_data
+import sys
+sys.path.append('../traffic')  # Passe den Pfad entsprechend an
+from ..traffic import traffic_data_cleaner
 import pandas as pd
 from datetime import datetime, time
 import logging
