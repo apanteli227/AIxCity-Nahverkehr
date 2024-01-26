@@ -46,29 +46,33 @@ def extract_stop_time_updates(gtfsr_data):
             # Nur Einträge entnehmen, die nicht ##VDV##COMPOSED in der TripId haben
             if "##VDV##COMPOSED" not in trip_update.get('Trip', {}).get('TripId', ''):
                 for stop_update in stop_time_update:
+                     
+                     # Nur Einträge entnehmen, deren stop_id nicht mit "de" beginnt
+                     stop_id = stop_update.get('StopId', '')
+                     if not stop_id.startswith("de"):
 
-                    start_date_str = trip_update.get('Trip', {}).get('StartDate', '')
-                    start_time_str = trip_update.get('Trip', {}).get('StartTime', '')
+                        start_date_str = trip_update.get('Trip', {}).get('StartDate', '')
+                        start_time_str = trip_update.get('Trip', {}).get('StartTime', '')
 
-                    # Kombiniere Datum und Uhrzeit zu einem einzigen String
-                    datetime_str = f"{start_date_str} {start_time_str}"
+                        # Kombiniere Datum und Uhrzeit zu einem einzigen String
+                        datetime_str = f"{start_date_str} {start_time_str}"
 
-                    # Wandele den kombinierten String in ein datetime-Objekt um
-                    start_datetime = datetime.strptime(datetime_str, '%Y%m%d %H:%M:%S')
-                    stop_info = {
-                        "TripId": int(trip_update.get('Trip', {}).get('TripId')),
-                        "RouteId": int(trip_update.get('Trip', {}).get('RouteId')),
-                        "StartTime": start_datetime,
-                        "StartDate": start_datetime.date(),
-                        "ScheduleRelationship": trip_update.get('Trip', {}).get('ScheduleRelationship'),
-                        "StopId": int(stop_update.get('StopId')),
-                        "StopSequence": stop_update.get('StopSequence'),
-                        "ArrivalDelay": stop_update.get('Arrival', {}).get('Delay', 0),
-                        "DepartureDelay": int(stop_update.get('Departure', {}).get('Delay', 0)),
-                        "ScheduleRelationshipStop": stop_update.get('ScheduleRelationship')
-                    }
-                    # Füge den Eintrag der Liste hinzu
-                    stop_time_updates.append(stop_info)
+                        # Wandele den kombinierten String in ein datetime-Objekt um
+                        start_datetime = datetime.strptime(datetime_str, '%Y%m%d %H:%M:%S')
+                        stop_info = {
+                            "TripId": int(trip_update.get('Trip', {}).get('TripId')),
+                            "RouteId": trip_update.get('Trip', {}).get('RouteId'),
+                            "StartTime": start_datetime,
+                            "StartDate": start_datetime.date(),
+                            "ScheduleRelationship": trip_update.get('Trip', {}).get('ScheduleRelationship'),
+                            "StopId": int(stop_update.get('StopId')),
+                            "StopSequence": stop_update.get('StopSequence'),
+                            "ArrivalDelay": stop_update.get('Arrival', {}).get('Delay', 0),
+                            "DepartureDelay": int(stop_update.get('Departure', {}).get('Delay', 0)),
+                            "ScheduleRelationshipStop": stop_update.get('ScheduleRelationship')
+                        }
+                        # Füge den Eintrag der Liste hinzu
+                        stop_time_updates.append(stop_info)
 
         # Gib die Liste zurück
         return stop_time_updates

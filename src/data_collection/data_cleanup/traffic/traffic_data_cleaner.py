@@ -16,18 +16,32 @@ def main(stop_times_bsag_updates):
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     full_path = os.path.join(os.path.dirname(__file__), "../resources")
 
-    # Pfad zur Datei mit den Koordinaten
+    # Pfad zur Datei stops.txt mit den Haltestellenkoordinaten
     file_path = os.path.join(full_path, "stops.txt")
 
-    # DataFrame aus der Datei lesen (angepasstes Beispiel, bitte anpassen, wenn nötig)
+    # Pfad zur Datei not_used_stops.txt mit den Haltestellen, die nicht relevant für den Verkehr sind
+    not_used_stops = os.path.join(full_path, "not_used_stops.csv")
+
+    # DataFrame aus der Datei stops.txt erstellen
     coordinates_df = pd.read_csv(file_path)
 
-    #coordinates_df.to_csv("coordinates_df.csv", index=False)
-    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    # DataFrame aus der Datei not_used_stops.txt erstellen
+    not_used_stops_df = pd.read_csv(not_used_stops)
 
     # Führe einen Inner Join zwischen stops.txt und stop_times_bsag_updates durch. Join auf die Spalte "Haltestelle" und "stop_name"
     coordinates_df = pd.merge(coordinates_df, stop_times_bsag_updates, left_on="stop_name", right_on="Haltestelle", how="inner")
+    
+    # Aus DataFrame alle Spalten löschen außer der stop_name, stop_lat und stop_lon
+    coordinates_df = coordinates_df.drop(columns=["stop_id","stop_code","stop_desc","location_type","parent_station","wheelchair_boarding","platform_code","zone_id"])
 
+    # Duplikate aus dem DataFrame in stop_names entfernen
+    coordinates_df = coordinates_df.drop_duplicates(subset=["stop_name"])
+
+    # Entferne alle Haltestellen aus coordinates_df, die in der Spalte "Nicht relevante Haltestellen" in not_used_stops_df vorkommen
+    coordinates_df = coordinates_df[~coordinates_df.stop_name.isin(not_used_stops_df["Nicht relevante Haltestellen"])]
+
+    coordinates_df.to_csv("coordinates_df.csv", index=False)
+    """
     # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
     for index, row in coordinates_df.iterrows():
         latitude = row['stop_lat']
@@ -43,3 +57,4 @@ def main(stop_times_bsag_updates):
         #if result_dataframe is not None:
             # DataFrame anzeigen
          #   print(result_dataframe)
+        """
