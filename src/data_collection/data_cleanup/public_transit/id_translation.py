@@ -120,7 +120,7 @@ def process_gtfs_data(base_path="../resources"):
     # Filtern der Transfers der BSAG, welche auch eine entsprechende Stop-ID in der Stop-Tabelle besitzen
     transfer_bsag_df = filtered_transfer_df[
         filtered_transfer_df["from_stop_id"].isin(stops_bremen_df["stop_id"]) & filtered_transfer_df["to_stop_id"].isin(
-            stops_bremen_df["stop_id"])]
+            stops_bremen_df["stop_id"])]    
 
     # Rückgabe des Dictionarys mit den DataFrames
     return {

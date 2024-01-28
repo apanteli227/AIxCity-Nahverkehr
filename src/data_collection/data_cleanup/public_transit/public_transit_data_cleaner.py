@@ -59,11 +59,18 @@ if __name__ == "__main__":
     # Entferne alle StopTimeUpdates, die nicht in der trips_bsag_df enthalten sind
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
 
+    # Datei mit Anzahl der Haltestellen pro Linie einlesen
+    relevant_routes_stops_bsag = pd.read_csv("../resources/relevant_routes_stops_bsag.csv",delimiter=';')
+
+    # Merge von stop_times_bsag_updates und relevant_routes_stops_bsag, um die Anzahl der Haltestellen zu erhalten
+    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, relevant_routes_stops_bsag, how='inner', left_on='route_id', right_on='route_id')
+
     # Umbenennen der Spalten in verständliche Namen
     stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = stop_times_bsag_updates['StartTime']
     stop_times_bsag_updates['Richtung'] = stop_times_bsag_updates['trip_headsign']
     stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
+    stop_times_bsag_updates['Anzahl Haltestellen'] = stop_times_bsag_updates['number_stops']
 
     # Einfügen weiterer relevanter Spalten
     # Aktuelle Uhrzeit
@@ -84,7 +91,7 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Aktuelle Uhrzeit','Wochentag','Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Aktuelle Uhrzeit','Wochentag','Startzeit an der Anfangshaltestelle', 'Linie','Anzahl Haltestellen','Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
