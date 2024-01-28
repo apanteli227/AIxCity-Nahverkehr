@@ -1,236 +1,224 @@
-stop_lat,stop_lon,Aktuelle Uhrzeit,Wochentag,Anzahl Haltestellen,Haltestelle,currentSpeed,freeFlowSpeed,Durchschnittliche Verkehrsauslastung in %
-53.073972,8.852545,22:11:56,Sunday,39.0,Bremen Stader Straße/Bismarckstraße,16.0,16.0,0.0
-53.082482,8.837204,22:11:56,Sunday,44.0,Bremen St. Joseph-Stift,36.0,36.0,0.0
-53.170893,8.702791,22:11:56,Sunday,58.0,Bremen Goldbergplatz,44.0,44.0,0.0
-53.242891,8.590647,22:11:56,Sunday,48.0,Schwanewede Am Spreeken,64.0,64.0,0.0
-53.126404,8.747009,22:11:56,Sunday,58.0,Bremen DIAKO Bremen,48.0,48.0,0.0
-53.183024,8.579728,22:11:56,Sunday,58.0,Bremen Bahnhof Blumenthal,45.0,45.0,0.0
-53.17448,8.618157,22:11:56,Sunday,48.0,Bremen Gustav-Heinemann-Bürgerhaus,36.0,36.0,0.0
-53.057907,8.95105,22:11:56,Sunday,16.0,Bremen Osterholzer Möhlendamm,44.0,44.0,0.0
-53.053257,8.962122,22:11:56,Sunday,44.0,Bremen Werner-Steenken-Straße,40.0,40.0,0.0
-53.05985,8.914326,22:11:56,Sunday,16.0,Bremen Osterholzer Friedhof,47.0,47.0,0.0
-53.062197,8.887576,22:11:56,Sunday,33.0,Bremen Bahnhof Sebaldsbrück,26.0,26.0,0.0
-53.059469,8.899647,22:11:56,Sunday,29.0,Bremen Sebaldsbrück (Bus+Tram),48.0,48.0,0.0
-53.076869,8.837379,22:11:56,Sunday,39.0,Bremen Klinikum Bremen-Mitte,33.0,41.0,0.1951
-53.06431,8.877295,22:11:56,Sunday,29.0,Bremen Föhrenstraße,24.0,24.0,0.0
-53.049065,8.960619,22:11:56,Sunday,44.0,Bremen Weserpark,46.0,46.0,0.0
-53.069665,8.787596,22:11:56,Sunday,53.0,Bremen Pappelstraße,30.0,30.0,0.0
-53.23443,8.515404,22:11:56,Sunday,58.0,Neuenkirchen(Schwanewede) Marktplatz,65.0,65.0,0.0
-53.233095,8.525564,22:11:56,Sunday,58.0,Neuenkirchen(Schwanewede) Vorbruch,64.0,64.0,0.0
-53.173747,8.648916,22:11:56,Sunday,58.0,Bremen Bahnhof Schönebeck,46.0,46.0,0.0
-53.174692,8.669639,22:11:56,Sunday,58.0,Bremen Am Bahnhof St. Magnus,46.0,46.0,0.0
-53.133632,8.736583,22:11:56,Sunday,58.0,Bremen Ritterhuder Heerstraße,37.0,37.0,0.0
-53.151844,8.7084,22:11:56,Sunday,58.0,Bremen An Smidts Park,44.0,44.0,0.0
-53.167533,8.702409,22:11:56,Sunday,48.0,Bremen Stader Landstraße,44.0,44.0,0.0
-53.171674,8.621464,22:11:56,Sunday,58.0,Bremen Gerhard-Rohlfs-Straße,39.0,39.0,0.0
-53.050535,8.853241,22:11:56,Sunday,53.0,Bremen Friedrich-Engels-Straße,41.0,41.0,0.0
-53.061065,8.786174,22:11:56,Sunday,25.0,Bremen BSAG-Zentrum,23.0,23.0,0.0
-53.037377,8.822212,22:11:56,Sunday,53.0,Bremen Klinikum Links der Weser,40.0,40.0,0.0
-53.091991,8.920181,22:11:56,Sunday,23.0,Bremen Rockwinkeler Heerstraße,48.0,48.0,0.0
-53.072578,8.857605,22:11:56,Sunday,39.0,Bremen Stresemannstraße,37.0,37.0,0.0
-53.061129,8.963829,22:11:56,Sunday,44.0,Bremen Tenever-Zentrum,40.0,40.0,0.0
-53.111923,8.849904,22:11:56,Sunday,26.0,Bremen Wilhelm-Herbst-Straße,52.0,52.0,0.0
-53.072617,8.819835,22:11:56,Sunday,29.0,Bremen Ulrichsplatz,22.0,22.0,0.0
-53.190115,8.543273,22:11:56,Sunday,58.0,Bremen Buschdeel,53.0,53.0,0.0
-53.092897,8.810399,22:11:56,Sunday,53.0,Bremen Eickedorfer Straße,39.0,39.0,0.0
-53.073048,8.924736,22:11:56,Sunday,39.0,Bremen Einkaufszentrum Blockdiek,42.0,42.0,0.0
-53.22748,8.511132,22:11:56,Sunday,58.0,Bremen Moorstücke,65.0,65.0,0.0
-53.232616,8.513683,22:11:56,Sunday,58.0,Neuenkirchen(Schwanewede) Landwehr,64.0,64.0,0.0
-53.030451,8.845611,22:11:56,Sunday,53.0,Bremen In der Laake,39.0,39.0,0.0
-53.074048,8.947463,22:11:56,Sunday,44.0,Bremen Ellenerbrokstraße,36.0,36.0,0.0
-53.101724,8.778428,22:11:56,Sunday,53.0,Bremen Lange Reihe,23.0,23.0,0.0
-53.094547,8.802868,22:11:56,Sunday,26.0,Bremen Landshuter Straße,38.0,38.0,0.0
-53.044264,8.952185,22:11:56,Sunday,44.0,Bremen Nußhorn,47.0,47.0,0.0
-53.094724,8.797048,22:11:56,Sunday,26.0,Bremen Nürnberger Straße,66.0,66.0,0.0
-53.082209,8.854479,22:11:56,Sunday,44.0,Bremen Kurfürstenallee,35.0,35.0,0.0
-53.104354,8.816635,22:11:56,Sunday,26.0,Bremen Krönkeskamp,39.0,39.0,0.0
-53.058804,8.94127,22:11:56,Sunday,16.0,Bremen Lachmundsdamm,44.0,44.0,0.0
-53.178992,8.594592,22:11:56,Sunday,48.0,Bremen Margaretenallee,37.0,53.0,0.3019
-53.067635,8.862488,22:11:56,Sunday,29.0,Bremen Ludwig-Quidde-Straße,33.0,33.0,0.0
-53.063183,8.943653,22:11:56,Sunday,16.0,Bremen Am Siek,39.0,39.0,0.0
-53.095439,8.929975,22:11:56,Sunday,25.0,Bremen Am Querkamp,46.0,46.0,0.0
-53.181419,8.573693,22:11:56,Sunday,58.0,Bremen-Blumenthal Markt,48.0,48.0,0.0
-53.078187,8.911485,22:11:56,Sunday,44.0,Bremen Kurt-Huber-Straße,90.0,90.0,0.0
-53.068003,8.933838,22:11:56,Sunday,23.0,Bremen Am Hallacker,36.0,36.0,0.0
-53.205563,8.518154,22:11:56,Sunday,58.0,Bremen Bahnhof Farge,50.0,50.0,0.0
-53.063491,8.867964,22:11:56,Sunday,29.0,Bremen Weserwehr,40.0,40.0,0.0
-53.07121,8.85063,22:11:56,Sunday,29.0,Bremen Bei den Drei Pfählen,28.0,28.0,0.0
-53.09323,8.933031,22:11:56,Sunday,25.0,Bremen Höpkens Ruh,44.0,44.0,0.0
-53.107559,8.817532,22:11:56,Sunday,26.0,Bremen Umspannwerk,39.0,39.0,0.0
-53.099801,8.886046,22:11:56,Sunday,25.0,Bremen Wilhelm-Röntgen-Straße,46.0,46.0,0.0
-53.079041,8.885502,22:11:56,Sunday,44.0,Bremen Wilhelm-Leuschner-Straße,35.0,35.0,0.0
-53.071526,8.891394,22:11:56,Sunday,39.0,Bremen Georg-Gries-Straße,49.0,49.0,0.0
-53.067212,8.854328,22:11:56,Sunday,29.0,Bremen Georg-Bitter-Straße,33.0,33.0,0.0
-53.033976,8.830721,22:11:56,Sunday,53.0,Bremen Gemeinschaftszentrum Obervieland,38.0,38.0,0.0
-53.100023,8.902449,22:11:56,Sunday,25.0,Bremen Apfelallee,41.0,41.0,0.0
-53.059407,8.923097,22:11:56,Sunday,25.0,Bremen An der Kämenade,49.0,49.0,0.0
-53.167736,8.709153,22:11:56,Sunday,48.0,Bremen Beckers Barg,47.0,47.0,0.0
-53.192782,8.534216,22:11:56,Sunday,58.0,Bremen An der Amtsweide,51.0,51.0,0.0
-53.07149,8.886515,22:11:56,Sunday,39.0,Bremen Rennplatz,49.0,49.0,0.0
-53.207915,8.514131,22:11:56,Sunday,58.0,Bremen Wilhelm-Brandhorst-Straße,50.0,50.0,0.0
-53.11197,8.820089,22:11:56,Sunday,26.0,Bremen Wetterungsweg,52.0,52.0,0.0
-53.099687,8.807555,22:11:56,Sunday,53.0,Bremen Fürther Straße,38.0,38.0,0.0
-53.218184,8.509509,22:11:56,Sunday,58.0,Bremen Rekumer Siel,49.0,49.0,0.0
-53.077599,8.94024,22:11:56,Sunday,25.0,Bremen Schevemoorer Landstraße,44.0,44.0,0.0
-53.042111,8.9124,22:11:56,Sunday,19.0,Bremen Sollingstraße,43.0,43.0,0.0
-53.090669,8.92496,22:11:56,Sunday,23.0,Bremen Simon-Hermann-Post-Weg,48.0,48.0,0.0
-53.07075,8.82349,22:11:56,Sunday,29.0,Bremen Sielwall,25.0,25.0,0.0
-53.097205,8.816292,22:11:56,Sunday,39.0,Bremen Stuttgarter Straße,39.0,39.0,0.0
-53.078669,8.826308,22:11:56,Sunday,39.0,Bremen Dobbenweg,25.0,39.0,0.359
-53.102444,8.799509,22:11:56,Sunday,53.0,Bremen Dithmarscher Freiheit,68.0,68.0,0.0
-53.135314,8.73091,22:11:56,Sunday,58.0,Bremen Dohlenstraße,48.0,48.0,0.0
-53.071396,8.949386,22:11:56,Sunday,44.0,Bremen Graubündener Straße,36.0,36.0,0.0
-53.120574,8.753003,22:11:56,Sunday,58.0,Bremen Gröpelingen,35.0,35.0,0.0
-53.102536,8.785338,22:11:56,Sunday,53.0,Bremen Bahnhof Walle,17.0,17.0,0.0
-53.16061,8.704381,22:11:56,Sunday,58.0,Bremen-Burg(Bus),44.0,44.0,0.0
-53.071445,8.863627,22:11:56,Sunday,39.0,Bremen Steubenstraße,16.0,16.0,0.0
-53.078614,8.903285,22:11:56,Sunday,44.0,Bremen Dietrich-Bonhoeffer-Straße,34.0,34.0,0.0
-53.062116,8.801724,22:11:56,Sunday,53.0,Bremen Gottfried-Menken-Straße,37.0,37.0,0.0
-53.074913,8.925897,22:11:56,Sunday,44.0,Bremen Mülheimer Straße,120.0,120.0,0.0
-53.103608,8.855622,22:11:56,Sunday,25.0,Bremen Lise-Meitner-Straße,47.0,47.0,0.0
-53.079384,8.893002,22:11:56,Sunday,44.0,Bremen Berliner Freiheit,35.0,35.0,0.0
-53.051383,8.949641,22:11:56,Sunday,16.0,Bremen Beim Bohnenhof,44.0,44.0,0.0
-53.102639,8.859212,22:11:56,Sunday,25.0,Bremen Berufsbildungswerk,34.0,34.0,0.0
-53.219785,8.589594,22:11:56,Sunday,48.0,Schwanewede Insterburger Weg,49.0,49.0,0.0
-53.197066,8.571969,22:11:56,Sunday,48.0,Bremen Landrat-Berthold-Straße,51.0,51.0,0.0
-53.207153,8.578497,22:11:56,Sunday,48.0,Bremen Ringofenstraße,51.0,51.0,0.0
-53.17999,8.588774,22:11:56,Sunday,48.0,Bremen Wätjens Park,55.0,55.0,0.0
-53.175321,8.612803,22:11:56,Sunday,48.0,Bremen Fährgrund,43.0,43.0,0.0
-53.177414,8.601612,22:11:56,Sunday,48.0,Bremen Bremer Vulkan,46.0,46.0,0.0
-53.169621,8.627897,22:11:56,Sunday,58.0,Bremen Bahnhof Vegesack,46.0,46.0,0.0
-53.037688,8.851272,22:11:56,Sunday,53.0,Bremen Senator-Theil-Straße,41.0,41.0,0.0
-53.054889,8.814727,22:11:56,Sunday,53.0,Bremen Stenumer Straße,35.0,35.0,0.0
-53.071641,8.882724,22:11:56,Sunday,39.0,Bremen Stellichter Straße,28.0,28.0,0.0
-53.073339,8.930294,22:11:56,Sunday,44.0,Bremen Düsseldorfer Straße,45.0,45.0,0.0
-53.090284,8.813487,22:11:56,Sunday,53.0,Bremen Findorffallee,29.0,29.0,0.0
-53.051538,8.839582,22:11:56,Sunday,53.0,Bremen Fellendsweg,43.0,43.0,0.0
-53.199224,8.526993,22:11:56,Sunday,58.0,Bremen Fähre Farge,56.0,56.0,0.0
-53.147399,8.711405,22:11:56,Sunday,58.0,Bremen Am Geestkamp,44.0,44.0,0.0
-53.129774,8.743113,22:11:56,Sunday,58.0,Bremen Am Fuchsberg,48.0,48.0,0.0
-53.074036,8.875811,22:11:56,Sunday,39.0,Bremen Müdener Straße,28.0,28.0,0.0
-53.048153,8.950356,22:11:56,Sunday,16.0,Bremen Am Großen Kuhkamp,44.0,44.0,0.0
-53.043,8.824685,22:11:56,Sunday,49.0,Bremen Robert-Koch-Straße,42.0,42.0,0.0
-53.072382,8.816868,22:11:56,Sunday,29.0,Bremen Theater am Goetheplatz,22.0,22.0,0.0
-53.088125,8.808212,22:11:56,Sunday,39.0,Bremen Theodor-Heuss-Allee,29.0,29.0,0.0
-53.165632,8.67699,22:11:56,Sunday,48.0,Bremen Knoops Park,46.0,46.0,0.0
-53.038307,8.939628,22:11:56,Sunday,19.0,Bremen Kluvenhagener Straße,46.0,46.0,0.0
-53.039767,8.908775,22:11:56,Sunday,19.0,Bremen Süntelstraße,46.0,46.0,0.0
-53.11064,8.854691,22:11:56,Sunday,25.0,Bremen Universität-Nord,52.0,52.0,0.0
-53.035323,8.826916,22:11:56,Sunday,53.0,Bremen Kattenturm-Mitte,40.0,40.0,0.0
-53.083948,8.797781,22:11:56,Sunday,29.0,Bremen Doventor,15.0,20.0,0.25
-53.183148,8.562472,22:11:56,Sunday,58.0,Bremen Fähre Blumenthal,51.0,51.0,0.0
-53.071128,8.929917,22:11:56,Sunday,39.0,Bremen Krefelder Straße,42.0,42.0,0.0
-53.075347,8.844205,22:11:56,Sunday,39.0,Bremen Friedrich-Karl-Straße,39.0,39.0,0.0
-53.050376,8.828599,22:11:56,Sunday,53.0,Bremen Friedhof Huckelriede,37.0,37.0,0.0
-53.066199,8.943872,22:11:56,Sunday,39.0,Bremen Klinikum Bremen-Ost,39.0,39.0,0.0
-53.044354,8.897381,22:11:56,Sunday,19.0,Bremen Brünsweg,39.0,39.0,0.0
-53.225303,8.510034,22:11:56,Sunday,58.0,Bremen Sandkuhlenweg,53.0,53.0,0.0
-53.071088,8.916126,22:11:56,Sunday,39.0,Bremen Hermann-Koenen-Straße,43.0,43.0,0.0
-53.033495,8.850653,22:11:56,Sunday,53.0,Bremen Hermann-Helms-Straße,41.0,41.0,0.0
-53.072248,8.82864,22:11:56,Sunday,29.0,Bremen Brunnenstraße,22.0,22.0,0.0
-53.173313,8.688119,22:11:56,Sunday,58.0,Bremen Rotdornallee,76.0,76.0,0.0
-53.059599,8.90939,22:11:56,Sunday,25.0,Bremen Saarstraße,33.0,33.0,0.0
-53.090874,8.805639,22:11:56,Sunday,39.0,Bremen Herbststraße,34.0,34.0,0.0
-53.103246,8.794121,22:11:56,Sunday,53.0,Bremen Holsteiner Straße,38.0,38.0,0.0
-53.099087,8.921967,22:11:56,Sunday,25.0,Bremen Im Holze,46.0,46.0,0.0
-53.071527,8.902785,22:11:56,Sunday,39.0,Bremen Im Holter Feld,50.0,50.0,0.0
-53.079302,8.896774,22:11:56,Sunday,44.0,Bremen Carl-Goerdeler-Straße,35.0,35.0,0.0
-53.115035,8.833152,22:11:56,Sunday,26.0,Bremen Campingplatz,52.0,52.0,0.0
-53.071947,8.920571,22:11:56,Sunday,39.0,Bremen Bottroper Straße,42.0,42.0,0.0
-53.124857,8.7489,22:11:56,Sunday,58.0,Bremen Karl-Bröger-Straße,29.0,36.0,0.1944
-53.173164,8.640018,22:11:56,Sunday,58.0,Bremen Auf dem Krümpel,46.0,46.0,0.0
-53.052712,8.8993,22:11:56,Sunday,19.0,Bremen Osterhop,29.0,29.0,0.0
-53.074053,8.936052,22:11:56,Sunday,44.0,Bremen Osterholzer Landstraße,44.0,44.0,0.0
-53.21337,8.511061,22:11:56,Sunday,58.0,Bremen Hohenesch,50.0,50.0,0.0
-53.041519,8.850432,22:11:56,Sunday,53.0,Bremen Piependamm,41.0,41.0,0.0
-53.055731,8.884861,22:11:56,Sunday,19.0,Bremen Hannoversche Straße,36.0,36.0,0.0
-53.191441,8.53842,22:11:56,Sunday,58.0,Bremen Hanfstraße,52.0,52.0,0.0
-53.091659,8.791314,22:11:56,Sunday,26.0,Bremen Hansestraße,32.0,32.0,0.0
-53.079174,8.878882,22:11:56,Sunday,44.0,Bremen Polizeipräsidium,34.0,34.0,0.0
-53.050944,8.836268,22:11:56,Sunday,53.0,Bremen Helene-Lange-Straße,43.0,43.0,0.0
-53.101114,8.916252,22:11:56,Sunday,25.0,Bremen Kapitän-König-Weg,46.0,46.0,0.0
-53.030817,8.850603,22:11:56,Sunday,53.0,Bremen Arster Kirche,41.0,41.0,0.0
-53.096293,8.819184,22:11:56,Sunday,39.0,Bremen Weidedamm-Süd,39.0,39.0,0.0
-53.051804,8.819524,22:11:56,Sunday,53.0,Bremen Huckelriede,20.0,20.0,0.0
-53.059,8.80887,22:11:56,Sunday,53.0,Bremen Willigstraße,37.0,37.0,0.0
-53.060767,8.804383,22:11:56,Sunday,53.0,Bremen August-Hinrichs-Straße,37.0,37.0,0.0
-53.028031,8.849956,22:11:56,Sunday,53.0,Bremen Arster Landstraße,41.0,41.0,0.0
-53.056144,8.716162,22:11:56,Sunday,15.0,Bremen Brüsseler Straße,13.0,13.0,0.0
-53.178579,8.724093,22:11:56,Sunday,48.0,Bremen Marßel,57.0,57.0,0.0
-53.048336,8.741268,22:11:56,Sunday,15.0,Bremen Roland-Center,43.0,43.0,0.0
-53.050319,8.847649,22:11:56,Sunday,53.0,Bremen Habenhauser Brückenstraße,47.0,47.0,0.0
-53.098533,8.776565,22:11:56,Sunday,53.0,Bremen Waller Ring,43.0,49.0,0.1224
-53.045353,8.851022,22:11:56,Sunday,53.0,Bremen Pfarrfeldsweg,41.0,41.0,0.0
-53.066796,8.96154,22:11:56,Sunday,44.0,Bremen Neuwieder Straße,40.0,40.0,0.0
-53.053487,8.953382,22:11:56,Sunday,16.0,Bremen Heiligenbergstraße,44.0,44.0,0.0
-53.068245,8.938981,22:11:56,Sunday,39.0,Bremen Grenzwehr,38.0,38.0,0.0
-53.086163,8.896131,22:11:56,Sunday,32.0,Bremen Neue Vahr Nord,112.0,112.0,0.0
-53.04662,8.859413,22:11:56,Sunday,53.0,Bremen Staustraße,40.0,40.0,0.0
-53.114889,8.837954,22:11:56,Sunday,26.0,Bremen Stadtwaldsee,52.0,52.0,0.0
-53.066911,8.782459,22:11:56,Sunday,44.0,Bremen Neuenlander Straße,30.0,30.0,0.0
-53.041521,8.931657,22:11:56,Sunday,19.0,Bremen Eppenhainer Straße,43.0,43.0,0.0
-53.066433,8.95569,22:11:56,Sunday,44.0,Bremen Engadiner Straße,40.0,40.0,0.0
-53.069544,8.93453,22:11:56,Sunday,39.0,Bremen Emmentaler Straße,46.0,46.0,0.0
-53.077937,8.920951,22:11:56,Sunday,44.0,Bremen Erkelenzer Straße,120.0,120.0,0.0
-53.172469,8.67981,22:11:56,Sunday,58.0,Bremen Zum Kränholm,45.0,45.0,0.0
-53.181632,8.567805,22:11:56,Sunday,58.0,Bremen Zum Donaufleet,51.0,51.0,0.0
-53.068065,8.84893,22:11:56,Sunday,29.0,Bremen Stader Straße/Hamburger Straße,32.0,32.0,0.0
-53.040671,8.904561,22:11:56,Sunday,19.0,Bremen Stackkamp,41.0,41.0,0.0
-53.184836,8.59781,22:11:56,Sunday,58.0,Bremen Löhstraße,44.0,44.0,0.0
-53.09316,8.803987,22:11:56,Sunday,39.0,Bremen Lohmannstraße,39.0,39.0,0.0
-53.051864,8.740732,22:11:56,Sunday,15.0,Bremen Obervielander Straße,42.0,42.0,0.0
-53.062134,8.931654,22:11:56,Sunday,25.0,Bremen Oewerweg,36.0,36.0,0.0
-53.027399,8.802063,22:11:56,Sunday,11.0,Brinkum(Stuhr) IKEA/Marktkauf,63.0,63.0,0.0
-53.078596,8.823672,22:11:56,Sunday,49.0,Bremen Am Dobben,21.0,21.0,0.0
-53.085023,8.849847,22:11:56,Sunday,44.0,Bremen Kirchbachstraße,36.0,36.0,0.0
-53.202561,8.571028,22:11:56,Sunday,48.0,Bremen Steenkuhlenweg,38.0,38.0,0.0
-53.20506,8.574616,22:11:56,Sunday,48.0,Bremen Hegeweg,38.0,38.0,0.0
-53.052665,8.715193,22:11:56,Sunday,15.0,Bremen Flämische Straße,13.0,13.0,0.0
-53.037378,8.837386,22:11:56,Sunday,53.0,Bremen Brenningstraße,38.0,38.0,0.0
-53.036445,8.817585,22:11:56,Sunday,53.0,Bremen Klinikum Haupteingang,44.0,44.0,0.0
-53.099911,8.820266,22:11:56,Sunday,34.0,Bremen Weidedamm-Nord,39.0,39.0,0.0
-53.092162,8.7508,22:11:56,Sunday,32.0,Bremen Bakeweg,36.0,36.0,0.0
-53.094408,8.748123,22:11:56,Sunday,32.0,Bremen Roccoweg,36.0,36.0,0.0
-53.082939,8.768963,22:11:56,Sunday,32.0,Bremen Wildeshauser Straße,38.0,38.0,0.0
-53.096063,8.746105,22:11:56,Sunday,32.0,Bremen Rablinghausen,38.0,38.0,0.0
-53.094805,8.80845,22:11:56,Sunday,53.0,Bremen Hemmstraße,39.0,39.0,0.0
-53.098252,8.812582,22:11:56,Sunday,39.0,Bremen Utbremer Ring,39.0,39.0,0.0
-53.101476,8.814684,22:11:56,Sunday,26.0,Bremen Innsbrucker Straße,39.0,39.0,0.0
-53.100837,8.817501,22:11:56,Sunday,34.0,Bremen Rudolf-Alexander-Schröder-Straße,39.0,39.0,0.0
-53.072895,8.788779,22:11:56,Sunday,32.0,Bremen Hohentorsplatz,28.0,28.0,0.0
-53.075635,8.784052,22:11:56,Sunday,32.0,Bremen Bahnhof Neustadt,36.0,36.0,0.0
-53.079615,8.776158,22:11:56,Sunday,32.0,Bremen Huder Straße,38.0,38.0,0.0
-53.084331,8.766262,22:11:56,Sunday,32.0,Bremen Rechtenflether Straße,36.0,36.0,0.0
-53.087386,8.76182,22:11:56,Sunday,32.0,Bremen Woltmershauser Friedhof,36.0,36.0,0.0
-53.088699,8.7536,22:11:56,Sunday,32.0,Bremen Stromer Straße,32.0,32.0,0.0
-53.22186,8.59456,22:11:56,Sunday,48.0,Schwanewede Am Markt,42.0,42.0,0.0
-53.17346,8.675907,22:11:56,Sunday,58.0,Bremen Holthorster Weg,45.0,45.0,0.0
-53.164271,8.651447,22:11:56,Sunday,48.0,Bremen Taunusstraße,46.0,46.0,0.0
-53.16492,8.646217,22:11:56,Sunday,48.0,Bremen Seefahrtstraße,46.0,46.0,0.0
-53.166745,8.637522,22:11:56,Sunday,48.0,Bremen Schönebecker Straße,46.0,46.0,0.0
-53.178094,8.618798,22:11:56,Sunday,58.0,Bremen Aumunder Heide,33.0,33.0,0.0
-53.033829,8.844585,22:11:56,Sunday,53.0,Bremen Carsten-Dreßler-Straße,39.0,39.0,0.0
-53.076764,8.803639,22:11:56,Sunday,39.0,Bremen Martinistraße,18.0,18.0,0.0
-53.101558,8.816116,22:11:56,Sunday,34.0,Bremen Ricarda-Huch-Straße,62.0,62.0,0.0
-53.097677,8.76963,22:11:56,Sunday,26.0,Bremen Hochschule für Künste,51.0,51.0,0.0
-53.109664,8.848001,22:11:56,Sunday,26.0,Bremen Celsiusstraße,52.0,52.0,0.0
-53.113815,8.844014,22:11:56,Sunday,26.0,Bremen Kuhgrabenweg,52.0,52.0,0.0
-53.234221,8.521228,22:11:56,Sunday,58.0,Neuenkirchen(Schwanewede) Ahnten,64.0,64.0,0.0
-53.100178,8.773812,22:11:56,Sunday,53.0,Bremen Cuxhavener Straße,51.0,51.0,0.0
-53.057895,8.963148,22:11:56,Sunday,44.0,Bremen Teneverstraße,40.0,40.0,0.0
-53.087363,8.782517,22:11:56,Sunday,26.0,Bremen Konsul-Smidt-Straße,28.0,28.0,0.0
-53.196219,8.531245,22:11:56,Sunday,58.0,Bremen Wasserweg,41.0,41.0,0.0
-53.100743,8.763918,22:11:56,Sunday,26.0,Bremen Am Winterhafen,51.0,51.0,0.0
-53.098142,8.76115,22:11:56,Sunday,53.0,Bremen Silbermannstraße,36.0,36.0,0.0
-53.089847,8.77721,22:11:56,Sunday,26.0,Bremen Schuppen 1,44.0,44.0,0.0
-53.094724,8.771681,22:11:56,Sunday,53.0,Bremen Überseetor,44.0,44.0,0.0
-53.211112,8.512503,22:11:56,Sunday,58.0,Bremen De Kreienbarg,50.0,50.0,0.0
-53.223023,8.508864,22:11:56,Sunday,58.0,Bremen Vor den Wischen,53.0,53.0,0.0
-53.062489,8.950732,22:11:56,Sunday,16.0,Bremen Am Hahnenkamp,39.0,39.0,0.0
-53.039958,8.944274,22:11:56,Sunday,44.0,Bremen Bf Mahndorf,45.0,45.0,0.0
-53.100322,8.757581,22:11:56,Sunday,53.0,Bremen Ehrenfelsstraße,36.0,36.0,0.0
-53.102166,8.754545,22:11:56,Sunday,53.0,Bremen Überseestadt-Nord,51.0,51.0,0.0
-53.094487,8.767481,22:11:56,Sunday,53.0,Bremen Marcuskaje,44.0,44.0,0.0
-53.09244,8.773434,22:11:56,Sunday,26.0,Bremen Schuppen 3,44.0,44.0,0.0
-53.050084,8.857481,22:11:56,Sunday,53.0,Bremen Schlehenweg,40.0,40.0,0.0
-53.050385,8.843288,22:11:56,Sunday,53.0,Bremen Fontanestraße,37.0,37.0,0.0
+stop_lat,stop_lon,Aktuelle Uhrzeit,Wochentag,Anzahl Haltestellen,Anzahl Baustellen,Haltestelle,currentSpeed,freeFlowSpeed,Durchschnittliche Verkehrsauslastung in %
+53.082482,8.837204,22:59:16,Sunday,32.0,0.0,Bremen St. Joseph-Stift,36.0,36.0,0.0
+53.242891,8.590647,22:59:16,Sunday,48.0,2.0,Schwanewede Am Spreeken,64.0,64.0,0.0
+53.225206,8.591855,22:59:16,Sunday,48.0,2.0,Schwanewede Hospitalstraße,51.0,51.0,0.0
+53.126404,8.747009,22:59:16,Sunday,58.0,1.0,Bremen DIAKO Bremen,48.0,48.0,0.0
+53.183024,8.579728,22:59:16,Sunday,58.0,1.0,Bremen Bahnhof Blumenthal,38.0,45.0,0.1556
+53.17448,8.618157,22:59:16,Sunday,58.0,1.0,Bremen Gustav-Heinemann-Bürgerhaus,36.0,36.0,0.0
+53.23916,8.59269,22:59:16,Sunday,48.0,2.0,Schwanewede Landhaus Schwanewede,63.0,63.0,0.0
+53.057907,8.95105,22:59:16,Sunday,16.0,0.0,Bremen Osterholzer Möhlendamm,44.0,44.0,0.0
+53.053257,8.962122,22:59:16,Sunday,44.0,0.0,Bremen Werner-Steenken-Straße,40.0,40.0,0.0
+53.062197,8.887576,22:59:16,Sunday,29.0,1.0,Bremen Bahnhof Sebaldsbrück,26.0,26.0,0.0
+53.059469,8.899647,22:59:16,Sunday,16.0,0.0,Bremen Sebaldsbrück (Bus+Tram),48.0,48.0,0.0
+53.076869,8.837379,22:59:16,Sunday,39.0,1.0,Bremen Klinikum Bremen-Mitte,42.0,42.0,0.0
+53.06431,8.877295,22:59:16,Sunday,29.0,1.0,Bremen Föhrenstraße,24.0,24.0,0.0
+53.049065,8.960619,22:59:16,Sunday,44.0,0.0,Bremen Weserpark,46.0,46.0,0.0
+53.069665,8.787596,22:59:16,Sunday,53.0,0.0,Bremen Pappelstraße,30.0,30.0,0.0
+53.066421,8.793695,22:59:16,Sunday,53.0,0.0,Bremen Gastfeldstraße,31.0,31.0,0.0
+53.231682,8.593411,22:59:16,Sunday,48.0,2.0,Schwanewede Molkereiweg,68.0,68.0,0.0
+53.036236,8.726984,22:59:16,Sunday,21.0,1.0,Bremen Varreler Landstraße,46.0,46.0,0.0
+53.23443,8.515404,22:59:16,Sunday,58.0,1.0,Neuenkirchen(Schwanewede) Marktplatz,65.0,65.0,0.0
+53.233095,8.525564,22:59:16,Sunday,58.0,1.0,Neuenkirchen(Schwanewede) Vorbruch,64.0,64.0,0.0
+53.175062,8.660805,22:59:16,Sunday,58.0,1.0,Bremen Tannenhof,48.0,48.0,0.0
+53.173747,8.648916,22:59:16,Sunday,58.0,1.0,Bremen Bahnhof Schönebeck,46.0,46.0,0.0
+53.068022,8.790793,22:59:16,Sunday,53.0,0.0,Bremen Delmestraße,31.0,31.0,0.0
+53.133632,8.736583,22:59:16,Sunday,58.0,1.0,Bremen Ritterhuder Heerstraße,37.0,37.0,0.0
+53.151844,8.7084,22:59:16,Sunday,58.0,1.0,Bremen An Smidts Park,44.0,44.0,0.0
+53.167533,8.702409,22:59:16,Sunday,58.0,1.0,Bremen Stader Landstraße,44.0,44.0,0.0
+53.171674,8.621464,22:59:16,Sunday,58.0,1.0,Bremen Gerhard-Rohlfs-Straße,39.0,39.0,0.0
+53.089167,8.90423,22:59:16,Sunday,30.0,0.0,Bremen Hermann-Frese-Straße,37.0,37.0,0.0
+53.050535,8.853241,22:59:16,Sunday,53.0,0.0,Bremen Friedrich-Engels-Straße,41.0,41.0,0.0
+53.037377,8.822212,22:59:16,Sunday,49.0,0.0,Bremen Klinikum Links der Weser,40.0,40.0,0.0
+53.056372,8.784087,22:59:16,Sunday,25.0,0.0,Bremen Neuenlander Kämpe,44.0,44.0,0.0
+53.091991,8.920181,22:59:16,Sunday,23.0,0.0,Bremen Rockwinkeler Heerstraße,48.0,48.0,0.0
+53.061129,8.963829,22:59:16,Sunday,44.0,0.0,Bremen Tenever-Zentrum,40.0,40.0,0.0
+53.190115,8.543273,22:59:16,Sunday,58.0,1.0,Bremen Buschdeel,53.0,53.0,0.0
+53.092897,8.810399,22:59:16,Sunday,53.0,0.0,Bremen Eickedorfer Straße,39.0,39.0,0.0
+53.073048,8.924736,22:59:16,Sunday,39.0,1.0,Bremen Einkaufszentrum Blockdiek,42.0,42.0,0.0
+53.22748,8.511132,22:59:16,Sunday,58.0,1.0,Bremen Moorstücke,65.0,65.0,0.0
+53.030451,8.845611,22:59:16,Sunday,53.0,0.0,Bremen In der Laake,36.0,39.0,0.0769
+53.074048,8.947463,22:59:16,Sunday,44.0,0.0,Bremen Ellenerbrokstraße,36.0,36.0,0.0
+53.101724,8.778428,22:59:16,Sunday,53.0,0.0,Bremen Lange Reihe,23.0,23.0,0.0
+53.044264,8.952185,22:59:16,Sunday,44.0,0.0,Bremen Nußhorn,47.0,47.0,0.0
+53.082209,8.854479,22:59:16,Sunday,32.0,0.0,Bremen Kurfürstenallee,35.0,35.0,0.0
+53.058804,8.94127,22:59:16,Sunday,16.0,0.0,Bremen Lachmundsdamm,44.0,44.0,0.0
+53.090624,8.90569,22:59:16,Sunday,30.0,0.0,Bremen Mackensenweg,36.0,36.0,0.0
+53.178992,8.594592,22:59:16,Sunday,48.0,2.0,Bremen Margaretenallee,53.0,53.0,0.0
+53.067635,8.862488,22:59:16,Sunday,29.0,1.0,Bremen Ludwig-Quidde-Straße,33.0,33.0,0.0
+53.063183,8.943653,22:59:16,Sunday,16.0,0.0,Bremen Am Siek,39.0,39.0,0.0
+53.181419,8.573693,22:59:16,Sunday,58.0,1.0,Bremen-Blumenthal Markt,48.0,48.0,0.0
+53.078187,8.911485,22:59:16,Sunday,44.0,0.0,Bremen Kurt-Huber-Straße,90.0,90.0,0.0
+53.068003,8.933838,22:59:16,Sunday,25.0,0.0,Bremen Am Hallacker,36.0,36.0,0.0
+53.205563,8.518154,22:59:16,Sunday,58.0,1.0,Bremen Bahnhof Farge,50.0,50.0,0.0
+53.063491,8.867964,22:59:16,Sunday,29.0,0.0,Bremen Weserwehr,40.0,40.0,0.0
+53.07121,8.85063,22:59:16,Sunday,29.0,1.0,Bremen Bei den Drei Pfählen,28.0,28.0,0.0
+53.107559,8.817532,22:59:16,Sunday,26.0,0.0,Bremen Umspannwerk,39.0,39.0,0.0
+53.060028,8.893732,22:59:16,Sunday,29.0,1.0,Bremen Trinidadstraße,23.0,23.0,0.0
+53.173944,8.697446,22:59:16,Sunday,58.0,1.0,Bremen Am Heidbergstift,68.0,68.0,0.0
+53.04704,8.738244,22:59:16,Sunday,21.0,1.0,Bremen Willakedamm,43.0,43.0,0.0
+53.071526,8.891394,22:59:16,Sunday,39.0,1.0,Bremen Georg-Gries-Straße,49.0,49.0,0.0
+53.033976,8.830721,22:59:16,Sunday,53.0,0.0,Bremen Gemeinschaftszentrum Obervieland,38.0,38.0,0.0
+53.167736,8.709153,22:59:16,Sunday,48.0,2.0,Bremen Beckers Barg,47.0,47.0,0.0
+53.079089,8.86074,22:59:16,Sunday,44.0,0.0,Bremen Barbarossastraße,57.0,57.0,0.0
+53.084252,8.825747,22:59:16,Sunday,32.0,0.0,Bremen Am Stern,48.0,48.0,0.0
+53.192782,8.534216,22:59:16,Sunday,58.0,1.0,Bremen An der Amtsweide,51.0,51.0,0.0
+53.071391,8.906545,22:59:16,Sunday,39.0,1.0,Bremen Wilhelm-Busch-Weg,50.0,50.0,0.0
+53.207915,8.514131,22:59:16,Sunday,58.0,1.0,Bremen Wilhelm-Brandhorst-Straße,50.0,50.0,0.0
+53.11197,8.820089,22:59:16,Sunday,26.0,0.0,Bremen Wetterungsweg,52.0,52.0,0.0
+53.099687,8.807555,22:59:16,Sunday,53.0,0.0,Bremen Fürther Straße,38.0,38.0,0.0
+53.110403,8.769908,22:59:16,Sunday,29.0,1.0,Bremen Altenescher Straße,35.0,35.0,0.0
+53.218184,8.509509,22:59:16,Sunday,58.0,1.0,Bremen Rekumer Siel,49.0,49.0,0.0
+53.090669,8.92496,22:59:16,Sunday,23.0,0.0,Bremen Simon-Hermann-Post-Weg,48.0,48.0,0.0
+53.07075,8.82349,22:59:16,Sunday,29.0,1.0,Bremen Sielwall,19.0,25.0,0.24
+53.097205,8.816292,22:59:16,Sunday,39.0,1.0,Bremen Stuttgarter Straße,39.0,39.0,0.0
+53.078669,8.826308,22:59:16,Sunday,39.0,1.0,Bremen Dobbenweg,40.0,40.0,0.0
+53.102444,8.799509,22:59:16,Sunday,53.0,0.0,Bremen Dithmarscher Freiheit,68.0,68.0,0.0
+53.188391,8.547833,22:59:16,Sunday,58.0,1.0,Bremen Dillener Park,52.0,52.0,0.0
+53.135314,8.73091,22:59:16,Sunday,58.0,1.0,Bremen Dohlenstraße,48.0,48.0,0.0
+53.090592,8.911317,22:59:16,Sunday,30.0,0.0,Bremen Gravestraße,37.0,37.0,0.0
+53.071396,8.949386,22:59:16,Sunday,44.0,0.0,Bremen Graubündener Straße,36.0,36.0,0.0
+53.120574,8.753003,22:59:16,Sunday,58.0,1.0,Bremen Gröpelingen,35.0,35.0,0.0
+53.102536,8.785338,22:59:16,Sunday,53.0,0.0,Bremen Bahnhof Walle,17.0,17.0,0.0
+53.16061,8.704381,22:59:16,Sunday,58.0,1.0,Bremen-Burg(Bus),44.0,44.0,0.0
+53.078614,8.903285,22:59:16,Sunday,44.0,0.0,Bremen Dietrich-Bonhoeffer-Straße,34.0,34.0,0.0
+53.062116,8.801724,22:59:16,Sunday,53.0,0.0,Bremen Gottfried-Menken-Straße,37.0,37.0,0.0
+53.074913,8.925897,22:59:16,Sunday,44.0,0.0,Bremen Mülheimer Straße,120.0,120.0,0.0
+53.103608,8.855622,22:59:16,Sunday,25.0,0.0,Bremen Lise-Meitner-Straße,47.0,47.0,0.0
+53.089206,8.900648,22:59:16,Sunday,30.0,0.0,Bremen Achterdiek,33.0,33.0,0.0
+53.079384,8.893002,22:59:16,Sunday,44.0,0.0,Bremen Berliner Freiheit,35.0,35.0,0.0
+53.051383,8.949641,22:59:16,Sunday,16.0,0.0,Bremen Beim Bohnenhof,44.0,44.0,0.0
+53.102639,8.859212,22:59:16,Sunday,25.0,0.0,Bremen Berufsbildungswerk,34.0,34.0,0.0
+53.219785,8.589594,22:59:16,Sunday,48.0,2.0,Schwanewede Insterburger Weg,49.0,49.0,0.0
+53.197066,8.571969,22:59:16,Sunday,48.0,2.0,Bremen Landrat-Berthold-Straße,51.0,51.0,0.0
+53.207153,8.578497,22:59:16,Sunday,48.0,2.0,Bremen Ringofenstraße,51.0,51.0,0.0
+53.177414,8.601612,22:59:16,Sunday,48.0,2.0,Bremen Bremer Vulkan,46.0,46.0,0.0
+53.169621,8.627897,22:59:16,Sunday,58.0,1.0,Bremen Bahnhof Vegesack,46.0,46.0,0.0
+53.037688,8.851272,22:59:16,Sunday,53.0,0.0,Bremen Senator-Theil-Straße,41.0,41.0,0.0
+53.054889,8.814727,22:59:16,Sunday,53.0,0.0,Bremen Stenumer Straße,35.0,35.0,0.0
+53.073339,8.930294,22:59:16,Sunday,44.0,0.0,Bremen Düsseldorfer Straße,45.0,45.0,0.0
+53.051538,8.839582,22:59:16,Sunday,53.0,0.0,Bremen Fellendsweg,43.0,43.0,0.0
+53.199224,8.526993,22:59:16,Sunday,58.0,1.0,Bremen Fähre Farge,56.0,56.0,0.0
+53.147399,8.711405,22:59:16,Sunday,58.0,1.0,Bremen Am Geestkamp,44.0,44.0,0.0
+53.129774,8.743113,22:59:16,Sunday,58.0,1.0,Bremen Am Fuchsberg,48.0,48.0,0.0
+53.072382,8.816868,22:59:16,Sunday,29.0,1.0,Bremen Theater am Goetheplatz,22.0,22.0,0.0
+53.046294,8.957571,22:59:16,Sunday,44.0,0.0,Bremen Weserpark-Süd,47.0,47.0,0.0
+53.038307,8.939628,22:59:16,Sunday,17.0,1.0,Bremen Kluvenhagener Straße,46.0,46.0,0.0
+53.039767,8.908775,22:59:16,Sunday,17.0,1.0,Bremen Süntelstraße,46.0,46.0,0.0
+53.11064,8.854691,22:59:16,Sunday,25.0,0.0,Bremen Universität-Nord,52.0,52.0,0.0
+53.035323,8.826916,22:59:16,Sunday,53.0,0.0,Bremen Kattenturm-Mitte,40.0,40.0,0.0
+53.083948,8.797781,22:59:16,Sunday,39.0,1.0,Bremen Doventor,20.0,20.0,0.0
+53.184281,8.613111,22:59:16,Sunday,58.0,1.0,Bremen Fährer Kämpe,44.0,44.0,0.0
+53.183148,8.562472,22:59:16,Sunday,58.0,1.0,Bremen Fähre Blumenthal,51.0,51.0,0.0
+53.071128,8.929917,22:59:16,Sunday,39.0,1.0,Bremen Krefelder Straße,42.0,42.0,0.0
+53.169682,8.712631,22:59:16,Sunday,19.0,0.0,Bremen Burgdammer Ring,47.0,47.0,0.0
+53.050376,8.828599,22:59:16,Sunday,53.0,0.0,Bremen Friedhof Huckelriede,37.0,37.0,0.0
+53.155015,8.70459,22:59:16,Sunday,58.0,1.0,Bremen Burger Dorfstraße,44.0,44.0,0.0
+53.044354,8.897381,22:59:16,Sunday,17.0,1.0,Bremen Brünsweg,39.0,39.0,0.0
+53.038981,8.728576,22:59:16,Sunday,21.0,1.0,Bremen Friedhof Huchting,36.0,36.0,0.0
+53.225303,8.510034,22:59:16,Sunday,58.0,1.0,Bremen Sandkuhlenweg,53.0,53.0,0.0
+53.033495,8.850653,22:59:16,Sunday,53.0,0.0,Bremen Hermann-Helms-Straße,41.0,41.0,0.0
+53.082128,8.867423,22:59:16,Sunday,32.0,0.0,Bremen Brandenburger Straße,57.0,57.0,0.0
+53.072248,8.82864,22:59:16,Sunday,33.0,1.0,Bremen Brunnenstraße,22.0,22.0,0.0
+53.040909,8.731048,22:59:16,Sunday,21.0,1.0,Bremen Rotterdamer Straße,43.0,43.0,0.0
+53.173313,8.688119,22:59:16,Sunday,58.0,1.0,Bremen Rotdornallee,76.0,76.0,0.0
+53.090874,8.805639,22:59:16,Sunday,39.0,1.0,Bremen Herbststraße,34.0,34.0,0.0
+53.183616,8.595786,22:59:16,Sunday,58.0,1.0,Bremen Bf Klinikum Bremen-Nord,35.0,35.0,0.0
+53.044809,8.736153,22:59:16,Sunday,21.0,1.0,Bremen Hohenhorster Weg,43.0,43.0,0.0
+53.103246,8.794121,22:59:16,Sunday,53.0,0.0,Bremen Holsteiner Straße,38.0,38.0,0.0
+53.099087,8.921967,22:59:16,Sunday,25.0,0.0,Bremen Im Holze,46.0,46.0,0.0
+53.071527,8.902785,22:59:16,Sunday,39.0,1.0,Bremen Im Holter Feld,50.0,50.0,0.0
+53.079302,8.896774,22:59:16,Sunday,44.0,0.0,Bremen Carl-Goerdeler-Straße,35.0,35.0,0.0
+53.071947,8.920571,22:59:16,Sunday,39.0,1.0,Bremen Bottroper Straße,42.0,42.0,0.0
+53.124857,8.7489,22:59:16,Sunday,58.0,1.0,Bremen Karl-Bröger-Straße,36.0,36.0,0.0
+53.074053,8.936052,22:59:16,Sunday,44.0,0.0,Bremen Osterholzer Landstraße,44.0,44.0,0.0
+53.21337,8.511061,22:59:16,Sunday,58.0,1.0,Bremen Hohenesch,50.0,50.0,0.0
+53.191441,8.53842,22:59:16,Sunday,58.0,1.0,Bremen Hanfstraße,52.0,52.0,0.0
+53.091659,8.791314,22:59:16,Sunday,33.0,1.0,Bremen Hansestraße,32.0,32.0,0.0
+53.079174,8.878882,22:59:16,Sunday,44.0,0.0,Bremen Polizeipräsidium,34.0,34.0,0.0
+53.050944,8.836268,22:59:16,Sunday,53.0,0.0,Bremen Helene-Lange-Straße,43.0,43.0,0.0
+53.101114,8.916252,22:59:16,Sunday,25.0,0.0,Bremen Kapitän-König-Weg,46.0,46.0,0.0
+53.096293,8.819184,22:59:16,Sunday,39.0,1.0,Bremen Weidedamm-Süd,39.0,39.0,0.0
+53.051804,8.819524,22:59:16,Sunday,53.0,0.0,Bremen Huckelriede,20.0,20.0,0.0
+53.060767,8.804383,22:59:16,Sunday,53.0,0.0,Bremen August-Hinrichs-Straße,37.0,37.0,0.0
+53.046718,8.818351,22:59:16,Sunday,11.0,0.0,Bremen Arsterdamm,41.0,41.0,0.0
+53.057678,8.728489,22:59:16,Sunday,15.0,2.0,Bremen Harriersand,52.0,52.0,0.0
+53.056144,8.716162,22:59:16,Sunday,15.0,2.0,Bremen Brüsseler Straße,11.0,13.0,0.1538
+53.178579,8.724093,22:59:16,Sunday,48.0,2.0,Bremen Marßel,57.0,57.0,0.0
+53.048336,8.741268,22:59:16,Sunday,21.0,1.0,Bremen Roland-Center,43.0,43.0,0.0
+53.050319,8.847649,22:59:16,Sunday,53.0,0.0,Bremen Habenhauser Brückenstraße,47.0,47.0,0.0
+53.098533,8.776565,22:59:16,Sunday,53.0,0.0,Bremen Waller Ring,49.0,49.0,0.0
+53.045353,8.851022,22:59:16,Sunday,53.0,0.0,Bremen Pfarrfeldsweg,41.0,41.0,0.0
+53.066796,8.96154,22:59:16,Sunday,44.0,0.0,Bremen Neuwieder Straße,40.0,40.0,0.0
+53.058464,8.758757,22:59:16,Sunday,44.0,0.0,Bremen Norderländer Straße,51.0,51.0,0.0
+53.082918,8.874987,22:59:16,Sunday,32.0,0.0,Bremen Heinrich-Hertz-Straße,40.0,40.0,0.0
+53.053487,8.953382,22:59:16,Sunday,16.0,0.0,Bremen Heiligenbergstraße,44.0,44.0,0.0
+53.068245,8.938981,22:59:16,Sunday,39.0,1.0,Bremen Grenzwehr,38.0,38.0,0.0
+53.086163,8.896131,22:59:16,Sunday,32.0,0.0,Bremen Neue Vahr Nord,112.0,112.0,0.0
+53.04662,8.859413,22:59:16,Sunday,53.0,0.0,Bremen Staustraße,40.0,40.0,0.0
+53.056921,8.72305,22:59:16,Sunday,15.0,2.0,Bremen Mittelshuchtinger Dorfstraße,52.0,52.0,0.0
+53.064636,8.797028,22:59:16,Sunday,53.0,0.0,Bremen Meyerstraße,37.0,37.0,0.0
+53.092271,8.909687,22:59:16,Sunday,30.0,0.0,Bremen Nedderland,37.0,37.0,0.0
+53.066911,8.782459,22:59:16,Sunday,44.0,0.0,Bremen Neuenlander Straße,30.0,30.0,0.0
+53.066433,8.95569,22:59:16,Sunday,44.0,0.0,Bremen Engadiner Straße,40.0,40.0,0.0
+53.069544,8.93453,22:59:16,Sunday,39.0,1.0,Bremen Emmentaler Straße,46.0,46.0,0.0
+53.077937,8.920951,22:59:16,Sunday,44.0,0.0,Bremen Erkelenzer Straße,120.0,120.0,0.0
+53.172469,8.67981,22:59:16,Sunday,58.0,1.0,Bremen Zum Kränholm,45.0,45.0,0.0
+53.181632,8.567805,22:59:16,Sunday,58.0,1.0,Bremen Zum Donaufleet,51.0,51.0,0.0
+53.068065,8.84893,22:59:16,Sunday,29.0,0.0,Bremen Stader Straße/Hamburger Straße,32.0,32.0,0.0
+53.040671,8.904561,22:59:16,Sunday,17.0,1.0,Bremen Stackkamp,41.0,41.0,0.0
+53.184836,8.59781,22:59:16,Sunday,58.0,1.0,Bremen Löhstraße,44.0,44.0,0.0
+53.09316,8.803987,22:59:16,Sunday,39.0,1.0,Bremen Lohmannstraße,39.0,39.0,0.0
+53.051864,8.740732,22:59:16,Sunday,15.0,2.0,Bremen Obervielander Straße,42.0,42.0,0.0
+53.027399,8.802063,22:59:16,Sunday,11.0,0.0,Brinkum(Stuhr) IKEA/Marktkauf,63.0,63.0,0.0
+53.21403,8.583092,22:59:16,Sunday,48.0,2.0,Bremen Rastenburger Straße,51.0,51.0,0.0
+53.078596,8.823672,22:59:16,Sunday,33.0,1.0,Bremen Am Dobben,21.0,21.0,0.0
+53.085023,8.849847,22:59:16,Sunday,44.0,0.0,Bremen Kirchbachstraße,36.0,36.0,0.0
+53.21098,8.579634,22:59:16,Sunday,48.0,2.0,Bremen Hohenbuchener Straße,51.0,51.0,0.0
+53.188353,8.577122,22:59:16,Sunday,48.0,2.0,Bremen Martin-Luther-Straße,38.0,44.0,0.1364
+53.20506,8.574616,22:59:16,Sunday,48.0,2.0,Bremen Hegeweg,38.0,38.0,0.0
+53.060398,8.765164,22:59:16,Sunday,44.0,0.0,Bremen Bardenflethstraße,51.0,51.0,0.0
+53.081052,8.843632,22:59:16,Sunday,32.0,0.0,Bremen Verdunstraße,51.0,51.0,0.0
+53.052665,8.715193,22:59:16,Sunday,15.0,2.0,Bremen Flämische Straße,11.0,13.0,0.1538
+53.037378,8.837386,22:59:16,Sunday,53.0,0.0,Bremen Brenningstraße,38.0,38.0,0.0
+53.036445,8.817585,22:59:16,Sunday,53.0,0.0,Bremen Klinikum Haupteingang,44.0,44.0,0.0
+53.099911,8.820266,22:59:16,Sunday,34.0,0.0,Bremen Weidedamm-Nord,39.0,39.0,0.0
+53.092162,8.7508,22:59:16,Sunday,32.0,0.0,Bremen Bakeweg,36.0,36.0,0.0
+53.094408,8.748123,22:59:16,Sunday,32.0,0.0,Bremen Roccoweg,36.0,36.0,0.0
+53.096063,8.746105,22:59:16,Sunday,32.0,0.0,Bremen Rablinghausen,38.0,38.0,0.0
+53.094805,8.80845,22:59:16,Sunday,53.0,0.0,Bremen Hemmstraße,39.0,39.0,0.0
+53.098252,8.812582,22:59:16,Sunday,39.0,1.0,Bremen Utbremer Ring,39.0,39.0,0.0
+53.101476,8.814684,22:59:16,Sunday,34.0,0.0,Bremen Innsbrucker Straße,39.0,39.0,0.0
+53.100837,8.817501,22:59:16,Sunday,34.0,0.0,Bremen Rudolf-Alexander-Schröder-Straße,39.0,39.0,0.0
+53.072895,8.788779,22:59:16,Sunday,32.0,0.0,Bremen Hohentorsplatz,28.0,28.0,0.0
+53.075635,8.784052,22:59:16,Sunday,32.0,0.0,Bremen Bahnhof Neustadt,36.0,36.0,0.0
+53.079615,8.776158,22:59:16,Sunday,32.0,0.0,Bremen Huder Straße,38.0,38.0,0.0
+53.081692,8.772089,22:59:16,Sunday,32.0,0.0,Bremen Dötlinger Straße,36.0,36.0,0.0
+53.084331,8.766262,22:59:16,Sunday,32.0,0.0,Bremen Rechtenflether Straße,36.0,36.0,0.0
+53.087386,8.76182,22:59:16,Sunday,32.0,0.0,Bremen Woltmershauser Friedhof,36.0,36.0,0.0
+53.078266,8.780314,22:59:16,Sunday,32.0,0.0,Bremen Akazienstraße,36.0,36.0,0.0
+53.014614,8.777611,22:59:16,Sunday,21.0,1.0,Brinkum(Stuhr) Magdeburger Straße,50.0,50.0,0.0
+53.222271,8.599175,22:59:16,Sunday,48.0,2.0,Schwanewede Dreienkamp,41.0,41.0,0.0
+53.224913,8.59921,22:59:16,Sunday,48.0,2.0,Schwanewede Eichengrund,41.0,41.0,0.0
+53.22186,8.59456,22:59:16,Sunday,48.0,2.0,Schwanewede Am Markt,42.0,42.0,0.0
+53.17346,8.675907,22:59:16,Sunday,58.0,1.0,Bremen Holthorster Weg,45.0,45.0,0.0
+53.16492,8.646217,22:59:16,Sunday,48.0,2.0,Bremen Seefahrtstraße,46.0,46.0,0.0
+53.178094,8.618798,22:59:16,Sunday,58.0,1.0,Bremen Aumunder Heide,33.0,33.0,0.0
+53.183713,8.618878,22:59:16,Sunday,58.0,1.0,Bremen Bahnhof Aumund,33.0,33.0,0.0
+53.033829,8.844585,22:59:16,Sunday,53.0,0.0,Bremen Carsten-Dreßler-Straße,36.0,39.0,0.0769
+53.101558,8.816116,22:59:16,Sunday,34.0,0.0,Bremen Ricarda-Huch-Straße,62.0,62.0,0.0
+53.097677,8.76963,22:59:16,Sunday,26.0,0.0,Bremen Hochschule für Künste,51.0,51.0,0.0
+53.234221,8.521228,22:59:16,Sunday,58.0,1.0,Neuenkirchen(Schwanewede) Ahnten,64.0,64.0,0.0
+53.057895,8.963148,22:59:16,Sunday,44.0,0.0,Bremen Teneverstraße,40.0,40.0,0.0
+53.196219,8.531245,22:59:16,Sunday,58.0,1.0,Bremen Wasserweg,41.0,41.0,0.0
+53.100743,8.763918,22:59:16,Sunday,26.0,0.0,Bremen Am Winterhafen,51.0,51.0,0.0
+53.098142,8.76115,22:59:16,Sunday,53.0,0.0,Bremen Silbermannstraße,36.0,36.0,0.0
+53.094724,8.771681,22:59:16,Sunday,53.0,0.0,Bremen Überseetor,44.0,44.0,0.0
+53.211112,8.512503,22:59:16,Sunday,58.0,1.0,Bremen De Kreienbarg,50.0,50.0,0.0
+53.223023,8.508864,22:59:16,Sunday,58.0,1.0,Bremen Vor den Wischen,53.0,53.0,0.0
+53.062489,8.950732,22:59:16,Sunday,16.0,0.0,Bremen Am Hahnenkamp,39.0,39.0,0.0
+53.039958,8.944274,22:59:16,Sunday,17.0,1.0,Bremen Bf Mahndorf,45.0,45.0,0.0
+53.100322,8.757581,22:59:16,Sunday,53.0,0.0,Bremen Ehrenfelsstraße,36.0,36.0,0.0
+53.102166,8.754545,22:59:16,Sunday,53.0,0.0,Bremen Überseestadt-Nord,51.0,51.0,0.0
+53.094487,8.767481,22:59:16,Sunday,53.0,0.0,Bremen Marcuskaje,44.0,44.0,0.0
+53.050084,8.857481,22:59:16,Sunday,53.0,0.0,Bremen Schlehenweg,40.0,40.0,0.0
+53.050385,8.843288,22:59:16,Sunday,53.0,0.0,Bremen Fontanestraße,37.0,37.0,0.0

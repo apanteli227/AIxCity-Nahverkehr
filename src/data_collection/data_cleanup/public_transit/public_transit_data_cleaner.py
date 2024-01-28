@@ -71,6 +71,7 @@ if __name__ == "__main__":
     stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
     stop_times_bsag_updates['Anzahl Haltestellen'] = stop_times_bsag_updates['number_stops']
+    stop_times_bsag_updates['Anzahl Baustellen'] = stop_times_bsag_updates['number_building_sites']
 
     # Einfügen weiterer relevanter Spalten
     # Aktuelle Uhrzeit
@@ -91,7 +92,7 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Aktuelle Uhrzeit','Wochentag','Startzeit an der Anfangshaltestelle', 'Linie','Anzahl Haltestellen','Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Aktuelle Uhrzeit','Wochentag','Startzeit an der Anfangshaltestelle', 'Linie','Anzahl Haltestellen','Richtung', 'Anzahl Baustellen', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
