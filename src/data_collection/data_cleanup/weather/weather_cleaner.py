@@ -1,7 +1,7 @@
+from xml.etree.ElementTree import fromstring
+
 import requests
-import pandas as pd
-import logging
-import xml.etree.ElementTree as ET
+
 
 def get_weather_warning():
     """
@@ -15,7 +15,7 @@ def get_weather_warning():
 
     if response.status_code == 200:
         xml_content = response.content
-        root = ET.fromstring(xml_content)
+        root = fromstring(xml_content)
 
         # Extrahiere die Informationen aus dem ersten <item> Element
         item = root.find(".//item")
@@ -23,7 +23,7 @@ def get_weather_warning():
         # Beschreibung der Wetterwarnung
         description = item.find("description").text
         return description
-    
+
     else:
         print("Fehler beim Abrufen des RSS-Feeds. Status Code:", response.status_code)
         return None
