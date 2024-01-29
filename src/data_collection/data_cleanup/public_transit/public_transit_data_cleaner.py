@@ -1,6 +1,7 @@
 import public_transit_fetch as pt_fetch
 import id_translation as transl
 import sys
+
 sys.path.append('../')
 from traffic import traffic_data_cleaner as traffic_data_clean
 import pandas as pd
@@ -11,8 +12,8 @@ import logging
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     """
     Die Funktion entfernt alle StopTime-Einträge, die nicht in der trips_bsag_df enthalten sind.
-    Es wird also ein INNER JOIN zwischen den beiden DataFrames durchgeführt. Nur Fahrten die in 
-    in der trips_bsag_df enthalten sind, werden behalten.
+    Es wird also ein INNER JOIN zwischen den beiden DataFrames durchgeführt. Nur Fahrten die in der
+    trips_bsag_df enthalten sind, werden behalten.
 
     Parameters:
     - stop_time_updates_df (DataFrame): DataFrame mit StopTimeUpdates.
@@ -28,7 +29,6 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
 
 # Main Funktion
 if __name__ == "__main__":
-
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
@@ -60,10 +60,11 @@ if __name__ == "__main__":
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
 
     # Datei mit Anzahl der Haltestellen pro Linie einlesen
-    relevant_routes_stops_bsag = pd.read_csv("../resources/relevant_routes_stops_bsag.csv",delimiter=';')
+    relevant_routes_stops_bsag = pd.read_csv("../resources/relevant_routes_stops_bsag.csv", delimiter=';')
 
     # Merge von stop_times_bsag_updates und relevant_routes_stops_bsag, um die Anzahl der Haltestellen zu erhalten
-    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, relevant_routes_stops_bsag, how='inner', left_on='route_id', right_on='route_id')
+    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, relevant_routes_stops_bsag, how='inner',
+                                       left_on='route_id', right_on='route_id')
 
     # Umbenennen der Spalten in verständliche Namen
     stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = stop_times_bsag_updates['StartTime']
@@ -80,9 +81,11 @@ if __name__ == "__main__":
     stop_times_bsag_updates['Wochentag'] = datetime.now().strftime("%A")
 
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
-    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(routes_bsag_df.set_index('route_id')['route_short_name'])
-    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(stops_bremen_df.set_index('stop_id')['stop_name'])
-    
+    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(
+        routes_bsag_df.set_index('route_id')['route_short_name'])
+    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(
+        stops_bremen_df.set_index('stop_id')['stop_name'])
+
     logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
 
     # Entfernen der nicht benötigten Spalten
@@ -92,7 +95,9 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Aktuelle Uhrzeit','Wochentag','Startzeit an der Anfangshaltestelle', 'Linie','Anzahl Haltestellen','Richtung', 'Anzahl Baustellen', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Aktuelle Uhrzeit', 'Wochentag', 'Startzeit an der Anfangshaltestelle', 'Linie',
+                     'Anzahl Haltestellen', 'Richtung', 'Anzahl Baustellen', 'Haltestelle', 'StopSequence',
+                     'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
@@ -106,24 +111,23 @@ if __name__ == "__main__":
 
     # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
     stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
-    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
+    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(
+        stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
     # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
     stop_times_bsag_updates = stop_times_bsag_updates[
         ((stop_times_bsag_updates['StartDate'] <= actual_date_str) &
-        (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
+         (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
         | ((stop_times_bsag_updates['StartDate'] < actual_date_str) &
-        (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
-    ]
-    
+           (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
+        ]
+
     logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
-    
+
     # Optional: Speichern des DataFrames als CSV-Datei
     stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
 
-    # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter
+    # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter.
     # Dieser Prozess wird parallel zum aktuellen Prozess ausgeführt
-    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...") 
+    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...")
     traffic_data_clean.main(stop_times_bsag_updates)
-    
-

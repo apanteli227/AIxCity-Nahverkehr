@@ -1,7 +1,7 @@
-import requests
-import pandas as pd
 from datetime import datetime
-import logging
+
+import pandas as pd
+import requests
 
 
 def get_gtfsr_data(url):
@@ -46,11 +46,10 @@ def extract_stop_time_updates(gtfsr_data):
             # Nur Einträge entnehmen, die nicht ##VDV##COMPOSED in der TripId haben
             if "##VDV##COMPOSED" not in trip_update.get('Trip', {}).get('TripId', ''):
                 for stop_update in stop_time_update:
-                     
-                     # Nur Einträge entnehmen, deren stop_id nicht mit "de" beginnt
-                     stop_id = stop_update.get('StopId', '')
-                     if not stop_id.startswith("de"):
 
+                    # Nur Einträge entnehmen, deren stop_id nicht mit "de" beginnt
+                    stop_id = stop_update.get('StopId', '')
+                    if not stop_id.startswith("de"):
                         start_date_str = trip_update.get('Trip', {}).get('StartDate', '')
                         start_time_str = trip_update.get('Trip', {}).get('StartTime', '')
 
