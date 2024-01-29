@@ -1,6 +1,8 @@
 import requests
 import pandas as pd
 import logging
+import weather_cleaner as wc
+import datetime
 
 
 def get_weather_data(api_key, city):
@@ -21,7 +23,7 @@ def get_weather_data(api_key, city):
     params = {
         'q': city,
         'appid': api_key,
-        'units': 'metric' 
+        'units': 'metric'
     }
 
     # Abrufen der Wetterdaten
@@ -35,6 +37,7 @@ def get_weather_data(api_key, city):
         print(f"Fehlschlag bei der Abfrage. Status Code: {response.status_code}")
         return None
 
+
 def start_weather_process():
     """
     Diese Funktion startet den Prozess zur Ermittlung der Wetterdaten.
@@ -44,7 +47,7 @@ def start_weather_process():
     """
     # API-Key für OpenWeatherMap 
     # Achtung: API-Key ist vom Account von Emmanuel
-    # Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
+    # todo: Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
     api_key = '131b00cd42bee49451a4c69d496797e1'
 
     # Stadt für die Wetterdaten
@@ -59,39 +62,34 @@ def start_weather_process():
         temperature = weather_data['main']['temp']
         humidity = weather_data['main']['humidity']
         description = weather_data['weather'][0]['description']
-        
+
         # Prüfen, ob Winddaten verfügbar sind
         if 'wind' in weather_data:
             wind_speed = weather_data['wind']['speed']
         else:
             wind_speed = None
 
-        # Abrufen der Wetterwarnungen
-        warnings_response = requests.get(f"http://api.openweathermap.org/data/3.0/warnings?appid={api_key}&q={city}")
-        warnings_data = warnings_response.json()
-        
-        # Prüfen, ob Wetterwarnungen verfügbar sind
-        if 'warnings' in warnings_data:
-            weather_warnings = warnings_data['warnings']
-        else:
-            weather_warnings = None
+        weather_warning = wc.get_weather_warning()
 
         # Erstellen eines DataFrames mit den erstellten Wetterdaten
         weather_bremen_df = pd.DataFrame({
-            'City': [city],
-            'Temperature (Celsius)': [temperature],
-            'Humidity (%)': [humidity],
-            'Description': [description],
-            'Wind Speed (m/s)': [wind_speed],
-            'Weather Warnings': [weather_warnings]
+            'Stadt': [city],
+            'Datum': [datetime.date.today()],
+            'Uhrzeit': [datetime.datetime.now().strftime("%H:%M")],
+            'Temperatur (°C)': [temperature],
+            'Feuchtigkeit (%)': [humidity],
+            'Wetterbeschreibung': [description],
+            'Windgeschwindigkeit (m/s)': [wind_speed],
+            'Wetterwarnungen': [weather_warning]
         })
 
-        #Optional: Speichern des Wetter-DataFrames als CSV-Datei
+        # Optional: Speichern des Wetter-DataFrames als CSV-Datei
         weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
         print(weather_bremen_df)
         logging.info("Wetterdaten erfolgreich ermittelt und gespeichert!")
     else:
         logging.warning("Prozess zur Ermittlung der Bremer Wetterdaten fehlgeschlagen!")
+
 
 # Main-Funktion zum Start des zur Ermittlung der Wetterdaten über OpenWeatherMap
 if __name__ == "__main__":
