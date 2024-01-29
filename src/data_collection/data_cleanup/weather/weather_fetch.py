@@ -88,6 +88,7 @@ def start_weather_process():
 
         #Optional: Speichern des Wetter-DataFrames als CSV-Datei
         weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
+        print(weather_bremen_df)
         logging.info("Wetterdaten erfolgreich ermittelt und gespeichert!")
     else:
         logging.warning("Prozess zur Ermittlung der Bremer Wetterdaten fehlgeschlagen!")
@@ -99,3 +100,4 @@ if __name__ == "__main__":
     logging.info("Starte Prozess zur Ermittlung der Bremer Wetterdaten...")
 
     start_weather_process()
+
