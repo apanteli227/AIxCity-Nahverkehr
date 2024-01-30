@@ -1,6 +1,7 @@
 import pandas as pd
-from datetime import datetime, time
+from datetime import datetime, time, date
 import logging
+import numpy as np
 import os
 
 def get_events(base_path="../resources"):
@@ -18,31 +19,34 @@ def get_events(base_path="../resources"):
     full_path = os.path.join(current_directory, base_path)
 
     file_path = os.path.join(full_path, "events_bremen.csv")
+
     try:
-        events_data = pd.read_csv(file_path, low_memory=False)
+        events_data = pd.read_csv(file_path, low_memory=False, delimiter=";")
+    
     except FileNotFoundError:
         print("Warnung: Datei events_bremen.csv nicht gefunden.")
 
     # Abrufen der Events
     print(events_data.head())
 
-    # Ermittle die aktuelle Uhrzeit
-    today_time = datetime.now().time()
+    # Konvertiere Spalte mit Uhrzeit und Datum in Datetime-Objekte (Beginn)
+    events_data["Beginn_Datum"] = pd.to_datetime(events_data["Beginn_Datum"])
+    events_data["Beginn_Uhrzeit"] = pd.to_datetime(events_data["Beginn_Uhrzeit"])
+    events_data["Beginn_Uhrzeit"] = events_data["Beginn_Uhrzeit"].dt.time
 
-    # Ermittle das aktuelle Datum
-    today_date = datetime.now().date()
+    # Konvertiere Spalte mit Uhrzeit und Datum in Datetime-Objekte (Ende)
+    events_data["Ende_Datum"] = pd.to_datetime(events_data["Ende_Datum"])
+    events_data["Ende_Uhrzeit"] = pd.to_datetime(events_data["Ende_Uhrzeit"])
+    events_data["Ende_Uhrzeit"] = events_data["Ende_Uhrzeit"].dt.time
+    
+    # Ermittle das aktuelle Datum und die aktuelle Uhrzeit
+    now = datetime.now()
+    today_date = np.datetime64(date(now.year, now.month, now.day))
+    today_time = now.time()
 
-    """
-    Vergleiche stop_times_updates mit Event-Liste und matche anhand von Datum und Uhrzeit
-    aktuell stattfindene Fußballspiele, Demos oder Osterwiese
+    # Vergleiche das aktuelle Datum und die aktuelle Uhrzeit mit den Events und filtere aktuelle Events heraus
+    events_bsag_updates_df = events_data[((events_data["Beginn_Datum"].dt.date == today_date) & (events_data["Ende_Datum"].dt.date >= today_date) & (events_data["Beginn_Datum"].dt.date != events_data["Ende_Datum"].dt.date)) |
+                             (events_data["Beginn_Datum"].dt.date  == today_date) & (events_data["Beginn_Uhrzeit"] <= today_time) & (events_data["Ende_Uhrzeit"] >= today_time)]
 
-    Implementierung folgt noch...
-    """
-
-    events_bsag_bremen = {
-    'Datum': [datetime.date.today()],
-    'Uhrzeit': [datetime.datetime.now().strftime("%H:%M")],
-    'Fussballspiel': [fussballspiel],
-    'Osterwiese': [osterwiese],
-    'Demonstration': [demonstration]
-}   
+    # CSV-Datei aus events_bsag_updates_dferstellen
+    events_bsag_updates_df.to_csv("events_bsag_updates.csv", index=False)    
