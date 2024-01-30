@@ -1,12 +1,12 @@
 version: "3.8"
 
 services:
-  frontend:
-    image: frontend-image
-    ports:
-      - "3000:3000"
-    networks:
-      - my_network
+  #frontend:
+   # image: frontend-image
+    #ports:
+    # - "3000:3000"
+    #networks:
+    # - my_network
 
   backend:
     image: backend-image
@@ -21,7 +21,21 @@ services:
       - "8079:8079"
     networks:
       - my_network
-
+  pg:
+    image: postgis/postgis
+    restart: always
+    environment:
+     - PGPORT=8086
+     - POSTGRES_DB=gis
+     - POSTGRES_USER=gis
+     - POSTGRES_PASSWORD=password
+    expose:
+      - "8086"
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./data/postgis:/var/lib/postgresql/data
+    network_mode: host
 networks:
   my_network:
     driver: bridge

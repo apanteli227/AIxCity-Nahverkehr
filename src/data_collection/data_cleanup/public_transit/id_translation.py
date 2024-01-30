@@ -19,13 +19,10 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
     - trips_bsag_df: DataFrame für Trips der BSAG
     - transfer_bsag_df: DataFrame für Transfers der BSAG
     """
-    
-    # Erhalte das Verzeichnis der aktuellen Datei
-    current_directory = os.path.dirname(__file__)
 
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
-    full_path = os.path.join(current_directory, base_path)
-
+    path = "C:/Users/jan10/PycharmProjects/AIxCity-Nahverkehr/src/data_collection/data_cleanup/resources"
+    path1 = "/app/data_cleanup/resources/"
     # Liste mit den Dateinamen der GTFS-Textdateien
     gtfs_files = [
         "stops",
@@ -38,9 +35,10 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
     # Erstelle ein Dictionary mit den DataFrames
     gtfs_data = {}
     for file in gtfs_files:
-        file_path = os.path.join(full_path, f"{file}.txt")
+        file_path = os.path.join(path, f"{file}.txt")
+
         try:
-            gtfs_data[file] = pd.read_csv(file_path, low_memory=False)
+            gtfs_data[file] = pd.read_csv(file_path, low_memory=False) #Path anpassen
         except FileNotFoundError:
             print(f"Warnung: Datei {file}.txt nicht gefunden.")
 

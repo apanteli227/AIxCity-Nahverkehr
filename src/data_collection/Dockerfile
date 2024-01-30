@@ -8,7 +8,11 @@ WORKDIR /app
 COPY . /app
 
 # Install any dependencies if needed
-RUN pip install --no-cache-dir -r requirements.txt
+# install psycopg2 dependencies
+RUN apt-get update \
+    && apt-get -y install libpq-dev gcc \
+    && pip install psycopg2
+RUN pip install -r requirements.txt
 
 # Expose port (if needed)
 EXPOSE 8079

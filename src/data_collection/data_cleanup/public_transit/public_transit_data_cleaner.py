@@ -1,9 +1,14 @@
+import sys
+
+import psycopg2
+
 import public_transit_fetch as pt_fetch
 import id_translation as transl
 import pandas as pd
 from datetime import datetime, time
 import logging
-
+from sqlalchemy import create_engine
+#import psycopg2
 
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     """
@@ -22,6 +27,48 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
                          validate='many_to_one')
     return merged_df
 
+def connect(params_dic):
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params_dic)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+        sys.exit(1)
+    print("Connection successful")
+    return conn
+def execute_query(conn, query):
+    """ Execute a single query """
+    ret = 0 # Return value
+    cursor = conn.cursor()
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except Exception as error:
+        print("Error: %s" % error)
+        conn.rollback()
+        cursor.close()
+        return 1
+    # If this was a select query, return the result
+    if 'select' in query.lower():
+        ret = cursor.fetchall()
+    cursor.close()
+    return ret
+def single_inserts(conn, df, table):
+    """Perform single inserts of the dataframe into the PostGIS table"""
+    for i in df.index:
+        vals  = [df.at[i,col] for col in list(df.columns)]
+        query = """ INSERT INTO %s(name, geom) 
+                    VALUES('%s', ST_GeomFromText('POINT(%s %s)', 4326))
+                """ % (
+            table,
+            vals[0],
+            vals[1],
+            vals[2]
+        )
+        execute_query(conn, query)
 
 # Main Funktion
 if __name__ == "__main__":
@@ -44,7 +91,7 @@ if __name__ == "__main__":
 
     # Erstellen der DataFrames zum späteren Filtern Bremer Linien und der Übersetzung der IDs
     result_dict_with_dataframes = transl.process_gtfs_data()
-    logging.info("GTFS-Textdateien gefunden und VErarbeitungsprozess gestartet...")
+    logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
 
     # Zugriff auf die DataFrames
     stops_bremen_df = result_dict_with_dataframes["stops_bremen_df"]
@@ -104,3 +151,27 @@ if __name__ == "__main__":
     
     # Optional: Speichern des DataFrames als CSV-Datei
     stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    #engine = create_engine("postgresql://postgres:1234@localhost:5432/bsag_data")
+    #stop_times_bsag_updates.to_("data", engine, if_exists="append", chunksize=10000)
+    #Verbindungsdaten zur Datenbank
+    param_dic = {
+        "host": "127.0.0.1",
+        "port": 8086,
+        "database": "bsag_data",
+        "user": "postgres",
+        "password": "1234"
+    }
+    #Verbindung initialisieren
+    conn = connect(param_dic)
+    #Daten hochladen
+    single_inserts(conn, stop_times_bsag_updates, 'bsag_data')
+    #Verbindung beenden
+    conn.close()
+    #Daten an das Backend senden
+    #backend_url = "http://backend:5432"  # Use the service name as the hostname
+
+    # Make a POST request to the backend API endpoint
+    #response = requests.post(f"{backend_url}/data_collection_endpoint", json={"data": stop_times_bsag_updates})
+
+    #print(response.status_code)
+    #print(response.json())
