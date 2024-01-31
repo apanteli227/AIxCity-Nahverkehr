@@ -1,12 +1,12 @@
 version: "3.8"
 
 services:
-  #frontend:
-   # image: frontend-image
-    #ports:
-    # - "3000:3000"
-    #networks:
-    # - my_network
+  frontend:
+    image: frontend-image
+    ports:
+      - "3000:3000"
+    networks:
+      - my_network
 
   backend:
     image: backend-image
@@ -21,21 +21,42 @@ services:
       - "8079:8079"
     networks:
       - my_network
+
+  #postgis:
+  #  image: postgis/postgis
+  #  container_name: postgis
+  #  environment:
+  #    POSTGRES_PASSWORD: fr24Password
+  #    POSTGRES_DB: flightradar
+  #  networks:
+  #    - my_network
+
   pg:
     image: postgis/postgis
     restart: always
     environment:
-     - PGPORT=8086
-     - POSTGRES_DB=gis
-     - POSTGRES_USER=gis
-     - POSTGRES_PASSWORD=password
+      - PGPORT=8086
+      - POSTGRES_DB=gis
+      - POSTGRES_USER=gis
+      - POSTGRES_PASSWORD=password
     expose:
       - "8086"
     ports:
       - "8086:8086"
     volumes:
       - ./data/postgis:/var/lib/postgresql/data
-    network_mode: host
+    networks:
+      - my_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=pgadmin_password
+      - PGADMIN_ENABLE_CSRF_PROTECTION=False  # Disable CSRF protection for testing (NOT recommended for production)
+    networks:
+      - my_network
+
 networks:
   my_network:
     driver: bridge
