@@ -2,8 +2,7 @@ import pandas as pd
 import os
 import logging
 
-
-def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
+def process_gtfs_data(base_path="../resources"):
     """
     Diese Funktion lädt die GTFS-Textdateien aus dem Ressourcen-Ordner ein
     und erstellt fünf DataFrames.
@@ -119,7 +118,7 @@ def process_gtfs_data(base_path="src/data_collection/data_cleanup/resources"):
     # Filtern der Transfers der BSAG, welche auch eine entsprechende Stop-ID in der Stop-Tabelle besitzen
     transfer_bsag_df = filtered_transfer_df[
         filtered_transfer_df["from_stop_id"].isin(stops_bremen_df["stop_id"]) & filtered_transfer_df["to_stop_id"].isin(
-            stops_bremen_df["stop_id"])]
+            stops_bremen_df["stop_id"])]    
 
     # Rückgabe des Dictionarys mit den DataFrames
     return {
