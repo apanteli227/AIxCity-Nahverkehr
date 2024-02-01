@@ -21,7 +21,7 @@ def get_events(base_path="../resources"):
     file_path = os.path.join(full_path, "events_bremen.csv")
 
     try:
-        events_data = pd.read_csv(file_path, low_memory=False, delimiter=";")
+        events_data = pd.read_csv(file_path, low_memory=False, delimiter=";", parse_dates=["Beginn_Datum", "Ende_Datum", "Beginn_Uhrzeit", "Ende_Uhrzeit"], dayfirst=True)
     
     except FileNotFoundError:
         print("Warnung: Datei events_bremen.csv nicht gefunden.")
