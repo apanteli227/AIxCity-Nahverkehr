@@ -18,5 +18,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8079
 
 # Define the command to run the data collection script
-CMD ["python", "data_cleanup/public_transit/public_transit_data_cleaner.py"]
-CMD ["uvicorn", "dashboard.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "data_collection/public_transit/public_transit_data_cleaner.py"]
+# CMD ["uvicorn", "dashboard.main:app", "--host", "0.0.0.0", "--port", "8000"]

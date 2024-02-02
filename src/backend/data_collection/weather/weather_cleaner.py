@@ -22,6 +22,7 @@ def get_weather_warning():
 
         # Beschreibung der Wetterwarnung
         description = item.find("description").text
+        print(description)
         return description
 
     else:
