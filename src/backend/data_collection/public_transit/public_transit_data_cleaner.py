@@ -155,12 +155,14 @@ if __name__ == "__main__":
     #stop_times_bsag_updates.to_("data", engine, if_exists="append", chunksize=10000)
     #Verbindungsdaten zur Datenbank
     param_dic = {
-        "host": "localhost",
+        "host": "aixcity-nahverkehr-db-1",
         "port": "5432",
-        "database": "bsag_data",
-        "user": "user",
-        "password": "1234"
+        "dbname": "bsag_data",
+        "user": "postgres",
+        "password": "password"
     }
+
+
     #Verbindung initialisieren
     conn = connect(param_dic)
     #Daten hochladen
