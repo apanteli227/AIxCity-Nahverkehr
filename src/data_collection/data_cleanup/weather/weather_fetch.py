@@ -2,7 +2,8 @@ import requests
 import pandas as pd
 import logging
 import weather_cleaner as wc
-import datetime
+from datetime import datetime
+
 
 
 def get_weather_data(api_key, city):
@@ -74,8 +75,8 @@ def start_weather_process():
         # Erstellen eines DataFrames mit den erstellten Wetterdaten
         weather_bremen_df = pd.DataFrame({
             'Stadt': [city],
-            'Datum': [datetime.date.today()],
-            'Uhrzeit': [datetime.datetime.now().strftime("%H:%M")],
+            'Datum': [datetime.now().strftime("%Y-%m-%d")],
+            'Uhrzeit': [datetime.now().strftime("%H:%M:%S")],
             'Temperatur (°C)': [temperature],
             'Feuchtigkeit (%)': [humidity],
             'Wetterbeschreibung': [description],

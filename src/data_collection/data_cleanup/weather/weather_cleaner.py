@@ -1,5 +1,4 @@
 from xml.etree.ElementTree import fromstring
-
 import requests
 
 
@@ -22,7 +21,11 @@ def get_weather_warning():
 
         # Beschreibung der Wetterwarnung
         description = item.find("description").text
-        return description
+        
+        # Extrahiere den Text vor dem ersten <br>
+        weather_warning = description.split('<br />')[0].strip()
+
+        return weather_warning
 
     else:
         print("Fehler beim Abrufen des RSS-Feeds. Status Code:", response.status_code)

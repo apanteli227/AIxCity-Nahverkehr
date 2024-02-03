@@ -1,11 +1,10 @@
 import public_transit_fetch as pt_fetch
 import id_translation as transl
 import sys
-
 sys.path.append('../')
 from traffic import traffic_data_cleaner as traffic_data_clean
 import pandas as pd
-from datetime import datetime, time
+from datetime import datetime
 import logging
 
 
@@ -29,6 +28,7 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
 
 # Main Funktion
 if __name__ == "__main__":
+
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
@@ -124,8 +124,7 @@ if __name__ == "__main__":
     actual_date_str = actual_datetime.strftime("%Y-%m-%d")
     actual_time_str = actual_datetime.strftime("%H:%M:%S")
 
-    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
-    
+    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist 
     stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(
         stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
