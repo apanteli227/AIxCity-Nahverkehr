@@ -9,7 +9,7 @@ const MyMap = () => {
     <main className="map-container">
       <MapContainer center={position} zoom={12}>
         {/* Füge eine OpenStreetMap-Kachel-Schicht hinzu */}
-        <TileLayers
+        <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
