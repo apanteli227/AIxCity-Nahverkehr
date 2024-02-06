@@ -1,1 +1,62 @@
 StartDate,Startzeit an der Anfangshaltestelle,Linie,Richtung,Haltestelle,StopSequence,Ankunftsverspaetung in Sek.,Abfahrtsverspaetung in Sek.
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Hauptbahnhof,,0,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Bürgerpark,2.0,-30,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Findorffallee,3.0,46,46
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Eickedorfer Straße,4.0,17,17
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Hemmstraße,5.0,15,15
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Fürther Straße,7.0,48,48
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Bahnhof Walle,10.0,15,15
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Lange Reihe,12.0,-15,-15
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Waller Ring,13.0,15,15
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Emder Straße,14.0,18,18
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Gröpelingen,17.0,-93,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Karl-Bröger-Straße,18.0,-64,-45
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen DIAKO Bremen,19.0,-75,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Am Fuchsberg,20.0,0,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Ritterhuder Heerstraße,21.0,-36,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Dohlenstraße,22.0,-43,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Am Geestkamp,25.0,31,31
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Burger Dorfstraße,27.0,70,70
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen-Burg(Bus),28.0,29,29
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Marßel,33.0,-10,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Burgdammer Postweg,35.0,30,30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Am Heidbergstift,36.0,35,35
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Am Bahnhof St. Magnus,41.0,5,5
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Tannenhof,42.0,69,69
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Bahnhof Schönebeck,43.0,100,100
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Bahnhof Vegesack,45.0,-20,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Buschdeel,62.0,-30,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Hanfstraße,63.0,0,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Wasserweg,65.0,-30,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Fähre Farge,66.0,0,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Hohenesch,71.0,-30,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Rekumer Siel,72.0,0,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Sandkuhlenweg,74.0,-30,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Moorstücke,75.0,0,0
+2024-02-04,04:30:00,N7,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,77.0,-30,-30
+2024-02-04,04:30:00,N7,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,78.0,0,0
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Bf Mahndorf,,0,0
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Am Großen Kuhkamp,1.0,30,30
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Egestorff-Stiftung,4.0,68,68
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Osterholzer Möhlendamm,5.0,76,76
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Am Hahnenkamp,6.0,106,106
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Klinikum Bremen-Ost,8.0,67,67
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Lachmundsdamm,10.0,96,96
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Osterholzer Heerstraße,11.0,48,48
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Poggenburg,13.0,60,60
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Am Hallacker,14.0,90,90
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Schevemoorer Landstraße,16.0,124,124
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Bahnhof Oberneuland,18.0,88,88
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Simon-Hermann-Post-Weg,20.0,130,130
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Beim Kleinen Tagwerk,23.0,91,91
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Vorstraße,28.0,105,105
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Helmer,29.0,175,175
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Wiener Straße,33.0,122,122
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Parkallee,35.0,86,86
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Crüsemannallee,38.0,45,45
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Am Stern,41.0,7,7
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Hauptbahnhof,43.0,14,0
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Herdentor,44.0,47,47
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Schüsselkorb,45.0,77,77
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Rechtenflether Straße,56.0,47,47
+2024-02-04,04:34:00,N3,Rablinghausen,Bremen Woltmershauser Friedhof,57.0,77,77

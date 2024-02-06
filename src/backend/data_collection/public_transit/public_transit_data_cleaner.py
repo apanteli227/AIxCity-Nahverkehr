@@ -1,14 +1,16 @@
+import logging
 import sys
+import time
+from datetime import datetime
 
+import pandas as pd
 import psycopg2
 
-import public_transit_fetch as pt_fetch
 import id_translation as transl
-import pandas as pd
-from datetime import datetime, time
-import logging
-from sqlalchemy import create_engine
-#import psycopg2
+import public_transit_fetch as pt_fetch
+from ...persistence import database_controller as dbc
+import os
+
 
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     """
@@ -27,52 +29,9 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
                          validate='many_to_one')
     return merged_df
 
-def connect(params_dic):
-    """ Connect to the PostgreSQL persistence server """
-    conn = None
-    try:
-        # connect to the PostgreSQL server
-        print('Connecting to the PostgreSQL persistence...')
-        conn = psycopg2.connect(**params_dic)
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-        sys.exit(1)
-    print("Connection successful")
-    return conn
-def execute_query(conn, query):
-    """ Execute a single query """
-    ret = 0 # Return value
-    cursor = conn.cursor()
-    try:
-        cursor.execute(query)
-        conn.commit()
-    except Exception as error:
-        print("Error: %s" % error)
-        conn.rollback()
-        cursor.close()
-        return 1
-    # If this was a select query, return the result
-    if 'select' in query.lower():
-        ret = cursor.fetchall()
-    cursor.close()
-    return ret
-def single_inserts(conn, df, table):
-    """Perform single inserts of the dataframe into the PostGIS table"""
-    for i in df.index:
-        vals  = [df.at[i,col] for col in list(df.columns)]
-        query = """ INSERT INTO %s(name, geom) 
-                    VALUES('%s', ST_GeomFromText('POINT(%s %s)', 4326))
-                """ % (
-            table,
-            vals[0],
-            vals[1],
-            vals[2]
-        )
-        execute_query(conn, query)
 
 # Main Funktion
 if __name__ == "__main__":
-
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
@@ -110,9 +69,11 @@ if __name__ == "__main__":
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
 
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
-    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(routes_bsag_df.set_index('route_id')['route_short_name'])
-    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(stops_bremen_df.set_index('stop_id')['stop_name'])
-    
+    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(
+        routes_bsag_df.set_index('route_id')['route_short_name'])
+    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(
+        stops_bremen_df.set_index('stop_id')['stop_name'])
+
     logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
 
     # Entfernen der nicht benötigten Spalten
@@ -122,7 +83,8 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle', 'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle',
+                     'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
@@ -134,46 +96,49 @@ if __name__ == "__main__":
     actual_date_str = actual_datetime.strftime("%Y-%m-%d")
     actual_time_str = actual_datetime.strftime("%H:%M:%S")
 
-    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
+    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine
+    # Spalte mit Zeit-Strings ist
     stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
-    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
+    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(
+        stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
-    
     # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
     stop_times_bsag_updates = stop_times_bsag_updates[
         ((stop_times_bsag_updates['StartDate'] <= actual_date_str) &
-        (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
+         (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
         | ((stop_times_bsag_updates['StartDate'] < actual_date_str) &
-        (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
-    ]
-    
+           (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
+        ]
+
     logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
-    
+
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
-    #engine = create_engine("postgresql://postgres:1234@localhost:5432/bsag_data")
-    #stop_times_bsag_updates.to_("data", engine, if_exists="append", chunksize=10000)
-    #Verbindungsdaten zur Datenbank
-    param_dic = {
-        "host": "aixcity-nahverkehr-db-1",
-        "port": "5432",
-        "dbname": "bsag_data",
-        "user": "postgres",
-        "password": "password"
-    }
 
-
-    #Verbindung initialisieren
-    conn = connect(param_dic)
-    #Daten hochladen
-    single_inserts(conn, stop_times_bsag_updates, 'bsag_data')
-    #Verbindung beenden
-    conn.close()
-    #Daten an das Backend senden
-    #backend_url = "http://backend:5432"  # Use the service name as the hostname
-
-    # Make a POST request to the backend API endpoint
-    #response = requests.post(f"{backend_url}/data_collection_endpoint", json={"data": stop_times_bsag_updates})
-
-    #print(response.status_code)
-    #print(response.json())
+    print(stop_times_bsag_updates)
+    # Daten hochladen
+    print("Daten herunterladen...")
+    time.sleep(60)
+    #single_inserts(stop_times_bsag_updates, 'public.bsag_data')
+    """Perform single inserts of the dataframe into the PostGIS table"""
+    conn = dbc.connect(dbc.param_dic)
+    print("======[" + "public.bsag_data" + "]======")
+    print("conn: " + conn.dsn)
+    #dataframe = pt_fetch.create_stop_time_updates_df(df)
+    #print("2: " + stop_times_bsag_updates)
+    print("======[" + "public.bsag_data" + "]======")
+    for i in stop_times_bsag_updates.index:
+        vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
+        query = """INSERT INTO public.bsag_data (startdate, startzeit_an_der_anfangshaltestelle, linie, richtung, haltestelle, stopsequence, ankunftsverspaetung_sek, abfahrtsverspaetung_sek)
+                       VALUES ('%s', '%s', '%s', '%s', '%s', %s, %s, %s);""" % (
+            vals[0],
+            vals[1],
+            vals[2],
+            vals[3],
+            vals[4],
+            vals[5],
+            vals[6],
+            vals[7]
+        )
+        dbc.execute_query(conn, query)
+        #print("execute_query: " + query)
+    dbc.disconnect(conn)

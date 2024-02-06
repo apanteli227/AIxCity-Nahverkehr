@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy the data collection script to the container
-COPY . /app
+COPY . .
 
 # Install any dependencies if needed
 # install psycopg2 dependencies
@@ -14,9 +14,12 @@ RUN apt-get update \
     && pip install psycopg2
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Set PYTHONPATH
+ENV PYTHONPATH="/app/src/backend"
+
 # Expose port (if needed)
 EXPOSE 8079
 
 # Define the command to run the data collection script
-CMD ["python", "data_collection/public_transit/public_transit_data_cleaner.py"]
+CMD ["python", "-m", "data_collection/public_transit/public_transit_data_cleaner.py"]
 # CMD ["uvicorn", "dashboard.main:app", "--host", "0.0.0.0", "--port", "8000"]

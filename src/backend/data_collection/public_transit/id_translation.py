@@ -3,7 +3,7 @@ import os
 import logging
 
 
-def process_gtfs_data(base_path="src/data_collection/resources"):
+def process_gtfs_data(base_path="../resources"):
     """
     Diese Funktion lädt die GTFS-Textdateien aus dem Ressourcen-Ordner ein
     und erstellt fünf DataFrames.
@@ -23,6 +23,13 @@ def process_gtfs_data(base_path="src/data_collection/resources"):
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     path = "C:/Users/jan10/PycharmProjects/AIxCity-Nahverkehr/src/backend/data_collection/resources"
     path1 = "/app/data_collection/resources/"
+    # Erhalte das Verzeichnis der aktuellen Datei
+    current_directory = os.path.dirname(__file__)
+
+    # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
+    full_path = os.path.join(current_directory, base_path)
+
+
     # Liste mit den Dateinamen der GTFS-Textdateien
     gtfs_files = [
         "stops",
@@ -31,11 +38,10 @@ def process_gtfs_data(base_path="src/data_collection/resources"):
         "agency",
         "transfers"
     ]
-
     # Erstelle ein Dictionary mit den DataFrames
     gtfs_data = {}
     for file in gtfs_files:
-        file_path = os.path.join(path1, f"{file}.txt")
+        file_path = os.path.join(full_path, f"{file}.txt")
 
         try:
             gtfs_data[file] = pd.read_csv(file_path, low_memory=False) #Path anpassen

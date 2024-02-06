@@ -44,11 +44,13 @@ services:
       gisnet:
         aliases:
           - pgadmin4.docker
+    volumes:
+      - data:/data-postgis15-data
 volumes:
   data:
     name: data-postgis15-data
 
 networks:
   gisnet:
-    external:
-      name: gisnet
+    external: true
+    name: gisnet
