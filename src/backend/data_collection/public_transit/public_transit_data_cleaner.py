@@ -1,43 +1,16 @@
 import logging
-import sys
-import time
 from datetime import datetime
 
 import pandas as pd
-import psycopg2
 
-import id_translation as transl
-import public_transit_fetch as pt_fetch
-from ...persistence import database_controller as dbc
-import os
+from ..public_transit import id_translation as transl
+from ..public_transit import public_transit_data_fetch as pt_fetch
 
 
-def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
-    """
-    Die Funktion entfernt alle StopTime-Einträge, die nicht in der trips_bsag_df enthalten sind.
-    Es wird also ein INNER JOIN zwischen den beiden DataFrames durchgeführt. Nur Fahrten die in 
-    in der trips_bsag_df enthalten sind, werden behalten.
-
-    Parameters:
-    - stop_time_updates_df (DataFrame): DataFrame mit StopTimeUpdates.
-
-    Returns:
-    - merged_df (DataFrame): DataFrame mit StopTimeUpdates, die in der trips_bsag_df enthalten sind.
-    """
-    # Inner Join zwischen stop_time_updates_df und trips_bsag_df
-    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id',
-                         validate='many_to_one')
-    return merged_df
-
-
-# Main Funktion
-if __name__ == "__main__":
+def get_public_transit_dataframe(gtfsr_url):
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
-
-    # URL für die Abfrage der GTFS-Realtime Daten
-    gtfsr_url = "https://gtfsr.vbn.de/gtfsr_connect.json"
 
     # Abrufen der GTFS-Realtime Daten
     gtfsr_data = pt_fetch.get_gtfsr_data(gtfsr_url)
@@ -63,7 +36,8 @@ if __name__ == "__main__":
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
 
     # Umbenennen der Spalten in verständliche Namen
-    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = stop_times_bsag_updates['StartTime']
+    start_time_starting_stop_string = 'Startzeit an der Anfangshaltestelle'
+    stop_times_bsag_updates[start_time_starting_stop_string] = stop_times_bsag_updates['StartTime']
     stop_times_bsag_updates['Richtung'] = stop_times_bsag_updates['trip_headsign']
     stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
     stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
@@ -83,7 +57,7 @@ if __name__ == "__main__":
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Startzeit an der Anfangshaltestelle', 'Linie', 'Richtung', 'Haltestelle',
+    columns_order = ['StartDate', start_time_starting_stop_string, 'Linie', 'Richtung', 'Haltestelle',
                      'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
@@ -96,49 +70,43 @@ if __name__ == "__main__":
     actual_date_str = actual_datetime.strftime("%Y-%m-%d")
     actual_time_str = actual_datetime.strftime("%H:%M:%S")
 
-    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine
-    # Spalte mit Zeit-Strings ist
+    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und start_time_starting_stop_string
+    # bzw. 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
     stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
-    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(
-        stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
+    stop_times_bsag_updates[start_time_starting_stop_string] = pd.to_datetime(
+        stop_times_bsag_updates[start_time_starting_stop_string], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
     # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
     stop_times_bsag_updates = stop_times_bsag_updates[
         ((stop_times_bsag_updates['StartDate'] <= actual_date_str) &
-         (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
+         (stop_times_bsag_updates[start_time_starting_stop_string] <= actual_time_str))
         | ((stop_times_bsag_updates['StartDate'] < actual_date_str) &
-           (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
+           (stop_times_bsag_updates[start_time_starting_stop_string] >= actual_time_str))
         ]
 
     logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
-
+    return stop_times_bsag_updates
     # Optional: Speichern des DataFrames als CSV-Datei
 
-    print(stop_times_bsag_updates)
-    # Daten hochladen
-    print("Daten herunterladen...")
-    time.sleep(60)
-    #single_inserts(stop_times_bsag_updates, 'public.bsag_data')
-    """Perform single inserts of the dataframe into the PostGIS table"""
-    conn = dbc.connect(dbc.param_dic)
-    print("======[" + "public.bsag_data" + "]======")
-    print("conn: " + conn.dsn)
-    #dataframe = pt_fetch.create_stop_time_updates_df(df)
-    #print("2: " + stop_times_bsag_updates)
-    print("======[" + "public.bsag_data" + "]======")
-    for i in stop_times_bsag_updates.index:
-        vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
-        query = """INSERT INTO public.bsag_data (startdate, startzeit_an_der_anfangshaltestelle, linie, richtung, haltestelle, stopsequence, ankunftsverspaetung_sek, abfahrtsverspaetung_sek)
-                       VALUES ('%s', '%s', '%s', '%s', '%s', %s, %s, %s);""" % (
-            vals[0],
-            vals[1],
-            vals[2],
-            vals[3],
-            vals[4],
-            vals[5],
-            vals[6],
-            vals[7]
-        )
-        dbc.execute_query(conn, query)
-        #print("execute_query: " + query)
-    dbc.disconnect(conn)
+
+def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
+    """
+    Die Funktion entfernt alle StopTime-Einträge, die nicht in der trips_bsag_df enthalten sind.
+    Es wird also ein INNER JOIN zwischen den beiden DataFrames durchgeführt. Nur Fahrten die
+    in der trips_bsag_df enthalten sind, werden behalten.
+
+    Parameters:
+    - stop_time_updates_df (DataFrame): DataFrame mit StopTimeUpdates.
+
+    Returns:
+    - merged_df (DataFrame): DataFrame mit StopTimeUpdates, die in der trips_bsag_df enthalten sind.
+    """
+    # Inner Join zwischen stop_time_updates_df und trips_bsag_df
+    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id',
+                         validate='many_to_one')
+    return merged_df
+
+
+# todo: remove
+if __name__ == "__main__":
+    get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")

@@ -21,5 +21,5 @@ ENV PYTHONPATH="/app/src/backend"
 EXPOSE 8079
 
 # Define the command to run the data collection script
-CMD ["python", "-m", "data_collection/public_transit/public_transit_data_cleaner.py"]
+CMD ["python", "main.py"]
 # CMD ["uvicorn", "dashboard.main:app", "--host", "0.0.0.0", "--port", "8000"]

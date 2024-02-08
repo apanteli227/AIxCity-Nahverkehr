@@ -1,4 +1,305 @@
 StartDate,Startzeit an der Anfangshaltestelle,Linie,Richtung,Haltestelle,StopSequence,Ankunftsverspaetung in Sek.,Abfahrtsverspaetung in Sek.
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Buschdeel/Wendeplatz,,0,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Bahnhof Turnerstraße,1.0,-6,6
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Ermlandstraße,2.0,0,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Am Fillerkamp,3.0,-6,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Neuenkirchener Weg,4.0,-58,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Köhlhorster Straße,5.0,-30,12
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Vorberger Straße,6.0,-12,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen An der Lehmkuhle,7.0,0,12
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Eggestedter Straße,8.0,29,29
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Bahnhof Kreinsloger,9.0,23,35
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Rönnebecker Straße,10.0,47,59
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Fähre Blumenthal,11.0,55,73
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Zum Donaufleet,12.0,43,61
+2024-02-06,12:04:00,91,Gröpelingen,Bremen-Blumenthal Markt,13.0,52,52
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Bahnhof Blumenthal,14.0,21,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Wätjens Park,15.0,20,32
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Margaretenallee,16.0,38,50
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Bremer Vulkan,17.0,102,114
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Vereinsstraße,18.0,108,120
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Fährgrund,19.0,78,90
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Gustav-Heinemann-Bürgerhaus,20.0,48,66
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Gerhard-Rohlfs-Straße,21.0,36,66
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Bahnhof Vegesack,22.0,66,0
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Auf dem Krümpel,23.0,37,49
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Bahnhof Schönebeck,24.0,33,57
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Tannenhof,25.0,35,65
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Am Bahnhof St. Magnus,26.0,65,77
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Holthorster Weg,27.0,65,77
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Lesum Park,28.0,83,89
+2024-02-06,12:04:00,91,Gröpelingen,Bremen-Lesum Kirche,29.0,132,144
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Stehnckenshoff,30.0,172,178
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Stader Landstraße,31.0,114,144
+2024-02-06,12:04:00,91,Gröpelingen,Bremen-Burg(Bus),32.0,144,114
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Burger Dorfstraße,33.0,188,194
+2024-02-06,12:04:00,91,Gröpelingen,Bremen An Smidts Park,34.0,194,200
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Am Geestkamp,35.0,194,200
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Auf den Delben,36.0,146,158
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Stahlwerk Tor 1,37.0,140,158
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Riedemannstraße,38.0,146,158
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Hüttenhafen,39.0,146,158
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Oslebshauser Landstraße,40.0,152,164
+2024-02-06,12:04:00,91,Gröpelingen,Bremen Togostraße,41.0,146,158
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Marßel,,0,0
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Helsingborger Straße,1.0,24,36
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Upsalastraße,2.0,36,48
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Stockholmer Straße,3.0,30,42
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Burgdammer Ring,4.0,97,103
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Beckers Barg,5.0,85,85
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Stader Landstraße,6.0,56,86
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen-Burg(Bus),7.0,94,0
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Stader Landstraße,8.0,23,47
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Stehnckenshoff,9.0,17,29
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen-Lesum Kirche,10.0,35,47
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Auf dem Pasch,11.0,47,59
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Knoops Park,12.0,71,71
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Am Kapellenberg,13.0,71,83
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Richthofenstraße,14.0,47,59
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Finkenschlag,15.0,47,59
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Taunusstraße,16.0,41,53
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Seefahrtstraße,17.0,35,47
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Schönebecker Straße,18.0,47,59
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Grohn-Markt,19.0,82,88
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Bahnhof Vegesack,20.0,-3,0
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Gerhard-Rohlfs-Straße,21.0,18,30
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Gustav-Heinemann-Bürgerhaus,22.0,31,36
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Fährgrund,23.0,56,68
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Vereinsstraße,24.0,68,80
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Bremer Vulkan,25.0,56,68
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Margaretenallee,26.0,56,68
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Wätjens Park,27.0,28,40
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Bahnhof Blumenthal,28.0,-61,0
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Martin-Luther-Straße,29.0,24,36
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Bockhorner Weg,30.0,45,106
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Landrat-Berthold-Straße,31.0,118,130
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Steenkuhlenweg,32.0,146,158
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Hegeweg,33.0,191,203
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Ringofenstraße,34.0,215,227
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Hohenbuchener Straße,35.0,209,221
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Bremen Rastenburger Straße,36.0,197,209
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,,37.0,179,191
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Schwanewede Insterburger Weg,38.0,179,191
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Schwanewede Am Markt,39.0,179,191
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Schwanewede Dreienkamp,40.0,191,203
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Schwanewede Eichengrund,41.0,179,191
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Schwanewede Schützenweg,42.0,230,242
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,Schwanewede Molkereiweg,44.0,224,230
+2024-02-06,12:00:00,94,Schwanewede / Ostlandstraße,,45.0,218,0
+2024-02-06,11:49:00,90,Gröpelingen,,,0,0
+2024-02-06,11:49:00,90,Gröpelingen,Neuenkirchen(Schwanewede) Vorbruch,1.0,6,6
+2024-02-06,11:49:00,90,Gröpelingen,Neuenkirchen(Schwanewede) Ahnten,2.0,62,98
+2024-02-06,11:49:00,90,Gröpelingen,Neuenkirchen(Schwanewede) Marktplatz,3.0,111,117
+2024-02-06,11:49:00,90,Gröpelingen,Neuenkirchen(Schwanewede) Landwehr,4.0,117,123
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Moorstücke,5.0,158,164
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Sandkuhlenweg,6.0,167,173
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Vor den Wischen,7.0,167,173
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Rekumer Siel,8.0,161,167
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Hohenesch,9.0,167,173
+2024-02-06,11:49:00,90,Gröpelingen,Bremen De Kreienbarg,10.0,173,179
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Wilhelm-Brandhorst-Straße,11.0,218,218
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Betonstraße,13.0,275,281
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Fähre Farge,14.0,204,210
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Wasserweg,15.0,204,210
+2024-02-06,11:49:00,90,Gröpelingen,Bremen An der Amtsweide,16.0,242,212
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Hanfstraße,17.0,194,206
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Buschdeel,18.0,164,176
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Dillener Park,19.0,157,175
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Rönnebecker Straße,20.0,192,204
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Fähre Blumenthal,21.0,183,183
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Zum Donaufleet,22.0,153,171
+2024-02-06,11:49:00,90,Gröpelingen,Bremen-Blumenthal Markt,23.0,225,225
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Bahnhof Blumenthal,24.0,121,91
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Bf Klinikum Bremen-Nord,25.0,158,170
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Löhstraße,26.0,182,194
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Blumenhorster Straße,27.0,158,170
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Fährer Kämpe,28.0,176,182
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Bahnhof Aumund,29.0,288,300
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Aumunder Heide,30.0,281,293
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Gustav-Heinemann-Bürgerhaus,31.0,228,246
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Gerhard-Rohlfs-Straße,32.0,224,254
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Bahnhof Vegesack,33.0,218,188
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Auf dem Krümpel,34.0,89,101
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Bahnhof Schönebeck,35.0,53,77
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Tannenhof,36.0,29,59
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Am Bahnhof St. Magnus,37.0,59,71
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Holthorster Weg,38.0,59,71
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Zum Kränholm,39.0,41,59
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Bahnhof Lesum,40.0,53,65
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Rotdornallee,41.0,71,83
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Am Heidbergstift,42.0,89,101
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Burgdammer Postweg,43.0,65,77
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Goldbergplatz,44.0,77,89
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Stader Landstraße,45.0,23,53
+2024-02-06,11:49:00,90,Gröpelingen,Bremen-Burg(Bus),46.0,53,23
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Burger Dorfstraße,47.0,53,59
+2024-02-06,11:49:00,90,Gröpelingen,Bremen An Smidts Park,48.0,59,65
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Am Geestkamp,49.0,59,65
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Mittelsbürener Landstraße,50.0,71,77
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Von-Ossietzky-Straße,51.0,35,65
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Dohlenstraße,52.0,5,23
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Ritterhuder Heerstraße,53.0,11,23
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Am Fuchsberg,54.0,17,29
+2024-02-06,11:49:00,90,Gröpelingen,Bremen DIAKO Bremen,55.0,29,41
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Karl-Bröger-Straße,56.0,17,29
+2024-02-06,11:49:00,90,Gröpelingen,Bremen Gröpelingen,57.0,23,0
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Gröpelingen,,0,63
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Karl-Bröger-Straße,1.0,109,121
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen DIAKO Bremen,2.0,103,115
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Am Fuchsberg,3.0,145,157
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Ritterhuder Heerstraße,4.0,109,121
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Dohlenstraße,5.0,140,152
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Von-Ossietzky-Straße,6.0,152,164
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Mittelsbürener Landstraße,7.0,170,182
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Am Geestkamp,8.0,177,189
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen An Smidts Park,9.0,189,201
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Burger Dorfstraße,10.0,226,238
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen-Burg(Bus),11.0,238,148
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Stader Landstraße,12.0,142,166
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Goldbergplatz,13.0,172,184
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Burgdammer Postweg,14.0,190,202
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Am Heidbergstift,15.0,178,190
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Rotdornallee,16.0,172,184
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bahnhof Lesum,17.0,190,208
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Zum Kränholm,18.0,172,184
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Holthorster Weg,19.0,172,184
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Am Bahnhof St. Magnus,20.0,172,184
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Tannenhof,21.0,196,208
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bahnhof Schönebeck,22.0,160,172
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Auf dem Krümpel,23.0,147,159
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bahnhof Vegesack,24.0,102,72
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Gerhard-Rohlfs-Straße,25.0,104,163
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Gustav-Heinemann-Bürgerhaus,26.0,145,169
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Aumunder Heide,27.0,190,202
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bahnhof Aumund,28.0,159,177
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Fährer Kämpe,29.0,147,159
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Blumenhorster Straße,30.0,159,171
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Löhstraße,31.0,159,171
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bf Klinikum Bremen-Nord,32.0,170,188
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bahnhof Blumenthal,33.0,219,221
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen-Blumenthal Markt,34.0,255,267
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Zum Donaufleet,35.0,273,279
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Fähre Blumenthal,36.0,261,273
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Rönnebecker Straße,37.0,300,306
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Dillener Park,38.0,328,340
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Buschdeel,39.0,322,322
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Hanfstraße,40.0,310,322
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen An der Amtsweide,41.0,310,322
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Wasserweg,42.0,322,328
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Fähre Farge,43.0,352,352
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Betonstraße,44.0,387,399
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Bahnhof Farge,45.0,375,387
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Wilhelm-Brandhorst-Straße,46.0,417,429
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen De Kreienbarg,47.0,399,411
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Hohenesch,48.0,417,417
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Rekumer Siel,49.0,441,441
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Vor den Wischen,50.0,423,423
+2024-02-06,11:53:00,90,Neuenkirchen,Bremen Sandkuhlenweg,51.0,417,417
+2024-02-06,11:53:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,54.0,393,399
+2024-02-06,11:53:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,55.0,381,393
+2024-02-06,11:53:00,90,Neuenkirchen,Neuenkirchen(Schwanewede) Vorbruch,56.0,399,399
+2024-02-06,11:53:00,90,Neuenkirchen,,57.0,393,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Überseestadt-Nord,,0,44
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Ehrenfelsstraße,1.0,44,50
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Silbermannstraße,2.0,9,15
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Marcuskaje,3.0,75,81
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Überseetor,4.0,75,81
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Waller Ring,6.0,107,119
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Lange Reihe,7.0,151,157
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Bahnhof Walle,8.0,99,111
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Holsteiner Straße,9.0,52,70
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Dithmarscher Freiheit,10.0,52,70
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Fürther Straße,11.0,58,70
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Hemmstraße,12.0,58,76
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Eickedorfer Straße,13.0,91,103
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Findorffallee,14.0,91,103
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Bürgerpark,15.0,97,103
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Messe-Zentrum,16.0,97,109
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Hauptbahnhof,17.0,32,124
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Am Wall,18.0,138,156
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Am Brill (Bgm.-Smidt-Straße),19.0,94,106
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Westerstraße,20.0,194,206
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Hochschule Bremen,21.0,188,200
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Pappelstraße,22.0,164,182
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Delmestraße,23.0,140,152
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Gastfeldstraße,24.0,148,166
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Meyerstraße,25.0,130,142
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Gottfried-Menken-Straße,26.0,112,124
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen August-Hinrichs-Straße,27.0,130,142
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Willigstraße,28.0,83,95
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Stenumer Straße,29.0,96,108
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Huckelriede,30.0,92,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Friedhof Huckelriede,31.0,36,36
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Helene-Lange-Straße,32.0,24,24
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Fellendsweg,33.0,21,21
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Fontanestraße,34.0,-9,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Habenhauser Brückenstraße,35.0,3,9
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Friedrich-Engels-Straße,36.0,54,60
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Schlehenweg,37.0,36,42
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Staustraße,38.0,-7,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Pfarrfeldsweg,39.0,-12,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Piependamm,40.0,-12,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Senator-Theil-Straße,41.0,-6,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Hermann-Helms-Straße,42.0,-6,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Arster Kirche,43.0,-6,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Arster Landstraße,44.0,-6,0
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen In der Laake,45.0,12,18
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Carsten-Dreßler-Straße,46.0,59,65
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Martin-Buber-Straße,47.0,53,65
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Brenningstraße,48.0,59,65
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Gemeinschaftszentrum Obervieland,49.0,53,65
+2024-02-06,11:57:00,26,Kattenturm / Klinikum LDW,Bremen Kattenturm-Mitte,50.0,53,65
+2024-02-06,11:53:00,26,Überseestadt,Bremen Klinikum Haupteingang,,0,523
+2024-02-06,11:53:00,26,Überseestadt,Bremen Klinikum Links der Weser,1.0,523,535
+2024-02-06,11:53:00,26,Überseestadt,Bremen Kattenturm-Mitte,2.0,513,525
+2024-02-06,11:53:00,26,Überseestadt,Bremen Gemeinschaftszentrum Obervieland,3.0,537,543
+2024-02-06,11:53:00,26,Überseestadt,Bremen Brenningstraße,4.0,561,567
+2024-02-06,11:53:00,26,Überseestadt,Bremen Carsten-Dreßler-Straße,6.0,555,561
+2024-02-06,11:53:00,26,Überseestadt,Bremen In der Laake,7.0,549,555
+2024-02-06,11:53:00,26,Überseestadt,Bremen Arster Landstraße,8.0,549,555
+2024-02-06,11:53:00,26,Überseestadt,Bremen Arster Kirche,9.0,561,567
+2024-02-06,11:53:00,26,Überseestadt,Bremen Hermann-Helms-Straße,10.0,549,555
+2024-02-06,11:53:00,26,Überseestadt,Bremen Senator-Theil-Straße,11.0,583,589
+2024-02-06,11:53:00,26,Überseestadt,Bremen Piependamm,12.0,616,628
+2024-02-06,11:53:00,26,Überseestadt,Bremen Pfarrfeldsweg,13.0,636,666
+2024-02-06,11:53:00,26,Überseestadt,Bremen Staustraße,14.0,672,684
+2024-02-06,11:53:00,26,Überseestadt,Bremen Schlehenweg,15.0,672,678
+2024-02-06,11:53:00,26,Überseestadt,Bremen Friedrich-Engels-Straße,16.0,666,666
+2024-02-06,11:53:00,26,Überseestadt,Bremen Habenhauser Brückenstraße,17.0,666,636
+2024-02-06,11:53:00,26,Überseestadt,Bremen Fontanestraße,18.0,624,630
+2024-02-06,11:53:00,26,Überseestadt,Bremen Fellendsweg,19.0,589,595
+2024-02-06,11:53:00,26,Überseestadt,Bremen Helene-Lange-Straße,20.0,549,555
+2024-02-06,11:53:00,26,Überseestadt,Bremen Friedhof Huckelriede,21.0,537,537
+2024-02-06,11:53:00,26,Überseestadt,Bremen Huckelriede,22.0,433,433
+2024-02-06,11:53:00,26,Überseestadt,Bremen Stenumer Straße,23.0,473,479
+2024-02-06,11:53:00,26,Überseestadt,Bremen Willigstraße,24.0,485,491
+2024-02-06,11:53:00,26,Überseestadt,Bremen August-Hinrichs-Straße,25.0,495,405
+2024-02-06,11:53:00,26,Überseestadt,Bremen Gottfried-Menken-Straße,26.0,393,405
+2024-02-06,11:53:00,26,Überseestadt,Bremen Meyerstraße,27.0,324,342
+2024-02-06,11:53:00,26,Überseestadt,Bremen Gastfeldstraße,28.0,330,342
+2024-02-06,11:53:00,26,Überseestadt,Bremen Delmestraße,29.0,352,383
+2024-02-06,11:53:00,26,Überseestadt,Bremen Pappelstraße,30.0,389,401
+2024-02-06,11:53:00,26,Überseestadt,Bremen Hochschule Bremen,31.0,371,383
+2024-02-06,11:53:00,26,Überseestadt,Bremen Westerstraße,32.0,366,378
+2024-02-06,11:53:00,26,Überseestadt,Bremen Am Brill (Bgm.-Smidt-Straße),33.0,324,342
+2024-02-06,11:53:00,26,Überseestadt,Bremen Am Wall,34.0,399,411
+2024-02-06,11:53:00,26,Überseestadt,Bremen Hauptbahnhof,35.0,283,345
+2024-02-06,11:53:00,26,Überseestadt,Bremen Messe-Zentrum,36.0,376,400
+2024-02-06,11:53:00,26,Überseestadt,Bremen Bürgerpark,37.0,364,382
+2024-02-06,11:53:00,26,Überseestadt,Bremen Findorffallee,38.0,352,376
+2024-02-06,11:53:00,26,Überseestadt,Bremen Eickedorfer Straße,39.0,358,376
+2024-02-06,11:53:00,26,Überseestadt,Bremen Hemmstraße,40.0,371,383
+2024-02-06,11:53:00,26,Überseestadt,Bremen Fürther Straße,41.0,377,389
+2024-02-06,11:53:00,26,Überseestadt,Bremen Dithmarscher Freiheit,42.0,320,332
+2024-02-06,11:53:00,26,Überseestadt,Bremen Holsteiner Straße,43.0,344,350
+2024-02-06,11:53:00,26,Überseestadt,Bremen Bahnhof Walle,44.0,344,350
+2024-02-06,11:53:00,26,Überseestadt,Bremen Bahnhof Walle,45.0,338,350
+2024-02-06,11:53:00,26,Überseestadt,Bremen Lange Reihe,46.0,344,350
+2024-02-06,11:53:00,26,Überseestadt,Bremen Waller Ring,47.0,326,338
+2024-02-06,11:53:00,26,Überseestadt,Bremen Überseetor,48.0,332,332
+2024-02-06,11:53:00,26,Überseestadt,Bremen Marcuskaje,49.0,326,332
+2024-02-06,11:53:00,26,Überseestadt,Bremen Silbermannstraße,50.0,326,332
+2024-02-06,11:53:00,26,Überseestadt,Bremen Überseestadt-Nord,52.0,338,0
 2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Hauptbahnhof,,0,0
 2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Bürgerpark,2.0,-30,-30
 2024-02-04,04:30:00,N7,Neuenkirchen,Bremen Findorffallee,3.0,46,46

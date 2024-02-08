@@ -1,9 +1,10 @@
-import requests
-import pandas as pd
 import logging
 
+import pandas as pd
+import requests
 
-def get_weather_data(api_key, city):
+
+def get_weather_data(base_url, api_key, city):
     """
     Diese Funktion holt die Wetterdaten für eine Stadt von OpenWeatherMap.
 
@@ -14,14 +15,11 @@ def get_weather_data(api_key, city):
     - weather_data (dict): Die Wetterdaten im JSON-Format.
     """
 
-    # URL für die Abfrage der Wetterdaten
-    base_url = "http://api.openweathermap.org/data/2.5/weather"
-
     # Parameter für die Abfrage der Wetterdaten
     params = {
         'q': city,
         'appid': api_key,
-        'units': 'metric' 
+        'units': 'metric'
     }
 
     # Abrufen der Wetterdaten
@@ -35,23 +33,21 @@ def get_weather_data(api_key, city):
         print(f"Fehlschlag bei der Abfrage. Status Code: {response.status_code}")
         return None
 
-def start_weather_process():
+
+def get_weather_dataframe(url, api_key, city):
     """
     Diese Funktion startet den Prozess zur Ermittlung der Wetterdaten.
     
     Returns:
     - weather_bremen_df (DataFrame): DataFrame mit den Wetterdaten für Bremen.
     """
-    # API-Key für OpenWeatherMap 
-    # Achtung: API-Key ist vom Account von Emmanuel
-    # Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
-    api_key = '131b00cd42bee49451a4c69d496797e1'
 
-    # Stadt für die Wetterdaten
-    city = 'Bremen'
+    # Konfiguriere das Logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.info("Starte Prozess zur Ermittlung der Bremer Wetterdaten...")
 
     # Abrufen der Funktion zur Ermittlung Wetterdaten
-    weather_data = get_weather_data(api_key, city)
+    weather_data = get_weather_data(url, api_key, city)
 
     # Prüfen, ob die Wetterdaten erfolgreich ermittelt wurden
     if weather_data:
@@ -59,7 +55,7 @@ def start_weather_process():
         temperature = weather_data['main']['temp']
         humidity = weather_data['main']['humidity']
         description = weather_data['weather'][0]['description']
-        
+
         # Prüfen, ob Winddaten verfügbar sind
         if 'wind' in weather_data:
             wind_speed = weather_data['wind']['speed']
@@ -69,7 +65,7 @@ def start_weather_process():
         # Abrufen der Wetterwarnungen
         warnings_response = requests.get(f"http://api.openweathermap.org/data/3.0/warnings?appid={api_key}&q={city}")
         warnings_data = warnings_response.json()
-        
+
         # Prüfen, ob Wetterwarnungen verfügbar sind
         if 'warnings' in warnings_data:
             weather_warnings = warnings_data['warnings']
@@ -86,16 +82,14 @@ def start_weather_process():
             'Weather Warnings': [weather_warnings]
         })
 
-        #Optional: Speichern des Wetter-DataFrames als CSV-Datei
+        # Optional: Speichern des Wetter-DataFrames als CSV-Datei
         weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
         logging.info("Wetterdaten erfolgreich ermittelt und gespeichert!")
+        return weather_bremen_df
     else:
         logging.warning("Prozess zur Ermittlung der Bremer Wetterdaten fehlgeschlagen!")
 
-# Main-Funktion zum Start des zur Ermittlung der Wetterdaten über OpenWeatherMap
-if __name__ == "__main__":
-    # Konfiguriere das Logging
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starte Prozess zur Ermittlung der Bremer Wetterdaten...")
 
-    start_weather_process()
+# todo: remove
+if __name__ == "__main__":
+    get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1", "Bremen")
