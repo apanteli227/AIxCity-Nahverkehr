@@ -19,8 +19,3 @@ def get_traffic_dataframe(api_url):
         # Falls die Anfrage nicht erfolgreich war, eine Fehlermeldung ausgeben
         print(f"Fehler bei der API-Anfrage. Status Code: {response.status_code}")
         return None
-
-
-# todo: remove
-if __name__ == "__main__":
-    get_traffic_dataframe("https://jsonplaceholder.typicode.com/todos")

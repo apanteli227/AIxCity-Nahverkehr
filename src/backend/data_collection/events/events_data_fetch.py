@@ -29,9 +29,6 @@ def get_events_dataframe(base_path="../resources"):
     except FileNotFoundError:
         print("Warnung: Datei events_bremen.csv nicht gefunden.")
 
-    # Abrufen der Events
-    print(events_data.head())
-
     # Konvertiere Spalte mit Uhrzeit und Datum in Datetime-Objekte (Beginn)
     events_data["Beginn_Datum"] = pd.to_datetime(events_data["Beginn_Datum"])
     events_data["Beginn_Uhrzeit"] = pd.to_datetime(events_data["Beginn_Uhrzeit"])
@@ -58,8 +55,3 @@ def get_events_dataframe(base_path="../resources"):
     # CSV-Datei aus events_bsag_updates_df erstellen
     events_bsag_updates_df.to_csv("events_bsag_updates.csv", index=False)
     return events_bsag_updates_df
-
-
-# todo: remove
-if __name__ == "__main__":
-    get_events_dataframe()

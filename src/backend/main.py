@@ -32,7 +32,7 @@ def hello_world():
 
 
 # todo db müll auslagern
-def a(stop_times_bsag_updates_df):
+def save_transit_and_traffic_data(stop_times_bsag_updates_df):
     print(stop_times_bsag_updates_df)
     # Daten hochladen
     print("Daten herunterladen...")
@@ -63,7 +63,7 @@ def a(stop_times_bsag_updates_df):
     dbc.disconnect(conn)
 
 
-def b(events_bsag_updates_df):
+def save_events_data(events_bsag_updates_df):
     conn = dbc.connect(dbc.param_dic)
     for i in events_bsag_updates_df.index:
         vals = [events_bsag_updates_df.at[i, col] for col in list(events_bsag_updates_df.columns)]
@@ -84,20 +84,17 @@ def b(events_bsag_updates_df):
         print("execute_query: " + query)
     dbc.disconnect(conn)
 
-def c(dataframe):
-    return dataframe
-
-def d(dataframe):
+def save_weather_data(dataframe):
     return dataframe
 
 
 if __name__ == "__main__":
-    a(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
-    b(get_events_dataframe("https://www.bremen.de/veranstaltungen")) #todo change url
+    save_transit_and_traffic_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json", "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
+                            "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point="))
+    save_events_data(get_events_dataframe("https://www.bremen.de/veranstaltungen")) #todo change url
     # todo Achtung: API-Key ist vom Account von Emmanuel
     # todo Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
-    c(get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1", "Bremen"))
-    d(get_traffic_dataframe("https://jsonplaceholder.typicode.com/todos"))
+    save_weather_data(get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1", "Bremen"))
 
 
 

@@ -92,9 +92,3 @@ def get_weather_dataframe(url, api_key, city):
         return weather_bremen_df
     else:
         logging.warning("Prozess zur Ermittlung der Bremer Wetterdaten fehlgeschlagen!")
-
-
-# todo: remove
-if __name__ == "__main__":
-    get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1",
-                          "Bremen")

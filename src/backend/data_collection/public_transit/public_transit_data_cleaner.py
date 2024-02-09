@@ -8,13 +8,10 @@ from ..public_transit import id_translation as transl
 from ..public_transit import public_transit_data_fetch as pt_fetch
 
 
-def get_public_transit_dataframe(gtfsr_url):
+def get_public_transit_dataframe(gtfsr_url, base_api_url):
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
-
-    # URL für die Abfrage der GTFS-Realtime Daten
-    gtfsr_url = "https://gtfsr.vbn.de/gtfsr_connect.json"
 
     # Abrufen der GTFS-Realtime Daten
     gtfsr_data = pt_fetch.get_gtfsr_data(gtfsr_url)
@@ -40,10 +37,10 @@ def get_public_transit_dataframe(gtfsr_url):
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
 
     # Datei mit Anzahl der Haltestellen pro Linie einlesen
-    relevant_routes_stops_bsag = pd.read_csv("../resources/relevant_routes_stops_bsag.csv", delimiter=';')
+    relevant_routes_stops_bsag = pd.read_csv("data_collection/resources/relevant_routes_stops_bsag.csv", delimiter=';')
 
     # Datei mit den Feiertagen einlesen
-    holidays_bremen_df = pd.read_csv("../resources/holidays.csv", delimiter=';')
+    holidays_bremen_df = pd.read_csv("data_collection/resources/holidays.csv", delimiter=';')
 
     # Anpassen der Angabe des Feiertages als Integer
     holidays_bremen_df['Feiertag'] = holidays_bremen_df['Feiertag'].astype(int)
@@ -107,7 +104,8 @@ def get_public_transit_dataframe(gtfsr_url):
     actual_date_str = actual_datetime.strftime("%Y-%m-%d")
     actual_time_str = actual_datetime.strftime("%H:%M:%S")
 
-    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
+    # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine
+    # Spalte mit Zeit-Strings ist
     stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(
         stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
@@ -127,7 +125,7 @@ def get_public_transit_dataframe(gtfsr_url):
     # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter.
     # Dieser Prozess wird parallel zum aktuellen Prozess ausgeführt
     logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...")
-    return traffic_data_cleaner.main(stop_times_bsag_updates)
+    return traffic_data_cleaner.main(base_api_url, stop_times_bsag_updates)
 
 
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
