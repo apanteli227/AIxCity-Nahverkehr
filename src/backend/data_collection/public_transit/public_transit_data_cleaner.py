@@ -1,3 +1,11 @@
+import public_transit_fetch as pt_fetch
+import id_translation as transl
+import sys
+
+sys.path.append('../')
+from traffic import traffic_data_cleaner as traffic_data_clean
+import pandas as pd
+from datetime import datetime, time
 import logging
 from datetime import datetime
 
@@ -35,6 +43,28 @@ def get_public_transit_dataframe(gtfsr_url):
     # Entferne alle StopTimeUpdates, die nicht in der trips_bsag_df enthalten sind
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
 
+    # Datei mit Anzahl der Haltestellen pro Linie einlesen
+    relevant_routes_stops_bsag = pd.read_csv("../resources/relevant_routes_stops_bsag.csv", delimiter=';')
+
+    # Datei mit den Feiertagen einlesen
+    holidays_bremen_df = pd.read_csv("../resources/holidays.csv", delimiter=';')
+
+    # Anpassen der Angabe des Feiertages als Integer
+    holidays_bremen_df['Feiertag'] = holidays_bremen_df['Feiertag'].astype(int)
+
+    # Anpassen der Datumsformat der Spalte Datum_Feiertag in holidays_bremen_df
+    holidays_bremen_df['Datum_Feiertag'] = pd.to_datetime(holidays_bremen_df['Datum_Feiertag'], format="%d.%m.%Y").dt.strftime("%Y-%m-%d")
+
+    # Merge von stop_times_bsag_updates und relevant_routes_stops_bsag, um die Anzahl der Haltestellen zu erhalten
+    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, relevant_routes_stops_bsag, how='inner',
+                                       left_on='route_id', right_on='route_id')
+
+    # Anpassen des Datumsformats der Spalte StartDate in stop_times_bsag_uodates
+    stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
+
+    # Merge von stop_times_bsag_updates und holidays_bremen_df, um die Feiertage zu erhalten
+    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='StartDate', right_on='Datum_Feiertag')
+
     # Umbenennen der Spalten in verständliche Namen
     start_time_starting_stop_string = 'Startzeit an der Anfangshaltestelle'
     stop_times_bsag_updates[start_time_starting_stop_string] = stop_times_bsag_updates['StartTime']
@@ -53,12 +83,13 @@ def get_public_transit_dataframe(gtfsr_url):
     # Entfernen der nicht benötigten Spalten
     columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
                          'ScheduleRelationshipStop', 'DepartureDelay', 'ArrivalDelay', 'trip_id', 'route_id',
-                         'trip_headsign', 'trip_headsign', 'StartTime']
+                         'trip_headsign', 'trip_headsign', 'StartTime', 'Datum_Feiertag']
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', start_time_starting_stop_string, 'Linie', 'Richtung', 'Haltestelle',
-                     'StopSequence', 'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['StartDate', 'Aktuelle Uhrzeit', 'Wochentag', 'Feiertag', 'Startzeit an der Anfangshaltestelle', 'Linie',
+                     'Anzahl Haltestellen', 'Richtung', 'Anzahl Baustellen', 'Haltestelle', 'StopSequence',
+                     'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
@@ -72,7 +103,6 @@ def get_public_transit_dataframe(gtfsr_url):
 
     # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und start_time_starting_stop_string
     # bzw. 'Startzeit an der Anfangshaltestelle' eine Spalte mit Zeit-Strings ist
-    stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
     stop_times_bsag_updates[start_time_starting_stop_string] = pd.to_datetime(
         stop_times_bsag_updates[start_time_starting_stop_string], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
