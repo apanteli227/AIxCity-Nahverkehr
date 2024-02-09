@@ -1,11 +1,8 @@
 import logging
+from datetime import datetime
 
 import pandas as pd
 import requests
-import logging
-import weather_cleaner as wc
-from datetime import datetime
-
 
 
 def get_weather_data(base_url, api_key, city):
@@ -13,14 +10,12 @@ def get_weather_data(base_url, api_key, city):
     Diese Funktion holt die Wetterdaten für eine Stadt von OpenWeatherMap.
 
     Parameters:
+        #todo docs add param
     - api_key (str): Der API-Key für OpenWeatherMap.
 
     Returns:
     - weather_data (dict): Die Wetterdaten im JSON-Format.
     """
-
-    # URL für die Abfrage der Wetterdaten
-    base_url = "http://api.openweathermap.org/data/2.5/weather"
 
     # Parameter für die Abfrage der Wetterdaten
     params = {
@@ -48,10 +43,6 @@ def get_weather_dataframe(url, api_key, city):
     Returns:
     - weather_bremen_df (DataFrame): DataFrame mit den Wetterdaten für Bremen.
     """
-    # API-Key für OpenWeatherMap 
-    # Achtung: API-Key ist vom Account von Emmanuel
-    # todo: Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
-    api_key = '131b00cd42bee49451a4c69d496797e1'
 
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -92,7 +83,7 @@ def get_weather_dataframe(url, api_key, city):
             'Feuchtigkeit (%)': [humidity],
             'Wetterbeschreibung': [description],
             'Windgeschwindigkeit (m/s)': [wind_speed],
-            'Wetterwarnungen': [weather_warning]
+            'Wetterwarnungen': [weather_warnings]
         })
 
         # Optional: Speichern des Wetter-DataFrames als CSV-Datei
@@ -105,4 +96,5 @@ def get_weather_dataframe(url, api_key, city):
 
 # todo: remove
 if __name__ == "__main__":
-    get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1", "Bremen")
+    get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1",
+                          "Bremen")
