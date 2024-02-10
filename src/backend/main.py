@@ -1,12 +1,13 @@
 import time
 
-#from fastapi import FastAPI
-#from fastapi.middleware.cors import CORSMiddleware
+import schedule
+
+# from fastapi import FastAPI
+# from fastapi.middleware.cors import CORSMiddleware
 
 from data_collection.public_transit.public_transit_data_cleaner import get_public_transit_dataframe
 from data_collection.events.events_data_fetch import get_events_dataframe
 from data_collection.weather.weather_data_fetch import get_weather_dataframe
-from data_collection.traffic.traffic_data_fetch import get_traffic_dataframe
 from persistence import database_controller as dbc
 
 '''
@@ -84,19 +85,26 @@ def save_events_data(events_bsag_updates_df):
         print("execute_query: " + query)
     dbc.disconnect(conn)
 
+
 def save_weather_data(dataframe):
     return dataframe
 
 
 if __name__ == "__main__":
-    save_transit_and_traffic_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json", "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
-                            "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point="))
-    save_events_data(get_events_dataframe("https://www.bremen.de/veranstaltungen")) #todo change url
+    # Schedule tasks
+    schedule.every(1).minutes.do(save_transit_and_traffic_data(
+        get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json",
+                                     "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
+                                     "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point=")))
+    # todo change url
+    schedule.every(1).day.do(save_events_data(get_events_dataframe("https://www.bremen.de/veranstaltungen")))
     # todo Achtung: API-Key ist vom Account von Emmanuel
     # todo Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
-    save_weather_data(get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1", "Bremen"))
+    schedule.every(60).minutes.do(save_weather_data(
+        get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1",
+                              "Bremen")))
 
-
-
-
-
+    # Endlessly run the scheduled tasks
+    while True:
+        schedule.run_pending()
+        time.sleep(1)  # Sleep for 1 second to avoid excessive CPU usage
