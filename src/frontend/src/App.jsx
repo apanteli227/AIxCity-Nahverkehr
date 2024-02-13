@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import MyMap from "./pages/MyMap";
+import MyMap_OpenStreet from "./pages/MyMap_OpenStreet";
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -23,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/map" element={<MyMap />} />
+          <Route path="/map" element={<MyMap_OpenStreet />} />
         </Routes>
       </BrowserRouter>
     </div>
