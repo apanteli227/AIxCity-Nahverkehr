@@ -1,410 +1,340 @@
-stop_lat,stop_lon,Aktuelle Uhrzeit,Wochentag,Feiertag,Anzahl Haltestellen,Anzahl Baustellen,Haltestelle,currentSpeed,freeFlowSpeed,Durchschnittliche Verkehrsauslastung in %
-53.073972,8.852545,14:04:33,Friday,0,39.0,1.0,Bremen Stader Straße/Bismarckstraße,10.0,16.0,0.375
-53.082482,8.837204,14:04:33,Friday,0,32.0,0.0,Bremen St. Joseph-Stift,14.0,35.0,0.6
-53.170893,8.702791,14:04:33,Friday,0,58.0,1.0,Bremen Goldbergplatz,26.0,44.0,0.4091
-53.143057,8.714654,14:04:33,Friday,0,58.0,1.0,Bremen Mittelsbürener Landstraße,26.0,44.0,0.4091
-53.242891,8.590647,14:04:33,Friday,0,48.0,2.0,Schwanewede Am Spreeken,64.0,64.0,0.0
-53.225206,8.591855,14:04:33,Friday,0,48.0,2.0,Schwanewede Hospitalstraße,41.0,50.0,0.18
-53.126404,8.747009,14:04:33,Friday,0,58.0,1.0,Bremen DIAKO Bremen,16.0,48.0,0.6667
-53.095719,8.647627,14:04:33,Friday,0,15.0,0.0,Delmenhorst Sandhausen,58.0,58.0,0.0
-53.183024,8.579728,14:04:33,Friday,0,40.0,0.0,Bremen Bahnhof Blumenthal,36.0,44.0,0.1818
-53.17448,8.618157,14:04:33,Friday,0,40.0,0.0,Bremen Gustav-Heinemann-Bürgerhaus,20.0,35.0,0.4286
-53.23916,8.59269,14:04:33,Friday,0,48.0,2.0,Schwanewede Landhaus Schwanewede,63.0,63.0,0.0
-53.057907,8.95105,14:04:33,Friday,0,16.0,0.0,Bremen Osterholzer Möhlendamm,22.0,42.0,0.4762
-53.053257,8.962122,14:04:33,Friday,0,44.0,0.0,Bremen Werner-Steenken-Straße,27.0,40.0,0.325
-53.05985,8.914326,14:04:33,Friday,0,23.0,0.0,Bremen Osterholzer Friedhof,25.0,47.0,0.4681
-53.059114,8.930389,14:04:33,Friday,0,23.0,0.0,Bremen Osterholzer Heerstraße,33.0,43.0,0.2326
-53.062197,8.887576,14:04:33,Friday,0,33.0,1.0,Bremen Bahnhof Sebaldsbrück,14.0,25.0,0.44
-53.059469,8.899647,14:04:33,Friday,0,33.0,1.0,Bremen Sebaldsbrück (Bus+Tram),7.0,44.0,0.8409
-53.076869,8.837379,14:04:33,Friday,0,39.0,1.0,Bremen Klinikum Bremen-Mitte,32.0,43.0,0.2558
-53.06431,8.877295,14:04:33,Friday,0,33.0,1.0,Bremen Föhrenstraße,24.0,24.0,0.0
-53.049065,8.960619,14:04:33,Friday,0,44.0,0.0,Bremen Weserpark,28.0,45.0,0.3778
-53.069665,8.787596,14:04:33,Friday,0,44.0,0.0,Bremen Pappelstraße,18.0,29.0,0.3793
-53.066421,8.793695,14:04:33,Friday,0,25.0,0.0,Bremen Gastfeldstraße,22.0,32.0,0.3125
-53.231682,8.593411,14:04:33,Friday,0,48.0,2.0,Schwanewede Molkereiweg,68.0,68.0,0.0
-53.036236,8.726984,14:04:33,Friday,0,21.0,1.0,Bremen Varreler Landstraße,20.0,45.0,0.5556
-53.226292,8.594252,14:04:33,Friday,0,48.0,2.0,Schwanewede Schützenweg,37.0,58.0,0.3621
-53.23443,8.515404,14:04:33,Friday,0,58.0,1.0,Neuenkirchen(Schwanewede) Marktplatz,65.0,65.0,0.0
-53.233095,8.525564,14:04:33,Friday,0,58.0,1.0,Neuenkirchen(Schwanewede) Vorbruch,64.0,64.0,0.0
-53.027896,8.806059,14:04:33,Friday,0,34.0,0.0,Brinkum-Nord Ochtum Park (IKEA),24.0,44.0,0.4545
-53.03943,8.814502,14:04:33,Friday,0,34.0,0.0,Bremen Wolfskuhlenweg,22.0,30.0,0.2667
-53.175062,8.660805,14:04:33,Friday,0,58.0,1.0,Bremen Tannenhof,48.0,48.0,0.0
-53.173747,8.648916,14:04:33,Friday,0,58.0,1.0,Bremen Bahnhof Schönebeck,27.0,46.0,0.413
-53.174692,8.669639,14:04:33,Friday,0,58.0,1.0,Bremen Am Bahnhof St. Magnus,17.0,45.0,0.6222
-53.068022,8.790793,14:04:33,Friday,0,53.0,0.0,Bremen Delmestraße,22.0,32.0,0.3125
-53.133632,8.736583,14:04:33,Friday,0,58.0,1.0,Bremen Ritterhuder Heerstraße,35.0,39.0,0.1026
-53.151844,8.7084,14:04:33,Friday,0,58.0,1.0,Bremen An Smidts Park,32.0,43.0,0.2558
-53.167533,8.702409,14:04:33,Friday,0,58.0,1.0,Bremen Stader Landstraße,26.0,44.0,0.4091
-53.174211,8.719675,14:04:33,Friday,0,48.0,2.0,Bremen Stockholmer Straße,32.0,45.0,0.2889
-53.171674,8.621464,14:04:33,Friday,0,40.0,0.0,Bremen Gerhard-Rohlfs-Straße,18.0,38.0,0.5263
-53.09924,8.862825,14:04:33,Friday,0,25.0,2.0,Bremen Helmer,23.0,31.0,0.2581
-53.050535,8.853241,14:04:33,Friday,0,53.0,0.0,Bremen Friedrich-Engels-Straße,41.0,41.0,0.0
-53.061065,8.786174,14:04:33,Friday,0,25.0,0.0,Bremen BSAG-Zentrum,16.0,23.0,0.3043
-53.130727,8.706355,14:04:33,Friday,0,15.0,0.0,Bremen Stahlwerk Tor 3,52.0,52.0,0.0
-53.037377,8.822212,14:04:33,Friday,0,53.0,0.0,Bremen Klinikum Links der Weser,29.0,40.0,0.275
-53.056372,8.784087,14:04:33,Friday,0,25.0,0.0,Bremen Neuenlander Kämpe,33.0,44.0,0.25
-53.091991,8.920181,14:04:33,Friday,0,23.0,0.0,Bremen Rockwinkeler Heerstraße,48.0,48.0,0.0
-53.072578,8.857605,14:04:33,Friday,0,39.0,1.0,Bremen Stresemannstraße,24.0,36.0,0.3333
-53.061129,8.963829,14:04:33,Friday,0,44.0,0.0,Bremen Tenever-Zentrum,27.0,40.0,0.325
-53.124637,8.740288,14:04:33,Friday,0,23.0,2.0,Bremen Togostraße,60.0,60.0,0.0
-53.111923,8.849904,14:04:33,Friday,0,26.0,0.0,Bremen Wilhelm-Herbst-Straße,44.0,51.0,0.1373
-53.072617,8.819835,14:04:33,Friday,0,29.0,1.0,Bremen Ulrichsplatz,22.0,22.0,0.0
-53.141842,8.713751,14:04:33,Friday,0,23.0,2.0,Bremen Auf den Delben,30.0,36.0,0.1667
-53.190115,8.543273,14:04:33,Friday,0,58.0,1.0,Bremen Buschdeel,40.0,53.0,0.2453
-53.092897,8.810399,14:04:33,Friday,0,53.0,0.0,Bremen Eickedorfer Straße,24.0,38.0,0.3684
-53.073048,8.924736,14:04:33,Friday,0,39.0,1.0,Bremen Einkaufszentrum Blockdiek,26.0,43.0,0.3953
-53.22748,8.511132,14:04:33,Friday,0,58.0,1.0,Bremen Moorstücke,65.0,65.0,0.0
-53.232616,8.513683,14:04:33,Friday,0,58.0,1.0,Neuenkirchen(Schwanewede) Landwehr,64.0,64.0,0.0
-53.030451,8.845611,14:04:33,Friday,0,53.0,0.0,Bremen In der Laake,34.0,39.0,0.1282
-53.07319,8.879215,14:04:33,Friday,0,39.0,1.0,Bremen Wilseder-Berg-Straße,28.0,28.0,0.0
-53.074048,8.947463,14:04:33,Friday,0,44.0,0.0,Bremen Ellenerbrokstraße,36.0,36.0,0.0
-53.101724,8.778428,14:04:33,Friday,0,53.0,0.0,Bremen Lange Reihe,20.0,23.0,0.1304
-53.094547,8.802868,14:04:33,Friday,0,26.0,0.0,Bremen Landshuter Straße,38.0,38.0,0.0
-53.102234,8.912764,14:04:33,Friday,0,25.0,0.0,Bremen Oberneulander Heerstraße,36.0,45.0,0.2
-53.044264,8.952185,14:04:33,Friday,0,44.0,0.0,Bremen Nußhorn,32.0,47.0,0.3191
-53.094724,8.797048,14:04:33,Friday,0,26.0,0.0,Bremen Nürnberger Straße,27.0,66.0,0.5909
-53.08762,8.938337,14:04:33,Friday,0,23.0,0.0,Bremen Bahnhof Oberneuland,27.0,36.0,0.25
-53.082209,8.854479,14:04:33,Friday,0,32.0,0.0,Bremen Kurfürstenallee,27.0,35.0,0.2286
-53.104354,8.816635,14:04:33,Friday,0,26.0,0.0,Bremen Krönkeskamp,28.0,38.0,0.2632
-53.058804,8.94127,14:04:33,Friday,0,16.0,0.0,Bremen Lachmundsdamm,22.0,42.0,0.4762
-53.178992,8.594592,14:04:33,Friday,0,23.0,2.0,Bremen Margaretenallee,53.0,53.0,0.0
-53.189963,8.558304,14:04:33,Friday,0,23.0,2.0,Bremen Bahnhof Kreinsloger,33.0,46.0,0.2826
-53.067635,8.862488,14:04:33,Friday,0,33.0,1.0,Bremen Ludwig-Quidde-Straße,25.0,33.0,0.2424
-53.063183,8.943653,14:04:33,Friday,0,16.0,0.0,Bremen Am Siek,19.0,40.0,0.525
-53.095439,8.929975,14:04:33,Friday,0,25.0,0.0,Bremen Am Querkamp,36.0,45.0,0.2
-53.188245,8.629329,14:04:33,Friday,0,32.0,,Bremen Machandelweg,28.0,41.0,0.3171
-53.181419,8.573693,14:04:33,Friday,0,58.0,1.0,Bremen-Blumenthal Markt,36.0,47.0,0.234
-53.078187,8.911485,14:04:33,Friday,0,44.0,0.0,Bremen Kurt-Huber-Straße,90.0,90.0,0.0
-53.068003,8.933838,14:04:33,Friday,0,23.0,0.0,Bremen Am Hallacker,29.0,40.0,0.275
-53.164231,8.666018,14:04:33,Friday,0,48.0,2.0,Bremen Am Kapellenberg,37.0,45.0,0.1778
-53.205563,8.518154,14:04:33,Friday,0,58.0,1.0,Bremen Bahnhof Farge,39.0,49.0,0.2041
-53.184611,8.604506,14:04:33,Friday,0,40.0,0.0,Bremen Blumenhorster Straße,31.0,49.0,0.3673
-53.176795,8.717168,14:04:33,Friday,0,48.0,2.0,Bremen Upsalastraße,27.0,76.0,0.6447
-53.063491,8.867964,14:04:33,Friday,0,18.0,1.0,Bremen Weserwehr,31.0,39.0,0.2051
-53.07121,8.85063,14:04:33,Friday,0,33.0,1.0,Bremen Bei den Drei Pfählen,21.0,28.0,0.25
-53.09323,8.933031,14:04:33,Friday,0,25.0,0.0,Bremen Höpkens Ruh,44.0,44.0,0.0
-53.060028,8.893732,14:04:33,Friday,0,33.0,1.0,Bremen Trinidadstraße,14.0,25.0,0.44
-53.054136,8.851033,14:04:33,Friday,0,8.0,,Bremen Karl-Carstens-Brücke,34.0,46.0,0.2609
-53.081534,8.939615,14:04:33,Friday,0,23.0,0.0,Bremen Am Heiddamm,20.0,35.0,0.4286
-53.173944,8.697446,14:04:33,Friday,0,58.0,1.0,Bremen Am Heidbergstift,20.0,67.0,0.7015
-53.04704,8.738244,14:04:33,Friday,0,21.0,1.0,Bremen Willakedamm,26.0,42.0,0.381
-53.099801,8.886046,14:04:33,Friday,0,23.0,0.0,Bremen Wilhelm-Röntgen-Straße,33.0,45.0,0.2667
-53.079041,8.885502,14:04:33,Friday,0,44.0,0.0,Bremen Wilhelm-Leuschner-Straße,24.0,35.0,0.3143
-53.071526,8.891394,14:04:33,Friday,0,39.0,1.0,Bremen Georg-Gries-Straße,38.0,48.0,0.2083
-53.067212,8.854328,14:04:33,Friday,0,29.0,1.0,Bremen Georg-Bitter-Straße,33.0,33.0,0.0
-53.033976,8.830721,14:04:33,Friday,0,53.0,0.0,Bremen Gemeinschaftszentrum Obervieland,28.0,38.0,0.2632
-53.100023,8.902449,14:04:33,Friday,0,23.0,0.0,Bremen Apfelallee,15.0,39.0,0.6154
-53.059407,8.923097,14:04:33,Friday,0,23.0,0.0,Bremen An der Kämenade,4.0,44.0,0.9091
-53.048331,8.883638,14:04:33,Friday,0,18.0,1.0,Bremen Arberger Hafendamm,51.0,51.0,0.0
-53.167736,8.709153,14:04:33,Friday,0,48.0,2.0,Bremen Beckers Barg,36.0,46.0,0.2174
-53.079089,8.86074,14:04:33,Friday,0,44.0,0.0,Bremen Barbarossastraße,57.0,57.0,0.0
-53.084252,8.825747,14:04:33,Friday,0,32.0,0.0,Bremen Am Stern,38.0,48.0,0.2083
-53.192782,8.534216,14:04:33,Friday,0,58.0,1.0,Bremen An der Amtsweide,51.0,51.0,0.0
-53.07149,8.886515,14:04:33,Friday,0,39.0,1.0,Bremen Rennplatz,38.0,48.0,0.2083
-53.085724,8.873569,14:04:33,Friday,0,32.0,0.0,Bremen August-Bebel-Allee,29.0,38.0,0.2368
-53.098408,8.892991,14:04:33,Friday,0,23.0,0.0,Bremen Schorf,32.0,46.0,0.3043
-53.176364,8.606265,14:04:33,Friday,0,23.0,2.0,Bremen Vereinsstraße,21.0,45.0,0.5333
-53.138126,8.723107,14:04:33,Friday,0,58.0,1.0,Bremen Von-Ossietzky-Straße,27.0,27.0,0.0
-53.071391,8.906545,14:04:33,Friday,0,39.0,1.0,Bremen Wilhelm-Busch-Weg,34.0,49.0,0.3061
-53.207915,8.514131,14:04:33,Friday,0,58.0,1.0,Bremen Wilhelm-Brandhorst-Straße,38.0,50.0,0.24
-53.106152,8.845833,14:04:33,Friday,0,26.0,0.0,Bremen Wiener Straße,35.0,42.0,0.1667
-53.11197,8.820089,14:04:33,Friday,0,26.0,0.0,Bremen Wetterungsweg,44.0,51.0,0.1373
-53.099687,8.807555,14:04:33,Friday,0,53.0,0.0,Bremen Fürther Straße,38.0,38.0,0.0
-53.086218,8.891447,14:04:33,Friday,0,32.0,0.0,Bremen Friedrich-Stampfer-Straße,29.0,38.0,0.2368
-53.103655,8.902444,14:04:33,Friday,0,25.0,0.0,Bremen An den Wühren,39.0,39.0,0.0
-53.029962,8.823292,14:04:33,Friday,0,34.0,0.0,Bremen Alfred-Faust-Straße,28.0,39.0,0.2821
-53.110403,8.769908,14:04:33,Friday,0,33.0,1.0,Bremen Altenescher Straße,18.0,35.0,0.4857
-53.203363,8.524038,14:04:33,Friday,0,58.0,1.0,Bremen Betonstraße,39.0,49.0,0.2041
-53.189418,8.566792,14:04:33,Friday,0,40.0,0.0,Bremen Besanstraße,25.0,36.0,0.3056
-53.218184,8.509509,14:04:33,Friday,0,58.0,1.0,Bremen Rekumer Siel,38.0,49.0,0.2245
-53.076633,8.880817,14:04:33,Friday,0,25.0,2.0,Bremen Schneverdinger Straße,26.0,42.0,0.381
-53.049696,8.892448,14:04:33,Friday,0,18.0,1.0,Bremen Schlengstraße,22.0,31.0,0.2903
-53.077599,8.94024,14:04:33,Friday,0,23.0,0.0,Bremen Schevemoorer Landstraße,25.0,42.0,0.4048
-53.042111,8.9124,14:04:33,Friday,0,16.0,0.0,Bremen Sollingstraße,43.0,43.0,0.0
-53.090669,8.92496,14:04:33,Friday,0,23.0,0.0,Bremen Simon-Hermann-Post-Weg,48.0,48.0,0.0
-53.07075,8.82349,14:04:33,Friday,0,33.0,1.0,Bremen Sielwall,16.0,25.0,0.36
-53.193991,8.545544,14:04:33,Friday,0,23.0,2.0,Bremen Bahnhof Turnerstraße,36.0,36.0,0.0
-53.097205,8.816292,14:04:33,Friday,0,39.0,1.0,Bremen Stuttgarter Straße,39.0,39.0,0.0
-53.191307,8.631397,14:04:33,Friday,0,32.0,,Bremen Dobbheide,28.0,41.0,0.3171
-53.078669,8.826308,14:04:33,Friday,0,39.0,1.0,Bremen Dobbenweg,22.0,40.0,0.45
-53.102444,8.799509,14:04:33,Friday,0,53.0,0.0,Bremen Dithmarscher Freiheit,41.0,67.0,0.3881
-53.188391,8.547833,14:04:33,Friday,0,58.0,1.0,Bremen Dillener Park,52.0,52.0,0.0
-53.135314,8.73091,14:04:33,Friday,0,58.0,1.0,Bremen Dohlenstraße,38.0,48.0,0.2083
-53.071396,8.949386,14:04:33,Friday,0,44.0,0.0,Bremen Graubündener Straße,36.0,36.0,0.0
-53.120574,8.753003,14:04:33,Friday,0,33.0,1.0,Bremen Gröpelingen,22.0,31.0,0.2903
-53.102536,8.785338,14:04:33,Friday,0,33.0,1.0,Bremen Bahnhof Walle,9.0,17.0,0.4706
-53.065007,8.914263,14:04:33,Friday,0,25.0,2.0,Bremen Mercedes-Benz Tor 8,24.0,47.0,0.4894
-53.16061,8.704381,14:04:33,Friday,0,58.0,1.0,Bremen-Burg(Bus),26.0,44.0,0.4091
-53.071445,8.863627,14:04:33,Friday,0,39.0,1.0,Bremen Steubenstraße,16.0,16.0,0.0
-53.078614,8.903285,14:04:33,Friday,0,44.0,0.0,Bremen Dietrich-Bonhoeffer-Straße,24.0,36.0,0.3333
-53.055964,8.888368,14:04:33,Friday,0,18.0,1.0,Bremen Glockenstraße/Bf Hemelingen,27.0,36.0,0.25
-53.062116,8.801724,14:04:33,Friday,0,53.0,0.0,Bremen Gottfried-Menken-Straße,20.0,37.0,0.4595
-53.074913,8.925897,14:04:33,Friday,0,44.0,0.0,Bremen Mülheimer Straße,120.0,120.0,0.0
-53.193711,8.566023,14:04:33,Friday,0,23.0,2.0,Bremen An der Lehmkuhle,31.0,41.0,0.2439
-53.089905,8.93411,14:04:33,Friday,0,23.0,0.0,Bremen Mühlenfeldstraße,36.0,36.0,0.0
-53.103608,8.855622,14:04:33,Friday,0,25.0,0.0,Bremen Lise-Meitner-Straße,25.0,47.0,0.4681
-53.10478,8.840919,14:04:33,Friday,0,8.0,,Bremen Munte,38.0,50.0,0.24
-53.079384,8.893002,14:04:33,Friday,0,44.0,0.0,Bremen Berliner Freiheit,24.0,35.0,0.3143
-53.09658,8.909506,14:04:33,Friday,0,23.0,0.0,Bremen Beim Kleinen Tagwerk,48.0,48.0,0.0
-53.051383,8.949641,14:04:33,Friday,0,16.0,0.0,Bremen Beim Bohnenhof,39.0,43.0,0.093
-53.102639,8.859212,14:04:33,Friday,0,25.0,0.0,Bremen Berufsbildungswerk,26.0,34.0,0.2353
-53.219785,8.589594,14:04:33,Friday,0,48.0,2.0,Schwanewede Insterburger Weg,38.0,49.0,0.2245
-53.197066,8.571969,14:04:33,Friday,0,48.0,2.0,Bremen Landrat-Berthold-Straße,41.0,50.0,0.18
-53.207153,8.578497,14:04:33,Friday,0,48.0,2.0,Bremen Ringofenstraße,41.0,50.0,0.18
-53.17999,8.588774,14:04:33,Friday,0,23.0,2.0,Bremen Wätjens Park,55.0,55.0,0.0
-53.175321,8.612803,14:04:33,Friday,0,23.0,2.0,Bremen Fährgrund,24.0,43.0,0.4419
-53.177414,8.601612,14:04:33,Friday,0,23.0,2.0,Bremen Bremer Vulkan,21.0,45.0,0.5333
-53.169621,8.627897,14:04:33,Friday,0,40.0,0.0,Bremen Bahnhof Vegesack,30.0,46.0,0.3478
-53.037688,8.851272,14:04:33,Friday,0,53.0,0.0,Bremen Senator-Theil-Straße,41.0,41.0,0.0
-53.054889,8.814727,14:04:33,Friday,0,53.0,0.0,Bremen Stenumer Straße,23.0,35.0,0.3429
-53.071641,8.882724,14:04:33,Friday,0,39.0,1.0,Bremen Stellichter Straße,28.0,28.0,0.0
-53.057474,8.954588,14:04:33,Friday,0,16.0,0.0,Bremen Egestorff-Stiftung,15.0,43.0,0.6512
-53.073339,8.930294,14:04:33,Friday,0,44.0,0.0,Bremen Düsseldorfer Straße,45.0,45.0,0.0
-53.131649,8.722021,14:04:33,Friday,0,23.0,2.0,Bremen Hüttenhafen,52.0,52.0,0.0
-53.191589,8.561986,14:04:33,Friday,0,40.0,0.0,Bremen Eggestedter Straße,33.0,46.0,0.2826
-53.090284,8.813487,14:04:33,Friday,0,53.0,0.0,Bremen Findorffallee,23.0,29.0,0.2069
-53.051538,8.839582,14:04:33,Friday,0,53.0,0.0,Bremen Fellendsweg,43.0,43.0,0.0
-53.199224,8.526993,14:04:33,Friday,0,58.0,1.0,Bremen Fähre Farge,56.0,56.0,0.0
-53.02783,8.818821,14:04:33,Friday,0,34.0,0.0,Bremen Morsumer Straße,28.0,39.0,0.2821
-53.147399,8.711405,14:04:33,Friday,0,58.0,1.0,Bremen Am Geestkamp,33.0,44.0,0.25
-53.129774,8.743113,14:04:33,Friday,0,58.0,1.0,Bremen Am Fuchsberg,16.0,48.0,0.6667
-53.074036,8.875811,14:04:33,Friday,0,39.0,1.0,Bremen Müdener Straße,28.0,28.0,0.0
-53.048153,8.950356,14:04:33,Friday,0,16.0,0.0,Bremen Am Großen Kuhkamp,39.0,43.0,0.093
-53.198973,8.5539,14:04:33,Friday,0,23.0,2.0,Bremen Am Fillerkamp,34.0,39.0,0.1282
-53.072382,8.816868,14:04:33,Friday,0,29.0,1.0,Bremen Theater am Goetheplatz,19.0,24.0,0.2083
-53.046294,8.957571,14:04:33,Friday,0,44.0,0.0,Bremen Weserpark-Süd,31.0,48.0,0.3542
-53.088125,8.808212,14:04:33,Friday,0,39.0,1.0,Bremen Theodor-Heuss-Allee,29.0,29.0,0.0
-53.165632,8.67699,14:04:33,Friday,0,48.0,2.0,Bremen Knoops Park,37.0,45.0,0.1778
-53.038307,8.939628,14:04:33,Friday,0,17.0,1.0,Bremen Kluvenhagener Straße,26.0,44.0,0.4091
-53.040635,8.883995,14:04:33,Friday,0,18.0,1.0,Bremen Kleine Marschstraße,50.0,50.0,0.0
-53.039767,8.908775,14:04:33,Friday,0,17.0,1.0,Bremen Süntelstraße,35.0,45.0,0.2222
-53.11064,8.854691,14:04:33,Friday,0,25.0,0.0,Bremen Universität-Nord,44.0,51.0,0.1373
-53.035323,8.826916,14:04:33,Friday,0,53.0,0.0,Bremen Kattenturm-Mitte,27.0,39.0,0.3077
-53.083948,8.797781,14:04:33,Friday,0,29.0,1.0,Bremen Doventor,15.0,20.0,0.25
-53.184281,8.613111,14:04:33,Friday,0,40.0,0.0,Bremen Fährer Kämpe,26.0,42.0,0.381
-53.183148,8.562472,14:04:33,Friday,0,58.0,1.0,Bremen Fähre Blumenthal,30.0,50.0,0.4
-53.193581,8.56044,14:04:33,Friday,0,40.0,0.0,Bremen Betriebshof Blumenthal,26.0,47.0,0.4468
-53.185739,8.555946,14:04:33,Friday,0,58.0,1.0,Bremen Rönnebecker Straße,40.0,40.0,0.0
-53.071128,8.929917,14:04:33,Friday,0,39.0,1.0,Bremen Krefelder Straße,26.0,43.0,0.3953
-53.043223,8.816081,14:04:33,Friday,0,34.0,0.0,Bremen Krimpelweg,25.0,49.0,0.4898
-53.169682,8.712631,14:04:33,Friday,0,48.0,2.0,Bremen Burgdammer Ring,38.0,46.0,0.1739
-53.075347,8.844205,14:04:33,Friday,0,39.0,1.0,Bremen Friedrich-Karl-Straße,39.0,39.0,0.0
-53.050376,8.828599,14:04:33,Friday,0,53.0,0.0,Bremen Friedhof Huckelriede,37.0,37.0,0.0
-53.08715,8.871199,14:04:33,Friday,0,25.0,2.0,Bremen Friedrich-Mißler-Straße,28.0,39.0,0.2821
-53.129117,8.711446,14:04:33,Friday,0,15.0,0.0,Bremen Riespot,52.0,52.0,0.0
-53.135024,8.715458,14:04:33,Friday,0,23.0,2.0,Bremen Riedemannstraße,52.0,52.0,0.0
-53.066199,8.943872,14:04:33,Friday,0,16.0,0.0,Bremen Klinikum Bremen-Ost,19.0,40.0,0.525
-53.155015,8.70459,14:04:33,Friday,0,58.0,1.0,Bremen Burger Dorfstraße,33.0,44.0,0.25
-53.044354,8.897381,14:04:33,Friday,0,17.0,1.0,Bremen Brünsweg,25.0,39.0,0.359
-53.18387,8.573123,14:04:33,Friday,0,40.0,0.0,Bremen Fresenbergstraße,26.0,35.0,0.2571
-53.038981,8.728576,14:04:33,Friday,0,21.0,1.0,Bremen Friedhof Huchting,34.0,34.0,0.0
-53.225303,8.510034,14:04:33,Friday,0,58.0,1.0,Bremen Sandkuhlenweg,53.0,53.0,0.0
-53.039052,8.932274,14:04:33,Friday,0,17.0,1.0,Bremen Hermann-Osterloh-Straße,43.0,43.0,0.0
-53.071088,8.916126,14:04:33,Friday,0,39.0,1.0,Bremen Hermann-Koenen-Straße,27.0,46.0,0.413
-53.033495,8.850653,14:04:33,Friday,0,53.0,0.0,Bremen Hermann-Helms-Straße,41.0,41.0,0.0
-53.082128,8.867423,14:04:33,Friday,0,32.0,0.0,Bremen Brandenburger Straße,57.0,57.0,0.0
-53.072248,8.82864,14:04:33,Friday,0,33.0,1.0,Bremen Brunnenstraße,19.0,24.0,0.2083
-53.044297,8.922371,14:04:33,Friday,0,16.0,0.0,Bremen Ruppertshainer Straße,43.0,43.0,0.0
-53.040909,8.731048,14:04:33,Friday,0,21.0,1.0,Bremen Rotterdamer Straße,25.0,42.0,0.4048
-53.173313,8.688119,14:04:33,Friday,0,58.0,1.0,Bremen Rotdornallee,49.0,75.0,0.3467
-53.059599,8.90939,14:04:33,Friday,0,23.0,0.0,Bremen Saarstraße,33.0,33.0,0.0
-53.090874,8.805639,14:04:33,Friday,0,39.0,1.0,Bremen Herbststraße,15.0,34.0,0.5588
-53.183616,8.595786,14:04:33,Friday,0,40.0,0.0,Bremen Bf Klinikum Bremen-Nord,21.0,35.0,0.4
-53.086101,8.886604,14:04:33,Friday,0,32.0,0.0,Bremen Otto-Braun-Straße,29.0,39.0,0.2564
-53.044809,8.736153,14:04:33,Friday,0,21.0,1.0,Bremen Hohenhorster Weg,25.0,42.0,0.4048
-53.103246,8.794121,14:04:33,Friday,0,53.0,0.0,Bremen Holsteiner Straße,22.0,37.0,0.4054
-53.196601,8.549472,14:04:33,Friday,0,23.0,2.0,Bremen Ermlandstraße,36.0,36.0,0.0
-53.038246,8.925009,14:04:33,Friday,0,17.0,1.0,Bremen Colshornstraße,42.0,42.0,0.0
-53.099087,8.921967,14:04:33,Friday,0,25.0,0.0,Bremen Im Holze,35.0,45.0,0.2222
-53.071527,8.902785,14:04:33,Friday,0,39.0,1.0,Bremen Im Holter Feld,32.0,51.0,0.3725
-53.079302,8.896774,14:04:33,Friday,0,44.0,0.0,Bremen Carl-Goerdeler-Straße,24.0,35.0,0.3143
-53.115035,8.833152,14:04:33,Friday,0,26.0,0.0,Bremen Campingplatz,44.0,51.0,0.1373
-53.054497,8.894109,14:04:33,Friday,0,18.0,1.0,Bremen Christernstraße,28.0,34.0,0.1765
-53.071947,8.920571,14:04:33,Friday,0,39.0,1.0,Bremen Bottroper Straße,26.0,43.0,0.3953
-53.124857,8.7489,14:04:33,Friday,0,58.0,1.0,Bremen Karl-Bröger-Straße,25.0,35.0,0.2857
-53.167455,8.685111,14:04:33,Friday,0,48.0,2.0,Bremen Auf dem Pasch,37.0,46.0,0.1957
-53.173164,8.640018,14:04:33,Friday,0,58.0,1.0,Bremen Auf dem Krümpel,27.0,46.0,0.413
-53.080088,8.709937,14:04:33,Friday,0,15.0,0.0,Bremen Auf der Sandhöhe,58.0,58.0,0.0
-53.052712,8.8993,14:04:33,Friday,0,18.0,1.0,Bremen Osterhop,19.0,29.0,0.3448
-53.074053,8.936052,14:04:33,Friday,0,44.0,0.0,Bremen Osterholzer Landstraße,21.0,42.0,0.5
-53.21337,8.511061,14:04:33,Friday,0,58.0,1.0,Bremen Hohenesch,38.0,50.0,0.24
-53.065226,8.932828,14:04:33,Friday,0,23.0,0.0,Bremen Poggenburg,28.0,35.0,0.2
-53.041519,8.850432,14:04:33,Friday,0,53.0,0.0,Bremen Piependamm,41.0,41.0,0.0
-53.055731,8.884861,14:04:33,Friday,0,18.0,1.0,Bremen Hannoversche Straße,36.0,36.0,0.0
-53.191441,8.53842,14:04:33,Friday,0,58.0,1.0,Bremen Hanfstraße,52.0,52.0,0.0
-53.189758,8.571367,14:04:33,Friday,0,40.0,0.0,Bremen Hakenwehrstraße,24.0,35.0,0.3143
-53.091659,8.791314,14:04:33,Friday,0,33.0,1.0,Bremen Hansestraße,15.0,33.0,0.5455
-53.079174,8.878882,14:04:33,Friday,0,44.0,0.0,Bremen Polizeipräsidium,22.0,36.0,0.3889
-53.050944,8.836268,14:04:33,Friday,0,53.0,0.0,Bremen Helene-Lange-Straße,43.0,43.0,0.0
-53.101114,8.916252,14:04:33,Friday,0,25.0,0.0,Bremen Kapitän-König-Weg,35.0,45.0,0.2222
-53.030817,8.850603,14:04:33,Friday,0,53.0,0.0,Bremen Arster Kirche,41.0,41.0,0.0
-53.078505,8.855109,14:04:33,Friday,0,8.0,,Bremen Arensburgstraße,28.0,42.0,0.3333
-53.186622,8.572564,14:04:33,Friday,0,40.0,0.0,Bremen Wasserturm,26.0,35.0,0.2571
-53.096293,8.819184,14:04:33,Friday,0,39.0,1.0,Bremen Weidedamm-Süd,26.0,39.0,0.3333
-53.051804,8.819524,14:04:33,Friday,0,53.0,0.0,Bremen Huckelriede,20.0,20.0,0.0
-53.059,8.80887,14:04:33,Friday,0,53.0,0.0,Bremen Willigstraße,20.0,37.0,0.4595
-53.060767,8.804383,14:04:33,Friday,0,53.0,0.0,Bremen August-Hinrichs-Straße,20.0,37.0,0.4595
-53.028031,8.849956,14:04:33,Friday,0,53.0,0.0,Bremen Arster Landstraße,41.0,41.0,0.0
-53.105197,8.850888,14:04:33,Friday,0,25.0,0.0,Bremen Universität-Süd,25.0,47.0,0.4681
-53.046718,8.818351,14:04:33,Friday,0,34.0,0.0,Bremen Arsterdamm,23.0,40.0,0.425
-53.178579,8.724093,14:04:33,Friday,0,48.0,2.0,Bremen Marßel,47.0,58.0,0.1897
-53.062863,8.913942,14:04:33,Friday,0,25.0,2.0,Bremen Mercedes-Benz Tor 7,27.0,46.0,0.413
-53.048336,8.741268,14:04:33,Friday,0,44.0,0.0,Bremen Roland-Center,25.0,42.0,0.4048
-53.085865,8.879448,14:04:33,Friday,0,32.0,0.0,Bremen Philipp-Scheidemann-Straße,25.0,36.0,0.3056
-53.050319,8.847649,14:04:33,Friday,0,53.0,0.0,Bremen Habenhauser Brückenstraße,34.0,46.0,0.2609
-53.098533,8.776565,14:04:33,Friday,0,53.0,0.0,Bremen Waller Ring,37.0,49.0,0.2449
-53.047316,8.892916,14:04:33,Friday,0,17.0,1.0,Bremen Marschstraße,32.0,40.0,0.2
-53.045353,8.851022,14:04:33,Friday,0,53.0,0.0,Bremen Pfarrfeldsweg,41.0,41.0,0.0
-53.066796,8.96154,14:04:33,Friday,0,44.0,0.0,Bremen Neuwieder Straße,27.0,40.0,0.325
-53.058464,8.758757,14:04:33,Friday,0,44.0,0.0,Bremen Norderländer Straße,51.0,51.0,0.0
-53.039044,8.916285,14:04:33,Friday,0,17.0,1.0,Bremen Heisiusstraße,42.0,42.0,0.0
-53.082918,8.874987,14:04:33,Friday,0,32.0,0.0,Bremen Heinrich-Hertz-Straße,30.0,41.0,0.2683
-53.053487,8.953382,14:04:33,Friday,0,16.0,0.0,Bremen Heiligenbergstraße,39.0,43.0,0.093
-53.178584,8.71919,14:04:33,Friday,0,48.0,2.0,Bremen Helsingborger Straße,47.0,58.0,0.1897
-53.068245,8.938981,14:04:33,Friday,0,39.0,1.0,Bremen Grenzwehr,27.0,38.0,0.2895
-53.086163,8.896131,14:04:33,Friday,0,32.0,0.0,Bremen Neue Vahr Nord,112.0,112.0,0.0
-53.168762,8.695165,14:04:33,Friday,0,48.0,2.0,Bremen Stehnckenshoff,19.0,36.0,0.4722
-53.04662,8.859413,14:04:33,Friday,0,53.0,0.0,Bremen Staustraße,40.0,40.0,0.0
-53.094139,8.914759,14:04:33,Friday,0,23.0,0.0,Bremen Modersohnweg,48.0,48.0,0.0
-53.114889,8.837954,14:04:33,Friday,0,26.0,0.0,Bremen Stadtwaldsee,44.0,51.0,0.1373
-53.064636,8.797028,14:04:33,Friday,0,53.0,0.0,Bremen Meyerstraße,20.0,37.0,0.4595
-53.044673,8.915057,14:04:33,Friday,0,16.0,0.0,Bremen Nauheimer Straße,43.0,43.0,0.0
-53.066911,8.782459,14:04:33,Friday,0,44.0,0.0,Bremen Neuenlander Straße,18.0,29.0,0.3793
-53.041521,8.931657,14:04:33,Friday,0,16.0,0.0,Bremen Eppenhainer Straße,43.0,43.0,0.0
-53.066433,8.95569,14:04:33,Friday,0,44.0,0.0,Bremen Engadiner Straße,27.0,40.0,0.325
-53.069544,8.93453,14:04:33,Friday,0,39.0,1.0,Bremen Emmentaler Straße,46.0,46.0,0.0
-53.077937,8.920951,14:04:33,Friday,0,44.0,0.0,Bremen Erkelenzer Straße,120.0,120.0,0.0
-53.172469,8.67981,14:04:33,Friday,0,58.0,1.0,Bremen Zum Kränholm,15.0,45.0,0.6667
-53.181632,8.567805,14:04:33,Friday,0,58.0,1.0,Bremen Zum Donaufleet,30.0,49.0,0.3878
-53.068065,8.84893,14:04:33,Friday,0,29.0,0.0,Bremen Stader Straße/Hamburger Straße,22.0,31.0,0.2903
-53.040671,8.904561,14:04:33,Friday,0,17.0,1.0,Bremen Stackkamp,32.0,40.0,0.2
-53.082555,8.860005,14:04:33,Friday,0,32.0,0.0,Bremen Loignystraße,51.0,51.0,0.0
-53.184836,8.59781,14:04:33,Friday,0,40.0,0.0,Bremen Löhstraße,27.0,43.0,0.3721
-53.09316,8.803987,14:04:33,Friday,0,39.0,1.0,Bremen Lohmannstraße,25.0,38.0,0.3421
-53.128701,8.729345,14:04:33,Friday,0,23.0,2.0,Bremen Oslebshauser Landstraße,61.0,61.0,0.0
-53.062134,8.931654,14:04:33,Friday,0,23.0,0.0,Bremen Oewerweg,36.0,36.0,0.0
-53.027399,8.802063,14:04:33,Friday,0,34.0,0.0,Brinkum(Stuhr) IKEA/Marktkauf,58.0,63.0,0.0794
-53.21403,8.583092,14:04:33,Friday,0,48.0,2.0,Bremen Rastenburger Straße,42.0,50.0,0.16
-53.078596,8.823672,14:04:33,Friday,0,33.0,1.0,Bremen Am Dobben,21.0,21.0,0.0
-53.085023,8.849847,14:04:33,Friday,0,44.0,0.0,Bremen Kirchbachstraße,18.0,35.0,0.4857
-53.21098,8.579634,14:04:33,Friday,0,48.0,2.0,Bremen Hohenbuchener Straße,42.0,50.0,0.16
-53.192655,8.574816,14:04:33,Friday,0,48.0,2.0,Bremen Bockhorner Weg,34.0,46.0,0.2609
-53.188353,8.577122,14:04:33,Friday,0,48.0,2.0,Bremen Martin-Luther-Straße,36.0,45.0,0.2
-53.202561,8.571028,14:04:33,Friday,0,48.0,2.0,Bremen Steenkuhlenweg,38.0,38.0,0.0
-53.20506,8.574616,14:04:33,Friday,0,48.0,2.0,Bremen Hegeweg,38.0,38.0,0.0
-53.171129,8.684687,14:04:33,Friday,0,58.0,1.0,Bremen Bahnhof Lesum,31.0,51.0,0.3922
-53.060398,8.765164,14:04:33,Friday,0,44.0,0.0,Bremen Bardenflethstraße,51.0,51.0,0.0
-53.081052,8.843632,14:04:33,Friday,0,32.0,0.0,Bremen Verdunstraße,51.0,51.0,0.0
-53.037378,8.837386,14:04:33,Friday,0,53.0,0.0,Bremen Brenningstraße,29.0,38.0,0.2368
-53.169581,8.688774,14:04:33,Friday,0,48.0,2.0,Bremen-Lesum Kirche,22.0,35.0,0.3714
-53.036445,8.817585,14:04:33,Friday,0,53.0,0.0,Bremen Klinikum Haupteingang,24.0,43.0,0.4419
-53.175454,8.706396,14:04:33,Friday,0,58.0,1.0,Bremen Burgdammer Postweg,28.0,39.0,0.2821
-53.099911,8.820266,14:04:33,Friday,0,34.0,0.0,Bremen Weidedamm-Nord,25.0,38.0,0.3421
-53.030449,8.81252,14:04:33,Friday,0,34.0,0.0,Bremen Kattenescher Weg,26.0,38.0,0.3158
-53.094546,8.6664,14:04:33,Friday,0,15.0,0.0,Bremen Stedinger Brücke,58.0,58.0,0.0
-53.088707,8.674244,14:04:33,Friday,0,15.0,0.0,Bremen Luley,58.0,58.0,0.0
-53.086236,8.690978,14:04:33,Friday,0,15.0,0.0,Bremen Stellfeldsweg,58.0,58.0,0.0
-53.083275,8.701513,14:04:33,Friday,0,15.0,0.0,Bremen-Strom Schule,58.0,58.0,0.0
-53.076718,8.722993,14:04:33,Friday,0,15.0,0.0,Bremen Köhler Brücke,58.0,58.0,0.0
-53.092162,8.7508,14:04:33,Friday,0,32.0,0.0,Bremen Bakeweg,36.0,36.0,0.0
-53.094408,8.748123,14:04:33,Friday,0,32.0,0.0,Bremen Roccoweg,36.0,36.0,0.0
-53.082939,8.768963,14:04:33,Friday,0,32.0,0.0,Bremen Wildeshauser Straße,32.0,38.0,0.1579
-53.096063,8.746105,14:04:33,Friday,0,32.0,0.0,Bremen Rablinghausen,32.0,38.0,0.1579
-53.094805,8.80845,14:04:33,Friday,0,53.0,0.0,Bremen Hemmstraße,27.0,39.0,0.3077
-53.098252,8.812582,14:04:33,Friday,0,34.0,0.0,Bremen Utbremer Ring,27.0,39.0,0.3077
-53.101476,8.814684,14:04:33,Friday,0,34.0,0.0,Bremen Innsbrucker Straße,27.0,39.0,0.3077
-53.100837,8.817501,14:04:33,Friday,0,34.0,0.0,Bremen Rudolf-Alexander-Schröder-Straße,25.0,38.0,0.3421
-53.072895,8.788779,14:04:33,Friday,0,32.0,0.0,Bremen Hohentorsplatz,14.0,27.0,0.4815
-53.075635,8.784052,14:04:33,Friday,0,32.0,0.0,Bremen Bahnhof Neustadt,36.0,36.0,0.0
-53.079615,8.776158,14:04:33,Friday,0,32.0,0.0,Bremen Huder Straße,32.0,38.0,0.1579
-53.081692,8.772089,14:04:33,Friday,0,32.0,0.0,Bremen Dötlinger Straße,36.0,36.0,0.0
-53.084331,8.766262,14:04:33,Friday,0,32.0,0.0,Bremen Rechtenflether Straße,36.0,36.0,0.0
-53.087386,8.76182,14:04:33,Friday,0,32.0,0.0,Bremen Woltmershauser Friedhof,36.0,36.0,0.0
-53.088699,8.7536,14:04:33,Friday,0,32.0,0.0,Bremen Stromer Straße,19.0,31.0,0.3871
-53.085894,8.752739,14:04:33,Friday,0,15.0,0.0,Bremen Neuer Schutzdeich,19.0,31.0,0.3871
-53.110187,8.716313,14:04:33,Friday,0,19.0,0.0,Bremen Klärwerk,50.0,54.0,0.0741
-53.110894,8.709551,14:04:33,Friday,0,19.0,0.0,Bremen-Seehausen Schule,55.0,55.0,0.0
-53.11568,8.704411,14:04:33,Friday,0,19.0,0.0,Bremen Ortsamt Seehausen,50.0,54.0,0.0741
-53.116712,8.700237,14:04:33,Friday,0,19.0,0.0,Bremen Kriegerdenkmal,50.0,54.0,0.0741
-53.116538,8.697117,14:04:33,Friday,0,19.0,0.0,Bremen Hasenbüren Hagens,50.0,54.0,0.0741
-53.116764,8.690902,14:04:33,Friday,0,19.0,0.0,Bremen Am Glockenstein,50.0,54.0,0.0741
-53.116457,8.683115,14:04:33,Friday,0,19.0,0.0,Bremen Stumper,55.0,55.0,0.0
-53.117578,8.678985,14:04:33,Friday,0,19.0,0.0,Bremen Wessels,55.0,55.0,0.0
-53.119649,8.674182,14:04:33,Friday,0,19.0,0.0,Bremen Hasenbürener Deich,55.0,55.0,0.0
-53.120653,8.671538,14:04:33,Friday,0,19.0,0.0,Bremen Hasenbüren,55.0,55.0,0.0
-53.0795,8.741807,14:04:33,Friday,0,15.0,0.0,Bremen Güterbahnhof Grolland,39.0,51.0,0.2353
-53.079807,8.73703,14:04:33,Friday,0,15.0,0.0,Bremen Stromer Berg,53.0,53.0,0.0
-53.078266,8.780314,14:04:33,Friday,0,32.0,0.0,Bremen Akazienstraße,36.0,36.0,0.0
-53.067143,8.887862,14:04:33,Friday,0,25.0,2.0,Bremen Parsevalstraße,28.0,42.0,0.3333
-53.138303,8.714133,14:04:33,Friday,0,23.0,2.0,Bremen Stahlwerk Tor 1,28.0,35.0,0.2
-53.014159,8.784592,14:04:33,Friday,0,21.0,1.0,Brinkum(Stuhr) Am Bahnhof,50.0,50.0,0.0
-53.014614,8.777611,14:04:33,Friday,0,21.0,1.0,Brinkum(Stuhr) Magdeburger Straße,50.0,50.0,0.0
-53.011508,8.786621,14:04:33,Friday,0,21.0,1.0,Brinkum(Stuhr) Schule Feldstraße,31.0,39.0,0.2051
-53.03218,8.885225,14:04:33,Friday,0,18.0,1.0,Bremen Ludwig-von-Kapff-Straße,50.0,50.0,0.0
-53.034791,8.885128,14:04:33,Friday,0,18.0,1.0,Bremen Walther-Jacobs-Straße,48.0,48.0,0.0
-53.201683,8.560562,14:04:33,Friday,0,23.0,2.0,Bremen Neuenkirchener Weg,38.0,38.0,0.0
-53.199311,8.563063,14:04:33,Friday,0,23.0,2.0,Bremen Köhlhorster Straße,26.0,35.0,0.2571
-53.19698,8.565518,14:04:33,Friday,0,23.0,2.0,Bremen Vorberger Straße,26.0,38.0,0.3158
-53.222271,8.599175,14:04:33,Friday,0,48.0,2.0,Schwanewede Dreienkamp,41.0,41.0,0.0
-53.224913,8.59921,14:04:33,Friday,0,48.0,2.0,Schwanewede Eichengrund,41.0,41.0,0.0
-53.22186,8.59456,14:04:33,Friday,0,48.0,2.0,Schwanewede Am Markt,42.0,42.0,0.0
-53.17346,8.675907,14:04:33,Friday,0,58.0,1.0,Bremen Holthorster Weg,20.0,46.0,0.5652
-53.168617,8.661512,14:04:33,Friday,0,38.0,1.0,Bremen Blumenkamp,46.0,75.0,0.3867
-53.163958,8.661774,14:04:33,Friday,0,48.0,2.0,Bremen Richthofenstraße,29.0,46.0,0.3696
-53.163568,8.657023,14:04:33,Friday,0,48.0,2.0,Bremen Finkenschlag,29.0,46.0,0.3696
-53.164271,8.651447,14:04:33,Friday,0,48.0,2.0,Bremen Taunusstraße,38.0,46.0,0.1739
-53.16492,8.646217,14:04:33,Friday,0,48.0,2.0,Bremen Seefahrtstraße,38.0,46.0,0.1739
-53.166745,8.637522,14:04:33,Friday,0,48.0,2.0,Bremen Schönebecker Straße,38.0,46.0,0.1739
-53.167045,8.631187,14:04:33,Friday,0,48.0,2.0,Bremen Grohn-Markt,38.0,46.0,0.1739
-53.178094,8.618798,14:04:33,Friday,0,40.0,0.0,Bremen Aumunder Heide,17.0,33.0,0.4848
-53.183713,8.618878,14:04:33,Friday,0,40.0,0.0,Bremen Bahnhof Aumund,15.0,32.0,0.5312
-53.033829,8.844585,14:04:33,Friday,0,53.0,0.0,Bremen Carsten-Dreßler-Straße,34.0,39.0,0.1282
-53.076764,8.803639,14:04:33,Friday,0,39.0,1.0,Bremen Martinistraße,18.0,18.0,0.0
-53.101558,8.816116,14:04:33,Friday,0,34.0,0.0,Bremen Ricarda-Huch-Straße,45.0,61.0,0.2623
-53.097677,8.76963,14:04:33,Friday,0,26.0,0.0,Bremen Hochschule für Künste,44.0,50.0,0.12
-53.086041,8.747544,14:04:33,Friday,0,19.0,0.0,Bremen Ahrensstraße,55.0,55.0,0.0
-53.087941,8.736353,14:04:33,Friday,0,19.0,0.0,Bremen Georg-Henschel-Straße,55.0,55.0,0.0
-53.109664,8.848001,14:04:33,Friday,0,26.0,0.0,Bremen Celsiusstraße,44.0,52.0,0.1538
-53.113815,8.844014,14:04:33,Friday,0,26.0,0.0,Bremen Kuhgrabenweg,44.0,52.0,0.1538
-53.234221,8.521228,14:04:33,Friday,0,58.0,1.0,Neuenkirchen(Schwanewede) Ahnten,64.0,64.0,0.0
-53.100178,8.773812,14:04:33,Friday,0,53.0,0.0,Bremen Cuxhavener Straße,44.0,50.0,0.12
-53.057895,8.963148,14:04:33,Friday,0,44.0,0.0,Bremen Teneverstraße,28.0,40.0,0.3
-53.135019,8.740205,14:04:33,Friday,0,15.0,0.0,Bremen Bahnhof Oslebshausen,49.0,62.0,0.2097
-53.139979,8.701704,14:04:33,Friday,0,15.0,0.0,Bremen Gottlieb-Daimler-Straße,28.0,35.0,0.2
-53.142393,8.693072,14:04:33,Friday,0,15.0,0.0,Bremen Stahlwerk Tor 2,35.0,43.0,0.186
-53.052039,8.894824,14:04:33,Friday,0,18.0,1.0,Bremen Belmerstraße,19.0,28.0,0.3214
-53.033943,8.891078,14:04:33,Friday,0,18.0,1.0,Bremen Europaallee/Autohof,81.0,81.0,0.0
-53.087363,8.782517,14:04:33,Friday,0,29.0,0.0,Bremen Konsul-Smidt-Straße,28.0,28.0,0.0
-53.196219,8.531245,14:04:33,Friday,0,58.0,1.0,Bremen Wasserweg,28.0,41.0,0.3171
-53.100743,8.763918,14:04:33,Friday,0,26.0,0.0,Bremen Am Winterhafen,44.0,50.0,0.12
-53.098142,8.76115,14:04:33,Friday,0,53.0,0.0,Bremen Silbermannstraße,36.0,36.0,0.0
-53.089847,8.77721,14:04:33,Friday,0,26.0,0.0,Bremen Schuppen 1,37.0,44.0,0.1591
-53.126482,8.713954,14:04:33,Friday,0,15.0,0.0,Bremen Hüttenstraße Süd,52.0,52.0,0.0
-53.094724,8.771681,14:04:33,Friday,0,53.0,0.0,Bremen Überseetor,37.0,44.0,0.1591
-53.081578,8.755375,14:04:33,Friday,0,19.0,0.0,Bremen Reedeich-Nord,59.0,59.0,0.0
-53.121091,8.761499,14:04:33,Friday,0,11.0,0.0,Bremen Bromberger Straße,18.0,34.0,0.4706
-53.12581,8.757589,14:04:33,Friday,0,11.0,0.0,Bremen Schwarzer Weg,24.0,36.0,0.3333
-53.124666,8.760703,14:04:33,Friday,0,11.0,0.0,Bremen Wasserhorster Straße,122.0,122.0,0.0
-53.120739,8.76058,14:04:33,Friday,0,11.0,0.0,Bremen Halmerweg,18.0,34.0,0.4706
-53.118385,8.765532,14:04:33,Friday,0,11.0,0.0,Bremen Kalischer Straße,18.0,34.0,0.4706
-53.211112,8.512503,14:04:33,Friday,0,58.0,1.0,Bremen De Kreienbarg,36.0,50.0,0.28
-53.223023,8.508864,14:04:33,Friday,0,58.0,1.0,Bremen Vor den Wischen,53.0,53.0,0.0
-53.116773,8.768244,14:04:33,Friday,0,11.0,0.0,Bremen Dirschauer Straße,18.0,34.0,0.4706
-53.114141,8.77,14:04:33,Friday,0,11.0,0.0,Bremen In den Barken,18.0,34.0,0.4706
-53.062489,8.950732,14:04:33,Friday,0,16.0,0.0,Bremen Am Hahnenkamp,18.0,40.0,0.55
-53.190443,8.542791,14:04:33,Friday,0,23.0,2.0,Bremen Buschdeel/Wendeplatz,36.0,36.0,0.0
-53.039958,8.944274,14:04:33,Friday,0,44.0,0.0,Bremen Bf Mahndorf,45.0,45.0,0.0
-53.03596,8.901992,14:04:33,Friday,0,18.0,1.0,Bremen Bordeaux-Straße,117.0,117.0,0.0
-53.173868,8.681091,14:04:33,Friday,0,23.0,2.0,Bremen Lesum Park,58.0,58.0,0.0
-53.184183,8.626388,14:04:33,Friday,0,32.0,,Bremen Kaspar-Ohm-Straße,44.0,44.0,0.0
-53.045253,8.883854,14:04:33,Friday,0,18.0,1.0,Bremen Fuldahafen,51.0,51.0,0.0
-53.100322,8.757581,14:04:33,Friday,0,53.0,0.0,Bremen Ehrenfelsstraße,36.0,36.0,0.0
-53.102166,8.754545,14:04:33,Friday,0,53.0,0.0,Bremen Überseestadt-Nord,44.0,50.0,0.12
-53.031468,8.903186,14:04:33,Friday,0,18.0,1.0,Bremen Bergener Straße,117.0,117.0,0.0
-53.030228,8.90886,14:04:33,Friday,0,18.0,1.0,Bremen Europaallee-Ost,117.0,117.0,0.0
-53.094487,8.767481,14:04:33,Friday,0,53.0,0.0,Bremen Marcuskaje,37.0,44.0,0.1591
-53.09244,8.773434,14:04:33,Friday,0,26.0,0.0,Bremen Schuppen 3,37.0,44.0,0.1591
-53.22268,8.592843,14:04:33,Friday,0,48.0,2.0,Schwanewede Zum Marktplatz,39.0,48.0,0.1875
-53.050084,8.857481,14:04:33,Friday,0,53.0,0.0,Bremen Schlehenweg,40.0,40.0,0.0
-53.050385,8.843288,14:04:33,Friday,0,53.0,0.0,Bremen Fontanestraße,37.0,37.0,0.0
-53.010794,8.788817,14:04:33,Friday,0,21.0,1.0,Brinkum(Stuhr) Marktplatz,34.0,41.0,0.1707
+StartDate,Aktuelle Uhrzeit,Wochentag,Feiertag,Startzeit an der Anfangshaltestelle,Linie,Anzahl Haltestellen,Richtung,Anzahl Baustellen,Haltestelle,StopSequence,Ankunftsverspaetung in Sek.,Abfahrtsverspaetung in Sek.,stop_lat,stop_lon,currentSpeed,freeFlowSpeed,Durchschnittliche Verkehrsauslastung in %
+2024-02-13,00:16:13,Wednesday,0,23:47:00,33,25.0,Sebaldsbrück,0.0,Bremen Apfelallee,5.0,23,23,53.100023,8.902449,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:47:00,33,25.0,Sebaldsbrück,0.0,Bremen Kapitän-König-Weg,8.0,-7,-7,53.101114,8.916252,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:47:00,33,25.0,Sebaldsbrück,0.0,Bremen Im Holze,9.0,23,23,53.099087,8.921967,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:47:00,33,25.0,Sebaldsbrück,0.0,Bremen Am Heiddamm,14.0,-21,0,53.081534,8.939615,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:47:00,33,25.0,Sebaldsbrück,0.0,Bremen Schevemoorer Landstraße,15.0,-32,0,53.077599,8.94024,42.0,42.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Rablinghausen,,0,204,53.096063,8.746105,38.0,38.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Roccoweg,1.0,174,174,53.094408,8.748123,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Bakeweg,2.0,204,204,53.092162,8.7508,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Dötlinger Straße,7.0,174,174,53.081692,8.772089,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Dötlinger Straße,47.0,142,142,53.081692,8.772089,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Huder Straße,8.0,204,204,53.079615,8.776158,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Huder Straße,53.0,0,0,53.079615,8.776158,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Huder Straße,46.0,107,107,53.079615,8.776158,38.0,38.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Bahnhof Neustadt,10.0,174,174,53.075635,8.784052,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Bahnhof Neustadt,44.0,75,75,53.075635,8.784052,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Hohentorsplatz,11.0,204,204,53.072895,8.788779,28.0,28.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Oewerweg,49.0,-30,-30,53.062134,8.931654,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:34:00,N3,62.0,Bf Mahndorf,1.0,Bremen Oewerweg,49.0,-30,-30,53.062134,8.931654,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:04:00,N3,62.0,Bf Mahndorf,1.0,Bremen Osterholzer Heerstraße,50.0,0,0,53.059114,8.930389,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:34:00,N3,62.0,Bf Mahndorf,1.0,Bremen Osterholzer Heerstraße,50.0,0,0,53.059114,8.930389,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Osterholzer Heerstraße,11.0,40,40,53.059114,8.930389,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:34:00,N3,62.0,Bf Mahndorf,1.0,Bremen Parkallee,26.0,-82,-82,53.099188,8.837012,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Parkallee,35.0,0,0,53.099188,8.837012,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Parkallee,28.0,10,10,53.099188,8.837012,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:34:00,N3,62.0,Bf Mahndorf,1.0,Bremen Munte,27.0,-82,0,53.10478,8.840919,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Munte,27.0,-21,0,53.10478,8.840919,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Bf Mahndorf,,0,0,53.039958,8.944274,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,N1,44.0,Huchting,0.0,Bremen Bf Mahndorf,,0,0,53.039958,8.944274,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Bf Mahndorf,,0,12,53.039958,8.944274,45.0,45.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:05:00,1E,32.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Bf Mahndorf,,0,0,53.039958,8.944274,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Egestorff-Stiftung,4.0,36,36,53.057474,8.954588,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Osterholzer Möhlendamm,5.0,6,6,53.057907,8.95105,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Am Hahnenkamp,6.0,82,82,53.062489,8.950732,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Poggenburg,13.0,10,10,53.065226,8.932828,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Am Hallacker,14.0,40,40,53.068003,8.933838,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Osterholzer Landstraße,15.0,78,78,53.074053,8.936052,42.0,42.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Mühlenfeldstraße,19.0,111,111,53.089905,8.93411,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Rockwinkeler Heerstraße,21.0,67,67,53.091991,8.920181,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Rockwinkeler Heerstraße,14.0,-16,-16,53.091991,8.920181,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Modersohnweg,22.0,23,23,53.094139,8.914759,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Modersohnweg,15.0,-16,0,53.094139,8.914759,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Lise-Meitner-Straße,31.0,-7,-7,53.103608,8.855622,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Lise-Meitner-Straße,24.0,-1,-1,53.103608,8.855622,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,6,25.0,Flughafen,0.0,Bremen Lise-Meitner-Straße,3.0,-41,0,53.103608,8.855622,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Universität-Süd,32.0,63,63,53.105197,8.850888,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Universität-Süd,25.0,29,29,53.105197,8.850888,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,6,25.0,Flughafen,0.0,Bremen Universität-Süd,2.0,-49,0,53.105197,8.850888,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Wiener Straße,33.0,30,30,53.106152,8.845833,40.0,40.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Emmastraße/Bürgerpark,37.0,-108,-108,53.094535,8.833433,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Emmastraße/Bürgerpark,30.0,-58,0,53.094535,8.833433,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Akazienstraße,52.0,-30,-30,53.078266,8.780314,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Akazienstraße,45.0,77,77,53.078266,8.780314,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Rechtenflether Straße,56.0,-30,-30,53.084331,8.766262,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Rechtenflether Straße,49.0,112,112,53.084331,8.766262,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:33:00,N3,62.0,Rablinghausen,1.0,Bremen Woltmershauser Friedhof,57.0,0,0,53.087386,8.76182,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Woltmershauser Friedhof,50.0,142,142,53.087386,8.76182,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Beim Kleinen Tagwerk,16.0,-31,0,53.09658,8.909506,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Helmer,22.0,29,29,53.09924,8.862825,32.0,32.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:12:00,N3,62.0,Rablinghausen,1.0,Bremen Am Stern,34.0,-74,0,53.084252,8.825747,48.0,48.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:08:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Huckelriede,,0,0,53.051804,8.819524,20.0,20.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Huckelriede,,0,13,53.051804,8.819524,20.0,20.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:16:00,4E,,Ersatzverkehr Arsten,0.0,Bremen Huckelriede,,0,0,53.051804,8.819524,20.0,20.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:50:00,1E,32.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Huckelriede,,0,0,53.051804,8.819524,20.0,20.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:09:00,N4,49.0,Lilienthal,0.0,Bremen Huckelriede,,0,0,53.051804,8.819524,20.0,20.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:39:00,N4,49.0,Lilienthal,0.0,Bremen Huckelriede,,0,0,53.051804,8.819524,20.0,20.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:08:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Gottfried-Menken-Straße,4.0,-30,-30,53.062116,8.801724,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Gottfried-Menken-Straße,4.0,143,143,53.062116,8.801724,37.0,37.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:08:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Meyerstraße,5.0,0,0,53.064636,8.797028,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Meyerstraße,5.0,222,222,53.064636,8.797028,37.0,37.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Neue Vahr Nord,,0,0,53.086163,8.896131,112.0,112.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Neue Vahr Nord,,0,0,53.086163,8.896131,112.0,112.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen August-Bebel-Allee,4.0,38,38,53.085724,8.873569,39.0,39.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Carsten-Dreßler-Straße,38.0,-30,-30,53.033829,8.844585,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Carsten-Dreßler-Straße,38.0,-30,-30,53.033829,8.844585,39.0,39.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen In der Laake,39.0,0,0,53.030451,8.845611,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen In der Laake,39.0,0,0,53.030451,8.845611,39.0,39.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Hermann-Helms-Straße,42.0,-30,-30,53.033495,8.850653,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Hermann-Helms-Straße,42.0,-30,-30,53.033495,8.850653,41.0,41.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Senator-Theil-Straße,43.0,0,0,53.037688,8.851272,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Senator-Theil-Straße,43.0,0,0,53.037688,8.851272,41.0,41.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Piependamm,44.0,-30,-30,53.041519,8.850432,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Piependamm,44.0,-30,-30,53.041519,8.850432,41.0,41.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Pfarrfeldsweg,45.0,0,0,53.045353,8.851022,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Pfarrfeldsweg,45.0,0,0,53.045353,8.851022,41.0,41.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Fontanestraße,50.0,-30,-30,53.050385,8.843288,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Fontanestraße,50.0,-30,-30,53.050385,8.843288,37.0,37.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Fellendsweg,51.0,0,0,53.051538,8.839582,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Fellendsweg,51.0,0,0,53.051538,8.839582,43.0,43.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Helene-Lange-Straße,52.0,-30,-30,53.050944,8.836268,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Helene-Lange-Straße,52.0,-30,-30,53.050944,8.836268,43.0,43.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:07:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Friedhof Huckelriede,53.0,0,0,53.050376,8.828599,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Friedhof Huckelriede,53.0,0,0,53.050376,8.828599,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Stenumer Straße,1.0,43,43,53.054889,8.814727,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Willigstraße,2.0,90,90,53.059,8.80887,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen August-Hinrichs-Straße,3.0,128,128,53.060767,8.804383,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N9,55.0,Neue Vahr-Nord,1.0,Bremen Kirchbachstraße,17.0,51,51,53.085023,8.849847,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Kirchbachstraße,18.0,296,387,53.085023,8.849847,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:18:00,N4,49.0,Huckelriede / weiter mit Bus,0.0,Bremen Kirchbachstraße,23.0,-2,0,53.085023,8.849847,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N4,49.0,Huckelriede / weiter mit Bus,0.0,Bremen Kirchbachstraße,23.0,-103,-69,53.085023,8.849847,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Kirchbachstraße,18.0,36,36,53.085023,8.849847,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:37:00,N9,55.0,Kattenturm / Huckelriede,1.0,Bremen Kurfürstenallee,8.0,-16,0,53.082209,8.854479,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Kurfürstenallee,19.0,40,40,53.082209,8.854479,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:55:00,25,39.0,Weidedamm-Süd,1.0,Bremen Grenzwehr,2.0,-30,-30,53.068245,8.938981,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:55:00,25,39.0,Weidedamm-Süd,1.0,Bremen Emmentaler Straße,3.0,0,0,53.069544,8.93453,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Emmentaler Straße,3.0,0,35,53.069544,8.93453,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:55:00,25,39.0,Weidedamm-Süd,1.0,Bremen Im Holter Feld,9.0,-30,-30,53.071527,8.902785,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Im Holter Feld,9.0,-59,-30,53.071527,8.902785,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:55:00,25,39.0,Weidedamm-Süd,1.0,Bremen Georg-Gries-Straße,10.0,0,0,53.071526,8.891394,49.0,49.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Georg-Gries-Straße,10.0,0,0,53.071526,8.891394,49.0,49.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Weidedamm-Süd,,0,0,53.096293,8.819184,40.0,40.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Stuttgarter Straße,1.0,-30,-30,53.097205,8.816292,39.0,39.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Utbremer Ring,2.0,0,0,53.098252,8.812582,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:23:00,N7,80.0,Hauptbahnhof,2.0,Bremen Utbremer Ring,38.0,-109,-107,53.098252,8.812582,38.0,38.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Lohmannstraße,5.0,-54,0,53.09316,8.803987,38.0,38.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Herbststraße,6.0,-29,0,53.090874,8.805639,34.0,34.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Theodor-Heuss-Allee,7.0,-34,0,53.088125,8.808212,29.0,29.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,25,39.0,Domsheide,1.0,Bremen Doventor,9.0,-82,0,53.083948,8.797781,20.0,20.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Hermann-Koenen-Straße,7.0,-11,0,53.071088,8.916126,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Wilhelm-Busch-Weg,8.0,-29,-29,53.071391,8.906545,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Rennplatz,11.0,-41,0,53.07149,8.886515,49.0,49.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Stellichter Straße,12.0,-33,0,53.071641,8.882724,28.0,28.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Stader Straße/Bismarckstraße,18.0,32,32,53.073972,8.852545,16.0,16.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Stader Straße/Bismarckstraße,8.0,30,30,53.073972,8.852545,16.0,16.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Klinikum Bremen-Mitte,20.0,8,48,53.076869,8.837379,42.0,42.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Dobbenweg,21.0,-48,0,53.078669,8.826308,40.0,40.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Dobbenweg,5.0,60,60,53.078669,8.826308,40.0,40.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:25:00,25,39.0,Weidedamm-Süd,1.0,Bremen Martinistraße,27.0,85,85,53.076764,8.803639,18.0,18.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Müdener Straße,12.0,-40,0,53.074036,8.875811,28.0,28.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Sebaldsbrück (Bus+Tram),25.0,-30,-30,53.059469,8.899647,48.0,48.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,N10,33.0,Gröpelingen,1.0,Bremen Sebaldsbrück (Bus+Tram),,0,48,53.059469,8.899647,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:31:00,N10,33.0,Gröpelingen,1.0,Bremen Sebaldsbrück (Bus+Tram),,0,0,53.059469,8.899647,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,37,16.0,Bf Mahndorf,0.0,Bremen Sebaldsbrück (Bus+Tram),,0,0,53.059469,8.899647,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Christernstraße,26.0,0,0,53.054497,8.894109,33.0,34.0,0.0294
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Osterhop,27.0,-30,-30,53.052712,8.8993,29.0,29.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N5,41.0,Bf Mahndorf,0.0,Bremen Belmerstraße,28.0,0,0,53.052039,8.894824,29.0,29.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:09:00,3,29.0,Weserwehr,0.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:39:00,3,29.0,Weserwehr,0.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Gröpelingen,28.0,73,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Gröpelingen,17.0,37,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:35:00,N10,33.0,Sebaldsbrück,1.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:05:00,N10,33.0,Sebaldsbrück,1.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:49:00,2,29.0,Sebaldsbrück,1.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:14:00,2,29.0,Sebaldsbrück,1.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Gröpelingen,,0,29,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Gröpelingen,,0,0,53.120574,8.753003,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Altenescher Straße,3.0,-32,0,53.110403,8.769908,35.0,35.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:05:00,N10,33.0,Sebaldsbrück,1.0,Bremen Altenescher Straße,3.0,67,67,53.110403,8.769908,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Bahnhof Walle,6.0,-30,0,53.102536,8.785338,17.0,17.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Hansestraße,10.0,-40,0,53.091659,8.791314,32.0,32.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:35:00,N10,33.0,Sebaldsbrück,1.0,Bremen Hansestraße,10.0,6,6,53.091659,8.791314,32.0,32.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Am Dobben,17.0,172,172,53.078596,8.823672,16.0,20.0,0.2
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Am Dobben,30.0,75,105,53.078596,8.823672,16.0,20.0,0.2
+2024-02-13,00:16:13,Wednesday,0,23:31:00,N10,33.0,Gröpelingen,1.0,Bremen Am Dobben,14.0,235,235,53.078596,8.823672,16.0,20.0,0.2
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Am Dobben,13.0,329,329,53.078596,8.823672,16.0,20.0,0.2
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Am Dobben,13.0,90,90,53.078596,8.823672,16.0,20.0,0.2
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Sielwall,19.0,88,88,53.07075,8.82349,25.0,25.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:39:00,3,29.0,Weserwehr,0.0,Bremen Sielwall,20.0,64,64,53.07075,8.82349,25.0,25.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:31:00,N10,33.0,Gröpelingen,1.0,Bremen Sielwall,12.0,224,224,53.07075,8.82349,25.0,25.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,10,33.0,Sebaldsbrück,1.0,Bremen Bei den Drei Pfählen,23.0,-16,0,53.07121,8.85063,28.0,28.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Marßel,,0,0,53.178579,8.724093,57.0,57.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:06:00,94,48.0,Schwanewede-Nord,2.0,Bremen Marßel,,0,73,53.178579,8.724093,57.0,57.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Stader Landstraße,6.0,-31,0,53.167533,8.702409,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Stader Landstraße,8.0,34,34,53.167533,8.702409,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Stader Landstraße,12.0,49,78,53.167533,8.702409,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen-Burg(Bus),7.0,-35,0,53.16061,8.704381,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen-Burg(Bus),11.0,-34,0,53.16061,8.704381,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen-Burg(Bus),11.0,44,0,53.16061,8.704381,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen-Lesum Kirche,10.0,63,63,53.169581,8.688774,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Richthofenstraße,14.0,10,10,53.163958,8.661774,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Seefahrtstraße,17.0,-23,0,53.16492,8.646217,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Schönebecker Straße,18.0,10,10,53.166745,8.637522,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Grohn-Markt,19.0,-24,0,53.167045,8.631187,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Bahnhof Vegesack,20.0,-141,0,53.169621,8.627897,46.0,46.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:06:00,94,48.0,Schwanewede-Nord,2.0,Bremen Bahnhof Vegesack,20.0,73,0,53.169621,8.627897,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Bahnhof Vegesack,,0,0,53.169621,8.627897,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Bahnhof Vegesack,24.0,9,0,53.169621,8.627897,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Hegeweg,33.0,-30,-30,53.20506,8.574616,38.0,38.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:06:00,94,48.0,Schwanewede-Nord,2.0,Bremen Hegeweg,33.0,-30,-30,53.20506,8.574616,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Hegeweg,14.0,-91,-76,53.20506,8.574616,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Bremen Ringofenstraße,34.0,0,0,53.207153,8.578497,51.0,51.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:06:00,94,48.0,Schwanewede-Nord,2.0,Bremen Ringofenstraße,34.0,0,0,53.207153,8.578497,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Ringofenstraße,13.0,-71,-67,53.207153,8.578497,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Schwanewede Insterburger Weg,38.0,-30,-30,53.219785,8.589594,49.0,49.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:06:00,94,48.0,Schwanewede-Nord,2.0,Schwanewede Insterburger Weg,38.0,-30,-30,53.219785,8.589594,49.0,49.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:36:00,94,48.0,Schwanewede-Nord,2.0,Schwanewede Am Markt,39.0,0,0,53.22186,8.59456,42.0,42.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:06:00,94,48.0,Schwanewede-Nord,2.0,Schwanewede Am Markt,39.0,0,0,53.22186,8.59456,42.0,42.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Steenkuhlenweg,15.0,-86,-69,53.202561,8.571028,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Landrat-Berthold-Straße,16.0,-69,0,53.197066,8.571969,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Bockhorner Weg,17.0,-49,0,53.192655,8.574816,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Martin-Luther-Straße,18.0,-38,0,53.188353,8.577122,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Bahnhof Blumenthal,19.0,-141,73,53.183024,8.579728,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Bahnhof Blumenthal,24.0,-147,67,53.183024,8.579728,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Bahnhof Blumenthal,33.0,35,0,53.183024,8.579728,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Margaretenallee,21.0,92,92,53.178992,8.594592,53.0,53.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Bremer Vulkan,22.0,122,122,53.177414,8.601612,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,94,48.0,Bf Vegesack,2.0,Bremen Vereinsstraße,23.0,180,180,53.176364,8.606265,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:39:00,3,29.0,Weserwehr,0.0,Bremen Ulrichsplatz,19.0,61,61,53.072617,8.819835,22.0,22.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:39:00,3,29.0,Weserwehr,0.0,Bremen Weserwehr,28.0,-10,0,53.063491,8.867964,40.0,40.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:47:00,3,29.0,Gröpelingen,0.0,Bremen Weserwehr,,0,0,53.063491,8.867964,40.0,40.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:47:00,3,29.0,Gröpelingen,0.0,Bremen Georg-Bitter-Straße,2.0,61,61,53.067212,8.854328,34.0,34.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:08:00,N1,44.0,Bf Mahndorf,0.0,Bremen Roland-Center,,0,0,53.048336,8.741268,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N1,44.0,Bf Mahndorf,0.0,Bremen Roland-Center,,0,0,53.048336,8.741268,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,58,15.0,Bremen Roland-Center,2.0,Bremen Roland-Center,9.0,-121,0,53.048336,8.741268,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Roland-Center,,0,36,53.048336,8.741268,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,57,15.0,Bremen Roland-Center,2.0,Bremen Roland-Center,,0,0,53.048336,8.741268,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Roland-Center,,0,16,53.048336,8.741268,43.0,43.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:08:00,N1,44.0,Bf Mahndorf,0.0,Bremen Carl-Goerdeler-Straße,25.0,-30,-30,53.079302,8.896774,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N1,44.0,Bf Mahndorf,0.0,Bremen Carl-Goerdeler-Straße,25.0,173,173,53.079302,8.896774,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:50:00,1E,32.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Carl-Goerdeler-Straße,25.0,126,126,53.079302,8.896774,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:55:00,1E,32.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Carl-Goerdeler-Straße,30.0,-30,-30,53.079302,8.896774,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Carl-Goerdeler-Straße,25.0,357,357,53.079302,8.896774,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Carl-Goerdeler-Straße,25.0,0,0,53.079302,8.896774,35.0,35.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:08:00,N1,44.0,Bf Mahndorf,0.0,Bremen Dietrich-Bonhoeffer-Straße,26.0,0,0,53.078614,8.903285,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N1,44.0,Bf Mahndorf,0.0,Bremen Dietrich-Bonhoeffer-Straße,26.0,203,203,53.078614,8.903285,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:50:00,1E,32.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Dietrich-Bonhoeffer-Straße,26.0,156,156,53.078614,8.903285,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:55:00,1E,32.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Dietrich-Bonhoeffer-Straße,31.0,0,0,53.078614,8.903285,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Dietrich-Bonhoeffer-Straße,26.0,387,387,53.078614,8.903285,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Dietrich-Bonhoeffer-Straße,26.0,30,30,53.078614,8.903285,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N1,44.0,Bf Mahndorf,0.0,Bremen Neuenlander Straße,5.0,54,54,53.066911,8.782459,30.0,30.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Neuenlander Straße,5.0,58,58,53.066911,8.782459,30.0,30.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:38:00,N1,44.0,Bf Mahndorf,0.0,Bremen Pappelstraße,6.0,83,83,53.069665,8.787596,30.0,30.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen Pappelstraße,6.0,70,70,53.069665,8.787596,30.0,30.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Nußhorn,1.0,31,31,53.044264,8.952185,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Weserpark-Süd,2.0,22,37,53.046294,8.957571,47.0,47.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Weserpark,3.0,20,43,53.049065,8.960619,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Werner-Steenken-Straße,4.0,45,60,53.053257,8.962122,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Teneverstraße,5.0,54,71,53.057895,8.963148,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Graubündener Straße,10.0,138,138,53.071396,8.949386,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:15:00,N1,44.0,Huchting,0.0,Bremen Kurt-Huber-Straße,16.0,106,106,53.078187,8.911485,89.0,89.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:10:00,98,17.0,Bf Vegesack,0.0,Bremen Borchsholt,,0,0,53.18305,8.634595,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:10:00,98,17.0,Bf Vegesack,0.0,Bremen Herbartstraße,2.0,-30,-30,53.188459,8.640607,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:10:00,98,17.0,Bf Vegesack,0.0,Bremen Vorlöhnhorster Weg,3.0,0,0,53.190798,8.635381,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:23:00,N7,80.0,Hauptbahnhof,2.0,Bremen Dithmarscher Freiheit,36.0,-85,0,53.102444,8.799509,68.0,68.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:23:00,N7,80.0,Hauptbahnhof,2.0,Bremen Fürther Straße,37.0,-94,-94,53.099687,8.807555,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:23:00,N7,80.0,Hauptbahnhof,2.0,Bremen Hemmstraße,39.0,-102,-100,53.094805,8.80845,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:23:00,N7,80.0,Hauptbahnhof,2.0,Bremen Eickedorfer Straße,40.0,-115,-104,53.092897,8.810399,39.0,39.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Eickedorfer Straße,4.0,37,37,53.092897,8.810399,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:23:00,N7,80.0,Hauptbahnhof,2.0,Bremen Findorffallee,41.0,-126,-124,53.090284,8.813487,29.0,29.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Auf dem Krümpel,1.0,34,34,53.173164,8.640018,46.0,46.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Tannenhof,3.0,73,73,53.175062,8.660805,48.0,48.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Tannenhof,42.0,0,0,53.175062,8.660805,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Tannenhof,21.0,134,134,53.175062,8.660805,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Holthorster Weg,5.0,43,43,53.17346,8.675907,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Holthorster Weg,19.0,164,164,53.17346,8.675907,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Holthorster Weg,19.0,0,0,53.17346,8.675907,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Zum Kränholm,6.0,73,73,53.172469,8.67981,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Zum Kränholm,18.0,92,92,53.172469,8.67981,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Zum Kränholm,18.0,-30,-30,53.172469,8.67981,45.0,45.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:53:00,N7,80.0,Gröpelingen,2.0,Bremen Karl-Bröger-Straße,27.0,43,43,53.124857,8.7489,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Karl-Bröger-Straße,1.0,58,58,53.124857,8.7489,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Karl-Bröger-Straße,1.0,65,65,53.124857,8.7489,36.0,36.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Lange Reihe,12.0,7,7,53.101724,8.778428,23.0,23.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Waller Ring,13.0,37,37,53.098533,8.776565,49.0,49.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen DIAKO Bremen,19.0,-30,-30,53.126404,8.747009,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen DIAKO Bremen,2.0,71,71,53.126404,8.747009,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen DIAKO Bremen,2.0,35,35,53.126404,8.747009,48.0,48.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Am Fuchsberg,20.0,0,0,53.129774,8.743113,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Am Fuchsberg,3.0,101,101,53.129774,8.743113,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Am Fuchsberg,3.0,65,65,53.129774,8.743113,48.0,48.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:00:00,N7,80.0,Betriebshof Blumenthal,2.0,Bremen Am Bahnhof St. Magnus,41.0,-30,-30,53.174692,8.669639,46.0,46.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,N10,33.0,Gröpelingen,1.0,Bremen Trinidadstraße,2.0,117,117,53.060028,8.893732,23.0,23.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:31:00,N10,33.0,Gröpelingen,1.0,Bremen Trinidadstraße,2.0,82,82,53.060028,8.893732,23.0,23.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:01:00,N10,33.0,Gröpelingen,1.0,Bremen Bahnhof Sebaldsbrück,3.0,151,151,53.062197,8.887576,26.0,26.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:31:00,N10,33.0,Gröpelingen,1.0,Bremen Föhrenstraße,4.0,126,126,53.06431,8.877295,24.0,24.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:31:00,N10,33.0,Gröpelingen,1.0,Bremen Ludwig-Quidde-Straße,6.0,158,158,53.067635,8.862488,33.0,33.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,58,15.0,Bremen Roland-Center,2.0,Bremen Mittelshuchtinger Dorfstraße,5.0,-83,-83,53.056921,8.72305,52.0,52.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,58,15.0,Bremen Roland-Center,2.0,Bremen Brüsseler Straße,6.0,-79,-67,53.056144,8.716162,13.0,13.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,57,15.0,Bremen Roland-Center,2.0,Bremen Brüsseler Straße,8.0,149,149,53.056144,8.716162,13.0,13.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,58,15.0,Bremen Roland-Center,2.0,Bremen Flämische Straße,7.0,-67,0,53.052665,8.715193,13.0,13.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,57,15.0,Bremen Roland-Center,2.0,Bremen Flämische Straße,7.0,111,111,53.052665,8.715193,13.0,13.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,58,15.0,Bremen Roland-Center,2.0,Bremen Obervielander Straße,8.0,-118,0,53.051864,8.740732,42.0,42.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Neuenkirchen(Schwanewede) Vorbruch,1.0,111,111,53.233095,8.525564,64.0,64.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Neuenkirchen(Schwanewede) Ahnten,2.0,141,141,53.234221,8.521228,64.0,64.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Neuenkirchen(Schwanewede) Ahnten,55.0,0,0,53.234221,8.521228,64.0,64.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Neuenkirchen(Schwanewede) Ahnten,55.0,0,0,53.234221,8.521228,64.0,64.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Neuenkirchen(Schwanewede) Marktplatz,3.0,101,101,53.23443,8.515404,65.0,65.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Neuenkirchen(Schwanewede) Marktplatz,54.0,-30,-30,53.23443,8.515404,65.0,65.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Neuenkirchen(Schwanewede) Marktplatz,54.0,-30,-30,53.23443,8.515404,65.0,65.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Neuenkirchen(Schwanewede) Landwehr,4.0,64,64,53.232616,8.513683,64.0,64.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Moorstücke,5.0,34,34,53.22748,8.511132,65.0,65.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Moorstücke,52.0,0,0,53.22748,8.511132,65.0,65.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Moorstücke,52.0,0,0,53.22748,8.511132,65.0,65.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Sandkuhlenweg,6.0,62,62,53.225303,8.510034,53.0,53.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Sandkuhlenweg,51.0,-30,-30,53.225303,8.510034,53.0,53.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Sandkuhlenweg,51.0,-30,-30,53.225303,8.510034,53.0,53.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Vor den Wischen,7.0,38,38,53.223023,8.508864,53.0,53.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Rekumer Siel,8.0,68,68,53.218184,8.509509,42.0,49.0,0.1429
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Rekumer Siel,49.0,0,0,53.218184,8.509509,42.0,49.0,0.1429
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Rekumer Siel,49.0,0,0,53.218184,8.509509,42.0,49.0,0.1429
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen De Kreienbarg,10.0,38,38,53.211112,8.512503,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Wilhelm-Brandhorst-Straße,11.0,68,68,53.207915,8.514131,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Bahnhof Farge,12.0,17,17,53.205563,8.518154,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Wasserweg,15.0,-18,0,53.196219,8.531245,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Wasserweg,42.0,-30,-30,53.196219,8.531245,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Wasserweg,42.0,-30,-30,53.196219,8.531245,41.0,41.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen An der Amtsweide,16.0,-40,-26,53.192782,8.534216,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen An der Amtsweide,41.0,0,0,53.192782,8.534216,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen An der Amtsweide,41.0,0,0,53.192782,8.534216,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Hanfstraße,17.0,-25,-25,53.191441,8.53842,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Hanfstraße,40.0,-30,-30,53.191441,8.53842,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Hanfstraße,40.0,-30,-30,53.191441,8.53842,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Buschdeel,18.0,5,5,53.190115,8.543273,53.0,53.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Rönnebecker Straße,20.0,-45,0,53.185739,8.555946,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Fähre Blumenthal,21.0,-37,0,53.183148,8.562472,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Fähre Blumenthal,36.0,0,0,53.183148,8.562472,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Fähre Blumenthal,36.0,0,0,53.183148,8.562472,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen Zum Donaufleet,22.0,-53,0,53.181632,8.567805,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Zum Donaufleet,35.0,-30,-30,53.181632,8.567805,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Zum Donaufleet,35.0,-30,-30,53.181632,8.567805,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:45:00,90,58.0,Bf Vegesack / N7 Hauptbahnhof,1.0,Bremen-Blumenthal Markt,23.0,-56,0,53.181419,8.573693,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Am Geestkamp,8.0,48,48,53.147399,8.711405,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Am Geestkamp,8.0,76,76,53.147399,8.711405,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Burger Dorfstraße,10.0,17,17,53.155015,8.70459,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Am Heidbergstift,15.0,84,84,53.173944,8.697446,67.0,67.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Gerhard-Rohlfs-Straße,25.0,73,73,53.171674,8.621464,38.0,38.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Gustav-Heinemann-Bürgerhaus,26.0,65,65,53.17448,8.618157,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Fährer Kämpe,29.0,103,103,53.184281,8.613111,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Löhstraße,31.0,134,134,53.184836,8.59781,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Fähre Farge,43.0,0,0,53.199224,8.526993,56.0,56.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Fähre Farge,43.0,0,0,53.199224,8.526993,56.0,56.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:28:00,90,58.0,Neuenkirchen,1.0,Bremen Hohenesch,48.0,-30,-30,53.21337,8.511061,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Hohenesch,48.0,-30,-30,53.21337,8.511061,50.0,50.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Ritterhuder Heerstraße,4.0,99,99,53.133632,8.736583,37.0,37.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:58:00,90,58.0,Neuenkirchen,1.0,Bremen Dohlenstraße,5.0,134,134,53.135314,8.73091,48.0,48.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:46:00,1E,35.0,Neue Vahr-Süd / Kurt-Huber-Str.,0.0,Bremen St. Joseph-Stift,16.0,298,298,53.082482,8.837204,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:48:00,N4,49.0,Huckelriede / weiter mit Bus,0.0,Bremen St. Joseph-Stift,25.0,-70,0,53.082482,8.837204,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen St. Joseph-Stift,16.0,40,40,53.082482,8.837204,36.0,36.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:18:00,N4,49.0,Huckelriede / weiter mit Bus,0.0,Bremen Höger Weg,13.0,92,92,53.115513,8.894018,39.0,39.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,57,15.0,Bremen Roland-Center,2.0,Bremen Hohenhorster Weg,2.0,35,35,53.044809,8.736153,43.0,43.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:59:00,57,15.0,Bremen Roland-Center,2.0,Bremen Am Sodenmatt,6.0,78,78,53.045803,8.718782,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,6,25.0,Flughafen,0.0,Bremen Universität-Nord,,0,0,53.11064,8.854691,52.0,52.0,0.0
+2024-02-14,00:16:13,Wednesday,0,00:09:00,6,25.0,Flughafen,0.0,Bremen Universität-Nord,,0,254,53.11064,8.854691,52.0,52.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,6,25.0,Flughafen,0.0,Bremen Berufsbildungswerk,4.0,-45,0,53.102639,8.859212,34.0,34.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,6,25.0,Flughafen,0.0,Bremen Gastfeldstraße,19.0,12,12,53.066421,8.793695,31.0,31.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:43:00,6,25.0,Flughafen,0.0,Bremen Neuenlander Kämpe,22.0,-54,0,53.056372,8.784087,44.0,44.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Norderländer Straße,1.0,15,15,53.058464,8.758757,51.0,51.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Wilhelm-Leuschner-Straße,23.0,91,91,53.079041,8.885502,35.0,35.0,0.0
+2024-02-13,00:16:13,Wednesday,0,23:22:00,1,44.0,Bf Mahndorf,0.0,Bremen Berliner Freiheit,24.0,30,30,53.079384,8.893002,35.0,35.0,0.0

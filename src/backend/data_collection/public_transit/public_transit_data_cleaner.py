@@ -141,11 +141,5 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     - merged_df (DataFrame): DataFrame mit StopTimeUpdates, die in der trips_bsag_df enthalten sind.
     """
     # Inner Join zwischen stop_time_updates_df und trips_bsag_df
-    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id',
-                         validate='many_to_one')
+    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate='many_to_many')
     return merged_df
-
-
-# todo: remove
-if __name__ == "__main__":
-    get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")

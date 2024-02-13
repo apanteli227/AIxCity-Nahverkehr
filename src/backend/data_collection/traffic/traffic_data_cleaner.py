@@ -8,9 +8,9 @@ from ..traffic import traffic_data_fetch as td_fetch
 
 def main(base_api_url, stop_times_bsag_updates):
     # Entferne alle Spalten außer die Spalte "Haltestelle"
-    stop_times_bsag_updates = stop_times_bsag_updates.drop(
+    stop_times_bsag_drop__copy = stop_times_bsag_updates.drop(
         columns=["StartDate", "Startzeit an der Anfangshaltestelle", "Linie", "Richtung", "StopSequence",
-                 "Ankunftsverspaetung in Sek.", "Abfahrtsverspaetung in Sek."])
+                 "Ankunftsverspaetung in Sek.", "Abfahrtsverspaetung in Sek.", "Aktuelle Uhrzeit" , "Wochentag","Feiertag","Anzahl Haltestellen","Anzahl Baustellen"])
 
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     full_path = os.path.join(os.path.dirname(__file__), "../resources")
@@ -29,7 +29,7 @@ def main(base_api_url, stop_times_bsag_updates):
 
     # Führe einen Inner Join zwischen stops.txt und stop_times_bsag_updates durch. Join auf die Spalte "Haltestelle"
     # und "stop_name"
-    coordinates_df = pd.merge(coordinates_df, stop_times_bsag_updates, left_on="stop_name", right_on="Haltestelle",
+    coordinates_df = pd.merge(coordinates_df, stop_times_bsag_drop__copy, left_on="stop_name", right_on="Haltestelle",
                               how="inner")
 
     # Aus DataFrame alle Spalten löschen außer der stop_name, stop_lat und stop_lon
@@ -79,5 +79,10 @@ def main(base_api_url, stop_times_bsag_updates):
         print(traffic_data_bsag_updates.loc[index])
 
     logging.info("Verkehrsdaten wurden ermittelt.")
-    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
-    return traffic_data_bsag_updates
+
+    # Verkehrsdaten mit Verspätungsdaten mergen
+    merged_stop_time_traffic_bsag_updates = pd.merge(stop_times_bsag_updates, traffic_data_bsag_updates, how="inner",
+                                         left_on="Haltestelle", right_on="Haltestelle")
+
+    merged_stop_time_traffic_bsag_updates.to_csv("merged_stop_time_traffic_bsag_updates.csv", index=False)
+    return merged_stop_time_traffic_bsag_updates

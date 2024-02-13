@@ -69,7 +69,7 @@ def extract_stop_time_updates(gtfsr_data):
                     # Füge den Eintrag der Liste hinzu
                     stop_time_updates.append(stop_info)
 
-        # Gib die Liste zurück
+        # Gib die Liste zurück           
         return stop_time_updates
     else:
         return None

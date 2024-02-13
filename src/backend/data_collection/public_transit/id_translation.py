@@ -109,8 +109,15 @@ def process_gtfs_data(base_path="../resources"):
     # Filtere das DataFrame um nur die Route-ID und Trip-ID zu behalten
     filtered_trips_df = trips_df[["trip_id", "route_id", "trip_headsign"]]
 
+    # Entferne die letzten zwei Strings in Spalte "route_id" zur Vereinheitlichung
+    # Zunächst dafür die Spalte in ein String umwandeln und danach wieder zurück zu Integer
+    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].astype(str)
+    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].str[:-2]
+    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].astype(int)
+
     # Filtern der Trips der BSAG, welche auch eine entsprechende Routen-ID in der Routen-Tabelle besitzen
     trips_bsag_df = filtered_trips_df[filtered_trips_df["route_id"].isin(routes_bsag_df["route_id"])]
+   
 
     # Zugriff auf DataFrame für Transfers
     transfer_df = gtfs_data.get("transfers")
