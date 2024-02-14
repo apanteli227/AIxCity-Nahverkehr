@@ -1,16 +1,15 @@
 import logging
 import os
-
 import pandas as pd
 
 from ..traffic import traffic_data_fetch as td_fetch
 
 
-def main(base_api_url, stop_times_bsag_updates):
+def main(base_api_url, stop_times_bsag_updates) -> pd.DataFrame:
     # Entferne alle Spalten außer die Spalte "Haltestelle"
     stop_times_bsag_drop__copy = stop_times_bsag_updates.drop(
-        columns=["StartDate", "Startzeit an der Anfangshaltestelle", "Linie", "Richtung", "StopSequence",
-                 "Ankunftsverspaetung in Sek.", "Abfahrtsverspaetung in Sek.", "Aktuelle Uhrzeit" , "Wochentag","Feiertag","Anzahl Haltestellen","Anzahl Baustellen"])
+        columns=["start_date", "starting_stop_time", "line", "direction", "stop_sequence",
+                 "arrival_delay_sec", "departure_delay_sec", "current_time" , "weekday", "holiday", "number_of_stops", "number_of_building_sites"])
 
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     full_path = os.path.join(os.path.dirname(__file__), "../resources")
@@ -29,7 +28,7 @@ def main(base_api_url, stop_times_bsag_updates):
 
     # Führe einen Inner Join zwischen stops.txt und stop_times_bsag_updates durch. Join auf die Spalte "Haltestelle"
     # und "stop_name"
-    coordinates_df = pd.merge(coordinates_df, stop_times_bsag_drop__copy, left_on="stop_name", right_on="Haltestelle",
+    coordinates_df = pd.merge(coordinates_df, stop_times_bsag_drop__copy, left_on="stop_name", right_on="stop",
                               how="inner")
 
     # Aus DataFrame alle Spalten löschen außer der stop_name, stop_lat und stop_lon
@@ -68,21 +67,22 @@ def main(base_api_url, stop_times_bsag_updates):
 
         # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle
         # Koordianten eintragen
-        traffic_data_bsag_updates.loc[index, 'currentSpeed'] = current_speed
-        traffic_data_bsag_updates.loc[index, 'freeFlowSpeed'] = free_flow_speed
+        traffic_data_bsag_updates.loc[index, 'current_speed'] = current_speed
+        traffic_data_bsag_updates.loc[index, 'freeflow_Speed'] = free_flow_speed
 
         # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
-        traffic_data_bsag_updates["Durchschnittliche Verkehrsauslastung in %"] = abs(
-            (traffic_data_bsag_updates["currentSpeed"] / traffic_data_bsag_updates["freeFlowSpeed"]) - 1).round(4)
+        traffic_data_bsag_updates["average_traffic_load_percentage"] = abs(
+            (traffic_data_bsag_updates["current_speed"] / traffic_data_bsag_updates["freeflow_Speed"]) - 1).round(4)
 
-        # Gebe mir die aktuelle Zeile aus
-        print(traffic_data_bsag_updates.loc[index])
+        # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
+        #print(traffic_data_bsag_updates.loc[index])
 
     logging.info("Verkehrsdaten wurden ermittelt.")
 
     # Verkehrsdaten mit Verspätungsdaten mergen
     merged_stop_time_traffic_bsag_updates = pd.merge(stop_times_bsag_updates, traffic_data_bsag_updates, how="inner",
-                                         left_on="Haltestelle", right_on="Haltestelle")
-
-    merged_stop_time_traffic_bsag_updates.to_csv("merged_stop_time_traffic_bsag_updates.csv", index=False)
+                                         left_on="stop", right_on="stop")
+    
+    # Optional: Speichern des DataFrames als CSV-Datei
+    #merged_stop_time_traffic_bsag_updates.to_csv("merged_stop_time_traffic_bsag_updates.csv", index=False)
     return merged_stop_time_traffic_bsag_updates

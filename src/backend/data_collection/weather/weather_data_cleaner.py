@@ -1,9 +1,9 @@
 from xml.etree.ElementTree import fromstring
-
+import logging
 import requests
 
 
-def get_weather_warning():
+def get_weather_warning() -> str:
     """
     Diese Funktion holt die Wetterwarnungen von wettwarn.de für Bremen.
 
@@ -29,5 +29,5 @@ def get_weather_warning():
         return weather_warning
 
     else:
-        print("Fehler beim Abrufen des RSS-Feeds. Status Code:", response.status_code)
-        return None
+        logging.warn("Fehler beim Abrufen des RSS-Feeds. Status Code:", response.status_code)
+        return ""
