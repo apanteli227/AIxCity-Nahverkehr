@@ -1,8 +1,8 @@
 import pandas as pd
 import requests
+import logging
 
-
-def get_traffic_dataframe(api_url):
+def get_traffic_dataframe(api_url) -> pd.DataFrame:
     # API-Anfrage senden und JSON-Daten abrufen
     response = requests.get(api_url)
 
@@ -17,5 +17,5 @@ def get_traffic_dataframe(api_url):
         return dataframe
     else:
         # Falls die Anfrage nicht erfolgreich war, eine Fehlermeldung ausgeben
-        print(f"Fehler bei der API-Anfrage. Status Code: {response.status_code}")
+        logging.warn(f"Fehler bei der API-Anfrage. Status Code: {response.status_code}")
         return None

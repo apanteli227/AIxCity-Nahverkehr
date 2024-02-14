@@ -1,0 +1,2 @@
+city,date,time,temperature (°C),humidity (%),weather_description,wind_speed (m/s),weather_warning
+Bremen,2024-02-14,12:19:38,10.44,96,drizzle,5.66,Es sind keine Warnungen für Bremen vorhanden.

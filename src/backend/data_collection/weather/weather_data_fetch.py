@@ -1,6 +1,6 @@
 import logging
 from datetime import datetime
-
+from ..weather import weather_data_cleaner as wdc
 import pandas as pd
 import requests
 
@@ -32,7 +32,7 @@ def get_weather_data(base_url, api_key, city):
         weather_data = response.json()
         return weather_data
     else:
-        print(f"Fehlschlag bei der Abfrage. Status Code: {response.status_code}")
+        logging.warn(f"Fehlschlag bei der Abfrage. Status Code: {response.status_code}")
         return None
 
 
@@ -65,29 +65,22 @@ def get_weather_dataframe(url, api_key, city):
             wind_speed = None
 
         # Abrufen der Wetterwarnungen
-        warnings_response = requests.get(f"http://api.openweathermap.org/data/3.0/warnings?appid={api_key}&q={city}")
-        warnings_data = warnings_response.json()
-
-        # Prüfen, ob Wetterwarnungen verfügbar sind
-        if 'warnings' in warnings_data:
-            weather_warnings = warnings_data['warnings']
-        else:
-            weather_warnings = None
+        weather_warnings = wdc.get_weather_warning()
 
         # Erstellen eines DataFrames mit den erstellten Wetterdaten
         weather_bremen_df = pd.DataFrame({
-            'Stadt': [city],
-            'Datum': [datetime.now().strftime("%Y-%m-%d")],
-            'Uhrzeit': [datetime.now().strftime("%H:%M:%S")],
-            'Temperatur (°C)': [temperature],
-            'Feuchtigkeit (%)': [humidity],
-            'Wetterbeschreibung': [description],
-            'Windgeschwindigkeit (m/s)': [wind_speed],
-            'Wetterwarnungen': [weather_warnings]
+            'city': [city],
+            'date': [datetime.now().strftime("%Y-%m-%d")],
+            'time': [datetime.now().strftime("%H:%M:%S")],
+            'temperature (°C)': [temperature],
+            'humidity (%)': [humidity],
+            'weather_description': [description],
+            'wind_speed (m/s)': [wind_speed],
+            'weather_warning': [weather_warnings]
         })
 
         # Optional: Speichern des Wetter-DataFrames als CSV-Datei
-        weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
+        #weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
         logging.info("Wetterdaten erfolgreich ermittelt und gespeichert!")
         return weather_bremen_df
     else:

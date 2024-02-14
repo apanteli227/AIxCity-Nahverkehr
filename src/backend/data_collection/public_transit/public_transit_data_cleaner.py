@@ -1,6 +1,5 @@
 import logging
 from datetime import datetime
-
 import pandas as pd
 
 from ..traffic import traffic_data_cleaner
@@ -26,12 +25,10 @@ def get_public_transit_dataframe(gtfsr_url, base_api_url):
     result_dict_with_dataframes = transl.process_gtfs_data()
     logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
 
-    # Zugriff auf die DataFrames
+    # Zugriff auf die benötigten DataFrames
     stops_bremen_df = result_dict_with_dataframes["stops_bremen_df"]
-    agency_bsag_df = result_dict_with_dataframes["agency_bsag_df"]
     routes_bsag_df = result_dict_with_dataframes["routes_bsag_df"]
     trips_bsag_df = result_dict_with_dataframes["trips_bsag_df"]
-    transfer_bsag_df = result_dict_with_dataframes["transfer_bsag_df"]
 
     # Entferne alle StopTimeUpdates, die nicht in der trips_bsag_df enthalten sind
     stop_times_bsag_updates = remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df)
@@ -42,42 +39,54 @@ def get_public_transit_dataframe(gtfsr_url, base_api_url):
     # Datei mit den Feiertagen einlesen
     holidays_bremen_df = pd.read_csv("data_collection/resources/holidays.csv", delimiter=';')
 
-    # Anpassen der Angabe des Feiertages als Integer
-    holidays_bremen_df['Feiertag'] = holidays_bremen_df['Feiertag'].astype(int)
+    # Anpassen der Angabe des Feiertages als Integer und Umbennnenung zu holiday
+    holidays_bremen_df["holiday"] = holidays_bremen_df["Feiertag"].astype(int)
 
     # Anpassen der Datumsformat der Spalte Datum_Feiertag in holidays_bremen_df
-    holidays_bremen_df['Datum_Feiertag'] = pd.to_datetime(holidays_bremen_df['Datum_Feiertag'],
+    holidays_bremen_df["holiday_date"] = pd.to_datetime(holidays_bremen_df["Datum_Feiertag"],
                                                           format="%d.%m.%Y").dt.strftime("%Y-%m-%d")
 
     # Merge von stop_times_bsag_updates und relevant_routes_stops_bsag, um die Anzahl der Haltestellen zu erhalten
     stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, relevant_routes_stops_bsag, how='inner',
-                                       left_on='route_id', right_on='route_id')
+                                       left_on='route_id', right_on='route_id', validate='many_to_one')
 
     # Anpassen des Datumsformats der Spalte StartDate in stop_times_bsag_uodates
-    stop_times_bsag_updates['StartDate'] = pd.to_datetime(stop_times_bsag_updates['StartDate']).dt.strftime("%Y-%m-%d")
+    stop_times_bsag_updates["start_date"] = pd.to_datetime(stop_times_bsag_updates["StartDate"]).dt.strftime("%Y-%m-%d")
 
     # Merge von stop_times_bsag_updates und holidays_bremen_df, um die Feiertage zu erhalten
-    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='StartDate',
-                                       right_on='Datum_Feiertag')
+    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='start_date',
+                                       right_on='holiday_date', validate='many_to_one')
 
     # Umbenennen der Spalten in verständliche Namen
-    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = stop_times_bsag_updates['StartTime']
-    stop_times_bsag_updates['Richtung'] = stop_times_bsag_updates['trip_headsign']
-    stop_times_bsag_updates['Abfahrtsverspaetung in Sek.'] = stop_times_bsag_updates['DepartureDelay']
-    stop_times_bsag_updates['Ankunftsverspaetung in Sek.'] = stop_times_bsag_updates['ArrivalDelay']
-    stop_times_bsag_updates['Anzahl Haltestellen'] = stop_times_bsag_updates['number_stops']
-    stop_times_bsag_updates['Anzahl Baustellen'] = stop_times_bsag_updates['number_building_sites']
+    stop_times_bsag_updates["starting_stop_time"] = stop_times_bsag_updates['StartTime']
+    stop_times_bsag_updates["direction"] = stop_times_bsag_updates['trip_headsign']
+    stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates['DepartureDelay']
+    stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates['ArrivalDelay']
+    stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates['number_stops']
+    stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates['number_building_sites']
+    stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates['StopSequence']
+
+    # Wandle die Spalte Anzahl an Baustellen und Anzahl an Haltestellen in Integer um
+    stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates["number_of_stops"].fillna(0).astype(int)
+    stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates["number_of_building_sites"].fillna(0).astype(int)
+
+    # Fehlende Werte in stop_sequence mit 0 ersetzen
+    stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates["stop_sequence"].fillna(0)
+
+    # Wandle die Werte in Spalte arrival_delay_sec und departure_delay_sec in 1 um, enn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
+    stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates["arrival_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
+    stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates["departure_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
 
     # Einfügen weiterer relevanter Spalten
     # Aktuelle Uhrzeit
-    stop_times_bsag_updates['Aktuelle Uhrzeit'] = datetime.now().time().strftime("%H:%M:%S")
+    stop_times_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
     # Aktueller Wochentag
-    stop_times_bsag_updates['Wochentag'] = datetime.now().strftime("%A")
+    stop_times_bsag_updates["weekday"] = datetime.now().strftime("%A")
 
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
-    stop_times_bsag_updates['Linie'] = stop_times_bsag_updates['route_id'].map(
+    stop_times_bsag_updates["line"] = stop_times_bsag_updates['route_id'].map(
         routes_bsag_df.set_index('route_id')['route_short_name'])
-    stop_times_bsag_updates['Haltestelle'] = stop_times_bsag_updates['StopId'].map(
+    stop_times_bsag_updates["stop"] = stop_times_bsag_updates['StopId'].map(
         stops_bremen_df.set_index('stop_id')['stop_name'])
 
     logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
@@ -89,10 +98,9 @@ def get_public_transit_dataframe(gtfsr_url, base_api_url):
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['StartDate', 'Aktuelle Uhrzeit', 'Wochentag', 'Feiertag', 'Startzeit an der Anfangshaltestelle',
-                     'Linie',
-                     'Anzahl Haltestellen', 'Richtung', 'Anzahl Baustellen', 'Haltestelle', 'StopSequence',
-                     'Ankunftsverspaetung in Sek.', 'Abfahrtsverspaetung in Sek.']
+    columns_order = ['start_date', 'current_time', 'weekday', 'holiday', 'starting_stop_time',
+                     'line', 'number_of_stops', 'direction', 'number_of_building_sites', 'stop', 'stop_sequence',
+                     'arrival_delay_sec', 'departure_delay_sec']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
@@ -106,21 +114,20 @@ def get_public_transit_dataframe(gtfsr_url, base_api_url):
 
     # Sicherstellen, dass 'StartDate' eine Spalte mit Datum-Strings und 'Startzeit an der Anfangshaltestelle' eine
     # Spalte mit Zeit-Strings ist
-    stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] = pd.to_datetime(
-        stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'], format='%H:%M:%S').dt.strftime("%H:%M:%S")
+    stop_times_bsag_updates["starting_stop_time"] = pd.to_datetime(
+        stop_times_bsag_updates["starting_stop_time"], format='%H:%M:%S').dt.strftime("%H:%M:%S")
 
     # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
     stop_times_bsag_updates = stop_times_bsag_updates[
-        ((stop_times_bsag_updates['StartDate'] <= actual_date_str) &
-         (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] <= actual_time_str))
-        | ((stop_times_bsag_updates['StartDate'] < actual_date_str) &
-           (stop_times_bsag_updates['Startzeit an der Anfangshaltestelle'] >= actual_time_str))
+        ((stop_times_bsag_updates["start_date"] <= actual_date_str) &
+         (stop_times_bsag_updates["starting_stop_time"] <= actual_time_str))
+        | ((stop_times_bsag_updates["start_date"] < actual_date_str) &
+           (stop_times_bsag_updates["starting_stop_time"] >= actual_time_str))
         ]
-
     logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
 
     # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter.
     # Dieser Prozess wird parallel zum aktuellen Prozess ausgeführt

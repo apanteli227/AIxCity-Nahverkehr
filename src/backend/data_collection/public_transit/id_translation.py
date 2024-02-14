@@ -1,9 +1,8 @@
 import os
-
 import pandas as pd
+import logging
 
-
-def process_gtfs_data(base_path="../resources"):
+def process_gtfs_data(base_path="../resources") -> dict:
     """
     Diese Funktion lädt die GTFS-Textdateien aus dem Ressourcen-Ordner ein
     und erstellt fünf DataFrames.
@@ -42,7 +41,7 @@ def process_gtfs_data(base_path="../resources"):
         try:
             gtfs_data[file] = pd.read_csv(file_path, low_memory=False)  # Path anpassen
         except FileNotFoundError:
-            print(f"Warnung: Datei {file}.txt nicht gefunden.")
+            logging.warn(f"Warnung: Datei {file}.txt nicht gefunden.")
 
     # Zugriff auf DataFrame für Haltestellen im Dictionary
     stops_df = gtfs_data.get("stops")
@@ -111,14 +110,11 @@ def process_gtfs_data(base_path="../resources"):
 
     # Entferne die letzten zwei Strings in Spalte "route_id" zur Vereinheitlichung
     # Zunächst dafür die Spalte in ein String umwandeln und danach wieder zurück zu Integer
-    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].astype(str)
-    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].str[:-2]
-    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].astype(int)
+    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].astype(str).str[:-2].astype(int)
 
     # Filtern der Trips der BSAG, welche auch eine entsprechende Routen-ID in der Routen-Tabelle besitzen
     trips_bsag_df = filtered_trips_df[filtered_trips_df["route_id"].isin(routes_bsag_df["route_id"])]
    
-
     # Zugriff auf DataFrame für Transfers
     transfer_df = gtfs_data.get("transfers")
 
