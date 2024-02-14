@@ -38,12 +38,11 @@ const MyMap = () => {
     const fetchTramRoutes = async () => {
       try {
         const response = await axios.get(
-          "https://overpass-api.de/api/interpreter?data=[out:json];way[route=bus](53.07,8.76,53.10,8.87);out;"
+          "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];area(id:3600062559)->.searchArea;relation[type=route][route=tram](area.searchArea);out geom;"
         );
         console.log('Raw Overpass API response:', response.data); // Log raw response
-        const geoJSON = osmToGeoJSON(response.data.elements);
-        console.log('Converted GeoJSON:', geoJSON); // Log converted GeoJSON
-        setTramRoutes(geoJSON.features);
+        console.log('Converted GeoJSON:', response.data.elements); // Log converted GeoJSON
+        setTramRoutes(response.data.elements);
       } catch (error) {
         console.error(error);
       }
@@ -54,47 +53,6 @@ const MyMap = () => {
     loadTramStations();
   }, []);
 
-  const osmToGeoJSON = (elements) => {
-    // Initialize an empty GeoJSON FeatureCollection
-    const geoJSON = {
-      type: 'FeatureCollection',
-      features: [],
-    };
-
-    // A lookup to find nodes by id
-    const nodesById = {};
-
-    // First pass to get all nodes and store them by id
-    elements.forEach((el) => {
-      if (el.type === 'node') {
-        nodesById[el.id] = el;
-      }
-    });
-
-    // Second pass to get all ways and construct linestring features
-    elements.forEach((el) => {
-      if (el.type === 'way') {
-        const coordinates = el.nodes.map((nodeId) => {
-          const node = nodesById[nodeId];
-          return [node.lon, node.lat];
-        });
-
-        // Only add the feature if it has coordinates
-        if (coordinates.length) {
-          geoJSON.features.push({
-            type: 'Feature',
-            geometry: {
-              type: 'LineString',
-              coordinates,
-            },
-            properties: el.tags,
-          });
-        }
-      }
-    });
-
-    return geoJSON;
-  };
 
   return (
     <main className="map-container">
@@ -131,14 +89,7 @@ const MyMap = () => {
           </Marker>
         ))}
 
-        {/* Draw tram routes */}
-        {tramRoutes.map((route, idx) => (
-          <Polyline
-            key={route.properties.id}
-            positions={route.geometry.coordinates}
-            color="pink" // Use a distinctive color for tram routes
-          />
-        ))}
+        
       </MapContainer>
     </main>
   );
