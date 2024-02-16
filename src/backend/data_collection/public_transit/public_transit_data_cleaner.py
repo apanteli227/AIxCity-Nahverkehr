@@ -2,12 +2,11 @@ import logging
 from datetime import datetime
 import pandas as pd
 
-from ..traffic import traffic_data_cleaner
 from ..public_transit import id_translation as transl
 from ..public_transit import public_transit_data_fetch as pt_fetch
 
 
-def get_public_transit_dataframe(gtfsr_url, base_api_url):
+def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
@@ -128,11 +127,7 @@ def get_public_transit_dataframe(gtfsr_url, base_api_url):
 
     # Optional: Speichern des DataFrames als CSV-Datei
     #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
-
-    # Führe die main-Funktion in traffic_data_cleaner.py aus und übergebe die stop_times_bsag_updates als Parameter.
-    # Dieser Prozess wird parallel zum aktuellen Prozess ausgeführt
-    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...")
-    return traffic_data_cleaner.main(base_api_url, stop_times_bsag_updates)
+    return stop_times_bsag_updates
 
 
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
