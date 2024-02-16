@@ -5,11 +5,8 @@ import pandas as pd
 from ..traffic import traffic_data_fetch as td_fetch
 
 
-def main(base_api_url, stop_times_bsag_updates) -> pd.DataFrame:
-    # Entferne alle Spalten außer die Spalte "Haltestelle"
-    stop_times_bsag_drop__copy = stop_times_bsag_updates.drop(
-        columns=["start_date", "starting_stop_time", "line", "direction", "stop_sequence",
-                 "arrival_delay_sec", "departure_delay_sec", "current_time" , "weekday", "holiday", "number_of_stops", "number_of_building_sites"])
+def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
+    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...")
 
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     full_path = os.path.join(os.path.dirname(__file__), "../resources")
@@ -17,8 +14,14 @@ def main(base_api_url, stop_times_bsag_updates) -> pd.DataFrame:
     # Pfad zur Datei stops.txt mit den Haltestellenkoordinaten
     file_path = os.path.join(full_path, "stops.txt")
 
+    # Pfad zur Datei stops_bremen.csv mit den Haltestellen in Bremen
+    stops_bremen = os.path.join(full_path, "stops_bremen.csv")
+
     # Pfad zur Datei not_used_stops.txt mit den Haltestellen, die nicht relevant für den Verkehr sind
     not_used_stops = os.path.join(full_path, "not_used_stops.csv")
+
+    # DataFrame aus der Datei stops_bremen.csv erstellen
+    stops_bremen_df = pd.read_csv(stops_bremen)
 
     # DataFrame aus der Datei stops.txt erstellen
     coordinates_df = pd.read_csv(file_path)
@@ -28,23 +31,26 @@ def main(base_api_url, stop_times_bsag_updates) -> pd.DataFrame:
 
     # Führe einen Inner Join zwischen stops.txt und stop_times_bsag_updates durch. Join auf die Spalte "Haltestelle"
     # und "stop_name"
-    coordinates_df = pd.merge(coordinates_df, stop_times_bsag_drop__copy, left_on="stop_name", right_on="stop",
+    coordinates_df = pd.merge(coordinates_df, stops_bremen_df, left_on="stop_name", right_on="stop_name",
                               how="inner")
+   
+   # erstelle csv
+    coordinates_df.to_csv("coordinates_df.csv", index=False)
 
     # Aus DataFrame alle Spalten löschen außer der stop_name, stop_lat und stop_lon
     coordinates_df = coordinates_df.drop(
-        columns=["stop_id", "stop_code", "stop_desc", "location_type", "parent_station", "wheelchair_boarding",
-                 "platform_code", "zone_id"])
+        columns=["stop_id_x","stop_code", "stop_desc", "location_type", "parent_station", "wheelchair_boarding",
+                 "platform_code", "zone_id", "stop_id_y", "stop_lat_y", "stop_lon_y",])
+    
+    # Spalte stop_id_x in stop_id, stop_lat_x in stop_lat und stop_lon_x in stop_lon umbenennen
+    coordinates_df = coordinates_df.rename(columns={"stop_id_x": "stop_id", "stop_lat_x": "stop_lat", "stop_lon_x": "stop_lon"})
 
     # Duplikate aus dem DataFrame in stop_names entfernen
     coordinates_df = coordinates_df.drop_duplicates(subset=["stop_name"])
 
     # Entferne alle Haltestellen aus coordinates_df, die in der Spalte "Nicht relevante Haltestellen" in
     # not_used_stops_df vorkommen
-    coordinates_df = coordinates_df[~coordinates_df.stop_name.isin(not_used_stops_df["Nicht relevante Haltestellen"])]
-
-    # Spalte stop_name entfernen
-    traffic_data_bsag_updates = coordinates_df.drop(columns=["stop_name"])
+    traffic_data_bsag_updates = coordinates_df[~coordinates_df.stop_name.isin(not_used_stops_df["Nicht relevante Haltestellen"])]
 
     logging.info("Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
     logging.info("Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
@@ -78,11 +84,5 @@ def main(base_api_url, stop_times_bsag_updates) -> pd.DataFrame:
         #print(traffic_data_bsag_updates.loc[index])
 
     logging.info("Verkehrsdaten wurden ermittelt.")
-
-    # Verkehrsdaten mit Verspätungsdaten mergen
-    merged_stop_time_traffic_bsag_updates = pd.merge(stop_times_bsag_updates, traffic_data_bsag_updates, how="inner",
-                                         left_on="stop", right_on="stop")
-    
-    # Optional: Speichern des DataFrames als CSV-Datei
-    #merged_stop_time_traffic_bsag_updates.to_csv("merged_stop_time_traffic_bsag_updates.csv", index=False)
-    return merged_stop_time_traffic_bsag_updates
+    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
+    return traffic_data_bsag_updates
