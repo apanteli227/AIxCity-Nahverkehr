@@ -1,0 +1,543 @@
+stop_name,stop_lat,stop_lon,current_time,current_date,daytime
+Bremen-Vegesack,53.16976,8.629996,02:44:51,2024-02-16,night
+Bremen-Walle,53.103808,8.786209,02:44:51,2024-02-16,night
+Bremen-Sebaldsbrück (Zug),53.061133,8.887807,02:44:51,2024-02-16,night
+Bremen-St. Magnus,53.171574,8.669636,02:44:51,2024-02-16,night
+Bremen-Oslebshausen,53.135308,8.741053,02:44:51,2024-02-16,night
+Bremen-Schönebeck,53.172775,8.649133,02:44:51,2024-02-16,night
+Bremen Mahndorf,53.039748,8.944614,02:44:51,2024-02-16,night
+Bremen-Oberneuland,53.087177,8.937892,02:44:51,2024-02-16,night
+Bremen-Burg(Bahn),53.160602,8.704687,02:44:51,2024-02-16,night
+Bremen-Hemelingen,53.054479,8.886823,02:44:51,2024-02-16,night
+Bremen Neustadt,53.075897,8.785927,02:44:51,2024-02-16,night
+Bremen-Lesum,53.170691,8.686548,02:44:51,2024-02-16,night
+Bremen Hbf,53.083456,8.813719,02:44:51,2024-02-16,night
+Bremen Tenever,53.057509,8.962761,02:44:51,2024-02-16,night
+Bremen Stader Straße/Bismarckstraße,53.073972,8.852545,02:44:51,2024-02-16,night
+Bremen St. Joseph-Stift,53.082482,8.837204,02:44:51,2024-02-16,night
+Bremen Goldbergplatz,53.170893,8.702791,02:44:51,2024-02-16,night
+Bremen Mittelsbürener Landstraße,53.143057,8.714654,02:44:51,2024-02-16,night
+Schwanewede Am Spreeken,53.242891,8.590647,02:44:51,2024-02-16,night
+Schwanewede Hospitalstraße,53.225206,8.591855,02:44:51,2024-02-16,night
+Bremen DIAKO Bremen,53.126404,8.747009,02:44:51,2024-02-16,night
+Delmenhorst Sandhausen,53.095719,8.647627,02:44:51,2024-02-16,night
+Bremen Bahnhof Blumenthal,53.183024,8.579728,02:44:51,2024-02-16,night
+Bremen Gustav-Heinemann-Bürgerhaus,53.17448,8.618157,02:44:51,2024-02-16,night
+Schwanewede Landhaus Schwanewede,53.23916,8.59269,02:44:51,2024-02-16,night
+Bremen Osterholzer Möhlendamm,53.057907,8.95105,02:44:51,2024-02-16,night
+Bremen Werner-Steenken-Straße,53.053257,8.962122,02:44:51,2024-02-16,night
+Bremen Osterholzer Friedhof,53.05985,8.914326,02:44:51,2024-02-16,night
+Bremen Osterholzer Heerstraße,53.059114,8.930389,02:44:51,2024-02-16,night
+Bremen Bahnhof Sebaldsbrück,53.062197,8.887576,02:44:51,2024-02-16,night
+Bremen Sebaldsbrück (Bus+Tram),53.059469,8.899647,02:44:51,2024-02-16,night
+Bremen Klinikum Bremen-Mitte,53.076869,8.837379,02:44:51,2024-02-16,night
+Bremen Föhrenstraße,53.06431,8.877295,02:44:51,2024-02-16,night
+Bremen Weserpark,53.049065,8.960619,02:44:51,2024-02-16,night
+Bremen Holzweide,53.042185,8.959171,02:44:51,2024-02-16,night
+Bremen Pappelstraße,53.069665,8.787596,02:44:51,2024-02-16,night
+Bremen Gastfeldstraße,53.066421,8.793695,02:44:51,2024-02-16,night
+Schwanewede Molkereiweg,53.231682,8.593411,02:44:51,2024-02-16,night
+Bremen Varreler Landstraße,53.036236,8.726984,02:44:51,2024-02-16,night
+Schwanewede Schützenweg,53.226292,8.594252,02:44:51,2024-02-16,night
+Neuenkirchen(Schwanewede) Marktplatz,53.23443,8.515404,02:44:51,2024-02-16,night
+Neuenkirchen(Schwanewede) Vorbruch,53.233095,8.525564,02:44:51,2024-02-16,night
+Brinkum-Nord Ochtum Park (IKEA),53.027896,8.806059,02:44:51,2024-02-16,night
+Bremen Wolfskuhlenweg,53.03943,8.814502,02:44:51,2024-02-16,night
+Bremen Tannenhof,53.175062,8.660805,02:44:51,2024-02-16,night
+Bremen Bahnhof Schönebeck,53.173747,8.648916,02:44:51,2024-02-16,night
+Bremen Am Bahnhof St. Magnus,53.174692,8.669639,02:44:51,2024-02-16,night
+Bremen Delmestraße,53.068022,8.790793,02:44:51,2024-02-16,night
+Bremen Ritterhuder Heerstraße,53.133632,8.736583,02:44:51,2024-02-16,night
+Bremen An Smidts Park,53.151844,8.7084,02:44:51,2024-02-16,night
+Bremen Stader Landstraße,53.167533,8.702409,02:44:51,2024-02-16,night
+Bremen Stockholmer Straße,53.174211,8.719675,02:44:51,2024-02-16,night
+Bremen Gerhard-Rohlfs-Straße,53.171674,8.621464,02:44:51,2024-02-16,night
+Bremen Wilhelm-Zöllig-Straße,53.186389,8.619076,02:44:51,2024-02-16,night
+Bremen Lerchenstraße,53.19083,8.618431,02:44:51,2024-02-16,night
+Bremen Milchstraße,53.192704,8.617068,02:44:51,2024-02-16,night
+Bremen Helmer,53.09924,8.862825,02:44:51,2024-02-16,night
+Bremen Hermann-Frese-Straße,53.089167,8.90423,02:44:51,2024-02-16,night
+Bremen Friedrich-Engels-Straße,53.050535,8.853241,02:44:51,2024-02-16,night
+Bremen BSAG-Zentrum,53.061065,8.786174,02:44:51,2024-02-16,night
+Bremen Stahlwerk Tor 3,53.130727,8.706355,02:44:51,2024-02-16,night
+Bremen Johann-Bornemacher-Straße,53.090596,8.786706,02:44:51,2024-02-16,night
+Bremen Klinikum Links der Weser,53.037377,8.822212,02:44:51,2024-02-16,night
+Bremen Neuenlander Kämpe,53.056372,8.784087,02:44:51,2024-02-16,night
+Bremen Rockwinkeler Heerstraße,53.091991,8.920181,02:44:51,2024-02-16,night
+Bremen Stresemannstraße,53.072578,8.857605,02:44:51,2024-02-16,night
+Bremen Tenever-Zentrum,53.061129,8.963829,02:44:51,2024-02-16,night
+Bremen Togostraße,53.124637,8.740288,02:44:51,2024-02-16,night
+Bremen Wilhelm-Herbst-Straße,53.111923,8.849904,02:44:51,2024-02-16,night
+Bremen Ulrichsplatz,53.072617,8.819835,02:44:51,2024-02-16,night
+Bremen Auf den Delben,53.141842,8.713751,02:44:51,2024-02-16,night
+Bremen Bollener Landstraße,53.034477,8.95256,02:44:51,2024-02-16,night
+Bremen Buschdeel,53.190115,8.543273,02:44:51,2024-02-16,night
+Bremen Eickedorfer Straße,53.092897,8.810399,02:44:51,2024-02-16,night
+Bremen Einkaufszentrum Blockdiek,53.073048,8.924736,02:44:51,2024-02-16,night
+Bremen Moorstücke,53.22748,8.511132,02:44:51,2024-02-16,night
+Neuenkirchen(Schwanewede) Landwehr,53.232616,8.513683,02:44:51,2024-02-16,night
+Bremen In der Laake,53.030451,8.845611,02:44:51,2024-02-16,night
+Bremen Witzlebenstraße,53.076859,8.90146,02:44:51,2024-02-16,night
+Bremen Wilseder-Berg-Straße,53.07319,8.879215,02:44:51,2024-02-16,night
+Bremen Ziegeleiweg,53.185773,8.637623,02:44:51,2024-02-16,night
+Bremen Oberste Kämpe,53.109801,8.882018,02:44:51,2024-02-16,night
+Bremen Ellenerbrokstraße,53.074048,8.947463,02:44:51,2024-02-16,night
+Bremen Lange Reihe,53.101724,8.778428,02:44:51,2024-02-16,night
+Bremen Landshuter Straße,53.094547,8.802868,02:44:51,2024-02-16,night
+Bremen Linzer Straße,53.10848,8.861101,02:44:51,2024-02-16,night
+Bremen Oberneulander Heerstraße,53.102234,8.912764,02:44:51,2024-02-16,night
+Bremen Nußhorn,53.044264,8.952185,02:44:51,2024-02-16,night
+Bremen Nürnberger Straße,53.094724,8.797048,02:44:51,2024-02-16,night
+Bremen Bahnhof Oberneuland,53.08762,8.938337,02:44:51,2024-02-16,night
+Bremen Kurfürstenallee,53.082209,8.854479,02:44:51,2024-02-16,night
+Bremen Krönkeskamp,53.104354,8.816635,02:44:51,2024-02-16,night
+Bremen Lachmundsdamm,53.058804,8.94127,02:44:51,2024-02-16,night
+Bremen Malthusstraße,53.03883,8.95983,02:44:51,2024-02-16,night
+Bremen Mackensenweg,53.090624,8.90569,02:44:51,2024-02-16,night
+Bremen Margaretenallee,53.178992,8.594592,02:44:51,2024-02-16,night
+Bremen Hexenstieg,53.037864,8.944647,02:44:51,2024-02-16,night
+Bremen Fultonstraße,53.114441,8.89599,02:44:51,2024-02-16,night
+Bremen Bahnhof Kreinsloger,53.189963,8.558304,02:44:51,2024-02-16,night
+Bremen Ludwig-Quidde-Straße,53.067635,8.862488,02:44:51,2024-02-16,night
+Bremen Am Siek,53.063183,8.943653,02:44:51,2024-02-16,night
+Bremen Am Querkamp,53.095439,8.929975,02:44:51,2024-02-16,night
+Bremen Machandelweg,53.188245,8.629329,02:44:51,2024-02-16,night
+Bremen Am Sodenmatt,53.045803,8.718782,02:44:51,2024-02-16,night
+Bremen-Blumenthal Markt,53.181419,8.573693,02:44:51,2024-02-16,night
+Bremen Borchsholt,53.18305,8.634595,02:44:51,2024-02-16,night
+Bremen Kurt-Huber-Straße,53.078187,8.911485,02:44:51,2024-02-16,night
+Bremen Am Hallacker,53.068003,8.933838,02:44:51,2024-02-16,night
+Bremen Am Kapellenberg,53.164231,8.666018,02:44:51,2024-02-16,night
+Bremen Bahnhof Farge,53.205563,8.518154,02:44:51,2024-02-16,night
+Bremen Blumenhorster Straße,53.184611,8.604506,02:44:51,2024-02-16,night
+Bremen Upsalastraße,53.176795,8.717168,02:44:51,2024-02-16,night
+Bremen Weserwehr,53.063491,8.867964,02:44:51,2024-02-16,night
+Bremen Bei den Drei Pfählen,53.07121,8.85063,02:44:51,2024-02-16,night
+Bremen Höpkens Ruh,53.09323,8.933031,02:44:51,2024-02-16,night
+Bremen Umspannwerk,53.107559,8.817532,02:44:51,2024-02-16,night
+Bremen Trinidadstraße,53.060028,8.893732,02:44:51,2024-02-16,night
+Bremen Werrahafen,53.051821,8.882936,02:44:51,2024-02-16,night
+Bremen Karl-Carstens-Brücke,53.054136,8.851033,02:44:51,2024-02-16,night
+Bremen Am Heiddamm,53.081534,8.939615,02:44:51,2024-02-16,night
+Bremen Am Heidbergstift,53.173944,8.697446,02:44:51,2024-02-16,night
+Bremen Willakedamm,53.04704,8.738244,02:44:51,2024-02-16,night
+Bremen Wilhelm-Röntgen-Straße,53.099801,8.886046,02:44:51,2024-02-16,night
+Bremen Wilhelm-Leuschner-Straße,53.079041,8.885502,02:44:51,2024-02-16,night
+Bremen Georg-Gries-Straße,53.071526,8.891394,02:44:51,2024-02-16,night
+Bremen Georg-Bitter-Straße,53.067212,8.854328,02:44:51,2024-02-16,night
+Bremen Gemeinschaftszentrum Obervieland,53.033976,8.830721,02:44:51,2024-02-16,night
+Bremen Apfelallee,53.100023,8.902449,02:44:51,2024-02-16,night
+Bremen Anna-Stiegler-Straße,53.040765,8.828041,02:44:51,2024-02-16,night
+Bremen An der Kämenade,53.059407,8.923097,02:44:51,2024-02-16,night
+Bremen Arberger Hafendamm,53.048331,8.883638,02:44:51,2024-02-16,night
+Bremen Beckers Barg,53.167736,8.709153,02:44:51,2024-02-16,night
+Bremen Bayernstraße,53.10645,8.795886,02:44:51,2024-02-16,night
+Bremen Barbarossastraße,53.079089,8.86074,02:44:51,2024-02-16,night
+Bremen Am Stern,53.084252,8.825747,02:44:51,2024-02-16,night
+Bremen An der Amtsweide,53.192782,8.534216,02:44:51,2024-02-16,night
+Bremen Ricardostraße,53.043253,8.970069,02:44:51,2024-02-16,night
+Bremen Rhododendronpark,53.090421,8.883697,02:44:51,2024-02-16,night
+Bremen Rennplatz,53.07149,8.886515,02:44:51,2024-02-16,night
+Bremen Aumunder Kirche,53.174872,8.624136,02:44:51,2024-02-16,night
+Bremen August-Bebel-Allee,53.085724,8.873569,02:44:51,2024-02-16,night
+Bremen Schorf,53.098408,8.892991,02:44:51,2024-02-16,night
+Bremen Vorlöhnhorster Weg,53.190798,8.635381,02:44:51,2024-02-16,night
+Bremen Von-Thünen-Straße Süd,53.039666,8.965659,02:44:51,2024-02-16,night
+Bremen Von-Thünen-Straße Nord,53.046056,8.969888,02:44:51,2024-02-16,night
+Bremen Vereinsstraße,53.176364,8.606265,02:44:51,2024-02-16,night
+Bremen Von-Ossietzky-Straße,53.138126,8.723107,02:44:51,2024-02-16,night
+Bremen Wilhelm-Busch-Weg,53.071391,8.906545,02:44:51,2024-02-16,night
+Bremen Wilhelm-Brandhorst-Straße,53.207915,8.514131,02:44:51,2024-02-16,night
+Bremen Wiener Straße,53.106152,8.845833,02:44:51,2024-02-16,night
+Bremen Wetterungsweg,53.11197,8.820089,02:44:51,2024-02-16,night
+Bremen Fürther Straße,53.099687,8.807555,02:44:51,2024-02-16,night
+Bremen Friedrich-Stampfer-Straße,53.086218,8.891447,02:44:51,2024-02-16,night
+Bremen An den Wühren,53.103655,8.902444,02:44:51,2024-02-16,night
+Bremen Amselweg,53.108065,8.796979,02:44:51,2024-02-16,night
+Bremen Allerkai,53.056754,8.877859,02:44:51,2024-02-16,night
+Bremen Alfred-Faust-Straße,53.029962,8.823292,02:44:51,2024-02-16,night
+Bremen Altenescher Straße,53.110403,8.769908,02:44:51,2024-02-16,night
+Bremen Betonstraße,53.203363,8.524038,02:44:51,2024-02-16,night
+Bremen Besanstraße,53.189418,8.566792,02:44:51,2024-02-16,night
+Bremen Rekumer Siel,53.218184,8.509509,02:44:51,2024-02-16,night
+Bremen Schneverdinger Straße,53.076633,8.880817,02:44:51,2024-02-16,night
+Bremen Schlengstraße,53.049696,8.892448,02:44:51,2024-02-16,night
+Bremen Schevemoorer Landstraße,53.077599,8.94024,02:44:51,2024-02-16,night
+Bremen Sollingstraße,53.042111,8.9124,02:44:51,2024-02-16,night
+Bremen Simon-Hermann-Post-Weg,53.090669,8.92496,02:44:51,2024-02-16,night
+Bremen Sielwall,53.07075,8.82349,02:44:51,2024-02-16,night
+Bremen Bahnhof Turnerstraße,53.193991,8.545544,02:44:51,2024-02-16,night
+Bremen Stuttgarter Straße,53.097205,8.816292,02:44:51,2024-02-16,night
+Bremen Dobbheide,53.191307,8.631397,02:44:51,2024-02-16,night
+Bremen Dobbenweg,53.078669,8.826308,02:44:51,2024-02-16,night
+Bremen Dithmarscher Freiheit,53.102444,8.799509,02:44:51,2024-02-16,night
+Bremen Dillener Park,53.188391,8.547833,02:44:51,2024-02-16,night
+Bremen Dohlenstraße,53.135314,8.73091,02:44:51,2024-02-16,night
+Bremen Gravestraße,53.090592,8.911317,02:44:51,2024-02-16,night
+Bremen Graubündener Straße,53.071396,8.949386,02:44:51,2024-02-16,night
+Bremen Gröpelingen,53.120574,8.753003,02:44:51,2024-02-16,night
+Bremen Bahnhof Walle,53.102536,8.785338,02:44:51,2024-02-16,night
+Bremen Mercedes-Benz Tor 8,53.065007,8.914263,02:44:51,2024-02-16,night
+Bremen-Burg(Bus),53.16061,8.704381,02:44:51,2024-02-16,night
+Bremen Steubenstraße,53.071445,8.863627,02:44:51,2024-02-16,night
+Bremen Dietrich-Bonhoeffer-Straße,53.078614,8.903285,02:44:51,2024-02-16,night
+Bremen Glockenstraße/Bf Hemelingen,53.055964,8.888368,02:44:51,2024-02-16,night
+Bremen Gottfried-Menken-Straße,53.062116,8.801724,02:44:51,2024-02-16,night
+Bremen Mülheimer Straße,53.074913,8.925897,02:44:51,2024-02-16,night
+Bremen An der Lehmkuhle,53.193711,8.566023,02:44:51,2024-02-16,night
+Bremen Mühlenfeldstraße,53.089905,8.93411,02:44:51,2024-02-16,night
+Bremen Hohweg,53.11159,8.797908,02:44:51,2024-02-16,night
+Bremen Lise-Meitner-Straße,53.103608,8.855622,02:44:51,2024-02-16,night
+Bremen Achterdiek,53.089206,8.900648,02:44:51,2024-02-16,night
+Bremen Munte,53.10478,8.840919,02:44:51,2024-02-16,night
+Bremen Agnes-Heineken-Straße,53.038759,8.832342,02:44:51,2024-02-16,night
+Bremen Berliner Freiheit,53.079384,8.893002,02:44:51,2024-02-16,night
+Bremen Beim Kleinen Tagwerk,53.09658,8.909506,02:44:51,2024-02-16,night
+Bremen Beim Bohnenhof,53.051383,8.949641,02:44:51,2024-02-16,night
+Bremen Berufsbildungswerk,53.102639,8.859212,02:44:51,2024-02-16,night
+Schwanewede Insterburger Weg,53.219785,8.589594,02:44:51,2024-02-16,night
+Bremen Landrat-Berthold-Straße,53.197066,8.571969,02:44:51,2024-02-16,night
+Bremen Ringofenstraße,53.207153,8.578497,02:44:51,2024-02-16,night
+Bremen Wätjens Park,53.17999,8.588774,02:44:51,2024-02-16,night
+Bremen Fährgrund,53.175321,8.612803,02:44:51,2024-02-16,night
+Bremen Bremer Vulkan,53.177414,8.601612,02:44:51,2024-02-16,night
+Bremen Bahnhof Vegesack,53.169621,8.627897,02:44:51,2024-02-16,night
+Bremen Senator-Theil-Straße,53.037688,8.851272,02:44:51,2024-02-16,night
+Bremen Stenumer Straße,53.054889,8.814727,02:44:51,2024-02-16,night
+Bremen Stellichter Straße,53.071641,8.882724,02:44:51,2024-02-16,night
+Bremen Deliusweg,53.089179,8.892313,02:44:51,2024-02-16,night
+Bremen Delfter Straße,53.043866,8.723196,02:44:51,2024-02-16,night
+Bremen Egestorff-Stiftung,53.057474,8.954588,02:44:51,2024-02-16,night
+Bremen Düsseldorfer Straße,53.073339,8.930294,02:44:51,2024-02-16,night
+Bremen Hüttenhafen,53.131649,8.722021,02:44:51,2024-02-16,night
+Bremen Eggestedter Straße,53.191589,8.561986,02:44:51,2024-02-16,night
+Bremen Findorffallee,53.090284,8.813487,02:44:51,2024-02-16,night
+Bremen Fellendsweg,53.051538,8.839582,02:44:51,2024-02-16,night
+Bremen Fähre Farge,53.199224,8.526993,02:44:51,2024-02-16,night
+Bremen Morsumer Straße,53.02783,8.818821,02:44:51,2024-02-16,night
+Bremen Am Geestkamp,53.147399,8.711405,02:44:51,2024-02-16,night
+Bremen Am Fuchsberg,53.129774,8.743113,02:44:51,2024-02-16,night
+Bremen Müdener Straße,53.074036,8.875811,02:44:51,2024-02-16,night
+Bremen Am Großen Kuhkamp,53.048153,8.950356,02:44:51,2024-02-16,night
+Bremen Am Fillerkamp,53.198973,8.5539,02:44:51,2024-02-16,night
+Bremen Robert-Koch-Straße,53.043,8.824685,02:44:51,2024-02-16,night
+Bremen Theater am Goetheplatz,53.072382,8.816868,02:44:51,2024-02-16,night
+Bremen Weserpark-Süd,53.046294,8.957571,02:44:51,2024-02-16,night
+Bremen Theodor-Heuss-Allee,53.088125,8.808212,02:44:51,2024-02-16,night
+Bremen Knoops Park,53.165632,8.67699,02:44:51,2024-02-16,night
+Bremen Kluvenhagener Straße,53.038307,8.939628,02:44:51,2024-02-16,night
+Bremen Kleine Marschstraße,53.040635,8.883995,02:44:51,2024-02-16,night
+Bremen Süntelstraße,53.039767,8.908775,02:44:51,2024-02-16,night
+Bremen Universität-Nord,53.11064,8.854691,02:44:51,2024-02-16,night
+Bremen Kattenturm-Mitte,53.035323,8.826916,02:44:51,2024-02-16,night
+Bremen Doventor,53.083948,8.797781,02:44:51,2024-02-16,night
+Bremen Dortmunder Straße,53.059135,8.778001,02:44:51,2024-02-16,night
+Bremen Fährer Kämpe,53.184281,8.613111,02:44:51,2024-02-16,night
+Bremen Fähre Blumenthal,53.183148,8.562472,02:44:51,2024-02-16,night
+Bremen Betriebshof Blumenthal,53.193581,8.56044,02:44:51,2024-02-16,night
+Bremen Rönnebecker Straße,53.185739,8.555946,02:44:51,2024-02-16,night
+Bremen Krefelder Straße,53.071128,8.929917,02:44:51,2024-02-16,night
+Bremen Krimpelweg,53.043223,8.816081,02:44:51,2024-02-16,night
+Bremen Burgdammer Ring,53.169682,8.712631,02:44:51,2024-02-16,night
+Bremen Friedrich-Karl-Straße,53.075347,8.844205,02:44:51,2024-02-16,night
+Bremen Friedhof Huckelriede,53.050376,8.828599,02:44:51,2024-02-16,night
+Bremen Friedrich-Mißler-Straße,53.08715,8.871199,02:44:51,2024-02-16,night
+Bremen Riespot,53.129117,8.711446,02:44:51,2024-02-16,night
+Bremen Riedemannstraße,53.135024,8.715458,02:44:51,2024-02-16,night
+Bremen Klinikum Bremen-Ost,53.066199,8.943872,02:44:51,2024-02-16,night
+Bremen Burger Dorfstraße,53.155015,8.70459,02:44:51,2024-02-16,night
+Bremen Brünsweg,53.044354,8.897381,02:44:51,2024-02-16,night
+Bremen Fresenbergstraße,53.18387,8.573123,02:44:51,2024-02-16,night
+Bremen Friedhof Huchting,53.038981,8.728576,02:44:51,2024-02-16,night
+Bremen St.-Magnus-Straße,53.092578,8.784457,02:44:51,2024-02-16,night
+Bremen Sandkuhlenweg,53.225303,8.510034,02:44:51,2024-02-16,night
+Bremen Hermann-Osterloh-Straße,53.039052,8.932274,02:44:51,2024-02-16,night
+Bremen Hermann-Koenen-Straße,53.071088,8.916126,02:44:51,2024-02-16,night
+Bremen Hermann-Helms-Straße,53.033495,8.850653,02:44:51,2024-02-16,night
+Bremen Hermann-Funk-Straße,53.056807,8.880991,02:44:51,2024-02-16,night
+Bremen Brandenburger Straße,53.082128,8.867423,02:44:51,2024-02-16,night
+Bremen Brunnenstraße,53.072248,8.82864,02:44:51,2024-02-16,night
+Bremen Ruppertshainer Straße,53.044297,8.922371,02:44:51,2024-02-16,night
+Bremen Rotterdamer Straße,53.040909,8.731048,02:44:51,2024-02-16,night
+Bremen Rotdornallee,53.173313,8.688119,02:44:51,2024-02-16,night
+Bremen Saarstraße,53.059599,8.90939,02:44:51,2024-02-16,night
+Bremen Herbststraße,53.090874,8.805639,02:44:51,2024-02-16,night
+Bremen Herbartstraße,53.188459,8.640607,02:44:51,2024-02-16,night
+Bremen Bf Klinikum Bremen-Nord,53.183616,8.595786,02:44:51,2024-02-16,night
+Bremen Panrepel-Süd,53.042473,8.961146,02:44:51,2024-02-16,night
+Bremen Panrepel-Nord,53.045949,8.965827,02:44:51,2024-02-16,night
+Bremen Otto-Braun-Straße,53.086101,8.886604,02:44:51,2024-02-16,night
+Bremen Parkallee,53.099188,8.837012,02:44:51,2024-02-16,night
+Bremen Hohenhorster Weg,53.044809,8.736153,02:44:51,2024-02-16,night
+Bremen Holsteiner Straße,53.103246,8.794121,02:44:51,2024-02-16,night
+Bremen Ermlandstraße,53.196601,8.549472,02:44:51,2024-02-16,night
+Bremen Colshornstraße,53.038246,8.925009,02:44:51,2024-02-16,night
+Bremen Im Holze,53.099087,8.921967,02:44:51,2024-02-16,night
+Bremen Im Holter Feld,53.071527,8.902785,02:44:51,2024-02-16,night
+Bremen Carl-Hurtzig-Straße,53.055035,8.739491,02:44:51,2024-02-16,night
+Bremen Carl-Goerdeler-Straße,53.079302,8.896774,02:44:51,2024-02-16,night
+Bremen Campingplatz,53.115035,8.833152,02:44:51,2024-02-16,night
+Bremen Christernstraße,53.054497,8.894109,02:44:51,2024-02-16,night
+Bremen Bottroper Straße,53.071947,8.920571,02:44:51,2024-02-16,night
+Bremen Borgwardstraße,53.045739,8.844893,02:44:51,2024-02-16,night
+Bremen Karl-Peters-Straße,53.095457,8.782206,02:44:51,2024-02-16,night
+Bremen Karl-Bröger-Straße,53.124857,8.7489,02:44:51,2024-02-16,night
+Bremen Auf dem Pasch,53.167455,8.685111,02:44:51,2024-02-16,night
+Bremen Auf dem Krümpel,53.173164,8.640018,02:44:51,2024-02-16,night
+Bremen Ascherfeld,53.178477,8.624792,02:44:51,2024-02-16,night
+Bremen Auf der Sandhöhe,53.080088,8.709937,02:44:51,2024-02-16,night
+Bremen Osterhop,53.052712,8.8993,02:44:51,2024-02-16,night
+Bremen Osterholzer Landstraße,53.074053,8.936052,02:44:51,2024-02-16,night
+Bremen Ostwaldstraße,53.111033,8.892938,02:44:51,2024-02-16,night
+Bremen Hohenesch,53.21337,8.511061,02:44:51,2024-02-16,night
+Bremen Poggenburg,53.065226,8.932828,02:44:51,2024-02-16,night
+Bremen Piependamm,53.041519,8.850432,02:44:51,2024-02-16,night
+Bremen Hannoversche Straße,53.055731,8.884861,02:44:51,2024-02-16,night
+Bremen Hanfstraße,53.191441,8.53842,02:44:51,2024-02-16,night
+Bremen Hakenwehrstraße,53.189758,8.571367,02:44:51,2024-02-16,night
+Bremen Hansestraße,53.091659,8.791314,02:44:51,2024-02-16,night
+Bremen Polizeipräsidium,53.079174,8.878882,02:44:51,2024-02-16,night
+Bremen Helene-Lange-Straße,53.050944,8.836268,02:44:51,2024-02-16,night
+Bremen Kapitän-König-Weg,53.101114,8.916252,02:44:51,2024-02-16,night
+Bremen Arster Kirche,53.030817,8.850603,02:44:51,2024-02-16,night
+Bremen Arensburgstraße,53.078505,8.855109,02:44:51,2024-02-16,night
+Bremen Wasserturm,53.186622,8.572564,02:44:51,2024-02-16,night
+Bremen Weidedamm-Süd,53.096293,8.819184,02:44:51,2024-02-16,night
+Bremen Bruchhauser Straße,53.039086,8.834853,02:44:51,2024-02-16,night
+Bremen Huckelriede,53.051804,8.819524,02:44:51,2024-02-16,night
+Bremen Willigstraße,53.059,8.80887,02:44:51,2024-02-16,night
+Bremen August-Hinrichs-Straße,53.060767,8.804383,02:44:51,2024-02-16,night
+Bremen Arster Landstraße,53.028031,8.849956,02:44:51,2024-02-16,night
+Bremen Arster Hemm,53.024278,8.859401,02:44:51,2024-02-16,night
+Bremen Universität-Süd,53.105197,8.850888,02:44:51,2024-02-16,night
+Bremen Arsterdamm,53.046718,8.818351,02:44:51,2024-02-16,night
+Bremen Harriersand,53.057678,8.728489,02:44:51,2024-02-16,night
+Bremen Brüsseler Straße,53.056144,8.716162,02:44:51,2024-02-16,night
+Bremen Soester Straße,53.034094,8.81067,02:44:51,2024-02-16,night
+Bremen Marßel,53.178579,8.724093,02:44:51,2024-02-16,night
+Bremen Mercedes-Benz Tor 7,53.062863,8.913942,02:44:51,2024-02-16,night
+Bremen Roland-Center,53.048336,8.741268,02:44:51,2024-02-16,night
+Bremen Philipp-Scheidemann-Straße,53.085865,8.879448,02:44:51,2024-02-16,night
+Bremen Haferwende,53.111887,8.878577,02:44:51,2024-02-16,night
+Bremen Habenhauser Brückenstraße,53.050319,8.847649,02:44:51,2024-02-16,night
+Bremen Waller Ring,53.098533,8.776565,02:44:51,2024-02-16,night
+Bremen Marschstraße,53.047316,8.892916,02:44:51,2024-02-16,night
+Bremen Pfarrfeldsweg,53.045353,8.851022,02:44:51,2024-02-16,night
+Bremen Neuwieder Straße,53.066796,8.96154,02:44:51,2024-02-16,night
+Bremen Norderländer Straße,53.058464,8.758757,02:44:51,2024-02-16,night
+Bremen Heisiusstraße,53.039044,8.916285,02:44:51,2024-02-16,night
+Bremen Heinrich-Hertz-Straße,53.082918,8.874987,02:44:51,2024-02-16,night
+Bremen Heiligenbergstraße,53.053487,8.953382,02:44:51,2024-02-16,night
+Bremen Helsingborger Straße,53.178584,8.71919,02:44:51,2024-02-16,night
+Bremen Grenzwehr,53.068245,8.938981,02:44:51,2024-02-16,night
+Bremen Neue Vahr Nord,53.086163,8.896131,02:44:51,2024-02-16,night
+Bremen Stehnckenshoff,53.168762,8.695165,02:44:51,2024-02-16,night
+Bremen Staustraße,53.04662,8.859413,02:44:51,2024-02-16,night
+Bremen Mittelshuchtinger Dorfstraße,53.056921,8.72305,02:44:51,2024-02-16,night
+Bremen Modersohnweg,53.094139,8.914759,02:44:51,2024-02-16,night
+Bremen Stadtwaldsee,53.114889,8.837954,02:44:51,2024-02-16,night
+Bremen Meyerstraße,53.064636,8.797028,02:44:51,2024-02-16,night
+Bremen Paul-Feller-Straße,53.055847,8.795915,02:44:51,2024-02-16,night
+Bremen Nedderland,53.092271,8.909687,02:44:51,2024-02-16,night
+Bremen Nauheimer Straße,53.044673,8.915057,02:44:51,2024-02-16,night
+Bremen Neuenlander Straße,53.066911,8.782459,02:44:51,2024-02-16,night
+Bremen Eppenhainer Straße,53.041521,8.931657,02:44:51,2024-02-16,night
+Bremen Engadiner Straße,53.066433,8.95569,02:44:51,2024-02-16,night
+Bremen Emmentaler Straße,53.069544,8.93453,02:44:51,2024-02-16,night
+Bremen Erkelenzer Straße,53.077937,8.920951,02:44:51,2024-02-16,night
+Bremen Zum Kränholm,53.172469,8.67981,02:44:51,2024-02-16,night
+Bremen Zum Huchtinger Bahnhof,53.05814,8.735178,02:44:51,2024-02-16,night
+Bremen Zum Donaufleet,53.181632,8.567805,02:44:51,2024-02-16,night
+Bremen Stader Straße/Hamburger Straße,53.068065,8.84893,02:44:51,2024-02-16,night
+Bremen Stackkamp,53.040671,8.904561,02:44:51,2024-02-16,night
+Bremen Loignystraße,53.082555,8.860005,02:44:51,2024-02-16,night
+Bremen Löhstraße,53.184836,8.59781,02:44:51,2024-02-16,night
+Bremen Lohmannstraße,53.09316,8.803987,02:44:51,2024-02-16,night
+Bremen Oslebshauser Landstraße,53.128701,8.729345,02:44:51,2024-02-16,night
+Bremen Ohmstraße,53.109118,8.891121,02:44:51,2024-02-16,night
+Bremen Obervielander Straße,53.051864,8.740732,02:44:51,2024-02-16,night
+Bremen Oewerweg,53.062134,8.931654,02:44:51,2024-02-16,night
+Brinkum(Stuhr) IKEA/Marktkauf,53.027399,8.802063,02:44:51,2024-02-16,night
+Bremen Rastenburger Straße,53.21403,8.583092,02:44:51,2024-02-16,night
+Bremen Am Dobben,53.078596,8.823672,02:44:51,2024-02-16,night
+Bremen Kirchbachstraße,53.085023,8.849847,02:44:51,2024-02-16,night
+Bremen Hohenbuchener Straße,53.21098,8.579634,02:44:51,2024-02-16,night
+Bremen Höger Weg,53.115513,8.894018,02:44:51,2024-02-16,night
+Bremen Bockhorner Weg,53.192655,8.574816,02:44:51,2024-02-16,night
+Bremen Martin-Luther-Straße,53.188353,8.577122,02:44:51,2024-02-16,night
+Bremen Steenkuhlenweg,53.202561,8.571028,02:44:51,2024-02-16,night
+Bremen Hegeweg,53.20506,8.574616,02:44:51,2024-02-16,night
+Bremen Bahnhof Lesum,53.171129,8.684687,02:44:51,2024-02-16,night
+Bremen Bardenflethstraße,53.060398,8.765164,02:44:51,2024-02-16,night
+Bremen Verdunstraße,53.081052,8.843632,02:44:51,2024-02-16,night
+Bremen Flämische Straße,53.052665,8.715193,02:44:51,2024-02-16,night
+Bremen Brenningstraße,53.037378,8.837386,02:44:51,2024-02-16,night
+Bremen-Lesum Kirche,53.169581,8.688774,02:44:51,2024-02-16,night
+Bremen Klinikum Haupteingang,53.036445,8.817585,02:44:51,2024-02-16,night
+Bremen Burgdammer Postweg,53.175454,8.706396,02:44:51,2024-02-16,night
+Bremen Weidedamm-Nord,53.099911,8.820266,02:44:51,2024-02-16,night
+Bremen Kattenescher Weg,53.030449,8.81252,02:44:51,2024-02-16,night
+Bremen Stedinger Brücke,53.094546,8.6664,02:44:51,2024-02-16,night
+Bremen Luley,53.088707,8.674244,02:44:51,2024-02-16,night
+Bremen Stellfeldsweg,53.086236,8.690978,02:44:51,2024-02-16,night
+Bremen-Strom Schule,53.083275,8.701513,02:44:51,2024-02-16,night
+Bremen Köhler Brücke,53.076718,8.722993,02:44:51,2024-02-16,night
+Bremen Bakeweg,53.092162,8.7508,02:44:51,2024-02-16,night
+Bremen Roccoweg,53.094408,8.748123,02:44:51,2024-02-16,night
+Bremen Wildeshauser Straße,53.082939,8.768963,02:44:51,2024-02-16,night
+Bremen Rablinghausen,53.096063,8.746105,02:44:51,2024-02-16,night
+Bremen Hemmstraße,53.094805,8.80845,02:44:51,2024-02-16,night
+Bremen Utbremer Ring,53.098252,8.812582,02:44:51,2024-02-16,night
+Bremen Innsbrucker Straße,53.101476,8.814684,02:44:51,2024-02-16,night
+Bremen Rudolf-Alexander-Schröder-Straße,53.100837,8.817501,02:44:51,2024-02-16,night
+Bremen Hohentorsplatz,53.072895,8.788779,02:44:51,2024-02-16,night
+Bremen Bahnhof Neustadt,53.075635,8.784052,02:44:51,2024-02-16,night
+Bremen Huder Straße,53.079615,8.776158,02:44:51,2024-02-16,night
+Bremen Dötlinger Straße,53.081692,8.772089,02:44:51,2024-02-16,night
+Bremen Rechtenflether Straße,53.084331,8.766262,02:44:51,2024-02-16,night
+Bremen Woltmershauser Friedhof,53.087386,8.76182,02:44:51,2024-02-16,night
+Bremen Stromer Straße,53.088699,8.7536,02:44:51,2024-02-16,night
+Bremen Neuer Schutzdeich,53.085894,8.752739,02:44:51,2024-02-16,night
+Bremen Neustädter Hafen,53.088685,8.744386,02:44:51,2024-02-16,night
+Bremen Klärwerk,53.110187,8.716313,02:44:51,2024-02-16,night
+Bremen-Seehausen Schule,53.110894,8.709551,02:44:51,2024-02-16,night
+Bremen Ortsamt Seehausen,53.11568,8.704411,02:44:51,2024-02-16,night
+Bremen Kriegerdenkmal,53.116712,8.700237,02:44:51,2024-02-16,night
+Bremen Hasenbüren Hagens,53.116538,8.697117,02:44:51,2024-02-16,night
+Bremen Am Glockenstein,53.116764,8.690902,02:44:51,2024-02-16,night
+Bremen Stumper,53.116457,8.683115,02:44:51,2024-02-16,night
+Bremen Wessels,53.117578,8.678985,02:44:51,2024-02-16,night
+Bremen Hasenbürener Deich,53.119649,8.674182,02:44:51,2024-02-16,night
+Bremen Hasenbüren,53.120653,8.671538,02:44:51,2024-02-16,night
+Bremen Güterbahnhof Grolland,53.0795,8.741807,02:44:51,2024-02-16,night
+Bremen Stromer Berg,53.079807,8.73703,02:44:51,2024-02-16,night
+Bremen Ludwig-Erhard-Straße,53.081246,8.730619,02:44:51,2024-02-16,night
+Bremen GVZ-Verkehrsgewerbe Ost,53.083494,8.723576,02:44:51,2024-02-16,night
+Bremen GVZ-Zentralbereich,53.085385,8.717639,02:44:51,2024-02-16,night
+Bremen Senator-Harmssen-Straße,53.087546,8.711909,02:44:51,2024-02-16,night
+Bremen Albert-Bote-Straße,53.090322,8.704472,02:44:51,2024-02-16,night
+Bremen Erich-Kühlmann-Straße,53.094089,8.699587,02:44:51,2024-02-16,night
+Bremen Senator-Mester-Straße,53.094537,8.709992,02:44:51,2024-02-16,night
+Bremen Mühlenhauser Fleet,53.097927,8.718535,02:44:51,2024-02-16,night
+Bremen Akazienstraße,53.078266,8.780314,02:44:51,2024-02-16,night
+Bremen Parsevalstraße,53.067143,8.887862,02:44:51,2024-02-16,night
+Bremen Stahlwerk Tor 1,53.138303,8.714133,02:44:51,2024-02-16,night
+Bremen-Farge Fähranleger,53.198499,8.518854,02:44:51,2024-02-16,night
+Bremen-Blumenthal Fähranleger,53.181835,8.560894,02:44:51,2024-02-16,night
+Bremen-Vegesack Fähranleger,53.168582,8.622395,02:44:51,2024-02-16,night
+Brinkum(Stuhr) Schule Brunnenweg,53.005347,8.776305,02:44:51,2024-02-16,night
+Brinkum(Stuhr) Am Bahnhof,53.014159,8.784592,02:44:51,2024-02-16,night
+Brinkum(Stuhr) Magdeburger Straße,53.014614,8.777611,02:44:51,2024-02-16,night
+Brinkum(Stuhr) Schule Feldstraße,53.011508,8.786621,02:44:51,2024-02-16,night
+Bremen Ludwig-von-Kapff-Straße,53.03218,8.885225,02:44:51,2024-02-16,night
+Bremen Walther-Jacobs-Straße,53.034791,8.885128,02:44:51,2024-02-16,night
+Bremen Neuenkirchener Weg,53.201683,8.560562,02:44:51,2024-02-16,night
+Bremen Köhlhorster Straße,53.199311,8.563063,02:44:51,2024-02-16,night
+Bremen Vorberger Straße,53.19698,8.565518,02:44:51,2024-02-16,night
+Schwanewede Dreienkamp,53.222271,8.599175,02:44:51,2024-02-16,night
+Schwanewede Eichengrund,53.224913,8.59921,02:44:51,2024-02-16,night
+Schwanewede Am Markt,53.22186,8.59456,02:44:51,2024-02-16,night
+Bremen Holthorster Weg,53.17346,8.675907,02:44:51,2024-02-16,night
+Bremen Blumenkamp,53.168617,8.661512,02:44:51,2024-02-16,night
+Bremen Richthofenstraße,53.163958,8.661774,02:44:51,2024-02-16,night
+Bremen Finkenschlag,53.163568,8.657023,02:44:51,2024-02-16,night
+Bremen Taunusstraße,53.164271,8.651447,02:44:51,2024-02-16,night
+Bremen Seefahrtstraße,53.16492,8.646217,02:44:51,2024-02-16,night
+Bremen Schönebecker Straße,53.166745,8.637522,02:44:51,2024-02-16,night
+Bremen Grohn-Markt,53.167045,8.631187,02:44:51,2024-02-16,night
+Bremen Aumunder Heide,53.178094,8.618798,02:44:51,2024-02-16,night
+Bremen Bahnhof Aumund,53.183713,8.618878,02:44:51,2024-02-16,night
+Bremen Carsten-Dreßler-Straße,53.033829,8.844585,02:44:51,2024-02-16,night
+Bremen Albert-Bischof-Straße,53.117864,8.906101,02:44:51,2024-02-16,night
+Bremen Bürgermeister-Kaisen-Allee,53.120951,8.899986,02:44:51,2024-02-16,night
+Bremen Martinistraße,53.076764,8.803639,02:44:51,2024-02-16,night
+Bremen Louise-Böhm-Weg,53.118985,8.908503,02:44:51,2024-02-16,night
+Bremen Schöpfwerk,53.101872,8.671316,02:44:51,2024-02-16,night
+Bremen Ricarda-Huch-Straße,53.101558,8.816116,02:44:51,2024-02-16,night
+Bremen Schulzentrum Lerchenstraße,53.192248,8.627739,02:44:51,2024-02-16,night
+Bremen Hochschule für Künste,53.097677,8.76963,02:44:51,2024-02-16,night
+Bremen Emmastraße/Bürgerpark,53.094535,8.833433,02:44:51,2024-02-16,night
+Bremen Ahrensstraße,53.086041,8.747544,02:44:51,2024-02-16,night
+Bremen Busestraße/Bürgerpark,53.097139,8.835355,02:44:51,2024-02-16,night
+Bremen Georg-Henschel-Straße,53.087941,8.736353,02:44:51,2024-02-16,night
+Bremen Senator-Nolting-Hauff-Straße,53.099729,8.704085,02:44:51,2024-02-16,night
+Bremen Auf dem Bockhorn,53.213053,8.585265,02:44:51,2024-02-16,night
+Bremen Martinshof Aumund,53.181932,8.630764,02:44:51,2024-02-16,night
+Bremen Celsiusstraße,53.109664,8.848001,02:44:51,2024-02-16,night
+Bremen Kuhgrabenweg,53.113815,8.844014,02:44:51,2024-02-16,night
+Neuenkirchen(Schwanewede) Ahnten,53.234221,8.521228,02:44:51,2024-02-16,night
+Bremen Im Achterkamp,53.089569,8.901573,02:44:51,2024-02-16,night
+Bremen Hauptbahnhof (ZOB Breitenweg),53.082317,8.810391,02:44:51,2024-02-16,night
+Bremen Bernauer Straße,53.109519,8.801574,02:44:51,2024-02-16,night
+Bremen Bremervörder Straße,53.098093,8.780528,02:44:51,2024-02-16,night
+Bremen Cuxhavener Straße,53.100178,8.773812,02:44:51,2024-02-16,night
+Bremen Straubinger Straße,53.111546,8.799765,02:44:51,2024-02-16,night
+Bremen Teneverstraße,53.057895,8.963148,02:44:51,2024-02-16,night
+Bremen Bahnhof Oslebshausen,53.135019,8.740205,02:44:51,2024-02-16,night
+Bremen Gottlieb-Daimler-Straße,53.139979,8.701704,02:44:51,2024-02-16,night
+Bremen Stahlwerk Tor 2,53.142393,8.693072,02:44:51,2024-02-16,night
+Bremen-Aumund,53.185195,8.617492,02:44:51,2024-02-16,night
+Bremen Klinikum Bremen-Nord/Beckedorf,53.185269,8.595141,02:44:51,2024-02-16,night
+Bremen-Blumenthal,53.183642,8.581215,02:44:51,2024-02-16,night
+Bremen Mühlenstraße,53.18521,8.57134,02:44:51,2024-02-16,night
+Bremen Kreinsloger,53.188782,8.557846,02:44:51,2024-02-16,night
+Bremen Turnerstraße,53.193225,8.545346,02:44:51,2024-02-16,night
+Bremen-Farge,53.205202,8.516538,02:44:51,2024-02-16,night
+Bremen Belmerstraße,53.052039,8.894824,02:44:51,2024-02-16,night
+Bremen Europaallee/Autohof,53.033943,8.891078,02:44:51,2024-02-16,night
+Bremen Franz-Stickan-Straße,53.089813,8.723032,02:44:51,2024-02-16,night
+Bremen Konsul-Smidt-Straße,53.087363,8.782517,02:44:51,2024-02-16,night
+Bremen Wasserweg,53.196219,8.531245,02:44:51,2024-02-16,night
+Bremen Auf dem Flintacker,53.188963,8.634641,02:44:51,2024-02-16,night
+Bremen Unterführung B75,53.062201,8.771863,02:44:51,2024-02-16,night
+Bremen Am Winterhafen,53.100743,8.763918,02:44:51,2024-02-16,night
+Bremen Silbermannstraße,53.098142,8.76115,02:44:51,2024-02-16,night
+Bremen Senator-Paulmann-Straße,53.070326,8.775482,02:44:51,2024-02-16,night
+Bremen Warturmer Heerstraße,53.072562,8.769577,02:44:51,2024-02-16,night
+Bremen Visbeker Straße,53.075759,8.761682,02:44:51,2024-02-16,night
+Bremen Schuppen 1,53.089847,8.77721,02:44:51,2024-02-16,night
+Bremen Hüttenstraße Süd,53.126482,8.713954,02:44:51,2024-02-16,night
+Bremen Universität-Ost,53.10661,8.863862,02:44:51,2024-02-16,night
+Bremen Überseetor,53.094724,8.771681,02:44:51,2024-02-16,night
+Bremen Reedeich-Nord,53.081578,8.755375,02:44:51,2024-02-16,night
+Bremen Bromberger Straße,53.121091,8.761499,02:44:51,2024-02-16,night
+Bremen Schwarzer Weg,53.12581,8.757589,02:44:51,2024-02-16,night
+Bremen Wasserhorster Straße,53.124666,8.760703,02:44:51,2024-02-16,night
+Bremen Halmerweg,53.120739,8.76058,02:44:51,2024-02-16,night
+Bremen Kalischer Straße,53.118385,8.765532,02:44:51,2024-02-16,night
+Bremen De Kreienbarg,53.211112,8.512503,02:44:51,2024-02-16,night
+Bremen Vor den Wischen,53.223023,8.508864,02:44:51,2024-02-16,night
+Bremen Dirschauer Straße,53.116773,8.768244,02:44:51,2024-02-16,night
+Bremen In den Barken,53.114141,8.77,02:44:51,2024-02-16,night
+Bremen Am Hahnenkamp,53.062489,8.950732,02:44:51,2024-02-16,night
+Bremen Fraunhoferstraße,53.116251,8.899534,02:44:51,2024-02-16,night
+Bremen Buschdeel/Wendeplatz,53.190443,8.542791,02:44:51,2024-02-16,night
+Bremen Bf Mahndorf,53.039958,8.944274,02:44:51,2024-02-16,night
+Bremen Bordeaux-Straße,53.03596,8.901992,02:44:51,2024-02-16,night
+Bremen La-Rochelle-Straße,53.033155,8.899999,02:44:51,2024-02-16,night
+Bremen Lankenauer Höft,53.108639,8.740862,02:44:51,2024-02-16,night
+Bremen Ikensdamm,53.085305,8.932633,02:44:51,2024-02-16,night
+Bremen Hochschulring,53.106527,8.862167,02:44:51,2024-02-16,night
+Bremen Lesum Park,53.173868,8.681091,02:44:51,2024-02-16,night
+Bremen Kaspar-Ohm-Straße,53.184183,8.626388,02:44:51,2024-02-16,night
+Bremen Martinsheide,53.183005,8.626053,02:44:51,2024-02-16,night
+Bremen Fuldahafen,53.045253,8.883854,02:44:51,2024-02-16,night
+Bremen Ehrenfelsstraße,53.100322,8.757581,02:44:51,2024-02-16,night
+Bremen Überseestadt-Nord,53.102166,8.754545,02:44:51,2024-02-16,night
+Bremen Ludwig-Sütterlin-Straße,53.085791,8.907654,02:44:51,2024-02-16,night
+Bremen Segelsbrück,53.058651,8.897149,02:44:51,2024-02-16,night
+Bremen Bergener Straße,53.031468,8.903186,02:44:51,2024-02-16,night
+Bremen Europaallee-Ost,53.030228,8.90886,02:44:51,2024-02-16,night
+Bremen Marcuskaje,53.094487,8.767481,02:44:51,2024-02-16,night
+Bremen Schuppen 3,53.09244,8.773434,02:44:51,2024-02-16,night
+Schwanewede Zum Marktplatz,53.22268,8.592843,02:44:51,2024-02-16,night
+Bremen PIER 2/Waterfront (Fähranleger),53.107882,8.750016,02:44:51,2024-02-16,night
+Bremen Molenturm Überseestadt (Fähranleger),53.104525,8.750246,02:44:51,2024-02-16,night
+Bremen Schlehenweg,53.050084,8.857481,02:44:51,2024-02-16,night
+Bremen Fontanestraße,53.050385,8.843288,02:44:51,2024-02-16,night
+Bremen Stromer Landstraße,53.082081,8.751472,02:44:51,2024-02-16,night
+Bremen Am Gaswerkgraben,53.076707,8.776059,02:44:51,2024-02-16,night
+Bremen Auf dem Bohnenkamp,53.078226,8.771448,02:44:51,2024-02-16,night
+Bremen Am Tabakquartier,53.07685,8.768874,02:44:51,2024-02-16,night
+Bremen Alter Schutzdeich,53.074508,8.765604,02:44:51,2024-02-16,night
+Brinkum(Stuhr) Marktplatz,53.010794,8.788817,02:44:51,2024-02-16,night

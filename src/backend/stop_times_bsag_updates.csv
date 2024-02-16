@@ -1,0 +1,28 @@
+start_date,current_time,daytime,weekday,holiday,starting_stop_time,line,number_of_stops,direction,number_of_building_sites,stop,stop_sequence,arrival_delay_sec,departure_delay_sec
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Hauptbahnhof,0.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Messe-Zentrum,1.0,1,1
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Bürgerpark,2.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Findorffallee,3.0,1,1
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Eickedorfer Straße,4.0,1,1
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Hemmstraße,5.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Utbremer Ring,6.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Bahnhof Walle,10.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Bahnhof Walle,11.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Lange Reihe,12.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Waller Ring,13.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Emder Straße,14.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Use Akschen,16.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Gröpelingen,17.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Karl-Bröger-Straße,18.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen DIAKO Bremen,19.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Am Fuchsberg,20.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Ritterhuder Heerstraße,21.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Dohlenstraße,22.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen-Burg(Bus),28.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Stader Landstraße,29.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Am Bahnhof St. Magnus,41.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:30:00,N7,80,Betriebshof Blumenthal,2,Bremen Tannenhof,42.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:12:00,N1,44,Bf Mahndorf,0,Bremen Werner-Steenken-Straße,36.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:12:00,N1,44,Bf Mahndorf,0,Bremen Weserpark,37.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:12:00,N1,44,Bf Mahndorf,0,Bremen Weserpark-Süd,38.0,0,0
+2024-02-16,02:08:34,night,Friday,0,01:12:00,N1,44,Bf Mahndorf,0,Bremen Nußhorn,39.0,0,0

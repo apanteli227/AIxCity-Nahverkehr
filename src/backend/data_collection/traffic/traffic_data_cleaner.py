@@ -1,8 +1,9 @@
 import logging
 import os
 import pandas as pd
-
+from datetime import datetime
 from ..traffic import traffic_data_fetch as td_fetch
+from ..public_transit import public_transit_data_cleaner as pt_cleaner
 
 
 def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
@@ -52,6 +53,24 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     # not_used_stops_df vorkommen
     traffic_data_bsag_updates = coordinates_df[~coordinates_df.stop_name.isin(not_used_stops_df["Nicht relevante Haltestellen"])]
 
+    # Aktuelle Uhrzeit
+    traffic_data_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
+
+    # Aktuelles Datum
+    traffic_data_bsag_updates["current_date"] = datetime.now().date().strftime("%Y-%m-%d")
+
+    # Konvertiere die Spalte 'current_time' in ein datetime-Format zur Bestimmung der Tageszeit
+    traffic_data_bsag_updates['current_time_for_daytime'] = pd.to_datetime(traffic_data_bsag_updates['current_time'], format='%H:%M:%S')
+
+    # Füge die Spalte 'daytime' hinzu (Tageszeit)
+    traffic_data_bsag_updates['daytime'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.hour.apply(pt_cleaner.map_daytime)
+
+    # Entferne die Spalte 'current_time_for_daytime'
+    traffic_data_bsag_updates.drop(columns=["current_time_for_daytime"], inplace=True)
+
+    #csv
+    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
+
     logging.info("Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
     logging.info("Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
     logging.info("Dieser Prozess kann bis zu 5 Minuten dauern...")
@@ -73,16 +92,16 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
 
         # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle
         # Koordianten eintragen
-        traffic_data_bsag_updates.loc[index, 'current_speed'] = current_speed
-        traffic_data_bsag_updates.loc[index, 'freeflow_Speed'] = free_flow_speed
+        traffic_data_bsag_updates.loc[index, "current_speed"] = current_speed
+        traffic_data_bsag_updates.loc[index, "freeflow_Speed"] = free_flow_speed
 
         # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
-        traffic_data_bsag_updates["average_traffic_load_percentage"] = abs(
-            (traffic_data_bsag_updates["current_speed"] / traffic_data_bsag_updates["freeflow_Speed"]) - 1).round(4)
+        traffic_data_bsag_updates.loc[index, "average_traffic_load_percentage"] = abs(
+            (traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]) - 1).round(4)
 
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
-        #print(traffic_data_bsag_updates.loc[index])
+        print(traffic_data_bsag_updates.loc[index])       
 
     logging.info("Verkehrsdaten wurden ermittelt.")
-    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
+    #traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
     return traffic_data_bsag_updates

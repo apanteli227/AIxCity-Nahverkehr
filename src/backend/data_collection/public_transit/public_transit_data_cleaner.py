@@ -1,7 +1,6 @@
 import logging
 from datetime import datetime
 import pandas as pd
-
 from ..public_transit import id_translation as transl
 from ..public_transit import public_transit_data_fetch as pt_fetch
 
@@ -55,7 +54,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Merge von stop_times_bsag_updates und holidays_bremen_df, um die Feiertage zu erhalten
     stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='start_date',
                                        right_on='holiday_date', validate='many_to_one')
-
+    
     # Umbenennen der Spalten in verständliche Namen
     stop_times_bsag_updates["starting_stop_time"] = stop_times_bsag_updates['StartTime']
     stop_times_bsag_updates["direction"] = stop_times_bsag_updates['trip_headsign']
@@ -76,11 +75,17 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates["arrival_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
     stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates["departure_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
 
-    # Einfügen weiterer relevanter Spalten
     # Aktuelle Uhrzeit
     stop_times_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
+
     # Aktueller Wochentag
     stop_times_bsag_updates["weekday"] = datetime.now().strftime("%A")
+
+    # Konvertiere die Spalte 'current_time' in ein datetime-Format zur Bestimmung der Tageszeit
+    stop_times_bsag_updates['current_time_for_daytime'] = pd.to_datetime(stop_times_bsag_updates['current_time'], format='%H:%M:%S')
+
+    # Füge die Spalte 'daytime' hinzu (Tageszeit)
+    stop_times_bsag_updates['daytime'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(map_daytime)
 
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
     stop_times_bsag_updates["line"] = stop_times_bsag_updates['route_id'].map(
@@ -93,11 +98,11 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Entfernen der nicht benötigten Spalten
     columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
                          'ScheduleRelationshipStop', 'DepartureDelay', 'ArrivalDelay', 'trip_id', 'route_id',
-                         'trip_headsign', 'trip_headsign', 'StartTime', 'Datum_Feiertag']
+                         'trip_headsign', 'trip_headsign', 'StartTime', 'Datum_Feiertag', 'current_time_for_daytime']
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['start_date', 'current_time', 'weekday', 'holiday', 'starting_stop_time',
+    columns_order = ['start_date', 'current_time', 'daytime', 'weekday', 'holiday', 'starting_stop_time',
                      'line', 'number_of_stops', 'direction', 'number_of_building_sites', 'stop', 'stop_sequence',
                      'arrival_delay_sec', 'departure_delay_sec']
 
@@ -145,3 +150,26 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     # Inner Join zwischen stop_time_updates_df und trips_bsag_df
     merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate='many_to_many')
     return merged_df
+
+def map_daytime(hour):
+    """
+    Diese Funktion ordnet die aktuelle Uhrzeit einer Tageszeit zu.
+    
+    Parameters:
+    - hour (int): Stunde der aktuellen Uhrzeit.
+
+    Returns:
+    - daytime (str): Tageszeit.
+    """
+    if 6 <= hour < 10:
+        return "morning"
+    elif 10 <= hour < 12:
+        return "forenoon"
+    elif 12 <= hour < 14:
+        return "noon"
+    elif 14 <= hour < 17:
+        return "afternoon"
+    elif 17 <= hour < 21:
+        return "evening"
+    else:
+        return 'night'
