@@ -53,13 +53,16 @@ def save_traffic_data(traffic_data_bsag_updates):
     for i in traffic_data_bsag_updates.index:
         vals = [traffic_data_bsag_updates.at[i, col] for col in list(traffic_data_bsag_updates.columns)]
         query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,current_time,current_date,daytime,current_speed,freeflow_Speed,average_traffic_load_percentage)
-                       VALUES ('%s', '%s', '%s', '%s', '%s', %s);""" % (
+                       VALUES ('%s', '%s', '%s', '%s', '%s', %s, '%s', '%s', %s);""" % (
             vals[0],
             vals[1],
             vals[2],
             vals[3],
             vals[4],
-            vals[5]
+            vals[5],
+            vals[6],
+            vals[7],
+            vals[8]
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
@@ -83,15 +86,36 @@ def save_events_data(events_bsag_updates_df):
         print("execute_query: " + query)
     dbc.disconnect(conn)
 
-def save_weather_data(dataframe):
-    return dataframe
+
+def save_weather_data(weather_bremen_df):
+    conn = dbc.connect(dbc.param_dic)
+    for i in weather_bremen_df.index:
+        vals = [weather_bremen_df.at[i, col] for col in list(weather_bremen_df.columns)]
+        query = """INSERT INTO public.weather_data (
+                            city,date,time,temperature_celsius,humidity_percentage,weather_description,wind_speed_m_s,weather_warning) 
+                            VALUES ('%s', '%s', '%s', '%s', '%s', %s, '%s', %s);""" % (
+            vals[0],
+            vals[1],
+            vals[2],
+            vals[3],
+            vals[4],
+            vals[5],
+            vals[6],
+            vals[7]
+        )
+        dbc.execute_query(conn, query)
+        print("execute_query: " + query)
+    dbc.disconnect(conn)    
+
+# to-do: Zu Entfernen?
+#def save_weather_data(dataframe):
+#    return dataframe
 
 
 if __name__ == "__main__":
     # Schedule tasks
 
-    schedule.every(1).minutes.do(save_transit_data(
-        get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")))
+    schedule.every(1).minutes.do(save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")))
     
     # Parameter anpassen, sodass nur um 8 Uhr, 12 Uhr, 16 Uhr und 20 Uhr die Verkehrsdaten abgerufen werden??
     schedule.every(1).minutes.do(save_traffic_data(
