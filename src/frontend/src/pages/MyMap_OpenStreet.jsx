@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import axios from 'axios';
 
 const MapComponent = () => {
@@ -37,14 +37,14 @@ const MapComponent = () => {
                         if (member.type === "way" && member.role === "") {
                             const routeGeometry = member.geometry || [];
                             // Extrahiere die Farbe aus den Tags und füge sie als Eigenschaft zur Route hinzu                          
-                            routes.push({ id: element.id, geometry: routeGeometry, color: color });
+                            routes.push({ id: element.id, geometry: routeGeometry, color: color , name: tags.name});
                         }
-                        else if (element.type === "node") {
-                          const stop = tramRoutesData.find(e => e.type === "node" && e.id === element.id);
-                          if (stop) {
-                              stops.push({ id: stop.id, coords: [stop.lat, stop.lon] });
-                          }
-                      }
+                        else if (member.type === "node") {
+                            const stop = tramRoutesData.find(e => e.type === "node" && e.id === member.ref);
+                            if (member.role === "stop") {
+                                stops.push({ id: element.id, coords: [member.lat, member.lon] });
+                            }
+                        }
                     });                   
                 }                
             } 
@@ -73,17 +73,20 @@ const MapComponent = () => {
                     minZoom={12}
                     opacity={0.5} // Stelle die Opazität nach Bedarf ein
                 />
+
                 {tramStops.map((stop, index) => (
                     <Marker key={`stop_${index}`} position={stop.coords}>
-                        {/* Hier kannst du weitere Marker-Details hinzufügen, z.B. Popups mit Haltestelleninformationen */}
+                        <Popup>{stop.id || "Tramstation"}</Popup>
                     </Marker>
                 ))}
                 {tramRoutes.map((route, index) => (
                     <Polyline
                         key={`route_${index}`}
                         positions={route.geometry}
-                        color={route.color || "blue"}
-                    />
+                        color={route.color || "blue"} // Verwende standardmäßig Blau, falls keine Farbe gefunden wird
+                    >
+                        <Popup>{route.name || "Route"}</Popup>
+                    </Polyline>
                 ))}
             </MapContainer>
         </main>
