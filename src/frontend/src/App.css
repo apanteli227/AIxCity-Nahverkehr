@@ -213,6 +213,11 @@ body {
     display: inline;
   }
 }
+
+.custom-icon-stop {
+  fill: #ac2acc;
+  opacity: 0.25;
+}
   
 /* Small <= 768px */
   

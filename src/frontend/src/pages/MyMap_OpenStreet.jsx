@@ -5,7 +5,17 @@ import axios from 'axios';
 const MapComponent = () => {
     const [tramRoutes, setTramRoutes] = useState([]);
     const [tramStops, setTramStops] = useState([]);
+    const [selectedRouteId, setSelectedRouteId] = useState(null); // Zustand für ausgewählte Route
     const position = [53.0826, 8.8136]; // Setze die Startposition der Karte
+    
+    const customIcon = L.divIcon({
+        className: 'custom-icon-stop', // Benutzerdefinierte Klasse für CSS-Styling
+        html: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+              </svg>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12] // Zentriert das Icon auf der Position
+      });
 
     useEffect(() => {
         fetchTramRoutes();
@@ -55,6 +65,10 @@ const MapComponent = () => {
         setTramStops(stops);
         console.log('Tram Stops:', stops);
     };
+    const handleRouteClick = (id) => {
+        setSelectedRouteId(id); // Aktualisiere den Zustand mit der ausgewählten Route
+        console.log(`Route selected: ${id}`); // Zum Debuggen
+    };
 
     return (
         <main className="map-container">
@@ -75,22 +89,34 @@ const MapComponent = () => {
                 />
 
                 {tramStops.map((stop, index) => (
-                    <Marker key={`stop_${index}`} position={stop.coords}>
-                        <Popup>{stop.id || "Tramstation"}</Popup>
-                    </Marker>
+                    <Marker key={`stop_${index}`} position={stop.coords} icon={customIcon}>
+                    <Popup>{stop.id || "Tramstation"}</Popup>
+                  </Marker>
                 ))}
                 {tramRoutes.map((route, index) => (
                     <Polyline
                         key={`route_${index}`}
                         positions={route.geometry}
-                        color={route.color || "blue"} // Verwende standardmäßig Blau, falls keine Farbe gefunden wird
+                        color={route.color || "blue"} // Verwende standardmäßig Blau, falls keine Farbe gefunden wird // Dicke der Linie kontrollieren
                     >
-                        <Popup>{route.name || "Route"}</Popup>
+                        <Popup>{route.name || "Route"}</Popup> 
                     </Polyline>
                 ))}
+                <button onClick={() => console.log('Button clicked')}>Test Button</button>
             </MapContainer>
         </main>
     );
 };
 
 export default MapComponent;
+
+/*
+const customIcon = L.divIcon({
+    className: 'custom-icon-stop', // Benutzerdefinierte Klasse für CSS-Styling
+    html: '<svg>https://upload.wikimedia.org/wikipedia/commons/e/e5/Zeichen_224.svg</svg>' // Ihr SVG-Icon als HTML-String
+  });
+  
+  <Marker key={`stop_${index}`} position={stop.coords} icon={customIcon}>
+    <Popup>{stop.id || "Tramstation"}</Popup>
+  </Marker>
+  */
