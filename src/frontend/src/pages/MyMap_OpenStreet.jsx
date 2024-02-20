@@ -11,9 +11,9 @@ const MapComponent = () => {
     const customIcon = L.divIcon({
         className: 'custom-icon-stop', // Benutzerdefinierte Klasse für CSS-Styling
         html: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+                <circle cx="12" cy="12" r="10"/>
               </svg>`,
-        iconSize: [24, 24],
+        iconSize: [15, 15],
         iconAnchor: [12, 12] // Zentriert das Icon auf der Position
       });
 
@@ -66,8 +66,10 @@ const MapComponent = () => {
         console.log('Tram Stops:', stops);
     };
     const handleRouteClick = (id) => {
-        setSelectedRouteId(id); // Aktualisiere den Zustand mit der ausgewählten Route
+        console.log(`Route HALLO TEST`);
         console.log(`Route selected: ${id}`); // Zum Debuggen
+        setSelectedRouteId(id); // Aktualisiere den Zustand mit der ausgewählten Route
+        
     };
 
     return (
@@ -75,13 +77,13 @@ const MapComponent = () => {
             <MapContainer center={position} zoom={12}>
                 {/* Füge eine schlichte OpenStreetMap-Kachel-Schicht hinzu */}
                 <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
 
                 {/* Füge eine Overlay-TileLayer nur für Straßen hinzu */}
                 <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
                     attribution="&copy; OpenStreetMap contributors"
                     maxZoom={18}
                     minZoom={12}
@@ -97,12 +99,13 @@ const MapComponent = () => {
                     <Polyline
                         key={`route_${index}`}
                         positions={route.geometry}
-                        color={route.color || "blue"} // Verwende standardmäßig Blau, falls keine Farbe gefunden wird // Dicke der Linie kontrollieren
+                        color={selectedRouteId === route.id ? route.colour : "gray"} // Ändere die Farbe basierend auf dem ausgewählten Zustand
+                        weight={5}
+                        onClick={() => handleRouteClick(route.id)} // Füge einen Klick-Handler hinzu
                     >
                         <Popup>{route.name || "Route"}</Popup> 
                     </Polyline>
                 ))}
-                <button onClick={() => console.log('Button clicked')}>Test Button</button>
             </MapContainer>
         </main>
     );
@@ -119,4 +122,9 @@ const customIcon = L.divIcon({
   <Marker key={`stop_${index}`} position={stop.coords} icon={customIcon}>
     <Popup>{stop.id || "Tramstation"}</Popup>
   </Marker>
+
+  var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+});
+
   */

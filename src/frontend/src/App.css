@@ -215,8 +215,12 @@ body {
 }
 
 .custom-icon-stop {
-  fill: #ac2acc;
+  fill: #ffffff;
   opacity: 0.25;
+  stroke: black;
+  stroke-width: 2;
+  width: 5px;
+  height: 5px; 
 }
   
 /* Small <= 768px */
@@ -241,4 +245,5 @@ body {
     display: none;
   }
 }
+
 
