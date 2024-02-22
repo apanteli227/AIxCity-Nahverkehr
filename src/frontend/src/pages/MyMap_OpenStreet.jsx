@@ -1,24 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Polyline, Circle, Popup } from 'react-leaflet';
 import axios from 'axios';
 
 const MapComponent = () => {
     const [tramRoutes, setTramRoutes] = useState([]);
     const [tramStops, setTramStops] = useState([]);
-    const [selectedRouteId, setSelectedRouteId] = useState(null);
-    const [dataFetched, setDataFetched] = useState(false); // Zustand für Verfolgung, ob Daten bereits abgerufen wurden
+    const [dataFetched, setDataFetched] = useState(false);
     const position = [53.0826, 8.8136];
-    
-    const customIcon = L.divIcon({
-        className: 'custom-icon-stop',
-        html: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10"/>
-              </svg>`,
-        iconSize: [15, 15],
-        iconAnchor: [12, 12]
-      });
+    const circleRadius = 100; // Radius des Kreises um den Mittelpunkt einer Haltestellengruppe
 
-      useEffect(() => {
+    useEffect(() => {
         if (!dataFetched && tramRoutes.length === 0) {
             fetchTramRoutes();
         }
@@ -30,10 +21,8 @@ const MapComponent = () => {
             const response = await axios.get(
                 "https://overpass-api.de/api/interpreter?data=[out:json][timeout:50];(relation[network=VBN][type=route][route=tram];relation[operator=BSAG][type=route][route=bus];);out geom;"
             );
-            console.log('Raw Overpass API response:', response.data); // Log raw response
             const tramRoutesData = response.data.elements;
             drawTramRoutesAndStops(tramRoutesData);
-             // Setze dataFetched auf true, um anzuzeigen, dass die Daten abgerufen wurden
         } catch (error) {
             console.error(error);
         }
@@ -64,47 +53,89 @@ const MapComponent = () => {
         });
 
         setTramRoutes(routes);
-        console.log('Tram Routes:', routes);
+        console.log("Routes:", routes);
         setTramStops(stops);
-        console.log('Tram Stops:', stops);
+        console.log("Stops:", stops);
     };
-    const handleRouteClick = (id) => {
-        
-        console.log(`Route selected: ${id}`); // Zum Debuggen
-        setSelectedRouteId(id); // Aktualisiere den Zustand mit der ausgewählten Route
-        
+
+    const groupNearbyStops = (stops) => {
+        const groupedStops = [];
+        const processedIndexes = new Set();
+
+        stops.forEach((stop, index) => {
+            if (!processedIndexes.has(index)) {
+                const nearbyStops = [stop];
+                for (let i = index + 1; i < stops.length; i++) {
+                    const distance = calculateDistance(stop.coords, stops[i].coords);
+                    if (distance < circleRadius / 1000) { // Umrechnung von Metern in Kilometer
+                        nearbyStops.push(stops[i]);
+                        processedIndexes.add(i);
+                    }
+                }
+                groupedStops.push(nearbyStops);
+            }
+        });
+
+        console.log("Grouped Stops:", groupedStops); // Gruppierte Haltestellen in der Konsole ausgeben
+        return groupedStops;
+    };
+
+    const calculateDistance = (coord1, coord2) => {
+        const [lat1, lon1] = coord1;
+        const [lat2, lon2] = coord2;
+        const R = 6371; // Radius der Erde in km
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distance = R * c;
+        return distance;
+    };
+
+    const groupedStops = groupNearbyStops(tramStops);
+
+    const getGroupCenter = (group) => {
+        const sumLat = group.reduce((acc, stop) => acc + stop.coords[0], 0);
+        const sumLon = group.reduce((acc, stop) => acc + stop.coords[1], 0);
+        const avgLat = sumLat / group.length;
+        const avgLon = sumLon / group.length;
+        return [avgLat, avgLon];
     };
 
     return (
         <main className="map-container">
             <MapContainer center={position} zoom={12}>
-                
-                    <TileLayer
+                <TileLayer
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
                     attribution="&copy; OpenStreetMap contributors"
                     maxZoom={18}
                     minZoom={12}
-                    
                 />
-
-                {tramStops.map((stop, index) => (
-                    <Marker key={`stop_${index}`} position={stop.coords} icon={customIcon}>
-                    <Popup>{stop.id || "Tramstation"}</Popup>
-                  </Marker>
-                ))}
                 {tramRoutes.map((route, index) => (
                     <Polyline
                         key={`route_${index}`}
-                        positions={route.geometry}
+                        positions={route.geometry.map(coord => [coord.lat, coord.lon])}
                         color={route.color}
                         weight={5}
-                        onClick={() => 
-                            handleRouteClick(route.id)
-                        } // Füge einen Klick-Handler hinzu
                     >
                         <Popup>{route.name || "Route"}</Popup> 
                     </Polyline>
                 ))}
+                {groupedStops.map((group, index) => {
+                    const center = getGroupCenter(group);
+                    return (
+                        <Circle
+                            key={`stop_group_${index}`}
+                            center={center}
+                            radius={circleRadius}
+                            pathOptions={{ color: 'grey', fillColor: 'white', fillOpacity: 0.4, opacity: 0.5 }} // Farbe des Kreises festlegen
+                        >
+                            <Popup>Gruppierte Haltestellen</Popup>
+                        </Circle>
+                    );
+                })}
             </MapContainer>
         </main>
     );
