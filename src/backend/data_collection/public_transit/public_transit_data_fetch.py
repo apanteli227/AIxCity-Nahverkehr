@@ -18,7 +18,7 @@ def get_gtfsr_data(url):
     if response.status_code == 200:
         return response.json()
     else:
-        logging.warn(f"Fehler beim Abrufen der Daten. Statuscode: {response.status_code}")
+        logging.warn(f"Fehler beim Abrufen der Verspätungsdaten. Statuscode: {response.status_code}")
         return None
     
 def extract_stop_time_updates(gtfsr_data) -> list:
@@ -46,9 +46,9 @@ def extract_stop_time_updates(gtfsr_data) -> list:
         trip_id = trip_update.get('Trip', {}).get('TripId', '')
 
         # Prüfe, ob TripId mit 'de' beginnt oder den Eintrag ##VDV##COMPOSED enthält
-        if not (trip_id.startswith('de') or "##VDV##COMPOSED" in trip_id):
+        if not (trip_id[0].isalpha() or "##VDV##COMPOSED" in trip_id):
             for stop_update in stop_time_update:
-                if not any(item.startswith('de') for item in [stop_update.get('StopId', ''), trip_update.get('Trip', {}).get('RouteId', ''), trip_id]):
+                if not any(item[0].isalpha() for item in [stop_update.get('StopId', ''), trip_update.get('Trip', {}).get('RouteId', ''), trip_id]):
                     start_datetime = datetime.strptime(f"{trip_update.get('Trip', {}).get('StartDate', '')} {trip_update.get('Trip', {}).get('StartTime', '')}", '%Y%m%d %H:%M:%S')
                     stop_info = create_stop_info(stop_update, trip_update, start_datetime)
                     stop_time_updates.append(stop_info)

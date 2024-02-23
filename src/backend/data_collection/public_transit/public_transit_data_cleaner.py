@@ -6,6 +6,19 @@ from ..public_transit import public_transit_data_fetch as pt_fetch
 
 
 def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
+    """
+    Diese Funktion ruft die GTFS-Realtime-Daten (Verspätungsdaten) ab,
+    und bereitet diese durch unterschiedliche Unterfunktionen, Hilfsdateien 
+    und Filterungsprozessen auf. Das Ergebnis ist ein DataFrame, welche alle relevanten 
+    Attribute zu einer Verspätung einer Linie enthält und welche direkt in eine entsprechende
+    Datenbank gespeichert werden kann.
+
+    Parameters:
+    - gtfsr_url (str): URL zum Abruf der GTFSR-Daten auf der VBN-Website.
+
+    Returns:
+    - stop_times_bsag_updates (DataFrame): DataFrame mit den Verspätungsdaten und relevanten Attributen.
+    """
     # Konfiguriere das Logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
@@ -68,8 +81,8 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates["number_of_stops"].fillna(0).astype(int)
     stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates["number_of_building_sites"].fillna(0).astype(int)
 
-    # Fehlende Werte in stop_sequence mit 0 ersetzen
-    stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates["stop_sequence"].fillna(0)
+    # Fehlende Werte in stop_sequence mit 0 ersetzen und Werte in int umwandeln
+    stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates["stop_sequence"].fillna(0).astype(int)
 
     # Wandle die Werte in Spalte arrival_delay_sec und departure_delay_sec in 1 um, enn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
     stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates["arrival_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
@@ -131,7 +144,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 

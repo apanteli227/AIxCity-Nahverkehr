@@ -10,11 +10,12 @@ def get_weather_data(base_url, api_key, city):
     Diese Funktion holt die Wetterdaten für eine Stadt von OpenWeatherMap.
 
     Parameters:
-        #todo docs add param
+    - base_url (str): Die Basis-URL für die Abfrage der Wetterdaten.
     - api_key (str): Der API-Key für OpenWeatherMap.
+    - city (str): Der Name der Stadt, für die die Wetterdaten abgefragt werden sollen.
 
     Returns:
-    - weather_data (dict): Die Wetterdaten im JSON-Format.
+    - weather_data: Die Wetterdaten im JSON-Format.
     """
 
     # Parameter für die Abfrage der Wetterdaten
@@ -32,7 +33,7 @@ def get_weather_data(base_url, api_key, city):
         weather_data = response.json()
         return weather_data
     else:
-        logging.warn(f"Fehlschlag bei der Abfrage. Status Code: {response.status_code}")
+        logging.warn(f"Fehlschlag bei der Wetterabfrage. Status Code: {response.status_code}")
         return None
 
 
@@ -72,10 +73,10 @@ def get_weather_dataframe(url, api_key, city):
             'city': [city],
             'date': [datetime.now().strftime("%Y-%m-%d")],
             'time': [datetime.now().strftime("%H:%M:%S")],
-            'temperature (°C)': [temperature],
-            'humidity (%)': [humidity],
+            'temperature_celsius': [temperature],
+            'humidity_percentage': [humidity],
             'weather_description': [description],
-            'wind_speed (m/s)': [wind_speed],
+            'wind_speed_m_s': [wind_speed],
             'weather_warning': [weather_warnings]
         })
 
