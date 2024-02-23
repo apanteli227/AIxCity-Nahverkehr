@@ -13,6 +13,7 @@ from persistence import database_controller as dbc
 global lock_public_transit
 lock_public_transit = False
 
+
 def save_transit_data(stop_times_bsag_updates):
     if lock_public_transit == False:
         print(stop_times_bsag_updates)
@@ -110,6 +111,7 @@ def save_weather_data(weather_bremen_df):
         dbc.execute_query(conn, query)
         print("execute_query: " + query)
     dbc.disconnect(conn)
+
 
 async def run_task_with_interval(task_function, interval_seconds):
     while True:
