@@ -1,19 +1,79 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Polyline, Circle, Popup } from 'react-leaflet';
 import axios from 'axios';
+import StopsCSV from '../../../data_collection/data_cleanup/resources/stops_bremen.csv';
 
 const MapComponent = () => {
     const [tramRoutes, setTramRoutes] = useState([]);
     const [tramStops, setTramStops] = useState([]);
     const [dataFetched, setDataFetched] = useState(false);
+    const [csvStops, setCsvStops] = useState([]);
     const position = [53.0826, 8.8136];
     const circleRadius = 100; // Radius des Kreises um den Mittelpunkt einer Haltestellengruppe
+
+    const getGroupCenter = (group) => {
+        const sumLat = group.reduce((acc, stop) => acc + stop.coords[0], 0);
+        const sumLon = group.reduce((acc, stop) => acc + stop.coords[1], 0);
+        const avgLat = sumLat / group.length;
+        const avgLon = sumLon / group.length;
+        return [avgLat, avgLon];
+    };
+    
+    const groupNearbyStops = (stops) => {
+        const groupedStops = [];
+        const processedIndexes = new Set(); // Haltestellen-Indizes, die bereits verarbeitet wurden
+    
+        stops.forEach((stop, index) => {
+            if (!processedIndexes.has(index)) {
+                let foundGroup = false;
+    
+                for (const group of groupedStops) {
+                    const groupCenter = getGroupCenter(group);
+    
+                    // Überprüfen, ob die Haltestelle nahe genug an der Gruppenmitte liegt
+                    const distance = calculateDistance(stop.coords, groupCenter);
+                    if (distance < circleRadius / 1000) { // Umrechnung von Metern in Kilometer
+                        group.push(stop);
+                        foundGroup = true;
+                        break;
+                    }
+                }
+    
+                // Wenn die Haltestelle keiner Gruppe zugeordnet ist, eine neue Gruppe erstellen
+                if (!foundGroup) {
+                    groupedStops.push([stop]);
+                }
+    
+                // Markiere den aktuellen Index als verarbeitet
+                processedIndexes.add(index);
+            }
+        });
+    
+        return groupedStops;
+    };
+    
+
+    const calculateDistance = (coord1, coord2) => {
+        const [lat1, lon1] = coord1;
+        const [lat2, lon2] = coord2;
+        const R = 6371; // Radius der Erde in km
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distance = R * c;
+        return distance;
+    };
 
     useEffect(() => {
         if (!dataFetched && tramRoutes.length === 0) {
             fetchTramRoutes();
+            loadCsvStops(); // CSV-Haltestellen laden
+            console.log("CSV Stops:", csvStops);
         }
-    }, [dataFetched, tramRoutes]);
+    }, [dataFetched, tramRoutes, csvStops]);
 
     const fetchTramRoutes = async () => {
         try {
@@ -27,6 +87,52 @@ const MapComponent = () => {
             console.error(error);
         }
     };
+
+    const loadCsvStops = async () => {
+    try {
+        console.log("Loading CSV data...");
+        const response = await axios.get(StopsCSV);
+        console.log("CSV Response:", response); // Ausgabe der Antwort des Axios-Aufrufs
+        const csvData = response.data.split('\n').slice(1); // Header entfernen und Zeilen trennen
+        console.log("CSV Data:", csvData); // Ausgabe der geladenen CSV-Daten
+        
+        // Objekt zum Speichern von eindeutigen Haltestellen basierend auf dem Namen erstellen
+        const uniqueStops = {};
+        
+        csvData.forEach(row => {
+            const [stop_id, stop_name, stop_lat, stop_lon] = row.split(',');
+            const parsedStop = {
+                stop_id: parseInt(stop_id),
+                stop_name,
+                stop_lat: parseFloat(stop_lat),
+                stop_lon: parseFloat(stop_lon)
+            };
+            
+            // Überprüfen, ob die Haltestelle bereits im eindeutigen Objekt vorhanden ist
+            if (!uniqueStops[stop_name]) {
+                uniqueStops[stop_name] = parsedStop;
+            } else {
+                // Wenn die Haltestelle bereits existiert, füge die Koordinaten zum vorhandenen Eintrag hinzu
+                uniqueStops[stop_name].coords.push([parsedStop.stop_lat, parsedStop.stop_lon]);
+            }
+        });
+        
+        // Konvertieren des eindeutigen Objekts wieder in ein Array
+        const stops = Object.values(uniqueStops);
+        console.log("Parsed Stops:", stops); // Ausgabe der verarbeiteten Haltestellen-Daten
+        
+        setCsvStops(stops);
+        console.log("CSV Stops:", csvStops); // Ausgabe der zugewiesenen CSV-Haltestellen
+        console.log("CSV data loaded successfully.");
+    } catch (error) {
+        console.error("Error loading CSV data:", error);
+    }
+};
+
+    
+    
+    
+    
 
     const drawTramRoutesAndStops = (tramRoutesData) => {
         const routes = [];
@@ -53,56 +159,27 @@ const MapComponent = () => {
         });
 
         setTramRoutes(routes);
-        console.log("Routes:", routes);
         setTramStops(stops);
-        console.log("Stops:", stops);
     };
 
-    const groupNearbyStops = (stops) => {
-        const groupedStops = [];
-        const processedIndexes = new Set();
-
-        stops.forEach((stop, index) => {
-            if (!processedIndexes.has(index)) {
-                const nearbyStops = [stop];
-                for (let i = index + 1; i < stops.length; i++) {
-                    const distance = calculateDistance(stop.coords, stops[i].coords);
-                    if (distance < circleRadius / 1000) { // Umrechnung von Metern in Kilometer
-                        nearbyStops.push(stops[i]);
-                        processedIndexes.add(i);
-                    }
-                }
-                groupedStops.push(nearbyStops);
+    const findNearestStop = (apiStopCoords) => {
+        let nearestStop = null;
+        let minDistance = Infinity;
+    
+        csvStops.forEach(csvStop => {
+            const distance = calculateDistance(apiStopCoords, [csvStop.stop_lat, csvStop.stop_lon]);
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestStop = csvStop;
             }
         });
-
-        console.log("Grouped Stops:", groupedStops); // Gruppierte Haltestellen in der Konsole ausgeben
-        return groupedStops;
+        return nearestStop;
     };
-
-    const calculateDistance = (coord1, coord2) => {
-        const [lat1, lon1] = coord1;
-        const [lat2, lon2] = coord2;
-        const R = 6371; // Radius der Erde in km
-        const dLat = (lat2 - lat1) * Math.PI / 180;
-        const dLon = (lon2 - lon1) * Math.PI / 180;
-        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        const distance = R * c;
-        return distance;
-    };
+    
+    
 
     const groupedStops = groupNearbyStops(tramStops);
-
-    const getGroupCenter = (group) => {
-        const sumLat = group.reduce((acc, stop) => acc + stop.coords[0], 0);
-        const sumLon = group.reduce((acc, stop) => acc + stop.coords[1], 0);
-        const avgLat = sumLat / group.length;
-        const avgLon = sumLon / group.length;
-        return [avgLat, avgLon];
-    };
+    console.log("Grouped Stops:", groupedStops); // Ausgabe der gruppierten Haltestellen
 
     return (
         <main className="map-container">
@@ -125,14 +202,15 @@ const MapComponent = () => {
                 ))}
                 {groupedStops.map((group, index) => {
                     const center = getGroupCenter(group);
+                    const nearestStop = findNearestStop(center); // Die nächstgelegene Haltestelle für die Gruppe finden
                     return (
                         <Circle
                             key={`stop_group_${index}`}
                             center={center}
-                            radius={circleRadius}
-                            pathOptions={{ color: 'grey', fillColor: 'white', fillOpacity: 0.4, opacity: 0.5 }} // Farbe des Kreises festlegen
+                            radius={circleRadius / 3}
+                            pathOptions={{ color: 'black', fillColor: 'white', fillOpacity: 0.4, opacity: 0.5 }} // Farbe des Kreises festlegen
                         >
-                            <Popup>Gruppierte Haltestellen</Popup>
+                            <Popup>{nearestStop ? nearestStop.stop_name : "Unknown Stop"}</Popup> 
                         </Circle>
                     );
                 })}
