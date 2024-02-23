@@ -1,6 +1,5 @@
 import asyncio
 import logging
-import time
 
 import schedule
 
@@ -10,16 +9,15 @@ from data_collection.traffic.traffic_data_cleaner import get_traffic_dataframe
 from data_collection.weather.weather_data_fetch import get_weather_dataframe
 from persistence import database_controller as dbc
 
-global lock_public_transit
 lock_public_transit = False
 
 
 def save_transit_data(stop_times_bsag_updates):
-    if lock_public_transit == False:
-        print(stop_times_bsag_updates)
-        # Daten hochladen
-        global lock_public_transit
+    global lock_public_transit
+    if not lock_public_transit:
         lock_public_transit = True
+        # print(stop_times_bsag_updates)
+        # Daten hochladen
         logging.info("Verspätungsdaten herunterladen...")
         # single_inserts(stop_times_bsag_updates, 'public.bsag_data')
         """Perform single inserts of the dataframe into the PostGIS table"""
@@ -47,6 +45,7 @@ def save_transit_data(stop_times_bsag_updates):
             # print("execute_query: " + query)
         dbc.disconnect(conn)
         lock_public_transit = False
+        print("Verspätungsdaten erfolgreich hochgeladen...")
 
 
 def save_traffic_data(traffic_data_bsag_updates):
@@ -71,7 +70,7 @@ def save_traffic_data(traffic_data_bsag_updates):
             vals[8]
         )
         dbc.execute_query(conn, query)
-        # print("execute_query: " + query)
+        print("execute_query: " + query)
     dbc.disconnect(conn)
 
 
