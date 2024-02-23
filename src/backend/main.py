@@ -1,11 +1,15 @@
-import time
-import schedule
+import asyncio
 import logging
+import time
+
+import schedule
+
+from data_collection.events.events_data_fetch import get_events_dataframe
 from data_collection.public_transit.public_transit_data_cleaner import get_public_transit_dataframe
 from data_collection.traffic.traffic_data_cleaner import get_traffic_dataframe
-from data_collection.events.events_data_fetch import get_events_dataframe
 from data_collection.weather.weather_data_fetch import get_weather_dataframe
 from persistence import database_controller as dbc
+
 
 def save_transit_data(stop_times_bsag_updates):
     print(stop_times_bsag_updates)
@@ -39,6 +43,7 @@ def save_transit_data(stop_times_bsag_updates):
         # print("execute_query: " + query)
     dbc.disconnect(conn)
 
+
 def save_traffic_data(traffic_data_bsag_updates):
     print(traffic_data_bsag_updates)
     # Daten hochladen
@@ -63,7 +68,8 @@ def save_traffic_data(traffic_data_bsag_updates):
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
-    dbc.disconnect(conn)    
+    dbc.disconnect(conn)
+
 
 def save_events_data(events_bsag_updates_df):
     conn = dbc.connect(dbc.param_dic)
@@ -83,28 +89,58 @@ def save_events_data(events_bsag_updates_df):
         print("execute_query: " + query)
     dbc.disconnect(conn)
 
+
 def save_weather_data(dataframe):
     return dataframe
 
 
-if __name__ == "__main__":
-    # Schedule tasks
+async def run_task_with_interval(task_function, interval_seconds):
+    while True:
+        await task_function()
+        await asyncio.sleep(interval_seconds)
 
-    schedule.every(1).minutes.do(save_transit_data(
-        get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")))
-    
-    # Parameter anpassen, sodass nur um 8 Uhr, 12 Uhr, 16 Uhr und 20 Uhr die Verkehrsdaten abgerufen werden??
-    schedule.every(1).minutes.do(save_traffic_data(
-        get_traffic_dataframe("https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
-                              "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point=")))
-    
-    schedule.every(1).day.do(save_events_data(get_events_dataframe()))
-    # todo Achtung: API-Key ist vom Account von Emmanuel
-    # todo Für längerfristige Lösung könnte man einen gemeinsamen Account für den Key erstellen
-    schedule.every(60).minutes.do(save_weather_data(
-        get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1", "Bremen")))
-    
-    # Endlessly run the scheduled tasks
+
+async def run_transit_task():
+    await save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
+
+
+async def run_traffic_task():
+    await save_traffic_data(get_traffic_dataframe(
+        "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
+        "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point="))
+
+
+async def run_events_task():
+    await save_events_data(get_events_dataframe())
+
+
+async def run_weather_task():
+    await save_weather_data(
+        get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1",
+                              "Bremen"))
+
+
+async def run_traffic_task_at_specific_times():
+    schedule.every().day.at("08:00").do(run_traffic_task)
+    schedule.every().day.at("12:00").do(run_traffic_task)
+    schedule.every().day.at("16:00").do(run_traffic_task)
+    schedule.every().day.at("20:00").do(run_traffic_task)
+
     while True:
         schedule.run_pending()
-        time.sleep(1)  # Sleep for 1 second to avoid excessive CPU usage
+        await asyncio.sleep(1)
+
+
+async def main():
+    tasks = [
+        asyncio.create_task(run_task_with_interval(run_transit_task, 60)),
+        asyncio.create_task(run_task_with_interval(run_events_task, 86400)),  # 86400 seconds = 24 hours
+        asyncio.create_task(run_task_with_interval(run_weather_task, 3600)),  # 3600 seconds = 1 hour
+        asyncio.create_task(run_traffic_task_at_specific_times())
+    ]
+
+    await asyncio.gather(*tasks)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
