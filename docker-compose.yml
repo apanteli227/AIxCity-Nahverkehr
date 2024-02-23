@@ -18,6 +18,7 @@ services:
       - gisnet
 
   db:
+    container_name: db
     image: postgis/postgis
     restart: "always"
     environment:
@@ -25,19 +26,19 @@ services:
     ports:
       - "5434:5432"
     volumes:
-      - data:/var/lib/postgresql/data
+      - postgis_data:/var/lib/postgresql/data
     networks:
       gisnet:
         aliases:
           - postgis15.docker
   pgadmin4:
     image: dpage/pgadmin4
-    restart: "no"
+    restart: "always"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@gmail.com
       PGADMIN_DEFAULT_PASSWORD: pgadmin_password
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "True"
-      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 25
     ports:
       - "5480:80"
     networks:
@@ -49,6 +50,8 @@ services:
 volumes:
   data:
     name: data-postgis15-data
+  postgis_data:
+
 
 networks:
   gisnet:
