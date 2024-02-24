@@ -20,8 +20,10 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     - stop_times_bsag_updates (DataFrame): DataFrame mit den Verspätungsdaten und relevanten Attributen.
     """
     # Konfiguriere das Logging
+    CORANGE = '\033[33m'
+    CEND = '\033[0m'
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
+    logging.info(CORANGE + "[TRANSIT] " + CEND + "Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
 
     # Abrufen der GTFS-Realtime Daten
     gtfsr_data = pt_fetch.get_gtfsr_data(gtfsr_url)
@@ -34,7 +36,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
 
     # Erstellen der DataFrames zum späteren Filtern Bremer Linien und der Übersetzung der IDs
     result_dict_with_dataframes = transl.process_gtfs_data()
-    logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
+    #logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
 
     # Zugriff auf die benötigten DataFrames
     stops_bremen_df = result_dict_with_dataframes["stops_bremen_df"]
@@ -106,7 +108,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates["stop"] = stop_times_bsag_updates['StopId'].map(
         stops_bremen_df.set_index('stop_id')['stop_name'])
 
-    logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
+    #logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
 
     # Entfernen der nicht benötigten Spalten
     columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
@@ -141,10 +143,10 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
         | ((stop_times_bsag_updates["start_date"] < actual_date_str) &
            (stop_times_bsag_updates["starting_stop_time"] >= actual_time_str))
         ]
-    logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
+    logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 
