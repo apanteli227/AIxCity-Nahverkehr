@@ -17,6 +17,9 @@ def get_events_dataframe(base_path="../resources") -> pd.DataFrame:
     Returns:
     - events_df (DataFrame): DataFrame mit den Events.
     """
+    CGREEN = '\033[32m'
+    CEND = '\033[0m'
+    logging.info(CGREEN + "[EVENTS] " + CEND + "Starte Prozess zur Ermittlung der Events...")
     # Erhalte das Verzeichnis der aktuellen Datei
     current_directory = os.path.dirname(__file__)
 
@@ -33,6 +36,7 @@ def get_events_dataframe(base_path="../resources") -> pd.DataFrame:
         events_data = pd.read_csv(file_path, low_memory=False, delimiter=";",
                                   parse_dates=["Beginn_Datum", "Ende_Datum", "Beginn_Uhrzeit", "Ende_Uhrzeit"],
                                   dayfirst=True)
+
     except FileNotFoundError:
         logging.warn("Warnung: Datei events_bremen.csv nicht gefunden.")
 
@@ -52,7 +56,7 @@ def get_events_dataframe(base_path="../resources") -> pd.DataFrame:
     # Umbennenung der Event-Spalten
     events_data["event_type"] = events_data["Art_Event"]
     events_data["event_classification"] = events_data["Eventkennzeichnung"]
-    
+
     # Ermittle das aktuelle Datum und die aktuelle Uhrzeit
     now = datetime.now()
     today_date = np.datetime64(date(now.year, now.month, now.day))
@@ -84,11 +88,12 @@ def get_events_dataframe(base_path="../resources") -> pd.DataFrame:
     events_bsag_updates_df["current_time"] = datetime.now().time().strftime("%H:%M:%S")
 
     # Aktuelles Datum in Datenframe einfügen
-    events_bsag_updates_df["current_date"] = datetime.now().date().strftime("%Y-%m-%d")   
+    events_bsag_updates_df["current_date"] = datetime.now().date().strftime("%Y-%m-%d")
 
     # Konvertiere event_classification in Integer
     events_bsag_updates_df["event_classification"] = events_bsag_updates_df["event_classification"].astype(int)     
 
     # Optional: CSV-Datei aus events_bsag_updates_df erstellen
-    #events_bsag_updates_df.to_csv("events_bsag_updates.csv", index=False)
+    events_bsag_updates_df.to_csv("events_bsag_updates.csv", index=False)
+    print(CGREEN + "[EVENTS] " + CEND + "Daten erfolgreich ermittelt!")
     return events_bsag_updates_df
