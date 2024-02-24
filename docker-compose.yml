@@ -17,8 +17,8 @@ services:
     networks:
       - gisnet
 
-  db:
-    container_name: db
+  database:
+    container_name: database
     image: postgis/postgis
     restart: "always"
     environment:
@@ -38,7 +38,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@gmail.com
       PGADMIN_DEFAULT_PASSWORD: pgadmin_password
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "True"
-      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 25
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 30
     ports:
       - "5480:80"
     networks:
