@@ -7,6 +7,8 @@ from ..public_transit import public_transit_data_cleaner as pt_cleaner
 
 
 def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
+    CBLUE = '\033[34m'
+    CEND = '\033[0m'
     """
     Diese Funktion ruft die Verkehrsdaten ab und bereitet diese durch 
     unterschiedliche Hilfsdateien auf. Das Ergebnis ist ein DataFrame,
@@ -19,7 +21,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     Returns:
     - traffic_data_bsag_updates (DataFrame): DataFrame mit den Verkehrsdaten und relevanten Attributen.
     """
-    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...")
+    logging.info(CBLUE + "[TRAFFIC] " + CEND + "Starte Prozess zur Ermittlung der Verkehrsdaten...")
 
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     full_path = os.path.join(os.path.dirname(__file__), "../resources")
@@ -80,9 +82,9 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     # Entferne die Spalte 'current_time_for_daytime'
     traffic_data_bsag_updates.drop(columns=["current_time_for_daytime"], inplace=True)
 
-    logging.info("Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
-    logging.info("Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
-    logging.info("Dieser Prozess kann bis zu 10 Minuten dauern...")
+    logging.info(CBLUE + "[TRAFFIC] " + CEND + "Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
+    logging.info(CBLUE + "[TRAFFIC] " + CEND + "Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
+    #logging.info("Dieser Prozess kann bis zu 10 Minuten dauern...")
 
     # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
     for index, row in traffic_data_bsag_updates.iterrows():
@@ -109,12 +111,12 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
             ((traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]) - 1).round(4))*100
 
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
-        print(traffic_data_bsag_updates.loc[index])
+        #print(traffic_data_bsag_updates.loc[index])
 
     # Setze das Optionssystem zurück
     pd.reset_option('mode.chained_assignment')       
 
-    logging.info("Verkehrsdaten wurden ermittelt.")
+    logging.info(CBLUE + "[TRAFFIC] " + CEND + "Daten erfolgreich ermittelt.")
 
     # Speichere das DataFrame in eine CSV-Datei
     #traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
