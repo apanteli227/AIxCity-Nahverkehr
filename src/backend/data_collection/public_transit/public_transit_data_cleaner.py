@@ -144,7 +144,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 

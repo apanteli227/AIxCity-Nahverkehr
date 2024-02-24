@@ -110,7 +110,7 @@ def process_gtfs_data(base_path="../resources") -> dict:
 
     # Entferne die letzten zwei Strings in Spalte "route_id" zur Vereinheitlichung
     # Zunächst dafür die Spalte in ein String umwandeln und danach wieder zurück zu Integer
-    filtered_trips_df["route_id"] = filtered_trips_df["route_id"].astype(str).str[:-2].astype(int)
+    filtered_trips_df.loc[:, "route_id"] = filtered_trips_df["route_id"].astype(str).str[:-2].astype(int)
 
     # Filtern der Trips der BSAG, welche auch eine entsprechende Routen-ID in der Routen-Tabelle besitzen
     trips_bsag_df = filtered_trips_df[filtered_trips_df["route_id"].isin(routes_bsag_df["route_id"])]
