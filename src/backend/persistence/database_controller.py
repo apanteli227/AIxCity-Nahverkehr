@@ -7,7 +7,7 @@ param_dic = {
     "host": "database",
     "port": "5432",
     "dbname": "aixcity-nahverkehr",
-    "user": "postgres",
+    "user": "pg_user",
     "password": "password"
 }
 
