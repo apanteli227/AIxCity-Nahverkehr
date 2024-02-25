@@ -23,6 +23,8 @@ services:
     restart: "always"
     environment:
       POSTGRES_PASSWORD: password
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_INITDB_ARGS: --auth-host=trust
     ports:
       - "5434:5432"
     volumes:
