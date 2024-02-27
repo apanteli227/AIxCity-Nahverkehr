@@ -1,3 +1,5 @@
+/*todo sass oder scss benutzen und diese riesige css Datei aufteilen*/
+
 body {
   margin: 0;
   padding: 0;
@@ -244,6 +246,20 @@ body {
   .hedaer-left {
     display: none;
   }
+}
+
+/* Statistics Page */
+
+/* Card */
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #263043;
+    margin: 15px 0;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 
