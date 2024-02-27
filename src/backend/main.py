@@ -121,7 +121,6 @@ async def run_task_with_interval(task_function, interval_seconds):
 async def run_transit_task():
     await save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
 
-
 async def run_traffic_task():
     await save_traffic_data(get_traffic_dataframe(
         "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
