@@ -6,8 +6,8 @@ import psycopg2
 param_dic = {
     "host": "database",
     "port": "5432",
-    "dbname": "aixcity-nahverkehr",
-    "user": "aixcity_user",
+    "dbname": "aixcity_nahverkehr",
+    "user": "aixcity-user",
     "password": "password"
 }
 
