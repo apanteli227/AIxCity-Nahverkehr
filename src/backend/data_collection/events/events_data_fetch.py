@@ -75,7 +75,7 @@ def get_events_dataframe(base_path="../resources") -> pd.DataFrame:
 
     # Wenn es keine Events gibt, dann fülle die Datum-Spalten mit 01-01-1970 und restliche Spalten mit 0
     if events_bsag_updates_df.empty:
-        fillna_values = {"begin_date": 0, "end_date": 0, "begin_time": 0, "end_time": 0, "event_type": "no_event", "event_classification": 0}
+        fillna_values = {"begin_date": 0, "end_date": 0, "begin_time": "00:00", "end_time": "00:00", "event_type": "no_event", "event_classification": 0}
 
         # Befülle die dann die Zeitspalten mit 0. Datumsspalten erhalten den Standardwert 01-01-1970
         for column, value in fillna_values.items():
