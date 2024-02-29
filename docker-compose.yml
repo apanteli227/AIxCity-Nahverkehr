@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services:
 #  frontend:
@@ -19,20 +19,20 @@ services:
 
   database:
     container_name: database
-    image: postgis/postgis
-    restart: "always"
+    hostname: database
+    platform: linux/amd64
+    image: pgrouting/pgrouting:latest
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_INITDB_ARGS: --auth-host=trust
+      - POSTGRES_USER=aixcity-user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=aixcity_nahverkehr
     ports:
-      - "5434:5432"
+      - 5434:5432
     volumes:
-      - postgis_data:/var/lib/postgresql/data
+      - ./data/db:/var/lib/postgresql/data
     networks:
-      gisnet:
-        aliases:
-          - postgis15.docker
+      - gisnet
+
   pgadmin4:
     image: dpage/pgadmin4
     restart: "always"
@@ -52,7 +52,6 @@ services:
 volumes:
   data:
     name: data-postgis15-data
-  postgis_data:
 
 
 networks:
