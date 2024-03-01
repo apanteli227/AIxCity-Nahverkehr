@@ -113,6 +113,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
                 print(prefix + "currentSpeed / freeFlowSpeed konnte nicht ermittelt werden!")
         else:
             print(prefix + "Fehler beim Abrufen der Verkehrsdaten.")
+            break
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
         #print(traffic_data_bsag_updates.loc[index])
 
