@@ -52,7 +52,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     coordinates_df = coordinates_df.drop(
         columns=["stop_id_x","stop_code", "stop_desc", "location_type", "parent_station", "wheelchair_boarding",
                  "platform_code", "zone_id", "stop_id_y", "stop_lat_y", "stop_lon_y",])
-    
+
     # Spalte stop_id_x in stop_id, stop_lat_x in stop_lat und stop_lon_x in stop_lon umbenennen
     coordinates_df = coordinates_df.rename(columns={"stop_id_x": "stop_id", "stop_lat_x": "stop_lat", "stop_lon_x": "stop_lon"})
 
@@ -95,26 +95,29 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
 
         # Funktion aufrufen und DataFrame erhalten
         result_dataframe = td_fetch.get_traffic_dataframe(api_endpoint)
-        if result_dataframe["flowSegmentData"]["currentSpeed"] is not None and result_dataframe["flowSegmentData"]["freeFlowSpeed"] is not None:
-        # Aus DataFrame currentSpeed und freeFlowSpeed entnehmen
-            current_speed = result_dataframe["flowSegmentData"]["currentSpeed"]
-            free_flow_speed = result_dataframe["flowSegmentData"]["freeFlowSpeed"]
+        if result_dataframe is not None:
+            if result_dataframe["flowSegmentData"]["currentSpeed"] is not None and result_dataframe["flowSegmentData"]["freeFlowSpeed"] is not None:
+                # Aus DataFrame currentSpeed und freeFlowSpeed entnehmen
+                current_speed = result_dataframe["flowSegmentData"]["currentSpeed"]
+                free_flow_speed = result_dataframe["flowSegmentData"]["freeFlowSpeed"]
 
-            # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle
-            # Koordianten eintragen
-            traffic_data_bsag_updates.loc[index, "current_speed"] = current_speed
-            traffic_data_bsag_updates.loc[index, "freeflow_Speed"] = free_flow_speed
+                # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle
+                # Koordianten eintragen
+                traffic_data_bsag_updates.loc[index, "current_speed"] = current_speed
+                traffic_data_bsag_updates.loc[index, "freeflow_Speed"] = free_flow_speed
 
-            # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
-            traffic_data_bsag_updates.loc[index, "average_traffic_load_percentage"] = abs(
-                ((traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]) - 1).round(4))*100
+                # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
+                traffic_data_bsag_updates.loc[index, "average_traffic_load_percentage"] = abs(
+                    ((traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]) - 1).round(4))*100
+            else:
+                print(prefix + "currentSpeed / freeFlowSpeed konnte nicht ermittelt werden!")
         else:
-            print(prefix + "currentSpeed / freeFlowSpeed konnte nicht ermittelt werden!")
+            print(prefix + "Fehler beim Abrufen der Verkehrsdaten.")
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
         #print(traffic_data_bsag_updates.loc[index])
 
     # Setze das Optionssystem zurück
-    pd.reset_option('mode.chained_assignment')       
+    pd.reset_option('mode.chained_assignment')
 
     print(prefix + "Daten erfolgreich ermittelt.")
 

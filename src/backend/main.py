@@ -22,7 +22,6 @@ def save_transit_data(stop_times_bsag_updates):
     tic = time.perf_counter()
     conn = dbc.connect(dbc.param_dic)
     max = 0
-    print(time.time())
     for i in stop_times_bsag_updates.index:
         vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
         query = """INSERT INTO public.bsag_data (start_date,"current_time",daytime,weekday,holiday,starting_stop_time,"line",number_of_stops,direction,number_of_building_sites,stop,stop_sequence,arrival_delay_sec,departure_delay_sec)
@@ -199,11 +198,10 @@ async def run_traffic_task_at_specific_times():
 
 async def main():
     tasks = [
-        asyncio.create_task(run_task_with_interval(run_transit_task, 60)),
+        asyncio.create_task(run_task_with_interval(run_transit_task, 600)),
         asyncio.create_task(run_task_with_interval(run_events_task, 86400)),  # 86400 seconds = 24 hours
         asyncio.create_task(run_task_with_interval(run_weather_task, 3600)),  # 3600 seconds = 1 hour
         asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
-        asyncio.create_task(run_traffic_task_at_specific_times())
     ]
 
     await asyncio.gather(*tasks)
