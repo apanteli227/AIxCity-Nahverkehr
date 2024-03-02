@@ -107,8 +107,8 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
                 traffic_data_bsag_updates.loc[index, "freeflow_Speed"] = free_flow_speed
 
                 # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
-                traffic_data_bsag_updates.loc[index, "average_traffic_load_percentage"] = abs(
-                    ((traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]) - 1).round(4))*100
+                traffic_data_bsag_updates.loc[index, "quotient_current_freeflow_speed"] = abs(
+                    (traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]).round(4))
             else:
                 print(prefix + "currentSpeed / freeFlowSpeed konnte nicht ermittelt werden!")
         else:
