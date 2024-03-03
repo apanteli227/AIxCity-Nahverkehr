@@ -24,8 +24,8 @@ def save_transit_data(stop_times_bsag_updates):
     max = 0
     for i in stop_times_bsag_updates.index:
         vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
-        query = """INSERT INTO public.bsag_data (start_date,"current_time",daytime,weekday,holiday,starting_stop_time,"line",number_of_stops,direction,number_of_building_sites,stop,stop_sequence,arrival_delay_sec,departure_delay_sec)
-                                    VALUES ('%s', '%s', '%s', '%s', %s, '%s', '%s', %s, '%s', %s, '%s', %s, %s, %s);""" % (
+        query = """INSERT INTO public.bsag_data (start_date,"current_time",daytime,weekday,holiday,starting_stop_time,"line",number_of_stops,direction,stop,stop_sequence,arrival_delay,departure_delay)
+                                    VALUES ('%s', '%s', '%s', '%s', %s, '%s', '%s', %s, '%s', %s, '%s', %s, %s);""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -38,8 +38,7 @@ def save_transit_data(stop_times_bsag_updates):
             vals[9],
             vals[10],
             vals[11],
-            vals[12],
-            vals[13]
+            vals[12]
         )
         dbc.execute_query(conn, query)
         max = i
@@ -64,7 +63,7 @@ def save_traffic_data(traffic_data_bsag_updates):
     max = 0
     for i in traffic_data_bsag_updates.index:
         vals = [traffic_data_bsag_updates.at[i, col] for col in list(traffic_data_bsag_updates.columns)]
-        query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,"current_speed","freeflow_Speed",average_traffic_load_percentage)
+        query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,"current_speed","freeflow_Speed","quotient_current_freeflow_speed")
                        VALUES ('%s', %s, %s, '%s', '%s', '%s', %s, %s, %s);""" % (
             vals[0],
             vals[1],
@@ -92,14 +91,16 @@ def save_events_data(events_bsag_updates_df):
     max = 0
     for i in events_bsag_updates_df.index:
         vals = [events_bsag_updates_df.at[i, col] for col in list(events_bsag_updates_df.columns)]
-        query = """INSERT INTO public.events_data (begin_date,begin_time,end_date,end_time,event_type,event_classification) 
-                            VALUES ('%s', '%s', '%s', '%s', '%s', %s);""" % (
+        query = """INSERT INTO public.events_data (begin_date,begin_time,end_date,end_time,event_type,event_classification,frequently_visited_stop,stop_id) 
+                            VALUES ('%s', '%s', '%s', '%s', '%s', %s, '%s', '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
             vals[3],
             vals[4],
-            vals[5]
+            vals[5],
+            vals[6],
+            vals[7]
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)

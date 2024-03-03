@@ -32,6 +32,8 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     stops_bremen = os.path.join(full_path, "stops_bremen.csv")
 
     # Pfad zur Datei not_used_stops.txt mit den Haltestellen, die nicht relevant für den Verkehr sind
+    # Nicht relevant heißt, dass die Bestimmung der Verkehrsdaten hier keinen Sinn macht (da z.B. nur eine Bahn diese Haltestelle anfährt)
+    # Schienenverkehr wird in der Regel nicht vom Verkehrfluss der Straßen beeinflusst
     not_used_stops = os.path.join(full_path, "not_used_stops.csv")
 
     # DataFrame aus der Datei stops_bremen.csv erstellen

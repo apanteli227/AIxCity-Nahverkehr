@@ -73,24 +73,21 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Umbenennen der Spalten in verständliche Namen
     stop_times_bsag_updates["starting_stop_time"] = stop_times_bsag_updates['StartTime']
     stop_times_bsag_updates["direction"] = stop_times_bsag_updates['trip_headsign']
-    stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates['DepartureDelay']
-    stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates['ArrivalDelay']
+    stop_times_bsag_updates["departure_delay"] = stop_times_bsag_updates['DepartureDelay']
+    stop_times_bsag_updates["arrival_delay"] = stop_times_bsag_updates['ArrivalDelay']
     stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates['number_stops']
-    stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates['number_building_sites']
     stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates['StopSequence']
 
     # Wandle die Spalte Anzahl an Baustellen und Anzahl an Haltestellen in Integer um
     stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates["number_of_stops"].fillna(0).astype(int)
-    stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates["number_of_building_sites"].fillna(
-        0).astype(int)
 
     # Fehlende Werte in stop_sequence mit 0 ersetzen und Werte in int umwandeln
     stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates["stop_sequence"].fillna(0).astype(int)
 
-    # Wandle die Werte in Spalte arrival_delay_sec und departure_delay_sec in 1 um, enn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
-    stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates["arrival_delay_sec"].apply(
+    # Wandle die Werte in Spalte arrival_delay und departure_delay in 1 um, enn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
+    stop_times_bsag_updates["arrival_delay"] = stop_times_bsag_updates["arrival_delay"].apply(
         lambda x: 1 if x >= 60 else 0)
-    stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates["departure_delay_sec"].apply(
+    stop_times_bsag_updates["departure_delay"] = stop_times_bsag_updates["departure_delay"].apply(
         lambda x: 1 if x >= 60 else 0)
 
     # Aktuelle Uhrzeit
@@ -122,8 +119,8 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
 
     # Reihenfolge der Spalten umändern
     columns_order = ['start_date', 'current_time', 'daytime', 'weekday', 'holiday', 'starting_stop_time',
-                     'line', 'number_of_stops', 'direction', 'number_of_building_sites', 'stop', 'stop_sequence',
-                     'arrival_delay_sec', 'departure_delay_sec']
+                     'line', 'number_of_stops', 'direction', 'stop', 'stop_sequence',
+                     'arrival_delay', 'departure_delay']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
