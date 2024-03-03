@@ -24,8 +24,8 @@ def save_transit_data(stop_times_bsag_updates):
     max = 0
     for i in stop_times_bsag_updates.index:
         vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
-        query = """INSERT INTO public.bsag_data (start_date,"current_time",daytime,weekday,holiday,starting_stop_time,"line",number_of_stops,direction,stop,stop_sequence,arrival_delay,departure_delay)
-                                    VALUES ('%s', '%s', '%s', '%s', %s, '%s', '%s', %s, '%s', %s, '%s', %s, %s);""" % (
+        query = """INSERT INTO public.bsag_data (start_date,"current_time",daytime,weekday,holiday,starting_stop_time,"line",number_of_stops,direction,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds)
+                                    VALUES ('%s', '%s', '%s', '%s', %s, '%s', '%s', %s, '%s', %s, '%s', '%s', '%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -38,7 +38,10 @@ def save_transit_data(stop_times_bsag_updates):
             vals[9],
             vals[10],
             vals[11],
-            vals[12]
+            vals[12],
+            vals[13],
+            vals[14]
+
         )
         dbc.execute_query(conn, query)
         max = i
@@ -64,7 +67,7 @@ def save_traffic_data(traffic_data_bsag_updates):
     for i in traffic_data_bsag_updates.index:
         vals = [traffic_data_bsag_updates.at[i, col] for col in list(traffic_data_bsag_updates.columns)]
         query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,"current_speed","freeflow_Speed","quotient_current_freeflow_speed")
-                       VALUES ('%s', %s, %s, '%s', '%s', '%s', %s, %s, %s);""" % (
+                       VALUES ('%s', %s, %s, '%s', '%s', '%s', '%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
             vals[2],

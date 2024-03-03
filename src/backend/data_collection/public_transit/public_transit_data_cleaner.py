@@ -84,11 +84,16 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Fehlende Werte in stop_sequence mit 0 ersetzen und Werte in int umwandeln
     stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates["stop_sequence"].fillna(0).astype(int)
 
-    # Wandle die Werte in Spalte arrival_delay und departure_delay in 1 um, enn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
-    stop_times_bsag_updates["arrival_delay"] = stop_times_bsag_updates["arrival_delay"].apply(
+    # Wandle die Werte in Spalte arrival_delay und departure_delay in 1 um, wenn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
+    stop_times_bsag_updates["arrival_delay_category"] = stop_times_bsag_updates["arrival_delay"].apply(
         lambda x: 1 if x >= 60 else 0)
-    stop_times_bsag_updates["departure_delay"] = stop_times_bsag_updates["departure_delay"].apply(
+    stop_times_bsag_updates["departure_delay_category"] = stop_times_bsag_updates["departure_delay"].apply(
         lambda x: 1 if x >= 60 else 0)
+    
+    # Beibehaltung der Verspätung in Sekundenangabe
+    stop_times_bsag_updates["arrival_delay_seconds"] = stop_times_bsag_updates["arrival_delay"]
+    stop_times_bsag_updates["departure_delay_seconds"] = stop_times_bsag_updates["departure_delay"]
+    
 
     # Aktuelle Uhrzeit
     stop_times_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
@@ -120,7 +125,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Reihenfolge der Spalten umändern
     columns_order = ['start_date', 'current_time', 'daytime', 'weekday', 'holiday', 'starting_stop_time',
                      'line', 'number_of_stops', 'direction', 'stop', 'stop_sequence',
-                     'arrival_delay', 'departure_delay']
+                     'arrival_delay_category', 'departure_delay_category', 'arrival_delay_seconds','departure_delay_seconds']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
