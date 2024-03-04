@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
-import MyMap from "./pages/MyMap";
 import MyMap_OpenStreet from "./pages/MyMap_OpenStreet";
+import Weg from "./pages/Weg";
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -25,6 +25,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/map" element={<MyMap_OpenStreet />} />
+          <Route path="/weg" element={<Weg />} /> 
         </Routes>
       </BrowserRouter>
     </div>

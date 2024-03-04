@@ -8,8 +8,11 @@ const MapComponent = () => {
     const [tramStops, setTramStops] = useState([]);
     const [dataFetched, setDataFetched] = useState(false);
     const [csvStops, setCsvStops] = useState([]);
+    const [routeColors, setRouteColors] = useState({});
+    const [selectedRoute, setSelectedRoute] = useState(null);
+    const [nightMode, setNightMode] = useState(false); // Zustandsvariable für Tag-/Nachtmodus
     const position = [53.0826, 8.8136];
-    const circleRadius = 100; // Radius des Kreises um den Mittelpunkt einer Haltestellengruppe
+    const circleRadius = 100;
 
     const getGroupCenter = (group) => {
         const sumLat = group.reduce((acc, stop) => acc + stop.coords[0], 0);
@@ -51,7 +54,6 @@ const MapComponent = () => {
     
         return groupedStops;
     };
-    
 
     const calculateDistance = (coord1, coord2) => {
         const [lat1, lon1] = coord1;
@@ -66,6 +68,12 @@ const MapComponent = () => {
         const distance = R * c;
         return distance;
     };
+
+    // Funktion zum Umschalten zwischen Tag- und Nachtmodus
+    const toggleNightMode = () => {
+        setNightMode(!nightMode);
+    };
+
 
     useEffect(() => {
         if (!dataFetched && tramRoutes.length === 0) {
@@ -89,59 +97,56 @@ const MapComponent = () => {
     };
 
     const loadCsvStops = async () => {
-    try {
-        console.log("Loading CSV data...");
-        const response = await axios.get(StopsCSV);
-        console.log("CSV Response:", response); // Ausgabe der Antwort des Axios-Aufrufs
-        const csvData = response.data.split('\n').slice(1); // Header entfernen und Zeilen trennen
-        console.log("CSV Data:", csvData); // Ausgabe der geladenen CSV-Daten
-        
-        // Objekt zum Speichern von eindeutigen Haltestellen basierend auf dem Namen erstellen
-        const uniqueStops = {};
-        
-        csvData.forEach(row => {
-            const [stop_id, stop_name, stop_lat, stop_lon] = row.split(',');
-            const parsedStop = {
-                stop_id: parseInt(stop_id),
-                stop_name,
-                stop_lat: parseFloat(stop_lat),
-                stop_lon: parseFloat(stop_lon)
-            };
+        try {
+            console.log("Loading CSV data...");
+            const response = await axios.get(StopsCSV);
+            console.log("CSV Response:", response); // Ausgabe der Antwort des Axios-Aufrufs
+            const csvData = response.data.split('\n').slice(1); // Header entfernen und Zeilen trennen
+            console.log("CSV Data:", csvData); // Ausgabe der geladenen CSV-Daten
             
-            // Überprüfen, ob die Haltestelle bereits im eindeutigen Objekt vorhanden ist
-            if (!uniqueStops[stop_name]) {
-                uniqueStops[stop_name] = parsedStop;
-            } else {
-                // Wenn die Haltestelle bereits existiert, füge die Koordinaten zum vorhandenen Eintrag hinzu
-                uniqueStops[stop_name].coords.push([parsedStop.stop_lat, parsedStop.stop_lon]);
-            }
-        });
-        
-        // Konvertieren des eindeutigen Objekts wieder in ein Array
-        const stops = Object.values(uniqueStops);
-        console.log("Parsed Stops:", stops); // Ausgabe der verarbeiteten Haltestellen-Daten
-        
-        setCsvStops(stops);
-        console.log("CSV Stops:", csvStops); // Ausgabe der zugewiesenen CSV-Haltestellen
-        console.log("CSV data loaded successfully.");
-    } catch (error) {
-        console.error("Error loading CSV data:", error);
-    }
-};
-
-    
-    
-    
-    
+            // Objekt zum Speichern von eindeutigen Haltestellen basierend auf dem Namen erstellen
+            const uniqueStops = {};
+            
+            csvData.forEach(row => {
+                const [stop_id, stop_name, stop_lat, stop_lon] = row.split(',');
+                const parsedStop = {
+                    stop_id: parseInt(stop_id),
+                    stop_name,
+                    stop_lat: parseFloat(stop_lat),
+                    stop_lon: parseFloat(stop_lon)
+                };
+                
+                // Überprüfen, ob die Haltestelle bereits im eindeutigen Objekt vorhanden ist
+                if (!uniqueStops[stop_name]) {
+                    uniqueStops[stop_name] = parsedStop;
+                } else {
+                    // Wenn die Haltestelle bereits existiert, füge die Koordinaten zum vorhandenen Eintrag hinzu
+                    uniqueStops[stop_name].coords.push([parsedStop.stop_lat, parsedStop.stop_lon]);
+                }
+            });
+            
+            // Konvertieren des eindeutigen Objekts wieder in ein Array
+            const stops = Object.values(uniqueStops);
+            console.log("Parsed Stops:", stops); // Ausgabe der verarbeiteten Haltestellen-Daten
+            
+            setCsvStops(stops);
+            console.log("CSV Stops:", csvStops); // Ausgabe der zugewiesenen CSV-Haltestellen
+            console.log("CSV data loaded successfully.");
+        } catch (error) {
+            console.error("Error loading CSV data:", error);
+        }
+    };
 
     const drawTramRoutesAndStops = (tramRoutesData) => {
         const routes = [];
         const stops = [];
+        const colors = {}; // Objekt zum Speichern der Farben für jede Route
 
         tramRoutesData.forEach(element => {
             if (element.type === "relation") {
                 const tags = element.tags || {};
                 const color = tags.colour || "blue";
+                colors[element.id] = color; // Farbe der Route speichern
                 if (tags.type === "route" && (tags.route === "tram" || tags.route === "bus")) {
                     element.members.forEach(member => {
                         if (member.type === "way" && member.role === "") {
@@ -160,6 +165,7 @@ const MapComponent = () => {
 
         setTramRoutes(routes);
         setTramStops(stops);
+        setRouteColors(colors); // Setzen der Farben für jede Route
     };
 
     const findNearestStop = (apiStopCoords) => {
@@ -175,17 +181,30 @@ const MapComponent = () => {
         });
         return nearestStop;
     };
-    
-    
+
+    // Funktion zum Auswählen einer Route
+    const selectRoute = (routeId) => {
+        setSelectedRoute(routeId);
+    };
 
     const groupedStops = groupNearbyStops(tramStops);
     console.log("Grouped Stops:", groupedStops); // Ausgabe der gruppierten Haltestellen
 
     return (
         <main className="map-container">
+            <div>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={nightMode}
+                        onChange={toggleNightMode}
+                    />
+                    Nachtmodus
+                </label>
+            </div>
             <MapContainer center={position} zoom={12}>
                 <TileLayer
-                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
+                    url={nightMode ? "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}" : "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"}
                     attribution="&copy; OpenStreetMap contributors"
                     maxZoom={18}
                     minZoom={12}
@@ -194,8 +213,9 @@ const MapComponent = () => {
                     <Polyline
                         key={`route_${index}`}
                         positions={route.geometry.map(coord => [coord.lat, coord.lon])}
-                        color={route.color}
+                        color={selectedRoute === route.id ? route.color : (routeColors[route.id] || 'gray')} // Farbe je nach Auswahl der Route oder vordefinierter Farbe setzen
                         weight={5}
+                        onClick={() => selectRoute(route.id)} // Klick-Handler zum Auswählen der Route hinzufügen
                     >
                         <Popup>{route.name || "Route"}</Popup> 
                     </Polyline>

@@ -33,32 +33,22 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         </li>
         <li className="sidebar-list-item">
           <a href="/map">
-            <BsFillArchiveFill className="icon" /> Map
+            <BsFillArchiveFill className="icon" /> Karte
+          </a>
+        </li>
+        <li className="sidebar-list-item">
+          <a href="/Weg">
+            <BsFillGrid3X3GapFill className="icon" /> Routen
           </a>
         </li>
         <li className="sidebar-list-item">
           <a href="">
-            <BsFillGrid3X3GapFill className="icon" /> Categories
+            <BsPeopleFill className="icon" /> Statistiken
           </a>
         </li>
         <li className="sidebar-list-item">
           <a href="">
-            <BsPeopleFill className="icon" /> Customers
-          </a>
-        </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsListCheck className="icon" /> Inventory
-          </a>
-        </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsMenuButtonWideFill className="icon" /> Reports
-          </a>
-        </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsFillGearFill className="icon" /> Setting
+            <BsListCheck className="icon" /> Probleme
           </a>
         </li>
       </ul>
