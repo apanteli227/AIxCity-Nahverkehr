@@ -3,9 +3,9 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
-import MyMap_OpenStreet from "./pages/MyMap_OpenStreet";
-import Weg from "./pages/Weg";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import MyMap from "./pages/Map/MyMap";
+import Weg from "./pages/Weg/Weg";
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/map" element={<MyMap_OpenStreet />} />
+          <Route path="/map" element={<MyMap />} />
           <Route path="/weg" element={<Weg />} /> 
         </Routes>
       </BrowserRouter>

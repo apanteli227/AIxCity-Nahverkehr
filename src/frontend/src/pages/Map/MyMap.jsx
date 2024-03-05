@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Polyline, Circle, Popup } from 'react-leaflet';
 import axios from 'axios';
-import StopsCSV from '../../../data_collection/data_cleanup/resources/stops_bremen.csv';
+import StopsCSV from '../../../../data_collection/data_cleanup/resources/stops_bremen.csv';
 
 const MapComponent = () => {
     const [tramRoutes, setTramRoutes] = useState([]);
@@ -70,10 +70,7 @@ const MapComponent = () => {
     };
 
     // Funktion zum Umschalten zwischen Tag- und Nachtmodus
-    const toggleNightMode = () => {
-        setNightMode(!nightMode);
-    };
-
+    
 
     useEffect(() => {
         if (!dataFetched && tramRoutes.length === 0) {
@@ -98,11 +95,11 @@ const MapComponent = () => {
 
     const loadCsvStops = async () => {
         try {
-            console.log("Loading CSV data...");
+       
             const response = await axios.get(StopsCSV);
-            console.log("CSV Response:", response); // Ausgabe der Antwort des Axios-Aufrufs
+           
             const csvData = response.data.split('\n').slice(1); // Header entfernen und Zeilen trennen
-            console.log("CSV Data:", csvData); // Ausgabe der geladenen CSV-Daten
+
             
             // Objekt zum Speichern von eindeutigen Haltestellen basierend auf dem Namen erstellen
             const uniqueStops = {};
