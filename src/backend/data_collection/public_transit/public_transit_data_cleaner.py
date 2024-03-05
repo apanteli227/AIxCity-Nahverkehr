@@ -152,7 +152,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 
@@ -170,6 +170,8 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     """
     # Inner Join zwischen stop_time_updates_df und trips_bsag_df
     merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate="many_to_many")
+    if merged_df.empty:
+        logging.warning("Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
     return merged_df
 
 
