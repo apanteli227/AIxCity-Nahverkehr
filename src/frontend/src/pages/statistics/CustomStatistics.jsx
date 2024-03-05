@@ -33,17 +33,17 @@ export default function BasicTabs() {
     useEffect(() => {
             getLines().then((response) => {
                 const data = response.data;
-                console.log('Data:', data);
+                console.log('Lines Data:', data);
                 setLines(data);
             }).catch((error) => {
-                console.error('Error fetching data:', error);
+                console.error('Error fetching lines data:', error);
             });
             getStops().then((response) => {
                 const data = response.data;
-                console.log('Data:', data);
+                console.log('Stops Data:', data);
                 setStops(data);
             }).catch((error) => {
-                console.error('Error fetching data:', error);
+                console.error('Error fetching stops data:', error);
             });
         }, [] // Empty dependency array ensures that the effect runs only once on component mount
     );
