@@ -1,7 +1,10 @@
 import asyncio
 import logging
+import multiprocessing
+import subprocess
 
 import schedule
+import rest_controller
 
 from data_collection.events.events_data_fetch import get_events_dataframe
 from data_collection.public_transit.public_transit_data_cleaner import get_public_transit_dataframe
@@ -121,6 +124,7 @@ async def run_task_with_interval(task_function, interval_seconds):
 async def run_transit_task():
     await save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
 
+
 async def run_traffic_task():
     await save_traffic_data(get_traffic_dataframe(
         "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
@@ -159,5 +163,24 @@ async def main():
     await asyncio.gather(*tasks)
 
 
-if __name__ == "__main__":
+def run_fastapi():
+    # Run FastAPI application with Uvicorn
+    subprocess.run(["uvicorn", "rest_controller:app", "--host", "0.0.0.0", "--port", "8000"])
+
+
+def run_data_collection():
     asyncio.run(main())
+
+
+if __name__ == "__main__":
+    # Create separate processes for running FastAPI and another script
+    fastapi_process = multiprocessing.Process(target=run_fastapi)
+    other_script_process = multiprocessing.Process(target=run_data_collection)
+
+    # Start both processes
+    fastapi_process.start()
+    other_script_process.start()
+
+    # Wait for both processes to finish
+    fastapi_process.join()
+    other_script_process.join()
