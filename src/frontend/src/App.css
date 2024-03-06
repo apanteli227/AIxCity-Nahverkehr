@@ -37,6 +37,15 @@ body {
   height: 100vh;
 }
 
+.navigation-bar-map{
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  background-color: #ffffff;
+  z-index: 2000;
+  list-style-type: none; margin: 0; padding: 0;
+  color: #000000;}
+
 /* Header  */
 .header {
   grid-area: header;
