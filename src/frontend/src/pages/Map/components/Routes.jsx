@@ -4,8 +4,12 @@ import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
 
 function Routes() {
-  const { tramRoutes, setTramRoutes } = useRouteContext();
-
+  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } = useRouteContext();
+  
+  useEffect(() => {
+    console.log("Selected route has changed:", selectedRoute);
+  }, [selectedRoute]);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -60,15 +64,23 @@ function Routes() {
 
     setTramRoutes(routes);
   };
+  const handleRouteClick = (routeId) => {
+    console.log("Route clicked:", routeId, "Color:", tramRoutes.find(route => route.id === routeId)?.color);
+    setSelectedRoute(routeId === selectedRoute ? null : routeId);
+  };
+  
 
   return (
     <div>
       {tramRoutes.map((route, index) => (
         <Polyline
-          key={`${route.id}-${index}`}
           positions={route.geometry}
-          color={route.color}
-        >
+          color={selectedRoute === null || selectedRoute === route.id ? route.color : "grey"}
+          weight={5}
+          eventHandlers={{
+            click: () => handleRouteClick(route.id),
+          }}
+>
           <Popup>{route.name}</Popup>
         </Polyline>
       ))}
