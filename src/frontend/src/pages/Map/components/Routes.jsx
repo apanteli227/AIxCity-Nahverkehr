@@ -7,7 +7,6 @@ import { useNightModeContext } from "../store/NightModeContext";
 function Routes() {
   const { tramRoutes, setTramRoutes } = useRouteContext();
   const { nightMode } = useNightModeContext();
-  const [routesToDisplay, setRoutesToDisplay] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,12 +71,12 @@ function Routes() {
     const filteredRoutes = routes.filter((route) =>
       nightMode ? route.isNight : !route.isNight
     );
-    setRoutesToDisplay(filteredRoutes);
+    setTramRoutes(filteredRoutes);
   };
 
   return (
     <div>
-      {routesToDisplay.map((route, index) => (
+      {tramRoutes.map((route, index) => (
         <Polyline
           key={`${route.id}-${index}`}
           positions={route.geometry}
