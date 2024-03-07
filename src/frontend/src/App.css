@@ -137,13 +137,7 @@ body {
   margin: 15px 0;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 8px 15px;
-  border-radius: 5px;
-}
+
 
 .card:first-child {
   background-color: #2962ff;
@@ -261,5 +255,35 @@ body {
     margin: 15px 0;
     color: rgba(255, 255, 255, 0.95);
 }
+
+
+.statistics-container{
+  color:rgba(255, 255, 255, 0.95);
+  width: 300%; 
+  
+}
+.statistics-header{
+  padding-left: 25px;
+}
+.statistics-box{
+    border-radius: 10px;
+    background-color: #33415a;
+    padding: 20px; 
+    margin: 20px;    
+}
+.statistics-box-box{
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin: 5px; 
+    width: 250px;
+    color: #d50000;
+     
+}
+
+
+
+    
+        
+
 
 

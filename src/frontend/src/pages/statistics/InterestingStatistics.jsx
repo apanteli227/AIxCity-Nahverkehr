@@ -18,7 +18,7 @@ const data = [];
 
 const InterestingStatistics = () => {
     return (
-        <>
+        <main className='statistics-box'>
             <h2>Interessante Statistiken</h2>
             <h3>Verspätungen</h3>
             <div className="cards-container">
@@ -81,7 +81,7 @@ const InterestingStatistics = () => {
                     return <Card key={index} statistic={statistic}/>
                 })}
             </div>
-        </>
+        </main>
     )
         ;
 };
