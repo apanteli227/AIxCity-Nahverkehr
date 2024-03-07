@@ -11,21 +11,21 @@ const MapComponent = () => {
 
   return (
     <main className="map-container">
-      <MapContainer center={position} zoom={12}>
-        <ul className="navigation-bar-map">
-          <NightModeProvider>
+      <NightModeProvider>
+        <MapContainer center={position} zoom={12}>
+          <ul className="navigation-bar-map">
             <Nightmode />
-          </NightModeProvider>
-        </ul>
+          </ul>
 
-        <RouteProvider>
-          <Routes />
-        </RouteProvider>
+          <RouteProvider>
+            <Routes />
+          </RouteProvider>
 
-        <StopProvider>
-          <Stops />
-        </StopProvider>
-      </MapContainer>
+          <StopProvider>
+            <Stops />
+          </StopProvider>
+        </MapContainer>
+      </NightModeProvider>
     </main>
   );
 };

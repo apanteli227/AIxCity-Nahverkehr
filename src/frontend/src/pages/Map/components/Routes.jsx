@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Polyline, Popup } from "react-leaflet";
 import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
+import { useNightModeContext } from "../store/NightModeContext";
 
 function Routes() {
-  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } = useRouteContext();
-  
+  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } =
+    useRouteContext();
+  const { nightMode } = useNightModeContext();
   useEffect(() => {
     console.log("Selected route has changed:", selectedRoute);
   }, [selectedRoute]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,7 +24,7 @@ function Routes() {
     };
 
     fetchData();
-  }, []); // Passen Sie die Abhängigkeiten hier an, wenn nötig
+  }, [nightMode]); // Überwachung von Änderungen des Night-Mode-Status
 
   const drawRoutes = (tramRoutesData) => {
     const routes = [];
@@ -33,20 +35,28 @@ function Routes() {
       );
     };
 
-    const pushRoute = (id, color, name, routeGeometry) => {
+    const pushRoute = (id, color, name, routeGeometry, isNight) => {
       routes.push({
         id: id,
         geometry: routeGeometry,
         color: color,
         name: name,
+        isNight: isNight,
       });
     };
 
     const processMembers = (members, tags, color, id) => {
+      let isNight = false;
+      if (tags.by_night) {
+        if (tags.by_night === "yes" || tags.by_night === "only") {
+          isNight = true;
+        }
+      }
+
       members.forEach((member) => {
         if (member.type === "way" && member.role === "") {
           const routeGeometry = member.geometry || [];
-          pushRoute(id, color, tags.name, routeGeometry);
+          pushRoute(id, color, tags.name, routeGeometry, isNight);
         }
       });
     };
@@ -62,25 +72,36 @@ function Routes() {
       }
     });
 
-    setTramRoutes(routes);
+    const filteredRoutes = routes.filter((route) =>
+      nightMode ? route.isNight : !route.isNight
+    );
+    setTramRoutes(filteredRoutes);
   };
   const handleRouteClick = (routeId) => {
-    console.log("Route clicked:", routeId, "Color:", tramRoutes.find(route => route.id === routeId)?.color);
+    console.log(
+      "Route clicked:",
+      routeId,
+      "Color:",
+      tramRoutes.find((route) => route.id === routeId)?.color
+    );
     setSelectedRoute(routeId === selectedRoute ? null : routeId);
   };
-  
 
   return (
     <div>
       {tramRoutes.map((route, index) => (
         <Polyline
           positions={route.geometry}
-          color={selectedRoute === null || selectedRoute === route.id ? route.color : "grey"}
+          color={
+            selectedRoute === null || selectedRoute === route.id
+              ? route.color
+              : "grey"
+          }
           weight={5}
           eventHandlers={{
             click: () => handleRouteClick(route.id),
           }}
->
+        >
           <Popup>{route.name}</Popup>
         </Polyline>
       ))}

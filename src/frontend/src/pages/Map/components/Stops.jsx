@@ -3,9 +3,11 @@ import { Circle, Popup } from "react-leaflet";
 import { useStopContext } from "../store/StopContext";
 import { fetchRoutesAndStops } from "../API";
 import { fetchCsvStops } from "../CSV";
+import { useNightModeContext } from "../store/NightModeContext";
 
-function Stops() {
+const Stops = () => {
   const { tramStops, setTramStops } = useStopContext();
+  const { nightMode } = useNightModeContext();
 
   const [csvStops, setCsvStops] = useState([]);
   const circleRadius = 100;
@@ -25,7 +27,7 @@ function Stops() {
     };
 
     fetchData();
-  }, []);
+  }, [nightMode]); // nightMode als Abhängigkeit hinzufügen
 
   const drawStops = (tramRoutesData) => {
     const stops = [];
@@ -38,7 +40,12 @@ function Stops() {
       ) {
         element.members.forEach((member) => {
           if (member.type === "node" && member.role === "stop") {
-            stops.push({ id: element.id, coords: [member.lat, member.lon] });
+            const isNightStop =
+              element.tags.by_night === "yes" ||
+              element.tags.by_night === "only";
+            if ((nightMode && isNightStop) || (!nightMode && !isNightStop)) {
+              stops.push({ id: element.id, coords: [member.lat, member.lon] });
+            }
           }
         });
       }
@@ -132,7 +139,7 @@ function Stops() {
     return distance;
   };
 
-  const findNearestStop = (apiStopCoords) => {
+  const findNearestStop = (apiStopCoords, csvStops) => {
     let nearestStop = null;
     let minDistance = Infinity;
 
@@ -155,7 +162,15 @@ function Stops() {
     <>
       {groupedStops.map((group, index) => {
         const center = getGroupCenter(group);
-        const nearestStop = findNearestStop(center); // Die nächstgelegene Haltestelle für die Gruppe finden
+        const nearestCsvStop = findNearestStop(center, csvStops);
+        const isNightStop = group.some(
+          (stop) => stop.byNight === "yes" || stop.byNight === "only"
+        );
+
+        if (!nightMode && isNightStop) {
+          return null; // Nichts rendern, wenn es kein Nachtmodus ist und die Haltestelle eine Nacht-Haltestelle ist
+        }
+
         return (
           <Circle
             key={`stop_group_${index}_${center[0]}_${center[1]}`}
@@ -169,13 +184,13 @@ function Stops() {
             }}
           >
             <Popup>
-              {nearestStop ? nearestStop.stop_name : "Unknown Stop"}
+              {nearestCsvStop ? nearestCsvStop.stop_name : "Unknown Stop"}
             </Popup>
           </Circle>
         );
       })}
     </>
   );
-}
+};
 
 export default Stops;
