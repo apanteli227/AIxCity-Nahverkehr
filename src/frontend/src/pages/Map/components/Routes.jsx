@@ -91,13 +91,14 @@ function Routes() {
     <div>
       {tramRoutes.map((route, index) => (
         <Polyline
+          key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
           positions={route.geometry}
           color={
             selectedRoute === null || selectedRoute === route.id
               ? route.color
               : "grey"
           }
-          weight={5}
+          weight={4}
           eventHandlers={{
             click: () => handleRouteClick(route.id),
           }}
