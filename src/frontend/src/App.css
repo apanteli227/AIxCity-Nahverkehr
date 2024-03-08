@@ -44,7 +44,13 @@ body {
   background-color: #ffffff;
   z-index: 2000;
   list-style-type: none; margin: 0; padding: 0;
+  width: 130px;
   color: #000000;}
+
+  .navigation-bar-map li {
+    margin-bottom: 15px; /* Hier den Abstand zwischen den Elementen anpassen */
+  }
+
 
 /* Header  */
 .header {
