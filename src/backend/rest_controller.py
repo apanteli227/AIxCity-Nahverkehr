@@ -24,16 +24,30 @@ class Item(BaseModel):
 
 
 # Endpoint to fetch all the stops from the database
-@app.get("/api/data")
+@app.get("getLines")
 async def read_data_stops():
     query = "SELECT DISTINCT line FROM public.bsag_data"
     return read_data(query)
 
 
 # Endpoint to fetch all the lines from the database
-@app.get("/api/data")
+@app.get("getStops")
 async def read_data_lines():
     query = "SELECT DISTINCT stop FROM public.bsag_data"
+    return read_data(query)
+
+
+# Endpoint to fetch all the lines from the database
+@app.get("getCardsData")
+async def read_data_lines():
+    query = "SELECT * FROM public.bsag_data"
+    return read_data(query)
+
+
+# Endpoint to fetch all the lines from the database
+@app.get("getCustomData")
+async def read_data_lines():
+    query = "SELECT * FROM public.bsag_data"
     return read_data(query)
 
 
