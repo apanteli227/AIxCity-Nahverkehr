@@ -2,7 +2,7 @@ import sys
 
 import psycopg2
 
-# Verbindungsdaten zur Datenbank
+# DB connection parameters
 param_dic = {
     "host": "aixcity-nahverkehr-db-1",
     "port": "5432",
