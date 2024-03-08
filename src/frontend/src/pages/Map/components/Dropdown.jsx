@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+import RouteProvider from "../store/RouteContext";
 
 // Array mit Linien-Namen
 const lineNames = ["1", "2", "3", "4"];
@@ -21,6 +22,7 @@ export default function SearchableDropdown() {
     setSelectedLine(value);
     setSearchTerm(value); // Suchbegriff auf ausgewählte Linie setzen
     setOpen(false); // Dropdown-Menü schließen
+    console.log("Selected Line:", value);
   };
 
   return (

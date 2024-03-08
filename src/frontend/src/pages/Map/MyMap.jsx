@@ -5,7 +5,6 @@ import RouteProvider from "./store/RouteContext";
 import Routes from "./components/Routes";
 import StopProvider from "./store/StopContext";
 import Stops from "./components/Stops";
-import DropdownProvider from "./store/DropdownContext";
 import CustomizedSelects from "./components/Dropdown";
 
 const MapComponent = () => {
@@ -20,10 +19,7 @@ const MapComponent = () => {
               <Nightmode />
             </NightModeProvider>
           </li>
-
-          <DropdownProvider>
-            <CustomizedSelects />
-          </DropdownProvider>
+          <CustomizedSelects />
         </ul>
 
         <RouteProvider>
