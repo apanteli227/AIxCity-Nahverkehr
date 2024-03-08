@@ -8,9 +8,6 @@ function Routes() {
   const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } =
     useRouteContext();
   const { nightMode } = useNightModeContext();
-  useEffect(() => {
-    console.log("Selected route has changed:", selectedRoute);
-  }, [selectedRoute]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +21,7 @@ function Routes() {
     };
 
     fetchData();
-  }, [nightMode]); // Überwachung von Änderungen des Night-Mode-Status
+  }, [nightMode, selectedRoute]);
 
   const drawRoutes = (tramRoutesData) => {
     const routes = [];
@@ -84,6 +81,7 @@ function Routes() {
       "Color:",
       tramRoutes.find((route) => route.id === routeId)?.color
     );
+    console.log("Selected route has changed:", selectedRoute);
     setSelectedRoute(routeId === selectedRoute ? null : routeId);
   };
 
