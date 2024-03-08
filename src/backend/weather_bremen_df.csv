@@ -1,0 +1,2 @@
+city,date,time,temperature_celsius,humidity_percentage,weather_description,wind_speed_m_s,weather_warning
+Bremen,2024-02-16,19:56:26,10.91,89,overcast clouds,5.14,Es sind keine Warnungen für Bremen vorhanden.
