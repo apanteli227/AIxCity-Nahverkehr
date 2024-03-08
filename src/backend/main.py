@@ -4,7 +4,6 @@ import multiprocessing
 import subprocess
 
 import schedule
-import rest_controller
 
 from data_collection.events.events_data_fetch import get_events_dataframe
 from data_collection.public_transit.public_transit_data_cleaner import get_public_transit_dataframe
