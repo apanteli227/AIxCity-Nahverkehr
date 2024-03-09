@@ -37,7 +37,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     not_used_stops = os.path.join(full_path, "not_used_stops.csv")
 
     # DataFrame aus der Datei stops_bremen.csv erstellen
-    stops_bremen_df = pd.read_csv(stops_bremen)
+    stops_bremen_df = pd.read_csv(stops_bremen, sep=";")
 
     # DataFrame aus der Datei stops.txt erstellen
     coordinates_df = pd.read_csv(file_path)

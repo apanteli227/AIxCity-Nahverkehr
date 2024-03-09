@@ -166,9 +166,9 @@ async def run_traffic_data_async():
         "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point=")
     time.sleep(60)
     if traffic_data is not None and not traffic_data.empty:
-        save_traffic_data(traffic_data)
+       save_traffic_data(traffic_data)
     else:
-        logging.error("Traffic data is empty or None.")
+       logging.error("Traffic data is empty or None.")
 
 
 async def run_events_task():
