@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Polyline, Popup } from "react-leaflet";
 import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
