@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useMemo } from "react";
 
 const RouteContext = createContext();
 
@@ -14,18 +14,20 @@ export default function RouteProvider({ children }) {
     </RouteContext.Provider>
   );
 }
-function useSelectedRout() {
-  const [nightMode, setNightMode] = useState(false);
+function useSelectedRoute() {
+  const [selectedRoute, setSelectedRoute] = useState(false);
 
-  const toggleNightMode = () => {
-    setNightMode(!nightMode);
+  const toggleSelectedRoute = () => {
+    setSelectedRoute(!selectedRoute);
   };
 
   return useMemo(
     () => ({
-      nightMode,
-      toggleNightMode,
+      selectedRoute,
+      toggleSelectedRoute,
     }),
-    [nightMode]
+    [selectedRoute]
   );
 }
+
+
