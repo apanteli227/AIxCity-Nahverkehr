@@ -19,9 +19,10 @@ function Routes() {
         console.error("Error:", error);
       }
     };
-
+  
     fetchData();
-  }, [nightMode, selectedRoute]);
+  }, [nightMode, selectedRoute]);  // selectedRoute zu den Abhängigkeiten hinzugefügt
+  
 
   const drawRoutes = (tramRoutesData) => {
     const routes = [];
@@ -91,11 +92,7 @@ function Routes() {
         <Polyline
           key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
           positions={route.geometry}
-          color={
-            selectedRoute === null || selectedRoute === route.id
-              ? route.color
-              : "grey"
-          }
+          color={selectedRoute === null || selectedRoute === route.id ? route.color : "grey"}
           weight={4}
           eventHandlers={{
             click: () => handleRouteClick(route.id),

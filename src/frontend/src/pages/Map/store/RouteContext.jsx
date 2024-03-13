@@ -14,3 +14,18 @@ export default function RouteProvider({ children }) {
     </RouteContext.Provider>
   );
 }
+function useSelectedRout() {
+  const [nightMode, setNightMode] = useState(false);
+
+  const toggleNightMode = () => {
+    setNightMode(!nightMode);
+  };
+
+  return useMemo(
+    () => ({
+      nightMode,
+      toggleNightMode,
+    }),
+    [nightMode]
+  );
+}
