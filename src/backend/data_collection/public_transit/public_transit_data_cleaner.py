@@ -173,8 +173,8 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
                          validate='many_to_many')
     #if merged_df.empty:
     #    logging.warning(
-            "Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
-    #return merged_df
+    #        "Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
+    return merged_df
 
 
 def map_daytime(hour):
