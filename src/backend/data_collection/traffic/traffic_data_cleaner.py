@@ -7,6 +7,7 @@ from ..public_transit import public_transit_data_cleaner as pt_cleaner
 
 
 def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
+    prefix = '\033[34m' + "[TRAFFIC] " + '\033[0m'
     """
     Diese Funktion ruft die Verkehrsdaten ab und bereitet diese durch 
     unterschiedliche Hilfsdateien auf. Das Ergebnis ist ein DataFrame,
@@ -19,7 +20,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     Returns:
     - traffic_data_bsag_updates (DataFrame): DataFrame mit den Verkehrsdaten und relevanten Attributen.
     """
-    logging.info("Starte Prozess zur Ermittlung der Verkehrsdaten...")
+    print(prefix + "Starte Prozess zur Ermittlung der Verkehrsdaten...")
 
     # Kombiniere das aktuelle Verzeichnis mit dem relativen Pfad
     full_path = os.path.join(os.path.dirname(__file__), "../resources")
@@ -31,6 +32,8 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     stops_bremen = os.path.join(full_path, "stops_bremen.csv")
 
     # Pfad zur Datei not_used_stops.txt mit den Haltestellen, die nicht relevant für den Verkehr sind
+    # Nicht relevant heißt, dass die Bestimmung der Verkehrsdaten hier keinen Sinn macht (da z.B. nur eine Bahn diese Haltestelle anfährt)
+    # Schienenverkehr wird in der Regel nicht vom Verkehrfluss der Straßen beeinflusst
     not_used_stops = os.path.join(full_path, "not_used_stops.csv")
 
     # DataFrame aus der Datei stops_bremen.csv erstellen
@@ -46,12 +49,14 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     # und "stop_name"
     coordinates_df = pd.merge(coordinates_df, stops_bremen_df, left_on="stop_name", right_on="stop_name",
                               how="inner")
-
+    if coordinates_df.empty:
+        logging.warning(
+            "Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
     # Aus DataFrame alle Spalten löschen außer der stop_name, stop_lat und stop_lon
     coordinates_df = coordinates_df.drop(
         columns=["stop_id_x","stop_code", "stop_desc", "location_type", "parent_station", "wheelchair_boarding",
                  "platform_code", "zone_id", "stop_id_y", "stop_lat_y", "stop_lon_y",])
-    
+
     # Spalte stop_id_x in stop_id, stop_lat_x in stop_lat und stop_lon_x in stop_lon umbenennen
     coordinates_df = coordinates_df.rename(columns={"stop_id_x": "stop_id", "stop_lat_x": "stop_lat", "stop_lon_x": "stop_lon"})
 
@@ -80,9 +85,9 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     # Entferne die Spalte 'current_time_for_daytime'
     traffic_data_bsag_updates.drop(columns=["current_time_for_daytime"], inplace=True)
 
-    logging.info("Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
-    logging.info("Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
-    logging.info("Dieser Prozess kann bis zu 10 Minuten dauern...")
+    print(prefix + "Relevante Haltestellen wurden für die Verkehrsdaten ermittelt.")
+    print(prefix + "Starte nun Prozess zur Ermittlung der Verkehrsdaten an den jeweiligen Haltestellen...")
+    #print("Dieser Prozess kann bis zu 10 Minuten dauern...")
 
     # Iteriere durch die Zeilen des DataFrames und rufe die API für jede Koordinate auf
     for index, row in traffic_data_bsag_updates.iterrows():
@@ -94,27 +99,32 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
 
         # Funktion aufrufen und DataFrame erhalten
         result_dataframe = td_fetch.get_traffic_dataframe(api_endpoint)
+        if result_dataframe is not None:
+            if result_dataframe["flowSegmentData"]["currentSpeed"] is not None and result_dataframe["flowSegmentData"]["freeFlowSpeed"] is not None:
+                # Aus DataFrame currentSpeed und freeFlowSpeed entnehmen
+                current_speed = result_dataframe["flowSegmentData"]["currentSpeed"]
+                free_flow_speed = result_dataframe["flowSegmentData"]["freeFlowSpeed"]
 
-        # Aus DataFrame currentSpeed und freeFlowSpeed entnehmen
-        current_speed = result_dataframe["flowSegmentData"]["currentSpeed"]
-        free_flow_speed = result_dataframe["flowSegmentData"]["freeFlowSpeed"]
+                # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle
+                # Koordianten eintragen
+                traffic_data_bsag_updates.loc[index, "current_speed"] = current_speed
+                traffic_data_bsag_updates.loc[index, "freeflow_Speed"] = free_flow_speed
 
-        # In coordinates_df die Spalten currentSpeed und freeFlowSpeed sowie den ermittelten Wert für aktuelle
-        # Koordianten eintragen
-        traffic_data_bsag_updates.loc[index, "current_speed"] = current_speed
-        traffic_data_bsag_updates.loc[index, "freeflow_Speed"] = free_flow_speed
-
-        # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
-        traffic_data_bsag_updates.loc[index, "average_traffic_load_percentage"] = abs(
-            ((traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]) - 1).round(4))*100
-
+                # Neue Spalte "Verkehrsauslastung" erstellen und Verkehrsauslastung berechnen
+                traffic_data_bsag_updates.loc[index, "quotient_current_freeflow_speed"] = abs(
+                    (traffic_data_bsag_updates.loc[index, "current_speed"] / traffic_data_bsag_updates.loc[index, "freeflow_Speed"]).round(4))
+            else:
+                print(prefix + "currentSpeed / freeFlowSpeed konnte nicht ermittelt werden!")
+        else:
+            print(prefix + "Fehler beim Abrufen der Verkehrsdaten.")
+            break
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
-        print(traffic_data_bsag_updates.loc[index])
+        #print(traffic_data_bsag_updates.loc[index])
 
     # Setze das Optionssystem zurück
-    pd.reset_option('mode.chained_assignment')       
+    pd.reset_option('mode.chained_assignment')
 
-    logging.info("Verkehrsdaten wurden ermittelt.")
+    print(prefix + "Daten erfolgreich ermittelt.")
 
     # Speichere das DataFrame in eine CSV-Datei
     #traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
