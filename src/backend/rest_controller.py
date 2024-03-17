@@ -64,12 +64,17 @@ async def read_data_lines():
     return read_data(query)
 
 
-@app.get("/api/data/{mode}/{mode_input}/{start_time}/{end_time}")
-async def read_data_delay_frequency(mode: str, mode_input: list):
+@app.get("/api/data/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
+async def read_data_delay_frequency(mode: str, mode_input: list, frequency: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
-
     mode_input_str = "', '".join(mode_input)
-    query = f""
+
+    if frequency == "daily":
+        query = f"SELECT DATE_TRUNC('day', start_time) AS date, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('day', start_time);"
+    elif frequency == "hourly":
+        query = f"SELECT DATE_TRUNC('hour', start_time) AS hour, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('hour', start_time);"
+    else:
+        return "Invalid frequency parameter. Please choose either 'daily' or 'hourly'."
 
     return await read_data(query)
 
@@ -79,9 +84,20 @@ async def read_data_delay_rate(mode: str, mode_input: list, start_time: str, end
     mode_str = get_mode(mode)
 
     mode_input_str = "', '".join(mode_input)
-    query = f"SELECT SUM(departure_delay) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}');"
+    query = f"SELECT SUM(departure_delay) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
 
     return await read_data(query)
+
+
+@app.get("/api/data/{mode}/{mode_input}/{start_time}/{end_time}")
+async def read_data_delay_rate(mode: str, mode_input: list, start_time: str, end_time: str):
+    mode_str = get_mode(mode)
+
+    mode_input_str = "', '".join(mode_input)
+    query = f"SELECT SUM(departure_delay) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
+
+    return await read_data(query)
+
 
 
 @app.get("/api/data/{statistic}/{mode}/{mode_input}/{aggregate}/{start_time}/{end_time}")
