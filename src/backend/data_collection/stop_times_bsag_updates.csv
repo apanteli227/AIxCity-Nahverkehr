@@ -1,389 +1,89 @@
 start_date,current_time,daytime,weekday,holiday,starting_stop_time,line,number_of_stops,direction,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Arsten,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Twiedelftsweg,1,0,0,33,33
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Sielhof,6,0,0,-18,0
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Huckelriede,7,0,0,-21,0
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Am Dammacker,8,0,0,10,10
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Schüsselkorb,16,0,0,41,41
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Herdentor,17,1,1,89,89
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Am Dobben,20,1,1,159,159
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,32,1,1,129,129
-2024-03-18,00:11:29,night,Tuesday,0,23:40:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,33,1,1,159,159
-2024-03-19,00:11:29,night,Tuesday,0,00:05:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Bf Mahndorf,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal Kutscher Behrens,1,0,0,35,35
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal Schoofmoor,3,0,0,2,2
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Lilienthal Truperdeich,9,0,0,-35,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Borgfeld,10,0,0,-86,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,30,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,1E,32,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,31,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Sebaldsbrück (Bus+Tram),0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Schloßparkstraße,1,0,0,25,25
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Trinidadstraße,2,0,0,55,55
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Bei den Drei Pfählen,8,0,0,17,17
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Am Hulsberg,9,0,0,-23,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen St.-Jürgen-Straße,10,0,0,-36,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Brunnenstraße,11,1,1,1458,1458
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N10,33,Gröpelingen,Bremen Hauptbahnhof,16,1,1,1458,1068
-2024-03-18,00:11:29,night,Tuesday,0,23:35:00,N10,33,Sebaldsbrück,Bremen Gröpelingen,0,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:05:00,N10,33,Sebaldsbrück,Bremen Gröpelingen,0,0,1,0,1867
-2024-03-19,00:11:29,night,Tuesday,0,00:05:00,N10,33,Sebaldsbrück,Bremen Hauptbahnhof,15,1,1,1867,1477
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Gröpelingen,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Lindenhofstraße,1,0,0,1,1
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Altenescher Straße,3,0,0,45,45
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Utbremer Straße,8,0,0,54,54
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Hansestraße,10,1,1,85,85
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Doventorsteinweg,12,1,1,89,120
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Falkenstraße,14,1,1,64,64
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Hauptbahnhof,15,1,0,64,34
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Am Dobben,17,0,0,-7,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Humboldtstraße,18,0,0,-43,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Sielwall,19,0,0,-55,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen St.-Jürgen-Straße,21,0,0,-51,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Bei den Drei Pfählen,23,0,0,-8,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Ludwig-Quidde-Straße,25,0,0,-35,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Föhrenstraße,27,0,0,-65,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,10,33,Sebaldsbrück,Bremen Bahnhof Sebaldsbrück,28,0,0,-58,0
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,10,33,Sebaldsbrück,Bremen Gröpelingen,0,0,1,0,3144
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Gröpelingen,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen DIAKO Bremen,2,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Am Fuchsberg,3,0,0,31,31
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Am Geestkamp,8,0,0,26,26
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen-Burg(Bus),11,0,0,26,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Stader Landstraße,12,0,1,45,76
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Burgdammer Postweg,14,1,1,105,105
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Am Heidbergstift,15,1,1,73,73
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Zum Kränholm,18,1,1,83,83
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Holthorster Weg,19,1,1,113,113
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Tannenhof,21,1,1,77,77
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Bahnhof Vegesack,24,0,0,-25,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Zum Donaufleet,35,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Fähre Blumenthal,36,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Hanfstraße,40,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen An der Amtsweide,41,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Wasserweg,42,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Fähre Farge,43,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Hohenesch,48,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Rekumer Siel,49,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Sandkuhlenweg,51,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Bremen Moorstücke,52,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,54,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:28:00,90,58,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,55,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Gröpelingen,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Karl-Bröger-Straße,1,0,0,-30,-29
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen DIAKO Bremen,2,0,0,-59,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Am Fuchsberg,3,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Ritterhuder Heerstraße,4,0,0,27,39
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Am Geestkamp,8,0,0,-5,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen An Smidts Park,9,0,0,-44,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Burger Dorfstraße,10,0,0,-59,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen-Burg(Bus),11,0,0,-82,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Zum Kränholm,18,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Holthorster Weg,19,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Zum Donaufleet,35,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Fähre Blumenthal,36,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Hanfstraße,40,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen An der Amtsweide,41,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Wasserweg,42,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Fähre Farge,43,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Hohenesch,48,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Rekumer Siel,49,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Sandkuhlenweg,51,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Bremen Moorstücke,52,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Neuenkirchen(Schwanewede) Marktplatz,54,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:58:00,90,58,Neuenkirchen,Neuenkirchen(Schwanewede) Ahnten,55,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:59:00,57,15,Bremen Roland-Center,Bremen Roland-Center,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:47:00,3,29,Gröpelingen,Bremen Weserwehr,0,0,1,0,137
-2024-03-18,00:11:29,night,Tuesday,0,23:47:00,3,29,Gröpelingen,Bremen Hohwisch,1,1,1,167,167
-2024-03-18,00:11:29,night,Tuesday,0,23:47:00,3,29,Gröpelingen,Bremen Nienburger Straße,4,1,1,111,111
-2024-03-18,00:11:29,night,Tuesday,0,23:47:00,3,29,Gröpelingen,Bremen St.-Jürgen-Straße,6,1,1,61,61
-2024-03-18,00:11:29,night,Tuesday,0,23:47:00,3,29,Gröpelingen,Bremen Brunnenstraße,7,1,1,881,881
-2024-03-19,00:11:29,night,Tuesday,0,00:09:00,3,29,Weserwehr,Bremen Gröpelingen,0,0,1,0,1454
-2024-03-19,00:11:29,night,Tuesday,0,00:09:00,3,29,Weserwehr,Bremen Domsheide,17,1,1,1454,1424
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Gröpelingen,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Use Akschen,2,0,0,-36,0
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Goosestraße,3,0,0,-30,0
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Radio Bremen/VHS,14,0,0,39,39
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Am Brill (Hutfilter-/Obernstraße),15,0,0,1,1
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Domsheide,17,0,0,-40,0
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Sielwall,20,0,0,33,33
-2024-03-18,00:11:29,night,Tuesday,0,23:39:00,3,29,Weserwehr,Bremen Brunnenstraße,21,1,1,76,76
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Universität-Nord,0,0,1,0,254
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Universität-Süd,2,1,1,313,313
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Lise-Meitner-Straße,3,1,1,362,362
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Emmastraße,7,1,1,375,436
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Brahmsstraße,10,1,1,476,476
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Hauptbahnhof,13,1,1,476,326
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Herdentor,14,1,1,331,331
-2024-03-18,00:11:29,night,Tuesday,0,23:43:00,6,25,Flughafen,Bremen Schüsselkorb,15,1,1,361,361
-2024-03-19,00:11:29,night,Tuesday,0,00:09:00,6,25,Flughafen,Bremen Universität-Nord,0,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:09:00,6,25,Flughafen,Bremen Herdentor,14,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:09:00,6,25,Flughafen,Bremen Schüsselkorb,15,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Arsten,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Twiedelftsweg,1,0,0,39,39
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Sielhof,6,0,0,-9,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Huckelriede,7,0,0,-44,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Schwankhalle,11,0,0,34,34
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Domsheide,15,0,0,-15,49
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Herdentor,17,1,1,103,103
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Hauptbahnhof,18,1,0,73,46
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Rembertistraße,19,0,1,47,77
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen St. Joseph-Stift,23,0,0,38,38
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Metzer Straße,24,1,1,105,105
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Friedhofstraße,26,1,1,103,103
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Vorstraße,30,1,1,63,63
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Horner Mühle,31,0,0,-9,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Bremen Borgfeld,38,0,0,-32,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Lilienthal Truperdeich,39,0,0,-30,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,4,49,Lilienthal,Lilienthal Lilienthal-Mitte,42,0,0,-87,0
-2024-03-18,00:11:29,night,Tuesday,0,23:49:00,2,29,Sebaldsbrück,Bremen Gröpelingen,0,0,1,0,2725
-2024-03-18,00:11:29,night,Tuesday,0,23:59:00,37,16,Bf Mahndorf,Bremen Sebaldsbrück (Bus+Tram),0,0,1,0,63
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Roland-Center,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Neuenlander Straße,5,0,0,45,45
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Pappelstraße,6,1,1,74,74
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Am Brill (Bgm.-Smidt-Straße),9,0,0,20,20
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Am Wall,10,1,1,60,60
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Hauptbahnhof,11,0,1,11,60
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Rembertistraße,12,1,1,67,98
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Am Dobben,13,1,1,135,135
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Metzer Straße,17,1,1,175,175
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25,1,1,145,145
-2024-03-18,00:11:29,night,Tuesday,0,23:38:00,N1,44,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26,1,1,175,175
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Bf Mahndorf,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Nußhorn,1,1,1,75,75
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Weserpark-Süd,2,0,0,32,32
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Weserpark,3,0,0,29,29
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Werner-Steenken-Straße,4,0,0,27,27
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Tenever-Zentrum,6,0,0,-20,0
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Neuwieder Straße,7,0,0,8,8
-2024-03-18,00:11:29,night,Tuesday,0,23:45:00,N1,44,Huchting,Bremen Hauptbahnhof,32,0,0,8,0
-2024-03-19,00:11:29,night,Tuesday,0,00:08:00,N1,44,Bf Mahndorf,Bremen Roland-Center,0,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:08:00,N1,44,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:08:00,N1,44,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Bf Mahndorf,0,0,1,0,82
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Nußhorn,1,1,1,151,151
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Weserpark,3,1,1,119,119
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Werner-Steenken-Straße,4,1,1,117,117
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Engadiner Straße,8,1,1,148,148
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Ellenerbrokstraße,11,1,1,117,117
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Kurt-Huber-Straße,16,1,1,79,79
-2024-03-18,00:11:29,night,Tuesday,0,23:15:00,N1,44,Huchting,Bremen Hauptbahnhof,32,1,0,79,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Schweizer Eck,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Klinikum Bremen-Ost,1,0,0,33,33
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Grenzwehr,2,0,0,3,3
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Emmentaler Straße,3,1,1,70,70
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Krefelder Straße,4,0,0,37,37
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Einkaufszentrum Blockdiek,5,0,0,7,7
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Im Holter Feld,9,0,0,-23,-23
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Georg-Gries-Straße,10,0,0,7,7
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Hauptbahnhof,23,0,0,7,0
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Herdentor,24,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:55:00,25,39,Weidedamm-Süd,Bremen Schüsselkorb,25,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Bottroper Straße,6,0,0,-69,-69
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Hermann-Koenen-Straße,7,0,0,-70,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Wilhelm-Busch-Weg,8,0,0,-46,-45
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Im Holter Feld,9,0,0,-75,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Georg-Gries-Straße,10,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Rennplatz,11,0,0,-31,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Julius-Brecht-Allee,15,0,0,-51,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Steubenstraße,16,0,0,-59,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Stresemannstraße,17,0,0,-49,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Stader Straße/Bismarckstraße,18,0,0,-47,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Friedrich-Karl-Straße,19,0,0,-44,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Klinikum Bremen-Mitte,20,0,0,-52,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Dobbenweg,21,0,0,-135,-101
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Rembertistraße,22,0,0,-71,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Hauptbahnhof,23,0,0,-65,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Herdentor,24,0,0,3,3
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Schüsselkorb,25,0,0,-8,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Domsheide,26,0,0,-50,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Martinistraße,27,0,0,-38,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Am Brill (Martinistraße),28,0,0,-32,0
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Radio Bremen/VHS,29,0,0,-97,-84
-2024-03-18,00:11:29,night,Tuesday,0,23:25:00,25,39,Weidedamm-Süd,Bremen Doventor,30,0,0,-84,0
-2024-03-18,00:11:29,night,Tuesday,0,23:59:00,58,15,Bremen Roland-Center,Bremen Roland-Center,0,0,1,0,106
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Bf Mahndorf,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Egestorff-Stiftung,4,0,0,34,34
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Osterholzer Möhlendamm,5,0,0,36,36
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Am Hahnenkamp,6,1,1,99,99
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Schweizer Eck,7,1,1,61,61
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Lachmundsdamm,10,0,0,19,19
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Poggenburg,13,0,0,-11,-11
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Am Hallacker,14,0,0,19,19
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Lise-Meitner-Straße,31,0,0,-11,-11
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Universität-Süd,32,0,0,19,19
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Hauptbahnhof,43,0,0,19,0
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Herdentor,44,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Schüsselkorb,45,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Akazienstraße,52,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Huder Straße,53,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Rechtenflether Straße,56,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:33:00,N3,62,Rablinghausen,Bremen Woltmershauser Friedhof,57,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Rablinghausen,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Roccoweg,1,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Bakeweg,2,0,0,30,30
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Rechtenflether Straße,5,1,1,60,60
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Dötlinger Straße,7,0,0,30,30
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Huder Straße,8,1,1,60,60
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Akazienstraße,9,0,0,21,22
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Bahnhof Neustadt,10,0,0,-7,-7
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Hohentorsplatz,11,0,0,55,55
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Westerstraße,12,0,0,24,24
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Wilhelm-Kaisen-Brücke,14,0,0,-33,0
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Oewerweg,49,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:34:00,N3,62,Bf Mahndorf,Bremen Osterholzer Heerstraße,50,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Schweizer Eck,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Klinikum Bremen-Ost,1,0,0,29,29
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Lachmundsdamm,3,0,0,-21,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Osterholzer Heerstraße,4,0,0,-46,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Oewerweg,5,0,0,-28,-26
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Poggenburg,6,0,0,-25,-25
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Am Hallacker,7,0,0,8,8
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Bahnhof Oberneuland,11,0,0,45,45
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Mühlenfeldstraße,12,1,1,78,78
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Simon-Hermann-Post-Weg,13,1,1,125,125
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Rockwinkeler Heerstraße,14,1,1,92,92
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Apfelallee,17,1,1,125,125
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Lise-Meitner-Straße,24,1,1,114,128
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Universität-Süd,25,1,1,158,158
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Wiener Straße,26,1,1,123,123
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Emmastraße/Bürgerpark,30,0,0,24,24
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Bulthauptstraße,32,0,0,-14,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Am Stern,34,0,0,-95,-79
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Blumenthalstraße,35,0,0,-79,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Hauptbahnhof,36,0,0,-64,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Herdentor,37,0,0,15,15
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Schüsselkorb,38,1,1,80,80
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Domsheide,39,0,0,-3,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Wilhelm-Kaisen-Brücke,40,0,0,30,30
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Akazienstraße,45,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Huder Straße,46,0,0,30,30
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Rechtenflether Straße,49,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:12:00,N3,62,Rablinghausen,Bremen Woltmershauser Friedhof,50,0,0,30,30
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Rablinghausen,0,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Roccoweg,1,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Bakeweg,2,0,0,46,46
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Stromer Straße,3,0,0,13,13
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Woltmershauser Friedhof,4,0,0,22,22
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Rechtenflether Straße,5,1,1,64,64
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Dötlinger Straße,7,0,0,34,34
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Huder Straße,8,1,1,64,64
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Bahnhof Neustadt,10,0,0,34,34
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Hohentorsplatz,11,1,1,64,64
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Hauptbahnhof,18,1,0,64,0
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Oewerweg,49,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:04:00,N3,62,Bf Mahndorf,Bremen Osterholzer Heerstraße,50,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Überseestadt-Nord,0,0,0,0,29
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Ehrenfelsstraße,1,0,0,-1,-1
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Silbermannstraße,2,0,0,-10,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Überseetor,4,0,0,37,37
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Waller Ring,6,0,0,-11,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Lange Reihe,7,0,0,11,11
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Bahnhof Walle,8,0,0,-19,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Holsteiner Straße,9,0,0,-36,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Dithmarscher Freiheit,10,0,0,-38,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Fürther Straße,11,0,0,-82,-69
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Hemmstraße,12,0,0,-69,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Eickedorfer Straße,13,0,0,-56,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Hauptbahnhof,17,0,1,-6,87
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Am Brill (Bgm.-Smidt-Straße),19,0,0,54,54
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Westerstraße,20,1,1,91,91
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Pappelstraße,22,0,0,43,43
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Stenumer Straße,29,1,1,80,80
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Huckelriede,30,0,0,18,0
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Friedhof Huckelriede,31,0,0,46,46
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Fellendsweg,33,0,0,11,11
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Fontanestraße,34,0,0,-10,-10
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Habenhauser Brückenstraße,35,0,0,23,53
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Schlehenweg,37,0,0,23,23
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Staustraße,38,0,0,53,53
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Pfarrfeldsweg,39,1,1,95,95
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Piependamm,40,1,1,126,126
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Hermann-Helms-Straße,42,1,1,87,87
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Arster Landstraße,44,0,0,56,56
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Carsten-Dreßler-Straße,46,0,0,17,17
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Martin-Buber-Straße,47,0,0,-13,-13
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Brenningstraße,48,0,0,58,58
-2024-03-18,00:11:29,night,Tuesday,0,23:05:00,26,53,Kattenturm / Klinikum LDW,Bremen Klinikum Haupteingang,52,0,0,-39,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Arsten,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Klinikum Links der Weser,4,0,0,39,39
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Sielhof,6,0,0,5,35
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Am Dammacker,8,1,1,65,65
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Rotes-Kreuz-Krankenhaus,12,0,0,36,36
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Wilhelm-Kaisen-Brücke,14,1,1,91,91
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Hauptbahnhof,18,0,0,49,0
-2024-03-18,00:11:29,night,Tuesday,0,23:31:00,N4,49,Lilienthal,Bremen Rembertistraße,19,0,1,53,84
-2024-03-19,00:11:29,night,Tuesday,0,00:01:00,N4,49,Lilienthal,Bremen Arsten,0,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:01:00,N4,49,Lilienthal,Bremen Twiedelftsweg,1,0,0,31,31
-2024-03-19,00:11:29,night,Tuesday,0,00:01:00,N4,49,Lilienthal,Bremen Klinikum Links der Weser,4,1,1,67,67
-2024-03-19,00:11:29,night,Tuesday,0,00:01:00,N4,49,Lilienthal,Bremen Hauptbahnhof,18,1,0,67,0
-2024-03-18,00:11:29,night,Tuesday,0,23:48:00,N4,49,Arsten,Lilienthal,0,0,1,0,129
-2024-03-18,00:11:29,night,Tuesday,0,23:48:00,N4,49,Arsten,Lilienthal Kutscher Behrens,1,1,1,162,162
-2024-03-18,00:11:29,night,Tuesday,0,23:48:00,N4,49,Arsten,Lilienthal Auf dem Kamp,2,1,1,195,195
-2024-03-18,00:11:29,night,Tuesday,0,23:48:00,N4,49,Arsten,Bremen Hauptbahnhof,30,1,0,195,0
-2024-03-18,00:11:29,night,Tuesday,0,23:48:00,N4,49,Arsten,Bremen Herdentor,31,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:48:00,N4,49,Arsten,Bremen Schüsselkorb,32,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Neue Vahr Nord,0,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Friedrich-Stampfer-Straße,1,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Otto-Braun-Straße,2,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Carsten-Dreßler-Straße,38,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen In der Laake,39,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Hermann-Helms-Straße,42,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Senator-Theil-Straße,43,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Piependamm,44,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Pfarrfeldsweg,45,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Fontanestraße,50,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Fellendsweg,51,0,0,0,0
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Helene-Lange-Straße,52,0,0,-30,-30
-2024-03-19,00:11:29,night,Tuesday,0,00:07:00,N9,55,Kattenturm / Huckelriede,Bremen Friedhof Huckelriede,53,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Neue Vahr Nord,0,0,1,0,130
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Friedrich-Stampfer-Straße,1,1,1,133,133
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Otto-Braun-Straße,2,1,1,194,194
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Philipp-Scheidemann-Straße,3,1,1,160,160
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Kurfürstenallee,8,1,1,104,104
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen St. Joseph-Stift,10,1,1,73,73
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Blumenthalstraße,12,0,0,34,34
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Hauptbahnhof,13,0,0,-54,38
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Am Brill (Bgm.-Smidt-Straße),15,1,1,75,75
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Huckelriede,26,1,0,75,0
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Carsten-Dreßler-Straße,38,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen In der Laake,39,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Hermann-Helms-Straße,42,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Senator-Theil-Straße,43,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Piependamm,44,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Pfarrfeldsweg,45,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Fontanestraße,50,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Fellendsweg,51,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Helene-Lange-Straße,52,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:37:00,N9,55,Kattenturm / Huckelriede,Bremen Friedhof Huckelriede,53,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Roland-Center,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Pappelstraße,6,0,0,-30,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Hochschule Bremen,7,0,0,-29,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Westerstraße,8,0,0,4,4
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Am Brill (Bgm.-Smidt-Straße),9,0,0,-44,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Am Wall,10,0,0,4,4
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Hauptbahnhof,11,0,0,-65,0
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Am Dobben,13,0,0,45,45
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Metzer Straße,17,1,1,206,206
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Polizeipräsidium,22,1,1,155,155
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Wilhelm-Leuschner-Straße,23,1,1,213,213
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Berliner Freiheit,24,1,1,159,159
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Carl-Goerdeler-Straße,25,1,1,161,161
-2024-03-18,00:11:29,night,Tuesday,0,23:22:00,1,44,Bf Mahndorf,Bremen Dietrich-Bonhoeffer-Straße,26,1,1,142,142
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Steenkuhlenweg,15,0,0,-73,-73
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Landrat-Berthold-Straße,16,0,0,-73,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Bockhorner Weg,17,0,0,-19,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Martin-Luther-Straße,18,0,0,8,8
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Bahnhof Blumenthal,19,0,0,-53,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Margaretenallee,21,0,0,-30,-30
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,94,48,Bf Vegesack,Bremen Bremer Vulkan,22,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Roland-Center,0,0,0,0,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Solinger Straße,3,0,0,-37,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Hochschule Bremen,7,0,0,-30,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Am Brill (Bgm.-Smidt-Straße),9,0,0,-73,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Am Wall,10,0,0,-40,0
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Hauptbahnhof,11,0,1,2,67
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Am Dobben,13,1,1,151,151
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Parkstraße,14,1,1,146,146
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Carl-Goerdeler-Straße,25,1,1,116,116
-2024-03-18,00:11:29,night,Tuesday,0,23:46:00,1E,35,Neue Vahr-Süd / Kurt-Huber-Str.,Bremen Dietrich-Bonhoeffer-Straße,26,1,1,146,146
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Roland-Center,0,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Obervielander Straße,1,1,1,114,126
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Norderländer Straße,2,1,1,161,161
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Bardenflethstraße,3,1,1,173,179
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Solinger Straße,4,1,1,203,209
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Dortmunder Straße,5,1,1,197,197
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen BSAG-Zentrum,6,1,1,144,156
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Neuenlander Kämpe,7,1,1,125,137
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Flughafen,8,1,1,161,161
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Cornelius-Edzard-Straße,9,1,1,110,116
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Paul-Feller-Straße,10,1,1,104,104
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Arsterdamm,11,1,1,76,82
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Anna-Stiegler-Straße,13,1,1,100,100
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Kattenturm-Mitte,14,1,0,64,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Kattenturm-Mitte,0,0,1,0,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Agnes-Heineken-Straße,1,1,1,64,70
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Bruchhauser Straße,2,0,1,58,70
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Hannoversche Straße,3,1,1,112,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Glockenstraße/Bf Hemelingen,4,1,1,106,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Christernstraße,5,1,1,94,106
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Christernstraße,6,1,1,76,82
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Sebaldsbrück (Bus+Tram),7,0,1,52,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Saarstraße,8,1,1,76,82
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Osterholzer Friedhof,9,1,1,64,76
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Mercedes-Benz Tor 7,10,0,1,58,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Mercedes-Benz Tor 8,11,1,1,70,76
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Hermann-Koenen-Straße,12,1,1,106,112
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Wilhelm-Busch-Weg,13,1,1,118,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Im Holter Feld,14,1,1,100,106
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Witzlebenstraße,15,1,1,100,106
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Carl-Goerdeler-Straße,16,1,1,112,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Berliner Freiheit,17,0,1,46,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Friedrich-Stampfer-Straße,18,0,1,52,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Neue Vahr Nord,0,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Friedrich-Stampfer-Straße,1,0,0,-12,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Berliner Freiheit,2,1,1,61,85
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Carl-Goerdeler-Straße,3,1,1,61,61
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Witzlebenstraße,4,1,1,73,79
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Im Holter Feld,5,0,0,31,36
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Wilhelm-Busch-Weg,6,0,0,0,6
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Hermann-Koenen-Straße,7,0,0,12,18
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Mercedes-Benz Tor 8,8,0,0,24,24
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Mercedes-Benz Tor 7,9,0,0,0,6
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Osterholzer Friedhof,10,0,0,20,38
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Saarstraße,11,1,1,75,81
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Sebaldsbrück (Bus+Tram),12,0,0,28,52
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Christernstraße,13,0,0,19,42
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Glockenstraße/Bf Hemelingen,14,0,0,30,42
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Hannoversche Straße,15,0,0,36,48
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Bruchhauser Straße,16,0,0,24,36
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Agnes-Heineken-Straße,17,0,0,30,42
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Kattenturm-Mitte,18,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Gröpelingen,0,0,0,0,56
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Karl-Bröger-Straße,1,1,1,120,132
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen DIAKO Bremen,2,1,1,196,208
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Am Fuchsberg,3,1,1,269,281
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Bahnhof Oslebshausen,4,1,1,268,280
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Ritterhuder Heerstraße,5,1,1,318,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Dohlenstraße,6,1,1,318,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Von-Ossietzky-Straße,7,1,1,330,342
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Mittelsbürener Landstraße,8,1,1,348,360
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Auf den Delben,9,1,1,348,360
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Gottlieb-Daimler-Straße,10,1,1,348,348
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Stahlwerk Tor 2,11,1,1,324,336
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Gottlieb-Daimler-Straße,12,1,1,330,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Stahlwerk Tor 3,13,1,1,324,336
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Riespot,14,1,1,330,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Hauptbahnhof,0,0,1,0,150
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Am Wall,1,1,1,186,186
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Am Brill (Bgm.-Smidt-Straße),2,1,1,185,185
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Westerstraße,3,1,1,224,224
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Bahnhof Neustadt,5,1,1,260,260
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Alter Schutzdeich,8,1,1,215,215
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Visbeker Straße,9,1,1,185,185
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Reedeich-Nord,10,1,1,216,216
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Neustädter Hafen,12,1,1,186,186
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Georg-Henschel-Straße,13,1,1,216,216
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Franz-Stickan-Straße,14,1,1,127,127
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen GVZ-Zentralbereich,0,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Ludwig-Erhard-Straße,2,0,0,-30,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Reedeich-Nord,5,0,0,6,39
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Visbeker Straße,6,0,0,36,36
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Alter Schutzdeich,7,0,0,-2,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Auf dem Bohnenkamp,9,0,0,-40,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Am Gaswerkgraben,10,0,0,-30,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Bahnhof Neustadt,11,0,0,-55,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Hohentorsplatz,12,0,0,-92,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Westerstraße,13,1,1,71,71

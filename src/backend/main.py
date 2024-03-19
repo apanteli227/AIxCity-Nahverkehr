@@ -80,7 +80,7 @@ def save_traffic_data(traffic_data_bsag_updates):
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
-        max = i
+        max = i 
     dbc.disconnect(conn)
     toc = time.perf_counter()
     print(prefix + f"Daten ({max}) erfolgreich in {toc - tic:0.2f} Sekunden hochgeladen...")
@@ -147,44 +147,21 @@ async def run_task_with_interval(task_function, interval_seconds):
 
 
 async def run_transit_task():
-    await run_transit_data_async()
-
-
-async def run_transit_data_async():
-    df = get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")
-    time.sleep(60)
-    save_transit_data(df)
+    await save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
 
 
 async def run_traffic_task():
-    await run_traffic_data_async()
-
-
-async def run_traffic_data_async():
-    traffic_data = get_traffic_dataframe(
+    await save_traffic_data(get_traffic_dataframe(
         "https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key"
-        "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point=")
-    time.sleep(60)
-    if traffic_data is not None and not traffic_data.empty:
-       save_traffic_data(traffic_data)
-    else:
-       logging.error("Traffic data is empty or None.")
+        "=VogM4y4rQiI8XWQIAZJMlcqGIqGn53tr&point="))
 
 
 async def run_events_task():
-    await run_events_data_async()
-
-
-async def run_events_data_async():
-    save_events_data(get_events_dataframe())
+    await save_events_data(get_events_dataframe())
 
 
 async def run_weather_task():
-    await run_weather_data_async()
-
-
-async def run_weather_data_async():
-    save_weather_data(
+    await save_weather_data(
         get_weather_dataframe("http://api.openweathermap.org/data/2.5/weather", "131b00cd42bee49451a4c69d496797e1",
                               "Bremen"))
 
