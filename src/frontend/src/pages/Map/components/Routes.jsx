@@ -4,16 +4,19 @@ import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
 
+
 function Routes() {
-  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } =
+  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute  } =
     useRouteContext();
   const { nightMode } = useNightModeContext();
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetchRoutesAndStops();
         const routesData = response.data.elements;
+        console.log(selectedRoute);
         drawRoutes(routesData);
       } catch (error) {
         console.error("Error:", error);
@@ -21,7 +24,7 @@ function Routes() {
     };
   
     fetchData();
-  }, [nightMode, selectedRoute]);  // selectedRoute zu den Abhängigkeiten hinzugefügt
+  }, [selectedRoute, nightMode]);  // selectedRoute zu den Abhängigkeiten hinzugefügt
   
 
   const drawRoutes = (tramRoutesData) => {
@@ -73,26 +76,23 @@ function Routes() {
     const filteredRoutes = routes.filter((route) =>
       nightMode ? route.isNight : !route.isNight
     );
+    
     setTramRoutes(filteredRoutes);
   };
+  
   const handleRouteClick = (routeId) => {
-    console.log(
-      "Route clicked:",
-      routeId,
-      "Color:",
-      tramRoutes.find((route) => route.id === routeId)?.color
-    );
-    console.log("Selected route has changed:", selectedRoute);
-    setSelectedRoute(routeId === selectedRoute ? null : routeId);
+    console.log("Route clicked, updating selectedRoute to:", routeId);
+
+    setSelectedRoute(selectedRoute === routeId ? null : routeId);
   };
 
   return (
     <div>
-      {tramRoutes.map((route, index) => (
+      {tramRoutes.map((route, index) => {console.log(route.id );(
         <Polyline
-          key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
+          key={`${route.id}_${index}`}
           positions={route.geometry}
-          color={selectedRoute === null || selectedRoute === route.id ? route.color : "grey"}
+          color={selectedRoute && selectedRoute !== route.id ? "grey" : route.color}
           weight={4}
           eventHandlers={{
             click: () => handleRouteClick(route.id),
@@ -100,9 +100,10 @@ function Routes() {
         >
           <Popup>{route.name}</Popup>
         </Polyline>
-      ))}
+      )})}
     </div>
   );
 }
 
 export default Routes;
+

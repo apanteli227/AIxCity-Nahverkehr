@@ -4,22 +4,19 @@ const RouteContext = createContext();
 
 export const useRouteContext = () => useContext(RouteContext);
 
-export default function RouteProvider({ children }) {
-  const [tramRoutes, setTramRoutes] = useState([]);
-  const [selectedRoute, setSelectedRoute] = useState(null); // Hinzufügen des selectedRoute Zustands
-
-  return (
-    <RouteContext.Provider value={{ tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute }}>
-      {children}
-    </RouteContext.Provider>
-  );
+function setColor() {
+    //color={selectedRoute && selectedRoute !== route.id ? "grey" : route.color}
+    
 }
-function useSelectedRoute() {
-  const [selectedRoute, setSelectedRoute] = useState(false);
 
-  const toggleSelectedRoute = () => {
-    setSelectedRoute(!selectedRoute);
-  };
+function createLines() {
+
+}
+
+function useSelectedRoute() {
+  const [selectedRoute, setSelectedRoute] = useState(null);
+  
+  
 
   return useMemo(
     () => ({
@@ -29,5 +26,18 @@ function useSelectedRoute() {
     [selectedRoute]
   );
 }
+
+export default function RouteProvider({ children }) {
+  const [tramRoutes, setTramRoutes] = useState([]);
+  const [selectedRoute, setSelectedRoute] = useState(null); // Hinzufügen des selectedRoute Zustands
+  return (
+    <RouteContext.Provider value={{ tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute }}>
+    {children}
+    </RouteContext.Provider>
+  );
+}
+
+
+  
 
 
