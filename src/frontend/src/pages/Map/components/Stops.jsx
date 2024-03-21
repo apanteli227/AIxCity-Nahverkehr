@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Circle, Popup } from "react-leaflet";
 import { useStopContext } from "../store/StopContext";
 import { fetchRoutesAndStops } from "../API";
-import { fetchCsvStops } from "../CSV";
+import csv from "../../../assets/stops_bremen.csv";
 import { useNightModeContext } from "../store/NightModeContext";
 
 const Stops = () => {
@@ -18,8 +18,7 @@ const Stops = () => {
         const response = await fetchRoutesAndStops();
         const routesData = response.data.elements;
         drawStops(routesData);
-        const csv = await fetchCsvStops();
-        const csvData = csv.data.split("\n").slice(1);
+        const csvData = csv.split("\n").slice(1);
         loadCsvStops(csvData);
       } catch (error) {
         console.error("Error:", error);
