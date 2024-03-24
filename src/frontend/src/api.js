@@ -11,7 +11,13 @@ export async function getStops() {
 }
 
 export async function getInterestingStatistics() {
-    return await axios.get(`${BASE_URL}/getCardsData`);
+    try {
+        const response = await axios.get(`${BASE_URL}/getCardsData`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching interesting statistics:', error);
+        throw error;
+    }
 }
 
 export async function getCustomStatistics(input) {
