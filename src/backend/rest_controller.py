@@ -65,9 +65,9 @@ async def read_data_lines():
 
 
 @app.get("/api/data/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
-async def read_data_delay_frequency(mode: str, mode_input: list, frequency: str, start_time: str, end_time: str):
+async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
-    mode_input_str = "', '".join(mode_input)
+    mode_input_str = mode_input.split(',')
 
     if frequency == "daily":
         query = f"SELECT DATE_TRUNC('day', start_time) AS date, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('day', start_time);"
@@ -80,28 +80,29 @@ async def read_data_delay_frequency(mode: str, mode_input: list, frequency: str,
 
 
 @app.get("/api/data/{mode}/{mode_input}/{start_time}/{end_time}")
-async def read_data_delay_rate(mode: str, mode_input: list, start_time: str, end_time: str):
+async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
 
-    mode_input_str = "', '".join(mode_input)
+    mode_input_str = mode_input.split(',')
     query = f"SELECT SUM(departure_delay) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
 
     return await read_data(query)
 
 
 @app.get("/api/data/{statistic}/{mode}/{mode_input}/{aggregate}/{start_time}/{end_time}")
-async def read_data_arrival_departure_delay(mode: str, mode_input: list, aggregate: str, statistic: str, start_time: str, end_time: str):
+async def read_data_arrival_departure_delay(mode: str, mode_input: str, aggregate: str, statistic: str,
+                                            start_time: str, end_time: str):
     mode_str = get_mode(mode)
     aggregate_str = get_aggregate(aggregate)
     statistic = get_statistic(statistic)
 
-    mode_input_str = "', '".join(mode_input)
+    mode_input_str = mode_input.split(',')
     query = f"SELECT {aggregate_str}{statistic} FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
     # todo: time format converter function, if needed
     return await read_data(query)
 
 
-def get_statistic(statistic): #todo get frontend string names
+def get_statistic(statistic):  # todo get frontend string names
     if statistic == 'arrival':
         stat = 'arrival_delay'
     elif statistic == 'departure':
@@ -143,6 +144,7 @@ def read_data(query):
 
 
 all_stops = []
+
 
 def main():
     uvicorn.run(app, host="127.0.0.1", port=8080)
