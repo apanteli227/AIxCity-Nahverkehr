@@ -1,0 +1,89 @@
+start_date,current_time,daytime,weekday,holiday,starting_stop_time,line,number_of_stops,direction,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Roland-Center,0,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Obervielander Straße,1,1,1,114,126
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Norderländer Straße,2,1,1,161,161
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Bardenflethstraße,3,1,1,173,179
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Solinger Straße,4,1,1,203,209
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Dortmunder Straße,5,1,1,197,197
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen BSAG-Zentrum,6,1,1,144,156
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Neuenlander Kämpe,7,1,1,125,137
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Flughafen,8,1,1,161,161
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Cornelius-Edzard-Straße,9,1,1,110,116
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Paul-Feller-Straße,10,1,1,104,104
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Arsterdamm,11,1,1,76,82
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Anna-Stiegler-Straße,13,1,1,100,100
+2024-03-19,15:24:28,afternoon,Tuesday,0,14:59:00,52,16,Kattenturm / 29 Neue Vahr,Bremen Kattenturm-Mitte,14,1,0,64,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Kattenturm-Mitte,0,0,1,0,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Agnes-Heineken-Straße,1,1,1,64,70
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Bruchhauser Straße,2,0,1,58,70
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Hannoversche Straße,3,1,1,112,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Glockenstraße/Bf Hemelingen,4,1,1,106,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Christernstraße,5,1,1,94,106
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Christernstraße,6,1,1,76,82
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Sebaldsbrück (Bus+Tram),7,0,1,52,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Saarstraße,8,1,1,76,82
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Osterholzer Friedhof,9,1,1,64,76
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Mercedes-Benz Tor 7,10,0,1,58,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Mercedes-Benz Tor 8,11,1,1,70,76
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Hermann-Koenen-Straße,12,1,1,106,112
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Wilhelm-Busch-Weg,13,1,1,118,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Im Holter Feld,14,1,1,100,106
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Witzlebenstraße,15,1,1,100,106
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Carl-Goerdeler-Straße,16,1,1,112,118
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Berliner Freiheit,17,0,1,46,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:22:00,29,11,Neue Vahr-Nord,Bremen Friedrich-Stampfer-Straße,18,0,1,52,64
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Neue Vahr Nord,0,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Friedrich-Stampfer-Straße,1,0,0,-12,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Berliner Freiheit,2,1,1,61,85
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Carl-Goerdeler-Straße,3,1,1,61,61
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Witzlebenstraße,4,1,1,73,79
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Im Holter Feld,5,0,0,31,36
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Wilhelm-Busch-Weg,6,0,0,0,6
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Hermann-Koenen-Straße,7,0,0,12,18
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Mercedes-Benz Tor 8,8,0,0,24,24
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Mercedes-Benz Tor 7,9,0,0,0,6
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Osterholzer Friedhof,10,0,0,20,38
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Saarstraße,11,1,1,75,81
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Sebaldsbrück (Bus+Tram),12,0,0,28,52
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Christernstraße,13,0,0,19,42
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Glockenstraße/Bf Hemelingen,14,0,0,30,42
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Hannoversche Straße,15,0,0,36,48
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Bruchhauser Straße,16,0,0,24,36
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Agnes-Heineken-Straße,17,0,0,30,42
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,29,11,Kattenturm / 52 Huchting,Bremen Kattenturm-Mitte,18,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Gröpelingen,0,0,0,0,56
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Karl-Bröger-Straße,1,1,1,120,132
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen DIAKO Bremen,2,1,1,196,208
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Am Fuchsberg,3,1,1,269,281
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Bahnhof Oslebshausen,4,1,1,268,280
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Ritterhuder Heerstraße,5,1,1,318,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Dohlenstraße,6,1,1,318,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Von-Ossietzky-Straße,7,1,1,330,342
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Mittelsbürener Landstraße,8,1,1,348,360
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Auf den Delben,9,1,1,348,360
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Gottlieb-Daimler-Straße,10,1,1,348,348
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Stahlwerk Tor 2,11,1,1,324,336
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Gottlieb-Daimler-Straße,12,1,1,330,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Stahlwerk Tor 3,13,1,1,324,336
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:04:00,81,15,Industriehäfen,Bremen Riespot,14,1,1,330,330
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Hauptbahnhof,0,0,1,0,150
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Am Wall,1,1,1,186,186
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Am Brill (Bgm.-Smidt-Straße),2,1,1,185,185
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Westerstraße,3,1,1,224,224
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Bahnhof Neustadt,5,1,1,260,260
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Alter Schutzdeich,8,1,1,215,215
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Visbeker Straße,9,1,1,185,185
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Reedeich-Nord,10,1,1,216,216
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Neustädter Hafen,12,1,1,186,186
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Georg-Henschel-Straße,13,1,1,216,216
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:00:00,63,23,Bremen GVZ-Zentralbereich,Bremen Franz-Stickan-Straße,14,1,1,127,127
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen GVZ-Zentralbereich,0,0,0,0,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Ludwig-Erhard-Straße,2,0,0,-30,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Reedeich-Nord,5,0,0,6,39
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Visbeker Straße,6,0,0,36,36
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Alter Schutzdeich,7,0,0,-2,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Auf dem Bohnenkamp,9,0,0,-40,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Am Gaswerkgraben,10,0,0,-30,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Bahnhof Neustadt,11,0,0,-55,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Hohentorsplatz,12,0,0,-92,0
+2024-03-19,15:24:28,afternoon,Tuesday,0,15:02:00,63,23,Bremen Hauptbahnhof,Bremen Westerstraße,13,1,1,71,71

@@ -20,8 +20,10 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     - stop_times_bsag_updates (DataFrame): DataFrame mit den Verspätungsdaten und relevanten Attributen.
     """
     # Konfiguriere das Logging
+    CORANGE = '\033[33m'
+    CEND = '\033[0m'
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
+    logging.info(CORANGE + "[TRANSIT] " + CEND + "Starte Prozess zur Ermittlung der GTFS-Realtime Daten...")
 
     # Abrufen der GTFS-Realtime Daten
     gtfsr_data = pt_fetch.get_gtfsr_data(gtfsr_url)
@@ -34,7 +36,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
 
     # Erstellen der DataFrames zum späteren Filtern Bremer Linien und der Übersetzung der IDs
     result_dict_with_dataframes = transl.process_gtfs_data()
-    logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
+    # logging.info("GTFS-Textdateien gefunden und Verarbeitungsprozess gestartet...")
 
     # Zugriff auf die benötigten DataFrames
     stops_bremen_df = result_dict_with_dataframes["stops_bremen_df"]
@@ -55,7 +57,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
 
     # Anpassen der Datumsformat der Spalte Datum_Feiertag in holidays_bremen_df
     holidays_bremen_df["holiday_date"] = pd.to_datetime(holidays_bremen_df["Datum_Feiertag"],
-                                                          format="%d.%m.%Y").dt.strftime("%Y-%m-%d")
+                                                        format="%d.%m.%Y").dt.strftime("%Y-%m-%d")
 
     # Merge von stop_times_bsag_updates und relevant_routes_stops_bsag, um die Anzahl der Haltestellen zu erhalten
     stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, relevant_routes_stops_bsag, how='inner',
@@ -67,26 +69,31 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Merge von stop_times_bsag_updates und holidays_bremen_df, um die Feiertage zu erhalten
     stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='start_date',
                                        right_on='holiday_date', validate='many_to_one')
-    
+
     # Umbenennen der Spalten in verständliche Namen
     stop_times_bsag_updates["starting_stop_time"] = stop_times_bsag_updates['StartTime']
     stop_times_bsag_updates["direction"] = stop_times_bsag_updates['trip_headsign']
-    stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates['DepartureDelay']
-    stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates['ArrivalDelay']
+    stop_times_bsag_updates["departure_delay"] = stop_times_bsag_updates['DepartureDelay']
+    stop_times_bsag_updates["arrival_delay"] = stop_times_bsag_updates['ArrivalDelay']
     stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates['number_stops']
-    stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates['number_building_sites']
     stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates['StopSequence']
 
     # Wandle die Spalte Anzahl an Baustellen und Anzahl an Haltestellen in Integer um
     stop_times_bsag_updates["number_of_stops"] = stop_times_bsag_updates["number_of_stops"].fillna(0).astype(int)
-    stop_times_bsag_updates["number_of_building_sites"] = stop_times_bsag_updates["number_of_building_sites"].fillna(0).astype(int)
 
     # Fehlende Werte in stop_sequence mit 0 ersetzen und Werte in int umwandeln
     stop_times_bsag_updates["stop_sequence"] = stop_times_bsag_updates["stop_sequence"].fillna(0).astype(int)
 
-    # Wandle die Werte in Spalte arrival_delay_sec und departure_delay_sec in 1 um, enn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
-    stop_times_bsag_updates["arrival_delay_sec"] = stop_times_bsag_updates["arrival_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
-    stop_times_bsag_updates["departure_delay_sec"] = stop_times_bsag_updates["departure_delay_sec"].apply(lambda x: 1 if x >= 60 else 0)
+    # Wandle die Werte in Spalte arrival_delay und departure_delay in 1 um, wenn Wert größer als 60 ist, sonst in 0 umwandeln (Klassifikation)
+    stop_times_bsag_updates["arrival_delay_category"] = stop_times_bsag_updates["arrival_delay"].apply(
+        lambda x: 1 if x >= 60 else 0)
+    stop_times_bsag_updates["departure_delay_category"] = stop_times_bsag_updates["departure_delay"].apply(
+        lambda x: 1 if x >= 60 else 0)
+
+    # Beibehaltung der Verspätung in Sekundenangabe
+    stop_times_bsag_updates["arrival_delay_seconds"] = stop_times_bsag_updates["arrival_delay"]
+    stop_times_bsag_updates["departure_delay_seconds"] = stop_times_bsag_updates["departure_delay"]
+
 
     # Aktuelle Uhrzeit
     stop_times_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
@@ -95,7 +102,8 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates["weekday"] = datetime.now().strftime("%A")
 
     # Konvertiere die Spalte 'current_time' in ein datetime-Format zur Bestimmung der Tageszeit
-    stop_times_bsag_updates['current_time_for_daytime'] = pd.to_datetime(stop_times_bsag_updates['current_time'], format='%H:%M:%S')
+    stop_times_bsag_updates['current_time_for_daytime'] = pd.to_datetime(stop_times_bsag_updates['current_time'],
+                                                                         format='%H:%M:%S')
 
     # Füge die Spalte 'daytime' hinzu (Tageszeit)
     stop_times_bsag_updates['daytime'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(map_daytime)
@@ -106,7 +114,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates["stop"] = stop_times_bsag_updates['StopId'].map(
         stops_bremen_df.set_index('stop_id')['stop_name'])
 
-    logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
+    # logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
 
     # Entfernen der nicht benötigten Spalten
     columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
@@ -116,8 +124,8 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
 
     # Reihenfolge der Spalten umändern
     columns_order = ['start_date', 'current_time', 'daytime', 'weekday', 'holiday', 'starting_stop_time',
-                     'line', 'number_of_stops', 'direction', 'number_of_building_sites', 'stop', 'stop_sequence',
-                     'arrival_delay_sec', 'departure_delay_sec']
+                     'line', 'number_of_stops', 'direction', 'stop', 'stop_sequence',
+                     'arrival_delay_category', 'departure_delay_category', 'arrival_delay_seconds','departure_delay_seconds']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
@@ -141,10 +149,10 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
         | ((stop_times_bsag_updates["start_date"] < actual_date_str) &
            (stop_times_bsag_updates["starting_stop_time"] >= actual_time_str))
         ]
-    logging.info("Prozess zur Ermittlung der GTFS-Realtime Daten abgeschlossen. Datei wurde generiert!")
+    logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    #stop_times_bsag_updates.to_csv("stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 
@@ -161,8 +169,11 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     - merged_df (DataFrame): DataFrame mit StopTimeUpdates, die in der trips_bsag_df enthalten sind.
     """
     # Inner Join zwischen stop_time_updates_df und trips_bsag_df
-    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate='many_to_many')
+    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate="many_to_many")
+    if merged_df.empty:
+        logging.warning("Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
     return merged_df
+
 
 def map_daytime(hour):
     """
