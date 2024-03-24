@@ -53,7 +53,7 @@ def extract_stop_time_updates(gtfsr_data) -> list:
                     stop_info = create_stop_info(stop_update, trip_update, start_datetime)
                     stop_time_updates.append(stop_info)
 
-    logging.info("VBN-Verspätungsdaten wurden erfolgreich über den Link ermittelt!")
+    #logging.info("VBN-Verspätungsdaten wurden erfolgreich über den Link ermittelt!")
     return stop_time_updates
 
 def create_stop_info(stop_update, trip_update, start_datetime) -> dict:

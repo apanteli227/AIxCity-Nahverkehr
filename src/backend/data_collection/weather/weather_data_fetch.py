@@ -46,8 +46,10 @@ def get_weather_dataframe(url, api_key, city):
     """
 
     # Konfiguriere das Logging
+    CCYAN = '\033[36m'
+    CEND = '\033[0m'
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starte Prozess zur Ermittlung der Bremer Wetterdaten...")
+    logging.info(CCYAN + "[WEATHER] " + CEND + "Starte Prozess zur Ermittlung der Wetterdaten...")
 
     # Abrufen der Funktion zur Ermittlung Wetterdaten
     weather_data = get_weather_data(url, api_key, city)
@@ -81,8 +83,8 @@ def get_weather_dataframe(url, api_key, city):
         })
 
         # Optional: Speichern des Wetter-DataFrames als CSV-Datei
-        #weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
-        logging.info("Wetterdaten erfolgreich ermittelt und gespeichert!")
+        # weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
+        logging.info(CCYAN + "[WEATHER] " + CEND + "Daten erfolgreich ermittelt!")
         return weather_bremen_df
     else:
-        logging.warning("Prozess zur Ermittlung der Bremer Wetterdaten fehlgeschlagen!")
+        logging.warning(CCYAN + "[WEATHER] " + CEND + "Prozess zur Ermittlung der Bremer Wetterdaten fehlgeschlagen!")

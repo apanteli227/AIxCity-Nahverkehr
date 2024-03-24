@@ -4,10 +4,10 @@ import psycopg2
 
 # DB connection parameters
 param_dic = {
-    "host": "aixcity-nahverkehr-db-1",
+    "host": "database",
     "port": "5432",
-    "dbname": "bsag_data",
-    "user": "postgres",
+    "dbname": "aixcity_nahverkehr",
+    "user": "aixcity-user",
     "password": "password"
 }
 
