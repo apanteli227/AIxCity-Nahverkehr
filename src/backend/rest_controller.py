@@ -23,22 +23,32 @@ class Item(BaseModel):
     description: str = None
 
 
+@app.get("/getCardsData")
+async def read_data_cards():
+    return [
+        await read_data_last_7_days_delay(),
+        await read_data_weekend_day_delay(),
+        await read_data_public_holiday_delay(),
+        await read_data_football_match_day_delay(),
+    ]
+
+
 # durchschn. Verspätungen in den letzten 7 Tagen
-@app.get("/api/data/interesting_statistic_last_7_days")
+@app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
     query = "SELECT AVG(departure_delay) FROM bsag_data WHERE start_date >= CURRENT_DATE - INTERVAL '1 week' AND start_date < CURRENT_DATE;"
     return read_data(query)
 
 
 # durchschn. Verspätung an Wochenendtagen
-@app.get("/api/data/interesting_statistic_weekend")
+@app.get("/interesting_statistic_weekend")
 async def read_data_weekend_day_delay():
     query = "SELECT AVG(arrival_delay) FROM bsag_data WHERE weekday IN ('Saturday', 'Sunday');"
     return read_data(query)
 
 
 # durchschn. Verspätung an Feiertagen
-@app.get("/api/data/interesting_statistic_public_holiday")
+@app.get("/interesting_statistic_public_holiday")
 async def read_data_public_holiday_delay():
     query = "SELECT AVG(arrival_delay) FROM bsag_data WHERE holiday = 1;"
     return read_data(query)
@@ -46,25 +56,25 @@ async def read_data_public_holiday_delay():
 
 # durchschn. Verspätungen an einem (noch kommenden) zufälligen Heimspieltag von Werder Bremen
 # Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
-@app.get("/api/data/interesting_statistic_football_match_day")
+@app.get("/interesting_statistic_football_match_day")
 async def read_data_football_match_day_delay():
     query = "SELECT AVG(departure_delay) FROM bsag_data WHERE start_date = '2024-03-30';"
     return read_data(query)
 
 
-@app.get("/api/data/all_stops")
+@app.get("/all_stops")
 async def read_data_stops():
     query = "SELECT DISTINCT line FROM public.bsag_data"
     return read_data(query)
 
 
-@app.get("/api/data/all_lines")
+@app.get("/all_lines")
 async def read_data_lines():
     query = "SELECT DISTINCT stop FROM public.bsag_data"
     return read_data(query)
 
 
-@app.get("/api/data/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
+@app.get("/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
 async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
     mode_input_str = mode_input.split(',')
@@ -79,7 +89,7 @@ async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, 
     return await read_data(query)
 
 
-@app.get("/api/data/{mode}/{mode_input}/{start_time}/{end_time}")
+@app.get("/{mode}/{mode_input}/{start_time}/{end_time}")
 async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
 
@@ -89,7 +99,7 @@ async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_
     return await read_data(query)
 
 
-@app.get("/api/data/{statistic}/{mode}/{mode_input}/{aggregate}/{start_time}/{end_time}")
+@app.get("/{statistic}/{mode}/{mode_input}/{aggregate}/{start_time}/{end_time}")
 async def read_data_arrival_departure_delay(mode: str, mode_input: str, aggregate: str, statistic: str,
                                             start_time: str, end_time: str):
     mode_str = get_mode(mode)
@@ -146,6 +156,7 @@ def read_data(query):
 all_stops = []
 
 
+# only for testing purposes
 def main():
     uvicorn.run(app, host="127.0.0.1", port=8080)
 
@@ -153,4 +164,3 @@ def main():
 # Run the FastAPI app with Uvicorn
 if __name__ == "__main__":
     main()
-# todo change host
