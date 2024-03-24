@@ -2,8 +2,9 @@ import asyncio
 import logging
 import multiprocessing
 import subprocess
-
 import threading
+import time
+
 import schedule
 
 from data_collection.events.events_data_fetch import get_events_dataframe
@@ -11,7 +12,6 @@ from data_collection.public_transit.public_transit_data_cleaner import get_publi
 from data_collection.traffic.traffic_data_cleaner import get_traffic_dataframe
 from data_collection.weather.weather_data_fetch import get_weather_dataframe
 from persistence import database_controller as dbc
-import time
 
 lock = threading.Lock
 
@@ -193,7 +193,7 @@ async def main():
 
 def run_fastapi():
     # Run FastAPI application with Uvicorn
-    subprocess.run(["uvicorn", "rest_controller:app", "--host", "0.0.0.0", "--port", "8000"])
+    subprocess.run(["uvicorn", "rest_controller:app", "--host", "134.102.23.195", "--port", "8079"])
 
 
 def run_data_collection():
