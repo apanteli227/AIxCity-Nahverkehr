@@ -89,11 +89,11 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
         lambda x: 1 if x >= 60 else 0)
     stop_times_bsag_updates["departure_delay_category"] = stop_times_bsag_updates["departure_delay"].apply(
         lambda x: 1 if x >= 60 else 0)
-    
+
     # Beibehaltung der Verspätung in Sekundenangabe
     stop_times_bsag_updates["arrival_delay_seconds"] = stop_times_bsag_updates["arrival_delay"]
     stop_times_bsag_updates["departure_delay_seconds"] = stop_times_bsag_updates["departure_delay"]
-    
+
 
     # Aktuelle Uhrzeit
     stop_times_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
@@ -152,7 +152,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 

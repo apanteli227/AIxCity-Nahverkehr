@@ -22,4 +22,3 @@ EXPOSE 8079
 
 # Define the command to run the data collection script
 CMD ["python", "main.py"]
-# CMD ["uvicorn", "dashboard.main:app", "--host", "0.0.0.0", "--port", "8000"]

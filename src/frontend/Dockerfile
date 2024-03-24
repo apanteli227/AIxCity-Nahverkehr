@@ -1,5 +1,5 @@
 # Use an official Node.js image as a base image
-FROM node:21-alpine
+FROM node:18-alpine
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,16 +8,17 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci --only=production
 
 # Copy the rest of the application code to the container
-COPY dashboard .
+COPY . .
 
-# Build the application
+# Build the application with Vite
 RUN npm run build
 
 # Expose port 3000
 EXPOSE 3000
 
 # Define the command to run the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
+
