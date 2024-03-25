@@ -5,7 +5,7 @@ import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
 
 function Routes() {
-  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } =
+  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute  } =
     useRouteContext();
   const { nightMode } = useNightModeContext();
 
@@ -14,6 +14,7 @@ function Routes() {
       try {
         const response = await fetchRoutesAndStops();
         const routesData = response.data.elements;
+        console.log(selectedRoute);
         drawRoutes(routesData);
       } catch (error) {
         console.error("Error:", error);
