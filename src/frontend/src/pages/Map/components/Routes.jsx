@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Polyline, Popup } from "react-leaflet";
-import { useRouteContext } from "../store/RouteContext";
+import RouteProvider, { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
 
@@ -16,7 +16,7 @@ function Routes() {
         const response = await fetchRoutesAndStops();
         const routesData = response.data.elements;
         drawRoutes(routesData);
-        console.log(selectedRoute, "hätte neu gezecihnet werden müssen");
+        console.log(selectedRoute, "HÄTTE neu gezeichnet werden müssen");
       } catch (error) {
         console.error("Error:", error);
       }
@@ -72,7 +72,7 @@ function Routes() {
         }
       });
     };
-
+    
     tramRoutesData.forEach((element) => {
       if (element.type === "relation") {
         const tags = element.tags || {};
@@ -108,22 +108,26 @@ function Routes() {
   };
 
   return (
-    <div>
-      {tramRoutes.map((route, index) => (
-        <Polyline
-          key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
-          positions={route.geometry}
-          color={route.color
-          }
-          weight={4}
-          eventHandlers={{
-            click: () => handleRouteClick(route.id),
-          }}
-        >
-          <Popup>{route.name}</Popup>
-        </Polyline>
-      ))}
-    </div>
+<RouteProvider>
+{selectedRoute && (
+  <div>
+    {tramRoutes.map((route, index) => (
+      <Polyline
+        key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
+        positions={route.geometry}
+        color={route.color}
+        weight={4}
+        eventHandlers={{
+          click: () => handleRouteClick(route.id),
+        }}
+      >
+        <Popup>{route.name}</Popup>
+      </Polyline>
+    ))}
+  </div>
+)}
+
+</RouteProvider>
   );
 }
 
