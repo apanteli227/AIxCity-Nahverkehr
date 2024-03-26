@@ -13,8 +13,8 @@ export default function BasicTabs() {
     const [stops, setStops] = useState([]);
     const [formData, setFormData] = useState({
         mode: value === 0 ? "linien" : value === 1 ? "haltestellen" : "gesamt",
-        startDateTime: "",
-        endDateTime: "",
+        startDateAndTime: "",
+        endDateAndTime: "",
         selectedItems: [],
         selectedStatistic: "",
         selectedRadio: "",
@@ -89,7 +89,7 @@ export default function BasicTabs() {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    value={formData.startDateTime}
+                    value={formData.startDateAndTime}
                     onChange={(e) => handleInputChange("startDateTime", e.target.value)}
                 />
                 <TextField
@@ -100,7 +100,7 @@ export default function BasicTabs() {
                     InputLabelProps={{
                         shrink: true,
                     }}
-                    value={formData.endDateTime}
+                    value={formData.endDateAndTime}
                     onChange={(e) => handleInputChange("endDateTime", e.target.value)}
                 />
 
