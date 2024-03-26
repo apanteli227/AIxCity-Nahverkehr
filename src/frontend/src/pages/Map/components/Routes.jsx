@@ -9,24 +9,26 @@ function Routes() {
     useRouteContext();
   const { nightMode } = useNightModeContext();
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetchRoutesAndStops();
         const routesData = response.data.elements;
-        console.log(selectedRoute);
         drawRoutes(routesData);
+        console.log(selectedRoute, "hätte neu gezecihnet werden müssen");
       } catch (error) {
         console.error("Error:", error);
       }
     };
-
+    
     fetchData();
+    
   }, [nightMode, selectedRoute]);
 
   const drawRoutes = (tramRoutesData) => {
     const routes = [];
-
+   
     const isValidRoute = (tags) => {
       return (
         tags.type === "route" && (tags.route === "tram" || tags.route === "bus")
@@ -50,11 +52,23 @@ function Routes() {
           isNight = true;
         }
       }
-
+      const checkColor = (route) => {
+        if (selectedRoute === null) {
+          return color || route.tags.colour || "blue";
+        }
+        else {
+          if (selectedRoute === route.id) {
+            return color || route.tags.colour || "blue";
+          }
+          else {
+            return "grey";
+          }
+        }
+      }
       members.forEach((member) => {
         if (member.type === "way" && member.role === "") {
           const routeGeometry = member.geometry || [];
-          pushRoute(id, color, tags.name, routeGeometry, isNight);
+          pushRoute(id, checkColor(member), tags.name, routeGeometry, isNight);
         }
       });
     };
@@ -73,8 +87,15 @@ function Routes() {
     const filteredRoutes = routes.filter((route) =>
       nightMode ? route.isNight : !route.isNight
     );
+
+    
+    console.log("setTramRoutes wird aufgerufen mit:", filteredRoutes);
     setTramRoutes(filteredRoutes);
+    console.log("setTramRoutes Aufruf abgeschlossen.");
   };
+
+
+
   const handleRouteClick = (routeId) => {
     console.log(
       "Route clicked:",
@@ -92,10 +113,7 @@ function Routes() {
         <Polyline
           key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
           positions={route.geometry}
-          color={
-            selectedRoute === null || selectedRoute === route.id
-              ? route.color
-              : "grey"
+          color={route.color
           }
           weight={4}
           eventHandlers={{

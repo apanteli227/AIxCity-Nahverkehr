@@ -5,14 +5,12 @@ const RouteContext = createContext();
 export const useRouteContext = () => useContext(RouteContext);
 
 function useSelectedRoute() {
-  const [selectedRoute, setSelectedRoute] = useState(null);
-  
-  
+  const [selectedRoute, setSelectedRoute] = useState(false);
 
   return useMemo(
     () => ({
       selectedRoute,
-      toggleSelectedRoute,
+      setSelectedRoute,
     }),
     [selectedRoute]
   );
@@ -21,8 +19,9 @@ function useSelectedRoute() {
 export default function RouteProvider({ children }) {
   const [tramRoutes, setTramRoutes] = useState([]);
   const [selectedRoute, setSelectedRoute] = useState(null); // Hinzufügen des selectedRoute Zustands
+  const selectedRouteValue = useSelectedRoute();
   return (
-    <RouteContext.Provider value={{ tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute }}>
+    <RouteContext.Provider value={{ tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute, selectedRouteValue }}>
     {children}
     </RouteContext.Provider>
   );
