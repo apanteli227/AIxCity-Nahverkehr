@@ -80,6 +80,9 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     # Füge die Spalte 'daytime' hinzu (Tageszeit)
     traffic_data_bsag_updates['daytime'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.hour.apply(pt_cleaner.map_daytime)
 
+    # Füge die Spalte 'dayhour' hinzu (Stunde des Tages)
+    traffic_data_bsag_updates['dayhour'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.hour.apply(pt_cleaner.assign_hour_value)
+
     # Entferne die Spalte 'current_time_for_daytime'
     traffic_data_bsag_updates.drop(columns=["current_time_for_daytime"], inplace=True)
 

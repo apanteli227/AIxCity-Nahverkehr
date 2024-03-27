@@ -82,7 +82,7 @@ def get_weather_dataframe(url, api_key, city):
             'city': [city],
             'date': [datetime.now().strftime("%Y-%m-%d")],
             'time': [datetime.now().strftime("%H:%M:%S")],
-            'daytime': [wdt.assign_hour_value()],
+            'dayhour': [wdt.assign_hour_value()],
             'temperature_celsius': [temperature],
             'humidity_percentage': [humidity],
             'weather_description': [transformed_description],
@@ -91,7 +91,7 @@ def get_weather_dataframe(url, api_key, city):
         })
 
         # Optional: Speichern des Wetter-DataFrames als CSV-Datei
-        weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
+        #weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
         logging.info(CCYAN + "[WEATHER] " + CEND + "Daten erfolgreich ermittelt!")
         return weather_bremen_df
     else:

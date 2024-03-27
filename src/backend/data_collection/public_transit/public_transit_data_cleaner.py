@@ -94,7 +94,6 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates["arrival_delay_seconds"] = stop_times_bsag_updates["arrival_delay"]
     stop_times_bsag_updates["departure_delay_seconds"] = stop_times_bsag_updates["departure_delay"]
 
-
     # Aktuelle Uhrzeit
     stop_times_bsag_updates["current_time"] = datetime.now().time().strftime("%H:%M:%S")
 
@@ -108,23 +107,24 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Füge die Spalte 'daytime' hinzu (Tageszeit)
     stop_times_bsag_updates['daytime'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(map_daytime)
 
+    # Füge die Spalte 'dayhour' hinzu (Stundenwert)
+    stop_times_bsag_updates['dayhour'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(assign_hour_value)
+
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
     stop_times_bsag_updates["line"] = stop_times_bsag_updates['route_id'].map(
         routes_bsag_df.set_index('route_id')['route_short_name'])
     stop_times_bsag_updates["stop"] = stop_times_bsag_updates['StopId'].map(
         stops_bremen_df.set_index('stop_id')['stop_name'])
 
-    # logging.info("Filterungsprozess der GTFS-Realdaten gestartet...")
-
     # Entfernen der nicht benötigten Spalten
-    columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship', 'StopId',
+    columns_to_remove = ['TripId', 'RouteId', 'trip_id', 'route_id', 'ScheduleRelationship',
                          'ScheduleRelationshipStop', 'DepartureDelay', 'ArrivalDelay', 'trip_id', 'route_id',
                          'trip_headsign', 'trip_headsign', 'StartTime', 'Datum_Feiertag', 'current_time_for_daytime']
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['start_date', 'current_time', 'daytime', 'weekday', 'holiday', 'starting_stop_time',
-                     'line', 'number_of_stops', 'direction', 'stop', 'stop_sequence',
+    columns_order = ['start_date', 'current_time', 'daytime', 'dayhour','weekday', 'holiday', 'starting_stop_time',
+                     'line', 'number_of_stops', 'direction', 'StopId', 'stop', 'stop_sequence',
                      'arrival_delay_category', 'departure_delay_category', 'arrival_delay_seconds','departure_delay_seconds']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
@@ -156,6 +156,8 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     return stop_times_bsag_updates
 
 
+
+
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     """
     Die Funktion entfernt alle StopTime-Einträge, die nicht in der trips_bsag_df enthalten sind.
@@ -174,16 +176,15 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
         logging.warning("Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
     return merged_df
 
-
 def map_daytime(hour):
     """
-    Diese Funktion ordnet die aktuelle Uhrzeit einer Tageszeit zu.
+    Diese Funktion ordnet die aktuelle Uhrzeit einer Stunde zu.
     
     Parameters:
     - hour (int): Stunde der aktuellen Uhrzeit.
 
     Returns:
-    - daytime (str): Tageszeit.
+    - daytime (int): Stundenwert.
     """
     if 6 <= hour < 10:
         return "morning"
@@ -197,3 +198,42 @@ def map_daytime(hour):
         return "evening"
     else:
         return 'night'
+
+def assign_hour_value(hour):
+    """
+    Diese Funktion bestimmt die aktuelle Stunde und weist jedem Stundenbereich einen Zahlenwert zu.
+    
+    Returns:
+    - int: Der Zahlenwert entsprechend der aktuellen Stunde.
+    """
+
+    # Dictionary mit Zuordnungen von Stunden zu Zahlenwerten
+    hour_mapping = {
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9,
+        10: 10,
+        11: 11,
+        12: 12,
+        13: 13,
+        14: 14,
+        15: 15,
+        16: 16,
+        17: 17,
+        18: 18,
+        19: 19,
+        20: 20,
+        21: 21,
+        22: 22,
+        23: 23
+    }
+    
+    # Den Zahlenwert für die aktuelle Stunde aus dem Dictionary abrufen
+    return hour_mapping[hour]
