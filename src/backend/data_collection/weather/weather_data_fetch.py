@@ -61,6 +61,8 @@ def get_weather_dataframe(url, api_key, city):
         humidity = weather_data['main']['humidity']
         description = weather_data['weather'][0]['description']
 
+        
+
         # Prüfen, ob Winddaten verfügbar sind
         if 'wind' in weather_data:
             wind_speed = weather_data['wind']['speed']
