@@ -124,8 +124,8 @@ def save_weather_data(weather_bremen_df):
     max = 0
     for i in weather_bremen_df.index:
         vals = [weather_bremen_df.at[i, col] for col in list(weather_bremen_df.columns)]
-        query = """INSERT INTO public.weather_data (city,date,time,temperature_celsius,humidity_percentage,weather_description,wind_speed_m_s,weather_warning) 
-                            VALUES ('%s', '%s', '%s', %s, %s, '%s', %s, '%s');""" % (
+        query = """INSERT INTO public.weather_data (city,date,time,daytime,temperature_celsius,humidity_percentage,weather_description,wind_speed_m_s,weather_warning) 
+                            VALUES ('%s', '%s', '%s', %s ,%s, %s, '%s', %s, '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -133,7 +133,8 @@ def save_weather_data(weather_bremen_df):
             vals[4],
             vals[5],
             vals[6],
-            vals[7]
+            vals[7],
+            vals[8]
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
