@@ -20,13 +20,6 @@ def get_weather_warning() -> str:
         item = root.find(".//item")
 
         # Beschreibung der Wetterwarnung
-        #description = item.find("description").text
-
-        # Extrahiere den Text vor dem ersten <br>
-        #weather_warning = description.split('<br />')[0].strip()
-
-
-        # Beschreibung der Wetterwarnung
         description = item.find("title").text
 
         # Entferne DWD WETTERWARNUNG: aus dem Text
