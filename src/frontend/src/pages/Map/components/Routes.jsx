@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Polyline, Popup } from "react-leaflet";
 import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
 
 function Routes() {
-  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } =
-    useRouteContext();
+  const { setTramRoutes, setSelectedRoute } = useRouteContext();
   const { nightMode } = useNightModeContext();
+  const [dayRoutes, setDayRoutes] = useState([]);
+  const [nightRoutes, setNightRoutes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,10 +22,11 @@ function Routes() {
     };
 
     fetchData();
-  }, [nightMode, selectedRoute]);
+  }, []);
 
   const drawRoutes = (tramRoutesData) => {
-    const routes = [];
+    const dayRoutes = [];
+    const nightRoutes = [];
 
     const isValidRoute = (tags) => {
       return (
@@ -33,13 +35,18 @@ function Routes() {
     };
 
     const pushRoute = (id, color, name, routeGeometry, isNight) => {
-      routes.push({
+      const route = {
         id: id,
         geometry: routeGeometry,
         color: color,
         name: name,
         isNight: isNight,
-      });
+      };
+      if (isNight) {
+        nightRoutes.push(route);
+      } else {
+        dayRoutes.push(route);
+      }
     };
 
     const processMembers = (members, tags, color, id) => {
@@ -69,33 +76,26 @@ function Routes() {
       }
     });
 
-    const filteredRoutes = routes.filter((route) =>
-      nightMode ? route.isNight : !route.isNight
-    );
-    setTramRoutes(filteredRoutes);
+    setDayRoutes(dayRoutes);
+    setNightRoutes(nightRoutes);
+    setTramRoutes(nightMode ? nightRoutes : dayRoutes);
   };
+
   const handleRouteClick = (routeId) => {
-    console.log(
-      "Route clicked:",
-      routeId,
-      "Color:",
-      tramRoutes.find((route) => route.id === routeId)?.color
+    setSelectedRoute((prevRouteId) =>
+      routeId === prevRouteId ? null : routeId
     );
-    console.log("Selected route has changed:", selectedRoute);
-    setSelectedRoute(routeId === selectedRoute ? null : routeId);
   };
+
+  const routesToDisplay = nightMode ? nightRoutes : dayRoutes;
 
   return (
     <div>
-      {tramRoutes.map((route, index) => (
+      {routesToDisplay.map((route, index) => (
         <Polyline
           key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
           positions={route.geometry}
-          color={
-            selectedRoute === null || selectedRoute === route.id
-              ? route.color
-              : "grey"
-          }
+          color={route.color}
           weight={4}
           eventHandlers={{
             click: () => handleRouteClick(route.id),
