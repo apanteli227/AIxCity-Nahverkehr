@@ -1,2 +1,2 @@
-begin_date,begin_time,end_date,end_time,event_type,event_classification,current_time,current_date
-1970-01-01,0,1970-01-01,0,no_event,0,19:45:32,2024-02-16
+Unnamed: 7,begin_date,begin_time,end_date,end_time,event_type,event_classification,frequently_visited_stop,stop_id,current_time,current_date
+,1970-01-01,00:00,1970-01-01,00:00,no_event,0,no_stop,0.0,16:10:21,2024-03-24
