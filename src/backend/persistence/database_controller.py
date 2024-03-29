@@ -4,7 +4,7 @@ import psycopg2
 
 # DB connection parameters
 param_dic = {
-    "host": "database",
+    "host": "134.102.23.195",
     "port": "5432",
     "dbname": "aixcity_nahverkehr",
     "user": "aixcity-user",

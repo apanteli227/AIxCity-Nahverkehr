@@ -203,12 +203,13 @@ def run_data_collection():
 if __name__ == "__main__":
     # Create separate processes for running FastAPI and another script
     fastapi_process = multiprocessing.Process(target=run_fastapi)
-    other_script_process = multiprocessing.Process(target=run_data_collection)
+    #other_script_process = multiprocessing.Process(target=run_data_collection)
+    #todo comment out
 
     # Start both processes
     fastapi_process.start()
-    other_script_process.start()
+    #other_script_process.start()
 
     # Wait for both processes to finish
     fastapi_process.join()
-    other_script_process.join()
+    #other_script_process.join()

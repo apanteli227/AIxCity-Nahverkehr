@@ -18,12 +18,14 @@ app.add_middleware(
 
 
 # Pydantic model for the data
+# todo: do we need this?
 class Item(BaseModel):
     name: str
     description: str = None
+    # ...
 
 
-@app.get("/getCardsData")
+@app.get("/get_cards_data")
 async def read_data_cards():
     return [
         await read_data_last_7_days_delay(),
@@ -143,9 +145,12 @@ def get_mode(mode):
 def read_data(query):
     try:
         conn = dbc.connect(dbc.param_dic)
+        print(conn)
         cursor = conn.cursor()
+        print(cursor)
         cursor.execute(query)
         result = cursor.fetchall()
+        print(result)
         dbc.disconnect(conn)
         return result
 
