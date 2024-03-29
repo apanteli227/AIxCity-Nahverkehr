@@ -10,6 +10,8 @@ const Stops = () => {
   const { nightMode } = useNightModeContext();
 
   const [csvStops, setCsvStops] = useState([]);
+  const [dayStops, setDayStops] = useState([]);
+  const [nightStops, setNightStops] = useState([]);
   const circleRadius = 100;
 
   useEffect(() => {
@@ -17,7 +19,10 @@ const Stops = () => {
       try {
         const response = await fetchRoutesAndStops();
         const routesData = response.data.elements;
-        drawStops(routesData);
+        const { dayStops, nightStops } = drawStops(routesData);
+        setDayStops(dayStops);
+        setNightStops(nightStops);
+
         const csv = await fetchCsvStops();
         const csvData = csv.data.split("\n").slice(1);
         loadCsvStops(csvData);
@@ -27,10 +32,11 @@ const Stops = () => {
     };
 
     fetchData();
-  }, [nightMode]); // nightMode als Abhängigkeit hinzufügen
+  }, []); // Fetch nur einmalig ausführen, keine Abhängigkeit
 
   const drawStops = (tramRoutesData) => {
-    const stops = [];
+    const dayStops = [];
+    const nightStops = [];
 
     tramRoutesData.forEach((element) => {
       if (
@@ -43,20 +49,20 @@ const Stops = () => {
             const isNightStop =
               element.tags.by_night === "yes" ||
               element.tags.by_night === "only";
-            if ((nightMode && isNightStop) || (!nightMode && !isNightStop)) {
-              stops.push({ id: element.id, coords: [member.lat, member.lon] });
+            const stop = { id: element.id, coords: [member.lat, member.lon] };
+            if (isNightStop) {
+              nightStops.push(stop);
+            } else {
+              dayStops.push(stop);
             }
           }
         });
       }
     });
 
-    setTramStops(stops);
+    return { dayStops, nightStops };
   };
 
-  /*
-  CSV-Haltestellen laden und verarbeiten
-  */
   const loadCsvStops = (csvData) => {
     const uniqueStops = {};
 
@@ -156,39 +162,60 @@ const Stops = () => {
     return nearestStop;
   };
 
-  const groupedStops = groupNearbyStops(tramStops);
+  const groupedDayStops = groupNearbyStops(dayStops);
+  const groupedNightStops = groupNearbyStops(nightStops);
 
   return (
     <>
-      {groupedStops.map((group, index) => {
-        const center = getGroupCenter(group);
-        const nearestCsvStop = findNearestStop(center, csvStops);
-        const isNightStop = group.some(
-          (stop) => stop.byNight === "yes" || stop.byNight === "only"
-        );
-
-        if (!nightMode && isNightStop) {
-          return null; // Nichts rendern, wenn es kein Nachtmodus ist und die Haltestelle eine Nacht-Haltestelle ist
-        }
-
-        return (
-          <Circle
-            key={`stop_group_${index}_${center[0]}_${center[1]}`}
-            center={center}
-            radius={circleRadius / 3}
-            pathOptions={{
-              color: "black",
-              fillColor: "white",
-              fillOpacity: 0.4,
-              opacity: 0.5,
-            }}
-          >
-            <Popup>
-              {nearestCsvStop ? nearestCsvStop.stop_name : "Unknown Stop"}
-            </Popup>
-          </Circle>
-        );
-      })}
+      {nightMode
+        ? // Wenn Nachtmodus aktiv ist, rendern Sie die Nachtstops
+          groupedNightStops.map((group, index) => {
+            const center = getGroupCenter(group);
+            const nearestCsvStop = findNearestStop(center, csvStops);
+            return (
+              <Circle
+                key={`night_stop_group_${index}`}
+                center={center}
+                radius={circleRadius / 3}
+                pathOptions={{
+                  color: "black",
+                  fillColor: "white",
+                  fillOpacity: 0.4,
+                  opacity: 0.5,
+                }}
+              >
+                <Popup>
+                  {nearestCsvStop
+                    ? nearestCsvStop.stop_name
+                    : "Unknown Night Stop"}
+                </Popup>
+              </Circle>
+            );
+          })
+        : // Ansonsten rendern Sie die Tagesstops
+          groupedDayStops.map((group, index) => {
+            const center = getGroupCenter(group);
+            const nearestCsvStop = findNearestStop(center, csvStops);
+            return (
+              <Circle
+                key={`day_stop_group_${index}`}
+                center={center}
+                radius={circleRadius / 3}
+                pathOptions={{
+                  color: "black",
+                  fillColor: "white",
+                  fillOpacity: 0.4,
+                  opacity: 0.5,
+                }}
+              >
+                <Popup>
+                  {nearestCsvStop
+                    ? nearestCsvStop.stop_name
+                    : "Unknown Day Stop"}
+                </Popup>
+              </Circle>
+            );
+          })}
     </>
   );
 };
