@@ -29,7 +29,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     file_path = os.path.join(full_path, "stops.txt")
 
     # Pfad zur Datei stops_bremen.csv mit den Haltestellen in Bremen
-    stops_bremen = os.path.join(full_path, "stops_bremen.csv")
+    stops_bremen_linie_21 = os.path.join(full_path, "stops_bremen_linie_21.csv")
 
     # Pfad zur Datei not_used_stops.txt mit den Haltestellen, die nicht relevant für den Verkehr sind
     # Nicht relevant heißt, dass die Bestimmung der Verkehrsdaten hier keinen Sinn macht (da z.B. nur eine Bahn diese Haltestelle anfährt)
@@ -37,7 +37,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     not_used_stops = os.path.join(full_path, "not_used_stops.csv")
 
     # DataFrame aus der Datei stops_bremen.csv erstellen
-    stops_bremen_df = pd.read_csv(stops_bremen, sep=";")
+    stops_bremen_df = pd.read_csv(stops_bremen_linie_21, sep=";")
 
     # DataFrame aus der Datei stops.txt erstellen
     coordinates_df = pd.read_csv(file_path)
@@ -83,6 +83,9 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     # Füge die Spalte 'dayhour' hinzu (Stunde des Tages)
     traffic_data_bsag_updates['dayhour'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.hour.apply(pt_cleaner.assign_hour_value)
 
+    # Füge die Spalte 'dayquarter' hinzu - wichtig zum späteren Joinen mit Verspätungen (Viertel der Stunde)
+    traffic_data_bsag_updates['dayquarter'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.minute.apply(pt_cleaner.assign_quarter_value)
+
     # Entferne die Spalte 'current_time_for_daytime'
     traffic_data_bsag_updates.drop(columns=["current_time_for_daytime"], inplace=True)
 
@@ -120,7 +123,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
             print(prefix + "Fehler beim Abrufen der Verkehrsdaten.")
             break
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
-        #print(traffic_data_bsag_updates.loc[index])
+        print(traffic_data_bsag_updates.loc[index])
 
     # Setze das Optionssystem zurück
     pd.reset_option('mode.chained_assignment')
@@ -128,5 +131,5 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     print(prefix + "Daten erfolgreich ermittelt.")
 
     # Speichere das DataFrame in eine CSV-Datei
-    #traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
+    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
     return traffic_data_bsag_updates
