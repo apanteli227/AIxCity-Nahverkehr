@@ -113,8 +113,8 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Füge die Spalte 'dayquarter' hinzu (Viertel der Stunde) - wichtig zum Joinen mit Verkehrsdaten der Linie 21
     stop_times_bsag_updates['dayquarter'] = stop_times_bsag_updates['current_time_for_daytime'].dt.minute.apply(assign_quarter_value)
 
-    # Füge weitere Spalte 'is_weekday' hinzu, welche 1 wenn es ein Werktag ist einträgt, sonst 0
-    stop_times_bsag_updates["is_weekday"] = stop_times_bsag_updates["weekday"].apply(lambda x: 1 if x in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] else 0)
+    # Füge weitere Spalte 'is_workingday' hinzu, welche 1 wenn es ein Werktag ist einträgt, sonst 0
+    stop_times_bsag_updates["is_workingday"] = stop_times_bsag_updates["weekday"].apply(lambda x: 1 if x in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] else 0)
 
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
     stop_times_bsag_updates["line"] = stop_times_bsag_updates['route_id'].map(
@@ -129,7 +129,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['start_date', 'current_time', 'daytime', 'dayhour','dayquarter','weekday','is_weekday','is_holiday', 'starting_stop_time',
+    columns_order = ['start_date', 'current_time', 'daytime', 'dayhour','dayquarter','weekday','is_workingday','is_holiday', 'starting_stop_time',
                      'line', 'number_of_stops', 'direction', 'StopId', 'stop', 'stop_sequence',
                      'arrival_delay_category', 'departure_delay_category', 'arrival_delay_seconds','departure_delay_seconds']
 

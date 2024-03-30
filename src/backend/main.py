@@ -27,7 +27,7 @@ def save_transit_data(stop_times_bsag_updates):
     max = 0
     for i in stop_times_bsag_updates.index:
         vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
-        query = """INSERT INTO public.bsag_data (start_date,"current_time","daytime",dayhour,dayquarter,weekday,is_weekday,is_holiday,starting_stop_time,"line",number_of_stops,direction,StopId,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds)
+        query = """INSERT INTO public.bsag_data (start_date,"current_time","daytime",dayhour,dayquarter,weekday,is_workingday,is_holiday,starting_stop_time,"line",number_of_stops,direction,StopId,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds)
                                     VALUES ('%s', '%s', '%s', %s ,%s,'%s',%s ,%s, '%s', '%s', %s, '%s', %s,'%s', '%s', '%s', '%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
