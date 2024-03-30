@@ -126,7 +126,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['start_date', 'current_time', 'daytime', 'dayhour','weekday', 'holiday', 'starting_stop_time',
+    columns_order = ['start_date', 'current_time', 'daytime', 'dayhour','dayquarter','weekday', 'holiday', 'starting_stop_time',
                      'line', 'number_of_stops', 'direction', 'StopId', 'stop', 'stop_sequence',
                      'arrival_delay_category', 'departure_delay_category', 'arrival_delay_seconds','departure_delay_seconds']
 
