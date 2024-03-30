@@ -110,6 +110,9 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Füge die Spalte 'dayhour' hinzu (Stundenwert)
     stop_times_bsag_updates['dayhour'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(assign_hour_value)
 
+    # Füge die Spalte 'dayquarter' hinzu (Viertel der Stunde) - wichtig zum Joinen mit Verkehrsdaten der Linie 21
+    stop_times_bsag_updates['dayquarter'] = stop_times_bsag_updates['current_time_for_daytime'].dt.minute.apply(assign_quarter_value)
+
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
     stop_times_bsag_updates["line"] = stop_times_bsag_updates['route_id'].map(
         routes_bsag_df.set_index('route_id')['route_short_name'])
@@ -152,7 +155,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    #stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
+    stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 
@@ -237,3 +240,22 @@ def assign_hour_value(hour):
     
     # Den Zahlenwert für die aktuelle Stunde aus dem Dictionary abrufen
     return hour_mapping[hour]
+
+def assign_quarter_value(minute):
+    """
+    Diese Funktion ordnet die aktuelle Minute einem Viertel der Stunde zu.
+    
+    Parameters:
+    - minute (int): Minute der aktuellen Uhrzeit.
+
+    Returns:
+    - quarter (int): Viertel der Stunde.
+    """
+    if 0 <= minute < 15:
+        return 1
+    elif 15 <= minute < 30:
+        return 2
+    elif 30 <= minute < 45:
+        return 3
+    else:
+        return 4

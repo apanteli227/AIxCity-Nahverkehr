@@ -173,10 +173,14 @@ async def run_weather_task():
 
 
 async def run_traffic_task_at_specific_times():
-    schedule.every().day.at("08:00").do(run_traffic_task)
-    schedule.every().day.at("12:00").do(run_traffic_task)
-    schedule.every().day.at("16:00").do(run_traffic_task)
-    schedule.every().day.at("20:00").do(run_traffic_task)
+    # Alle Viertelstunde die Verkehrsdaten aktualisieren
+    schedule.every(15).minutes.do(run_traffic_task)
+
+    # !!!!Sollte obige Anpassung stimmen, bitte diese 4 Befehle entfernen!!!!!
+    #schedule.every().day.at("08:00").do(run_traffic_task)
+    #schedule.every().day.at("12:00").do(run_traffic_task)
+    #schedule.every().day.at("16:00").do(run_traffic_task)
+    #schedule.every().day.at("20:00").do(run_traffic_task)
 
     while True:
         schedule.run_pending()
@@ -188,7 +192,10 @@ async def main():
         asyncio.create_task(run_task_with_interval(run_transit_task, 600)),
         asyncio.create_task(run_task_with_interval(run_events_task, 86400)),  # 86400 seconds = 24 hours
         asyncio.create_task(run_task_with_interval(run_weather_task, 3600)),  # 3600 seconds = 1 hour
-        asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
+        asyncio.create_task(run_task_with_interval(run_traffic_task, 900)), # 900 seconds = 15 minutes
+
+        #!!!!Entfernen wenn dies nicht mehr benötigt wird!!!!
+        #asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
     ]
 
     await asyncio.gather(*tasks)

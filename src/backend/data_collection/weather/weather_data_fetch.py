@@ -91,7 +91,7 @@ def get_weather_dataframe(url, api_key, city):
         })
 
         # Optional: Speichern des Wetter-DataFrames als CSV-Datei
-        #weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
+        weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
         logging.info(CCYAN + "[WEATHER] " + CEND + "Daten erfolgreich ermittelt!")
         return weather_bremen_df
     else:
