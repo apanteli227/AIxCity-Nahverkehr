@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Circle, Popup } from "react-leaflet";
 import { useStopContext } from "../store/StopContext";
 import { fetchRoutesAndStops } from "../API";
-import csv from "../../../assets/stops_bremen.csv";
+import { fetchCsvStops } from "../CSV";
 import { useNightModeContext } from "../store/NightModeContext";
 
 const Stops = () => {
