@@ -80,8 +80,8 @@ def get_weather_dataframe(url, api_key, city):
         # Erstellen eines DataFrames mit den erstellten Wetterdaten
         weather_bremen_df = pd.DataFrame({
             'city': [city],
-            'date': [datetime.now().strftime("%Y-%m-%d")],
-            'time': [datetime.now().strftime("%H:%M:%S")],
+            'current_date': [datetime.now().strftime("%Y-%m-%d")],
+            'current_time': [datetime.now().strftime("%H:%M:%S")],
             'dayhour': [wdt.assign_hour_value()],
             'temperature_celsius': [temperature],
             'humidity_percentage': [humidity],
