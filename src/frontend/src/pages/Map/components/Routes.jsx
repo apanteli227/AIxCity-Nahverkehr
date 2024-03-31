@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Polyline, Popup } from "react-leaflet";
+import { Polyline } from "react-leaflet";
+import RoutePopup from "./popups/RoutePopup";
 import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
+import { useSelectedContext } from "../store/SelectedContext";
 
 function Routes() {
-  const { setTramRoutes, setSelectedRoute } = useRouteContext();
+  const { tramRoutes, setTramRoutes } = useRouteContext();
   const { nightMode } = useNightModeContext();
+  const { isSelected, toggleSelected } = useSelectedContext();
+  const { selectedRoute, setSelectedRoute } = useRouteContext();
   const [dayRoutes, setDayRoutes] = useState([]);
   const [nightRoutes, setNightRoutes] = useState([]);
 
@@ -22,6 +26,10 @@ function Routes() {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Überprüfen, ob isSelected gesetzt ist und selectedRoute aktualisieren
   }, []);
 
   const drawRoutes = (tramRoutesData) => {
@@ -82,9 +90,11 @@ function Routes() {
   };
 
   const handleRouteClick = (routeId) => {
-    setSelectedRoute((prevRouteId) =>
-      routeId === prevRouteId ? null : routeId
-    );
+    setSelectedRoute(routeId === selectedRoute ? null : routeId);
+    if (selectedRoute === null) {
+      toggleSelected();
+    }
+    console.log(isSelected, selectedRoute);
   };
 
   const routesToDisplay = nightMode ? nightRoutes : dayRoutes;
@@ -95,13 +105,21 @@ function Routes() {
         <Polyline
           key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
           positions={route.geometry}
-          color={route.color}
+          color={
+            isSelected // Farbe bei Auswahl hinzugefügt
+              ? selectedRoute === route.id
+                ? route.color
+                : "grey"
+              : route.color
+          }
           weight={4}
           eventHandlers={{
-            click: () => handleRouteClick(route.id),
+            click: () => {
+              handleRouteClick(route.id);
+            },
           }}
         >
-          <Popup>{route.name}</Popup>
+          <RoutePopup routeName={route.name} />
         </Polyline>
       ))}
     </div>

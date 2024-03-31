@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Circle, Popup } from "react-leaflet";
+import { Circle } from "react-leaflet";
+import StopPopup from "./popups/StopPopup";
 import { useStopContext } from "../store/StopContext";
 import { fetchRoutesAndStops } from "../API";
 import { fetchCsvStops } from "../CSV";
@@ -184,11 +185,11 @@ const Stops = () => {
                   opacity: 0.5,
                 }}
               >
-                <Popup>
-                  {nearestCsvStop
-                    ? nearestCsvStop.stop_name
-                    : "Unknown Night Stop"}
-                </Popup>
+                {/* Verwenden Sie die PopupComponent hier */}
+                <StopPopup
+                  nearestCsvStop={nearestCsvStop}
+                  defaultText="Unknown Night Stop"
+                />
               </Circle>
             );
           })
@@ -208,11 +209,11 @@ const Stops = () => {
                   opacity: 0.5,
                 }}
               >
-                <Popup>
-                  {nearestCsvStop
-                    ? nearestCsvStop.stop_name
-                    : "Unknown Day Stop"}
-                </Popup>
+                {/* Verwenden Sie die PopupComponent hier */}
+                <StopPopup
+                  nearestCsvStop={nearestCsvStop}
+                  defaultText="Unknown Day Stop"
+                />
               </Circle>
             );
           })}
