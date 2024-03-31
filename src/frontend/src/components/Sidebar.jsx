@@ -1,14 +1,8 @@
 import React from "react";
-import {
-  BsCart3,
-  BsGrid1X2Fill,
-  BsFillArchiveFill,
-  BsFillGrid3X3GapFill,
-  BsPeopleFill,
-  BsListCheck,
-  BsMenuButtonWideFill,
-  BsFillGearFill,
-} from "react-icons/bs";
+import { MdOutlineTram } from "react-icons/md";
+import { VscGraph } from "react-icons/vsc";
+import { FaRegMap } from "react-icons/fa";
+import { FaRoute } from "react-icons/fa";
 
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
   return (
@@ -18,7 +12,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
     >
       <div className="sidebar-title">
         <div className="sidebar-brand">
-          <BsCart3 className="icon_header" /> BSAG
+          <MdOutlineTram className="icon_header" /> BSAG
         </div>
         <span className="icon close_icon" onClick={OpenSidebar}>
           X
@@ -28,27 +22,17 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
       <ul className="sidebar-list">
         <li className="sidebar-list-item">
           <a href="/">
-            <BsGrid1X2Fill className="icon" /> Statistiken
+            <VscGraph className="icon" /> Statistiken
           </a>
         </li>
         <li className="sidebar-list-item">
           <a href="/map">
-            <BsFillArchiveFill className="icon" /> Karte
+            <FaRegMap className="icon" /> Karte
           </a>
         </li>
         <li className="sidebar-list-item">
           <a href="/Weg">
-            <BsFillGrid3X3GapFill className="icon" /> Routen
-          </a>
-        </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsPeopleFill className="icon" /> Statistiken
-          </a>
-        </li>
-        <li className="sidebar-list-item">
-          <a href="">
-            <BsListCheck className="icon" /> Probleme
+            <FaRoute className="icon" /> Routenplaner
           </a>
         </li>
       </ul>
