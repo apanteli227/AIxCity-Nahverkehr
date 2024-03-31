@@ -123,7 +123,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
             print(prefix + "Fehler beim Abrufen der Verkehrsdaten.")
             break
         # Gebe mir die aktuelle Zeile aus (Zur Übersicht über Zwischenstand)
-        print(traffic_data_bsag_updates.loc[index])
+        #print(traffic_data_bsag_updates.loc[index])
 
     # Setze das Optionssystem zurück
     pd.reset_option('mode.chained_assignment')
@@ -131,5 +131,5 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     print(prefix + "Daten erfolgreich ermittelt.")
 
     # Speichere das DataFrame in eine CSV-Datei
-    traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
+    #traffic_data_bsag_updates.to_csv("traffic_data_bsag_updates.csv", index=False)
     return traffic_data_bsag_updates
