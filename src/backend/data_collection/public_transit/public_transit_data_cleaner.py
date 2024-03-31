@@ -64,10 +64,10 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
                                        left_on='route_id', right_on='route_id', validate='many_to_one')
 
     # Anpassen des Datumsformats der Spalte StartDate in stop_times_bsag_uodates
-    stop_times_bsag_updates["start_date"] = pd.to_datetime(stop_times_bsag_updates["StartDate"]).dt.strftime("%Y-%m-%d")
+    stop_times_bsag_updates["current_date"] = pd.to_datetime(stop_times_bsag_updates["StartDate"]).dt.strftime("%Y-%m-%d")
 
     # Merge von stop_times_bsag_updates und holidays_bremen_df, um die Feiertage zu erhalten
-    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='start_date',
+    stop_times_bsag_updates = pd.merge(stop_times_bsag_updates, holidays_bremen_df, how='left', left_on='current_date',
                                        right_on='holiday_date', validate='many_to_one')
 
     # Umbenennen der Spalten in verständliche Namen
@@ -107,6 +107,9 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Füge die Spalte 'daytime' hinzu (Tageszeit)
     stop_times_bsag_updates['daytime'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(map_daytime)
 
+    # Füge die Spalte 'daytime_class' hinzu (Tageszeit als Nummer)
+    stop_times_bsag_updates['daytime_class'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(map_daytime_class)
+
     # Füge die Spalte 'dayhour' hinzu (Stundenwert)
     stop_times_bsag_updates['dayhour'] = stop_times_bsag_updates['current_time_for_daytime'].dt.hour.apply(assign_hour_value)
 
@@ -116,10 +119,13 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     # Füge weitere Spalte 'is_workingday' hinzu, welche 1 wenn es ein Werktag ist einträgt, sonst 0
     stop_times_bsag_updates["is_workingday"] = stop_times_bsag_updates["weekday"].apply(lambda x: 1 if x in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] else 0)
 
+    # Umbenennung der Spalte stop zu stop_name
+    stop_times_bsag_updates.rename(columns={"stop": "stop_name"}, inplace=True)
+
     # Übersetzen der IDs zur Route und Haltestelle in lesbare Namen
     stop_times_bsag_updates["line"] = stop_times_bsag_updates['route_id'].map(
         routes_bsag_df.set_index('route_id')['route_short_name'])
-    stop_times_bsag_updates["stop"] = stop_times_bsag_updates['StopId'].map(
+    stop_times_bsag_updates["stop_name"] = stop_times_bsag_updates['StopId'].map(
         stops_bremen_df.set_index('stop_id')['stop_name'])
 
     # Entfernen der nicht benötigten Spalten
@@ -129,12 +135,15 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     stop_times_bsag_updates.drop(columns=columns_to_remove, inplace=True)
 
     # Reihenfolge der Spalten umändern
-    columns_order = ['start_date', 'current_time', 'daytime', 'dayhour','dayquarter','weekday','is_workingday','is_holiday', 'starting_stop_time',
-                     'line', 'number_of_stops', 'direction', 'StopId', 'stop', 'stop_sequence',
+    columns_order = ['current_date', 'current_time', 'daytime','daytime_class','dayhour','dayquarter','weekday','is_workingday','is_holiday', 'starting_stop_time',
+                     'line', 'number_of_stops', 'direction', 'StopId', 'stop_name', 'stop_sequence',
                      'arrival_delay_category', 'departure_delay_category', 'arrival_delay_seconds','departure_delay_seconds']
 
     # DataFrame mit neuer Spaltenreihenfolge erstellen
     stop_times_bsag_updates = stop_times_bsag_updates[columns_order]
+
+    # Umbennennung der Spalte StopId zu stop_id
+    stop_times_bsag_updates.rename(columns={"StopId": "stop_id"}, inplace=True)
 
     # Ermittel das aktuelle Datum und die Uhrzeit
     actual_datetime = datetime.now()
@@ -150,9 +159,9 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
 
     # Entferne alle Zeilen, deren Uhrzeit oder Datum in der Zukunft liegt
     stop_times_bsag_updates = stop_times_bsag_updates[
-        ((stop_times_bsag_updates["start_date"] <= actual_date_str) &
+        ((stop_times_bsag_updates["current_date"] <= actual_date_str) &
          (stop_times_bsag_updates["starting_stop_time"] <= actual_time_str))
-        | ((stop_times_bsag_updates["start_date"] < actual_date_str) &
+        | ((stop_times_bsag_updates["current_date"] < actual_date_str) &
            (stop_times_bsag_updates["starting_stop_time"] >= actual_time_str))
         ]
     logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
@@ -204,6 +213,30 @@ def map_daytime(hour):
         return "evening"
     else:
         return 'night'
+    
+def map_daytime_class(hour):
+    """
+    Diese Funktion ordnet der aktuellen Tageszeit eine Nummer zu.
+
+    Parameters:
+    - hour (int): Stunde der aktuellen Uhrzeit.
+
+    Returns:
+    - daytime_class (int): Stundenwert.
+    """
+    if 6 <= hour < 10:
+        return 0
+    elif 10 <= hour < 12:
+        return 1
+    elif 12 <= hour < 14:
+        return 2
+    elif 14 <= hour < 17:
+        return 3
+    elif 17 <= hour < 21:
+        return 4
+    else:
+        return 5
+
 
 def assign_hour_value(hour):
     """
@@ -212,7 +245,6 @@ def assign_hour_value(hour):
     Returns:
     - int: Der Zahlenwert entsprechend der aktuellen Stunde.
     """
-
     # Dictionary mit Zuordnungen von Stunden zu Zahlenwerten
     hour_mapping = {
         0: 0,
