@@ -158,7 +158,7 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     logging.info(CORANGE + "[TRANSIT] " + CEND + "Daten erfolgreich ermittelt!")
 
     # Optional: Speichern des DataFrames als CSV-Datei
-    stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
+    #stop_times_bsag_updates.to_csv("data_collection/stop_times_bsag_updates.csv", index=False)
     return stop_times_bsag_updates
 
 
