@@ -1,24 +1,26 @@
 stop_name,stop_lat,stop_lon,number_of_building_sites,current_time,current_date,daytime,dayhour,dayquarter,current_speed,freeflow_Speed,quotient_current_freeflow_speed
-Bremen Stader Straße/Bismarckstraße,53.073972,8.852545,0,23:12:32,2024-03-30,night,23,1,16.0,16.0,1.0
-Bremen St. Joseph-Stift,53.082482,8.837204,0,23:12:32,2024-03-30,night,23,1,27.0,34.0,0.7941
-Bremen Linzer Straße,53.10848,8.861101,0,23:12:32,2024-03-30,night,23,1,23.0,23.0,1.0
-Bremen Kurfürstenallee,53.082209,8.854479,1,23:12:32,2024-03-30,night,23,1,35.0,35.0,1.0
-Bremen Universität/Zentralbereich,53.107711,8.852383,0,23:12:32,2024-03-30,night,23,1,47.0,47.0,1.0
-Bremen Bei den Drei Pfählen,53.07121,8.85063,0,23:12:32,2024-03-30,night,23,1,28.0,28.0,1.0
-Bremen Karl-Carstens-Brücke,53.054136,8.851033,0,23:12:32,2024-03-30,night,23,1,47.0,47.0,1.0
-Bremen Georg-Bitter-Straße,53.067212,8.854328,0,23:12:32,2024-03-30,night,23,1,34.0,34.0,1.0
-Bremen Anna-Stiegler-Straße,53.040765,8.828041,0,23:12:32,2024-03-30,night,23,1,41.0,41.0,1.0
-Bremen Am Stern,53.084252,8.825747,0,23:12:32,2024-03-30,night,23,1,48.0,48.0,1.0
-Bremen Wiener Straße,53.106152,8.845833,0,23:12:32,2024-03-30,night,23,1,40.0,40.0,1.0
-Bremen Munte,53.10478,8.840919,0,23:12:32,2024-03-30,night,23,1,51.0,51.0,1.0
-Bremen Agnes-Heineken-Straße,53.038759,8.832342,0,23:12:32,2024-03-30,night,23,1,41.0,41.0,1.0
-Bremen Universität-Nord,53.11064,8.854691,0,23:12:32,2024-03-30,night,23,1,23.0,23.0,1.0
-Bremen Kattenturm-Mitte,53.035323,8.826916,0,23:12:32,2024-03-30,night,23,1,40.0,40.0,1.0
-Bremen Parkallee,53.099188,8.837012,0,23:12:32,2024-03-30,night,23,1,51.0,51.0,1.0
-Bremen Borgwardstraße,53.045739,8.844893,0,23:12:32,2024-03-30,night,23,1,45.0,45.0,1.0
-Bremen Arensburgstraße,53.078505,8.855109,0,23:12:32,2024-03-30,night,23,1,42.0,42.0,1.0
-Bremen Bruchhauser Straße,53.039086,8.834853,0,23:12:32,2024-03-30,night,23,1,41.0,41.0,1.0
-Bremen Universität-Süd,53.105197,8.850888,0,23:12:32,2024-03-30,night,23,1,47.0,47.0,1.0
-Bremen Habenhauser Brückenstraße,53.050319,8.847649,0,23:12:32,2024-03-30,night,23,1,47.0,47.0,1.0
-Bremen Stader Straße/Hamburger Straße,53.068065,8.84893,0,23:12:32,2024-03-30,night,23,1,32.0,32.0,1.0
-Bremen Universität-Ost,53.10661,8.863862,0,23:12:32,2024-03-30,night,23,1,62.0,62.0,1.0
+Bremen Stader Straße/Bismarckstraße,53.073972,8.852545,0,13:27:33,2024-03-31,noon,13,2,16.0,16.0,1.0
+Bremen St. Joseph-Stift,53.082482,8.837204,0,13:27:33,2024-03-31,noon,13,2,26.0,35.0,0.7429
+Bremen Linzer Straße,53.10848,8.861101,0,13:27:33,2024-03-31,noon,13,2,32.0,34.0,0.9412
+Bremen Kurfürstenallee,53.082209,8.854479,1,13:27:33,2024-03-31,noon,13,2,35.0,35.0,1.0
+Bremen Kulenkampffallee,53.09832,8.839693,0,13:27:33,2024-03-31,noon,13,2,39.0,51.0,0.7647
+Bremen Universität/Zentralbereich,53.107711,8.852383,0,13:27:33,2024-03-31,noon,13,2,27.0,46.0,0.587
+Bremen Bei den Drei Pfählen,53.07121,8.85063,0,13:27:33,2024-03-31,noon,13,2,28.0,28.0,1.0
+Bremen Karl-Carstens-Brücke,53.054136,8.851033,0,13:27:33,2024-03-31,noon,13,2,47.0,47.0,1.0
+Bremen Georg-Bitter-Straße,53.067212,8.854328,0,13:27:33,2024-03-31,noon,13,2,23.0,33.0,0.697
+Bremen Anna-Stiegler-Straße,53.040765,8.828041,0,13:27:33,2024-03-31,noon,13,2,41.0,41.0,1.0
+Bremen Am Stern,53.084252,8.825747,0,13:27:33,2024-03-31,noon,13,2,48.0,48.0,1.0
+Bremen Wiener Straße,53.106152,8.845833,0,13:27:33,2024-03-31,noon,13,2,40.0,40.0,1.0
+Bremen Munte,53.10478,8.840919,0,13:27:33,2024-03-31,noon,13,2,38.0,50.0,0.76
+Bremen Agnes-Heineken-Straße,53.038759,8.832342,0,13:27:33,2024-03-31,noon,13,2,41.0,41.0,1.0
+Bremen Universität-Nord,53.11064,8.854691,0,13:27:33,2024-03-31,noon,13,2,32.0,34.0,0.9412
+Bremen Kattenturm-Mitte,53.035323,8.826916,0,13:27:33,2024-03-31,noon,13,2,40.0,40.0,1.0
+Bremen Parkallee,53.099188,8.837012,0,13:27:33,2024-03-31,noon,13,2,38.0,50.0,0.76
+Bremen Crüsemannallee,53.091492,8.834986,0,13:27:33,2024-03-31,noon,13,2,32.0,32.0,1.0
+Bremen Borgwardstraße,53.045739,8.844893,0,13:27:33,2024-03-31,noon,13,2,45.0,45.0,1.0
+Bremen Arensburgstraße,53.078505,8.855109,0,13:27:33,2024-03-31,noon,13,2,42.0,42.0,1.0
+Bremen Bruchhauser Straße,53.039086,8.834853,0,13:27:33,2024-03-31,noon,13,2,41.0,41.0,1.0
+Bremen Universität-Süd,53.105197,8.850888,0,13:27:33,2024-03-31,noon,13,2,27.0,46.0,0.587
+Bremen Habenhauser Brückenstraße,53.050319,8.847649,0,13:27:33,2024-03-31,noon,13,2,47.0,47.0,1.0
+Bremen Stader Straße/Hamburger Straße,53.068065,8.84893,0,13:27:33,2024-03-31,noon,13,2,22.0,31.0,0.7097
+Bremen Universität-Ost,53.10661,8.863862,0,13:27:33,2024-03-31,noon,13,2,62.0,62.0,1.0
