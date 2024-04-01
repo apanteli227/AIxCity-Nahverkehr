@@ -27,8 +27,8 @@ def save_transit_data(stop_times_bsag_updates):
     max = 0
     for i in stop_times_bsag_updates.index:
         vals = [stop_times_bsag_updates.at[i, col] for col in list(stop_times_bsag_updates.columns)]
-        query = """INSERT INTO public.bsag_data (start_date,"current_time",daytime,weekday,holiday,starting_stop_time,"line",number_of_stops,direction,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds)
-                                    VALUES ('%s', '%s', '%s', '%s', %s, '%s', '%s', %s, '%s', %s, '%s', '%s', '%s', '%s', '%s');""" % (
+        query = """INSERT INTO public.bsag_data (current_date,"current_time","daytime",daytime_class,dayhour,dayquarter,weekday,is_workingday,is_holiday,starting_stop_time,"line",number_of_stops,direction,StopId,stop,stop_sequence,arrival_delay_category,departure_delay_category,arrival_delay_seconds,departure_delay_seconds)
+                                    VALUES ('%s', '%s', '%s',%s ,%s ,%s,'%s',%s ,%s, '%s', '%s', %s, '%s', %s,'%s', '%s', '%s', '%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -43,8 +43,12 @@ def save_transit_data(stop_times_bsag_updates):
             vals[11],
             vals[12],
             vals[13],
-            vals[14]
-
+            vals[14],
+            vals[15],
+            vals[16],
+            vals[17],
+            vals[18],
+            vals[19]
         )
         dbc.execute_query(conn, query)
         max = i
@@ -69,8 +73,8 @@ def save_traffic_data(traffic_data_bsag_updates):
     max = 0
     for i in traffic_data_bsag_updates.index:
         vals = [traffic_data_bsag_updates.at[i, col] for col in list(traffic_data_bsag_updates.columns)]
-        query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,"current_speed","freeflow_Speed","quotient_current_freeflow_speed")
-                       VALUES ('%s', %s, %s, '%s', '%s', '%s', '%s', '%s', '%s');""" % (
+        query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,dayhour,dayquarter"current_speed","freeflow_Speed","quotient_current_freeflow_speed")
+                       VALUES ('%s', %s, %s, '%s', '%s', '%s', %s, %s ,'%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -79,7 +83,9 @@ def save_traffic_data(traffic_data_bsag_updates):
             vals[5],
             vals[6],
             vals[7],
-            vals[8]
+            vals[8],
+            vals[9],
+            vals[10]
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
@@ -97,8 +103,8 @@ def save_events_data(events_bsag_updates_df):
     max = 0
     for i in events_bsag_updates_df.index:
         vals = [events_bsag_updates_df.at[i, col] for col in list(events_bsag_updates_df.columns)]
-        query = """INSERT INTO public.events_data (begin_date,begin_time,end_date,end_time,event_type,event_classification,frequently_visited_stop,stop_id) 
-                            VALUES ('%s', '%s', '%s', '%s', '%s', %s, '%s', '%s');""" % (
+        query = """INSERT INTO public.events_data (begin_date,begin_time,end_date,end_time,event_type,event_classification,frequently_visited_stop,stop_id,current_time,current_date) 
+                            VALUES ('%s', '%s', '%s', '%s', '%s', %s, '%s', '%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -106,7 +112,9 @@ def save_events_data(events_bsag_updates_df):
             vals[4],
             vals[5],
             vals[6],
-            vals[7]
+            vals[7],
+            vals[8],
+            vals[9]
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
@@ -124,8 +132,8 @@ def save_weather_data(weather_bremen_df):
     max = 0
     for i in weather_bremen_df.index:
         vals = [weather_bremen_df.at[i, col] for col in list(weather_bremen_df.columns)]
-        query = """INSERT INTO public.weather_data (city,date,time,temperature_celsius,humidity_percentage,weather_description,wind_speed_m_s,weather_warning) 
-                            VALUES ('%s', '%s', '%s', %s, %s, '%s', %s, '%s');""" % (
+        query = """INSERT INTO public.weather_data (city,current_date,current_time,daytime,temperature_celsius,humidity_percentage,weather_description,wind_speed_m_s,weather_warning) 
+                            VALUES ('%s', '%s', '%s', %s ,%s, %s, '%s', %s, '%s');""" % (
             vals[0],
             vals[1],
             vals[2],
@@ -133,7 +141,8 @@ def save_weather_data(weather_bremen_df):
             vals[4],
             vals[5],
             vals[6],
-            vals[7]
+            vals[7],
+            vals[8]
         )
         dbc.execute_query(conn, query)
         # print("execute_query: " + query)
@@ -170,10 +179,14 @@ async def run_weather_task():
 
 
 async def run_traffic_task_at_specific_times():
-    schedule.every().day.at("08:00").do(run_traffic_task)
-    schedule.every().day.at("12:00").do(run_traffic_task)
-    schedule.every().day.at("16:00").do(run_traffic_task)
-    schedule.every().day.at("20:00").do(run_traffic_task)
+    # Alle Viertelstunde die Verkehrsdaten aktualisieren
+    schedule.every(15).minutes.do(run_traffic_task)
+
+    # !!!!Sollte obige Anpassung stimmen, bitte diese 4 Befehle entfernen!!!!!
+    #schedule.every().day.at("08:00").do(run_traffic_task)
+    #schedule.every().day.at("12:00").do(run_traffic_task)
+    #schedule.every().day.at("16:00").do(run_traffic_task)
+    #schedule.every().day.at("20:00").do(run_traffic_task)
 
     while True:
         schedule.run_pending()
@@ -185,7 +198,10 @@ async def main():
         asyncio.create_task(run_task_with_interval(run_transit_task, 600)),
         asyncio.create_task(run_task_with_interval(run_events_task, 86400)),  # 86400 seconds = 24 hours
         asyncio.create_task(run_task_with_interval(run_weather_task, 3600)),  # 3600 seconds = 1 hour
-        asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
+        asyncio.create_task(run_task_with_interval(run_traffic_task, 900)), # 900 seconds = 15 minutes
+
+        #!!!!Entfernen wenn dies nicht mehr benötigt wird!!!!
+        #asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
     ]
 
     await asyncio.gather(*tasks)

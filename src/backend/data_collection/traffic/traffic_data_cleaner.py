@@ -29,7 +29,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     file_path = os.path.join(full_path, "stops.txt")
 
     # Pfad zur Datei stops_bremen.csv mit den Haltestellen in Bremen
-    stops_bremen = os.path.join(full_path, "stops_bremen.csv")
+    stops_bremen_linie_22 = os.path.join(full_path, "stops_bremen_linie_22.csv")
 
     # Pfad zur Datei not_used_stops.txt mit den Haltestellen, die nicht relevant für den Verkehr sind
     # Nicht relevant heißt, dass die Bestimmung der Verkehrsdaten hier keinen Sinn macht (da z.B. nur eine Bahn diese Haltestelle anfährt)
@@ -37,7 +37,7 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
     not_used_stops = os.path.join(full_path, "not_used_stops.csv")
 
     # DataFrame aus der Datei stops_bremen.csv erstellen
-    stops_bremen_df = pd.read_csv(stops_bremen, sep=";")
+    stops_bremen_df = pd.read_csv(stops_bremen_linie_22, sep=";")
 
     # DataFrame aus der Datei stops.txt erstellen
     coordinates_df = pd.read_csv(file_path)
@@ -79,6 +79,12 @@ def get_traffic_dataframe(base_api_url) -> pd.DataFrame:
 
     # Füge die Spalte 'daytime' hinzu (Tageszeit)
     traffic_data_bsag_updates['daytime'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.hour.apply(pt_cleaner.map_daytime)
+
+    # Füge die Spalte 'dayhour' hinzu (Stunde des Tages)
+    traffic_data_bsag_updates['dayhour'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.hour.apply(pt_cleaner.assign_hour_value)
+
+    # Füge die Spalte 'dayquarter' hinzu - wichtig zum späteren Joinen mit Verspätungen (Viertel der Stunde)
+    traffic_data_bsag_updates['dayquarter'] = traffic_data_bsag_updates['current_time_for_daytime'].dt.minute.apply(pt_cleaner.assign_quarter_value)
 
     # Entferne die Spalte 'current_time_for_daytime'
     traffic_data_bsag_updates.drop(columns=["current_time_for_daytime"], inplace=True)

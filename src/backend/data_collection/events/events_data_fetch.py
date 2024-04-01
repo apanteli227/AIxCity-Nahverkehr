@@ -97,6 +97,6 @@ def get_events_dataframe(base_path="../resources") -> pd.DataFrame:
     events_bsag_updates_df["event_classification"] = events_bsag_updates_df["event_classification"].astype(int)     
 
     # Optional: CSV-Datei aus events_bsag_updates_df erstellen
-    events_bsag_updates_df.to_csv("events_bsag_updates.csv", index=False)
+    #events_bsag_updates_df.to_csv("events_bsag_updates.csv", index=False)
     print(CGREEN + "[EVENTS] " + CEND + "Daten erfolgreich ermittelt!")
     return events_bsag_updates_df

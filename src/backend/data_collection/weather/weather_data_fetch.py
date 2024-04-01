@@ -1,6 +1,7 @@
 import logging
 from datetime import datetime
 from ..weather import weather_data_cleaner as wdc
+from ..weather import weather_data_transform as wdt
 import pandas as pd
 import requests
 
@@ -61,6 +62,9 @@ def get_weather_dataframe(url, api_key, city):
         humidity = weather_data['main']['humidity']
         description = weather_data['weather'][0]['description']
 
+        # Tranformation der Wetterbeschreibung
+        transformed_description = wdt.transform_weather_description(description)
+
         # Prüfen, ob Winddaten verfügbar sind
         if 'wind' in weather_data:
             wind_speed = weather_data['wind']['speed']
@@ -70,20 +74,24 @@ def get_weather_dataframe(url, api_key, city):
         # Abrufen der Wetterwarnungen
         weather_warnings = wdc.get_weather_warning()
 
+        # Transformation der Wetterwarnungen
+        transformed_weather_warnings = wdt.transform_weather_warning(weather_warnings)
+
         # Erstellen eines DataFrames mit den erstellten Wetterdaten
         weather_bremen_df = pd.DataFrame({
             'city': [city],
-            'date': [datetime.now().strftime("%Y-%m-%d")],
-            'time': [datetime.now().strftime("%H:%M:%S")],
+            'current_date': [datetime.now().strftime("%Y-%m-%d")],
+            'current_time': [datetime.now().strftime("%H:%M:%S")],
+            'dayhour': [wdt.assign_hour_value()],
             'temperature_celsius': [temperature],
             'humidity_percentage': [humidity],
-            'weather_description': [description],
+            'weather_description': [transformed_description],
             'wind_speed_m_s': [wind_speed],
-            'weather_warning': [weather_warnings]
+            'weather_warning': [transformed_weather_warnings]
         })
 
         # Optional: Speichern des Wetter-DataFrames als CSV-Datei
-        # weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
+        #weather_bremen_df.to_csv("weather_bremen_df.csv", index=False)
         logging.info(CCYAN + "[WEATHER] " + CEND + "Daten erfolgreich ermittelt!")
         return weather_bremen_df
     else:

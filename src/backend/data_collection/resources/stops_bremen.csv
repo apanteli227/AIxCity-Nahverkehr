@@ -1,5 +1,5 @@
 stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
-9014331;Bremen-Vegesack;5.316.976;8.629.996;0
+9014331;Bremen-Vegesack;53.169.760;8.629.996;0
 9014333;Bremen-Walle;53.103.808;8.786.209;0
 9014326;Bremen-Sebaldsbrück (Zug);53.061.133;8.887.807;0
 9014329;Bremen-St. Magnus;53.171.574;8.669.636;0
@@ -23,16 +23,16 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9019789;Delmenhorst Sandhausen;53.095.719;8.647.627;0
 9014287;Bremen Westerstraße;53.074.474;8.794.082;0
 9013735;Bremen Bahnhof Blumenthal;53.183.024;8.579.728;0
-9013906;Bremen Gustav-Heinemann-Bürgerhaus;5.317.448;8.618.157;0
-9082650;Schwanewede Landhaus Schwanewede;5.323.916;859.269;0
-9014115;Bremen Osterholzer Möhlendamm;53.057.907;895.105;0
+9013906;Bremen Gustav-Heinemann-Bürgerhaus;53.174.480;8.618.157;0
+9082650;Schwanewede Landhaus Schwanewede;53.239.160;8.592.690;0
+9014115;Bremen Osterholzer Möhlendamm;53.057.907;8.951.050;0
 9014279;Bremen Werner-Steenken-Straße;53.053.257;8.962.122;0
-9014112;Bremen Osterholzer Friedhof;5.305.985;8.914.326;0
-9014113;Bremen Osterholzer Heerstraße;53.059.114;8.930.389;0
+9014112;Bremen Osterholzer Friedhof;53.059.850;8.914.326;0
+9014113;Bremen Heinz-Hinners-Platz;53.059.114;8.930.389;0
 9013744;Bremen Bahnhof Sebaldsbrück;53.062.197;8.887.576;1
 9014184;Bremen Sebaldsbrück (Bus+Tram);53.059.469;8.899.647;0
 9014005;Bremen Klinikum Bremen-Mitte;53.076.869;8.837.379;0
-9013884;Bremen Föhrenstraße;5.306.431;8.877.295;0
+9013884;Bremen Föhrenstraße;53.064.310;8.877.295;0
 9014282;Bremen Weserpark;53.049.065;8.960.619;0
 9013968;Bremen Holzweide;53.042.185;8.959.171;0
 9014122;Bremen Pappelstraße;53.069.665;8.787.596;0
@@ -41,24 +41,24 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9082665;Schwanewede Molkereiweg;53.231.682;8.593.411;0
 9014252;Bremen Varreler Landstraße;53.036.236;8.726.984;0
 9082669;Schwanewede Schützenweg;53.226.292;8.594.252;0
-9065563;Neuenkirchen(Schwanewede) Marktplatz;5.323.443;8.515.404;0
+9065563;Neuenkirchen(Schwanewede) Marktplatz;53.234.430;8.515.404;0
 9065568;Neuenkirchen(Schwanewede) Vorbruch;53.233.095;8.525.564;0
 9014992;Brinkum-Nord Ochtum Park (IKEA);53.027.896;8.806.059;0
-9014302;Bremen Wolfskuhlenweg;5.303.943;8.814.502;0
+9014302;Bremen Wolfskuhlenweg;53.039.430;8.814.502;0
 9014228;Bremen Tannenhof;53.175.062;8.660.805;0
 9013743;Bremen Bahnhof Schönebeck;53.173.747;8.648.916;0
 9013676;Bremen Am Bahnhof St. Magnus;53.174.692;8.669.639;0
 9013822;Bremen Delmestraße;53.068.022;8.790.793;0
 9014151;Bremen Ritterhuder Heerstraße;53.133.632;8.736.583;0
-9013707;Bremen An Smidts Park;53.151.844;87.084;0
+9013707;Bremen An Smidts Park;53.151.844;8.708.400;0
 9014204;Bremen Stader Landstraße;53.167.533;8.702.409;0
 9014219;Bremen Stockholmer Straße;53.174.211;8.719.675;0
 9013893;Bremen Gerhard-Rohlfs-Straße;53.171.674;8.621.464;0
 9014297;Bremen Wilhelm-Zöllig-Straße;53.186.389;8.619.076;0
-9014036;Bremen Lerchenstraße;5.319.083;8.618.431;0
+9014036;Bremen Lerchenstraße;53.190.830;8.618.431;0
 9014074;Bremen Milchstraße;53.192.704;8.617.068;0
-9013935;Bremen Helmer;5.309.924;8.862.825;0
-9013944;Bremen Hermann-Frese-Straße;53.089.167;890.423;0
+9013935;Bremen Helmer;53.099.240;8.862.825;0
+9013944;Bremen Hermann-Frese-Straße;53.089.167;8.904.230;0
 9013680;Bremen Am Brill (Hutfilter-/Obernstraße);53.078.737;8.801.612;0
 9013681;Bremen Am Brill (Martinistraße);53.078.186;8.801.361;0
 9013874;Bremen Friedrich-Engels-Straße;53.050.535;8.853.241;0
@@ -66,7 +66,6 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014210;Bremen Stahlwerk Tor 3;53.130.727;8.706.355;0
 9013985;Bremen Johann-Bornemacher-Straße;53.090.596;8.786.706;0
 9014009;Bremen Klinikum Links der Weser;53.037.377;8.822.212;0
-9014071;Bremen Messe-Zentrum;53.084.496;8.816.285;0
 9014092;Bremen Neuenlander Kämpe;53.056.372;8.784.087;0
 9014154;Bremen Rockwinkeler Heerstraße;53.091.991;8.920.181;0
 9014222;Bremen Stresemannstraße;53.072.578;8.857.605;0
@@ -75,38 +74,38 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014293;Bremen Wilhelm-Herbst-Straße;53.111.923;8.849.904;0
 9014304;Bremen Ulrichsplatz;53.072.617;8.819.835;0
 9013727;Bremen Auf den Delben;53.141.842;8.713.751;0
-9013770;Bremen Bollener Landstraße;53.034.477;895.256;0
+9013770;Bremen Bollener Landstraße;53.034.477;8.952.560;0
 9013797;Bremen Buschdeel;53.190.115;8.543.273;0
 9013842;Bremen Eickedorfer Straße;53.092.897;8.810.399;0
 9013843;Bremen Einkaufszentrum Blockdiek;53.073.048;8.924.736;0
-9014079;Bremen Moorstücke;5.322.748;8.511.132;0
+9014079;Bremen Moorstücke;53.227.480;8.511.132;0
 9065562;Neuenkirchen(Schwanewede) Landwehr;53.232.616;8.513.683;0
 9013982;Bremen In der Laake;53.030.451;8.845.611;0
-9014301;Bremen Witzlebenstraße;53.076.859;890.146;0
-9014300;Bremen Wilseder-Berg-Straße;5.307.319;8.879.215;0
+9014301;Bremen Witzlebenstraße;53.076.859;8.901.460;0
+9014300;Bremen Wilseder-Berg-Straße;53.073.190;8.879.215;0
 9014307;Bremen Ziegeleiweg;53.185.773;8.637.623;0
 9014104;Bremen Oberste Kämpe;53.109.801;8.882.018;0
 9013845;Bremen Ellenerbrokstraße;53.074.048;8.947.463;0
-9013844;Bremen Elisabethstraße;5.309.465;8.778.539;0
-9013846;Bremen Emder Straße;53.101.332;877.413;0
+9013844;Bremen Elisabethstraße;53.094.650;8.778.539;0
+9013846;Bremen Emder Straße;53.101.332;8.774.130;0
 9014033;Bremen Lange Reihe;53.101.724;8.778.428;0
 9014032;Bremen Landshuter Straße;53.094.547;8.802.868;0
-9014039;Bremen Linzer Straße;5.310.848;8.861.101;0
-9014103;Bremen Obernstraße;5.307.672;8.806.128;0
+9014039;Bremen Linzer Straße;53.108.480;8.861.101;0
+9014103;Bremen Obernstraße;53.076.720;8.806.128;0
 9014102;Bremen Oberneulander Heerstraße;53.102.234;8.912.764;0
 9014100;Bremen Nußhorn;53.044.264;8.952.185;0
 9014101;Bremen Nürnberger Straße;53.094.724;8.797.048;0
-9013741;Bremen Bahnhof Oberneuland;5.308.762;8.938.337;0
+9013741;Bremen Bahnhof Oberneuland;53.087.620;8.938.337;0
 9014023;Bremen Kurfürstenallee;53.082.209;8.854.479;0
-9014022;Bremen Kulenkampffallee;5.309.832;8.839.693;0
+9014022;Bremen Kulenkampffallee;53.098.320;8.839.693;0
 9014020;Bremen Krönkeskamp;53.104.354;8.816.635;0
-9014029;Bremen Lachmundsdamm;53.058.804;894.127;0
-9014055;Bremen Malthusstraße;5.303.883;895.983;0
+9014029;Bremen Lachmundsdamm;53.058.804;8.941.270;0
+9014055;Bremen Malthusstraße;53.038.830;8.959.830;0
 9014054;Bremen Malerstraße;53.067.038;8.871.854;0
-9014052;Bremen Mackensenweg;53.090.624;890.569;0
+9014052;Bremen Mackensenweg;53.090.624;8.905.690;0
 9014056;Bremen Margaretenallee;53.178.992;8.594.592;0
 9013952;Bremen Hexenstieg;53.037.864;8.944.647;0
-9013879;Bremen Fultonstraße;53.114.441;889.599;0
+9013879;Bremen Fultonstraße;53.114.441;8.895.990;0
 9013738;Bremen Bahnhof Kreinsloger;53.189.963;8.558.304;0
 9014046;Bremen Ludwig-Quidde-Straße;53.067.635;8.862.488;0
 9013701;Bremen Am Siek;53.063.183;8.943.653;0
@@ -114,27 +113,27 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014051;Bremen Machandelweg;53.188.245;8.629.329;0
 9013702;Bremen Am Sodenmatt;53.045.803;8.718.782;0
 9014315;Bremen-Blumenthal Markt;53.181.419;8.573.693;0
-9013771;Bremen Borchsholt;5.318.305;8.634.595;0
+9013771;Bremen Borchsholt;53.183.050;8.634.595;0
 9014024;Bremen Kurt-Huber-Straße;53.078.187;8.911.485;0
 9013691;Bremen Am Hallacker;53.068.003;8.933.838;0
 9013695;Bremen Am Kapellenberg;53.164.231;8.666.018;0
 9013737;Bremen Bahnhof Farge;53.205.563;8.518.154;0
 9013766;Bremen Blumenhorster Straße;53.184.611;8.604.506;0
 9013973;Bremen Humboldtstraße;53.075.191;8.822.637;0
-9014249;Bremen Use Akschen;53.112.431;875.212;0
+9014249;Bremen Waterfront (Use Akschen);53.112.431;8.752.120;0
 9014248;Bremen Upsalastraße;53.176.795;8.717.168;0
 9014246;Bremen Universität/Zentralbereich;53.107.711;8.852.383;0
 9014285;Bremen Weserwehr;53.063.491;8.867.964;0
-9013754;Bremen Bei den Drei Pfählen;5.307.121;885.063;0
-9013975;Bremen Höpkens Ruh;5.309.323;8.933.031;0
+9013754;Bremen Bei den Drei Pfählen;53.071.210;8.850.630;0
+9013975;Bremen Höpkens Ruh;53.093.230;8.933.031;0
 9014242;Bremen Umspannwerk;53.107.559;8.817.532;0
 9014238;Bremen Trinidadstraße;53.060.028;8.893.732;0
 9014281;Bremen Werrahafen;53.051.821;8.882.936;0
 9013994;Bremen Karl-Carstens-Brücke;53.054.136;8.851.033;0
-9013694;Bremen Am Hulsberg;5.307.233;8.842.746;0
+9013694;Bremen Am Hulsberg;53.072.330;8.842.746;0
 9013693;Bremen Am Heiddamm;53.081.534;8.939.615;0
 9013692;Bremen Am Heidbergstift;53.173.944;8.697.446;0
-9014298;Bremen Willakedamm;5.304.704;8.738.244;1
+9014298;Bremen Willakedamm;53.047.040;8.738.244;1
 9014296;Bremen Wilhelm-Röntgen-Straße;53.099.801;8.886.046;0
 9014295;Bremen Wilhelm-Leuschner-Straße;53.079.041;8.885.502;0
 9013891;Bremen Georg-Gries-Straße;53.071.526;8.891.394;0
@@ -145,13 +144,13 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013710;Bremen An der Kämenade;53.059.407;8.923.097;0
 9013714;Bremen Arberger Hafendamm;53.048.331;8.883.638;0
 9013753;Bremen Beckers Barg;53.167.736;8.709.153;0
-9013752;Bremen Bayernstraße;5.310.645;8.795.886;0
-9013750;Bremen Barbarossastraße;53.079.089;886.074;0
+9013752;Bremen Bayernstraße;53.106.450;8.795.886;0
+9013750;Bremen Barbarossastraße;53.079.089;8.860.740;0
 9013703;Bremen Am Stern;53.084.252;8.825.747;0
 9013709;Bremen An der Amtsweide;53.192.782;8.534.216;0
 9014145;Bremen Ricardostraße;53.043.253;8.970.069;0
 9014143;Bremen Rhododendronpark;53.090.421;8.883.697;0
-9014142;Bremen Rennplatz;5.307.149;8.886.515;0
+9014142;Bremen Rennplatz;53.071.490;8.886.515;0
 9013732;Bremen Aumunder Kirche;53.174.872;8.624.136;0
 9013729;Bremen August-Bebel-Allee;53.085.724;8.873.569;0
 9014173;Bremen Schorf;53.098.408;8.892.991;0
@@ -165,7 +164,7 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014292;Bremen Wilhelm-Busch-Weg;53.071.391;8.906.545;0
 9014291;Bremen Wilhelm-Brandhorst-Straße;53.207.915;8.514.131;0
 9014289;Bremen Wiener Straße;53.106.152;8.845.833;0
-9014288;Bremen Wetterungsweg;5.311.197;8.820.089;0
+9014288;Bremen Wetterungsweg;53.111.970;8.820.089;0
 9014294;Bremen Wilhelm-Kaisen-Brücke;53.072.125;8.803.444;0
 9013885;Bremen Fürther Straße;53.099.687;8.807.555;0
 9013877;Bremen Friedrich-Stampfer-Straße;53.086.218;8.891.447;0
@@ -181,24 +180,24 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014172;Bremen Schneverdinger Straße;53.076.633;8.880.817;0
 9014170;Bremen Schlengstraße;53.049.696;8.892.448;0
 9014169;Bremen Schleiermacherstraße;53.063.745;8.789.421;0
-9014168;Bremen Schevemoorer Landstraße;53.077.599;894.024;0
-9014198;Bremen Sollingstraße;53.042.111;89.124;0
-9014195;Bremen Simon-Hermann-Post-Weg;53.090.669;892.496;0
-9014193;Bremen Sielwall;5.307.075;882.349;0
+9014168;Bremen Schevemoorer Landstraße;53.077.599;8.940.240;0
+9014198;Bremen Sollingstraße;53.042.111;8.912.400;0
+9014195;Bremen Simon-Hermann-Post-Weg;53.090.669;8.924.960;0
+9014193;Bremen Sielwall;53.070.750;8.823.490;0
 9013746;Bremen Bahnhof Turnerstraße;53.193.991;8.545.544;0
 9014226;Bremen Stuttgarter Straße;53.097.205;8.816.292;0
 9013828;Bremen Dobbheide;53.191.307;8.631.397;0
 9013827;Bremen Dobbenweg;53.078.669;8.826.308;0
 9013826;Bremen Dithmarscher Freiheit;53.102.444;8.799.509;0
 9013824;Bremen Dillener Park;53.188.391;8.547.833;0
-9013829;Bremen Dohlenstraße;53.135.314;873.091;0
+9013829;Bremen Dohlenstraße;53.135.314;8.730.910;0
 9013901;Bremen Gravestraße;53.090.592;8.911.317;0
 9013900;Bremen Graubündener Straße;53.071.396;8.949.386;0
 9013899;Bremen Grasberger Straße;53.108.644;8.763.679;0
 9013905;Bremen Gröpelingen;53.120.574;8.753.003;0
 9014265;Bremen Bahnhof Walle;53.102.536;8.785.338;0
 9014069;Bremen Mercedes-Benz Tor 8;53.065.007;8.914.263;0
-9013736;Bremen-Burg(Bus);5.316.061;8.704.381;0
+9013736;Bremen-Burg(Bus);53.160.610;8.704.381;0
 9014218;Bremen Steubenstraße;53.071.445;8.863.627;0
 9013823;Bremen Dietrich-Bonhoeffer-Straße;53.078.614;8.903.285;0
 9013896;Bremen Goosestraße;53.110.451;8.757.192;0
@@ -207,21 +206,21 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013897;Bremen Gottfried-Menken-Straße;53.062.116;8.801.724;0
 9014087;Bremen Mülheimer Straße;53.074.913;8.925.897;0
 9013711;Bremen An der Lehmkuhle;53.193.711;8.566.023;0
-9014084;Bremen Mühlenfeldstraße;53.089.905;893.411;0
-9013962;Bremen Hohweg;5.311.159;8.797.908;0
+9014084;Bremen Mühlenfeldstraße;53.089.905;8.934.110;0
+9013962;Bremen Hohweg;53.111.590;8.797.908;0
 9014040;Bremen Lise-Meitner-Straße;53.103.608;8.855.622;0
 9013665;Bremen Achterdiek;53.089.206;8.900.648;0
-9014082;Bremen Munte;5.310.478;8.840.919;0
+9014082;Bremen Munte;53.104.780;8.840.919;0
 9013667;Bremen Agnes-Heineken-Straße;53.038.759;8.832.342;0
 9013759;Bremen Berliner Freiheit;53.079.384;8.893.002;0
 9013758;Bremen Bennigsenstraße;53.070.355;8.856.131;0
-9013756;Bremen Beim Kleinen Tagwerk;5.309.658;8.909.506;0
+9013756;Bremen Beim Kleinen Tagwerk;53.096.580;8.909.506;0
 9013755;Bremen Beim Bohnenhof;53.051.383;8.949.641;0
 9013761;Bremen Berufsbildungswerk;53.102.639;8.859.212;0
 9082657;Schwanewede Insterburger Weg;53.219.785;8.589.594;0
 9014031;Bremen Landrat-Berthold-Straße;53.197.066;8.571.969;0
 9014150;Bremen Ringofenstraße;53.207.153;8.578.497;0
-9014305;Bremen Wätjens Park;5.317.999;8.588.774;0
+9014305;Bremen Wätjens Park;53.179.990;8.588.774;0
 9013883;Bremen Fährgrund;53.175.321;8.612.803;0
 9013781;Bremen Bremer Vulkan;53.177.414;8.601.612;1
 9013747;Bremen Bahnhof Vegesack;53.169.621;8.627.897;0
@@ -241,23 +240,23 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013859;Bremen Fellendsweg;53.051.538;8.839.582;0
 9014135;Bremen Radio Bremen/VHS;53.080.968;8.796.789;0
 9013881;Bremen Fähre Farge;53.199.224;8.526.993;0
-9014081;Bremen Morsumer Straße;5.302.783;8.818.821;0
-9014078;Bremen Moorstraße;5.311.303;8.764.801;0
+9014081;Bremen Morsumer Straße;53.027.830;8.818.821;0
+9014078;Bremen Moorstraße;53.113.030;8.764.801;0
 9013687;Bremen Am Geestkamp;53.147.399;8.711.405;0
 9013685;Bremen Am Fuchsberg;53.129.774;8.743.113;0
 9014083;Bremen Müdener Straße;53.074.036;8.875.811;0
 9013689;Bremen Am Großen Kuhkamp;53.048.153;8.950.356;0
-9013684;Bremen Am Fillerkamp;53.198.973;85.539;0
-9014152;Bremen Robert-Koch-Straße;53.043;8.824.685;0
+9013684;Bremen Am Fillerkamp;53.198.973;8.553.900;0
+9014152;Bremen Robert-Koch-Straße;53.043.000;8.824.685;0
 9014157;Bremen Rosenpfad;53.058.651;8.812.935;0
 9014234;Bremen Theater am Goetheplatz;53.072.382;8.816.868;0
 9014283;Bremen Weserpark-Süd;53.046.294;8.957.571;0
 9014236;Bremen Theodor-Heuss-Allee;53.088.125;8.808.212;0
-9014012;Bremen Knoops Park;53.165.632;867.699;0
+9014012;Bremen Knoops Park;53.165.632;8.676.990;0
 9014010;Bremen Kluvenhagener Straße;53.038.307;8.939.628;0
 9014004;Bremen Kleine Marschstraße;53.040.635;8.883.995;0
 9014227;Bremen Süntelstraße;53.039.767;8.908.775;0
-9014243;Bremen Universität-Nord;5.311.064;8.854.691;0
+9014243;Bremen Universität-Nord;53.110.640;8.854.691;0
 9014003;Bremen Kirchweg;53.062.306;8.810.167;0
 9013999;Bremen Kattenturm-Mitte;53.035.323;8.826.916;0
 9013832;Bremen Doventor;53.083.948;8.797.781;0
@@ -265,7 +264,7 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013833;Bremen Doventorsteinweg;53.085.002;8.799.072;0
 9013882;Bremen Fährer Kämpe;53.184.281;8.613.111;0
 9013880;Bremen Fähre Blumenthal;53.183.148;8.562.472;0
-9013854;Bremen Betriebshof Blumenthal;53.193.581;856.044;0
+9013854;Bremen Betriebshof Blumenthal;53.193.581;8.560.440;0
 9013858;Bremen Falkenstraße;53.082.733;8.806.914;0
 9014163;Bremen Rönnebecker Straße;53.185.739;8.555.946;0
 9014015;Bremen Krefelder Straße;53.071.128;8.929.917;0
@@ -275,15 +274,15 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013799;Bremen Busestraße;53.094.999;8.837.678;0
 9013875;Bremen Friedrich-Karl-Straße;53.075.347;8.844.205;0
 9013872;Bremen Friedhof Huckelriede;53.050.376;8.828.599;0
-9013876;Bremen Friedrich-Mißler-Straße;5.308.715;8.871.199;0
+9013876;Bremen Friedrich-Mißler-Straße;53.087.150;8.871.199;0
 9014149;Bremen Riespot;53.129.117;8.711.446;0
 9014148;Bremen Riensberg;53.096.659;8.853.667;0
 9014147;Bremen Riedemannstraße;53.135.024;8.715.458;0
 9014007;Bremen Klinikum Bremen-Ost;53.066.199;8.943.872;0
-9013793;Bremen Burger Dorfstraße;53.155.015;870.459;0
+9013793;Bremen Burger Dorfstraße;53.155.015;8.704.590;0
 9013791;Bremen Bulthauptstraße;53.088.359;8.832.825;0
 9013788;Bremen Brünsweg;53.044.354;8.897.381;0
-9013869;Bremen Fresenbergstraße;5.318.387;8.573.123;0
+9013869;Bremen Fresenbergstraße;53.183.870;8.573.123;0
 9013863;Bremen Flughafen;53.053.572;8.785.182;0
 9013871;Bremen Friedhof Huchting;53.038.981;8.728.576;0
 9014202;Bremen St.-Magnus-Straße;53.092.578;8.784.457;0
@@ -295,12 +294,12 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013945;Bremen Hermann-Funk-Straße;53.056.807;8.880.991;0
 9013818;Bremen Daniel-von-Büren-Straße;53.084.905;8.803.072;0
 9013780;Bremen Brandenburger Straße;53.082.128;8.867.423;0
-9013786;Bremen Brunnenstraße;53.072.248;882.864;0
+9013786;Bremen Brunnenstraße;53.072.248;8.828.640;0
 9014162;Bremen Ruppertshainer Straße;53.044.297;8.922.371;0
 9014160;Bremen Rotterdamer Straße;53.040.909;8.731.048;0
 9014159;Bremen Rotes-Kreuz-Krankenhaus;53.067.584;8.802.223;0
 9014158;Bremen Rotdornallee;53.173.313;8.688.119;0
-9014165;Bremen Saarstraße;53.059.599;890.939;0
+9014165;Bremen Saarstraße;53.059.599;8.909.390;0
 9013942;Bremen Herbststraße;53.090.874;8.805.639;0
 9013941;Bremen Herbartstraße;53.188.459;8.640.607;0
 9013764;Bremen Bf Klinikum Bremen-Nord;53.183.616;8.595.786;0
@@ -327,20 +326,20 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013777;Bremen Borgwardstraße;53.045.739;8.844.893;0
 9013779;Bremen Brahmsstraße;53.085.909;8.831.126;0
 9013995;Bremen Karl-Peters-Straße;53.095.457;8.782.206;0
-9013993;Bremen Karl-Bröger-Straße;53.124.857;87.489;0
+9013993;Bremen Karl-Bröger-Straße;53.124.857;8.748.900;0
 9013725;Bremen Auf dem Pasch;53.167.455;8.685.111;0
 9013724;Bremen Auf dem Krümpel;53.173.164;8.640.018;0
 9013721;Bremen Ascherfeld;53.178.477;8.624.792;0
 9013728;Bremen Auf der Sandhöhe;53.080.088;8.709.937;0
-9014116;Bremen Osterhop;53.052.712;88.993;1
+9014116;Bremen Osterhop;53.052.712;8.899.300;1
 9014114;Bremen Osterholzer Landstraße;53.074.053;8.936.052;0
 9014117;Bremen Ostwaldstraße;53.111.033;8.892.938;0
-9013958;Bremen Hohenesch;5.321.337;8.511.061;0
+9013958;Bremen Hohenesch;53.213.370;8.511.061;0
 9014132;Bremen Poggenburg;53.065.226;8.932.828;0
 9014131;Bremen Piependamm;53.041.519;8.850.432;0
 9013918;Bremen Hansator;53.089.025;8.784.695;0
 9013917;Bremen Hannoversche Straße;53.055.731;8.884.861;0
-9013916;Bremen Hanfstraße;53.191.441;853.842;0
+9013916;Bremen Hanfstraße;53.191.441;8.538.420;0
 9013914;Bremen Hakenwehrstraße;53.189.758;8.571.367;0
 9013919;Bremen Hansestraße;53.091.659;8.791.314;0
 9014133;Bremen Polizeipräsidium;53.079.174;8.878.882;0
@@ -356,35 +355,35 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013785;Bremen Bruchhauser Straße;53.039.086;8.834.853;0
 9013679;Bremen Am Brill (Bgm.-Smidt-Straße);53.078.676;8.799.969;0
 9013971;Bremen Huckelriede;53.051.804;8.819.524;0
-9014299;Bremen Willigstraße;53.059;880.887;0
+9014299;Bremen Willigstraße;53.059.000;8.808.870;0
 9013730;Bremen August-Hinrichs-Straße;53.060.767;8.804.383;0
 9013704;Bremen Am Wall;53.080.303;8.803.852;0
 9014014;Bremen Kopernikusstraße;53.109.036;8.887.189;0
 9013817;Bremen Daniel-Jacobs-Allee;53.123.781;8.900.069;0
 9013719;Bremen Arster Landstraße;53.028.031;8.849.956;0
 9013717;Bremen Arster Hemm;53.024.278;8.859.401;0
-9055739;Lilienthal Kutscher Behrens;5.315.378;8.938.184;0
+9055739;Lilienthal Kutscher Behrens;53.153.780;8.938.184;0
 9055734;Lilienthal Feldhäuser Straße;53.140.108;8.905.269;0
 9014197;Bremen Solinger Straße;53.061.769;8.773.826;0
 9014245;Bremen Universität-Süd;53.105.197;8.850.888;0
 9055746;Lilienthal Trupe;53.138.093;8.899.341;0
-9013768;Bremen Blumenthalstraße;53.083.615;8.817.761;0
+9013768;Bremen Hauptbahnhof-Nord/Messe;53.083.615;8.817.761;0
 9013720;Bremen Arsterdamm;53.046.718;8.818.351;0
-9055743;Lilienthal Schoofmoor;53.153.603;892.211;0
+9055743;Lilienthal Schoofmoor;53.153.603;8.922.110;0
 9055729;Lilienthal Auf dem Kamp;53.154.675;8.927.243;0
-9055728;Lilienthal;5.315.833;8.945.083;0
+9055728;Lilienthal;53.158.330;8.945.083;0
 9013920;Bremen Harriersand;53.057.678;8.728.489;0
 9013789;Bremen Brüsseler Straße;53.056.144;8.716.162;0
-9014196;Bremen Soester Straße;53.034.094;881.067;0
+9014196;Bremen Soester Straße;53.034.094;8.810.670;0
 9013936;Bremen Marßel;53.178.579;8.724.093;0
 9014068;Bremen Mercedes-Benz Tor 7;53.062.863;8.913.942;0
 9014155;Bremen Roland-Center;53.048.336;8.741.268;0
 9014130;Bremen Philipp-Scheidemann-Straße;53.085.865;8.879.448;0
 9013913;Bremen Haferwende;53.111.887;8.878.577;0
-9013912;Bremen Haferkamp;5.308.831;8.793.641;0
+9013912;Bremen Haferkamp;53.088.310;8.793.641;0
 9013910;Bremen Habenhauser Brückenstraße;53.050.319;8.847.649;0
 9013991;Bremen Kap-Horn-Straße;53.115.668;8.752.608;0
-9013989;Bremen Julius-Brecht-Allee;5.307.467;8.869.481;0
+9013989;Bremen Julius-Brecht-Allee;53.074.670;8.869.481;0
 9013907;Bremen Gustavstraße;53.098.159;8.788.665;0
 9013909;Bremen H.-H.-Meier-Allee;53.088.944;8.842.264;0
 9014268;Bremen Waller Straße;53.106.042;8.778.567;0
@@ -393,17 +392,17 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014059;Bremen Martin-Buber-Straße;53.035.341;8.841.133;0
 9014057;Bremen Marschstraße;53.047.316;8.892.916;0
 9014129;Bremen Pfarrfeldsweg;53.045.353;8.851.022;0
-9014097;Bremen Neuwieder Straße;53.066.796;896.154;0
+9014097;Bremen Neuwieder Straße;53.066.796;8.961.540;0
 9014099;Bremen Norderländer Straße;53.058.464;8.758.757;0
 9013933;Bremen Heisiusstraße;53.039.044;8.916.285;0
 9013932;Bremen Heinrich-Hertz-Straße;53.082.918;8.874.987;0
 9013931;Bremen Heiligenbergstraße;53.053.487;8.953.382;0
-9013937;Bremen Helsingborger Straße;53.178.584;871.919;0
+9013937;Bremen Helsingborger Straße;53.178.584;8.719.190;0
 9013903;Bremen Grenzwehr;53.068.245;8.938.981;0
 9014090;Bremen Neue Vahr Nord;53.086.163;8.896.131;0
 9014214;Bremen Stehnckenshoff;53.168.762;8.695.165;0
-9014211;Bremen Staustraße;5.304.662;8.859.413;0
-9014076;Bremen Mittelshuchtinger Dorfstraße;53.056.921;872.305;0
+9014211;Bremen Staustraße;53.046.620;8.859.413;0
+9014076;Bremen Mittelshuchtinger Dorfstraße;53.056.921;8.723.050;0
 9014077;Bremen Modersohnweg;53.094.139;8.914.759;0
 9014207;Bremen Stadtwaldsee;53.114.889;8.837.954;0
 9014073;Bremen Meyerstraße;53.064.636;8.797.028;0
@@ -413,27 +412,27 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014093;Bremen Neuenlander Straße;53.066.911;8.782.459;0
 9013925;Bremen Hauptbahnhof;53.081.776;8.813.177;0
 9013851;Bremen Eppenhainer Straße;53.041.521;8.931.657;0
-9013850;Bremen Engadiner Straße;53.066.433;895.569;0
-9013849;Bremen Emmentaler Straße;53.069.544;893.453;0
+9013850;Bremen Engadiner Straße;53.066.433;8.955.690;0
+9013849;Bremen Emmentaler Straße;53.069.544;8.934.530;0
 9013847;Bremen Emmastraße;53.091.346;8.845.645;0
 9013853;Bremen Erkelenzer Straße;53.077.937;8.920.951;0
-9014310;Bremen Zum Kränholm;53.172.469;867.981;0
-9014309;Bremen Zum Huchtinger Bahnhof;5.305.814;8.735.178;0
+9014310;Bremen Zum Kränholm;53.172.469;8.679.810;0
+9014309;Bremen Zum Huchtinger Bahnhof;53.058.140;8.735.178;0
 9014308;Bremen Zum Donaufleet;53.181.632;8.567.805;0
 9014179;Bremen Schweizer Eck;53.064.785;8.949.679;0
-9014206;Bremen Stader Straße/Hamburger Straße;53.068.065;884.893;0
+9014206;Bremen Stader Straße/Hamburger Straße;53.068.065;8.848.930;0
 9014203;Bremen Stackkamp;53.040.671;8.904.561;0
 9014043;Bremen Loignystraße;53.082.555;8.860.005;0
-9014049;Bremen Löhstraße;53.184.836;859.781;0
-9014042;Bremen Lohmannstraße;5.309.316;8.803.987;0
+9014049;Bremen Löhstraße;53.184.836;8.597.810;0
+9014042;Bremen Lohmannstraße;53.093.160;8.803.987;0
 9014041;Bremen Lloydstraße;53.086.265;8.790.106;0
 9014109;Bremen Oslebshauser Landstraße;53.128.701;8.729.345;0
 9014107;Bremen Ohmstraße;53.109.118;8.891.121;0
 9014105;Bremen Obervielander Straße;53.051.864;8.740.732;0
 9014106;Bremen Oewerweg;53.062.134;8.931.654;0
 9014988;Brinkum(Stuhr) IKEA/Marktkauf;53.027.399;8.802.063;0
-9014136;Bremen Rastenburger Straße;5.321.403;8.583.092;0
-9013830;Bremen Domsheide;53.074.432;880.898;0
+9014136;Bremen Rastenburger Straße;53.214.030;8.583.092;0
+9013830;Bremen Domsheide;53.074.432;8.808.980;0
 9014183;Bremen Schüsselkorb;53.077.171;8.810.675;0
 9014141;Bremen Rembertistraße;53.080.648;8.818.683;0
 9013683;Bremen Am Dobben;53.078.596;8.823.672;0
@@ -443,20 +442,20 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014001;Bremen Kirchbachstraße;53.085.023;8.849.847;0
 9013873;Bremen Friedhofstraße;53.088.764;8.856.269;0
 9013866;Bremen Focke-Museum;53.090.232;8.862.913;0
-9013803;Bremen Bürgermeister-Spitta-Allee;5.309.124;8.871.132;0
+9013803;Bremen Bürgermeister-Spitta-Allee;53.091.240;8.871.132;0
 9013969;Bremen Horn (Horner Kirche);53.096.627;8.870.274;0
 9014263;Bremen Vorstraße;53.101.379;8.874.424;0
 9013970;Bremen Horner Mühle;53.101.463;8.880.136;0
 9014280;Bremen Werner-von-Siemens-Straße;53.105.213;8.884.023;0
 9014128;Bremen Peter-Henlein-Straße;53.113.018;8.891.596;0
 9013697;Bremen Am Lehester Deich;53.118.618;8.897.191;0
-9013957;Bremen Hohenbuchener Straße;5.321.098;8.579.634;0
+9013957;Bremen Hohenbuchener Straße;53.210.980;8.579.634;0
 9014239;Lilienthal Truperdeich;53.135.267;8.898.558;0
 9013974;Bremen Höger Weg;53.115.513;8.894.018;0
 9013769;Bremen Bockhorner Weg;53.192.655;8.574.816;0
 9014060;Bremen Martin-Luther-Straße;53.188.353;8.577.122;0
 9014213;Bremen Steenkuhlenweg;53.202.561;8.571.028;0
-9013929;Bremen Hegeweg;5.320.506;8.574.616;0
+9013929;Bremen Hegeweg;53.205.060;8.574.616;0
 9013739;Bremen Bahnhof Lesum;53.171.129;8.684.687;0
 9013751;Bremen Bardenflethstraße;53.060.398;8.765.164;0
 9014253;Bremen Verdunstraße;53.081.052;8.843.632;0
@@ -468,17 +467,17 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013773;Bremen Borgfeld;53.127.033;8.898.829;0
 9013795;Bremen Burgdammer Postweg;53.175.454;8.706.396;0
 9014277;Bremen Weidedamm-Nord;53.099.911;8.820.266;0
-9013998;Bremen Kattenescher Weg;53.030.449;881.252;0
-9014212;Bremen Stedinger Brücke;53.094.546;86.664;0
+9013998;Bremen Kattenescher Weg;53.030.449;8.812.520;0
+9014212;Bremen Stedinger Brücke;53.094.546;8.666.400;0
 9014048;Bremen Luley;53.088.707;8.674.244;0
 9014215;Bremen Stellfeldsweg;53.086.236;8.690.978;0
 9014330;Bremen-Strom Schule;53.083.275;8.701.513;0
 9014026;Bremen Köhler Brücke;53.076.718;8.722.993;0
-9013749;Bremen Bakeweg;53.092.162;87.508;0
+9013749;Bremen Bakeweg;53.092.162;8.750.800;0
 9014153;Bremen Roccoweg;53.094.408;8.748.123;0
 9014290;Bremen Wildeshauser Straße;53.082.939;8.768.963;0
 9014134;Bremen Rablinghausen;53.096.063;8.746.105;0
-9013939;Bremen Hemmstraße;53.094.805;880.845;0
+9013939;Bremen Hemmstraße;53.094.805;8.808.450;0
 9014250;Bremen Utbremer Ring;53.098.252;8.812.582;0
 9013983;Bremen Innsbrucker Straße;53.101.476;8.814.684;0
 9014161;Bremen Rudolf-Alexander-Schröder-Straße;53.100.837;8.817.501;0
@@ -487,13 +486,13 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013972;Bremen Huder Straße;53.079.615;8.776.158;0
 9013837;Bremen Dötlinger Straße;53.081.692;8.772.089;0
 9014137;Bremen Rechtenflether Straße;53.084.331;8.766.262;0
-9014303;Bremen Woltmershauser Friedhof;53.087.386;876.182;0
-9014224;Bremen Stromer Straße;53.088.699;87.536;0
+9014303;Bremen Woltmershauser Friedhof;53.087.386;8.761.820;0
+9014224;Bremen Stromer Straße;53.088.699;8.753.600;0
 9014094;Bremen Neuer Schutzdeich;53.085.894;8.752.739;0
 9014096;Bremen Neustädter Hafen;53.088.685;8.744.386;0
 9014011;Bremen Klärwerk;53.110.187;8.716.313;0
 9014328;Bremen-Seehausen Schule;53.110.894;8.709.551;0
-9014108;Bremen Ortsamt Seehausen;5.311.568;8.704.411;0
+9014108;Bremen Ortsamt Seehausen;53.115.680;8.704.411;0
 9014018;Bremen Kriegerdenkmal;53.116.712;8.700.237;0
 9013923;Bremen Hasenbüren Hagens;53.116.538;8.697.117;0
 9013688;Bremen Am Glockenstein;53.116.764;8.690.902;0
@@ -501,8 +500,8 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014286;Bremen Wessels;53.117.578;8.678.985;0
 9013924;Bremen Hasenbürener Deich;53.119.649;8.674.182;0
 9013922;Bremen Hasenbüren;53.120.653;8.671.538;0
-9013908;Bremen Güterbahnhof Grolland;530.795;8.741.807;0
-9014223;Bremen Stromer Berg;53.079.807;873.703;0
+9013908;Bremen Güterbahnhof Grolland;53.079.500;8.741.807;0
+9014223;Bremen Stromer Berg;53.079.807;8.737.030;0
 9014045;Bremen Ludwig-Erhard-Straße;53.081.246;8.730.619;0
 9013886;Bremen GVZ-Verkehrsgewerbe Ost;53.083.494;8.723.576;0
 9013887;Bremen GVZ-Zentralbereich;53.085.385;8.717.639;0
@@ -512,7 +511,7 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014188;Bremen Senator-Mester-Straße;53.094.537;8.709.992;0
 9014085;Bremen Mühlenhauser Fleet;53.097.927;8.718.535;0
 9013669;Bremen Akazienstraße;53.078.266;8.780.314;0
-9014038;Bremen Lindenhofstraße;5.311.603;8.758.874;0
+9014038;Bremen Lindenhofstraße;53.116.030;8.758.874;0
 9013716;Bremen Arsten;53.027.637;8.837.534;0
 9014125;Bremen Parsevalstraße;53.067.143;8.887.862;0
 9014208;Bremen Stahlwerk Tor 1;53.138.303;8.714.133;0
@@ -525,27 +524,27 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014981;Brinkum(Stuhr) Am Bahnhof;53.014.159;8.784.592;0
 9014991;Brinkum(Stuhr) Magdeburger Straße;53.014.614;8.777.611;0
 9014995;Brinkum(Stuhr) Schule Feldstraße;53.011.508;8.786.621;0
-9014047;Bremen Ludwig-von-Kapff-Straße;5.303.218;8.885.225;0
+9014047;Bremen Ludwig-von-Kapff-Straße;53.032.180;8.885.225;0
 9014269;Bremen Walther-Jacobs-Straße;53.034.791;8.885.128;0
 9014091;Bremen Neuenkirchener Weg;53.201.683;8.560.562;0
 9014027;Bremen Köhlhorster Straße;53.199.311;8.563.063;0
-9014261;Bremen Vorberger Straße;5.319.698;8.565.518;0
+9014261;Bremen Vorberger Straße;53.196.980;8.565.518;0
 9082647;Schwanewede Dreienkamp;53.222.271;8.599.175;0
-9082648;Schwanewede Eichengrund;53.224.913;859.921;0
-9082642;Schwanewede Am Markt;5.322.186;859.456;0
-9013966;Bremen Holthorster Weg;5.317.346;8.675.907;0
+9082648;Schwanewede Eichengrund;53.224.913;8.599.210;0
+9082642;Schwanewede Am Markt;53.221.860;8.594.560;0
+9013966;Bremen Holthorster Weg;53.173.460;8.675.907;0
 9013943;Bremen Herdentor;53.079.642;8.810.039;0
 9013767;Bremen Blumenkamp;53.168.617;8.661.512;0
 9014146;Bremen Richthofenstraße;53.163.958;8.661.774;0
 9013862;Bremen Finkenschlag;53.163.568;8.657.023;0
 9014229;Bremen Taunusstraße;53.164.271;8.651.447;0
-9014185;Bremen Seefahrtstraße;5.316.492;8.646.217;0
+9014185;Bremen Seefahrtstraße;53.164.920;8.646.217;0
 9014181;Bremen Schönebecker Straße;53.166.745;8.637.522;0
 9013904;Bremen Grohn-Markt;53.167.045;8.631.187;0
 9013731;Bremen Aumunder Heide;53.178.094;8.618.798;0
 9013734;Bremen Bahnhof Aumund;53.183.713;8.618.878;0
 9013808;Bremen Carsten-Dreßler-Straße;53.033.829;8.844.585;0
-9014235;Bremen Theater am Leibnizplatz;53.069.659;879.909;0
+9014235;Bremen Theater am Leibnizplatz;53.069.659;8.799.090;0
 9013698;Bremen Am Neuen Markt;53.072.836;8.799.535;0
 9013776;Bremen Borgfeld-Ost;53.119.653;8.912.811;0
 9013670;Bremen Albert-Bischof-Straße;53.117.864;8.906.101;0
@@ -555,7 +554,7 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014182;Bremen Schöpfwerk;53.101.872;8.671.316;0
 9014144;Bremen Ricarda-Huch-Straße;53.101.558;8.816.116;0
 9014175;Bremen Schulzentrum Lerchenstraße;53.192.248;8.627.739;0
-9013955;Bremen Hochschule für Künste;53.097.677;876.963;0
+9013955;Bremen Hochschule für Künste;53.097.677;8.769.630;0
 9013848;Bremen Emmastraße/Bürgerpark;53.094.535;8.833.433;0
 9013668;Bremen Ahrensstraße;53.086.041;8.747.544;0
 9013800;Bremen Busestraße/Bürgerpark;53.097.139;8.835.355;0
@@ -583,7 +582,7 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9014312;Bremen-Aumund;53.185.195;8.617.492;0
 9014006;Bremen Klinikum Bremen-Nord/Beckedorf;53.185.269;8.595.141;0
 9014313;Bremen-Blumenthal;53.183.642;8.581.215;0
-9014086;Bremen Mühlenstraße;5.318.521;857.134;0
+9014086;Bremen Mühlenstraße;53.185.210;8.571.340;0
 9014016;Bremen Kreinsloger;53.188.782;8.557.846;0
 9014240;Bremen Turnerstraße;53.193.225;8.545.346;0
 9014316;Bremen-Farge;53.205.202;8.516.538;0
@@ -595,30 +594,30 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9013723;Bremen Auf dem Flintacker;53.188.963;8.634.641;0
 9014247;Bremen Unterführung B75;53.062.201;8.771.863;0
 9013705;Bremen Am Winterhafen;53.100.743;8.763.918;0
-9014194;Bremen Silbermannstraße;53.098.142;876.115;0
+9014194;Bremen Silbermannstraße;53.098.142;8.761.150;0
 9014190;Bremen Senator-Paulmann-Straße;53.070.326;8.775.482;0
 9014272;Bremen Warturmer Heerstraße;53.072.562;8.769.577;0
 9014256;Bremen Visbeker Straße;53.075.759;8.761.682;0
-9014176;Bremen Schuppen 1;53.089.847;877.721;0
+9014176;Bremen Schuppen 1;53.089.847;8.777.210;0
 9013976;Bremen Hüttenstraße Süd;53.126.482;8.713.954;0
-9014244;Bremen Universität-Ost;5.310.661;8.863.862;0
+9014244;Bremen Universität-Ost;53.106.610;8.863.862;0
 9014311;Bremen Überseetor;53.094.724;8.771.681;0
 9055742;Lilienthal Moorhauser Landstraße;53.147.355;8.912.158;0
 9014139;Bremen Reedeich-Nord;53.081.578;8.755.375;0
 9013784;Bremen Bromberger Straße;53.121.091;8.761.499;0
-9014178;Bremen Schwarzer Weg;5.312.581;8.757.589;0
+9014178;Bremen Schwarzer Weg;53.125.810;8.757.589;0
 9014273;Bremen Wasserhorster Straße;53.124.666;8.760.703;0
-9013915;Bremen Halmerweg;53.120.739;876.058;0
+9013915;Bremen Halmerweg;53.120.739;8.760.580;0
 9013990;Bremen Kalischer Straße;53.118.385;8.765.532;0
 9013819;Bremen De Kreienbarg;53.211.112;8.512.503;0
 9014260;Bremen Vor den Wischen;53.223.023;8.508.864;0
 9013825;Bremen Dirschauer Straße;53.116.773;8.768.244;0
-9013981;Bremen In den Barken;53.114.141;Aug 77;0
+9013981;Bremen In den Barken;53.114.141;8.801.700;0
 9013690;Bremen Am Hahnenkamp;53.062.489;8.950.732;0
 9013868;Bremen Fraunhoferstraße;53.116.251;8.899.534;0
 9013798;Bremen Buschdeel/Wendeplatz;53.190.443;8.542.791;0
 9013765;Bremen Bf Mahndorf;53.039.958;8.944.274;0
-9013772;Bremen Bordeaux-Straße;5.303.596;8.901.992;0
+9013772;Bremen Bordeaux-Straße;53.035.960;8.901.992;0
 9014028;Bremen La-Rochelle-Straße;53.033.155;8.899.999;0
 9014034;Bremen Lankenauer Höft;53.108.639;8.740.862;0
 9055740;Lilienthal Lilienthal-Mitte;53.143.206;8.908.811;0
@@ -633,10 +632,10 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9106164;Bremen Ludwig-Sütterlin-Straße;53.085.791;8.907.654;0
 9097791;Bremen Segelsbrück;53.058.651;8.897.149;0
 9020600;Bremen Bergener Straße;53.031.468;8.903.186;0
-9020610;Bremen Europaallee-Ost;53.030.228;890.886;0
+9020610;Bremen Europaallee-Ost;53.030.228;8.908.860;0
 9091820;Bremen Marcuskaje;53.094.487;8.767.481;0
-9091830;Bremen Schuppen 3;5.309.244;8.773.434;0
-9073100;Schwanewede Zum Marktplatz;5.322.268;8.592.843;0
+9091830;Bremen Hauptzollamt;53.092.440;8.773.434;0
+9073100;Schwanewede Zum Marktplatz;53.222.680;8.592.843;0
 9089009;Bremen PIER 2/Waterfront (Fähranleger);53.107.882;8.750.016;0
 9089010;Bremen Molenturm Überseestadt (Fähranleger);53.104.525;8.750.246;0
 9001281;Bremen Schlehenweg;53.050.084;8.857.481;0
@@ -644,6 +643,6 @@ stop_id;stop_name;stop_lat;stop_lon;number_of_building_sites
 9007675;Bremen Stromer Landstraße;53.082.081;8.751.472;0
 9071101;Bremen Am Gaswerkgraben;53.076.707;8.776.059;0
 9081130;Bremen Auf dem Bohnenkamp;53.078.226;8.771.448;0
-9097111;Bremen Am Tabakquartier;5.307.685;8.768.874;0
+9097111;Bremen Am Tabakquartier;53.076.850;8.768.874;0
 9079301;Bremen Alter Schutzdeich;53.074.508;8.765.604;0
 9017513;Brinkum(Stuhr) Marktplatz;53.010.794;8.788.817;0
