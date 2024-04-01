@@ -6,7 +6,9 @@ export const useSelectedContext = () => useContext(SelectedContext);
 
 function useSelected() {
   const [isSelected, setIsSelected] = useState(false);
-
+  const resetSelected = () => {
+    setIsSelected(false);
+  };
   const toggleSelected = () => {
     setIsSelected(!isSelected);
   };
@@ -15,6 +17,7 @@ function useSelected() {
     () => ({
       isSelected,
       toggleSelected,
+      resetSelected,
     }),
     [isSelected]
   );

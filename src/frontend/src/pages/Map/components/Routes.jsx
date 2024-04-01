@@ -9,7 +9,7 @@ import { useSelectedContext } from "../store/SelectedContext";
 function Routes() {
   const { tramRoutes, setTramRoutes } = useRouteContext();
   const { nightMode } = useNightModeContext();
-  const { isSelected, toggleSelected } = useSelectedContext();
+  const { isSelected, toggleSelected, resetSelected } = useSelectedContext();
   const { selectedRoute, setSelectedRoute } = useRouteContext();
   const [dayRoutes, setDayRoutes] = useState([]);
   const [nightRoutes, setNightRoutes] = useState([]);
@@ -29,8 +29,10 @@ function Routes() {
   }, []);
 
   useEffect(() => {
-    // Überprüfen, ob isSelected gesetzt ist und selectedRoute aktualisieren
-  }, []);
+    setSelectedRoute(null);
+    resetSelected();
+    console.log("selectedRoute reset");
+  }, [nightMode]);
 
   const drawRoutes = (tramRoutesData) => {
     const dayRoutes = [];
@@ -90,39 +92,41 @@ function Routes() {
   };
 
   const handleRouteClick = (routeId) => {
-    setSelectedRoute(routeId === selectedRoute ? null : routeId);
-    if (selectedRoute === null) {
-      toggleSelected();
-    }
-    console.log(isSelected, selectedRoute);
+    setSelectedRoute(selectedRoute === null ? routeId : null);
+    toggleSelected();
   };
 
   const routesToDisplay = nightMode ? nightRoutes : dayRoutes;
 
+  const mappedRoutes = routesToDisplay.map((route, index) => (
+    <Polyline
+      key={`${route.id}_${index}`}
+      positions={route.geometry}
+      color={
+        isSelected
+          ? selectedRoute === route.id
+            ? route.color
+            : "rgba(128, 128, 128, 0.1)"
+          : route.color
+      }
+      weight={isSelected ? (selectedRoute === route.id ? 8 : 4) : 4}
+      eventHandlers={{
+        click: () => {
+          handleRouteClick(route.id);
+        },
+      }}
+    >
+      <RoutePopup routeName={route.name} />
+    </Polyline>
+  ));
+
   return (
-    <div>
-      {routesToDisplay.map((route, index) => (
-        <Polyline
-          key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
-          positions={route.geometry}
-          color={
-            isSelected // Farbe bei Auswahl hinzugefügt
-              ? selectedRoute === route.id
-                ? route.color
-                : "grey"
-              : route.color
-          }
-          weight={4}
-          eventHandlers={{
-            click: () => {
-              handleRouteClick(route.id);
-            },
-          }}
-        >
-          <RoutePopup routeName={route.name} />
-        </Polyline>
-      ))}
-    </div>
+      <div>
+        {!isSelected && mappedRoutes}
+        {isSelected && mappedRoutes}
+        {console.log(isSelected, selectedRoute)}
+      </div>
+    
   );
 }
 
