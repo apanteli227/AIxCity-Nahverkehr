@@ -1,0 +1,12 @@
+.my-popup-style .leaflet-popup-content-wrapper {
+  background: rgb(233, 230, 230);
+  color: #000000;
+}
+.my-popup-style .popup-section {
+  background: rgb(233, 230, 230);
+  color: #000000;
+}
+.my-popup-style-route .leaflet-popup-content-wrapper {
+  background: rgb(233, 230, 230);
+  color: #000000;
+}
