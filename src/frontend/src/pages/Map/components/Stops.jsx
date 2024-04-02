@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Circle } from "react-leaflet";
 import StopPopup from "./popups/StopPopup";
 import { useStopContext } from "../store/StopContext";
@@ -24,8 +25,8 @@ const Stops = () => {
         setDayStops(dayStops);
         setNightStops(nightStops);
 
-        const csv = await fetchCsvStops();
-        const csvData = csv.data.split("\n").slice(1);
+        const csvFetch = await axios.get(csv);
+        const csvData = csvFetch.data.split("\n").slice(1);
         loadCsvStops(csvData);
       } catch (error) {
         console.error("Error:", error);
@@ -206,7 +207,7 @@ const Stops = () => {
                   color: "black",
                   fillColor: "white",
                   fillOpacity: 0.4,
-                  opacity: 0.5,
+                  opacity: 1,
                 }}
               >
                 {/* Verwenden Sie die PopupComponent hier */}
