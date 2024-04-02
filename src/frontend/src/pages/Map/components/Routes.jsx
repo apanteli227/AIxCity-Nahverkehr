@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Polyline } from "react-leaflet";
+import { Polyline, Popup } from "react-leaflet";
 import RoutePopup from "./popups/RoutePopup";
 import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
@@ -13,7 +13,7 @@ function Routes() {
   const { selectedRoute, setSelectedRoute } = useRouteContext();
   const [dayRoutes, setDayRoutes] = useState([]);
   const [nightRoutes, setNightRoutes] = useState([]);
-
+  const [popupInfo, setPopupInfo] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -91,8 +91,8 @@ function Routes() {
     setTramRoutes(nightMode ? nightRoutes : dayRoutes);
   };
 
-  const handleRouteClick = (routeId) => {
-    setSelectedRoute(selectedRoute === null ? routeId : null);
+  const handleRouteClick = (routeid) => {
+    setSelectedRoute(selectedRoute === null ? routeid : null);
     toggleSelected();
   };
 
@@ -111,22 +111,28 @@ function Routes() {
       }
       weight={isSelected ? (selectedRoute === route.id ? 8 : 4) : 4}
       eventHandlers={{
-        click: () => {
+        click: (event) => {
           handleRouteClick(route.id);
+          setPopupInfo({
+            position: event.latlng,
+            name: route.name,
+          });
         },
       }}
     >
-      <RoutePopup routeName={route.name} />
     </Polyline>
   ));
 
   return (
+    <>
       <div>
         {!isSelected && mappedRoutes}
-        {isSelected && mappedRoutes}
-        {console.log(isSelected, selectedRoute)}
+        {isSelected && mappedRoutes }
+        {popupInfo && isSelected && (
+        <RoutePopup routeName={popupInfo.name} position={popupInfo.position} />
+      )}
       </div>
-    
+    </>
   );
 }
 
