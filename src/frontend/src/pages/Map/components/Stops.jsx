@@ -206,13 +206,13 @@ const Stops = () => {
                   color: "black",
                   fillColor: "white",
                   fillOpacity: 0.4,
-                  opacity: 0.5,
+                  opacity: 1,
                 }}
               >
                 {/* Verwenden Sie die PopupComponent hier */}
                 <StopPopup
                   nearestCsvStop={nearestCsvStop}
-                  defaultText="Unknown Day Stop"
+                  defaultText="Unknown Stop"
                 />
               </Circle>
             );
