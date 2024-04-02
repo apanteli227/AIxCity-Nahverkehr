@@ -7,13 +7,18 @@ import { useNightModeContext } from "../store/NightModeContext";
 import { useSelectedContext } from "../store/SelectedContext";
 
 function Routes() {
-  const { tramRoutes, setTramRoutes } = useRouteContext();
+  const {
+    dayRoutes,
+    setDayRoutes,
+    nightRoutes,
+    setNightRoutes,
+    selectedRoute,
+    setSelectedRoute,
+  } = useRouteContext();
   const { nightMode } = useNightModeContext();
   const { isSelected, toggleSelected, resetSelected } = useSelectedContext();
-  const { selectedRoute, setSelectedRoute } = useRouteContext();
-  const [dayRoutes, setDayRoutes] = useState([]);
-  const [nightRoutes, setNightRoutes] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -88,7 +93,6 @@ function Routes() {
 
     setDayRoutes(dayRoutes);
     setNightRoutes(nightRoutes);
-    setTramRoutes(nightMode ? nightRoutes : dayRoutes);
   };
 
   const handleRouteClick = (routeid) => {
@@ -119,18 +123,20 @@ function Routes() {
           });
         },
       }}
-    >
-    </Polyline>
+    ></Polyline>
   ));
 
   return (
     <>
       <div>
         {!isSelected && mappedRoutes}
-        {isSelected && mappedRoutes }
+        {isSelected && mappedRoutes}
         {popupInfo && isSelected && (
-        <RoutePopup routeName={popupInfo.name} position={popupInfo.position} />
-      )}
+          <RoutePopup
+            routeName={popupInfo.name}
+            position={popupInfo.position}
+          />
+        )}
       </div>
     </>
   );

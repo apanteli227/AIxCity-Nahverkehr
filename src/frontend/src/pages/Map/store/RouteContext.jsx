@@ -17,14 +17,17 @@ function useSelectedRoute() {
 }
 
 export default function RouteProvider({ children }) {
-  const [tramRoutes, setTramRoutes] = useState([]);
+  const [dayRoutes, setDayRoutes] = useState([]);
+  const [nightRoutes, setNightRoutes] = useState([]);
   const [selectedRoute, setSelectedRoute] = useState(null); // Hinzufügen des selectedRoute Zustands
   const selectedRouteValue = useSelectedRoute();
   return (
     <RouteContext.Provider
       value={{
-        tramRoutes,
-        setTramRoutes,
+        dayRoutes,
+        setDayRoutes,
+        nightRoutes,
+        setNightRoutes,
         selectedRoute,
         setSelectedRoute,
         selectedRouteValue,

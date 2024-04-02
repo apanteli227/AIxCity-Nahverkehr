@@ -16,20 +16,20 @@ const MapComponent = () => {
       <NightModeProvider>
         <SelectedProvider>
           <MapContainer center={position} zoom={12}>
-            <ul className="navigation-bar-map">
-              <li>
-                <Nightmode />
-              </li>
-              <CustomizedSelects />
-            </ul>
-
             <RouteProvider>
               <Routes />
-            </RouteProvider>
 
-            <StopProvider>
-              <Stops />
-            </StopProvider>
+              <StopProvider>
+                <Stops />
+              </StopProvider>
+
+              <ul className="navigation-bar-map">
+                <li>
+                  <Nightmode />
+                </li>
+                <CustomizedSelects />
+              </ul>
+            </RouteProvider>
           </MapContainer>
         </SelectedProvider>
       </NightModeProvider>
