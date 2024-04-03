@@ -6,7 +6,6 @@ import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
 import { useSelectedContext } from "../store/SelectedContext";
 
-
 function Routes() {
   const {
     dayRoutes,
@@ -15,10 +14,11 @@ function Routes() {
     setNightRoutes,
     selectedRoute,
     setSelectedRoute,
+    popupInfo,
+    setPopupInfo,
   } = useRouteContext();
   const { nightMode } = useNightModeContext();
   const { isSelected, toggleSelected, resetSelected } = useSelectedContext();
-  const [popupInfo, setPopupInfo] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -138,7 +138,8 @@ function Routes() {
             routeName={popupInfo.name}
             position={popupInfo.position}
           />
-        )}{console.log("selectedRoute:", selectedRoute)}
+        )}
+        {console.log("selectedRoute:", selectedRoute)}
       </div>
     </>
   );

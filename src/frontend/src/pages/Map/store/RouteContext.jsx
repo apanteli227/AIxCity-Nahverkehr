@@ -20,6 +20,7 @@ export default function RouteProvider({ children }) {
   const [dayRoutes, setDayRoutes] = useState([]);
   const [nightRoutes, setNightRoutes] = useState([]);
   const [selectedRoute, setSelectedRoute] = useState(null); // Hinzufügen des selectedRoute Zustands
+  const [popupInfo, setPopupInfo] = useState(null);
   const selectedRouteValue = useSelectedRoute();
   return (
     <RouteContext.Provider
@@ -31,6 +32,8 @@ export default function RouteProvider({ children }) {
         selectedRoute,
         setSelectedRoute,
         selectedRouteValue,
+        popupInfo,
+        setPopupInfo,
       }}
     >
       {children}
