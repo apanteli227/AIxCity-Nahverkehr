@@ -3,6 +3,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import RouteProvider, { useRouteContext } from "../store/RouteContext";
 import { useNightModeContext } from "../store/NightModeContext";
+import { useSelectedContext } from "../store/SelectedContext";
 
 
 // Rest of the code...
@@ -15,6 +16,7 @@ export default function SearchableDropdown() {
   const [dayRoutesNames, setDayRoutesNames] = useState([]);
   const [nightRoutesNames, setNightRoutesNames] = useState([]);
   const [routesLoaded, setRoutesLoaded] = useState(false);
+  const { toggleSelected } = useSelectedContext();
   //const [routesToDisplay, setRoutesToDisplay] = useState([]);
 
   // Prüfen ob Routen geladen sind
@@ -36,13 +38,13 @@ export default function SearchableDropdown() {
         id: id,
         name: name,
       }));
-
+      
       setDayRoutesNames(uniqueRoutes);
 
       const uniqueRouteNames2 = new Set();
 
       nightRoutes.forEach((route) => {
-        uniqueRouteNames2.add(route.name, route.id);
+        uniqueRouteNames2.add({name:route.name, id:route.id});
       });
 
       const uniqueRoutes2 = Array.from(uniqueRouteNames2).map((name, id) => ({
@@ -50,6 +52,7 @@ export default function SearchableDropdown() {
         name: name,
       }));
       setNightRoutesNames(uniqueRoutes2);
+      console.log("Unique Route Names:", uniqueRouteNames);
     }
     
   }, [routesLoaded]);
@@ -61,9 +64,8 @@ export default function SearchableDropdown() {
   };
 
   const handleLineSelect = (event, value) => {
-    console.log("Selected Line:", value.name);
+    console.log("Selected Line:", value);
     setSearchTerm(value ? `Tram ${value.name}` : "");
-    setSelectedRoute(value);
     setSelectedRoute(selectedRoute === null ? value.id : null);
     toggleSelected();
     ;
@@ -76,11 +78,11 @@ export default function SearchableDropdown() {
           id="searchable-dropdown"
           options={nightMode ? nightRoutesNames : dayRoutesNames}
           getOptionLabel={(option) => option.name || ""}
-          value={searchTerm}
+          value={selectedRoute} // Store the selected route in the value
           open={open}
           onOpen={() => setOpen(true)}
           onClose={() => setOpen(false)}
-          onChange={(event, value) => handleLineSelect(value)}
+          onChange={(event, value) => handleLineSelect(event, value)} // Pass the event and value to handleLineSelect
           inputValue={searchTerm}
           onInputChange={(event, value) => setSearchTerm(value)}
           renderInput={(params) => (
@@ -96,7 +98,7 @@ export default function SearchableDropdown() {
           )}
         />
       </div>
+      
     </RouteProvider>
   );
-  
 }

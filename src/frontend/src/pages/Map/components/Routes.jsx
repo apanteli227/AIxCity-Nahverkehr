@@ -85,7 +85,7 @@ function Routes() {
       if (element.type === "relation") {
         const tags = element.tags || {};
         const color = tags.colour || "blue";
-        const id = element.id;a
+        const id = element.id;
         if (isValidRoute(tags)) {
           processMembers(element.members, tags, color, id);
         }
@@ -99,6 +99,7 @@ function Routes() {
   const handleRouteClick = (routeid) => {
     setSelectedRoute(selectedRoute === null ? routeid : null);
     toggleSelected();
+    console.log("selectedRoute:", selectedRoute);
   };
 
   const routesToDisplay = nightMode ? nightRoutes : dayRoutes;
@@ -137,7 +138,7 @@ function Routes() {
             routeName={popupInfo.name}
             position={popupInfo.position}
           />
-        )}
+        )}{console.log("selectedRoute:", selectedRoute)}
       </div>
     </>
   );
