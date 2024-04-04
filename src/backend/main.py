@@ -159,7 +159,11 @@ async def run_task_with_interval(task_function, interval_seconds):
 
 
 async def run_transit_task():
-    await save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
+        traffic_dataframe = get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")
+        if traffic_dataframe is not None:
+            await save_transit_data(traffic_dataframe)
+        else:
+            logging.warning("Public transit data is None! Skipping save_transit_data.")    
 
 
 async def run_traffic_task():
