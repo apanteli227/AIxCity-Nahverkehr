@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://134.102.23.195:8079/';
+const BASE_URL = 'http://134.102.23.195:8079';
 
 export async function getLines() {
     return await axios.get(`${BASE_URL}/get_lines`);

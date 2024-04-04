@@ -6,29 +6,35 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import {Autocomplete, Button, Checkbox, TextField} from "@mui/material";
 import {getCustomStatistics, getLines, getStops} from "../../api.js";
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
+const icon = <CheckBoxOutlineBlankIcon fontSize="small"/>;
+const checkedIcon = <CheckBoxIcon fontSize="small"/>;
+
+const statistiken = [
+    "Ankunftsverspätung",
+    "Abfahrtsverspätung",
+    "generierte Verspätung",
+    "Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)",
+    "Anzahl der Verspätungen",
+    "Anzahl der Abfahrten pro Tag",
+    "Anzahl der Abfahrtenausfälle pro Monat",
+    "Ausfallrate",
+];
 
 export default function BasicTabs() {
     const [value, setValue] = useState(0);
-    const [lines, setLines] = useState([]);
-    const [stops, setStops] = useState([]);
+    const [lines, setLines] = useState(["1 - Bf Mahndorf", "1 - Huchting"]);
+    const [stops, setStops] = useState(["Hauptbahnhof"]);
     const [formData, setFormData] = useState({
         mode: value === 0 ? "linien" : value === 1 ? "haltestellen" : "gesamt",
         startDateAndTime: "",
         endDateAndTime: "",
         selectedItems: [],
-        selectedStatistic: "",
+        selectedStatistic: statistiken[1],
         selectedRadio: "",
     });
-    const statistiken = [
-        "Ankunftsverspätung",
-        "Abfahrtsverspätung",
-        "generierte Verspätung",
-        "Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)",
-        "Anzahl der Verspätungen",
-        "Anzahl der Abfahrten pro Tag",
-        "Anzahl der Abfahrtenausfälle pro Monat",
-        "Ausfallrate",
-    ];
 
     useEffect(
         () => {
@@ -50,7 +56,7 @@ export default function BasicTabs() {
                 .catch((error) => {
                     console.error("Error fetching stops data:", error);
                 });
-        }, [] // Empty dependency array ensures that the effect runs only once on component mount
+        }, [formData] // Empty dependency array ensures that the effect runs only once on component mount
     );
 
     const handleSubmit = (event) => {
@@ -66,11 +72,23 @@ export default function BasicTabs() {
             });
     };
 
+    const handleInputChangeList = (event, value) => {
+        console.log(value)
+        setFormData((prevData) => ({
+            ...prevData,
+            selectedItems: [...formData["selectedItems"], ...value],
+        }));
+        console.log(value)
+        console.log({formData});
+    };
+
     const handleInputChange = (field, value) => {
+        console.log(value)
         setFormData((prevData) => ({
             ...prevData,
             [field]: value,
         }));
+        console.log({formData});
     };
 
     const handleTabChange = (event, newValue) => {
@@ -90,7 +108,7 @@ export default function BasicTabs() {
                         shrink: true,
                     }}
                     value={formData.startDateAndTime}
-                    onChange={(e) => handleInputChange("startDateTime", e.target.value)}
+                    onChange={(e) => handleInputChange("startDateAndTime", e.target.innerText)}
                 />
                 <TextField
                     className="statistics-box-box"
@@ -101,7 +119,7 @@ export default function BasicTabs() {
                         shrink: true,
                     }}
                     value={formData.endDateAndTime}
-                    onChange={(e) => handleInputChange("endDateTime", e.target.value)}
+                    onChange={(e) => handleInputChange("endDateAndTime", e.target.innerText)}
                 />
 
                 <Box sx={{width: "100%"}}>
@@ -109,36 +127,48 @@ export default function BasicTabs() {
                         <Tabs
                             value={value}
                             onChange={handleTabChange}
-                            aria-label="basic tabs example"
+                            aria-label="custom statistics tabs"
                         >
-                            <Tab
-                                label="Item One"{...a11yProps(0)}/>
-                            <Tab label="Item Two" {...a11yProps(1)} />
-                            <Tab label="Item Three" {...a11yProps(2)} />
+                            <Tab label="Linien"{...a11yProps(0)}/>
+                            <Tab label="Haltestellen" {...a11yProps(1)} />
+                            <Tab label="Beides" {...a11yProps(2)} />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
-                        <h3>Linien</h3>
+                        <h3>Linienbasierte Statistiken</h3>
                         <Autocomplete
                             className="statistics-box-box"
-                            backgroundColor="black"
                             multiple
-                            id="checkboxes-tags-demo"
                             options={lines}
                             disableCloseOnSelect
-                            getOptionLabel={(option) => option.title}
+                            getOptionLabel={(option) => option}
                             renderOption={(props, option, {selected}) => (
                                 <li {...props}>
                                     <Checkbox
                                         icon={icon}
                                         checkedIcon={checkedIcon}
                                         style={{marginRight: 8}}
-                                        checked={formData.selectedItems.includes(option.title)}
+                                        checked={selected}
                                     />
-                                    {option.title}
+                                    {option}
                                 </li>
                             )}
-                            style={{width: 300}}
+                            onChange={(event, value, reason, details) => {
+                                console.log(event);
+                                console.log(formData["selectedItems"])
+                                console.log(value)
+                                console.log(reason)
+                                console.log(details)
+                                console.log([...formData["selectedItems"], ...value])
+                                const newForm = {
+                                    ...formData,
+                                    selectedItems: value,
+                                };
+                                setFormData(newForm);
+
+                                console.log({formData});
+                            }
+                            }
                             renderInput={(params) => (
                                 <TextField {...params} label="Linien" placeholder="Linien"/>
                             )}
@@ -150,28 +180,26 @@ export default function BasicTabs() {
                             options={statistiken}
                             value={formData.selectedStatistic}
                             onChange={(e) =>
-                                handleInputChange("selectedStatistic", e.target.value)
+                                handleInputChange(e.target.innerText)
                             }
-                            sx={{width: 300}}
                             renderInput={(params) => (
                                 <TextField {...params} label="Statistik"/>
                             )}
                         />
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
-                        <h3>Haltestellen</h3>
+                        <h3>Haltestellenbasierte Statistiken</h3>
                         <Autocomplete
                             className="statistics-box-box"
                             multiple
-                            id="checkboxes-tags-demo"
                             options={stops}
                             disableCloseOnSelect
-                            getOptionLabel={(option) => option.title}
+                            onInputChange={(e, value, reason) =>
+                                handleInputChangeList(e, value, reason)
+                            }
                             renderOption={(props, option, {selected}) => (
                                 <li {...props}>
                                     <Checkbox
-                                        icon={icon}
-                                        checkedIcon={checkedIcon}
                                         style={{marginRight: 8}}
                                         checked={formData.selectedItems.includes(option.title)}
                                     />
@@ -190,11 +218,11 @@ export default function BasicTabs() {
                         <Autocomplete
                             className="statistics-box-box"
                             disablePortal
-                            id="combo-box-demo"
                             options={statistiken}
-                            onChange={(e) =>
-                                handleInputChange("selectedStatistic", e.target.value)
-                            }
+                            onChange={(e) => {
+                                console.log(e.target);
+                                handleInputChange(e.target.innerText)
+                            }}
                             value={formData.selectedStatistic}
                             sx={{width: 300}}
                             renderInput={(params) => (
@@ -203,7 +231,7 @@ export default function BasicTabs() {
                         />
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={2}>
-                        <h3>Gesamt</h3>
+                        <h3>Linien- und haltestellenbasierte Statistiken</h3>
                     </CustomTabPanel>
                 </Box>
                 <Button variant="submit" onSubmit={handleSubmit}>

@@ -73,7 +73,7 @@ def save_traffic_data(traffic_data_bsag_updates):
     max = 0
     for i in traffic_data_bsag_updates.index:
         vals = [traffic_data_bsag_updates.at[i, col] for col in list(traffic_data_bsag_updates.columns)]
-        query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,dayhour,dayquarter"current_speed","freeflow_Speed","quotient_current_freeflow_speed")
+        query = """INSERT INTO public.traffic_data (stop_name,stop_lat,stop_lon,"current_time","current_date",daytime,dayhour,dayquarter,"current_speed","freeflow_Speed","quotient_current_freeflow_speed")
                        VALUES ('%s', %s, %s, '%s', '%s', '%s', %s, %s ,'%s', '%s', '%s');""" % (
             vals[0],
             vals[1],
@@ -219,13 +219,12 @@ def run_data_collection():
 if __name__ == "__main__":
     # Create separate processes for running FastAPI and another script
     fastapi_process = multiprocessing.Process(target=run_fastapi)
-    #other_script_process = multiprocessing.Process(target=run_data_collection)
-    #todo comment out
+    other_script_process = multiprocessing.Process(target=run_data_collection)
 
     # Start both processes
     fastapi_process.start()
-    #other_script_process.start()
+    other_script_process.start()
 
     # Wait for both processes to finish
     fastapi_process.join()
-    #other_script_process.join()
+    other_script_process.join()
