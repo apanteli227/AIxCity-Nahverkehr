@@ -79,6 +79,9 @@ export default function SearchableDropdown() {
     setSearchTerm(value ? `Tram: ${value.name}` : "");
     setSelectedRoute(selectedRoute === null ? value.id : null);
     toggleSelected();
+    setPopupInfo(
+      value ? { name: value.name, position: [53.0688, 8.6629] } : null
+    ); // Feste Position für das Popup
     console.log("Selected Value:", value);
   };
 
