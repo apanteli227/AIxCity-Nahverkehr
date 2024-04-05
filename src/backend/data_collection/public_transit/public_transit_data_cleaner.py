@@ -171,8 +171,6 @@ def get_public_transit_dataframe(gtfsr_url: str) -> pd.DataFrame:
     return stop_times_bsag_updates
 
 
-
-
 def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     """
     Die Funktion entfernt alle StopTime-Einträge, die nicht in der trips_bsag_df enthalten sind.

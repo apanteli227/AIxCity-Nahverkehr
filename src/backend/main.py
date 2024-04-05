@@ -159,7 +159,11 @@ async def run_task_with_interval(task_function, interval_seconds):
 
 
 async def run_transit_task():
-    await save_transit_data(get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json"))
+        traffic_dataframe = get_public_transit_dataframe("https://gtfsr.vbn.de/gtfsr_connect.json")
+        if traffic_dataframe is not None:
+            await save_transit_data(traffic_dataframe)
+        else:
+            logging.warning("Public transit data is None! Skipping save_transit_data.")    
 
 
 async def run_traffic_task():
@@ -182,12 +186,6 @@ async def run_traffic_task_at_specific_times():
     # Alle Viertelstunde die Verkehrsdaten aktualisieren
     schedule.every(15).minutes.do(run_traffic_task)
 
-    # !!!!Sollte obige Anpassung stimmen, bitte diese 4 Befehle entfernen!!!!!
-    #schedule.every().day.at("08:00").do(run_traffic_task)
-    #schedule.every().day.at("12:00").do(run_traffic_task)
-    #schedule.every().day.at("16:00").do(run_traffic_task)
-    #schedule.every().day.at("20:00").do(run_traffic_task)
-
     while True:
         schedule.run_pending()
         await asyncio.sleep(1)
@@ -199,9 +197,6 @@ async def main():
         asyncio.create_task(run_task_with_interval(run_events_task, 86400)),  # 86400 seconds = 24 hours
         asyncio.create_task(run_task_with_interval(run_weather_task, 3600)),  # 3600 seconds = 1 hour
         asyncio.create_task(run_task_with_interval(run_traffic_task, 900)), # 900 seconds = 15 minutes
-
-        #!!!!Entfernen wenn dies nicht mehr benötigt wird!!!!
-        #asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
     ]
 
     await asyncio.gather(*tasks)
