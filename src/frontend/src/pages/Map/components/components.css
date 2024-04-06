@@ -10,3 +10,8 @@
   background: rgb(233, 230, 230);
   color: #000000;
 }
+.heatmap-checkbox {
+  position: fixed;
+  left: 10px; /* Ändern Sie diesen Wert, um die horizontale Position anzupassen */
+  top: 10px; /* Ändern Sie diesen Wert, um die vertikale Position anzupassen */
+}
