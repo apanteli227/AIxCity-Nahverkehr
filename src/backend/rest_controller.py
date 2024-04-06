@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from urllib.parse import unquote
 
 from persistence import database_controller as dbc
 
@@ -79,7 +80,7 @@ async def read_data_lines():
 @app.get("/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
 async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
-    mode_input_str = mode_input.split(',')
+    mode_input_str = unquote(mode_input).split(',')
 
     if frequency == "daily":
         query = f"SELECT DATE_TRUNC('day', start_time) AS date, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('day', start_time);"
@@ -95,7 +96,7 @@ async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, 
 async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
 
-    mode_input_str = mode_input.split(',')
+    mode_input_str = unquote(mode_input).split(',')
     query = f"SELECT SUM(departure_delay) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
 
     return await read_data(query)
@@ -108,13 +109,13 @@ async def read_data_arrival_departure_delay(mode: str, mode_input: str, aggregat
     aggregate_str = get_aggregate(aggregate)
     statistic = get_statistic(statistic)
 
-    mode_input_str = mode_input.split(',')
+    mode_input_str = unquote(mode_input).split(',')
     query = f"SELECT {aggregate_str}{statistic} FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
-    # todo: time format converter function, if needed
+    # todo: use time format converter function
     return await read_data(query)
 
 
-def get_statistic(statistic):  # todo get frontend string names
+def get_statistic(statistic):
     if statistic == 'arrival':
         stat = 'arrival_delay'
     elif statistic == 'departure':
@@ -140,6 +141,14 @@ def get_mode(mode):
         return mode
     else:
         return 'what to do with mixed mode?'
+
+
+def get_date(date_string):
+    return date_string.split('T')[0]
+
+
+def get_time(date_string):
+    return date_string.split('T')[1]
 
 
 def read_data(query):

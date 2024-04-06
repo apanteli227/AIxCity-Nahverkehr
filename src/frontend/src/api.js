@@ -21,22 +21,25 @@ export async function getInterestingStatistics() {
 }
 
 export async function getCustomStatistics(input) {
-    const {mode, startDateAndTime, endDateAndTime, selectedItems, selectedStatistic, selectedRadio} = input;
+    const {mode, startDateTime, endDateTime, selectedItems, selectedStatistic, selectedRadio} = input;
     console.log({input})
     let endpoint = '';
 
+    // Encode selectedItems as a URI component
+    const encodedSelectedItems = encodeURIComponent(selectedItems.join(','));
+
     switch (selectedStatistic) {
         case "Ankunftsverspätung":
-            endpoint = `/arrival/${mode}/${selectedItems}/${selectedRadio}/${startDateAndTime}/${endDateAndTime}`;
+            endpoint = `/arrival/${mode}/${encodedSelectedItems}/${selectedRadio}/${startDateTime}/${endDateTime}`;
             break;
         case "Abfahrtsverspätung":
-            endpoint = `/departure/${mode}/${selectedItems}/${selectedRadio}/${startDateAndTime}/${endDateAndTime}`;
+            endpoint = `/departure/${mode}/${encodedSelectedItems}/${selectedRadio}/${startDateTime}/${endDateTime}`;
             break;
         case "generierte Verspätung":
-            endpoint = `/generated_delay/${mode}/${selectedItems}/${selectedRadio}/${startDateAndTime}/${endDateAndTime}`;
+            endpoint = `/generated_delay/${mode}/${encodedSelectedItems}/${selectedRadio}/${startDateTime}/${endDateTime}`;
             break;
         case 'Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)':
-            endpoint = `/${mode}/${selectedItems}/${startDateAndTime}/${endDateAndTime}`;
+            endpoint = `/${mode}/${encodedSelectedItems}/${startDateTime}/${endDateTime}`;
             break;
         case 'Anzahl der Abfahrten pro Tag':
             throw new Error('Noch nicht unterstützt!');
@@ -47,6 +50,6 @@ export async function getCustomStatistics(input) {
         default:
             throw new Error('Invalid mode');
     }
-
+    console.log(`${BASE_URL}${endpoint}`)
     return await axios.get(`${BASE_URL}${endpoint}`);
 }

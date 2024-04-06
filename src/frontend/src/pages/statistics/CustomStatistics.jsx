@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import {Autocomplete, Button, Checkbox, TextField} from "@mui/material";
+import {Autocomplete, Button, FormControl, FormControlLabel, Radio, RadioGroup, TextField} from "@mui/material";
 import {getCustomStatistics, getLines, getStops} from "../../api.js";
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -29,18 +29,25 @@ const statistiken = [
 export default function BasicTabs() {
     // workaround for the (initially planned) form object
     //todo put everything in the form object that can be put there
-    const [startDateTime, setStartDateTime] = useState(null);
-    const [endDateTime, setEndDateTime] = useState(null);
+    const [startDateTime, setStartDateTime] = useState(dayjs().subtract(1, 'month'));
+    const [endDateTime, setEndDateTime] = useState(dayjs());
     const [selectedStatistic, setSelectedStatistic] = useState(statistiken[1]);
-    const [selectedRadio, setSelectedRadio] = useState("");
-    const [lines, setLines] = useState(["1 - Bf Mahndorf", "1 - Huchting"]);
-    const [stops, setStops] = useState(["Hauptbahnhof"]);
+    const [selectedRadio, setSelectedRadio] = useState("avg");
+    const [lines, setLines] = useState(convertArrayToObject(["1 - Bf Mahndorf", "1 - Huchting"]));
+    const [stops, setStops] = useState(convertArrayToObject(["Hauptbahnhof"]));
     const [tab, setTab] = useState(0);
     const [allValues, setAllValues] = useState(tab === 0 ? lines : stops);
-    const selectedValues = React.useMemo(
+    let selectedValuesMemo = React.useMemo(
         () => allValues.filter((v) => v.selected),
         [allValues],
     );
+
+    function convertArrayToObject(array) {
+        return array.map((item) => ({
+            title: item,
+            selected: false
+        }));
+    }
 
     useEffect(
         () => {
@@ -62,13 +69,26 @@ export default function BasicTabs() {
                 .catch((error) => {
                     console.error("Error fetching stops data:", error);
                 });
+            console.log({allValues});
         }, [] // Empty dependency array ensures that the effect runs only once on component mount
     );
 
     const handleSubmit = (event) => {
-        console.log("Form data:", mode);
         event.preventDefault();
-        getCustomStatistics(new FormData(mode))
+        // Swap startDateTime and endDateTime if startDateTime is later than endDateTime
+        if (startDateTime.isAfter(endDateTime)) {
+            [startDateTime, endDateTime] = [endDateTime, startDateTime];
+        }
+        const formData = {
+            mode: tab === 0 ? "line" : "stop",
+            startDateTime: formatDate(startDateTime),
+            endDateTime: formatDate(endDateTime),
+            selectedItems: selectedValuesMemo.map((v) => v.title),
+            selectedStatistic: selectedStatistic,
+            selectedRadio: selectedRadio,
+        };
+        console.log({formData});
+        getCustomStatistics(formData)
             .then((response) => {
                 const data = response.data;
                 console.log("Data:", data);
@@ -79,31 +99,21 @@ export default function BasicTabs() {
             });
     };
 
-    const handleInputChangeList = (event, value) => {
-        console.log(value)
-        setMode((prevData) => ({
-            ...prevData,
-            selectedItems: [...mode["selectedItems"], ...value],
-        }));
-        console.log(value)
-        console.log({formData: mode});
-    };
+    function formatDate(dayjsObject) {
+        return dayjsObject.format('YYYY-MM-DDTHH:mm:ss');
+    }
 
-    const handleInputChange = (field, value) => {
-        console.log(value)
-        setMode((prevData) => ({
-            ...prevData,
-            [field]: value,
-        }));
-        console.log({formData: mode});
-    };
+    function handleRadioGroupChange(event) {
+        setSelectedRadio(event.target.value);
+    }
 
     const handleTabChange = (event, newValue) => {
         setTab(newValue);
+        setAllValues(newValue === 0 ? lines : stops);
     };
 
     return (
-        < className="statistics-box">
+        <div className="statistics-box">
             <h2>Benutzerdefinierte Statistiken</h2>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateTimePicker
@@ -111,12 +121,14 @@ export default function BasicTabs() {
                     value={startDateTime}
                     onChange={setStartDateTime}
                     referenceDate={dayjs('2022-04-17T15:30')}
+                    timeSteps={{minutes: 1}}
                 />
                 <DateTimePicker
                     className="statistics-box-box"
                     value={endDateTime}
                     onChange={setEndDateTime}
                     referenceDate={dayjs('2022-04-17T15:30')}
+                    timeSteps={{minutes: 1}}
                 />
             </LocalizationProvider>
             <Box sx={{width: "100%"}}>
@@ -136,41 +148,25 @@ export default function BasicTabs() {
                     <Autocomplete
                         className="statistics-box-box"
                         multiple
-                        options={lines}
-                        disableCloseOnSelect
-                        getOptionLabel={(option) => option}
-                        renderOption={(props, option, {selected}) => (
-                            <li {...props}>
-                                <Checkbox
-                                    icon={icon}
-                                    checkedIcon={checkedIcon}
-                                    style={{marginRight: 8}}
-                                    checked={selected}
-                                />
-                                {option}
-                            </li>
-                        )}
-                        onChange={(event, value, reason, details) => {
-                            const newForm = {
-                                ...mode,
-                                selectedItems: value,
-                            };
-                            setMode(newForm);
-                        }
-                        }
-                        renderInput={(params) => (
-                            <TextField {...params} label="Linien" placeholder="Linien"/>
-                        )}
+                        value={selectedValuesMemo}
+                        options={allValues}
+                        getOptionLabel={(option) => option.title}
+                        onChange={(event, newValue) => {
+                            setAllValues(allValues.map((option) =>
+                                newValue.includes(option) ? {...option, selected: true} : {...option, selected: false}
+                            ));
+                        }}
+                        renderInput={(params) => <TextField {...params} label="Linien"/>}
                     />
                     <Autocomplete
                         className="statistics-box-box"
                         disablePortal
                         id="combo-box-demo"
                         options={statistiken}
-                        value={""}
-                        onChange={(e) =>
-                            handleInputChange(e.target.innerText)
-                        }
+                        value={selectedStatistic}
+                        onChange={(event, newValue) => {
+                            setSelectedStatistic(newValue);
+                        }}
                         renderInput={(params) => (
                             <TextField {...params} label="Statistik"/>
                         )}
@@ -181,40 +177,25 @@ export default function BasicTabs() {
                     <Autocomplete
                         className="statistics-box-box"
                         multiple
-                        options={stops}
-                        getOptionLabel={(option) => option}
-                        disableCloseOnSelect
-                        onInputChange={(e, value, reason) =>
-                            handleInputChangeList(e, value, reason)
-                        }
-                        renderOption={(props, option, {selected}) => (
-                            <li {...props}>
-                                <Checkbox
-                                    style={{marginRight: 8}}
-                                    checked={selectedItems.includes(option)}
-                                />
-                                {option}
-                            </li>
-                        )}
-                        style={{width: 300}}
-                        renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                label="Haltestellen"
-                                placeholder="Haltestellen"
-                            />
-                        )}
+                        value={selectedValuesMemo}
+                        options={allValues}
+                        getOptionLabel={(option) => option.title}
+                        onChange={(event, newValue) => {
+                            setAllValues(allValues.map((option) =>
+                                newValue.includes(option) ? {...option, selected: true} : {...option, selected: false}
+                            ));
+                        }}
+                        renderInput={(params) => <TextField {...params} label="Haltestellen"/>}
                     />
                     <Autocomplete
                         className="statistics-box-box"
                         disablePortal
+                        id="combo-box-demo"
                         options={statistiken}
-                        onChange={(e) => {
-                            console.log(e.target);
-                            handleInputChange(e.target.innerText)
-                        }}
                         value={selectedStatistic}
-                        sx={{width: 300}}
+                        onChange={(event, newValue) => {
+                            setSelectedStatistic(newValue);
+                        }}
                         renderInput={(params) => (
                             <TextField {...params} label="Statistik"/>
                         )}
@@ -223,41 +204,46 @@ export default function BasicTabs() {
                 <CustomTabPanel value={tab} index={2}>
                     <h3>Linien- und haltestellenbasierte Statistiken</h3>
                 </CustomTabPanel>
+                <FormControl>
+                    <RadioGroup
+                        row
+                        name="controlled-radio-buttons-group"
+                        value={selectedRadio}
+                        onChange={handleRadioGroupChange}
+                    >
+                        <FormControlLabel value="avg" control={<Radio/>} label="Ø"/>
+                        <FormControlLabel value="max" control={<Radio/>} label="Max"/>
+                        <FormControlLabel value="min" control={<Radio/>} label="Min"/>
+                    </RadioGroup>
+                </FormControl>
             </Box>
-            <Button variant="submit"
-                    onClick={() => console.log(tab, startDateTime, endDateTime, selectedValues, selectedStatistic, selectedRadio)}>
+
+            <Button variant="submit" onClick={handleSubmit}>
                 Anzeigen
             </Button>
             <Box>
                 <h3>Ergebnisse</h3>
             </Box>
-        </>
+        </div>
     );
 
     function CustomTabPanel(props) {
-        const {children, tab, index, ...other} = props;
+        const {children, value, index, ...other} = props;
 
         return (
             <div
                 role="tabpanel"
-                hidden={tab !== index}
+                hidden={value !== index}
                 id={`simple-tabpanel-${index}`}
                 aria-labelledby={`simple-tab-${index}`}
                 {...other}
             >
-                {tab === index && (
+                {value === index && (
                     <Box sx={{p: 3}}>
                         <Typography>{children}</Typography>
                     </Box>
                 )}
             </div>
         );
-    }
-
-    function a11yProps(index) {
-        return {
-            id: `simple-tab-${index}`,
-            "aria-controls": `simple-tabpanel-${index}`,
-        };
     }
 }
