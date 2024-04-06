@@ -35,6 +35,11 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             <FaRoute className="icon" /> Routenplaner
           </a>
         </li>
+        <li className="sidebar-list-item">
+          <a href="/Prognose">
+            <FaRoute className="icon" /> Prognose
+          </a>
+        </li>
       </ul>
     </aside>
   );
