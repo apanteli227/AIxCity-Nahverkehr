@@ -6,6 +6,7 @@ import NightModeProvider, {
 import SelectedProvider, { useSelectedContext } from "../store/SelectedContext";
 import HeatmapProvider from "../store/HeatmapContext";
 
+
 function Heatmap() {
   const { nightMode, toggleNightMode } = useNightModeContext();
   const { isSelected, toggleSelected } = useSelectedContext();
