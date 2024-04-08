@@ -12,6 +12,6 @@
 }
 .heatmap-checkbox {
   position: fixed;
-  left: 10px; /* Ändern Sie diesen Wert, um die horizontale Position anzupassen */
-  top: 10px; /* Ändern Sie diesen Wert, um die vertikale Position anzupassen */
+  left: 10%; /* Change this value to adjust the horizontal position */
+  top: 10%; /* Change this value to adjust the vertical position */
 }

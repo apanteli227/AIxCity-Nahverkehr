@@ -4,6 +4,7 @@ import NightModeProvider, {
   useNightModeContext,
 } from "../store/NightModeContext";
 import SelectedProvider, { useSelectedContext } from "../store/SelectedContext";
+import HeatmapProvider from "../store/HeatmapContext";
 
 function Heatmap() {
   const { nightMode, toggleNightMode } = useNightModeContext();
@@ -12,11 +13,12 @@ function Heatmap() {
 
   useEffect(() => {
 
-  }, [isSelected, nightMode]);
+  }, []);
 
 
 return (
     <HeatmapProvider>
+    
     <div className="heatmap-checkbox">
         <label>
             <input
