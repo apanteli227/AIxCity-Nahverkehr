@@ -394,10 +394,10 @@ def regression_with_line_22():
         'f51': 'weather_warning',
         'f64': 'weather_warning',
         'f9': 'humidity_percentage',
-        'f21': 'humidity_percentage',
-        'f34': 'humidity_percentage',
-        'f47': 'humidity_percentage',
-        'f60': 'humidity_percentage',
+        'f22': 'humidity_percentage',
+        'f35': 'humidity_percentage',
+        'f48': 'humidity_percentage',
+        'f61': 'humidity_percentage',
         'f2': 'is_holiday',
         'f15': 'is_holiday',
         'f28': 'is_holiday',
@@ -412,14 +412,14 @@ def regression_with_line_22():
         'f23': 'weather_description',
         'f36': 'weather_description',
         'f49': 'weather_description',
-        'f52': 'weather_description'
+        'f62': 'weather_description'
     }
     # Plot Feature Importance
     plot_feature_importance(feature_names_dict, bst)
 
 
 
-def regression_with_line(line="6", direction="Universität"):
+def regression_with_line(line, direction):
     """
     Diese Funktion führt eine Regression für eine beliebige Linie und Richtung durch.
     Es werden die Stop-Times-Daten, und Wetterdaten verwendet. Als Standard wird die Linie 6 in Richtung Universität verwendet.

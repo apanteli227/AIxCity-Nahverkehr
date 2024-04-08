@@ -266,9 +266,9 @@ def classification_with_line_22():
         # Visualisierung der Confusion Matrix
         plt.figure(figsize=(8, 6))
         sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", cbar=False)
-        plt.xlabel('Predicted Labels')
-        plt.ylabel('True Labels')
-        plt.title('Confusion Matrix')
+        plt.xlabel("Prognostizierte Ankunft (0: pünktlich, 1: verspätet)")
+        plt.ylabel("Tatsächliche Ankunft (0: pünktlich, 1: verspätet)")
+        plt.title(f"Konfusionsmatrix der Linie 22 in Richtung Universität-Ost bei Verwendung von {num_stops} Haltestellen")
         plt.show()
 
     # Erstellen der Bar-Charts für Trainings-Accuracy, Test-Accuracy und F1-Score
@@ -440,9 +440,6 @@ def classification_with_line_22():
     plot_feature_importance(feature_names_dict, bst)
 
 
-
-
-
 def classification_with_line(line="6", direction="Universität"):
     """
     Diese Funktion führt die Klassifikation für eine beliebige Linie und Richtung durch.
@@ -568,14 +565,13 @@ def classification_with_line(line="6", direction="Universität"):
         # Visualisierung der Confusion Matrix
         plt.figure(figsize=(8, 6))
         sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", cbar=False)
-        plt.xlabel('Predicted Labels')
-        plt.ylabel('True Labels')
-        plt.title('Confusion Matrix')
+        plt.xlabel("Prognostizierte Ankunft (0: pünktlich, 1: verspätet)")
+        plt.ylabel("Tatsächliche Ankunft (0: pünktlich, 1: verspätet)")
+        plt.title(f"Konfusionsmatrix der Linie {line} in Richtung {direction} bei Verwendung von {num_stops} Haltestellen")
         plt.show()
 
     # Erstellen der Bar-Charts für Trainingsgenauigkeit, Testgenauigkeit und F1-Score
     plt.figure(figsize=(8, 6))
-
     plt.bar(range(1, 11), train_accuracy_scores, color='blue')
     plt.xlabel(f"Anzahl zur Prognose verwendeter Haltestellen der Linie {line} in Richtung {direction}")
     plt.ylabel('Accuracy auf Trainingsdaten')
@@ -717,10 +713,10 @@ def classification_with_line(line="6", direction="Universität"):
         'f51': 'weather_warning',
         'f64': 'weather_warning',
         'f9': 'humidity_percentage',
-        'f21': 'humidity_percentage',
-        'f34': 'humidity_percentage',
-        'f47': 'humidity_percentage',
-        'f60': 'humidity_percentage',
+        'f22': 'humidity_percentage',
+        'f35': 'humidity_percentage',
+        'f48': 'humidity_percentage',
+        'f61': 'humidity_percentage',
         'f2': 'is_holiday',
         'f15': 'is_holiday',
         'f28': 'is_holiday',
@@ -735,7 +731,7 @@ def classification_with_line(line="6", direction="Universität"):
         'f23': 'weather_description',
         'f36': 'weather_description',
         'f49': 'weather_description',
-        'f52': 'weather_description'
+        'f62': 'weather_description'
     }
 
     # Plot Feature Importance
@@ -747,4 +743,4 @@ def classification_with_line(line="6", direction="Universität"):
 classification_with_line_22()
 
 # Prognose einer beliebigen Linie - Linie muss als String übergeben werden
-#classification_with_line(line="90", direction="Neuenkirchen")
+classification_with_line(line="90", direction="Neuenkirchen")
