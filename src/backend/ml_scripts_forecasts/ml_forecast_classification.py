@@ -6,6 +6,8 @@ import xgboost as xgb
 from sklearn.metrics import accuracy_score, f1_score, roc_curve, auc
 import warnings
 import logging
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
 
 pd.options.mode.chained_assignment = None  # Deaktiviere SettingWithCopyWarning
 
@@ -257,6 +259,17 @@ def classification_with_line_22():
 
         # Erstellen der ROC-Kurve
         create_roc_curve(binary_y_test, y_test_pred,num_stops)
+
+        # Berechnung der Confusion Matrix
+        conf_matrix = confusion_matrix(binary_y_test, binary_y_test_pred)
+
+        # Visualisierung der Confusion Matrix
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", cbar=False)
+        plt.xlabel('Predicted Labels')
+        plt.ylabel('True Labels')
+        plt.title('Confusion Matrix')
+        plt.show()
 
     # Erstellen der Bar-Charts für Trainings-Accuracy, Test-Accuracy und F1-Score
     plt.figure(figsize=(8, 6))
@@ -548,7 +561,17 @@ def classification_with_line(line="6", direction="Universität"):
 
         # Erstellen der ROC-Kurve
         create_roc_curve(binary_y_test, y_test_pred,num_stops)
- 
+
+        # Berechnung der Confusion Matrix
+        conf_matrix = confusion_matrix(binary_y_test, binary_y_test_pred)
+
+        # Visualisierung der Confusion Matrix
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", cbar=False)
+        plt.xlabel('Predicted Labels')
+        plt.ylabel('True Labels')
+        plt.title('Confusion Matrix')
+        plt.show()
 
     # Erstellen der Bar-Charts für Trainingsgenauigkeit, Testgenauigkeit und F1-Score
     plt.figure(figsize=(8, 6))
@@ -724,4 +747,4 @@ def classification_with_line(line="6", direction="Universität"):
 classification_with_line_22()
 
 # Prognose einer beliebigen Linie - Linie muss als String übergeben werden
-classification_with_line(line="90", direction="Neuenkirchen")
+#classification_with_line(line="90", direction="Neuenkirchen")
