@@ -38,9 +38,10 @@ async def read_data_cards():
 
 
 # durchschn. Verspätungen in den letzten 7 Tagen
+#todo fix query
 @app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date >= CURRENT_DATE - INTERVAL '1 week' AND start_date < CURRENT_DATE;"
+    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week' AND current_date < CURRENT_DATE;"
     return read_data(query)
 
 
@@ -54,12 +55,13 @@ async def read_data_weekend_day_delay():
 # durchschn. Verspätung an Feiertagen
 @app.get("/interesting_statistic_public_holiday")
 async def read_data_public_holiday_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE holiday = 1;"
+    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE is_holiday = 1;"
     return read_data(query)
 
 
 # durchschn. Verspätungen an einem (noch kommenden) zufälligen Heimspieltag von Werder Bremen
 # Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
+#todo fix query, no result!!!!!!!!!!!!!!!!
 @app.get("/interesting_statistic_football_match_day")
 async def read_data_football_match_day_delay():
     query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date = '2024-03-30';"

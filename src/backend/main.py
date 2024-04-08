@@ -199,9 +199,6 @@ async def main():
         asyncio.create_task(run_task_with_interval(run_events_task, 86400)),  # 86400 seconds = 24 hours
         asyncio.create_task(run_task_with_interval(run_weather_task, 3600)),  # 3600 seconds = 1 hour
         asyncio.create_task(run_task_with_interval(run_traffic_task, 900)), # 900 seconds = 15 minutes
-
-        #!!!!Entfernen wenn dies nicht mehr benötigt wird!!!!
-        #asyncio.create_task(run_task_with_interval(run_traffic_task, 3600)),  # 3600 seconds = 1 hour
     ]
 
     await asyncio.gather(*tasks)
