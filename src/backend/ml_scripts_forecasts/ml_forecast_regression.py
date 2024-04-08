@@ -419,7 +419,7 @@ def regression_with_line_22():
 
 
 
-def regression_with_line(line, direction):
+def regression_with_line(line="6", direction="Universität"):
     """
     Diese Funktion führt eine Regression für eine beliebige Linie und Richtung durch.
     Es werden die Stop-Times-Daten, und Wetterdaten verwendet. Als Standard wird die Linie 6 in Richtung Universität verwendet.
