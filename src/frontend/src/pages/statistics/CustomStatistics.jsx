@@ -29,8 +29,8 @@ const statistiken = [
 export default function BasicTabs() {
     // workaround for the (initially planned) form object
     //todo put everything in the form object that can be put there
-    const [startDateTime, setStartDateTime] = useState(dayjs().subtract(1, 'month'));
-    const [endDateTime, setEndDateTime] = useState(dayjs());
+    let [startDateTime, setStartDateTime] = useState(dayjs().subtract(1, 'month'));
+    let [endDateTime, setEndDateTime] = useState(dayjs());
     const [selectedStatistic, setSelectedStatistic] = useState(statistiken[1]);
     const [selectedRadio, setSelectedRadio] = useState("avg");
     const [lines, setLines] = useState(convertArrayToObject(["1 - Bf Mahndorf", "1 - Huchting"]));
@@ -55,7 +55,7 @@ export default function BasicTabs() {
                 .then((response) => {
                     const data = response.data;
                     console.log("Lines Data:", data);
-                    setLines(data);
+                    setLines(convertArrayToObject(data.flat()));
                 })
                 .catch((error) => {
                     console.error("Error fetching lines data:", error);
@@ -64,7 +64,7 @@ export default function BasicTabs() {
                 .then((response) => {
                     const data = response.data;
                     console.log("Stops Data:", data);
-                    setStops(data);
+                    setStops(convertArrayToObject(data.flat()));
                 })
                 .catch((error) => {
                     console.error("Error fetching stops data:", error);

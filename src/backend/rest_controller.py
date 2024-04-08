@@ -3,8 +3,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from urllib.parse import unquote
+import sys
 
-from persistence import database_controller as dbc
+import psycopg2
 
 app = FastAPI()
 
@@ -29,31 +30,31 @@ class Item(BaseModel):
 @app.get("/get_cards_data")
 async def read_data_cards():
     return [
-        await read_data_last_7_days_delay(),
-        await read_data_weekend_day_delay(),
-        await read_data_public_holiday_delay(),
-        await read_data_football_match_day_delay(),
+        read_data_last_7_days_delay(),
+        read_data_weekend_day_delay(),
+        read_data_public_holiday_delay(),
+        read_data_football_match_day_delay(),
     ]
 
 
 # durchschn. Verspätungen in den letzten 7 Tagen
 @app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
-    query = "SELECT AVG(departure_delay) FROM bsag_data WHERE start_date >= CURRENT_DATE - INTERVAL '1 week' AND start_date < CURRENT_DATE;"
+    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date >= CURRENT_DATE - INTERVAL '1 week' AND start_date < CURRENT_DATE;"
     return read_data(query)
 
 
 # durchschn. Verspätung an Wochenendtagen
 @app.get("/interesting_statistic_weekend")
 async def read_data_weekend_day_delay():
-    query = "SELECT AVG(arrival_delay) FROM bsag_data WHERE weekday IN ('Saturday', 'Sunday');"
+    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE weekday IN ('Saturday', 'Sunday');"
     return read_data(query)
 
 
 # durchschn. Verspätung an Feiertagen
 @app.get("/interesting_statistic_public_holiday")
 async def read_data_public_holiday_delay():
-    query = "SELECT AVG(arrival_delay) FROM bsag_data WHERE holiday = 1;"
+    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE holiday = 1;"
     return read_data(query)
 
 
@@ -61,19 +62,19 @@ async def read_data_public_holiday_delay():
 # Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
 @app.get("/interesting_statistic_football_match_day")
 async def read_data_football_match_day_delay():
-    query = "SELECT AVG(departure_delay) FROM bsag_data WHERE start_date = '2024-03-30';"
+    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date = '2024-03-30';"
     return read_data(query)
 
 
 @app.get("/all_stops")
 async def read_data_stops():
-    query = "SELECT DISTINCT line FROM public.bsag_data"
+    query = "SELECT DISTINCT stop_name FROM public.bsag_data"
     return read_data(query)
 
 
 @app.get("/all_lines")
 async def read_data_lines():
-    query = "SELECT DISTINCT stop FROM public.bsag_data"
+    query = "SELECT DISTINCT line FROM public.bsag_data"
     return read_data(query)
 
 
@@ -89,17 +90,26 @@ async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, 
     else:
         return "Invalid frequency parameter. Please choose either 'daily' or 'hourly'."
 
-    return await read_data(query)
+    return read_data(query)
 
 
 @app.get("/{mode}/{mode_input}/{start_time}/{end_time}")
 async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
+    mode_input_str = ["'" + item + "'" for item in unquote(mode_input).split(',')]
 
-    mode_input_str = unquote(mode_input).split(',')
-    query = f"SELECT SUM(departure_delay) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
+    # Decodieren der URL
+    start_time = unquote(start_time)
+    end_time = unquote(end_time)
 
-    return await read_data(query)
+    # Aufteilung von Datum und Uhrzeit
+    start_date = get_date(start_time)
+    start_time = get_time(start_time)
+    end_date = get_date(end_time)
+    end_time = get_time(end_time)
+    query = f"SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
+
+    return read_data(query)
 
 
 @app.get("/{statistic}/{mode}/{mode_input}/{aggregate}/{start_time}/{end_time}")
@@ -108,20 +118,33 @@ async def read_data_arrival_departure_delay(mode: str, mode_input: str, aggregat
     mode_str = get_mode(mode)
     aggregate_str = get_aggregate(aggregate)
     statistic = get_statistic(statistic)
+    mode_input_str = ["'" + item + "'" for item in unquote(mode_input).split(',')]
 
-    mode_input_str = unquote(mode_input).split(',')
-    query = f"SELECT {aggregate_str}{statistic} FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
-    # todo: use time format converter function
-    return await read_data(query)
+    # Decodieren der URL
+    start_time = unquote(start_time)
+    end_time = unquote(end_time)
+
+    # Aufteilung von Datum und Uhrzeit
+    start_date = get_date(start_time)
+    start_time = get_time(start_time)
+    end_date = get_date(end_time)
+    end_time = get_time(end_time)
+
+    print(statistic, mode, mode_input_str, aggregate, start_date, start_time, end_date, end_time)
+
+    query = f"SELECT {aggregate_str}{statistic} FROM public.bsag_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
+
+    print(query)
+    return read_data(query)
 
 
 def get_statistic(statistic):
     if statistic == 'arrival':
-        stat = 'arrival_delay'
+        stat = 'arrival_delay_seconds'
     elif statistic == 'departure':
-        stat = 'departure_delay'
+        stat = 'departure_delay_seconds'
     elif statistic == 'generated_delay':
-        stat = 'departure_delay - arrival_delay'
+        stat = 'departure_delay_seconds - arrival_delay_seconds'
     else:
         stat = 'what to do with mixed statistic?'
     return '(' + stat + ')'
@@ -153,21 +176,106 @@ def get_time(date_string):
 
 def read_data(query):
     try:
-        conn = dbc.connect(dbc.param_dic)
+        conn = connect(param_dic)
         print(conn)
         cursor = conn.cursor()
         print(cursor)
         cursor.execute(query)
         result = cursor.fetchall()
         print(result)
-        dbc.disconnect(conn)
+        disconnect(conn)
         return result
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
-all_stops = []
+
+# DB connection parameters
+param_dic = {
+    "host": "134.102.23.195",
+    "port": "5434",
+    "dbname": "aixcity_nahverkehr",
+    "user": "aixcity-user",
+    "password": "password"
+}
+
+
+def connect(params_dic):
+    """ Connect to the PostgreSQL persistence server """
+    conn = None
+    try:
+        # connect to the PostgreSQL server
+        print('PostgreSQL-Datenbank: Verbindung aufbauen...')
+        conn = psycopg2.connect(**params_dic)
+    except Exception as error:
+        print(error)
+        sys.exit(1)
+    print("PostgreSQL-Datenbank: Verbindung erfolgreich!")
+    return conn
+
+
+def disconnect(conn):
+    """ Disconnect from the PostgreSQL """
+    if conn is not None:
+        conn.close()
+        print('PostgreSQL-Datenbank: Verbindung getrennt!')
+
+
+def execute_query(conn, query):
+    """ Execute a single query """
+    ret = 0  # Return value
+    cursor = conn.cursor()
+    try:
+        cursor.execute(query)
+        conn.commit()
+    except Exception as error:
+        print("Error: %s" % error)
+        conn.rollback()
+        cursor.close()
+        return 1
+    # If this was a select query, return the result
+    if 'select' in query.lower():
+        ret = cursor.fetchall()
+    cursor.close()
+    return ret
+
+
+def single_inserts(df, table):
+    """Perform single inserts of the dataframe into the PostGIS table"""
+    conn = connect(param_dic)
+    print("======[" + table + "]======")
+    print("conn: " + conn.dsn)
+    dataframe = pt_fetch.create_stop_time_updates_df(df)
+    print("2: " + dataframe)
+
+    print("======[" + table + "]======")
+    for i in df.index:
+        vals = [dataframe.at[i, col] for col in list(dataframe.columns)]
+        query = """INSERT INTO deine_tabelle (
+                        startdate,
+                        startzeit_an_der_anfangshaltestelle,
+                        linie,
+                        richtung,
+                        haltestelle,
+                        stopsequence,
+                        ankunfsverspatung_sek,
+                        abfahrtsverspatung_sek
+                   ) VALUES (
+                        '%s', '%s', '%s', '%s', '%s', %s, %s, %s
+                   );""" % (
+            vals[0],
+            vals[1],
+            vals[2],
+            vals[3],
+            vals[4],
+            vals[5],
+            vals[6],
+            vals[7]
+        )
+        execute_query(conn, query)
+        print("execute_query: " + query)
+    disconnect(conn)
 
 
 # only for testing purposes

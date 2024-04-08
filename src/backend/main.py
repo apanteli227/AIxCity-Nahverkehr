@@ -209,11 +209,13 @@ async def main():
 
 def run_fastapi():
     # Run FastAPI application with Uvicorn
-    subprocess.run(["uvicorn", "rest_controller:app", "--host", "134.102.23.195", "--port", "8079"])
+    subprocess.run(["uvicorn", "rest_controller:app", "--host", "127.0.0.1", "--port", "8080"])
 
 
 def run_data_collection():
-    asyncio.run(main())
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+
 
 
 if __name__ == "__main__":

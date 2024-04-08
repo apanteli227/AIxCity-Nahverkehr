@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://134.102.23.195:8079';
+const BASE_URL = 'http://127.0.0.1:8080';
 
 export async function getLines() {
-    return await axios.get(`${BASE_URL}/get_lines`);
+    return await axios.get(`${BASE_URL}/all_lines`);
 }
 
 export async function getStops() {
-    return await axios.get(`${BASE_URL}/get_stops`);
+    return await axios.get(`${BASE_URL}/all_stops`);
 }
 
 export async function getInterestingStatistics() {
