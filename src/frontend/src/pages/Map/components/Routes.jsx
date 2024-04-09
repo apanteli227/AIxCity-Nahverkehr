@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Polyline, Popup } from "react-leaflet";
+import RoutePopup from "./popups/RoutePopup";
 import { useRouteContext } from "../store/RouteContext";
 import { fetchRoutesAndStops } from "../API";
 import { useNightModeContext } from "../store/NightModeContext";
+import { useSelectedContext } from "../store/SelectedContext";
 
 function Routes() {
-  const { tramRoutes, setTramRoutes, selectedRoute, setSelectedRoute } =
-    useRouteContext();
+  const {
+    dayRoutes,
+    setDayRoutes,
+    nightRoutes,
+    setNightRoutes,
+    selectedRoute,
+    setSelectedRoute,
+    popupInfo,
+    setPopupInfo,
+  } = useRouteContext();
   const { nightMode } = useNightModeContext();
+  const { isSelected, toggleSelected, resetSelected } = useSelectedContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,10 +32,17 @@ function Routes() {
     };
 
     fetchData();
-  }, [nightMode, selectedRoute]);
+  }, []);
+
+  useEffect(() => {
+    setSelectedRoute(null);
+    resetSelected();
+    console.log("selectedRoute reset");
+  }, [nightMode]);
 
   const drawRoutes = (tramRoutesData) => {
-    const routes = [];
+    const dayRoutes = [];
+    const nightRoutes = [];
 
     const isValidRoute = (tags) => {
       return (
@@ -33,13 +51,18 @@ function Routes() {
     };
 
     const pushRoute = (id, color, name, routeGeometry, isNight) => {
-      routes.push({
+      const route = {
         id: id,
         geometry: routeGeometry,
         color: color,
         name: name,
         isNight: isNight,
-      });
+      };
+      if (isNight) {
+        nightRoutes.push(route);
+      } else {
+        dayRoutes.push(route);
+      }
     };
 
     const processMembers = (members, tags, color, id) => {
@@ -69,42 +92,56 @@ function Routes() {
       }
     });
 
-    const filteredRoutes = routes.filter((route) =>
-      nightMode ? route.isNight : !route.isNight
-    );
-    setTramRoutes(filteredRoutes);
-  };
-  const handleRouteClick = (routeId) => {
-    console.log(
-      "Route clicked:",
-      routeId,
-      "Color:",
-      tramRoutes.find((route) => route.id === routeId)?.color
-    );
-    console.log("Selected route has changed:", selectedRoute);
-    setSelectedRoute(routeId === selectedRoute ? null : routeId);
+    setDayRoutes(dayRoutes);
+    setNightRoutes(nightRoutes);
   };
 
+  const handleRouteClick = (routeid) => {
+    setSelectedRoute(selectedRoute === null ? routeid : null);
+    toggleSelected();
+    console.log("selectedRoute:", selectedRoute);
+  };
+
+  const routesToDisplay = nightMode ? nightRoutes : dayRoutes;
+
+  const mappedRoutes = routesToDisplay.map((route, index) => (
+    <Polyline
+      key={`${route.id}_${index}`}
+      positions={route.geometry}
+      color={
+        isSelected
+          ? selectedRoute === route.id
+            ? route.color
+            : "rgba(128, 128, 128, 0.1)"
+          : route.color
+      }
+      weight={isSelected ? (selectedRoute === route.id ? 8 : 4) : 4}
+      eventHandlers={{
+        click: (event) => {
+          handleRouteClick(route.id);
+          setPopupInfo({
+            position: event.latlng,
+            name: route.name,
+          });
+        },
+      }}
+    ></Polyline>
+  ));
+
   return (
-    <div>
-      {tramRoutes.map((route, index) => (
-        <Polyline
-          key={`${route.id}_${index}`} // Eindeutiger Schlüssel hinzugefügt
-          positions={route.geometry}
-          color={
-            selectedRoute === null || selectedRoute === route.id
-              ? route.color
-              : "grey"
-          }
-          weight={4}
-          eventHandlers={{
-            click: () => handleRouteClick(route.id),
-          }}
-        >
-          <Popup>{route.name}</Popup>
-        </Polyline>
-      ))}
-    </div>
+    <>
+      <div>
+        {!isSelected && mappedRoutes}
+        {isSelected && mappedRoutes}
+        {popupInfo && isSelected && (
+          <RoutePopup
+            routeName={popupInfo.name}
+            position={popupInfo.position}
+          />
+        )}
+        {console.log("selectedRoute:", selectedRoute)}
+      </div>
+    </>
   );
 }
 

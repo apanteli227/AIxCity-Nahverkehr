@@ -17,12 +17,12 @@ def connect(params_dic):
     conn = None
     try:
         # connect to the PostgreSQL server
-        print('PostgreSQL-Datenbank: Verbindung aufbauen...')
+        #print('PostgreSQL-Datenbank: Verbindung aufbauen...')
         conn = psycopg2.connect(**params_dic)
     except Exception as error:
         print(error)
         sys.exit(1)
-    print("PostgreSQL-Datenbank: Verbindung erfolgreich!")
+    #print("PostgreSQL-Datenbank: Verbindung erfolgreich!")
     return conn
 
 
@@ -30,7 +30,7 @@ def disconnect(conn):
     """ Disconnect from the PostgreSQL """
     if conn is not None:
         conn.close()
-        print('PostgreSQL-Datenbank: Verbindung getrennt!')
+        #print('PostgreSQL-Datenbank: Verbindung getrennt!')
 
 
 def execute_query(conn, query):

@@ -6,6 +6,7 @@ import Routes from "./components/Routes";
 import StopProvider from "./store/StopContext";
 import Stops from "./components/Stops";
 import CustomizedSelects from "./components/Dropdown";
+import SelectedProvider from "./store/SelectedContext";
 
 const MapComponent = () => {
   const position = [53.0826, 8.8136];
@@ -13,22 +14,24 @@ const MapComponent = () => {
   return (
     <main className="map-container">
       <NightModeProvider>
-        <MapContainer center={position} zoom={12}>
-          <ul className="navigation-bar-map">
-            <li>
-              <Nightmode />
-            </li>
-            <CustomizedSelects />
-          </ul>
+        <SelectedProvider>
+          <MapContainer center={position} zoom={12}>
+            <RouteProvider>
+              <Routes />
 
-          <RouteProvider>
-            <Routes />
-          </RouteProvider>
+              <StopProvider>
+                <Stops />
+              </StopProvider>
 
-          <StopProvider>
-            <Stops />
-          </StopProvider>
-        </MapContainer>
+              <ul className="navigation-bar-map">
+                <li>
+                  <Nightmode />
+                </li>
+                <CustomizedSelects />
+              </ul>
+            </RouteProvider>
+          </MapContainer>
+        </SelectedProvider>
       </NightModeProvider>
     </main>
   );
