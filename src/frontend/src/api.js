@@ -24,7 +24,7 @@ export async function getAvgStopDelay() {
     try {
         const response = await axios.get(`${BASE_URL}/get_avg_stop_delay`);
         console.log(response.data);
-        return response.data;//todo map
+        return response.data;
     } catch (error) {
         console.error('Error fetching interesting statistics:', error);
         throw error;
@@ -35,7 +35,7 @@ export async function getAvgLineDelay() {
     try {
         const response = await axios.get(`${BASE_URL}/get_avg_line_delay`);
         console.log(response.data);
-        return response.data;//todo map
+        return response.data;
     } catch (error) {
         console.error('Error fetching interesting statistics:', error);
         throw error;
