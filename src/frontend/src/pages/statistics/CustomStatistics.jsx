@@ -27,8 +27,6 @@ const statistiken = [
 ];
 
 export default function BasicTabs() {
-    // workaround for the (initially planned) form object
-    //todo put everything in the form object that can be put there
     let [startDateTime, setStartDateTime] = useState(dayjs().subtract(1, 'month'));
     let [endDateTime, setEndDateTime] = useState(dayjs());
     const [selectedStatistic, setSelectedStatistic] = useState(statistiken[1]);

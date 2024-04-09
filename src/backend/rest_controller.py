@@ -80,6 +80,20 @@ async def read_data_lines():
     return read_data(query)
 
 
+@app.get("/get_avg_stop_delay")
+async def read_data_stop_delay():
+    query = f"SELECT stop_name, AVG(departure_delay_seconds) AS avg_departure_delay FROM public.transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY stop_name"
+    print(query)
+    return read_data(query)
+
+
+@app.get("/get_avg_line_delay")
+async def read_data_line_delay():
+    query = f"SELECT line, AVG(departure_delay_seconds) AS avg_departure_delay FROM public.transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line"
+    print(query)
+    return read_data(query)
+
+
 @app.get("/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
 async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
