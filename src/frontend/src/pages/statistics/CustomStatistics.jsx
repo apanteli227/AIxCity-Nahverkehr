@@ -33,10 +33,11 @@ export default function BasicTabs() {
     let [endDateTime, setEndDateTime] = useState(dayjs());
     const [selectedStatistic, setSelectedStatistic] = useState(statistiken[1]);
     const [selectedRadio, setSelectedRadio] = useState("avg");
-    const [lines, setLines] = useState(convertArrayToObject(["1 - Bf Mahndorf", "1 - Huchting"]));
+    const [lines, setLines] = useState(convertArrayToObject([]));
     const [stops, setStops] = useState(convertArrayToObject(["Hauptbahnhof"]));
     const [tab, setTab] = useState(0);
     const [allValues, setAllValues] = useState(tab === 0 ? lines : stops);
+    const [result, setResult] = useState([]);
     let selectedValuesMemo = React.useMemo(
         () => allValues.filter((v) => v.selected),
         [allValues],
@@ -56,6 +57,7 @@ export default function BasicTabs() {
                     const data = response.data;
                     console.log("Lines Data:", data);
                     setLines(convertArrayToObject(data.flat()));
+                    setAllValues(convertArrayToObject(data.flat()));
                 })
                 .catch((error) => {
                     console.error("Error fetching lines data:", error);
@@ -92,7 +94,7 @@ export default function BasicTabs() {
             .then((response) => {
                 const data = response.data;
                 console.log("Data:", data);
-                //showCustomStatistics(data);
+                setResult(data);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -222,7 +224,8 @@ export default function BasicTabs() {
                 Anzeigen
             </Button>
             <Box>
-                <h3>Ergebnisse</h3>
+                <h3>Ergebnis</h3>
+                {result}
             </Box>
         </div>
     );
