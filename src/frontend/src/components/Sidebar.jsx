@@ -31,11 +31,6 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className="sidebar-list-item">
-          <a href="/Weg">
-            <FaRoute className="icon" /> Routenplaner
-          </a>
-        </li>
-        <li className="sidebar-list-item">
           <a href="/Prognose">
             <FaRoute className="icon" /> Prognose
           </a>

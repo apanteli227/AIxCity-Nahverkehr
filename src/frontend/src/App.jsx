@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Statistics from "./pages/statistics/Statistics.jsx";
 import MyMap from "./pages/Map/MyMap";
-import Weg from "./pages/Weg/Weg";
 import Prognose from "./pages/Prognose/Prognose.jsx";
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Statistics />} />
           <Route path="/map" element={<MyMap />} />
-          <Route path="/weg" element={<Weg />} />
           <Route path="/prognose" element={<Prognose />} />
         </Routes>
       </BrowserRouter>
