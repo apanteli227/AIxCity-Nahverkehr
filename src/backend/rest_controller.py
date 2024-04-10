@@ -36,30 +36,34 @@ async def read_data_cards():
 # durchschn. Verspätungen in den letzten 7 Tagen
 @app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
-    query = "SELECT ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week';"
+    query = """SELECT ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE "current_date" >= CURRENT_DATE - INTERVAL '1 week';"""
     return read_data(query)
 
 
 @app.get("/get_avg_line_delay")
 async def read_data_line_delay():
-    query = "SELECT line, ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line ORDER BY avg_departure_delay DESC;"
+    query = """SELECT line, ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE "current_date" >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line ORDER BY avg_departure_delay DESC;"""
     print(query)
     return read_data(query)
 
 @app.get("/get_avg_means_of_transport_delay")
 async def read_data_means_of_transport_delay():
-    query = "SELECT CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END AS means_of_transport, ROUND(AVG(departure_delay_seconds), 0) AS average_delay FROM transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END ORDER BY average_delay DESC;"
+    query = """SELECT CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END AS means_of_transport, ROUND(AVG(departure_delay_seconds), 0) AS average_delay FROM transit_data WHERE "current_date" >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END ORDER BY average_delay DESC;"""
 # durchschn. Verspätung an Wochenendtagen
 @app.get("/interesting_statistic_weekend")
 async def read_data_weekend_day_delay():
-    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE weekday IN ('Saturday', 'Sunday');"
+    query = """SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE weekday IN ('Saturday', 'Sunday');"""
     return read_data(query)
 
+@app.get("/interesting_statistic_weekend_vs_weekday")
+async def read_data_weekend_vs_weekday_delay():
+    query = """SELECT ROUND(AVG(CASE WHEN weekday NOT IN ('Saturday', 'Sunday') THEN arrival_delay_seconds END), 0) AS weekdays_avg, ROUND(AVG(CASE WHEN weekday IN ('Saturday', 'Sunday') THEN arrival_delay_seconds END), 0) AS weekends_avg FROM transit_data;"""
+    return read_data(query)
 
 # durchschn. Verspätung an Feiertagen
 #@app.get("/interesting_statistic_public_holiday")
 #async def read_data_public_holiday_delay():
-#    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE is_holiday = 1;" #DONE
+#    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE is_holiday = 1;"
 #    return read_data(query)
 
 
@@ -67,7 +71,7 @@ async def read_data_weekend_day_delay():
 # Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
 #@app.get("/interesting_statistic_football_match_day")
 #async def read_data_football_match_day_delay():
-#    query = "SELECT AVG(departure_delay) FROM transit_data WHERE current_date = '2024-03-30';"
+#    query = """SELECT AVG(departure_delay_seconds) FROM transit_data WHERE "current_date" = '2024-03-30';"""
 #    return read_data(query)
 
 
@@ -103,7 +107,7 @@ async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_
     mode_str = get_mode(mode)
 
     mode_input_str = mode_input.split(',')
-    query = f"SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM transit_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
+    query = """SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM transit_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"""
 
     return await read_data(query)
 
