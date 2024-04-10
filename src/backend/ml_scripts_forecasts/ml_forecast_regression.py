@@ -1,15 +1,20 @@
-import pandas as pd
-import numpy as np
+import logging
+import os
+import warnings
+
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
 import xgboost as xgb
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-import warnings
-import logging
+from sklearn.model_selection import train_test_split
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 pd.options.mode.chained_assignment = None  # Deaktiviere SettingWithCopyWarning
 
 warnings.filterwarnings("ignore", message="No positive samples in y_true*")
+
 
 def split_dataframe_by_time(df_stop_times):
     """
@@ -26,12 +31,13 @@ def split_dataframe_by_time(df_stop_times):
     start_index = 0
 
     for i in range(1, len(df_stop_times)):
-        if df_stop_times.loc[i, 'starting_stop_time'] != df_stop_times.loc[i-1, 'starting_stop_time']:
+        if df_stop_times.loc[i, 'starting_stop_time'] != df_stop_times.loc[i - 1, 'starting_stop_time']:
             splits.append(df_stop_times.iloc[start_index:i])
             start_index = i
 
     splits.append(df_stop_times.iloc[start_index:])
     return splits
+
 
 def create_dataset_matrix(data, num_stops_bundled=5, include_previous_stop_delay=False):
     """
@@ -50,32 +56,33 @@ def create_dataset_matrix(data, num_stops_bundled=5, include_previous_stop_delay
     """
     # Konvertiere das DataFrame in eine NumPy-Array-Repräsentation
     data_array = data.to_numpy()
-    
+
     # Anzahl der Zeilen, Spalten
     num_rows, num_features = data_array.shape
 
     # Anzahl der Samples in der X- und Y-Matrix
     num_samples = num_rows - num_stops_bundled
-    
+
     # Initialisiere die X- und Y-Matrizen
     # Wenn include_previous_stop_delay=True, dann wird die letzte Spalte (arrival_delay_category) nicht entfernt
     if include_previous_stop_delay:
         X_matrix = np.zeros((num_samples, num_stops_bundled, num_features))
     else:
         X_matrix = np.zeros((num_samples, num_stops_bundled, num_features - 1))  # Exclude previous stop delay
-   
+
     Y_matrix = np.zeros((num_samples, 1))
-    
+
     # Fülle die X- und Y-Matrizen
     for i in range(num_samples):
         if include_previous_stop_delay:
-            X_matrix[i] = data_array[i:i+num_stops_bundled]
+            X_matrix[i] = data_array[i:i + num_stops_bundled]
         else:
-            X_matrix[i] = data_array[i:i+num_stops_bundled, :-1]  # Exclude last column (previous stop delay)
+            X_matrix[i] = data_array[i:i + num_stops_bundled, :-1]  # Exclude last column (previous stop delay)
         # Wähle jeweils immer ab der nächsten Zeile aus der Spalte 'arrival_delay_category' als Label, dann fortlaufend
-        Y_matrix[i] = data_array[i+1, num_features-1]
-    
+        Y_matrix[i] = data_array[i + 1, num_features - 1]
+
     return X_matrix, Y_matrix, include_previous_stop_delay
+
 
 def plot_feature_importance(feature_names_dict, bst):
     """
@@ -105,12 +112,11 @@ def plot_feature_importance(feature_names_dict, bst):
         plt.xlabel('Features')
         plt.ylabel('Importance Score')
         plt.title('Feature Importance')
-        plt.xticks(range(len(features)), features) 
+        plt.xticks(range(len(features)), features)
         plt.show()
     except ValueError as var_error:
-        logging.error(f"Feature_Importance konnte nicht geplottet werden, da keine Variable für Entscheidung maßgebend war: {var_error}")
-
-
+        logging.error(
+            f"Feature_Importance konnte nicht geplottet werden, da keine Variable für Entscheidung maßgebend war: {var_error}")
 
 
 def regression_with_line_22():
@@ -150,7 +156,8 @@ def regression_with_line_22():
     df_stop_times = pd.merge(df_stop_times, df_weather, on=['current_date', 'dayhour_x'])
 
     # Datensatz sortieren nach Datum, current_time, starting_time und stop_sequence
-    df_stop_times = df_stop_times.sort_values(by=['current_date', 'current_time_x', 'starting_stop_time', 'stop_sequence'])
+    df_stop_times = df_stop_times.sort_values(
+        by=['current_date', 'current_time_x', 'starting_stop_time', 'stop_sequence'])
 
     # Index des DataFrames zurücksetzen nach Sortierung
     df_stop_times.reset_index(inplace=True, drop=True)
@@ -160,10 +167,9 @@ def regression_with_line_22():
 
     # Iteration über die Anzahl der Haltestellen (10 Stück)
     for num_stops in range(1, 11):
-        
+
         # Iteration über die aufgeteilten DataFrames
         for i, df_split in enumerate(getrennte_dataframes):
-
             # Spalte einfügen mit Verspätung von vorheriger Haltestelle (deparure_delay_seconds um einen nach unten verschieben)
             df_split['arrival_delay_seconds_previous_stop'] = df_split['arrival_delay_seconds'].shift(1)
 
@@ -172,21 +178,29 @@ def regression_with_line_22():
 
             # Erste Zeile entfernen (da keine vorherige Haltestelle)
             df_split = df_split.dropna()
-            
+
             # Spalten entfernen, die nicht für die Regression benötigt werden
-            df_stop_times = df_split.drop(columns=['city','current_date','starting_stop_time','stop_sequence','current_date','current_time_x','dayquarter', 'weekday','stop_name', 'line', 'direction','stop_id',"arrival_delay_category","stop_lat","stop_lon","departure_delay_category","departure_delay_seconds","current_time_x","arrival_delay_category_previous_stop"])
+            df_stop_times = df_split.drop(
+                columns=['city', 'current_date', 'starting_stop_time', 'stop_sequence', 'current_date',
+                         'current_time_x', 'dayquarter', 'weekday', 'stop_name', 'line', 'direction', 'stop_id',
+                         "arrival_delay_category", "stop_lat", "stop_lon", "departure_delay_category",
+                         "departure_delay_seconds", "current_time_x", "arrival_delay_category_previous_stop"])
 
             # Reihenfolge Datensatz ändern
-            df_stop_times = df_stop_times[["daytime_x","dayhour_x","is_workingday","is_holiday","number_of_stops","number_of_building_sites","current_speed","freeflow_Speed","quotient_current_freeflow_speed","temperature_celsius","humidity_percentage","weather_description","wind_speed_m_s","weather_warning","arrival_delay_seconds_previous_stop","arrival_delay_seconds"]]
+            df_stop_times = df_stop_times[
+                ["daytime_x", "dayhour_x", "is_workingday", "is_holiday", "number_of_stops", "number_of_building_sites",
+                 "current_speed", "freeflow_Speed", "quotient_current_freeflow_speed", "temperature_celsius",
+                 "humidity_percentage", "weather_description", "wind_speed_m_s", "weather_warning",
+                 "arrival_delay_seconds_previous_stop", "arrival_delay_seconds"]]
 
             # Spalte daytime_x entfernen
             df_stop_times = df_stop_times.drop(columns=['daytime_x'])
 
             # Erstellen der X- und Y-Matrix
-            x,y, knowledge_delay_pevius_stop = create_dataset_matrix(df_stop_times)
+            x, y, knowledge_delay_pevius_stop = create_dataset_matrix(df_stop_times)
 
             # arrival_delay_seconds aus x-Matrix entfernen (ist soweit als Label in y-Matrix erfasst)
-            x = x[:,:,:-1]
+            x = x[:, :, :-1]
 
             # x und y-Matrix den Listen hinzufügen
             x_matrices.append(x)
@@ -200,7 +214,8 @@ def regression_with_line_22():
         X_flattened = x_combined.reshape(x_combined.shape[0], -1)
 
         # Aufteilen der Daten in Trainings- und Testdaten
-        X_train, X_test, y_train, y_test = train_test_split(X_flattened, y_combined, test_size=0.3, random_state=42, shuffle=False)
+        X_train, X_test, y_train, y_test = train_test_split(X_flattened, y_combined, test_size=0.3, random_state=42,
+                                                            shuffle=False)
 
         # Erstellen der DMatrizen für XGBoost
         dtrain = xgb.DMatrix(X_train, label=y_train)
@@ -275,148 +290,147 @@ def regression_with_line_22():
 
     if knowledge_delay_pevius_stop:
         feature_names_dict = {
-    'f64': 'temperature_celsius',
-    'f50': 'temperature_celsius',
-    'f36': 'temperature_celsius',
-    'f22': 'temperature_celsius',
-    'f8': 'temperature_celsius',
-    'f0': 'dayhour',
-    'f14': 'dayhour',
-    'f28': 'dayhour',
-    'f42': 'dayhour',
-    'f56': 'dayhour',
-    'f1': 'is_workingday',
-    'f15': 'is_workingday',
-    'f29': 'is_workingday',
-    'f43': 'is_workingday',
-    'f57': 'is_workingday',
-    'f3': 'number_of_stops',
-    'f17': 'number_of_stops',
-    'f31': 'number_of_stops',
-    'f45': 'number_of_stops',
-    'f59': 'number_of_stops',
-    'f5': 'current_speed',
-    'f19': 'current_speed',
-    'f33': 'current_speed',
-    'f47': 'current_speed',
-    'f61': 'current_speed',
-    'f6': 'freeflow_speed',
-    'f20': 'freeflow_speed',
-    'f34': 'freeflow_speed',
-    'f48': 'freeflow_speed',
-    'f62': 'freeflow_speed',
-    'f7': 'quotient_current_freeflow_speed',
-    'f21': 'quotient_current_freeflow_speed',
-    'f35': 'quotient_current_freeflow_speed',
-    'f49': 'quotient_current_freeflow_speed',
-    'f63': 'quotient_current_freeflow_speed',
-    'f11': 'wind_speed_m_s',
-    'f25': 'wind_speed_m_s',
-    'f39': 'wind_speed_m_s',
-    'f53': 'wind_speed_m_s',
-    'f67': 'wind_speed_m_s',
-    'f12': 'weather_warning',
-    'f26': 'weather_warning',
-    'f40': 'weather_warning',
-    'f54': 'weather_warning',
-    'f68': 'weather_warning',
-    'f9': 'humidity_percentage',
-    'f23': 'humidity_percentage',
-    'f37': 'humidity_percentage',
-    'f51': 'humidity_percentage',
-    'f65': 'humidity_percentage',
-    'f2': 'is_holiday',
-    'f16': 'is_holiday',
-    'f30': 'is_holiday',
-    'f44': 'is_holiday',
-    'f58': 'is_holiday',
-    'f4': 'number_of_building_sites',
-    'f18': 'number_of_building_sites',
-    'f32': 'number_of_building_sites',
-    'f46': 'number_of_building_sites',
-    'f60': 'number_of_building_sites',
-    'f10': 'weather_description',
-    'f24': 'weather_description',
-    'f38': 'weather_description',
-    'f52': 'weather_description',
-    'f66': 'weather_description',
-    'f13': 'arrival_delay_seconds_previous_stop',
-    'f27': 'arrival_delay_seconds_previous_stop',
-    'f41': 'arrival_delay_seconds_previous_stop',
-    'f55': 'arrival_delay_seconds_previous_stop',
-    'f69': 'arrival_delay_seconds_previous_stop'
-}
-    else:    
+            'f64': 'temperature_celsius',
+            'f50': 'temperature_celsius',
+            'f36': 'temperature_celsius',
+            'f22': 'temperature_celsius',
+            'f8': 'temperature_celsius',
+            'f0': 'dayhour',
+            'f14': 'dayhour',
+            'f28': 'dayhour',
+            'f42': 'dayhour',
+            'f56': 'dayhour',
+            'f1': 'is_workingday',
+            'f15': 'is_workingday',
+            'f29': 'is_workingday',
+            'f43': 'is_workingday',
+            'f57': 'is_workingday',
+            'f3': 'number_of_stops',
+            'f17': 'number_of_stops',
+            'f31': 'number_of_stops',
+            'f45': 'number_of_stops',
+            'f59': 'number_of_stops',
+            'f5': 'current_speed',
+            'f19': 'current_speed',
+            'f33': 'current_speed',
+            'f47': 'current_speed',
+            'f61': 'current_speed',
+            'f6': 'freeflow_speed',
+            'f20': 'freeflow_speed',
+            'f34': 'freeflow_speed',
+            'f48': 'freeflow_speed',
+            'f62': 'freeflow_speed',
+            'f7': 'quotient_current_freeflow_speed',
+            'f21': 'quotient_current_freeflow_speed',
+            'f35': 'quotient_current_freeflow_speed',
+            'f49': 'quotient_current_freeflow_speed',
+            'f63': 'quotient_current_freeflow_speed',
+            'f11': 'wind_speed_m_s',
+            'f25': 'wind_speed_m_s',
+            'f39': 'wind_speed_m_s',
+            'f53': 'wind_speed_m_s',
+            'f67': 'wind_speed_m_s',
+            'f12': 'weather_warning',
+            'f26': 'weather_warning',
+            'f40': 'weather_warning',
+            'f54': 'weather_warning',
+            'f68': 'weather_warning',
+            'f9': 'humidity_percentage',
+            'f23': 'humidity_percentage',
+            'f37': 'humidity_percentage',
+            'f51': 'humidity_percentage',
+            'f65': 'humidity_percentage',
+            'f2': 'is_holiday',
+            'f16': 'is_holiday',
+            'f30': 'is_holiday',
+            'f44': 'is_holiday',
+            'f58': 'is_holiday',
+            'f4': 'number_of_building_sites',
+            'f18': 'number_of_building_sites',
+            'f32': 'number_of_building_sites',
+            'f46': 'number_of_building_sites',
+            'f60': 'number_of_building_sites',
+            'f10': 'weather_description',
+            'f24': 'weather_description',
+            'f38': 'weather_description',
+            'f52': 'weather_description',
+            'f66': 'weather_description',
+            'f13': 'arrival_delay_seconds_previous_stop',
+            'f27': 'arrival_delay_seconds_previous_stop',
+            'f41': 'arrival_delay_seconds_previous_stop',
+            'f55': 'arrival_delay_seconds_previous_stop',
+            'f69': 'arrival_delay_seconds_previous_stop'
+        }
+    else:
         feature_names_dict = {
-        'f60': 'temperature_celsius',
-        'f47': 'temperature_celsius',
-        'f34': 'temperature_celsius',
-        'f21': 'temperature_celsius',
-        'f8': 'temperature_celsius',
-        'f0': 'dayhour',
-        'f13': 'dayhour',
-        'f26': 'dayhour',
-        'f39': 'dayhour',
-        'f52': 'dayhour',
-        'f1': 'is_workingday',
-        'f14': 'is_workingday',
-        'f27': 'is_workingday',
-        'f40': 'is_workingday',
-        'f53': 'is_workingday',
-        'f3': 'number_of_stops',
-        'f16': 'number_of_stops',
-        'f29': 'number_of_stops',
-        'f42': 'number_of_stops',
-        'f55': 'number_of_stops',
-        'f5': 'current_speed',
-        'f18': 'current_speed',
-        'f31': 'current_speed',
-        'f44': 'current_speed',
-        'f57': 'current_speed',
-        'f6': 'freeflow_speed',
-        'f19': 'freeflow_speed',
-        'f32': 'freeflow_speed',
-        'f45': 'freeflow_speed',
-        'f58': 'freeflow_speed',
-        'f7': 'quotient_current_freeflow_speed',
-        'f20': 'quotient_current_freeflow_speed',
-        'f33': 'quotient_current_freeflow_speed',
-        'f46': 'quotient_current_freeflow_speed',
-        'f59': 'quotient_current_freeflow_speed',
-        'f11': 'wind_speed_m_s',
-        'f24': 'wind_speed_m_s',
-        'f37': 'wind_speed_m_s',
-        'f50': 'wind_speed_m_s',
-        'f63': 'wind_speed_m_s',
-        'f12': 'weather_warning',
-        'f25': 'weather_warning',
-        'f38': 'weather_warning',
-        'f51': 'weather_warning',
-        'f64': 'weather_warning',
-        'f9': 'humidity_percentage',
-        'f22': 'humidity_percentage',
-        'f35': 'humidity_percentage',
-        'f48': 'humidity_percentage',
-        'f61': 'humidity_percentage',
-        'f2': 'is_holiday',
-        'f15': 'is_holiday',
-        'f28': 'is_holiday',
-        'f41': 'is_holiday',
-        'f54': 'is_holiday',
-        'f4': 'number_of_building_sites',
-        'f17': 'number_of_building_sites',
-        'f30': 'number_of_building_sites',
-        'f43': 'number_of_building_sites',
-        'f56': 'number_of_building_sites',
-        'f10': 'weather_description',
-        'f23': 'weather_description',
-        'f36': 'weather_description',
-        'f49': 'weather_description',
-        'f62': 'weather_description'
-    }
+            'f60': 'temperature_celsius',
+            'f47': 'temperature_celsius',
+            'f34': 'temperature_celsius',
+            'f21': 'temperature_celsius',
+            'f8': 'temperature_celsius',
+            'f0': 'dayhour',
+            'f13': 'dayhour',
+            'f26': 'dayhour',
+            'f39': 'dayhour',
+            'f52': 'dayhour',
+            'f1': 'is_workingday',
+            'f14': 'is_workingday',
+            'f27': 'is_workingday',
+            'f40': 'is_workingday',
+            'f53': 'is_workingday',
+            'f3': 'number_of_stops',
+            'f16': 'number_of_stops',
+            'f29': 'number_of_stops',
+            'f42': 'number_of_stops',
+            'f55': 'number_of_stops',
+            'f5': 'current_speed',
+            'f18': 'current_speed',
+            'f31': 'current_speed',
+            'f44': 'current_speed',
+            'f57': 'current_speed',
+            'f6': 'freeflow_speed',
+            'f19': 'freeflow_speed',
+            'f32': 'freeflow_speed',
+            'f45': 'freeflow_speed',
+            'f58': 'freeflow_speed',
+            'f7': 'quotient_current_freeflow_speed',
+            'f20': 'quotient_current_freeflow_speed',
+            'f33': 'quotient_current_freeflow_speed',
+            'f46': 'quotient_current_freeflow_speed',
+            'f59': 'quotient_current_freeflow_speed',
+            'f11': 'wind_speed_m_s',
+            'f24': 'wind_speed_m_s',
+            'f37': 'wind_speed_m_s',
+            'f50': 'wind_speed_m_s',
+            'f63': 'wind_speed_m_s',
+            'f12': 'weather_warning',
+            'f25': 'weather_warning',
+            'f38': 'weather_warning',
+            'f51': 'weather_warning',
+            'f64': 'weather_warning',
+            'f9': 'humidity_percentage',
+            'f22': 'humidity_percentage',
+            'f35': 'humidity_percentage',
+            'f48': 'humidity_percentage',
+            'f61': 'humidity_percentage',
+            'f2': 'is_holiday',
+            'f15': 'is_holiday',
+            'f28': 'is_holiday',
+            'f41': 'is_holiday',
+            'f54': 'is_holiday',
+            'f4': 'number_of_building_sites',
+            'f17': 'number_of_building_sites',
+            'f30': 'number_of_building_sites',
+            'f43': 'number_of_building_sites',
+            'f56': 'number_of_building_sites',
+            'f10': 'weather_description',
+            'f23': 'weather_description',
+            'f36': 'weather_description',
+            'f49': 'weather_description',
+            'f62': 'weather_description'
+        }
     # Plot Feature Importance
     plot_feature_importance(feature_names_dict, bst)
-
 
 
 def regression_with_line(line="6", direction="Universität"):
@@ -433,7 +447,7 @@ def regression_with_line(line="6", direction="Universität"):
     df_stop_times = pd.read_csv("stop_times_bsag_updates.csv")
     df_stops_line = pd.read_csv("stops_bremen.csv", sep=";")
     df_weather = pd.read_csv('weather_bremen_df.csv')
-    
+
     # Liste für x- und y-Matrizen erstellen
     x_matrices = []
     y_matrices = []
@@ -453,10 +467,11 @@ def regression_with_line(line="6", direction="Universität"):
     df_stop_times = pd.merge(df_stop_times, df_weather, on=['current_date', 'dayhour'])
 
     # Merge df_stop_times und df_stops_line nach der Spalte stop_name
-    df_stop_times = pd.merge(df_stop_times, df_stops_line, on ="stop_name", how="inner")
+    df_stop_times = pd.merge(df_stop_times, df_stops_line, on="stop_name", how="inner")
 
     # Datensatz sortieren nach Datum, current_time, starting_time und stop_sequence
-    df_stop_times = df_stop_times.sort_values(by=['current_date', 'current_time_x', 'starting_stop_time', 'stop_sequence'])
+    df_stop_times = df_stop_times.sort_values(
+        by=['current_date', 'current_time_x', 'starting_stop_time', 'stop_sequence'])
 
     # Index des DataFrames zurücksetzen nach Sortierung
     df_stop_times.reset_index(inplace=True, drop=True)
@@ -466,10 +481,9 @@ def regression_with_line(line="6", direction="Universität"):
 
     # Iteration über die Anzahl der Haltestellen (10 Stück)
     for num_stops in range(1, 11):
-        
+
         # Iteration über die aufgeteilten DataFrames
         for i, df_split in enumerate(getrennte_dataframes):
-
             # Spalte einfügen mit Verspätung von vorheriger Haltestelle (deparure_delay_seconds um einen nach unten verschieben)
             df_split['arrival_delay_seconds_previous_stop'] = df_split['arrival_delay_seconds'].shift(1)
 
@@ -480,16 +494,23 @@ def regression_with_line(line="6", direction="Universität"):
             df_split = df_split.dropna()
 
             # Spalten entfernen, die nicht für die Klassifikation benötigt werden
-            df_stop_times = df_split.drop(columns=['city','current_date','starting_stop_time','stop_sequence','current_date','current_time_x','dayquarter', 'weekday','stop_name', 'line', 'direction',"stop_lat","stop_lon","arrival_delay_category","departure_delay_category","departure_delay_seconds","current_time_x","arrival_delay_category_previous_stop"])
+            df_stop_times = df_split.drop(
+                columns=['city', 'current_date', 'starting_stop_time', 'stop_sequence', 'current_date',
+                         'current_time_x', 'dayquarter', 'weekday', 'stop_name', 'line', 'direction', "stop_lat",
+                         "stop_lon", "arrival_delay_category", "departure_delay_category", "departure_delay_seconds",
+                         "current_time_x", "arrival_delay_category_previous_stop"])
 
             # Reihenfolge Datensatz ändern
-            df_stop_times = df_stop_times[["is_workingday","is_holiday","number_of_stops","number_of_building_sites","temperature_celsius","humidity_percentage","weather_description","wind_speed_m_s","weather_warning","arrival_delay_seconds_previous_stop","arrival_delay_seconds"]]
+            df_stop_times = df_stop_times[
+                ["is_workingday", "is_holiday", "number_of_stops", "number_of_building_sites", "temperature_celsius",
+                 "humidity_percentage", "weather_description", "wind_speed_m_s", "weather_warning",
+                 "arrival_delay_seconds_previous_stop", "arrival_delay_seconds"]]
 
             # Erstellen der X- und Y-Matrix
-            x,y,knowledge_delay_pevius_stop = create_dataset_matrix(df_stop_times)
+            x, y, knowledge_delay_pevius_stop = create_dataset_matrix(df_stop_times)
 
             # arrival_delay_seconds aus x-Matrix entfernen (da als Label in y-Matrix erfasst)
-            x = x[:,:,:-1]
+            x = x[:, :, :-1]
 
             # x- und y-Matrix den Listen hinzufügen
             x_matrices.append(x)
@@ -503,7 +524,8 @@ def regression_with_line(line="6", direction="Universität"):
         X_flattened = x_combined.reshape(x_combined.shape[0], -1)
 
         # Aufteilen der Daten in Trainings- und Testdaten
-        X_train, X_test, y_train, y_test = train_test_split(X_flattened, y_combined, test_size=0.3, random_state=42, shuffle=False)
+        X_train, X_test, y_train, y_test = train_test_split(X_flattened, y_combined, test_size=0.3, random_state=42,
+                                                            shuffle=False)
 
         # Erstellen der DMatrizen für XGBoost
         dtrain = xgb.DMatrix(X_train, label=y_train)
@@ -582,149 +604,147 @@ def regression_with_line(line="6", direction="Universität"):
 
     if knowledge_delay_pevius_stop:
         feature_names_dict = {
-    'f64': 'temperature_celsius',
-    'f50': 'temperature_celsius',
-    'f36': 'temperature_celsius',
-    'f22': 'temperature_celsius',
-    'f8': 'temperature_celsius',
-    'f0': 'dayhour',
-    'f14': 'dayhour',
-    'f28': 'dayhour',
-    'f42': 'dayhour',
-    'f56': 'dayhour',
-    'f1': 'is_workingday',
-    'f15': 'is_workingday',
-    'f29': 'is_workingday',
-    'f43': 'is_workingday',
-    'f57': 'is_workingday',
-    'f3': 'number_of_stops',
-    'f17': 'number_of_stops',
-    'f31': 'number_of_stops',
-    'f45': 'number_of_stops',
-    'f59': 'number_of_stops',
-    'f5': 'current_speed',
-    'f19': 'current_speed',
-    'f33': 'current_speed',
-    'f47': 'current_speed',
-    'f61': 'current_speed',
-    'f6': 'freeflow_speed',
-    'f20': 'freeflow_speed',
-    'f34': 'freeflow_speed',
-    'f48': 'freeflow_speed',
-    'f62': 'freeflow_speed',
-    'f7': 'quotient_current_freeflow_speed',
-    'f21': 'quotient_current_freeflow_speed',
-    'f35': 'quotient_current_freeflow_speed',
-    'f49': 'quotient_current_freeflow_speed',
-    'f63': 'quotient_current_freeflow_speed',
-    'f11': 'wind_speed_m_s',
-    'f25': 'wind_speed_m_s',
-    'f39': 'wind_speed_m_s',
-    'f53': 'wind_speed_m_s',
-    'f67': 'wind_speed_m_s',
-    'f12': 'weather_warning',
-    'f26': 'weather_warning',
-    'f40': 'weather_warning',
-    'f54': 'weather_warning',
-    'f68': 'weather_warning',
-    'f9': 'humidity_percentage',
-    'f23': 'humidity_percentage',
-    'f37': 'humidity_percentage',
-    'f51': 'humidity_percentage',
-    'f65': 'humidity_percentage',
-    'f2': 'is_holiday',
-    'f16': 'is_holiday',
-    'f30': 'is_holiday',
-    'f44': 'is_holiday',
-    'f58': 'is_holiday',
-    'f4': 'number_of_building_sites',
-    'f18': 'number_of_building_sites',
-    'f32': 'number_of_building_sites',
-    'f46': 'number_of_building_sites',
-    'f60': 'number_of_building_sites',
-    'f10': 'weather_description',
-    'f24': 'weather_description',
-    'f38': 'weather_description',
-    'f52': 'weather_description',
-    'f66': 'weather_description',
-    'f13': 'arrival_delay_seconds_previous_stop',
-    'f27': 'arrival_delay_seconds_previous_stop',
-    'f41': 'arrival_delay_seconds_previous_stop',
-    'f55': 'arrival_delay_seconds_previous_stop',
-    'f69': 'arrival_delay_seconds_previous_stop'
-}
-    else:    
+            'f64': 'temperature_celsius',
+            'f50': 'temperature_celsius',
+            'f36': 'temperature_celsius',
+            'f22': 'temperature_celsius',
+            'f8': 'temperature_celsius',
+            'f0': 'dayhour',
+            'f14': 'dayhour',
+            'f28': 'dayhour',
+            'f42': 'dayhour',
+            'f56': 'dayhour',
+            'f1': 'is_workingday',
+            'f15': 'is_workingday',
+            'f29': 'is_workingday',
+            'f43': 'is_workingday',
+            'f57': 'is_workingday',
+            'f3': 'number_of_stops',
+            'f17': 'number_of_stops',
+            'f31': 'number_of_stops',
+            'f45': 'number_of_stops',
+            'f59': 'number_of_stops',
+            'f5': 'current_speed',
+            'f19': 'current_speed',
+            'f33': 'current_speed',
+            'f47': 'current_speed',
+            'f61': 'current_speed',
+            'f6': 'freeflow_speed',
+            'f20': 'freeflow_speed',
+            'f34': 'freeflow_speed',
+            'f48': 'freeflow_speed',
+            'f62': 'freeflow_speed',
+            'f7': 'quotient_current_freeflow_speed',
+            'f21': 'quotient_current_freeflow_speed',
+            'f35': 'quotient_current_freeflow_speed',
+            'f49': 'quotient_current_freeflow_speed',
+            'f63': 'quotient_current_freeflow_speed',
+            'f11': 'wind_speed_m_s',
+            'f25': 'wind_speed_m_s',
+            'f39': 'wind_speed_m_s',
+            'f53': 'wind_speed_m_s',
+            'f67': 'wind_speed_m_s',
+            'f12': 'weather_warning',
+            'f26': 'weather_warning',
+            'f40': 'weather_warning',
+            'f54': 'weather_warning',
+            'f68': 'weather_warning',
+            'f9': 'humidity_percentage',
+            'f23': 'humidity_percentage',
+            'f37': 'humidity_percentage',
+            'f51': 'humidity_percentage',
+            'f65': 'humidity_percentage',
+            'f2': 'is_holiday',
+            'f16': 'is_holiday',
+            'f30': 'is_holiday',
+            'f44': 'is_holiday',
+            'f58': 'is_holiday',
+            'f4': 'number_of_building_sites',
+            'f18': 'number_of_building_sites',
+            'f32': 'number_of_building_sites',
+            'f46': 'number_of_building_sites',
+            'f60': 'number_of_building_sites',
+            'f10': 'weather_description',
+            'f24': 'weather_description',
+            'f38': 'weather_description',
+            'f52': 'weather_description',
+            'f66': 'weather_description',
+            'f13': 'arrival_delay_seconds_previous_stop',
+            'f27': 'arrival_delay_seconds_previous_stop',
+            'f41': 'arrival_delay_seconds_previous_stop',
+            'f55': 'arrival_delay_seconds_previous_stop',
+            'f69': 'arrival_delay_seconds_previous_stop'
+        }
+    else:
         feature_names_dict = {
-        'f60': 'temperature_celsius',
-        'f47': 'temperature_celsius',
-        'f34': 'temperature_celsius',
-        'f21': 'temperature_celsius',
-        'f8': 'temperature_celsius',
-        'f0': 'dayhour',
-        'f13': 'dayhour',
-        'f26': 'dayhour',
-        'f39': 'dayhour',
-        'f52': 'dayhour',
-        'f1': 'is_workingday',
-        'f14': 'is_workingday',
-        'f27': 'is_workingday',
-        'f40': 'is_workingday',
-        'f53': 'is_workingday',
-        'f3': 'number_of_stops',
-        'f16': 'number_of_stops',
-        'f29': 'number_of_stops',
-        'f42': 'number_of_stops',
-        'f55': 'number_of_stops',
-        'f5': 'current_speed',
-        'f18': 'current_speed',
-        'f31': 'current_speed',
-        'f44': 'current_speed',
-        'f57': 'current_speed',
-        'f6': 'freeflow_speed',
-        'f19': 'freeflow_speed',
-        'f32': 'freeflow_speed',
-        'f45': 'freeflow_speed',
-        'f58': 'freeflow_speed',
-        'f7': 'quotient_current_freeflow_speed',
-        'f20': 'quotient_current_freeflow_speed',
-        'f33': 'quotient_current_freeflow_speed',
-        'f46': 'quotient_current_freeflow_speed',
-        'f59': 'quotient_current_freeflow_speed',
-        'f11': 'wind_speed_m_s',
-        'f24': 'wind_speed_m_s',
-        'f37': 'wind_speed_m_s',
-        'f50': 'wind_speed_m_s',
-        'f63': 'wind_speed_m_s',
-        'f12': 'weather_warning',
-        'f25': 'weather_warning',
-        'f38': 'weather_warning',
-        'f51': 'weather_warning',
-        'f64': 'weather_warning',
-        'f9': 'humidity_percentage',
-        'f21': 'humidity_percentage',
-        'f34': 'humidity_percentage',
-        'f47': 'humidity_percentage',
-        'f60': 'humidity_percentage',
-        'f2': 'is_holiday',
-        'f15': 'is_holiday',
-        'f28': 'is_holiday',
-        'f41': 'is_holiday',
-        'f54': 'is_holiday',
-        'f4': 'number_of_building_sites',
-        'f17': 'number_of_building_sites',
-        'f30': 'number_of_building_sites',
-        'f43': 'number_of_building_sites',
-        'f56': 'number_of_building_sites',
-        'f10': 'weather_description',
-        'f23': 'weather_description',
-        'f36': 'weather_description',
-        'f49': 'weather_description',
-        'f52': 'weather_description'
-    }
+            'f60': 'temperature_celsius',
+            'f47': 'temperature_celsius',
+            'f34': 'temperature_celsius',
+            'f21': 'temperature_celsius',
+            'f8': 'temperature_celsius',
+            'f0': 'dayhour',
+            'f13': 'dayhour',
+            'f26': 'dayhour',
+            'f39': 'dayhour',
+            'f52': 'dayhour',
+            'f1': 'is_workingday',
+            'f14': 'is_workingday',
+            'f27': 'is_workingday',
+            'f40': 'is_workingday',
+            'f53': 'is_workingday',
+            'f3': 'number_of_stops',
+            'f16': 'number_of_stops',
+            'f29': 'number_of_stops',
+            'f42': 'number_of_stops',
+            'f55': 'number_of_stops',
+            'f5': 'current_speed',
+            'f18': 'current_speed',
+            'f31': 'current_speed',
+            'f44': 'current_speed',
+            'f57': 'current_speed',
+            'f6': 'freeflow_speed',
+            'f19': 'freeflow_speed',
+            'f32': 'freeflow_speed',
+            'f45': 'freeflow_speed',
+            'f58': 'freeflow_speed',
+            'f7': 'quotient_current_freeflow_speed',
+            'f20': 'quotient_current_freeflow_speed',
+            'f33': 'quotient_current_freeflow_speed',
+            'f46': 'quotient_current_freeflow_speed',
+            'f59': 'quotient_current_freeflow_speed',
+            'f11': 'wind_speed_m_s',
+            'f24': 'wind_speed_m_s',
+            'f37': 'wind_speed_m_s',
+            'f50': 'wind_speed_m_s',
+            'f63': 'wind_speed_m_s',
+            'f12': 'weather_warning',
+            'f25': 'weather_warning',
+            'f38': 'weather_warning',
+            'f51': 'weather_warning',
+            'f64': 'weather_warning',
+            'f9': 'humidity_percentage',
+            'f21': 'humidity_percentage',
+            'f34': 'humidity_percentage',
+            'f47': 'humidity_percentage',
+            'f60': 'humidity_percentage',
+            'f2': 'is_holiday',
+            'f15': 'is_holiday',
+            'f28': 'is_holiday',
+            'f41': 'is_holiday',
+            'f54': 'is_holiday',
+            'f4': 'number_of_building_sites',
+            'f17': 'number_of_building_sites',
+            'f30': 'number_of_building_sites',
+            'f43': 'number_of_building_sites',
+            'f56': 'number_of_building_sites',
+            'f10': 'weather_description',
+            'f23': 'weather_description',
+            'f36': 'weather_description',
+            'f49': 'weather_description',
+            'f52': 'weather_description'
+        }
     # Plot Feature Importance
     plot_feature_importance(feature_names_dict, bst)
-
-    
 
 
 # Funktionsaufruf mit gewünschten Parametern

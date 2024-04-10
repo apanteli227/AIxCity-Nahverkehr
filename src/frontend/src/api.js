@@ -6,6 +6,15 @@ export async function getLines() {
     return await axios.get(`${BASE_URL}/all_lines`);
 }
 
+export async function getLinesWithDirections() {
+    return await axios.get(`${BASE_URL}/all_lines_with_directions`);
+}
+
+export async function getML(selectedRadio, selectedLine) {
+    const encodedSelectedLine = encodeURIComponent(selectedLine);
+    return await axios.get(`${BASE_URL}/forecast/${selectedRadio}/${encodedSelectedLine}`);
+}
+
 export async function getStops() {
     return await axios.get(`${BASE_URL}/all_stops`);
 }
@@ -26,7 +35,7 @@ export async function getAvgStopDelay() {
         console.log(response.data);
         return response.data;
     } catch (error) {
-        console.error('Error fetching interesting statistics:', error);
+        console.error('Error:', error);
         throw error;
     }
 }
@@ -37,7 +46,7 @@ export async function getAvgLineDelay() {
         console.log(response.data);
         return response.data;
     } catch (error) {
-        console.error('Error fetching interesting statistics:', error);
+        console.error('Error:', error);
         throw error;
     }
 }

@@ -22,8 +22,12 @@ app.add_middleware(
 
 
 # Rufe abhängig von den Parametern die entsprechende Funktion in ml_scripts_forecasts auf
-@app.get("/forecast")
-async def get_forecast(mode: str, line: int, is_line22: bool, direction: str):
+@app.get("/forecast/{mode}/{line}")
+async def get_forecast(mode: str, line_with_direction: str):
+    print(mode, unquote(line_with_direction))
+    line = get_line(unquote(line_with_direction))
+    direction = get_direction(line_with_direction)
+    is_line22 = line == "22"
     if mode == "classification" and is_line22:
         return classification_with_line_22()
     elif mode == "classification" and not is_line22:
@@ -32,6 +36,14 @@ async def get_forecast(mode: str, line: int, is_line22: bool, direction: str):
         return regression_with_line_22()
     else:
         return regression_with_line(line, direction)
+
+
+def get_line(line_with_direction):
+    return line_with_direction.split(' => ')[0]
+
+
+def get_direction(line_with_direction):
+    return line_with_direction.split(' => ')[1]
 
 
 @app.get("/get_cards_data")
@@ -84,6 +96,12 @@ async def read_data_stops():
 @app.get("/all_lines")
 async def read_data_lines():
     query = "SELECT DISTINCT line FROM public.bsag_data"
+    return read_data(query)
+
+
+@app.get("/all_lines_with_directions")
+async def read_data_lines_with_directions():
+    query = "SELECT line, ARRAY_AGG(DISTINCT direction) AS directions FROM public.transit_data GROUP BY line;"
     return read_data(query)
 
 
