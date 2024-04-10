@@ -1,15 +1,17 @@
+from urllib.parse import unquote
+
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from urllib.parse import unquote
-import sys
 
-import psycopg2
+from persistence import database_controller as dbc
+from src.backend.ml_scripts_forecasts.ml_forecast_classification import classification_with_line_22, \
+    classification_with_line
+from src.backend.ml_scripts_forecasts.ml_forecast_regression import regression_with_line_22, regression_with_line
 
 app = FastAPI()
 
-# Allow CORS for all origins in this example
+# Allow CORS for all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,12 +21,17 @@ app.add_middleware(
 )
 
 
-# Pydantic model for the data
-# todo: do we need this?
-class Item(BaseModel):
-    name: str
-    description: str = None
-    # ...
+# Rufe abhängig von den Parametern die entsprechende Funktion in ml_scripts_forecasts auf
+@app.get("/forecast")
+async def get_forecast(mode: str, line: int, is_line22: bool, direction: str):
+    if mode == "classification" and is_line22:
+        return classification_with_line_22()
+    elif mode == "classification" and not is_line22:
+        return classification_with_line(line, direction)
+    elif mode == "regression" and is_line22:
+        return regression_with_line_22()
+    else:
+        return regression_with_line(line, direction)
 
 
 @app.get("/get_cards_data")
@@ -38,7 +45,7 @@ async def read_data_cards():
 
 
 # durchschn. Verspätungen in den letzten 7 Tagen
-#todo fix query
+# todo fix query
 @app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
     query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week' AND current_date < CURRENT_DATE;"
@@ -61,7 +68,7 @@ async def read_data_public_holiday_delay():
 
 # durchschn. Verspätungen an einem (noch kommenden) zufälligen Heimspieltag von Werder Bremen
 # Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
-#todo fix query, no result!!!!!!!!!!!!!!!!
+# todo fix query, no result!!!!!!!!!!!!!!!!
 @app.get("/interesting_statistic_football_match_day")
 async def read_data_football_match_day_delay():
     query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date = '2024-03-30';"
@@ -192,106 +199,15 @@ def get_time(date_string):
 
 def read_data(query):
     try:
-        conn = connect(param_dic)
-        print(conn)
+        conn = dbc.connect(dbc.param_dic)
         cursor = conn.cursor()
-        print(cursor)
         cursor.execute(query)
         result = cursor.fetchall()
-        print(result)
-        disconnect(conn)
+        dbc.disconnect(conn)
         return result
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-
-# DB connection parameters
-param_dic = {
-    "host": "134.102.23.195",
-    "port": "5434",
-    "dbname": "aixcity_nahverkehr",
-    "user": "aixcity-user",
-    "password": "password"
-}
-
-
-def connect(params_dic):
-    """ Connect to the PostgreSQL persistence server """
-    conn = None
-    try:
-        # connect to the PostgreSQL server
-        print('PostgreSQL-Datenbank: Verbindung aufbauen...')
-        conn = psycopg2.connect(**params_dic)
-    except Exception as error:
-        print(error)
-        sys.exit(1)
-    print("PostgreSQL-Datenbank: Verbindung erfolgreich!")
-    return conn
-
-
-def disconnect(conn):
-    """ Disconnect from the PostgreSQL """
-    if conn is not None:
-        conn.close()
-        print('PostgreSQL-Datenbank: Verbindung getrennt!')
-
-
-def execute_query(conn, query):
-    """ Execute a single query """
-    ret = 0  # Return value
-    cursor = conn.cursor()
-    try:
-        cursor.execute(query)
-        conn.commit()
-    except Exception as error:
-        print("Error: %s" % error)
-        conn.rollback()
-        cursor.close()
-        return 1
-    # If this was a select query, return the result
-    if 'select' in query.lower():
-        ret = cursor.fetchall()
-    cursor.close()
-    return ret
-
-
-def single_inserts(df, table):
-    """Perform single inserts of the dataframe into the PostGIS table"""
-    conn = connect(param_dic)
-    print("======[" + table + "]======")
-    print("conn: " + conn.dsn)
-    dataframe = pt_fetch.create_stop_time_updates_df(df)
-    print("2: " + dataframe)
-
-    print("======[" + table + "]======")
-    for i in df.index:
-        vals = [dataframe.at[i, col] for col in list(dataframe.columns)]
-        query = """INSERT INTO deine_tabelle (
-                        startdate,
-                        startzeit_an_der_anfangshaltestelle,
-                        linie,
-                        richtung,
-                        haltestelle,
-                        stopsequence,
-                        ankunfsverspatung_sek,
-                        abfahrtsverspatung_sek
-                   ) VALUES (
-                        '%s', '%s', '%s', '%s', '%s', %s, %s, %s
-                   );""" % (
-            vals[0],
-            vals[1],
-            vals[2],
-            vals[3],
-            vals[4],
-            vals[5],
-            vals[6],
-            vals[7]
-        )
-        execute_query(conn, query)
-        print("execute_query: " + query)
-    disconnect(conn)
 
 
 # only for testing purposes
