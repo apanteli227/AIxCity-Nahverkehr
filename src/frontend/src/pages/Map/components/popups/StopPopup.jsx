@@ -3,6 +3,7 @@ import { Popup } from "react-leaflet";
 import "../components.css";
 import csv from "../../../../assets/stops2lines.csv";
 import { readString } from "react-papaparse"; // Installieren Sie zuerst react-papaparse, um CSV zu parsen
+import { getAvgStopDelay } from "../../../../api"; // Importiere die Funktion getAvgStopDelay
 
 const PopupComponent = ({ nearestCsvStop, defaultText }) => {
   // Die Funktion zum Lesen und Parsen der CSV-Datei
@@ -29,13 +30,34 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
 
   // Zustand für die Linieninformationen
   const [lines, setLines] = React.useState([]);
+  // Zustand für die durchschnittliche Verspätung
+  const [avgStopDelay, setAvgStopDelay] = React.useState(null);
 
-  // Effekt zum Laden der Linieninformationen, wenn sich die Haltestelle ändert
+  // Effekt zum Laden der Linieninformationen und der durchschnittlichen Verspätung, wenn sich die Haltestelle ändert
   React.useEffect(() => {
     if (nearestCsvStop) {
+      // Linieninformationen laden
       fetchLinesForStop(nearestCsvStop.stop_name).then((lines) => {
         setLines(lines);
       });
+
+      async function fetchAvgDelay() {
+        try {
+          const data = await getAvgStopDelay();
+          console.log(data);
+          const avgDelay = data.find(
+            (data) => data[0] === nearestCsvStop.stop_name
+          );
+          if (avgDelay) {
+            setAvgStopDelay(avgDelay[1]);
+          } else {
+            setAvgStopDelay(null);
+          }
+        } catch (error) {
+          console.error("Error fetching average Delay:", error);
+        }
+      }
+      fetchAvgDelay();
     }
   }, [nearestCsvStop]);
 
@@ -49,6 +71,13 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
           <p>{lines.join(", ")}</p>
         ) : (
           "No information available"
+        )}
+      </div>
+      <div className="popup-section">
+        {avgStopDelay !== null ? (
+          <p>Average delay: {avgStopDelay}</p>
+        ) : (
+          "Average delay not available"
         )}
       </div>
     </Popup>

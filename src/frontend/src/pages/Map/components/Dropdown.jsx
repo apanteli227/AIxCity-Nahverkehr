@@ -89,7 +89,8 @@ export default function SearchableDropdown() {
     <RouteProvider>
       <div>
         <Autocomplete
-          id="searchable-dropdown"
+          id="free-solo-demo"
+          freeSolo
           options={nightMode ? nightRoutesNames : dayRoutesNames}
           getOptionLabel={(option) => option.name || ""}
           value={selectedRoute}
