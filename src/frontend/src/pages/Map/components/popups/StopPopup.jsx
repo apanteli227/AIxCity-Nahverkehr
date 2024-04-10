@@ -46,11 +46,7 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
       </div>
       <div className="popup-section">
         {lines.length > 0 ? (
-          <ul>
-            {lines.map((line, index) => (
-              <li key={index}>{line}</li>
-            ))}
-          </ul>
+          <p>{lines.join(", ")}</p>
         ) : (
           "No information available"
         )}
