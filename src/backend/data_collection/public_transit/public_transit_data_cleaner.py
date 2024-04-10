@@ -184,10 +184,15 @@ def remove_non_matching_stop_time_updates(stop_time_updates_df, trips_bsag_df):
     - merged_df (DataFrame): DataFrame mit StopTimeUpdates, die in der trips_bsag_df enthalten sind.
     """
     # Inner Join zwischen stop_time_updates_df und trips_bsag_df
-    merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate="many_to_many")
-    if merged_df.empty:
-        logging.warning("Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
-    return merged_df
+    # Prüfe ob die TripId in der trips_bsag_df enthalten ist und trip_id in  mit Exception-Handling
+    try:
+        merged_df = pd.merge(stop_time_updates_df, trips_bsag_df, how='inner', left_on='TripId', right_on='trip_id', validate="many_to_many")
+        if merged_df.empty:
+            logging.warning("Keine passenden StopTimeUpdates in der trips_bsag_df gefunden. Daher leeres DataFrame. Bitte als erste Maßnahme die trips.txt austauschen!")
+        return merged_df
+    except KeyError:
+        logging.error("Die Spalte 'TripId' oder 'trip_id' ist nicht in den DataFrames enthalten. Bitte überprüfen Sie die Spaltennamen!")
+        return None
 
 def map_daytime(hour):
     """
