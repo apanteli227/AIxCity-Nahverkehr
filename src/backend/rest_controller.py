@@ -2,10 +2,8 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from urllib.parse import unquote
-import sys
 
-import psycopg2
+from persistence import database_controller as dbc
 
 app = FastAPI()
 
@@ -20,112 +18,94 @@ app.add_middleware(
 
 
 # Pydantic model for the data
-# todo: do we need this?
 class Item(BaseModel):
     name: str
     description: str = None
-    # ...
 
 
-@app.get("/get_cards_data")
+@app.get("/getCardsData")
 async def read_data_cards():
     return [
-        read_data_last_7_days_delay(),
-        read_data_weekend_day_delay(),
-        read_data_public_holiday_delay(),
-        read_data_football_match_day_delay(),
+        await read_data_last_7_days_delay(),
+        await read_data_weekend_day_delay(),
+        await read_data_means_of_transport_delay(),
+        await read_data_line_delay(),
     ]
 
 
 # durchschn. Verspätungen in den letzten 7 Tagen
-#todo fix query
 @app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week' AND current_date < CURRENT_DATE;"
-    return read_data(query)
-
-
-# durchschn. Verspätung an Wochenendtagen
-@app.get("/interesting_statistic_weekend")
-async def read_data_weekend_day_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE weekday IN ('Saturday', 'Sunday');"
-    return read_data(query)
-
-
-# durchschn. Verspätung an Feiertagen
-@app.get("/interesting_statistic_public_holiday")
-async def read_data_public_holiday_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE is_holiday = 1;"
-    return read_data(query)
-
-
-# durchschn. Verspätungen an einem (noch kommenden) zufälligen Heimspieltag von Werder Bremen
-# Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
-#todo fix query, no result!!!!!!!!!!!!!!!!
-@app.get("/interesting_statistic_football_match_day")
-async def read_data_football_match_day_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date = '2024-03-30';"
-    return read_data(query)
-
-
-@app.get("/all_stops")
-async def read_data_stops():
-    query = "SELECT DISTINCT stop_name FROM public.bsag_data"
-    return read_data(query)
-
-
-@app.get("/all_lines")
-async def read_data_lines():
-    query = "SELECT DISTINCT line FROM public.bsag_data"
-    return read_data(query)
-
-
-@app.get("/get_avg_stop_delay")
-async def read_data_stop_delay():
-    query = f"SELECT stop_name, AVG(departure_delay_seconds) AS avg_departure_delay FROM public.transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY stop_name"
-    print(query)
+    query = "SELECT ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week';"
     return read_data(query)
 
 
 @app.get("/get_avg_line_delay")
 async def read_data_line_delay():
-    query = f"SELECT line, AVG(departure_delay_seconds) AS avg_departure_delay FROM public.transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line"
+    query = "SELECT line, ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line ORDER BY avg_departure_delay DESC;"
     print(query)
+    return read_data(query)
+
+@app.get("/get_avg_means_of_transport_delay")
+async def read_data_means_of_transport_delay():
+    query = "SELECT CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END AS means_of_transport, ROUND(AVG(departure_delay_seconds), 0) AS average_delay FROM transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END ORDER BY average_delay DESC;"
+# durchschn. Verspätung an Wochenendtagen
+@app.get("/interesting_statistic_weekend")
+async def read_data_weekend_day_delay():
+    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE weekday IN ('Saturday', 'Sunday');"
+    return read_data(query)
+
+
+# durchschn. Verspätung an Feiertagen
+#@app.get("/interesting_statistic_public_holiday")
+#async def read_data_public_holiday_delay():
+#    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE is_holiday = 1;" #DONE
+#    return read_data(query)
+
+
+# durchschn. Verspätungen an einem (noch kommenden) zufälligen Heimspieltag von Werder Bremen
+# Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
+#@app.get("/interesting_statistic_football_match_day")
+#async def read_data_football_match_day_delay():
+#    query = "SELECT AVG(departure_delay) FROM transit_data WHERE current_date = '2024-03-30';"
+#    return read_data(query)
+
+
+@app.get("/all_stops")
+async def read_data_stops():
+    query = "SELECT DISTINCT line FROM transit_data"
+    return read_data(query)
+
+
+@app.get("/all_lines")
+async def read_data_lines():
+    query = "SELECT DISTINCT stop_name FROM transit_data"
     return read_data(query)
 
 
 @app.get("/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
 async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
-    mode_input_str = unquote(mode_input).split(',')
+    mode_input_str = mode_input.split(',')
 
     if frequency == "daily":
-        query = f"SELECT DATE_TRUNC('day', start_time) AS date, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('day', start_time);"
+        query = """SELECT DATE_TRUNC('day', "current_time") AS date, COUNT(*) AS delay_occurrences FROM transit_data WHERE {mode_str} IN ('{mode_input_str}') AND "current_time" >= '{start_time}' AND "current_time" <= '{end_time}' GROUP BY DATE_TRUNC('day', "current_time");"""
     elif frequency == "hourly":
-        query = f"SELECT DATE_TRUNC('hour', start_time) AS hour, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('hour', start_time);"
+        query = """SELECT DATE_TRUNC('hour', "current_time") AS hour, COUNT(*) AS delay_occurrences FROM transit_data WHERE {mode_str} IN ('{mode_input_str}') AND "current_time" >= '{start_time}' AND "current_time" <= '{end_time}' GROUP BY DATE_TRUNC('hour', "current_time");"""
     else:
         return "Invalid frequency parameter. Please choose either 'daily' or 'hourly'."
 
-    return read_data(query)
+    return await read_data(query)
 
 
 @app.get("/{mode}/{mode_input}/{start_time}/{end_time}")
 async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_time: str):
     mode_str = get_mode(mode)
-    mode_input_str = ["'" + item + "'" for item in unquote(mode_input).split(',')]
 
-    # Decodieren der URL
-    start_time = unquote(start_time)
-    end_time = unquote(end_time)
+    mode_input_str = mode_input.split(',')
+    query = f"SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM transit_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
 
-    # Aufteilung von Datum und Uhrzeit
-    start_date = get_date(start_time)
-    start_time = get_time(start_time)
-    end_date = get_date(end_time)
-    end_time = get_time(end_time)
-    query = f"SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
-
-    return read_data(query)
+    return await read_data(query)
 
 
 @app.get("/{statistic}/{mode}/{mode_input}/{aggregate}/{start_time}/{end_time}")
@@ -134,33 +114,20 @@ async def read_data_arrival_departure_delay(mode: str, mode_input: str, aggregat
     mode_str = get_mode(mode)
     aggregate_str = get_aggregate(aggregate)
     statistic = get_statistic(statistic)
-    mode_input_str = ["'" + item + "'" for item in unquote(mode_input).split(',')]
 
-    # Decodieren der URL
-    start_time = unquote(start_time)
-    end_time = unquote(end_time)
-
-    # Aufteilung von Datum und Uhrzeit
-    start_date = get_date(start_time)
-    start_time = get_time(start_time)
-    end_date = get_date(end_time)
-    end_time = get_time(end_time)
-
-    print(statistic, mode, mode_input_str, aggregate, start_date, start_time, end_date, end_time)
-
-    query = f"SELECT {aggregate_str}{statistic} FROM public.bsag_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
-
-    print(query)
-    return read_data(query)
+    mode_input_str = mode_input.split(',')
+    query = f"SELECT {aggregate_str}{statistic} FROM transit_data WHERE {mode_str} IN ('{mode_input_str}') AND starting_stop_time >= '{start_time}' AND starting_stop_time <= '{end_time}';"
+    # todo: time format converter function, if needed
+    return await read_data(query)
 
 
-def get_statistic(statistic):
+def get_statistic(statistic):  # todo get frontend string names
     if statistic == 'arrival':
-        stat = 'arrival_delay_seconds'
+        stat = 'arrival_delay'
     elif statistic == 'departure':
-        stat = 'departure_delay_seconds'
+        stat = 'departure_delay'
     elif statistic == 'generated_delay':
-        stat = 'departure_delay_seconds - arrival_delay_seconds'
+        stat = 'departure_delay - arrival_delay'
     else:
         stat = 'what to do with mixed statistic?'
     return '(' + stat + ')'
@@ -182,116 +149,20 @@ def get_mode(mode):
         return 'what to do with mixed mode?'
 
 
-def get_date(date_string):
-    return date_string.split('T')[0]
-
-
-def get_time(date_string):
-    return date_string.split('T')[1]
-
-
 def read_data(query):
     try:
-        conn = connect(param_dic)
-        print(conn)
+        conn = dbc.connect(dbc.param_dic)
         cursor = conn.cursor()
-        print(cursor)
         cursor.execute(query)
         result = cursor.fetchall()
-        print(result)
-        disconnect(conn)
+        dbc.disconnect(conn)
         return result
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
-
-# DB connection parameters
-param_dic = {
-    "host": "134.102.23.195",
-    "port": "5434",
-    "dbname": "aixcity_nahverkehr",
-    "user": "aixcity-user",
-    "password": "password"
-}
-
-
-def connect(params_dic):
-    """ Connect to the PostgreSQL persistence server """
-    conn = None
-    try:
-        # connect to the PostgreSQL server
-        print('PostgreSQL-Datenbank: Verbindung aufbauen...')
-        conn = psycopg2.connect(**params_dic)
-    except Exception as error:
-        print(error)
-        sys.exit(1)
-    print("PostgreSQL-Datenbank: Verbindung erfolgreich!")
-    return conn
-
-
-def disconnect(conn):
-    """ Disconnect from the PostgreSQL """
-    if conn is not None:
-        conn.close()
-        print('PostgreSQL-Datenbank: Verbindung getrennt!')
-
-
-def execute_query(conn, query):
-    """ Execute a single query """
-    ret = 0  # Return value
-    cursor = conn.cursor()
-    try:
-        cursor.execute(query)
-        conn.commit()
-    except Exception as error:
-        print("Error: %s" % error)
-        conn.rollback()
-        cursor.close()
-        return 1
-    # If this was a select query, return the result
-    if 'select' in query.lower():
-        ret = cursor.fetchall()
-    cursor.close()
-    return ret
-
-
-def single_inserts(df, table):
-    """Perform single inserts of the dataframe into the PostGIS table"""
-    conn = connect(param_dic)
-    print("======[" + table + "]======")
-    print("conn: " + conn.dsn)
-    dataframe = pt_fetch.create_stop_time_updates_df(df)
-    print("2: " + dataframe)
-
-    print("======[" + table + "]======")
-    for i in df.index:
-        vals = [dataframe.at[i, col] for col in list(dataframe.columns)]
-        query = """INSERT INTO deine_tabelle (
-                        startdate,
-                        startzeit_an_der_anfangshaltestelle,
-                        linie,
-                        richtung,
-                        haltestelle,
-                        stopsequence,
-                        ankunfsverspatung_sek,
-                        abfahrtsverspatung_sek
-                   ) VALUES (
-                        '%s', '%s', '%s', '%s', '%s', %s, %s, %s
-                   );""" % (
-            vals[0],
-            vals[1],
-            vals[2],
-            vals[3],
-            vals[4],
-            vals[5],
-            vals[6],
-            vals[7]
-        )
-        execute_query(conn, query)
-        print("execute_query: " + query)
-    disconnect(conn)
+all_stops = []
 
 
 # only for testing purposes
