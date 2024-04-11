@@ -18,7 +18,7 @@ import {
   Line,
 } from "recharts";
 
-function Weg() {
+function Prognose() {
   const data = [
     {
       name: "Page A",
@@ -155,4 +155,4 @@ function Weg() {
   );
 }
 
-export default Weg;
+export default Prognose;
