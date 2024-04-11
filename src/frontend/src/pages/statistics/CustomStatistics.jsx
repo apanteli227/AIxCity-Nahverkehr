@@ -73,7 +73,7 @@ export default function BasicTabs() {
         }, [] // Empty dependency array ensures that the effect runs only once on component mount
     );
 
-    const handleSubmit = (event) => {
+    function handleSubmit(event) {
         event.preventDefault();
         // Swap startDateTime and endDateTime if startDateTime is later than endDateTime
         if (startDateTime.isAfter(endDateTime)) {
@@ -97,7 +97,7 @@ export default function BasicTabs() {
             .catch((error) => {
                 console.error("Error fetching data:", error);
             });
-    };
+    }
 
     function formatDate(dayjsObject) {
         return dayjsObject.format('YYYY-MM-DDTHH:mm:ss');
