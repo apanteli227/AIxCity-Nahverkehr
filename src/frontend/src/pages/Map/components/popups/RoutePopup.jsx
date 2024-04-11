@@ -21,7 +21,7 @@ const LinePopupComponent = ({ routeName, position }) => {
         const parsedData = readString(csvData).data;
 
         // Extrahiere den Linienname aus der Route
-        const lineName = routeName.match(/[N\d]+/)[0]; // Extrahiere alle Zahlen und das "N" aus der Route
+        const lineName = routeName.match(/[N\d]+[ES]?/)[0]; // Extrahiere "N" gefolgt von Zahlen und optional "E" oder "S"
 
         const avgDelay = parsedData.find((data) => data[0] === lineName);
 

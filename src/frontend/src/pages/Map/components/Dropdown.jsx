@@ -80,7 +80,7 @@ export default function SearchableDropdown() {
     setSelectedRoute(selectedRoute === null ? value.id : null);
     toggleSelected();
     setPopupInfo(
-      value ? { name: value.name, position: [53.0688, 8.6629] } : null
+      value ? { name: value.name, position: [53.082, 8.8138] } : null
     ); // Feste Position für das Popup
     console.log("Selected Value:", value);
   };

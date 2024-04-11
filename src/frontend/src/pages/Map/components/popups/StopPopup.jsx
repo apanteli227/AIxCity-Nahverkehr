@@ -71,14 +71,18 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
       </div>
       <div className="popup-section">
         {lines.length > 0 ? (
-          <p>{lines.join(", ")}</p>
+          <p>Linien: {lines.join(", ")}</p>
         ) : (
           "Keine Linieninformationen verfügbar"
         )}
       </div>
       <div className="popup-section">
         {avgStopDelay !== null ? (
-          <p>Durschnittliche Abfahrtsverspätung: {avgStopDelay}</p>
+          avgStopDelay === "0:00" ? (
+            "Wird zur Zeit wohl nicht befahren."
+          ) : (
+            <p>Durschnittliche Abfahrtsverspätung: {avgStopDelay}</p>
+          )
         ) : (
           "Durschnittliche Abfahrtsverspätung nicht verfügbar"
         )}
