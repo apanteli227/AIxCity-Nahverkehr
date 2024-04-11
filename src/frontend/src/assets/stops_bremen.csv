@@ -28,7 +28,7 @@ stop_id,stop_name,stop_lat,stop_lon
 9014115,Bremen Osterholzer Möhlendamm,53.057907,8.95105
 9014279,Bremen Werner-Steenken-Straße,53.053257,8.962122
 9014112,Bremen Osterholzer Friedhof,53.05985,8.914326
-9014113,Bremen Osterholzer Heerstraße,53.059114,8.930389
+9014113,Bremen Heinz-Hinners-Platz,53.059114,8.930389
 9013744,Bremen Bahnhof Sebaldsbrück,53.062197,8.887576
 9014184,Bremen Sebaldsbrück (Bus+Tram),53.059469,8.899647
 9014005,Bremen Klinikum Bremen-Mitte,53.076869,8.837379
@@ -66,7 +66,6 @@ stop_id,stop_name,stop_lat,stop_lon
 9014210,Bremen Stahlwerk Tor 3,53.130727,8.706355
 9013985,Bremen Johann-Bornemacher-Straße,53.090596,8.786706
 9014009,Bremen Klinikum Links der Weser,53.037377,8.822212
-9014071,Bremen Messe-Zentrum,53.084496,8.816285
 9014092,Bremen Neuenlander Kämpe,53.056372,8.784087
 9014154,Bremen Rockwinkeler Heerstraße,53.091991,8.920181
 9014222,Bremen Stresemannstraße,53.072578,8.857605
@@ -121,7 +120,7 @@ stop_id,stop_name,stop_lat,stop_lon
 9013737,Bremen Bahnhof Farge,53.205563,8.518154
 9013766,Bremen Blumenhorster Straße,53.184611,8.604506
 9013973,Bremen Humboldtstraße,53.075191,8.822637
-9014249,Bremen Use Akschen,53.112431,8.75212
+9014249,Bremen Waterfront (Use Akschen),53.112431,8.75212
 9014248,Bremen Upsalastraße,53.176795,8.717168
 9014246,Bremen Universität/Zentralbereich,53.107711,8.852383
 9014285,Bremen Weserwehr,53.063491,8.867964
@@ -368,7 +367,7 @@ stop_id,stop_name,stop_lat,stop_lon
 9014197,Bremen Solinger Straße,53.061769,8.773826
 9014245,Bremen Universität-Süd,53.105197,8.850888
 9055746,Lilienthal Trupe,53.138093,8.899341
-9013768,Bremen Blumenthalstraße,53.083615,8.817761
+9013768,Bremen Hauptbahnhof-Nord/Messe,53.083615,8.817761
 9013720,Bremen Arsterdamm,53.046718,8.818351
 9055743,Lilienthal Schoofmoor,53.153603,8.92211
 9055729,Lilienthal Auf dem Kamp,53.154675,8.927243
@@ -635,7 +634,7 @@ stop_id,stop_name,stop_lat,stop_lon
 9020600,Bremen Bergener Straße,53.031468,8.903186
 9020610,Bremen Europaallee-Ost,53.030228,8.90886
 9091820,Bremen Marcuskaje,53.094487,8.767481
-9091830,Bremen Schuppen 3,53.09244,8.773434
+9091830,Bremen Hauptzollamt,53.09244,8.773434
 9073100,Schwanewede Zum Marktplatz,53.22268,8.592843
 9089009,Bremen PIER 2/Waterfront (Fähranleger),53.107882,8.750016
 9089010,Bremen Molenturm Überseestadt (Fähranleger),53.104525,8.750246
