@@ -40,21 +40,35 @@ body {
   height: 100vh;
 }
 
-.navigation-bar-map {
+.navigation-bar-map-searchbar {
   position: fixed;
   top: 70px;
-  right: 2px;
+  right: 10px;
   background-color: #ffffff;
   z-index: 2000;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 150px;
+  margin-bottom: 15px;
+  width: 350px;
   color: #000000;
-}
+  
 
-.navigation-bar-map li {
-  margin-bottom: 15px; /* Hier den Abstand zwischen den Elementen anpassen */
+}
+.navigation-bar-map-buttons {
+  top:140px;
+  right:10px;
+  z-index: 2000;
+  position: fixed;
+  background-color: #ffffff;
+  color: #000000;
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 10px;
+  
 }
 
 /* Header  */
