@@ -80,7 +80,7 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
         {avgStopDelay !== null ? (
           <p>Durschnittliche Abfahrtsverspätung: {avgStopDelay}</p>
         ) : (
-          ">Durschnittliche Abfahrtsverspätung nicht verfügbar"
+          "Durschnittliche Abfahrtsverspätung nicht verfügbar"
         )}
       </div>
     </Popup>
