@@ -139,7 +139,6 @@ function Routes() {
             position={popupInfo.position}
           />
         )}
-        {console.log("selectedRoute:", selectedRoute)}
       </div>
     </>
   );

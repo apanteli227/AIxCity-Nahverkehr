@@ -7,6 +7,8 @@ import StopProvider from "./store/StopContext";
 import Stops from "./components/Stops";
 import CustomizedSelects from "./components/Dropdown";
 import SelectedProvider from "./store/SelectedContext";
+import HeatmapProvider from "./store/HeatmapContext";
+import Heatmap from "./components/Heatmap";
 
 const MapComponent = () => {
   const position = [53.0826, 8.8136];
@@ -14,24 +16,28 @@ const MapComponent = () => {
   return (
     <main className="map-container">
       <NightModeProvider>
-        <SelectedProvider>
-          <MapContainer center={position} zoom={12}>
-            <RouteProvider>
-              <Routes />
+        <HeatmapProvider>
+          <SelectedProvider>
+            <MapContainer center={position} zoom={12}>
+              <RouteProvider>
+                <Routes />
 
-              <StopProvider>
-                <Stops />
-              </StopProvider>
+                <StopProvider>
+                  <Stops />
+                </StopProvider>
 
-              <ul className="navigation-bar-map">
-                <li>
-                  <Nightmode />
-                </li>
-                <CustomizedSelects />
-              </ul>
-            </RouteProvider>
-          </MapContainer>
-        </SelectedProvider>
+                <ul className="navigation-bar-map">
+                  <li>
+                    <Nightmode />
+                    <Heatmap />
+                  </li>
+
+                  <CustomizedSelects />
+                </ul>
+              </RouteProvider>
+            </MapContainer>
+          </SelectedProvider>
+        </HeatmapProvider>
       </NightModeProvider>
     </main>
   );
