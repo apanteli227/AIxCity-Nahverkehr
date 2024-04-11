@@ -1,20 +1,22 @@
 import React from "react";
 import { Popup } from "react-leaflet";
 import "../components.css";
-import csvLines from "../../../../assets/stops2lines.csv";
-import csvAvgDelay from "../../../../assets/avgStopDelay.csv";
-import { readString } from "react-papaparse"; 
-import { getAvgStopDelay } from "../../../../api";
+import csv from "../../../../assets/stops2lines.csv";
+import { readString } from "react-papaparse"; // Installieren Sie zuerst react-papaparse, um CSV zu parsen
+import { getAvgStopDelay } from "../../../../api"; // Importiere die Funktion getAvgStopDelay
 
 const PopupComponent = ({ nearestCsvStop, defaultText }) => {
+  // Die Funktion zum Lesen und Parsen der CSV-Datei
   const fetchLinesForStop = async (stopName) => {
     try {
-      const response = await fetch(csvLines);
+      const response = await fetch(csv);
       const csvData = await response.text();
       const parsedData = readString(csvData).data;
 
+      // Finden Sie die Zeile, die der gewählten Haltestelle entspricht
       const stopData = parsedData.find((row) => row[0] === stopName);
 
+      // Extrahieren Sie die Linieninformationen aus der gefundenen Zeile
       if (stopData) {
         return stopData[1].split(", ").map((line) => line.trim());
       }
@@ -26,37 +28,36 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
     }
   };
 
-  const fetchAvgDelayForStop = async (stopName) => {
-    try {
-      const response = await fetch(csvAvgDelay);
-      const csvData = await response.text();
-      const parsedData = readString(csvData).data;
-
-      const avgDelayData = parsedData.find((row) => row[0] === stopName);
-
-      if (avgDelayData) {
-        return avgDelayData[1];
-      }
-
-      return null;
-    } catch (error) {
-      console.error("Error fetching average delay CSV data:", error);
-      return null;
-    }
-  };
-
+  // Zustand für die Linieninformationen
   const [lines, setLines] = React.useState([]);
+  // Zustand für die durchschnittliche Verspätung
   const [avgStopDelay, setAvgStopDelay] = React.useState(null);
 
+  // Effekt zum Laden der Linieninformationen und der durchschnittlichen Verspätung, wenn sich die Haltestelle ändert
   React.useEffect(() => {
     if (nearestCsvStop) {
+      // Linieninformationen laden
       fetchLinesForStop(nearestCsvStop.stop_name).then((lines) => {
         setLines(lines);
       });
 
-      fetchAvgDelayForStop(nearestCsvStop.stop_name).then((avgDelay) => {
-        setAvgStopDelay(avgDelay);
-      });
+      async function fetchAvgDelay() {
+        try {
+          const data = await getAvgStopDelay();
+          console.log(data);
+          const avgDelay = data.find(
+            (data) => data[0] === nearestCsvStop.stop_name
+          );
+          if (avgDelay) {
+            setAvgStopDelay(avgDelay[1]);
+          } else {
+            setAvgStopDelay(null);
+          }
+        } catch (error) {
+          console.error("Error fetching average Delay:", error);
+        }
+      }
+      fetchAvgDelay();
     }
   }, [nearestCsvStop]);
 
@@ -69,14 +70,14 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
         {lines.length > 0 ? (
           <p>{lines.join(", ")}</p>
         ) : (
-          "Keine Linieninformationen verfügbar"
+          "No information available"
         )}
       </div>
       <div className="popup-section">
         {avgStopDelay !== null ? (
-          <p>Durschnittliche Abfahrtsverspätung in Sekunden: {avgStopDelay}</p>
+          <p>Average delay: {avgStopDelay}</p>
         ) : (
-          "Durschnittliche Abfahrtsverspätung nicht verfügbar"
+          "Average delay not available"
         )}
       </div>
     </Popup>

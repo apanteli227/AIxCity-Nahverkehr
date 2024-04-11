@@ -16,6 +16,8 @@ const LinePopupComponent = ({ routeName, position }) => {
 
         const delay = await getAvgLineDelay();
         const avgDelay = delay.find((data) => data[0] === routeName);
+        //const lineMatch = routeName.match(/(Bus|Tram) (\d+)/);
+        //const lineNumber = lineMatch ? lineMatch[2] : null;
 
         if (avgDelay) {
           setAvgLineDelay(avgDelay[1]);
