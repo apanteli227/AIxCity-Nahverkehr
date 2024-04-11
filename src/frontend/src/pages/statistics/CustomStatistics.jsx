@@ -68,7 +68,6 @@ export default function BasicTabs() {
                 .catch((error) => {
                     console.error("Error fetching stops data:", error);
                 });
-            console.log({allValues});
         }, [] // Empty dependency array ensures that the effect runs only once on component mount
     );
 
