@@ -19,9 +19,9 @@ const statistiken = [
     "Ankunftsverspätung",
     "Abfahrtsverspätung",
     "generierte Verspätung",
-    "Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)",
-    "Anzahl der Verspätungen",
-    "Anzahl der Abfahrten pro Tag",
+    //"Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)",
+    //"Anzahl der Verspätungen",
+    //"Anzahl der Abfahrten pro Tag",
 ];
 
 export default function BasicTabs() {
