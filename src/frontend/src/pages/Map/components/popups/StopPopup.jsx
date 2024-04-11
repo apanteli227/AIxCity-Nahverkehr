@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Popup } from "react-leaflet";
-import "../components.css";
+import { readString } from "react-papaparse";
+import { getAvgStopDelay } from "../../../../api";
 import csvLines from "../../../../assets/stops2lines.csv";
 import csvAvgDelay from "../../../../assets/avgStopDelay.csv";
-import { readString } from "react-papaparse"; 
-import { getAvgStopDelay } from "../../../../api";
+import "../components.css";
 
 const PopupComponent = ({ nearestCsvStop, defaultText }) => {
   const fetchLinesForStop = async (stopName) => {
@@ -35,7 +35,11 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
       const avgDelayData = parsedData.find((row) => row[0] === stopName);
 
       if (avgDelayData) {
-        return avgDelayData[1];
+        // Umrechnung von Sekunden in Minuten und Sekunden
+        const totalSeconds = parseFloat(avgDelayData[1]);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+        return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
       }
 
       return null;
@@ -45,10 +49,10 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
     }
   };
 
-  const [lines, setLines] = React.useState([]);
-  const [avgStopDelay, setAvgStopDelay] = React.useState(null);
+  const [lines, setLines] = useState([]);
+  const [avgStopDelay, setAvgStopDelay] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (nearestCsvStop) {
       fetchLinesForStop(nearestCsvStop.stop_name).then((lines) => {
         setLines(lines);
@@ -74,9 +78,9 @@ const PopupComponent = ({ nearestCsvStop, defaultText }) => {
       </div>
       <div className="popup-section">
         {avgStopDelay !== null ? (
-          <p>Durschnittliche Abfahrtsverspätung in Sekunden: {avgStopDelay}</p>
+          <p>Durschnittliche Abfahrtsverspätung: {avgStopDelay}</p>
         ) : (
-          "Durschnittliche Abfahrtsverspätung nicht verfügbar"
+          ">Durschnittliche Abfahrtsverspätung nicht verfügbar"
         )}
       </div>
     </Popup>
