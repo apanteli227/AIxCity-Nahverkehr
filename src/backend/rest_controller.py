@@ -22,7 +22,7 @@ app.add_middleware(
 
 
 # Rufe abhängig von den Parametern die entsprechende Funktion in ml_scripts_forecasts auf
-@app.get("/forecast/{mode}/{line}")
+@app.get("/forecast/{mode}/{line_with_direction}")
 async def get_forecast(mode: str, line_with_direction: str):
     decoded_line_with_direction = unquote(line_with_direction)
     line = get_line(decoded_line_with_direction)
