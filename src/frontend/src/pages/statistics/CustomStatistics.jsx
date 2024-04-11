@@ -22,20 +22,19 @@ const statistiken = [
     "Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)",
     "Anzahl der Verspätungen",
     "Anzahl der Abfahrten pro Tag",
-    "Anzahl der Abfahrtenausfälle pro Monat",
-    "Ausfallrate",
 ];
 
 export default function BasicTabs() {
-    let [startDateTime, setStartDateTime] = useState(dayjs().subtract(1, 'month'));
+    let [startDateTime, setStartDateTime] = useState(dayjs().subtract(1, 'week'));
     let [endDateTime, setEndDateTime] = useState(dayjs());
     const [selectedStatistic, setSelectedStatistic] = useState(statistiken[1]);
     const [selectedRadio, setSelectedRadio] = useState("avg");
     const [lines, setLines] = useState(convertArrayToObject([]));
-    const [stops, setStops] = useState(convertArrayToObject(["Hauptbahnhof"]));
+    const [stops, setStops] = useState(convertArrayToObject([]));
     const [tab, setTab] = useState(0);
     const [allValues, setAllValues] = useState(tab === 0 ? lines : stops);
     const [result, setResult] = useState([]);
+    const [unit, setUnit] = useState("");
     let selectedValuesMemo = React.useMemo(
         () => allValues.filter((v) => v.selected),
         [allValues],
@@ -69,7 +68,6 @@ export default function BasicTabs() {
                 .catch((error) => {
                     console.error("Error fetching stops data:", error);
                 });
-            console.log({allValues});
         }, [] // Empty dependency array ensures that the effect runs only once on component mount
     );
 
@@ -80,19 +78,19 @@ export default function BasicTabs() {
             [startDateTime, endDateTime] = [endDateTime, startDateTime];
         }
         const formData = {
-            mode: tab === 0 ? "line" : "stop",
+            mode: tab === 0 ? "line" : "stop_name",
             startDateTime: formatDate(startDateTime),
             endDateTime: formatDate(endDateTime),
             selectedItems: selectedValuesMemo.map((v) => v.title),
             selectedStatistic: selectedStatistic,
             selectedRadio: selectedRadio,
         };
-        console.log({formData});
         getCustomStatistics(formData)
             .then((response) => {
                 const data = response.data;
                 console.log("Data:", data);
                 setResult(data);
+                setUnit(getUnit());
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -111,6 +109,38 @@ export default function BasicTabs() {
         setTab(newValue);
         setAllValues(newValue === 0 ? lines : stops);
     };
+
+        function getUnit(){
+        if(selectedStatistic === "Ankunftsverspätung" || selectedStatistic === "Abfahrtsverspätung" || selectedStatistic === "generierte Verspätung"){
+            return "Sekunden";
+        } else if(selectedStatistic === "Verspätungsrate der Abfahrten (nach Abfahrtsverspätung)"){
+            return "%";
+        } else if(selectedStatistic === "Anzahl der Verspätungen"){
+            return "gezählte Verspätungen (jede Haltestelle zählt)";
+        } else {
+            return "Abfahrten";
+        }
+    }
+
+    function CustomTabPanel(props) {
+        const {children, value, index, ...other} = props;
+
+        return (
+            <div
+                role="tabpanel"
+                hidden={value !== index}
+                id={`simple-tabpanel-${index}`}
+                aria-labelledby={`simple-tab-${index}`}
+                {...other}
+            >
+                {value === index && (
+                    <Box sx={{p: 3}}>
+                        <Typography>{children}</Typography>
+                    </Box>
+                )}
+            </div>
+        );
+    }
 
     return (
         <div className="statistics-box">
@@ -223,28 +253,8 @@ export default function BasicTabs() {
             </Button>
             <Box>
                 <h3>Ergebnis</h3>
-                {result}
+                {result} {unit}
             </Box>
         </div>
     );
-
-    function CustomTabPanel(props) {
-        const {children, value, index, ...other} = props;
-
-        return (
-            <div
-                role="tabpanel"
-                hidden={value !== index}
-                id={`simple-tabpanel-${index}`}
-                aria-labelledby={`simple-tab-${index}`}
-                {...other}
-            >
-                {value === index && (
-                    <Box sx={{p: 3}}>
-                        <Typography>{children}</Typography>
-                    </Box>
-                )}
-            </div>
-        );
-    }
 }
