@@ -24,9 +24,9 @@ app.add_middleware(
 # Rufe abhängig von den Parametern die entsprechende Funktion in ml_scripts_forecasts auf
 @app.get("/forecast/{mode}/{line}")
 async def get_forecast(mode: str, line_with_direction: str):
-    print(mode, unquote(line_with_direction))
-    line = get_line(unquote(line_with_direction))
-    direction = get_direction(line_with_direction)
+    decoded_line_with_direction = unquote(line_with_direction)
+    line = get_line(decoded_line_with_direction)
+    direction = get_direction(decoded_line_with_direction)
     is_line22 = line == "22"
     if mode == "classification" and is_line22:
         return classification_with_line_22()
