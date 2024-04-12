@@ -29,6 +29,7 @@ async def get_forecast(mode: str, line_with_direction: str):
     direction = get_direction(decoded_line_with_direction)
     is_line22 = line == "22"
     if mode == "classification" and is_line22:
+        print(classification_with_line_22())
         return classification_with_line_22()
     elif mode == "classification" and not is_line22:
         return classification_with_line(line, direction)
