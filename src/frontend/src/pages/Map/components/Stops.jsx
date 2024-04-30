@@ -11,7 +11,6 @@ import HeatmapProvider, { useHeatmapContext } from "../store/HeatmapContext";
 import delay from "../../../assets/avgStopDelay.csv";
 import { readString } from "react-papaparse";
 
-
 const Stops = () => {
   const { tramStops, setTramStops } = useStopContext();
   const { nightMode } = useNightModeContext();
@@ -20,11 +19,7 @@ const Stops = () => {
   const [dayStops, setDayStops] = useState([]);
   const [nightStops, setNightStops] = useState([]);
   const circleRadius = 100;
-  const [csvStop, setCsvStop] = useState([]);
-  const [avgStopDelay, setAvgStopDelay] = useState(null);
-  const [stopColor, setStopColor] = useState(null);
-  
- // const [avgStopDelay2, setStopDelay] = useState(null);
+  const [avgStopDelay, setAvgStopDelay] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,82 +29,54 @@ const Stops = () => {
         const { dayStops, nightStops } = drawStops(routesData);
         setDayStops(dayStops);
         setNightStops(nightStops);
-        //fetchAvgDelayForStop(); //HIER FEHLT DER PARAMETER
-  
+
         const csvFetch = await axios.get(csv);
         const csvData = csvFetch.data.split("\n").slice(1);
+
+        const delayFetch = await axios.get(delay);
+        const parsedData = readString(delayFetch.data).data;
+
+        const delaysMap = {};
+        parsedData.forEach((row) => {
+          const stopName = row[0];
+          const delay = parseFloat(row[1]);
+          delaysMap[stopName] = delay;
+        });
+
+        setAvgStopDelay(delaysMap);
         loadCsvStops(csvData);
-        console.log(avgStopDelay, "Test");
-        const color = getStopColor(avgStopDelay);
-        setStopColor(color);
       } catch (error) {
         console.error("Error:", error);
       }
     };
 
     fetchData();
-  }, []); 
+  }, []);
+
   const getStopColor = (delay) => {
-    
     if (delay < 60) {
-      return "blue";
+      return "green";
     } else if (delay < 120) {
       return "yellow";
+    } else if (delay < 180) {
+      return "orange";
     } else {
       return "red";
     }
   };
-    
-  
-  
-  
-  
-    const fetchAvgDelayForStop = async () => {
-      try {
-        //const response = await fetch(delay);
-        //const csvData = await response.text();
-        //const parsedData = readString(csvData).data;
 
-        //const avgDelayData = parsedData.find((row) => row[0] === csvStop.stop_name);
-        const delayFetch = await axios.get(delay);
-        const parsedData = readString(delayFetch.data).data;
-        setAvgStopDelay(parsedData);
-        console.log(parsedData);
-        const avgDelayData = parsedData.find((row) => row[0] === csvStop.stop_name);
-        return avgDelayData;
-      } catch (error) {
-        console.error("Error fetching average delay CSV data:", error);
-        return null;
-      }
-    };
-  
-    const getColor = () => {
-      if (avgStopDelay) {
-        if (avgStopDelay < 60) {
-          setStopColor("green");
-        }
-        if (avgStopDelay < 120) {
-          setStopColor("yellow");
-        }
-        setStopColor("red");
+  const fetchAvgDelayForStop = async (stopName) => {
+    try {
+      const delayFetch = await axios.get(delay);
+      const parsedData = readString(delayFetch.data).data;
+      const avgDelayData = parsedData.find((row) => row[0] === stopName);
+      return avgDelayData ? parseFloat(avgDelayData[1]) : 0; // Return 0 if no delay data found
+    } catch (error) {
+      console.error("Error fetching average delay CSV data:", error);
+      return 0; // Return 0 in case of error
     }
   };
-  useEffect(() => {
-    
 
-      fetchAvgDelayForStop(csvStop.stop_name).then((avgDelay) => {
-        setAvgStopDelay(avgDelay);
-      });
-      getColor();
-
-    
-  }, [csvStop]);
-
-    
-    
-
-
-  
   const drawStops = (tramRoutesData) => {
     const dayStops = [];
     const nightStops = [];
@@ -151,23 +118,20 @@ const Stops = () => {
         stop_lon: parseFloat(stop_lon),
       };
 
-      // Überprüfen, ob die Haltestelle bereits im eindeutigen Objekt vorhanden ist
       if (!uniqueStops[stop_name]) {
         uniqueStops[stop_name] = parsedStop;
       } else {
-        // Wenn die Haltestelle bereits existiert, füge die Koordinaten zum vorhandenen Eintrag hinzu
         uniqueStops[stop_name].coords.push([
           parsedStop.stop_lat,
           parsedStop.stop_lon,
         ]);
       }
     });
-    // Konvertieren des eindeutigen Objekts wieder in ein Array
+
     const stops = Object.values(uniqueStops);
 
     setCsvStops(stops);
   };
-
 
   const getGroupCenter = (group) => {
     const sumLat = group.reduce((acc, stop) => acc + stop.coords[0], 0);
@@ -179,36 +143,34 @@ const Stops = () => {
 
   const groupNearbyStops = (stops) => {
     const groupedStops = [];
-    const processedIndexes = new Set(); // Haltestellen-Indizes, die bereits verarbeitet wurden
+    const processedIndexes = new Set();
+
     stops.forEach((stop, index) => {
       if (!processedIndexes.has(index)) {
         let foundGroup = false;
         for (const group of groupedStops) {
           const groupCenter = getGroupCenter(group);
-          // Überprüfen, ob die Haltestelle nahe genug an der Gruppenmitte liegt
           const distance = calculateDistance(stop.coords, groupCenter);
           if (distance < circleRadius / 1000) {
-            // Umrechnung von Metern in Kilometer
             group.push(stop);
             foundGroup = true;
             break;
           }
         }
-        // Wenn die Haltestelle keiner Gruppe zugeordnet ist, eine neue Gruppe erstellen
         if (!foundGroup) {
           groupedStops.push([stop]);
         }
-        // Markiere den aktuellen Index als verarbeitet
         processedIndexes.add(index);
       }
     });
+
     return groupedStops;
   };
 
   const calculateDistance = (coord1, coord2) => {
     const [lat1, lon1] = coord1;
     const [lat2, lon2] = coord2;
-    const R = 6371; // Radius der Erde in km
+    const R = 6371;
     const dLat = ((lat2 - lat1) * Math.PI) / 180;
     const dLon = ((lon2 - lon1) * Math.PI) / 180;
     const a =
@@ -244,16 +206,15 @@ const Stops = () => {
 
   return (
     <>
-      {nightMode 
-        ? // Wenn Nachtmodus aktiv ist, rendern Sie die Nachtstops
-          groupedNightStops.map((group, index) => {
+      {nightMode
+        ? groupedNightStops.map((group, index) => {
             const center = getGroupCenter(group);
             const nearestCsvStop = findNearestStop(center, csvStops);
             return (
               <Circle
                 key={`night_stop_group_${index}`}
                 center={center}
-                radius={heatmapEnabled ? 300 :circleRadius / 3}//Hier noch irgendwie die Haltestelle übergeben
+                radius={heatmapEnabled ? 200 : circleRadius / 3}
                 pathOptions={{
                   color: "black",
                   fillColor: "white",
@@ -261,7 +222,6 @@ const Stops = () => {
                   opacity: 0.5,
                 }}
               >
-                {/* Verwenden Sie die PopupComponent hier */}
                 <StopPopup
                   nearestCsvStop={nearestCsvStop}
                   defaultText="Unknown Night Stop"
@@ -269,23 +229,24 @@ const Stops = () => {
               </Circle>
             );
           })
-        : // Ansonsten rendern Sie die Tagesstops
-          groupedDayStops.map((group, index) => {
+        : groupedDayStops.map((group, index) => {
             const center = getGroupCenter(group);
             const nearestCsvStop = findNearestStop(center, csvStops);
+            const stopName = nearestCsvStop ? nearestCsvStop.stop_name : "";
+            const stopDelay = avgStopDelay[stopName] || 0;
+
             return (
               <Circle
                 key={`day_stop_group_${index}`}
                 center={center}
-                radius={heatmapEnabled ? 300 : circleRadius / 3}
+                radius={heatmapEnabled ? 200 : circleRadius / 3}
                 pathOptions={{
                   color: "black",
-                  fillColor: heatmapEnabled ? stopColor: "white",
+                  fillColor: heatmapEnabled ? getStopColor(stopDelay) : "white",
                   fillOpacity: 0.4,
                   opacity: 1,
                 }}
               >
-                {/* Verwenden Sie die PopupComponent hier */}
                 <StopPopup
                   nearestCsvStop={nearestCsvStop}
                   defaultText="Unknown Day Stop"
