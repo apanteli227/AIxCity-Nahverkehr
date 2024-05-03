@@ -35,7 +35,7 @@ def split_dataframe_by_time(df_stop_times):
     splits.append(df_stop_times.iloc[start_index:])
     return splits
 
-def create_dataset_matrix(data, num_stops_bundled=5, include_previous_stop_delay=False):
+def create_dataset_matrix(data, num_stops_bundled):
     """
     Erstellt die X- und Y-Matrizen aus dem DataFrame. Für die X-Matrix werden jeweils standardmäßig
     die letzten 5 Haltestellen als Features verwendet. Optional kann die Verspätung der vorherigen Haltestelle
@@ -61,23 +61,17 @@ def create_dataset_matrix(data, num_stops_bundled=5, include_previous_stop_delay
     
     # Initialisiere die X- und Y-Matrizen
     # Wenn include_previous_stop_delay=True, dann wird die letzte Spalte (arrival_delay_category) nicht entfernt
-    if include_previous_stop_delay:
-        X_matrix = np.zeros((num_samples, num_stops_bundled, num_features))
-    else:
-        X_matrix = np.zeros((num_samples, num_stops_bundled, num_features - 1))  # Exclude previous stop delay
+    X_matrix = np.zeros((num_samples, num_stops_bundled, num_features - 1))  # Exclude previous stop delay
    
     Y_matrix = np.zeros((num_samples, 1))
     
     # Fülle die X- und Y-Matrizen
     for i in range(num_samples):
-        if include_previous_stop_delay:
-            X_matrix[i] = data_array[i:i+num_stops_bundled]
-        else:
             X_matrix[i] = data_array[i:i+num_stops_bundled, :-1]  # Exclude last column (previous stop delay)
-        # Wähle jeweils immer ab der nächsten Zeile aus der Spalte 'arrival_delay_category' als Label, dann fortlaufend
-        Y_matrix[i] = data_array[i+1, num_features-1]
+            # Wähle jeweils immer ab der nächsten Zeile aus der Spalte 'arrival_delay_category' als Label, dann fortlaufend
+            Y_matrix[i] = data_array[i+1, num_features-1]
     
-    return X_matrix, Y_matrix, include_previous_stop_delay
+    return X_matrix, Y_matrix
 
 def create_roc_curve(y_true, y_score,num_stops):
     """
@@ -205,7 +199,7 @@ def classification_with_line_22():
             df_stop_times = df_stop_times.drop(columns=['daytime_x'])
 
             # Erstellen der X- und Y-Matrix
-            x,y, knowledge_delay_pevius_stop = create_dataset_matrix(df_stop_times)
+            x,y = create_dataset_matrix(df_stop_times, num_stops)
 
             # arrival_delay_category aus x-Matrix entfernen (ist soweit als Label in y-Matrix erfasst)
             x = x[:,:,:-1]
@@ -557,7 +551,7 @@ def classification_with_line(line="6", direction="Universität"):
         f1_scores.append(f1)
 
         # Erstellen der ROC-Kurve
-        create_roc_curve(binary_y_test, y_test_pred,num_stops)
+        #create_roc_curve(binary_y_test, y_test_pred,num_stops)
 
         # Berechnung der Confusion Matrix
         conf_matrix = confusion_matrix(binary_y_test, binary_y_test_pred)
@@ -743,4 +737,4 @@ def classification_with_line(line="6", direction="Universität"):
 classification_with_line_22()
 
 # Prognose einer beliebigen Linie - Linie muss als String übergeben werden
-classification_with_line(line="90", direction="Neuenkirchen")
+#classification_with_line(line="90", direction="Neuenkirchen")
