@@ -210,6 +210,9 @@ const Stops = () => {
         ? groupedNightStops.map((group, index) => {
             const center = getGroupCenter(group);
             const nearestCsvStop = findNearestStop(center, csvStops);
+            const stopName = nearestCsvStop ? nearestCsvStop.stop_name : "";
+            const stopDelay = avgStopDelay[stopName] || 0;
+
             return (
               <Circle
                 key={`night_stop_group_${index}`}
@@ -217,7 +220,7 @@ const Stops = () => {
                 radius={heatmapEnabled ? 200 : circleRadius / 3}
                 pathOptions={{
                   color: "black",
-                  fillColor: "white",
+                  fillColor: heatmapEnabled ? getStopColor(stopDelay) : "white",
                   fillOpacity: 0.4,
                   opacity: 0.5,
                 }}
