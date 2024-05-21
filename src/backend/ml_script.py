@@ -33,3 +33,11 @@ def read_all_workdays():
     query = ("SELECT * FROM public.bsag_data WHERE holiday = 0 AND weekday IN ('Montag', 'Dienstag', 'Mittwoch', "
              "'Donnerstag', 'Freitag')")
     return read_data(query)
+
+def read_all_avgLineDelays():
+    query = "SELECT line, direction, AVG(delay) FROM public.bsag_data GROUP BY line, direction"
+    return read_data(query)
+
+def read_all_avgStopDelays():
+    query = "SELECT stop, AVG(delay) FROM public.bsag_data GROUP BY stop"
+    return read_data(query)
