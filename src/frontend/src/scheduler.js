@@ -1,4 +1,4 @@
-import { getAvgStopDelay } from './api.js';
+import { getAvgStopDelay, getAvgLineDelay } from './api.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -6,13 +6,17 @@ import path from 'path';
 async function updateData() {
     try {
         const data = await getAvgStopDelay();
+        const data2 = await getAvgLineDelay();
         
         // Konvertiere die Daten in CSV-Format
         const csvData = convertToCSV(data);
+        const csvData2 = convertToCSV(data2);
         
         // Schreibe die CSV-Daten in eine Datei
         const filePath = path.join(__dirname, '../assets/avgStopDelay.csv');
+        const filePath2 = path.join(__dirname, '../assets/avgLineDelay.csv');
         fs.writeFileSync(filePath, csvData);
+        fs.writeFileSync(filePath2, csvData2);
         
         console.log('Data updated and written to avgStopDelay.csv');
     } catch (error) {
