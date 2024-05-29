@@ -26,17 +26,18 @@ const MapComponent = () => {
                   <Stops />
                 </StopProvider>
 
-              <div className="navigation-bar-map-searchbar">
-                <CustomizedSelects />
-              </div>
-              <ul className="navigation-bar-map-buttons">
-                <li>
-                  <Nightmode />
-                </li>
-              </ul>
-            </RouteProvider>
-          </MapContainer>
-        </SelectedProvider>
+                <div className="navigation-bar-map-searchbar">
+                  <CustomizedSelects />
+                </div>
+                <ul className="navigation-bar-map-buttons">
+                  <li>
+                    <Nightmode />
+                  </li>
+                </ul>
+              </RouteProvider>
+            </MapContainer>
+          </SelectedProvider>
+        </HeatmapProvider>
       </NightModeProvider>
     </main>
   );

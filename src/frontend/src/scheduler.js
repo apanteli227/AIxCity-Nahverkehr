@@ -2,6 +2,11 @@ import { getAvgStopDelay, getAvgLineDelay } from './api.js';
 import fs from 'fs';
 import path from 'path';
 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 // Funktion zur Aktualisierung der Daten und Schreiben in die CSV-Datei
 export async function updateData() {
     try {
@@ -13,8 +18,8 @@ export async function updateData() {
         const csvData2 = convertToCSV(data2);
         
         // Schreibe die CSV-Daten in eine Datei
-        const filePath = path.join(__dirname, '../assets/avgStopDelay.csv');
-        const filePath2 = path.join(__dirname, '../assets/avgLineDelay.csv');
+        const filePath = path.join(__dirname, './assets/avgStopDelay.csv');
+        const filePath2 = path.join(__dirname, './assets/avgLineDelay.csv');
         fs.writeFileSync(filePath, csvData);
         fs.writeFileSync(filePath2, csvData2);
         
@@ -22,11 +27,9 @@ export async function updateData() {
     } catch (error) {
         console.error('Error updating data:', error);
     }
-   
+    
 }
-module.exports = {
-    updateData
-};
+
 // Hilfsfunktion zur Konvertierung der Daten in CSV-Format
 function convertToCSV(data) {
     const headers = Object.keys(data[0]);

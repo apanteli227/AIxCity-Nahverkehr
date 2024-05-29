@@ -1,607 +1,615 @@
-"stop_name","avg_departure_delay"
-"Bremen Achterdiek","36.0616071428571429"
-"Bremen Agnes-Heineken-Straße","274.7844164347683745"
-"Bremen Ahrensstraße","147.5119493233515692"
-"Bremen Akazienstraße","109.5304731119600353"
-"Bremen Albert-Bischof-Straße","73.0632210429164744"
-"Bremen Albert-Bote-Straße","240.5792099792099792"
-"Bremen Alfred-Faust-Straße","74.0769304648482520"
-"Bremen Allerkai","90.4744525547445255"
-"Bremen Altenescher Straße","93.5126664925568033"
-"Bremen Alter Schutzdeich","139.5279823269513991"
-"Bremen Am Bahnhof St. Magnus","79.1186159120630545"
-"Bremen Am Brill (Bgm.-Smidt-Straße)","87.7760220277451376"
-"Bremen Am Brill (Hutfilter-/Obernstraße)","79.4941843125559201"
-"Bremen Am Brill (Martinistraße)","143.8600112399734328"
-"Bremen Am Dammacker","108.6132717917675545"
-"Bremen Am Dobben","111.6472220590826335"
-"Bremen Am Fillerkamp","51.4841525906244069"
-"Bremen Am Fuchsberg","70.7367125826967944"
-"Bremen Am Gaswerkgraben","225.4000000000000000"
-"Bremen Am Geestkamp","84.1753062867022387"
-"Bremen Am Glockenstein","58.1317315658657829"
-"Bremen Am Großen Kuhkamp","114.3831640058055152"
-"Bremen Am Hahnenkamp","144.8500000000000000"
-"Bremen Am Hallacker","63.4172298742407392"
-"Bremen Am Heidbergstift","110.2588145004740192"
-"Bremen Am Heiddamm","70.0463231736816642"
-"Bremen Am Hulsberg","88.9783632390508141"
-"Bremen Am Kapellenberg","77.2343286533517896"
-"Bremen Am Lehester Deich","93.8777213495531672"
-"Bremen Am Neuen Markt","141.3183497281368032"
-"Bremen Am Querkamp","76.2756149988058276"
-"Bremen Amselweg","13.1628060886829914"
-"Bremen Am Siek","135.9947607404820119"
-"Bremen Am Sodenmatt","110.8773946360153257"
-"Bremen Am Stern","116.6124520690648758"
-"Bremen Am Tabakquartier","214.7200000000000000"
-"Bremen Am Wall","110.5299309843806756"
-"Bremen An den Wühren","64.2506602641056423"
-"Bremen An der Amtsweide","68.5982054332738449"
-"Bremen An der Kämenade","102.9519911707900304"
-"Bremen An der Lehmkuhle","42.6182023105100028"
-"Bremen Anna-Stiegler-Straße","182.7512682308180089"
-"Bremen An Smidts Park","93.5432920720080153"
-"Bremen Apfelallee","76.0985737290085116"
-"Bremen Arberger Hafendamm","81.5116129032258065"
-"Bremen Arensburgstraße","188.5974356257285154"
-"Bremen Arsten","8.5968990267950650"
-"Bremen Arsterdamm","124.8296129428629941"
-"Bremen Arster Kirche","77.4571815718157182"
-"Bremen Arster Landstraße","70.9124663072776280"
-"Bremen Ascherfeld","34.6090361445783133"
-"Bremen Auf dem Bohnenkamp","204.1985559566787004"
-"Bremen Auf dem Flintacker","0.00000000000000000000"
-"Bremen Auf dem Krümpel","99.8578028006351956"
-"Bremen Auf dem Pasch","51.4478767032676280"
-"Bremen Auf den Delben","76.1863438857852266"
-"Bremen Auf der Sandhöhe","35.2418300653594771"
-"Bremen August-Bebel-Allee","82.9224943504550174"
-"Bremen August-Hinrichs-Straße","94.9677397515317694"
-"Bremen Aumunder Heide","99.2807134681419306"
-"Bremen Aumunder Kirche","33.6714116251482800"
-"Bremen Bahnhof Aumund","99.2431047692013024"
-"Bremen Bahnhof Blumenthal","37.5042345397601972"
-"Bremen Bahnhof Farge","86.4697152595327700"
-"Bremen Bahnhof Kreinsloger","52.8113738243825261"
-"Bremen Bahnhof Lesum","95.8272997032640950"
-"Bremen Bahnhof Neustadt","114.6010729368793517"
-"Bremen Bahnhof Oberneuland","77.0919540229885057"
-"Bremen Bahnhof Oslebshausen","83.4676889375684556"
-"Bremen Bahnhof Schönebeck","80.7005463662899484"
-"Bremen Bahnhof Sebaldsbrück","86.2127766179540710"
-"Bremen Bahnhof Turnerstraße","37.8697430519140010"
-"Bremen Bahnhof Vegesack","51.9048039235804724"
-"Bremen Bahnhof Walle","86.9088084045808752"
-"Bremen Bakeweg","101.8848342346578885"
-"Bremen Barbarossastraße","83.6523287222722436"
-"Bremen Bardenflethstraße","92.1547243961107159"
-"Bremen Bayernstraße","11.6069444444444444"
-"Bremen Beckers Barg","62.8275637446491718"
-"Bremen Bei den Drei Pfählen","124.5489131832797428"
-"Bremen Beim Bohnenhof","120.4196515004840271"
-"Bremen Beim Kleinen Tagwerk","73.2663421418636996"
-"Bremen Belmerstraße","65.1648019599836668"
-"Bremen Bennigsenstraße","84.3355186924437397"
-"Bremen Bergener Straße","92.3535864978902954"
-"Bremen Berliner Freiheit","116.1704830178173719"
-"Bremen Bernauer Straße","30.2546239210850801"
-"Bremen Berufsbildungswerk","89.5285188592456302"
-"Bremen Besanstraße","52.1230982019363762"
-"Bremen Betonstraße","108.5650322959483265"
-"Bremen Betriebshof Blumenthal","26.9671941335391741"
-"Bremen Bf Klinikum Bremen-Nord","69.2213155537864464"
-"Bremen Bf Mahndorf","19.3014790232710587"
-"Bremen Blumenhorster Straße","76.5067523795285793"
-"Bremen Blumenkamp","83.0414827890556046"
-"Bremen-Blumenthal Markt","71.7658718078809403"
-"Bremen Bockhorner Weg","57.9684988332901219"
-"Bremen Bollener Landstraße","79.7740450989415555"
-"Bremen Borchsholt","19.8534653465346535"
-"Bremen Bordeaux-Straße","64.2912142152023692"
-"Bremen Borgfeld","49.3933114485022569"
-"Bremen Borgfeld-Ost","8.6187192118226601"
-"Bremen Borgwardstraße","190.8034521859644702"
-"Bremen Bottroper Straße","85.3738404452690167"
-"Bremen Brahmsstraße","115.5346560963727357"
-"Bremen Brandenburger Straße","103.0878560061460791"
-"Bremen Bremervörder Straße","31.8960660514813016"
-"Bremen Bremer Vulkan","76.9957697439068042"
-"Bremen Brenningstraße","66.2171182557863970"
-"Bremen Bromberger Straße","165.4261645193260654"
-"Bremen Bruchhauser Straße","212.4239170003640335"
-"Bremen Brunnenstraße","113.5198955541177558"
-"Bremen Brünsweg","85.9830521835093804"
-"Bremen Brüsseler Straße","97.1137440758293839"
-"Bremen BSAG-Zentrum","97.6138350286077559"
-"Bremen Bulthauptstraße","57.0430839002267574"
-"Bremen-Burg(Bus)","52.8722480362871999"
-"Bremen Burgdammer Postweg","106.5643792658181147"
-"Bremen Burgdammer Ring","65.6001475810542822"
-"Bremen Burger Dorfstraße","89.9753513307743552"
-"Bremen Bürgermeister-Kaisen-Allee","118.6068376068376068"
-"Bremen Bürgermeister-Spitta-Allee","96.5977179210318966"
-"Bremen Bürgerpark","74.5614468896817267"
-"Bremen Buschdeel","63.1933591946060774"
-"Bremen Buschdeel/Wendeplatz","17.3307860262008734"
-"Bremen Busestraße","87.1713896894012168"
-"Bremen Busestraße/Bürgerpark","81.0769230769230769"
-"Bremen Campingplatz","0.00000000000000000000"
-"Bremen Carl-Goerdeler-Straße","105.7681683016980241"
-"Bremen Carl-Hurtzig-Straße","97.0278551532033426"
-"Bremen Carsten-Dreßler-Straße","58.7942992639430914"
-"Bremen Celsiusstraße","0.00000000000000000000"
-"Bremen Christernstraße","151.0575239683201334"
-"Bremen Colshornstraße","84.4303833957912943"
-"Bremen Cornelius-Edzard-Straße","332.6232251521298174"
-"Bremen Crüsemannallee","104.2933832709113608"
-"Bremen Cuxhavener Straße","79.1821327461465870"
-"Bremen Daniel-Jacobs-Allee","99.3968214551775515"
-"Bremen Daniel-von-Büren-Straße","139.6982735787724832"
-"Bremen De Kreienbarg","68.0352906110283159"
-"Bremen Delfter Straße","81.1037037037037037"
-"Bremen Deliusweg","76.4218805863425098"
-"Bremen Delmestraße","102.8192587849195550"
-"Bremen DIAKO Bremen","48.8735305516083193"
-"Bremen Dietrich-Bonhoeffer-Straße","84.9614653685349238"
-"Bremen Dillener Park","71.1742902641260776"
-"Bremen Dirschauer Straße","125.8969276511397423"
-"Bremen Dithmarscher Freiheit","72.4613032791799053"
-"Bremen Dobbenweg","138.7386892571215788"
-"Bremen Dobbheide","58.8014827018121911"
-"Bremen Dohlenstraße","69.0981315567807642"
-"Bremen Domsheide","94.1728572538658792"
-"Bremen Dortmunder Straße","327.1807909604519774"
-"Bremen Dötlinger Straße","109.9592375366568915"
-"Bremen Doventor","128.7790108427936472"
-"Bremen Doventorsteinweg","102.4823922282938676"
-"Bremen Duckwitzstraße","77.0176552912046507"
-"Bremen Düsseldorfer Straße","99.9789222956271628"
-"Bremen Eduard-Schopf-Allee","71.8630303030303030"
-"Bremen Egestorff-Stiftung","162.4286522148916117"
-"Bremen Eggestedter Straße","35.4767871815940838"
-"Bremen Ehrenfelsstraße","32.4464499349804941"
-"Bremen Eickedorfer Straße","67.8760949746426925"
-"Bremen Einkaufszentrum Blockdiek","99.9140748770115901"
-"Bremen Elisabethstraße","69.0050421201500338"
-"Bremen Ellenerbrokstraße","96.5232317785566640"
-"Bremen Emder Straße","55.4074182886522218"
-"Bremen Emmastraße","130.5836002957121735"
-"Bremen Emmastraße/Bürgerpark","60.8129032258064516"
-"Bremen Emmentaler Straße","113.4441723800195886"
-"Bremen Engadiner Straße","88.1174213022854679"
-"Bremen Eppenhainer Straße","83.1679247970374591"
-"Bremen Erich-Kühlmann-Straße","238.3402061855670103"
-"Bremen Erkelenzer Straße","100.1262594739188587"
-"Bremen Ermlandstraße","33.1056794358681151"
-"Bremen Europaallee/Autohof","65.5730932203389831"
-"Bremen Europaallee-Ost","55.2350142721217888"
-"Bremen Europahafen","57.7877930261120308"
-"Bremen Fähre Blumenthal","67.1438106796116505"
-"Bremen Fähre Farge","80.8627609210243168"
-"Bremen Fährer Kämpe","82.9383026110031749"
-"Bremen Fährgrund","68.2184081332869458"
-"Bremen Falkenstraße","98.3565929203539823"
-"Bremen Fellendsweg","82.6125615534702221"
-"Bremen Findorffallee","74.1339849624060150"
-"Bremen Finkenschlag","56.9627895664862893"
-"Bremen Flämische Straße","110.6401673640167364"
-"Bremen Flughafen","106.0224595842956120"
-"Bremen Flughafen-Süd","24.8507230255839822"
-"Bremen Focke-Museum","105.4015442438107689"
-"Bremen Föhrenstraße","74.1471761354114295"
-"Bremen Fontanestraße","57.0010625435093247"
-"Bremen Franz-Stickan-Straße","131.9948914431673052"
-"Bremen Fraunhoferstraße","88.7732749178532311"
-"Bremen Fresenbergstraße","43.1543126684636119"
-"Bremen Friedhof Huchting","120.0782003213711837"
-"Bremen Friedhof Huckelriede","81.2836807591832383"
-"Bremen Friedhofstraße","111.9079856202286222"
-"Bremen Friedrich-Engels-Straße","106.1308689741712852"
-"Bremen Friedrich-Karl-Straße","147.1361719220727054"
-"Bremen Friedrich-Mißler-Straße","86.6536958899828098"
-"Bremen Friedrich-Stampfer-Straße","97.9429547052324997"
-"Bremen Fuldahafen","90.0601252609603340"
-"Bremen Fultonstraße","95.6091251175917215"
-"Bremen Fürther Straße","88.5848067355530042"
-"Bremen Gastfeldstraße","94.6087750150257107"
-"Bremen Gemeinschaftszentrum Obervieland","48.7577957691303212"
-"Bremen Georg-Bitter-Straße","102.6254988792302225"
-"Bremen Georg-Gries-Straße","105.9613987483040833"
-"Bremen Georg-Henschel-Straße","138.0979779713956929"
-"Bremen Gerhard-Rohlfs-Straße","63.1388814365688326"
-"Bremen Glockenstraße/Bf Hemelingen","140.2328861964517525"
-"Bremen Goldbergplatz","103.9725552641438741"
-"Bremen Goosestraße","63.2051301802495763"
-"Bremen Gottfried-Menken-Straße","93.4551663614163614"
-"Bremen Gottlieb-Daimler-Straße","108.2269372693726937"
-"Bremen Grasberger Straße","59.5692364170337739"
-"Bremen Graubündener Straße","100.9175087825822960"
-"Bremen Gravestraße","79.2301957129543336"
-"Bremen Grenzstraße","70.3418866988967398"
-"Bremen Grenzwehr","80.5278483835005574"
-"Bremen Grohn-Markt","47.2113891821399739"
-"Bremen Gröpelingen","17.5490701451097491"
-"Bremen Gustav-Heinemann-Bürgerhaus","72.9756855272968271"
-"Bremen Gustavstraße","95.0059498767954805"
-"Bremen Güterbahnhof Grolland","22.5133333333333333"
-"Bremen GVZ-Verkehrsgewerbe Ost","159.5890746025275173"
-"Bremen GVZ-Zentralbereich","152.2366624525916561"
-"Bremen Habenhauser Brückenstraße","108.9217153640918852"
-"Bremen Haferkamp","96.5549189921764307"
-"Bremen Haferwende","89.2184834123222749"
-"Bremen Hakenwehrstraße","55.5312737401873892"
-"Bremen Halmerweg","152.6838966202783300"
-"Bremen Hanfstraße","55.8943661971830986"
-"Bremen Hannoversche Straße","135.9209696969696970"
-"Bremen Hansator","72.9612369606814394"
-"Bremen Hansestraße","99.1679673351114623"
-"Bremen Harriersand","69.9620253164556962"
-"Bremen Hasenbüren","7.9255928045789043"
-"Bremen Hasenbürener Deich","44.2994161801501251"
-"Bremen Hasenbüren Hagens","47.4172131147540984"
-"Bremen Hauptbahnhof","84.2384967245144236"
-"Bremen Hauptbahnhof-Nord/Messe","95.5277886115444618"
-"Bremen Hegeweg","36.3196664693112295"
-"Bremen Heiligenbergstraße","146.4069714110992203"
-"Bremen Heinrich-Hertz-Straße","81.5833301310379280"
-"Bremen Heinz-Hinners-Platz","88.1881999248402856"
-"Bremen Heisiusstraße","69.6012094207511139"
-"Bremen Helene-Lange-Straße","79.3024516129032258"
-"Bremen Helmer","79.3657271481698963"
-"Bremen Helsingborger Straße","40.2538195245788138"
-"Bremen Hemmstraße","107.0468739354574978"
-"Bremen Herbartstraße","64.9247311827956989"
-"Bremen Herbststraße","137.8208194787085702"
-"Bremen Herdentor","125.8545557441992077"
-"Bremen Hermann-Frese-Straße","67.3123861566484517"
-"Bremen Hermann-Funk-Straße","122.3880837359098229"
-"Bremen Hermann-Helms-Straße","70.5662381951731375"
-"Bremen Hermann-Koenen-Straße","126.1346868957310724"
-"Bremen Hermann-Osterloh-Straße","70.7849430989203385"
-"Bremen Heukämpendamm","84.0511919315403423"
-"Bremen Hexenstieg","72.9382830626450116"
-"Bremen H.-H.-Meier-Allee","130.1264684727883002"
-"Bremen Hochschule Bremen","100.6281712007339191"
-"Bremen Höger Weg","97.9877658025050976"
-"Bremen Hohenbuchener Straße","58.9554233819391149"
-"Bremen Hohenesch","74.0414591842443910"
-"Bremen Hohenhorster Weg","105.9233800350262697"
-"Bremen Hohentorsplatz","114.7076652529223130"
-"Bremen Hohweg","-2.1861702127659574"
-"Bremen Hohwisch","54.6073205914172376"
-"Bremen Hollerallee","120.1582524884782929"
-"Bremen Holsteiner Straße","63.0921290711700844"
-"Bremen Holthorster Weg","83.5560331402230113"
-"Bremen Holzweide","41.5051546391752577"
-"Bremen Höpkens Ruh","80.8645733461169703"
-"Bremen Horner Mühle","96.3166638508757110"
-"Bremen Horn (Horner Kirche)","80.0816475800384519"
-"Bremen Huckelriede","62.9854648262098786"
-"Bremen Huder Straße","108.2968508002065049"
-"Bremen Humboldtstraße","111.2862702702702703"
-"Bremen Hüttenhafen","71.3633617138148860"
-"Bremen Hüttenstraße Süd","49.5828571428571429"
-"Bremen Ikensdamm","90.0740740740740741"
-"Bremen Im Achterkamp","67.7992610837438424"
-"Bremen Im Holter Feld","121.3515742403694608"
-"Bremen Im Holze","75.6008372770294867"
-"Bremen In den Barken","120.2101090188305253"
-"Bremen In der Laake","77.2839793159068267"
-"Bremen Innsbrucker Straße","28.7206864564007421"
-"Bremen Jadestraße","36.4073288915808601"
-"Bremen Johann-Bornemacher-Straße","33.4925657643919177"
-"Bremen Joseph-Haydn-Straße","129.3945889184013837"
-"Bremen Julius-Brecht-Allee","98.5597234042553191"
-"Bremen Kalischer Straße","125.4648166501486620"
-"Bremen Kap-Horn-Straße","68.3384879725085911"
-"Bremen Kapitän-König-Weg","59.6617977528089888"
-"Bremen Karl-Bröger-Straße","47.4694908121756207"
-"Bremen Karl-Carstens-Brücke","211.6642612988985948"
-"Bremen Karl-Peters-Straße","32.1542078044193700"
-"Bremen Kaspar-Ohm-Straße","63.9351297405189621"
-"Bremen Kattenescher Weg","63.7993446414803392"
-"Bremen Kattenturm-Mitte","75.2694967060359665"
-"Bremen Kirchbachstraße","112.9722429408630794"
-"Bremen Kirchweg","116.9615127570075087"
-"Bremen Klärwerk","75.5577889447236181"
-"Bremen Kleine Marschstraße","99.4450814725407363"
-"Bremen Klinikum Bremen-Mitte","149.5438279242409822"
-"Bremen Klinikum Bremen-Ost","98.0735519340270960"
-"Bremen Klinikum Haupteingang","11.3729629054788142"
-"Bremen Klinikum Links der Weser","82.8913370906617433"
-"Bremen Kluvenhagener Straße","77.4276838108387988"
-"Bremen Knoops Park","57.7685285366513389"
-"Bremen Köhler Brücke","34.0686274509803922"
-"Bremen Köhlhorster Straße","52.1625955621853440"
-"Bremen Konsul-Smidt-Straße","57.6673263090335348"
-"Bremen Kopernikusstraße","100.7955656356313299"
-"Bremen Krefelder Straße","105.6789164216715666"
-"Bremen Kriegerdenkmal","53.6633416458852868"
-"Bremen Krimpelweg","70.6149706928029211"
-"Bremen Krönkeskamp","0.00000000000000000000"
-"Bremen Kuhgrabenweg","0.00000000000000000000"
-"Bremen Kulenkampffallee","64.1535078677935821"
-"Bremen Kurfürstenallee","112.4703444049957648"
-"Bremen Kurt-Huber-Straße","66.6505176663927691"
-"Bremen Lachmundsdamm","140.7451737451737452"
-"Bremen Landrat-Berthold-Straße","53.9938385314107857"
-"Bremen Lange Reihe","69.3803930131004367"
-"Bremen Lankenauer Höft","13.6225868725868726"
-"Bremen La-Rochelle-Straße","65.4540750323415265"
-"Bremen Lerchenstraße","47.8869565217391304"
-"Bremen-Lesum Kirche","57.3468353231002464"
-"Bremen Lesum Park","70.2142857142857143"
-"Bremen Lindenhofstraße","89.8146406784704657"
-"Bremen Linzer Straße","144.8899123458624276"
-"Bremen Lise-Meitner-Straße","88.9539444882234480"
-"Bremen Lloydstraße","121.8485499462943072"
-"Bremen Lohmannstraße","151.4291288654765389"
-"Bremen Löhstraße","86.7401268161166309"
-"Bremen Loignystraße","103.2617873466442146"
-"Bremen Louise-Böhm-Weg","64.3863216266173752"
-"Bremen Ludwig-Erhard-Straße","165.7936218678815490"
-"Bremen Ludwig-Quidde-Straße","81.0913370055082624"
-"Bremen Ludwig-Sütterlin-Straße","97.5325842696629213"
-"Bremen Ludwig-von-Kapff-Straße","59.5193428722840488"
-"Bremen Luley","35.6796116504854369"
-"Bremen Machandelweg","64.8775913129318855"
-"Bremen Mackensenweg","77.3351724137931034"
-"Bremen Malerstraße","82.1394579913798193"
-"Bremen Malthusstraße","55.1507702392658145"
-"Bremen Marcuskaje","50.0423976608187135"
-"Bremen Margaretenallee","55.9312582345191041"
-"Bremen Marschstraße","64.9349688473520249"
-"Bremen Marßel","9.4409502007730701"
-"Bremen Martin-Buber-Straße","48.4717831669044223"
-"Bremen Martinistraße","149.3832579185520362"
-"Bremen Martin-Luther-Straße","64.1738763315146791"
-"Bremen Martinsheide","29.1511111111111111"
-"Bremen Martinshof Aumund","-61.5000000000000000"
-"Bremen Mercedes-Benz Tor 7","181.5696368401347810"
-"Bremen Mercedes-Benz Tor 8","159.3068725235687936"
-"Bremen Metzer Straße","117.8667761080944564"
-"Bremen Meyerstraße","91.7828530431663279"
-"Bremen Mittelsbürener Landstraße","106.9242049827830666"
-"Bremen Mittelshuchtinger Dorfstraße","87.1351351351351351"
-"Bremen Modersohnweg","77.9466882067851373"
-"Bremen Moorstraße","85.4375220331378393"
-"Bremen Moorstücke","56.9121665582303188"
-"Bremen Morsumer Straße","69.2277515802147085"
-"Bremen Müdener Straße","114.8419172068807105"
-"Bremen Mühlenfeldstraße","69.7536811106436685"
-"Bremen Mühlenhauser Fleet","182.7011412268188302"
-"Bremen Mülheimer Straße","99.5288727987843032"
-"Bremen Munte","164.6611037360136545"
-"Bremen Nauheimer Straße","89.1049700085689803"
-"Bremen Nedderland","70.0810686319668356"
-"Bremen Neuenkirchener Weg","45.5227739406384170"
-"Bremen Neuenlander Kämpe","106.6323385094960457"
-"Bremen Neuenlander Straße","83.7652988275664856"
-"Bremen Neuer Schutzdeich","50.3206106870229008"
-"Bremen Neue Vahr Nord","41.9894386857031097"
-"Bremen Neustädter Hafen","80.0601063829787234"
-"Bremen Neuwieder Straße","88.4124977009380173"
-"Bremen Nienburger Straße","72.5927032552288096"
-"Bremen Norderländer Straße","92.7419244922993049"
-"Bremen Nußhorn","67.3637930291672052"
-"Bremen Oberneulander Heerstraße","56.8292975305682091"
-"Bremen Obernstraße","105.0541548613850733"
-"Bremen Oberste Kämpe","98.0072992700729927"
-"Bremen Obervielander Straße","227.3521480087801819"
-"Bremen Oewerweg","58.2319838914794404"
-"Bremen Ohmstraße","97.8320278503046127"
-"Bremen Ortsamt Seehausen","65.8252508361204013"
-"Bremen Oslebshauser Landstraße","72.5404819929596534"
-"Bremen Osterholzer Friedhof","116.9354746364365052"
-"Bremen Osterholzer Landstraße","99.7402272229351194"
-"Bremen Osterholzer Möhlendamm","133.8314747700027878"
-"Bremen Osterhop","57.3833669693911874"
-"Bremen Ostwaldstraße","101.0299319727891156"
-"Bremen Otto-Braun-Straße","77.8822046320727060"
-"Bremen Panrepel-Nord","74.6899224806201550"
-"Bremen Panrepel-Süd","63.6104468219005664"
-"Bremen Pappelstraße","110.2933217159551023"
-"Bremen Parkallee","68.2410022779043280"
-"Bremen Parkstraße","120.1023213255624291"
-"Bremen Parsevalstraße","75.9010290556900726"
-"Bremen Paul-Feller-Straße","332.8570019723865878"
-"Bremen Peter-Henlein-Straße","96.6961205082891526"
-"Bremen Pfarrfeldsweg","75.2250087894058362"
-"Bremen Philipp-Scheidemann-Straße","89.0046694060515502"
-"Bremen Piependamm","69.5981439648330179"
-"Bremen Poggenburg","63.9799104705753903"
-"Bremen Polizeipräsidium","101.9573727298390891"
-"Bremen Rablinghausen","11.4127716868628582"
-"Bremen Radio Bremen/VHS","112.4535345200204330"
-"Bremen Rastenburger Straße","58.6555881177567604"
-"Bremen Rechtenflether Straße","96.9502046384720327"
-"Bremen Reedeich-Nord","127.2868156073001888"
-"Bremen Rekumer Siel","82.0237574968617788"
-"Bremen Rembertistraße","124.5598964981086538"
-"Bremen Rennplatz","101.2274474676221401"
-"Bremen Rhododendronpark","78.5324171952078929"
-"Bremen Ricarda-Huch-Straße","29.0715474209650582"
-"Bremen Ricardostraße","87.7579737335834897"
-"Bremen Richthofenstraße","58.7843365378727573"
-"Bremen Riedemannstraße","81.2653488676528341"
-"Bremen Riensberg","121.1560213680176518"
-"Bremen Riespot","93.4817073170731707"
-"Bremen Ringofenstraße","54.7182718738654634"
-"Bremen Ritterhuder Heerstraße","71.5804054054054054"
-"Bremen Robert-Koch-Straße","122.5416998823216794"
-"Bremen Roccoweg","73.8436628374225878"
-"Bremen Rockwinkeler Heerstraße","65.9059153493115757"
-"Bremen Roland-Center","12.2653497559841971"
-"Bremen Rönnebecker Straße","61.0549710861840730"
-"Bremen Rosenpfad","114.1753898820844428"
-"Bremen Rotdornallee","102.9336101588527835"
-"Bremen Rotes-Kreuz-Krankenhaus","131.8003905487209529"
-"Bremen Rotterdamer Straße","114.7713382507903056"
-"Bremen Rudolf-Alexander-Schröder-Straße","18.4338028169014085"
-"Bremen Ruppertshainer Straße","86.3435081057397400"
-"Bremen Saarstraße","116.9434390456793715"
-"Bremen Sandkuhlenweg","66.8360946469407757"
-"Bremen Schevemoorer Landstraße","77.8129523809523810"
-"Bremen Schlehenweg","72.6040062232594321"
-"Bremen Schleiermacherstraße","96.0799041788661166"
-"Bremen Schlengstraße","68.4284124629080119"
-"Bremen Schloßparkstraße","72.6695275900296821"
-"Bremen Schneverdinger Straße","82.4245134965473949"
-"Bremen Schönebecker Straße","59.9307291339571689"
-"Bremen Schorf","71.5672543459499445"
-"Bremen Schulzentrum Lerchenstraße","26.0695652173913043"
-"Bremen Schüsselkorb","100.6615065248440868"
-"Bremen Schwankhalle","115.3398002305032655"
-"Bremen Schwarzer Weg","96.7700803212851406"
-"Bremen Schweizer Eck","58.2592195399531636"
-"Bremen Sebaldsbrück (Bus+Tram)","34.6322874118083921"
-"Bremen Seefahrtstraße","58.1349421324796848"
-"Bremen-Seehausen Schule","74.0728643216080402"
-"Bremen Senator-Blase-Straße","173.8867459991793188"
-"Bremen Senator-Harmssen-Straße","211.4081632653061224"
-"Bremen Senator-Mester-Straße","183.9373443983402490"
-"Bremen Senator-Nolting-Hauff-Straße","200.8263993948562784"
-"Bremen Senator-Paulmann-Straße","176.8266932270916335"
-"Bremen Senator-Theil-Straße","69.9934181097833727"
-"Bremen Sielhof","89.4319048127961241"
-"Bremen Sielwall","120.8945433479646175"
-"Bremen Silbermannstraße","32.1499243980925057"
-"Bremen Simon-Hermann-Post-Weg","88.4824436776943373"
-"Bremen Soester Straße","22.4335839598997494"
-"Bremen Solinger Straße","101.6574105738321592"
-"Bremen Sollingstraße","79.0343591275769346"
-"Bremen Stackkamp","79.6553405694509989"
-"Bremen Stader Landstraße","60.5423914472242913"
-"Bremen Stader Straße/Bismarckstraße","168.1629297458893871"
-"Bremen Stader Straße/Hamburger Straße","133.8595018191995522"
-"Bremen Stadtwaldsee","0.00000000000000000000"
-"Bremen Stahlwerk Tor 1","73.2215840790703887"
-"Bremen Stahlwerk Tor 2","106.1808118081180812"
-"Bremen Stahlwerk Tor 3","106.5250431778929188"
-"Bremen Staustraße","83.4382187199340267"
-"Bremen Stedinger Brücke","38.0129449838187702"
-"Bremen Steenkuhlenweg","43.5493873942149804"
-"Bremen Stehnckenshoff","51.7539903008616225"
-"Bremen Stellfeldsweg","15.7068965517241379"
-"Bremen Stellichter Straße","104.9314511981898591"
-"Bremen Stenumer Straße","126.6522572402044293"
-"Bremen Steubenstraße","133.9112392524326829"
-"Bremen St. Joseph-Stift","117.0827855121834485"
-"Bremen St.-Jürgen-Straße","77.1880376117389104"
-"Bremen St.-Magnus-Straße","18.6069609507640068"
-"Bremen Stockholmer Straße","58.3824004305705059"
-"Bremen Straubinger Straße","30.6438356164383562"
-"Bremen Stresemannstraße","141.0749228512166743"
-"Bremen Stromer Berg","49.1299435028248588"
-"Bremen Stromer Straße","148.6294950962586270"
-"Bremen-Strom Schule","19.2078651685393258"
-"Bremen Stumper","57.2776859504132231"
-"Bremen Stuttgarter Straße","112.5522223690586318"
-"Bremen Süntelstraße","77.7090690208667737"
-"Bremen Tannenhof","85.3506461495123068"
-"Bremen Taunusstraße","55.1951694348117053"
-"Bremen Teneverstraße","85.1287530183607454"
-"Bremen Tenever-Zentrum","81.4518051174202594"
-"Bremen Theater am Goetheplatz","72.8529540321993152"
-"Bremen Theater am Leibnizplatz","99.1989700170209052"
-"Bremen Theodor-Heuss-Allee","139.3730851675641763"
-"Bremen Togostraße","53.0110264089300299"
-"Bremen Trinidadstraße","79.4361361435912713"
-"Bremen Twiedelftsweg","72.1138648443432043"
-"Bremen Überseestadt-Nord","14.9075740722014359"
-"Bremen Überseetor","60.6272636443112277"
-"Bremen Ulrichsplatz","71.5931835179315503"
-"Bremen Universität-Nord","39.7141162153939763"
-"Bremen Universität-Ost","2.7757273122014763"
-"Bremen Universität-Süd","102.2524648350203760"
-"Bremen Universität/Zentralbereich","96.9815525734669611"
-"Bremen Unterführung B75","473.5180327868852459"
-"Bremen Upsalastraße","54.0231660231660232"
-"Bremen Utbremer Ring","110.8167321194811377"
-"Bremen Utbremer Straße","99.8551125876707272"
-"Bremen Varreler Landstraße","110.7885898320680929"
-"Bremen Verdunstraße","133.5449574726609964"
-"Bremen Vereinsstraße","92.1083829178278226"
-"Bremen Visbeker Straße","139.8563547200653862"
-"Bremen Von-Ossietzky-Straße","92.0737363317515989"
-"Bremen Von-Thünen-Straße Nord","71.3794002607561930"
-"Bremen Von-Thünen-Straße Süd","102.8580459770114943"
-"Bremen Vorberger Straße","44.5641549753786119"
-"Bremen Vor den Wischen","73.4871249848171991"
-"Bremen Vorlöhnhorster Weg","71.5285605483625286"
-"Bremen Vorstraße","108.7950391291397005"
-"Bremen Waller Friedhof","86.9067861038574687"
-"Bremen Waller Ring","65.6387537578573381"
-"Bremen Waller Straße","120.9852946080229417"
-"Bremen Walther-Jacobs-Straße","73.1675451807228916"
-"Bremen Wartburgstraße","102.6485997885186070"
-"Bremen Warturmer Heerstraße","78.1001821493624772"
-"Bremen Wasserhorster Straße","121.8896620278330020"
-"Bremen Wasserturm","48.5599868160843771"
-"Bremen Wasserweg","62.6739943872778297"
-"Bremen Waterfront (Use Akschen)","54.2262392139572967"
-"Bremen Wätjens Park","55.8376822429906542"
-"Bremen Wätjenstraße","125.0108326885304446"
-"Bremen Weidedamm-Nord","1.8998368678629690"
-"Bremen Weidedamm-Süd","20.3048365562685732"
-"Bremen Werner-Steenken-Straße","84.8059310538378783"
-"Bremen Werner-von-Siemens-Straße","99.1376887364590740"
-"Bremen Werrahafen","88.0007451564828614"
-"Bremen Weserpark","73.2211059824418499"
-"Bremen Weserpark-Süd","55.9724289021164021"
-"Bremen Weserwehr","13.1206378096067105"
-"Bremen Wessels","51.3480432972522898"
-"Bremen Westerstraße","122.8397967845333266"
-"Bremen Wiener Straße","171.4522435300688885"
-"Bremen Wildeshauser Straße","107.4256789524733269"
-"Bremen Wilhelm-Brandhorst-Straße","85.7801835302585018"
-"Bremen Wilhelm-Busch-Weg","125.2734767657173089"
-"Bremen Wilhelm-Herbst-Straße","0.00000000000000000000"
-"Bremen Wilhelm-Kaisen-Brücke","127.4612067718130517"
-"Bremen Wilhelm-Leuschner-Straße","98.4887378163649767"
-"Bremen Wilhelm-Röntgen-Straße","79.6141156040684694"
-"Bremen Wilhelm-Zöllig-Straße","41.4347826086956522"
-"Bremen Willakedamm","94.6397815584961143"
-"Bremen Willigstraße","129.9751680929095355"
-"Bremen Wilseder-Berg-Straße","106.6183804694442992"
-"Bremen Witzlebenstraße","251.5778520041109969"
-"Bremen wohninvest WESERSTADION","71.1202042079207921"
-"Bremen Wolfskuhlenweg","76.4558946139736535"
-"Bremen Woltmershauser Friedhof","94.8902338941321297"
-"Bremen Ziegeleiweg","25.8144433299899699"
-"Bremen Zum Donaufleet","59.1953368026281362"
-"Bremen Zum Huchtinger Bahnhof","89.3381088825214900"
-"Bremen Zum Kränholm","78.7375338572887527"
-"Brinkum-Nord Ochtum Park (IKEA)","50.1057434778295804"
-"Brinkum(Stuhr) Am Bahnhof","76.4926650366748166"
-"Brinkum(Stuhr) IKEA/Marktkauf","15.3089241719134958"
-"Brinkum(Stuhr) Magdeburger Straße","87.7630544637843908"
-"Brinkum(Stuhr) Marktplatz","34.2673217435122197"
-"Brinkum(Stuhr) Schule Brunnenweg","26.6446700507614213"
-"Brinkum(Stuhr) Schule Feldstraße","83.5644292013718765"
-"Delmenhorst Sandhausen","6.0226537216828479"
-"Lilienthal","19.3885970531710442"
-"Lilienthal Auf dem Kamp","76.2782273240496801"
-"Lilienthal Feldhäuser Straße","97.6295996765062677"
-"Lilienthal Kutscher Behrens","81.0064980505848246"
-"Lilienthal Lilienthal-Mitte","89.0116577540106952"
-"Lilienthal Moorhauser Landstraße","75.7692476420267603"
-"Lilienthal Schoofmoor","74.3405112973374350"
-"Lilienthal Trupe","95.4705340699815838"
-"Lilienthal Truperdeich","93.1950597921976083"
-"nan","67.8979818183541724"
-"Neuenkirchen(Schwanewede) Ahnten","60.5651051625239006"
-"Neuenkirchen(Schwanewede) Landwehr","40.4434271504464790"
-"Neuenkirchen(Schwanewede) Marktplatz","50.7599936964857908"
-"Neuenkirchen(Schwanewede) Vorbruch","51.7045240042786132"
-"Schwanewede Am Markt","59.4850198219276012"
-"Schwanewede Am Spreeken","19.6680729450190528"
-"Schwanewede Dreienkamp","47.5628420202745133"
-"Schwanewede Eichengrund","61.1436965261313267"
-"Schwanewede Hospitalstraße","58.2185384481860788"
-"Schwanewede Insterburger Weg","46.9366258267375041"
-"Schwanewede Landhaus Schwanewede","24.4986435860999871"
-"Schwanewede Molkereiweg","26.6619883040935673"
-"Schwanewede Schützenweg","32.2275954316287684"
-"Schwanewede Zum Marktplatz","45.5412048192771084"
+0,1
+Bremen Achterdiek,32.009210983663536
+Bremen Agnes-Heineken-Straße,215.16406334743465
+Bremen Ahrensstraße,118.82039371820393
+Bremen Akazienstraße,105.57217115079175
+Bremen Albert-Bischof-Straße,63.10427666314678
+Bremen Albert-Bote-Straße,225.48497854077254
+Bremen Alfred-Faust-Straße,75.80191346493663
+Bremen Allerkai,92.88881829733164
+Bremen Altenescher Straße,100.27787512516092
+Bremen Alter Schutzdeich,152.7449799196787
+Bremen Am Bahnhof St. Magnus,82.41560471610893
+Bremen Am Brill (Bgm.-Smidt-Straße),89.50187194829722
+Bremen Am Brill (Hutfilter-/Obernstraße),90.36128985415174
+Bremen Am Brill (Martinistraße),115.05534798712537
+Bremen Am Dammacker,106.68371764961206
+Bremen Am Dobben,116.33404805704795
+Bremen Am Fillerkamp,61.73476974631516
+Bremen Am Fuchsberg,78.54902096930982
+Bremen Am Gaswerkgraben,230.254
+Bremen Am Geestkamp,91.78828263952069
+Bremen Am Glockenstein,48.177499409123136
+Bremen Am Großen Kuhkamp,98.5431284995393
+Bremen Am Hahnenkamp,126.84164990703145
+Bremen Am Hallacker,62.44638004658385
+Bremen Am Heidbergstift,104.70074877675086
+Bremen Am Heiddamm,64.79572017582717
+Bremen Am Hulsberg,94.78159540884747
+Bremen Am Kapellenberg,81.4775742869798
+Bremen Am Lehester Deich,93.14447855820707
+Bremen Am Neuen Markt,131.49573850757096
+Bremen Am Querkamp,75.9459812961873
+Bremen Amselweg,15.648716658278813
+Bremen Am Siek,120.27326480487584
+Bremen Am Sodenmatt,131.27342202094536
+Bremen Am Stern,99.80654662293327
+Bremen Am Tabakquartier,238.87457627118644
+Bremen Am Wall,110.88539526886879
+Bremen Am Winterhafen,59.275862068965516
+Bremen An den Wühren,62.551224944320715
+Bremen An der Amtsweide,64.09948809863266
+Bremen An der Kämenade,94.76390412795942
+Bremen An der Lehmkuhle,53.094573643410854
+Bremen Anna-Stiegler-Straße,118.18815224063843
+Bremen An Smidts Park,98.52540285787688
+Bremen Apfelallee,70.96945954589063
+Bremen Arberger Hafendamm,82.653700018093
+Bremen Arensburgstraße,146.95292115711854
+Bremen Arsten,8.246381463964447
+Bremen Arsterdamm,96.51507208387942
+Bremen Arster Kirche,71.79566970067307
+Bremen Arster Landstraße,65.56313721229243
+Bremen Ascherfeld,36.643241856886384
+Bremen Auf dem Bohnenkamp,207.49067164179104
+Bremen Auf dem Flintacker,0
+Bremen Auf dem Krümpel,101.69766155949652
+Bremen Auf dem Pasch,53.91802930148054
+Bremen Auf den Delben,90.97138798030859
+Bremen Auf der Sandhöhe,46.17488789237668
+Bremen August-Bebel-Allee,75.04370445715429
+Bremen August-Hinrichs-Straße,93.70575592414913
+Bremen Aumunder Heide,94.89701951942442
+Bremen Aumunder Kirche,36.06656694091249
+Bremen Bahnhof Aumund,97.30748387589207
+Bremen Bahnhof Blumenthal,41.55409896983836
+Bremen Bahnhof Farge,86.93052756372258
+Bremen Bahnhof Kreinsloger,62.61435590173757
+Bremen Bahnhof Lesum,91.92160820549624
+Bremen Bahnhof Neustadt,108.7049556224555
+Bremen Bahnhof Oberneuland,71.7940212150434
+Bremen Bahnhof Oslebshausen,65.81777661248033
+Bremen Bahnhof Schönebeck,81.90014398326065
+Bremen Bahnhof Sebaldsbrück,89.75018777943369
+Bremen Bahnhof Turnerstraße,48.89660883968268
+Bremen Bahnhof Vegesack,55.074111856513824
+Bremen Bahnhof Walle,89.18930577496928
+Bremen Bakeweg,101.424425221944
+Bremen Barbarossastraße,101.59517363901696
+Bremen Bardenflethstraße,86.49479771003347
+Bremen Bayernstraße,13.678644763860369
+Bremen Beckers Barg,70.7618719159548
+Bremen Bei den Drei Pfählen,120.85129959623522
+Bremen Beim Bohnenhof,100.92522864153469
+Bremen Beim Kleinen Tagwerk,69.62109781477628
+Bremen Belmerstraße,75.13280299959465
+Bremen Bennigsenstraße,96.13183709869203
+Bremen Bergener Straße,100.79747351263244
+Bremen Berliner Freiheit,121.1725629006027
+Bremen Bernauer Straße,33.10279840091376
+Bremen Berufsbildungswerk,79.9043048825941
+Bremen Besanstraße,71.12990501774921
+Bremen Betonstraße,108.8476514468399
+Bremen Betriebshof Blumenthal,30.785103058263264
+Bremen Bf Klinikum Bremen-Nord,68.83064390193118
+Bremen Bf Mahndorf,16.921620499436504
+Bremen Blumenhorster Straße,75.51448248460368
+Bremen Blumenkamp,128.60164370316656
+Bremen-Blumenthal Markt,76.46625952466486
+Bremen Bockhorner Weg,59.57948313424987
+Bremen Bollener Landstraße,85.14556637621732
+Bremen Borchsholt,26.44929328621908
+Bremen Bordeaux-Straße,72.24969128179798
+Bremen Borgfeld,53.18579111297919
+Bremen Borgfeld-Ost,7.421288515406163
+Bremen Borgwardstraße,143.5291197441194
+Bremen Bottroper Straße,74.5328571097784
+Bremen Brahmsstraße,101.75478323898074
+Bremen Brandenburger Straße,99.08210232178459
+Bremen Bremervörder Straße,34.84869523581518
+Bremen Bremer Vulkan,84.64423825590448
+Bremen Brenningstraße,62.41082899328296
+Bremen Bromberger Straße,132.54735651682216
+Bremen Bruchhauser Straße,160.43725281619072
+Bremen Brunnenstraße,120.30213871852656
+Bremen Brünsweg,89.85822208984322
+Bremen Brüsseler Straße,140.01369081574444
+Bremen BSAG-Zentrum,78.74610473424607
+Bremen Bulthauptstraße,54.65861583975944
+Bremen-Burg(Bus),56.71742638632271
+Bremen Burgdammer Postweg,103.23836355650373
+Bremen Burgdammer Ring,73.63626401193572
+Bremen Burger Dorfstraße,93.04550870083226
+Bremen Bürgermeister-Kaisen-Allee,100.74736842105263
+Bremen Bürgermeister-Spitta-Allee,100.2154847666534
+Bremen Bürgerpark,73.48277977987728
+Bremen Buschdeel,60.4125290947337
+Bremen Buschdeel/Wendeplatz,26.405463437910058
+Bremen Busestraße,70.17152055261812
+Bremen Busestraße/Bürgerpark,73.347915806851
+Bremen Campingplatz,99.10751633986928
+Bremen Carl-Goerdeler-Straße,109.73951786676244
+Bremen Carl-Hurtzig-Straße,82.05902079141515
+Bremen Carsten-Dreßler-Straße,56.22510439240975
+Bremen Celsiusstraße,86.83659029649596
+Bremen Christernstraße,125.9092455473284
+Bremen Colshornstraße,94.24399208368673
+Bremen Cornelius-Edzard-Straße,266.08224442736355
+Bremen Crüsemannallee,83.2374267873566
+Bremen Cuxhavener Straße,69.9202628870061
+Bremen Daniel-Jacobs-Allee,97.52512975054411
+Bremen Daniel-von-Büren-Straße,128.70540265035677
+Bremen De Kreienbarg,65.44888508001384
+Bremen Delfter Straße,107.51735184196477
+Bremen Deliusweg,68.71816459692697
+Bremen Delmestraße,101.36692180056735
+Bremen DIAKO Bremen,55.717439409444346
+Bremen Dietrich-Bonhoeffer-Straße,99.71619611391415
+Bremen Dillener Park,70.32168169101648
+Bremen Dirschauer Straße,93.57465424781259
+Bremen Dithmarscher Freiheit,70.67125165362363
+Bremen Dobbenweg,124.22177473889849
+Bremen Dobbheide,63.585454545454546
+Bremen Dohlenstraße,75.70887953455822
+Bremen Domsheide,85.93110500542863
+Bremen Dortmunder Straße,261.6946107784431
+Bremen Dötlinger Straße,108.72006506710045
+Bremen Doventor,122.19259178156031
+Bremen Doventorsteinweg,101.2777335748506
+Bremen Duckwitzstraße,82.11806404302126
+Bremen Düsseldorfer Straße,118.79045902905351
+Bremen Eduard-Schopf-Allee,82.090860669287
+Bremen Egestorff-Stiftung,136.94854097944685
+Bremen Eggestedter Straße,48.738611330653974
+Bremen Ehrenfelsstraße,31.69580636230604
+Bremen Eickedorfer Straße,66.65235352002952
+Bremen Einkaufszentrum Blockdiek,87.13491878146245
+Bremen Elisabethstraße,82.13219110255787
+Bremen Ellenerbrokstraße,115.34285443831791
+Bremen Emder Straße,69.9172385396651
+Bremen Emmastraße,112.04909240203358
+Bremen Emmastraße/Bürgerpark,68.4291734197731
+Bremen Emmentaler Straße,106.28068776034742
+Bremen Engadiner Straße,105.18911266019991
+Bremen Eppenhainer Straße,91.4202810871184
+Bremen Erich-Kühlmann-Straße,224.76533156057837
+Bremen Erkelenzer Straße,118.88584443050036
+Bremen Ermlandstraße,42.89409411517002
+Bremen Europaallee/Autohof,74.75848246241947
+Bremen Europaallee-Ost,51.4013248343957
+Bremen Europahafen,69.25614620224874
+Bremen Fähre Blumenthal,69.4800769971126
+Bremen Fähre Farge,76.57560283687943
+Bremen Fährer Kämpe,82.30778245419492
+Bremen Fährgrund,78.56277622827719
+Bremen Falkenstraße,99.86642834777163
+Bremen Fellendsweg,82.3794892702272
+Bremen Findorffallee,73.64549064095291
+Bremen Finkenschlag,64.12228489349776
+Bremen Flämische Straße,133.02256532066508
+Bremen Flughafen,79.32773337406032
+Bremen Flughafen-Süd,13.66808543213657
+Bremen Focke-Museum,108.2537032138606
+Bremen Föhrenstraße,80.92291437748288
+Bremen Fontanestraße,54.33699559172601
+Bremen Franz-Stickan-Straße,120.10773248764107
+Bremen Fraunhoferstraße,73.83261538461538
+Bremen Fresenbergstraße,69.10451538682773
+Bremen Friedhof Huchting,100.91814062271598
+Bremen Friedhof Huckelriede,78.84628770301624
+Bremen Friedhofstraße,114.98309097425093
+Bremen Friedrich-Engels-Straße,104.26469315691776
+Bremen Friedrich-Karl-Straße,128.89983921001772
+Bremen Friedrich-Mißler-Straße,103.95356098528028
+Bremen Friedrich-Stampfer-Straße,77.11642791831758
+Bremen Fuldahafen,79.8406715979805
+Bremen Fultonstraße,80.77631931422448
+Bremen Fürther Straße,82.65391559354832
+Bremen Gastfeldstraße,90.42882019763799
+Bremen Gemeinschaftszentrum Obervieland,46.65565818233096
+Bremen Georg-Bitter-Straße,98.32090520418694
+Bremen Georg-Gries-Straße,96.88396042464072
+Bremen Georg-Henschel-Straße,127.3914294143679
+Bremen Gerhard-Rohlfs-Straße,70.81165646424431
+Bremen Glockenstraße/Bf Hemelingen,123.0118494750767
+Bremen Goldbergplatz,99.50588019110621
+Bremen Goosestraße,74.83516783598706
+Bremen Gottfried-Menken-Straße,91.86197014804463
+Bremen Gottlieb-Daimler-Straße,98.2046313799622
+Bremen Grasberger Straße,73.70948258902223
+Bremen Graubündener Straße,119.4225150714392
+Bremen Gravestraße,73.83397365532382
+Bremen Grenzstraße,82.44058624577227
+Bremen Grenzwehr,75.32580277436452
+Bremen Grohn-Markt,54.666619046768695
+Bremen Gröpelingen,21.803680911971902
+Bremen Gustav-Heinemann-Bürgerhaus,77.60149124407151
+Bremen Gustavstraße,100.40990987290189
+Bremen Güterbahnhof Grolland,32.339059674502714
+Bremen GVZ-Verkehrsgewerbe Ost,149.48336633663365
+Bremen GVZ-Zentralbereich,143.98109024517476
+Bremen Habenhauser Brückenstraße,92.82084950110865
+Bremen Haferkamp,99.32315448447373
+Bremen Haferwende,74.81655844155844
+Bremen Hakenwehrstraße,75.82949371699144
+Bremen Halmerweg,119.68022598870057
+Bremen Hanfstraße,51.865254604189566
+Bremen Hannoversche Straße,119.98513920240782
+Bremen Hansator,85.60169460031959
+Bremen Hansestraße,104.51536768881317
+Bremen Harriersand,72.38854679802955
+Bremen Hasenbüren,5.759241927936359
+Bremen Hasenbürener Deich,34.899548800759916
+Bremen Hasenbüren Hagens,37.91860192352803
+Bremen Hauptbahnhof,78.83391681800867
+Bremen Hauptbahnhof-Nord/Messe,88.36851295173578
+Bremen Hauptzollamt,71.2001998667555
+Bremen Hegeweg,41.11747741699219
+Bremen Heiligenbergstraße,127.75650962292085
+Bremen Heinrich-Hertz-Straße,83.31048735416006
+Bremen Heinz-Hinners-Platz,79.4314682688697
+Bremen Heisiusstraße,81.21931048226385
+Bremen Helene-Lange-Straße,77.55675960312621
+Bremen Helmer,83.53978395468317
+Bremen Helsingborger Straße,48.023859300684684
+Bremen Hemmstraße,92.73520960590665
+Bremen Herbartstraße,59.44638403990025
+Bremen Herbststraße,104.81440112870987
+Bremen Herdentor,111.3206384239259
+Bremen Hermann-Frese-Straße,65.10952623535405
+Bremen Hermann-Funk-Straße,121.56642259414225
+Bremen Hermann-Helms-Straße,63.968643787147265
+Bremen Hermann-Koenen-Straße,113.40769699305133
+Bremen Hermann-Osterloh-Straße,79.46990248781097
+Bremen Heukämpendamm,82.49086450567616
+Bremen Hexenstieg,77.87014656724094
+Bremen H.-H.-Meier-Allee,112.13850125710815
+Bremen Hochschule Bremen,101.25048491901852
+Bremen Hochschule für Künste,59.247565351102
+Bremen Höger Weg,97.52972377902321
+Bremen Hohenbuchener Straße,62.387345099511826
+Bremen Hohenesch,66.71347771297951
+Bremen Hohenhorster Weg,82.01022857739275
+Bremen Hohentorsplatz,108.502313096122
+Bremen Hohweg,1.4002985074626866
+Bremen Hohwisch,60.792308824250746
+Bremen Hollerallee,123.2454828112167
+Bremen Holsteiner Straße,66.00626786270126
+Bremen Holthorster Weg,83.60980056210596
+Bremen Holzweide,46.31559823514145
+Bremen Höpkens Ruh,79.55082587974147
+Bremen Horner Mühle,94.05412503349795
+Bremen Horn (Horner Kirche),84.88488530171833
+Bremen Huckelriede,60.493796845541915
+Bremen Huder Straße,106.27926268731898
+Bremen Humboldtstraße,115.27402050147933
+Bremen Hüttenhafen,91.6858254585881
+Bremen Hüttenstraße Süd,35.44518027961737
+Bremen Ikensdamm,67.12121212121212
+Bremen Im Achterkamp,61.12107788851975
+Bremen Im Holter Feld,108.74021263601351
+Bremen Im Holze,75.49494839760999
+Bremen In den Barken,87.05521126760563
+Bremen In der Laake,74.77904994529679
+Bremen Innsbrucker Straße,34.13170205934963
+Bremen Jadestraße,46.51641803145776
+Bremen Johann-Bornemacher-Straße,35.8725697786333
+Bremen Joseph-Haydn-Straße,110.05931476391393
+Bremen Julius-Brecht-Allee,100.51137976663058
+Bremen Kalischer Straße,91.97233982500705
+Bremen Kap-Horn-Straße,78.85057772617465
+Bremen Kapitän-König-Weg,65.32990968655923
+Bremen Karl-Bröger-Straße,54.08448417455658
+Bremen Karl-Carstens-Brücke,161.5827681401452
+Bremen Karl-Peters-Straße,33.95247014750644
+Bremen Kaspar-Ohm-Straße,65.31444313262494
+Bremen Kattenescher Weg,65.5131635955858
+Bremen Kattenturm-Mitte,68.5280327812698
+Bremen Kirchbachstraße,120.58121648834219
+Bremen Kirchweg,116.55494248680445
+Bremen Klärwerk,65.74455871801004
+Bremen Kleine Marschstraße,93.52050499915269
+Bremen Klinikum Bremen-Mitte,127.54315016965286
+Bremen Klinikum Bremen-Ost,93.03979274865864
+Bremen Klinikum Haupteingang,10.846249342451342
+Bremen Klinikum Links der Weser,81.93406616041635
+Bremen Kluvenhagener Straße,84.12114888450448
+Bremen Knoops Park,60.62620913372286
+Bremen Köhler Brücke,44.08273381294964
+Bremen Köhlhorster Straße,61.4280692751764
+Bremen Konsul-Smidt-Straße,71.38580996782454
+Bremen Kopernikusstraße,98.7823253964748
+Bremen Krefelder Straße,97.26463826674562
+Bremen Kriegerdenkmal,44.19069104725718
+Bremen Krimpelweg,72.86933717282871
+Bremen Krönkeskamp,86.34705332086062
+Bremen Kuhgrabenweg,108.54261257908448
+Bremen Kulenkampffallee,52.207596905105056
+Bremen Kurfürstenallee,108.16863081516556
+Bremen Kurt-Huber-Straße,81.38921467867722
+Bremen Lachmundsdamm,120.95965552350246
+Bremen Landrat-Berthold-Straße,55.68636724739964
+Bremen Landshuter Straße,97.86970954356846
+Bremen Lange Reihe,70.06685804130834
+Bremen Lankenauer Höft,-4.120586115781888
+Bremen La-Rochelle-Straße,59.24180460889322
+Bremen Lerchenstraße,31.604456824512535
+Bremen-Lesum Kirche,66.23293346692301
+Bremen Lesum Park,82.85222535211268
+Bremen Lindenhofstraße,94.8862672451616
+Bremen Linzer Straße,108.18112363738004
+Bremen Lise-Meitner-Straße,76.17407698948759
+Bremen Lloydstraße,131.66235280401074
+Bremen Lohmannstraße,121.52313624678663
+Bremen Löhstraße,85.41536804595256
+Bremen Loignystraße,96.1233658504214
+Bremen Louise-Böhm-Weg,54.57886393659181
+Bremen Ludwig-Erhard-Straße,150.33757001292545
+Bremen Ludwig-Quidde-Straße,83.94755225522552
+Bremen Ludwig-Sütterlin-Straße,82.96459096459097
+Bremen Ludwig-von-Kapff-Straße,68.85115334397214
+Bremen Luley,43.506702412868634
+Bremen Machandelweg,66.40054923499412
+Bremen Mackensenweg,72.34722598105549
+Bremen Malerstraße,89.30988463042628
+Bremen Malthusstraße,57.20079739035882
+Bremen Marcuskaje,48.177120946387426
+Bremen Margaretenallee,66.37840232458439
+Bremen Marschstraße,76.957995951417
+Bremen Marßel,13.406481378543635
+Bremen Martin-Buber-Straße,42.43561375895845
+Bremen Martinistraße,122.46881633965906
+Bremen Martin-Luther-Straße,66.10932487877658
+Bremen Martinsheide,30.132754342431763
+Bremen Martinshof Aumund,-51.17857142857143
+Bremen Mercedes-Benz Tor 7,161.16363367362035
+Bremen Mercedes-Benz Tor 8,133.71747393041613
+Bremen Metzer Straße,123.0994672231484
+Bremen Meyerstraße,89.81981121056711
+Bremen Mittelsbürener Landstraße,113.05373281603912
+Bremen Mittelshuchtinger Dorfstraße,100.90465631929047
+Bremen Modersohnweg,68.05352037763447
+Bremen Moorstraße,90.77930304367005
+Bremen Moorstücke,52.02580395716711
+Bremen Morsumer Straße,71.02438054856235
+Bremen Müdener Straße,109.55712884944575
+Bremen Mühlenfeldstraße,65.02816819268676
+Bremen Mühlenhauser Fleet,163.81314521679283
+Bremen Mülheimer Straße,118.14291078049467
+Bremen Munte,114.38647859922179
+Bremen Nauheimer Straße,97.33990543735224
+Bremen Nedderland,65.41073862087762
+Bremen Neuenkirchener Weg,55.15322518247234
+Bremen Neuenlander Kämpe,80.75896090709088
+Bremen Neuenlander Straße,90.99189284120791
+Bremen Neuer Schutzdeich,38.29673063255153
+Bremen Neue Vahr Nord,27.12869811732209
+Bremen Neustädter Hafen,87.83785360163313
+Bremen Neuwieder Straße,113.58502012132861
+Bremen Nienburger Straße,80.66360038731949
+Bremen Norderländer Straße,89.374787867423
+Bremen Nürnberger Straße,96.35616987179488
+Bremen Nußhorn,81.18024051513316
+Bremen Oberneulander Heerstraße,58
+Bremen Obernstraße,114.49969016111622
+Bremen Oberste Kämpe,80.82104997476023
+Bremen Obervielander Straße,161.62976556950036
+Bremen Oewerweg,55.41735217403766
+Bremen Ohmstraße,81.88004836759372
+Bremen Ortsamt Seehausen,55.304545454545455
+Bremen Oslebshauser Landstraße,92.90111537758274
+Bremen Osterholzer Friedhof,99.15220201671981
+Bremen Osterholzer Landstraße,112.7020016772412
+Bremen Osterholzer Möhlendamm,114.12404160024292
+Bremen Osterhop,69.3000921470257
+Bremen Ostwaldstraße,85.37054691419969
+Bremen Otto-Braun-Straße,69.35934048343205
+Bremen Panrepel-Nord,78.8376263449625
+Bremen Panrepel-Süd,68.61034371988436
+Bremen Pappelstraße,109.40460474253102
+Bremen Parkallee,56.24076186131387
+Bremen Parkstraße,122.874190109532
+Bremen Parsevalstraße,93.32926829268293
+Bremen Paul-Feller-Straße,263.0901823632276
+Bremen Peter-Henlein-Straße,96.43870040056147
+Bremen Pfarrfeldsweg,70.64297682211672
+Bremen Philipp-Scheidemann-Straße,79.19134121540105
+Bremen Piependamm,64.6264398199324
+Bremen Poggenburg,60.77404361816232
+Bremen Polizeipräsidium,118.39272758311638
+Bremen Rablinghausen,12.930518045666584
+Bremen Radio Bremen/VHS,108.57398935779194
+Bremen Rastenburger Straße,62.34063011850853
+Bremen Rechtenflether Straße,96.54652944732662
+Bremen Reedeich-Nord,114.58284204106526
+Bremen Rekumer Siel,76.62505345208861
+Bremen Rembertistraße,122.57177747536306
+Bremen Rennplatz,98.3168090132655
+Bremen Rhododendronpark,69.8252346193952
+Bremen Ricarda-Huch-Straße,30.37314456473816
+Bremen Ricardostraße,91.80333119795003
+Bremen Richthofenstraße,66.81415788356794
+Bremen Riedemannstraße,99.63936766600509
+Bremen Riensberg,103.23815708302217
+Bremen Riespot,77.28611774929394
+Bremen Ringofenstraße,58.46688604858197
+Bremen Ritterhuder Heerstraße,76.14670180893451
+Bremen Robert-Koch-Straße,114.44575561052795
+Bremen Roccoweg,73.02699355168231
+Bremen Rockwinkeler Heerstraße,58.97867031551835
+Bremen Roland-Center,11.414111957219813
+Bremen Rönnebecker Straße,66.89119377971782
+Bremen Rosenpfad,113.87867606685555
+Bremen Rotdornallee,97.28482674950338
+Bremen Rotes-Kreuz-Krankenhaus,123.8631373478207
+Bremen Rotterdamer Straße,92.92621796676993
+Bremen Rudolf-Alexander-Schröder-Straße,17.79790897527379
+Bremen Ruppertshainer Straße,95.47945400255936
+Bremen Saarstraße,99.54027943697086
+Bremen Sandkuhlenweg,60.94458226879451
+Bremen Schevemoorer Landstraße,75.01236956671964
+Bremen Schlehenweg,68.77946484904275
+Bremen Schleiermacherstraße,86.71690756105427
+Bremen Schlengstraße,78.63429994961652
+Bremen Schloßparkstraße,77.18635992788147
+Bremen Schneverdinger Straße,99.78687638240353
+Bremen Schönebecker Straße,66.40184782413316
+Bremen Schorf,65.87560184394741
+Bremen Schulzentrum Lerchenstraße,6.988857938718663
+Bremen Schuppen 1,65.29690189328744
+Bremen Schüsselkorb,89.57764546188461
+Bremen Schwankhalle,111.2845070112972
+Bremen Schwarzer Weg,63.86882453151618
+Bremen Schweizer Eck,69.31692025384204
+Bremen Sebaldsbrück (Bus+Tram),31.61392520850148
+Bremen Seefahrtstraße,65.60954225352113
+Bremen-Seehausen Schule,64.60478468899521
+Bremen Senator-Blase-Straße,160.04215087650186
+Bremen Senator-Harmssen-Straße,200.078390323331
+Bremen Senator-Mester-Straße,171.09719934102142
+Bremen Senator-Nolting-Hauff-Straße,186.82102869139257
+Bremen Senator-Paulmann-Straße,168.58662762323084
+Bremen Senator-Theil-Straße,66.58103494896234
+Bremen Sielhof,88.55554070861042
+Bremen Sielwall,127.4732876753513
+Bremen Silbermannstraße,29.35222031617549
+Bremen Simon-Hermann-Post-Weg,77.30773896166909
+Bremen Soester Straße,29.24343544857768
+Bremen Solinger Straße,95.36558640806122
+Bremen Sollingstraße,89.21723937099593
+Bremen Stackkamp,85.70561822067137
+Bremen Stader Landstraße,64.23837983618566
+Bremen Stader Straße/Bismarckstraße,137.7561978590678
+Bremen Stader Straße/Hamburger Straße,118.73172254479616
+Bremen Stadtwaldsee,95.98766905330152
+Bremen Stahlwerk Tor 1,92.22149652136873
+Bremen Stahlwerk Tor 2,95.7476370510397
+Bremen Stahlwerk Tor 3,91.05488069414316
+Bremen Staustraße,77.79293600927225
+Bremen Stedinger Brücke,46.72654155495979
+Bremen Steenkuhlenweg,46.13568330718834
+Bremen Stehnckenshoff,61.621606840343084
+Bremen Stellfeldsweg,28.6375
+Bremen Stellichter Straße,102.28287492810988
+Bremen Stenumer Straße,126.20074449305396
+Bremen Steubenstraße,115.34305669021417
+Bremen St. Joseph-Stift,112.603665419002
+Bremen St.-Jürgen-Straße,83.52669010844188
+Bremen St.-Magnus-Straße,24.527320359281436
+Bremen Stockholmer Straße,66.6594656928695
+Bremen Straubinger Straße,31.293333333333333
+Bremen Stresemannstraße,126.73015537641399
+Bremen Stromer Berg,58.542857142857144
+Bremen Stromer Straße,145.43912633483703
+Bremen-Strom Schule,32.132635253054104
+Bremen Stumper,47.62093520056967
+Bremen Stuttgarter Straße,84.31110349084425
+Bremen Süntelstraße,86.2004318679902
+Bremen Tannenhof,89.45882364242418
+Bremen Taunusstraße,63.15001917512115
+Bremen Teneverstraße,102.12522540812306
+Bremen Tenever-Zentrum,106.98160356193698
+Bremen Theater am Goetheplatz,92.1052657843783
+Bremen Theater am Leibnizplatz,88.62749990666185
+Bremen Theodor-Heuss-Allee,111.03100736445732
+Bremen Togostraße,74.34020391696619
+Bremen Trinidadstraße,85.21465544786452
+Bremen Twiedelftsweg,70.17458316179497
+Bremen Überseestadt-Nord,15.768684864175789
+Bremen Überseetor,59.20227059191983
+Bremen Ulrichsplatz,90.9776892042969
+Bremen Umspannwerk,35.51770833333333
+Bremen Universität-Nord,29.558099634210066
+Bremen Universität-Ost,2.596056369409012
+Bremen Universität-Süd,84.31838036534378
+Bremen Universität/Zentralbereich,79.07880825117016
+Bremen Unterführung B75,374.3169642857143
+Bremen Upsalastraße,61.68982304515494
+Bremen Utbremer Ring,90.69556176103619
+Bremen Utbremer Straße,103.57188557418618
+Bremen Varreler Landstraße,101.83351318020657
+Bremen Verdunstraße,113.14830540698117
+Bremen Vereinsstraße,100.9812182845827
+Bremen Visbeker Straße,141.16622857743664
+Bremen Von-Ossietzky-Straße,98.04634162849987
+Bremen Von-Thünen-Straße Nord,74.65477370333663
+Bremen Von-Thünen-Straße Süd,104.09496874069663
+Bremen Vorberger Straße,54.37532613700312
+Bremen Vor den Wischen,71.37647255689424
+Bremen Vorlöhnhorster Weg,73.18777723016264
+Bremen Vorstraße,108.96849687636636
+Bremen Waller Friedhof,94.32900205547054
+Bremen Waller Ring,75.53796921907055
+Bremen Waller Straße,127.28071459950212
+Bremen Walther-Jacobs-Straße,78.78762864493997
+Bremen Wartburgstraße,106.52316930149645
+Bremen Warturmer Heerstraße,69.82621951219512
+Bremen Wasserhorster Straße,87.72598870056497
+Bremen Wasserturm,68.54984984984985
+Bremen Wasserweg,57.425904365904366
+Bremen Waterfront (Use Akschen),69.2855293032496
+Bremen Wätjens Park,66.74062773830512
+Bremen Wätjenstraße,107.67047751711485
+Bremen Weidedamm-Nord,2.747619864482374
+Bremen Weidedamm-Süd,15.641165151615686
+Bremen Werner-Steenken-Straße,102.87137584381526
+Bremen Werner-von-Siemens-Straße,97.7031186440678
+Bremen Werrahafen,83.62695521748446
+Bremen Weserpark,90.13382049885118
+Bremen Weserpark-Süd,74.20756478834271
+Bremen Weserwehr,13.401833108800535
+Bremen Wessels,41.4291825095057
+Bremen Westerstraße,119.90352805089647
+Bremen Wetterungsweg,88.4857946554149
+Bremen Wiener Straße,120.21853037985944
+Bremen Wildeshauser Straße,107.1975354742345
+Bremen Wilhelm-Brandhorst-Straße,83.33481620615227
+Bremen Wilhelm-Busch-Weg,106.91846465609727
+Bremen Wilhelm-Herbst-Straße,97.54357394366197
+Bremen Wilhelm-Kaisen-Brücke,114.02068148949333
+Bremen Wilhelm-Leuschner-Straße,113.67136195842238
+Bremen Wilhelm-Röntgen-Straße,73.76283392201914
+Bremen Wilhelm-Zöllig-Straße,-63.059322033898304
+Bremen Willakedamm,73.02584842623527
+Bremen Willigstraße,129.20884337003548
+Bremen Wilseder-Berg-Straße,102.48992667717398
+Bremen Witzlebenstraße,203.74640230252638
+Bremen wohninvest WESERSTADION,81.39957809432308
+Bremen Wolfskuhlenweg,80.4961625282167
+Bremen Woltmershauser Friedhof,94.22705120692858
+Bremen Ziegeleiweg,28.435023771790807
+Bremen Zum Donaufleet,60.84989756979313
+Bremen Zum Huchtinger Bahnhof,85.51301115241635
+Bremen Zum Kränholm,72.667132193595
+Brinkum-Nord Ochtum Park (IKEA),51.464511373209774
+Brinkum(Stuhr) Am Bahnhof,66.71655820679682
+Brinkum(Stuhr) IKEA/Marktkauf,18.323578474035394
+Brinkum(Stuhr) Magdeburger Straße,70.68040460561713
+Brinkum(Stuhr) Marktplatz,15.58930102915952
+Brinkum(Stuhr) Schule Brunnenweg,14.466796875
+Brinkum(Stuhr) Schule Feldstraße,79.92842302098484
+Delmenhorst Sandhausen,9.614834673815906
+Lilienthal,26.480341117556645
+Lilienthal Auf dem Kamp,91.73059653624118
+Lilienthal Feldhäuser Straße,113.705657909081
+Lilienthal Kutscher Behrens,96.86794180752526
+Lilienthal Lilienthal-Mitte,106.71738327318197
+Lilienthal Moorhauser Landstraße,95.42040816326531
+Lilienthal Schoofmoor,89.19680766583726
+Lilienthal Trupe,112.09532968521428
+Lilienthal Truperdeich,108.8996612721114
+nan,55.50943358098869
+Neuenkirchen(Schwanewede) Ahnten,57.177048850176845
+Neuenkirchen(Schwanewede) Landwehr,38.90549727750946
+Neuenkirchen(Schwanewede) Marktplatz,46.03141795272109
+Neuenkirchen(Schwanewede) Vorbruch,50.36889451242764
+Schwanewede Am Markt,56.90916802464451
+Schwanewede Am Spreeken,17.654867666111418
+Schwanewede Dreienkamp,48.75145106603069
+Schwanewede Eichengrund,62.922087158929266
+Schwanewede Hospitalstraße,58.49137241458119
+Schwanewede Insterburger Weg,52.204654586825946
+Schwanewede Landhaus Schwanewede,24.23730645970887
+Schwanewede Molkereiweg,32.813264649066326
+Schwanewede Schützenweg,37.219022712413654
+Schwanewede Zum Marktplatz,51.425975863136024
