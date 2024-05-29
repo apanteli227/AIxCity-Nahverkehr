@@ -1,5 +1,8 @@
 from urllib.parse import unquote
 
+import sys
+sys.path.append("/Users/jasperclemens/Desktop/AIxCity-Nahverkehr/src")
+
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
