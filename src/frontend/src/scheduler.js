@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Funktion zur Aktualisierung der Daten und Schreiben in die CSV-Datei
-async function updateData() {
+export async function updateData() {
     try {
         const data = await getAvgStopDelay();
         const data2 = await getAvgLineDelay();
@@ -22,8 +22,11 @@ async function updateData() {
     } catch (error) {
         console.error('Error updating data:', error);
     }
+   
 }
-
+module.exports = {
+    updateData
+};
 // Hilfsfunktion zur Konvertierung der Daten in CSV-Format
 function convertToCSV(data) {
     const headers = Object.keys(data[0]);
@@ -37,7 +40,7 @@ function convertToCSV(data) {
         const values = headers.map(header => row[header]);
         csvRows.push(values.join(','));
     }
-
+    console.log("Hallo");
     return csvRows.join('\n');
 }
 
