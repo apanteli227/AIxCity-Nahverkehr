@@ -32,6 +32,7 @@ const MapComponent = () => {
                 <ul className="navigation-bar-map-buttons">
                   <li>
                     <Nightmode />
+                    <Heatmap />
                   </li>
                 </ul>
               </RouteProvider>
