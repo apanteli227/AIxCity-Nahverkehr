@@ -8,7 +8,7 @@ const lines = ['10 => Gröpelingen', '10 => Sebaldsbrück', '10 => Waller Friedh
 export default function Prognose() {
     const [selectedLine, setSelectedLine] = useState('22 => Universität-Ost');
     const [selectedRadio, setSelectedRadio] = useState("classification");
-    const [result, setResult] = useState([]);
+    const [plots, setPlots] = useState([]);
 
     function handleRadioGroupChange(event) {
         setSelectedRadio(event.target.value);
@@ -19,8 +19,13 @@ export default function Prognose() {
         getML(selectedRadio, selectedLine)
             .then((response) => {
                 const data = response.data;
-                console.log("Result:", result);
-                setResult(data);
+                console.log("Result:", data);
+                const flattenedData = data.flat(Infinity);
+                const base64Strings = [];
+                for (const base64 of flattenedData) {
+                    base64Strings.push('data:image/png;base64,' + base64);
+                }
+                setPlots(base64Strings);
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -61,7 +66,11 @@ export default function Prognose() {
                 </Button>
                 <Box>
                     <h3>Ergebnis</h3>
-                    {result}
+                    {plots.map((plot, index) => (
+                        <div key={index}>
+                            <img src={plot} alt={`Plot ${index + 1}`}/>
+                        </div>
+                    ))}
                 </Box>
             </div>
         </main>

@@ -32,6 +32,7 @@ async def get_forecast(mode: str, line_with_direction: str):
     direction = get_direction(decoded_line_with_direction)
     is_line22 = line == "22"
     if mode == "classification" and is_line22:
+        print(classification_with_line_22())
         return classification_with_line_22()
     elif mode == "classification" and not is_line22:
         return classification_with_line(line, direction)
@@ -52,53 +53,69 @@ def get_direction(line_with_direction):
 @app.get("/get_cards_data")
 async def read_data_cards():
     return [
-        read_data_last_7_days_delay(),
-        read_data_weekend_day_delay(),
-        read_data_public_holiday_delay(),
-        read_data_football_match_day_delay(),
+        await read_data_last_7_days_delay(),
+        await read_data_weekend_vs_weekday_delay(),
+        await read_data_means_of_transport_delay(),
+        await read_data_line_delay_round(),
     ]
 
 
 # durchschn. Verspätungen in den letzten 7 Tagen
-# todo fix query
 @app.get("/interesting_statistic_last_7_days")
 async def read_data_last_7_days_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week' AND current_date < CURRENT_DATE;"
+    query = f"SELECT ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE current_date >= CURRENT_DATE - INTERVAL '1 week';"
+    return read_data(query)
+
+
+@app.get("/interesting_statistic_weekend_vs_weekday")
+async def read_data_weekend_vs_weekday_delay():
+    query = f"SELECT ROUND(AVG(CASE WHEN weekday NOT IN ('Saturday', 'Sunday') THEN arrival_delay_seconds END), 0) AS weekdays_avg, ROUND(AVG(CASE WHEN weekday IN ('Saturday', 'Sunday') THEN arrival_delay_seconds END), 0) AS weekends_avg FROM transit_data;"
+    return read_data(query)
+
+
+@app.get("/get_avg_means_of_transport_delay")
+async def read_data_means_of_transport_delay():
+    query = f"SELECT CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END AS means_of_transport, ROUND(AVG(departure_delay_seconds), 0) AS average_delay FROM transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY CASE WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) <= 10 THEN 'Bahn' WHEN line ~ '^[0-9]+$' AND CAST(line AS INTEGER) > 10 THEN 'Bus' ELSE 'Sonderlinien' END ORDER BY average_delay DESC;"
     return read_data(query)
 
 
 # durchschn. Verspätung an Wochenendtagen
-@app.get("/interesting_statistic_weekend")
-async def read_data_weekend_day_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE weekday IN ('Saturday', 'Sunday');"
+#@app.get("/interesting_statistic_weekend")
+#async def read_data_weekend_day_delay():
+#    query = f"SELECT AVG(departure_delay_seconds) FROM transit_data WHERE weekday IN ('Saturday', 'Sunday');"
+#    return read_data(query)
+
+
+@app.get("/get_avg_line_delay_round")
+async def read_data_line_delay_round():
+    query = f"SELECT line, ROUND(AVG(departure_delay_seconds),0) AS avg_departure_delay FROM transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line ORDER BY avg_departure_delay DESC;"
+    print(query)
     return read_data(query)
 
 
 # durchschn. Verspätung an Feiertagen
-@app.get("/interesting_statistic_public_holiday")
-async def read_data_public_holiday_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE is_holiday = 1;"
-    return read_data(query)
+#@app.get("/interesting_statistic_public_holiday")
+#async def read_data_public_holiday_delay():
+#    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE is_holiday = 1;"
+#    return read_data(query)
 
 
-# durchschn. Verspätungen an einem (noch kommenden) zufälligen Heimspieltag von Werder Bremen
-# Hieraus Statistik für Poster erstellen: an Werderspieltagen xy% mehr Verspätungen
-# todo fix query, no result!!!!!!!!!!!!!!!!
-@app.get("/interesting_statistic_football_match_day")
-async def read_data_football_match_day_delay():
-    query = "SELECT AVG(departure_delay_seconds) FROM bsag_data WHERE start_date = '2024-03-30';"
-    return read_data(query)
+# durchschn. Verspätungen an einem zufälligen Heimspieltag von Werder Bremen
+#@app.get("/interesting_statistic_football_match_day")
+#async def read_data_football_match_day_delay():
+#    query = """SELECT AVG(departure_delay_seconds) FROM transit_data WHERE "current_date" = '2024-03-30';"""
+#    return read_data(query)
 
 
 @app.get("/all_stops")
 async def read_data_stops():
-    query = "SELECT DISTINCT stop_name FROM public.bsag_data"
+    query = "SELECT DISTINCT stop_name FROM transit_data"
     return read_data(query)
 
 
 @app.get("/all_lines")
 async def read_data_lines():
-    query = "SELECT DISTINCT line FROM public.bsag_data"
+    query = "SELECT DISTINCT line FROM transit_data"
     return read_data(query)
 
 
@@ -128,9 +145,9 @@ async def read_data_delay_frequency(mode: str, mode_input: str, frequency: str, 
     mode_input_str = unquote(mode_input).split(',')
 
     if frequency == "daily":
-        query = f"SELECT DATE_TRUNC('day', start_time) AS date, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('day', start_time);"
+        query = f"SELECT DATE_TRUNC('day', start_time) AS date, COUNT(*) AS delay_occurrences FROM public.transit_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('day', start_time);"
     elif frequency == "hourly":
-        query = f"SELECT DATE_TRUNC('hour', start_time) AS hour, COUNT(*) AS delay_occurrences FROM public.bsag_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('hour', start_time);"
+        query = f"SELECT DATE_TRUNC('hour', start_time) AS hour, COUNT(*) AS delay_occurrences FROM public.transit_data WHERE {mode_str} IN ('{mode_input_str}') AND start_time >= '{start_time}' AND start_time <= '{end_time}' GROUP BY DATE_TRUNC('hour', start_time);"
     else:
         return "Invalid frequency parameter. Please choose either 'daily' or 'hourly'."
 
@@ -151,7 +168,7 @@ async def read_data_delay_rate(mode: str, mode_input: str, start_time: str, end_
     start_time = get_time(start_time)
     end_date = get_date(end_time)
     end_time = get_time(end_time)
-    query = f"SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM public.bsag_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
+    query = f"SELECT SUM(departure_delay_seconds) AS total_departure_delay,COUNT(*) AS total_records,SUM(departure_delay_seconds) / COUNT(*) AS total_delay_rate FROM public.transit_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
 
     return read_data(query)
 
@@ -176,7 +193,7 @@ async def read_data_arrival_departure_delay(mode: str, mode_input: str, aggregat
 
     print(statistic, mode, mode_input_str, aggregate, start_date, start_time, end_date, end_time)
 
-    query = f"SELECT {aggregate_str}{statistic} FROM public.bsag_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
+    query = f"SELECT {aggregate_str}{statistic} FROM public.transit_data WHERE {mode_str} IN ({','.join(mode_input_str)}) AND (current_date + starting_stop_time) BETWEEN '{start_date} {start_time}' AND '{end_date} {end_time}';"
 
     print(query)
     return read_data(query)
@@ -204,10 +221,10 @@ def get_aggregate(aggregate):
 
 
 def get_mode(mode):
-    if mode == 'stop' or mode == 'line':
+    if mode == 'stop_name' or mode == 'line':
         return mode
     else:
-        return 'what to do with mixed mode?'
+        return 'mixed mode not implemented yet' # todo
 
 
 def get_date(date_string):

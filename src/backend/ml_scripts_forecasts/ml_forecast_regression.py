@@ -1,7 +1,8 @@
 import logging
 import os
 import warnings
-
+import io
+import base64
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -15,6 +16,14 @@ pd.options.mode.chained_assignment = None  # Deaktiviere SettingWithCopyWarning
 
 warnings.filterwarnings("ignore", message="No positive samples in y_true*")
 
+
+def plot_to_base64_string(plot):
+    buffer = io.BytesIO()
+    plot.savefig(buffer, format='png')
+    buffer.seek(0)
+    plot_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+    plt.close()
+    return plot_base64
 
 def split_dataframe_by_time(df_stop_times):
     """
@@ -113,7 +122,9 @@ def plot_feature_importance(feature_names_dict, bst):
         plt.ylabel('Importance Score')
         plt.title('Feature Importance')
         plt.xticks(range(len(features)), features)
-        plt.show()
+        #plt.show()
+        feature_importance_plot = plot_to_base64_string(plt)
+        return feature_importance_plot
     except ValueError as var_error:
         logging.error(
             f"Feature_Importance konnte nicht geplottet werden, da keine Variable für Entscheidung maßgebend war: {var_error}")
@@ -132,6 +143,11 @@ def regression_with_line_22():
     df_stop_times = pd.read_csv("stop_times_bsag_updates.csv")
     df_traffic = pd.read_csv('traffic_data_bsag_updates.csv')
     df_weather = pd.read_csv('weather_bremen_df.csv')
+
+    # Listen für Plots erstellen
+    rsme_plots = []
+    mae_plots = []
+    mse_plots = []
 
     # Liste für x- und y-Matrizen erstellen
     x_matrices = []
@@ -264,7 +280,10 @@ def regression_with_line_22():
     plt.title('Mean Squared Error (MSE) für verschiedene Anzahl an Haltestellen')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    mse_plot = plot_to_base64_string(plt)
+    mse_plots.append(mse_plot)
+
 
     # Plot MAE
     plt.figure(figsize=(10, 6))
@@ -275,7 +294,9 @@ def regression_with_line_22():
     plt.title('Mean Absolute Error (MAE) für verschiedene Anzahl an Haltestellen')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    mae_plot = plot_to_base64_string(plt)
+    mae_plots.append(mae_plot)
 
     # Plot RMSE
     plt.figure(figsize=(10, 6))
@@ -287,6 +308,8 @@ def regression_with_line_22():
     plt.legend()
     plt.grid(True)
     plt.show()
+    rmse_plot = plot_to_base64_string(plt)
+    rsme_plots.append(rmse_plot)
 
     if knowledge_delay_pevius_stop:
         feature_names_dict = {
@@ -430,7 +453,8 @@ def regression_with_line_22():
             'f62': 'weather_description'
         }
     # Plot Feature Importance
-    plot_feature_importance(feature_names_dict, bst)
+    feature_importance_plot = plot_feature_importance(feature_names_dict, bst)
+    return feature_importance_plot, mse_plots, mae_plots, rsme_plots
 
 
 def regression_with_line(line="6", direction="Universität"):
@@ -447,6 +471,11 @@ def regression_with_line(line="6", direction="Universität"):
     df_stop_times = pd.read_csv("stop_times_bsag_updates.csv")
     df_stops_line = pd.read_csv("stops_bremen.csv", sep=";")
     df_weather = pd.read_csv('weather_bremen_df.csv')
+
+    # Listen für Plots erstellen
+    rsme_plots = []
+    mae_plots = []
+    mse_plots = []
 
     # Liste für x- und y-Matrizen erstellen
     x_matrices = []
@@ -578,7 +607,9 @@ def regression_with_line(line="6", direction="Universität"):
     plt.title('Mean Squared Error (MSE) für verschiedene Anzahl an Haltestellen')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    mse_plot = plot_to_base64_string(plt)
+    mse_plots.append(mse_plot)
 
     # Plot MAE
     plt.figure(figsize=(10, 6))
@@ -589,7 +620,9 @@ def regression_with_line(line="6", direction="Universität"):
     plt.title('Mean Absolute Error (MAE) für verschiedene Anzahl an Haltestellen')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    mae_plot = plot_to_base64_string(plt)
+    mae_plots.append(mae_plot)
 
     # Plot RMSE
     plt.figure(figsize=(10, 6))
@@ -600,7 +633,9 @@ def regression_with_line(line="6", direction="Universität"):
     plt.title('Root Mean Squared Error (RMSE) für verschiedene Anzahl an Haltestellen')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    #plt.show()
+    rmse_plot = plot_to_base64_string(plt)
+    rsme_plots.append(rmse_plot)
 
     if knowledge_delay_pevius_stop:
         feature_names_dict = {
@@ -723,10 +758,10 @@ def regression_with_line(line="6", direction="Universität"):
             'f51': 'weather_warning',
             'f64': 'weather_warning',
             'f9': 'humidity_percentage',
-            'f21': 'humidity_percentage',
-            'f34': 'humidity_percentage',
-            'f47': 'humidity_percentage',
-            'f60': 'humidity_percentage',
+            'f22': 'humidity_percentage',
+            'f35': 'humidity_percentage',
+            'f48': 'humidity_percentage',
+            'f61': 'humidity_percentage',
             'f2': 'is_holiday',
             'f15': 'is_holiday',
             'f28': 'is_holiday',
@@ -741,16 +776,17 @@ def regression_with_line(line="6", direction="Universität"):
             'f23': 'weather_description',
             'f36': 'weather_description',
             'f49': 'weather_description',
-            'f52': 'weather_description'
+            'f62': 'weather_description'
         }
     # Plot Feature Importance
-    plot_feature_importance(feature_names_dict, bst)
+    feature_importance = plot_feature_importance(feature_names_dict, bst)
+    return feature_importance, mse_plots, mae_plots, rsme_plots
 
 
 # Funktionsaufruf mit gewünschten Parametern
 
 # Prognose der Linie 22 mit Einbezug von Verkehrsdaten
-regression_with_line_22()
+#regression_with_line_22()
 
 # Prognose einer beliebigen Linie - Linie muss als String übergeben werden
-regression_with_line(line="90", direction="Neuenkirchen")
+#regression_with_line(line="90", direction="Neuenkirchen")

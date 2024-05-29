@@ -20,13 +20,7 @@ export async function getStops() {
 }
 
 export async function getInterestingStatistics() {
-    try {
-        const response = await axios.get(`${BASE_URL}/get_cards_data`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching interesting statistics:', error);
-        throw error;
-    }
+    return await axios.get(`${BASE_URL}/get_cards_data`);
 }
 
 export async function getAvgStopDelay() {

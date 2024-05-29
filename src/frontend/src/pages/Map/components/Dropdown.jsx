@@ -44,8 +44,34 @@ export default function SearchableDropdown() {
           uniqueRoutesArrayDay.push({ id: route.id, name: route.name });
         }
       });
-      uniqueRoutesArrayDay.sort((a, b) => a.name.localeCompare(b.name));
-      setDayRoutesNames(uniqueRoutesArrayDay);
+
+      const tramRoutesDay = uniqueRoutesArrayDay.filter((route) =>
+        route.name.includes("Tram")
+      );
+      const busRoutesDay = uniqueRoutesArrayDay.filter(
+        (route) => !route.name.includes("Tram")
+      );
+
+      const sortedTramRoutesDay = tramRoutesDay.sort((a, b) => {
+        // Sortiere nach Nummern, falls verfügbar
+        const numA = parseInt(a.name.match(/\d+/)?.[0]);
+        const numB = parseInt(b.name.match(/\d+/)?.[0]);
+        return numA - numB;
+      });
+
+      const sortedBusRoutesDay = busRoutesDay.sort((a, b) => {
+        // Sortiere nach Nummern, falls verfügbar
+        const numA = parseInt(a.name.match(/\d+/)?.[0]);
+        const numB = parseInt(b.name.match(/\d+/)?.[0]);
+        return numA - numB;
+      });
+
+      const sortedRoutesArrayDay = [
+        ...sortedTramRoutesDay,
+        ...sortedBusRoutesDay,
+      ];
+
+      setDayRoutesNames(sortedRoutesArrayDay);
 
       const uniqueRoutesMapNight = {};
       const uniqueRoutesArrayNight = [];
@@ -58,12 +84,39 @@ export default function SearchableDropdown() {
           uniqueRoutesArrayNight.push({ id: route.id, name: route.name });
         }
       });
-      uniqueRoutesArrayNight.sort((a, b) => a.name.localeCompare(b.name));
-      setNightRoutesNames(uniqueRoutesArrayNight);
+
+      const tramRoutesNight = uniqueRoutesArrayNight.filter((route) =>
+        route.name.includes("Tram")
+      );
+      const busRoutesNight = uniqueRoutesArrayNight.filter(
+        (route) => !route.name.includes("Tram")
+      );
+
+      const sortedTramRoutesNight = tramRoutesNight.sort((a, b) => {
+        // Sortiere nach Nummern, falls verfügbar
+        const numA = parseInt(a.name.match(/\d+/)?.[0]);
+        const numB = parseInt(b.name.match(/\d+/)?.[0]);
+        return numA - numB;
+      });
+
+      const sortedBusRoutesNight = busRoutesNight.sort((a, b) => {
+        // Sortiere nach Nummern, falls verfügbar
+        const numA = parseInt(a.name.match(/\d+/)?.[0]);
+        const numB = parseInt(b.name.match(/\d+/)?.[0]);
+        return numA - numB;
+      });
+
+      const sortedRoutesArrayNight = [
+        ...sortedTramRoutesNight,
+        ...sortedBusRoutesNight,
+      ];
+
+      setNightRoutesNames(sortedRoutesArrayNight);
+
       console.log(
         "Unique Route Names:",
-        uniqueRoutesArrayDay,
-        uniqueRoutesArrayNight
+        sortedRoutesArrayDay,
+        sortedRoutesArrayNight
       );
     }
   }, [routesLoaded]);
@@ -76,13 +129,14 @@ export default function SearchableDropdown() {
 
   const handleLineSelect = (event, value) => {
     console.log("Selected Line:", value);
-    setSearchTerm(value ? `Tram: ${value.name}` : "");
+    setSearchTerm(""); // Leer die Suchleiste, wenn eine Linie ausgewählt wird
     setSelectedRoute(selectedRoute === null ? value.id : null);
     toggleSelected();
     setPopupInfo(
       value ? { name: value.name, position: [53.082, 8.8138] } : null
     ); // Feste Position für das Popup
     console.log("Selected Value:", value);
+    setOpen(false);
   };
 
   return (
@@ -94,7 +148,9 @@ export default function SearchableDropdown() {
           options={nightMode ? nightRoutesNames : dayRoutesNames}
           getOptionLabel={(option) => option.name || ""}
           value={selectedRoute}
-          open={open}
+          open={
+            open && (dayRoutesNames.length > 0 || nightRoutesNames.length > 0)
+          }
           onOpen={() => {
             setOpen(true);
           }}
@@ -110,8 +166,9 @@ export default function SearchableDropdown() {
               label="Linien"
               variant="outlined"
               placeholder="Suche nach Linien"
-              sx={{ width: open ? 450 : 150, left: 0, textAlign: "right" }}
+              sx={{ width: 350, left: 0, textAlign: "right" }}
               onChange={handleSearchChange}
+              disabled={selectedRoute !== null}
             />
           )}
         />
