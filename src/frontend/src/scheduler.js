@@ -43,7 +43,6 @@ function convertToCSV(data) {
         const values = headers.map(header => row[header]);
         csvRows.push(values.join(','));
     }
-    console.log("Hallo");
     return csvRows.join('\n');
 }
 

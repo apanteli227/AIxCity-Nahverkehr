@@ -1,7 +1,7 @@
 from urllib.parse import unquote
 
 import sys
-sys.path.append("C:/Users/bengt/Repository/AIxCity-Nahverkehr")
+sys.path.append("Adding Path to Project")
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
