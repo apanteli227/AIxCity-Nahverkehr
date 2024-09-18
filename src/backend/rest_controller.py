@@ -1,16 +1,13 @@
 from urllib.parse import unquote
 
-import sys
-sys.path.append("Adding Path to Project")
-
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from persistence import database_controller as dbc
-from src.backend.ml_scripts_forecasts.ml_forecast_classification import classification_with_line_22, \
+from ml_scripts_forecasts.ml_forecast_classification import classification_with_line_22, \
     classification_with_line
-from src.backend.ml_scripts_forecasts.ml_forecast_regression import regression_with_line_22, regression_with_line
+from ml_scripts_forecasts.ml_forecast_regression import regression_with_line_22, regression_with_line
 
 app = FastAPI()
 
@@ -80,8 +77,8 @@ async def read_data_means_of_transport_delay():
 
 
 # durchschn. Verspätung an Wochenendtagen
-#@app.get("/interesting_statistic_weekend")
-#async def read_data_weekend_day_delay():
+# @app.get("/interesting_statistic_weekend")
+# async def read_data_weekend_day_delay():
 #    query = f"SELECT AVG(departure_delay_seconds) FROM transit_data WHERE weekday IN ('Saturday', 'Sunday');"
 #    return read_data(query)
 
@@ -94,15 +91,15 @@ async def read_data_line_delay_round():
 
 
 # durchschn. Verspätung an Feiertagen
-#@app.get("/interesting_statistic_public_holiday")
-#async def read_data_public_holiday_delay():
+# @app.get("/interesting_statistic_public_holiday")
+# async def read_data_public_holiday_delay():
 #    query = "SELECT AVG(arrival_delay_seconds) FROM transit_data WHERE is_holiday = 1;"
 #    return read_data(query)
 
 
 # durchschn. Verspätungen an einem zufälligen Heimspieltag von Werder Bremen
-#@app.get("/interesting_statistic_football_match_day")
-#async def read_data_football_match_day_delay():
+# @app.get("/interesting_statistic_football_match_day")
+# async def read_data_football_match_day_delay():
 #    query = """SELECT AVG(departure_delay_seconds) FROM transit_data WHERE "current_date" = '2024-03-30';"""
 #    return read_data(query)
 
@@ -137,6 +134,125 @@ async def read_data_line_delay():
     query = f"SELECT line, AVG(departure_delay_seconds) AS avg_departure_delay FROM public.transit_data WHERE current_date >= (CURRENT_DATE - INTERVAL '1 week') GROUP BY line"
     print(query)
     return read_data(query)
+
+
+# DATA-SCIENCE-PROJEKT VON JAN
+@app.get("/get_highest_avg_delay_time") #14:00 - 116.9s // 14:00 - 120.64s
+async def get_highest_avg_delay_time():
+    query = """
+    SELECT 
+        DATE_TRUNC('hour', starting_stop_time) AS hour, 
+        AVG(departure_delay_seconds) AS avg_departure_delay
+    FROM 
+        public.transit_data
+    WHERE 
+        "current_date" BETWEEN '2024-04-05' AND '2024-04-30'
+    GROUP BY 
+        DATE_TRUNC('hour', starting_stop_time)
+    ORDER BY 
+        avg_departure_delay DESC
+    LIMIT 1;
+    """
+    print(query)
+    return read_data(query)
+
+
+@app.get("/get_lowest_avg_delay_time") #05:00 - 40.17s // 01:00 - 40.28s
+async def get_lowest_avg_delay_time():
+    query = """
+    SELECT 
+        DATE_TRUNC('hour', starting_stop_time) AS hour,
+        AVG(departure_delay_seconds) AS avg_departure_delay
+    FROM 
+        public.transit_data
+    WHERE 
+        current_date >= (CURRENT_DATE - INTERVAL '1 week')
+    GROUP BY 
+        DATE_TRUNC('hour', starting_stop_time)
+    ORDER BY 
+        avg_departure_delay ASC
+    LIMIT 1;
+    """
+    print(query)
+    return read_data(query)
+
+
+@app.get("/get_highest_avg_delay_weekday") #Donnerstag - 85.9sstatt Wednesday114.1
+async def get_highest_avg_delay_weekday():
+    query = """
+    SELECT 
+        TO_CHAR(current_date, 'Day') AS weekday, 
+        AVG(departure_delay_seconds) AS avg_departure_delay
+    FROM 
+        public.transit_data
+    WHERE 
+        current_date BETWEEN '2024-04-05' AND '2024-04-30'
+    GROUP BY 
+        TO_CHAR(current_date, 'Day')
+    ORDER BY 
+        avg_departure_delay DESC
+    LIMIT 1;
+    """
+    print(query)
+    return read_data(query)
+
+
+@app.get("/get_lowest_avg_delay_weekday")
+async def get_lowest_avg_delay_weekday():
+    query = """
+    SELECT 
+        TO_CHAR(current_date, 'Day') AS weekday, 
+        AVG(departure_delay_seconds) AS avg_departure_delay
+    FROM 
+        public.transit_data
+    WHERE 
+        current_date BETWEEN '2024-04-05' AND '2024-04-30'
+    GROUP BY 
+        TO_CHAR(current_date, 'Day')
+    ORDER BY 
+        avg_departure_delay ASC
+    LIMIT 1;
+    """
+    print(query)
+    return read_data(query)
+
+
+@app.get("/get_stops_with_highest_delay")
+async def get_stops_with_highest_delay():
+    query = """
+    SELECT 
+        stop_name,
+        AVG(departure_delay_seconds) AS avg_departure_delay
+    FROM 
+        public.transit_data
+    WHERE 
+        current_date BETWEEN '2024-04-05' AND '2024-09-06'
+    GROUP BY 
+        stop_name
+    ORDER BY 
+        avg_departure_delay DESC
+    LIMIT 5;
+    """
+    print(query)
+    return read_data(query)
+
+
+@app.get("/get_arrival_departure_correlation")
+async def get_arrival_departure_correlation():
+    query = """
+    SELECT 
+        CORR(arrival_delay_seconds, departure_delay_seconds) AS correlation
+    FROM 
+        public.transit_data
+    WHERE 
+        "current_date" BETWEEN '2024-04-05' AND '2024-04-30';
+    """
+    print(query)
+    df = read_data(query)
+
+    # Berechnung der Korrelation
+    correlation = df['arrival_delay_seconds'].corr(df['departure_delay_seconds'])
+    return {"correlation": correlation}
 
 
 @app.get("/{mode}/{mode_input}/{frequency}/{start_time}/{end_time}")
@@ -224,7 +340,7 @@ def get_mode(mode):
     if mode == 'stop_name' or mode == 'line':
         return mode
     else:
-        return 'mixed mode not implemented yet' # todo
+        return 'mixed mode not implemented yet'  # todo
 
 
 def get_date(date_string):
